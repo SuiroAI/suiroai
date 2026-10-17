@@ -1,16 +1,16 @@
 # DSC-26 supported-interface discovery
 
-Revision 0.1.0 · 2026-10-17 · **Integration blocked; no real analytical invocation demonstrated.**
+Revision 0.2.0 · 2026-10-17 · **Real bounded Codex/Data engineering invocation demonstrated; full adapter acceptance incomplete.**
 
-Later evidence: the user's normal Terminal successfully initialized this app-server and completed skill discovery, but its returned skills lacked Data. See [TERMINAL_DISCOVERY.md](TERMINAL_DISCOVERY.md). The managed-environment failures below remain historical observations. The [draft.3 contract review](CONTRACT_REVIEW.md) now records DSC-26's exact structural ACK; native Data execution is the remaining capability blocker.
+The user's normal Terminal completed a real synthetic stage through Codex app-server `0.163.0`, with installed/enabled OpenAI Data `1.0.11` and the native Data plugin mention. The executing turn read Data's index and shared instructions, generated and executed Python, and returned verified artifact bytes. Independent review confirmed three rows, group totals `A=5`, `B=5`, total `10`, and unchanged engineering task/input/run bindings. See the [reviewed evidence](../../evidence/integration/native-stage-2026-10-17/review.json) and [probe history](SYNTHETIC_PROBE.md). No customer analysis ran.
 
-The user's subsequent native CLI catalog query also confirmed Data `1.0.11` installed and enabled as `data-analytics@openai-curated-remote`. Installation is therefore verified for that Terminal context. Its absent `skills/list` entry is not sufficient to declare remote Data unavailable: the official protocol separately documents on-demand remote skill retrieval. Native retrieval and actual invocation remain to be exercised; reinstalling or copying the cached skills is not justified by these results.
+The [draft.3 contract review](CONTRACT_REVIEW.md) records DSC-26's exact structural ACK. The adapter is still absent, native failure handling and broader version checks remain unverified, and customer execution still requires DSC-25 approval plus DSC-10 permission. Metadata discovery used under-development `plugin/read`; a production adapter must not depend on that method. The observed model provider was `openai`; the intended LiteLLM gateway route was not verified.
 
-Latest probe: the corrected remote-ID lookup verified installation/enabled state in the same app-server connection, and native remote skill retrieval succeeded. Its subsequent `thread/start` request was rejected for an incorrect sandbox enum in the probe. That request spelling is now corrected and covered by installed-protocol schema regressions. An analytical turn and real Data artifact retrieval remain unverified. See [SYNTHETIC_PROBE.md](SYNTHETIC_PROBE.md) for the ordered evidence and corrections.
+Earlier managed-environment startup failures, Terminal skill-list omission and two probe request corrections remain historical evidence below. An absent `skills/list` entry did not establish remote Data unavailability; native remote retrieval and the later executing turn established the supported route in that Terminal context. No cached skill was registered as a replacement plugin.
 
-## Observed result
+## Historical managed-environment startup results
 
-The installed Codex CLI reports `codex-cli 0.163.0`. Two engineering probes attempted the documented app-server stdio interface. Both child processes exited with code 1 before replying to `initialize`. Neither reached `skills/list`, `thread/start`, or `turn/start`. No synthetic calculation or customer analysis ran, and no analytical artifact was produced or retrieved.
+The installed Codex CLI reports `codex-cli 0.163.0`. Two initial engineering probes attempted the documented app-server stdio interface. Both child processes exited with code 1 before replying to `initialize`. Neither reached `skills/list`, `thread/start`, or `turn/start`. Those two probes ran no synthetic calculation or customer analysis and produced no analytical artifact.
 
 | Probe | Actual observation | Evidence |
 | --- | --- | --- |
@@ -39,8 +39,9 @@ No Tavily tool or `tavily-research/SKILL.md` was available at its configured pat
 - [Observation checks](../../evidence/integration/discovery-2026-10-17/observation-checks.json): confirms both saved records preserve actual startup failure and zero analytical invocation. These checks do not pass integration acceptance.
 - [Probe recipe](PROBE_RECIPE.md): commands, requests, deadline and evidence-capture procedure actually exercised.
 - [Ownership acknowledgment](OWNERSHIP_ACK.md): agreement with DSC-3 and exclusive paths.
+- [Reviewed native stage](../../evidence/integration/native-stage-2026-10-17/review.json): actual host/plugin/turn/command identities, artifact digests, 27 independent checks and scoped manual-review decision. Four small synthetic artifacts are retained alongside it; original raw evidence paths/digests are indexed without committing full skill text or agent reasoning.
 
-The JSON observations are discovery records, **not instances of an invented shared execution/result/evidence schema**. DSC-24 remains the sole owner of that schema. There is no customer task/proposal/approval/source version because no customer stage was submitted. Installed-file hashes establish observed identity only; propagation through an executing turn remains untested.
+The JSON observations are engineering records, **not instances of an invented shared execution/result/evidence schema**. DSC-24 remains the sole owner of that schema. There is no customer task/proposal/approval/source version because no customer stage was submitted. The successful synthetic turn demonstrates its engineering task/input/run binding passthrough; customer binding propagation and mismatch rejection remain untested.
 
 ## Adapter boundary after prerequisites clear
 
@@ -57,22 +58,22 @@ Enforce a finite deadline and declared limits around the supported mechanism. In
 | Behavior | Status in this discovery |
 | --- | --- |
 | Actual app-server startup failure | Observed twice; raw errors retained |
-| Installed host/plugin identity | CLI version, manifest and skill hashes recorded; executing-host skill discovery not reached |
-| Supported Data invocation and analytical artifact retrieval | Not demonstrated; blocked before handshake |
-| Version propagation and mismatch rejection | Not tested; no stage ran |
+| Installed host/plugin identity | Native Terminal metadata confirms installed/enabled Data 1.0.11; full executing-turn index output matches native remote Markdown hash |
+| Supported Data invocation and analytical artifact retrieval | Demonstrated for one real synthetic stage; code, command execution and four fetched artifact byte hashes independently reviewed |
+| Version propagation and mismatch rejection | Synthetic task/input/run binding passthrough verified; customer/source/proposal/approval/assumption propagation and rejection paths untested |
 | Missing plugin or inaccessible plugin response | Not tested; startup failure must not be mislabeled as this outcome |
-| Invalid analytical code | Not tested; no analytical worker ran |
-| Stage timeout and cancellation | Not tested; the discovery watchdog did not time out and process cleanup is not stage cancellation |
+| Invalid analytical code | Native path untested; the successful stage executed valid code |
+| Stage timeout and cancellation | Mock protocol path checked only; no native stage deadline expired or cancellation was exercised |
 | Exhausted usage/recovery limits | Not tested; no native exhaustion event occurred |
 | Needs data/material facts versus measured validation failure | Required distinction; no such outcome was manufactured or exercised |
 
-No adapter is implemented: the real mechanism has not been verified, and the DSC-24 snapshot was still under owner review during discovery. Mock tests cannot remove either prerequisite. No Linear status, external application, remote branch, merge or deployment was changed by DSC-26.
+No adapter is implemented. The engineering invocation and exact structural contract ACK clear those discovery questions, while full adapter acceptance still requires production-suitable capability binding, actual version/failure checks and parent integration. The successful probe preserves `automatic_DSC26_acceptance: false`. No Linear status, external application, remote branch, merge or deployment was changed by DSC-26.
 
-## Exact unblock conditions
+## Remaining adapter and acceptance work
 
-1. An authorized host must start successfully and discover the Data skill for its execution directory. Preserve the real handshake/discovery responses; do not infer readiness from local files.
-2. Exercise a bounded, clearly labeled synthetic engineering turn with explicit Data attachment. Retrieve actual execution items and generated artifact bytes, verify expected contents and hashes, then exercise version/failure behavior. These are engineering probes, not customer analysis.
-3. DSC-24 and DSC-3 must agree the concrete interface snapshot. Implement only the reserved adapter paths against that version.
+1. Use the verified native invocation mechanism in the adapter without depending on under-development plugin metadata methods. Confirm the intended executing host and provider route; the successful Terminal result does not establish managed-host or LiteLLM readiness.
+2. Exercise real invalid-code, timeout/cancellation and exhausted-limit behavior, plus broader version propagation/mismatch handling. Retain the distinction between material gaps, measured validation failure and execution failure. Mock checks cannot satisfy those native outcomes.
+3. Implement only the reserved adapter paths against the exact acknowledged DSC-24 snapshot and agreed DSC-10 parent interface. Independently verify input isolation, actual evidence retrieval and parent checkpoint handoff.
 4. Customer execution additionally requires genuine DSC-25 approval of the current proposal and DSC-10 parent permission. Capability discovery does not grant either.
 
-The assigned [DSC-26 issue](https://linear.app/gr3enarr0w/issue/DSC-26) and linked architecture/contract issues were accessible and read. The issue remains open for real invocation evidence.
+The assigned [DSC-26 issue](https://linear.app/gr3enarr0w/issue/DSC-26) and linked architecture/contract issues were accessible and read. The issue remains open for adapter implementation and remaining acceptance evidence.
