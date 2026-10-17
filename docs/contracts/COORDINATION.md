@@ -1,6 +1,6 @@
 # DSC-24 ownership and snapshot coordination
 
-Snapshot: `0.1.0-draft.2`. State: isolated branch draft, not yet released for shared consumer dependence; exact schema snapshot agreement is pending. Architecture path ownership has been mutually acknowledged. This record separates that acknowledgement from consumer acceptance of the definitions.
+Snapshot: `0.1.0-draft.3`. State: isolated branch draft, not yet released for shared consumer dependence; exact schema snapshot agreement is pending. Architecture path ownership has been mutually acknowledged. This record separates that acknowledgement from consumer acceptance of the definitions.
 
 ## Owners and proposed boundaries
 
@@ -52,4 +52,6 @@ Do not merge, deploy, change issue status, or count contract/fixture validation 
 
 Draft.1 (`cdcddc358a515b8b6a9546f540ac399de94f9de7047aa5957bc5d2fb577992ac`) was reviewed by DSC-3 and DSC-26 and was not released. Draft.2 fixes exact holdout binding, dependent parent permissions, acyclic independently checked candidate/approved quantities, report exception preservation, pending statistical policy resolution, explicit synthetic-zero assumptions, display-name fidelity, and stage requests with exact permission/attempt/input/budget/namespace bindings and outcome-specific evidence. Standalone engineering discovery remains separate from customer execution contracts.
 
-Current schema version: `0.1.0-draft.2`; byte SHA-256: `847fc00f6618aca6ffccda60a33cbcebe6b98174871c0b7794e109c64e20c65b`. Five mock bundles and 72 regression tests pass; actual local source reconciliation has 41 passed checks and zero failures. These are not analytical-pipeline acceptance. Exact revised snapshot acknowledgement is requested from both owners; no agreement is inferred from silence.
+Current schema version: `0.1.0-draft.3`; byte SHA-256: `1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46`. Five mock bundles and 77 regression tests pass; actual local source reconciliation has 41 passed checks and zero failures. These are not analytical-pipeline acceptance. Exact revised snapshot acknowledgement is requested from both owners; no agreement is inferred from silence.
+
+Draft.2 review identified a final budget representation gap: exhausted unrelated resources must be representable as zero. Draft.3 separates nonnegative remaining budgets from whole-run capacities and checks required stage resources before dispatch. The parent remains responsible for authoritative counters and actual enforcement.

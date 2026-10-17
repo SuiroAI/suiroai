@@ -1,6 +1,6 @@
 # DSC-24 retail MVP contracts
 
-Snapshot `0.1.0-draft.2` is ready for architecture/integration review. Exact schema agreement is recorded in [COORDINATION.md](COORDINATION.md); path ownership is acknowledged.
+Snapshot `0.1.0-draft.3` is ready for architecture/integration review. Exact schema agreement is recorded in [COORDINATION.md](COORDINATION.md); path ownership is acknowledged.
 
 This component supplies interface definitions, consistency checks and five small mock examples. It does not implement an analytical pipeline or demonstrate supported Codex/OpenAI Data execution.
 

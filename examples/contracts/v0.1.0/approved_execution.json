@@ -1,11 +1,11 @@
 {
-  "schema_version": "0.1.0-draft.2",
+  "schema_version": "0.1.0-draft.3",
   "fixture_provenance": "mock",
   "mock_notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
   "records": [
     {
       "kind": "submission",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-submission",
       "artifact_version": 1,
       "provenance": "mock",
@@ -82,7 +82,7 @@
     },
     {
       "kind": "task_proposal",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-task-proposal",
       "artifact_version": 1,
       "provenance": "mock",
@@ -92,12 +92,12 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "submission_ref": {
         "artifact_id": "mock-submission",
         "version": 1,
-        "sha256": "954e3bb7fd673b026a95ee877b3784e511f8ac3ac4200fd4c793c76feb6a65d3",
+        "sha256": "96712ea3679682a7d69149d64d711ea2faa4974974814449cb9eab8d835493bf",
         "provenance": "mock"
       },
       "goal": "MOCK single retail replenishment illustration only.",
@@ -246,7 +246,7 @@
     },
     {
       "kind": "task_approval",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-task-approval",
       "artifact_version": 1,
       "provenance": "mock",
@@ -256,12 +256,12 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "proposal_ref": {
         "artifact_id": "mock-task-proposal",
         "version": 1,
-        "sha256": "1a2ae9da9522b5443244de55dd7f3b4f4d6c62dda2982f1974306e3fb3bd902f",
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
         "provenance": "mock"
       },
       "decision": "approved",
@@ -271,7 +271,7 @@
     },
     {
       "kind": "execution_contract",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-execution-contract",
       "artifact_version": 1,
       "provenance": "mock",
@@ -281,19 +281,19 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "approval_ref": {
         "artifact_id": "mock-task-approval",
         "version": 1,
-        "sha256": "c514d520ce4d6e008ff531d2f5d757f8bb079b87724c96d8849fea3b7ada1581",
+        "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
         "provenance": "mock"
       },
       "proposal_ref": {
         "artifact_id": "mock-task-proposal",
         "version": 1,
-        "sha256": "1a2ae9da9522b5443244de55dd7f3b4f4d6c62dda2982f1974306e3fb3bd902f",
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
         "provenance": "mock"
       },
       "source_refs": [
@@ -493,7 +493,7 @@
     },
     {
       "kind": "stage_request",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-stage-request",
       "artifact_version": 1,
       "provenance": "mock",
@@ -503,13 +503,13 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "stage": "approved_execution",
@@ -524,7 +524,7 @@
           {
             "artifact_id": "mock-task-approval",
             "version": 1,
-            "sha256": "c514d520ce4d6e008ff531d2f5d757f8bb079b87724c96d8849fea3b7ada1581",
+            "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
             "provenance": "mock"
           }
         ]
@@ -575,7 +575,7 @@
     },
     {
       "kind": "stage_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-stage-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -585,19 +585,19 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "stage_request_ref": {
         "artifact_id": "mock-stage-request",
         "version": 1,
-        "sha256": "4e462009621a8127f714d13231f5c85697ff817c5c2273385e82329a04503250",
+        "sha256": "ebbbdefab8700e9abfe6c13e6df75d11034213d7325bbfaa78d6bd428c2acc4e",
         "provenance": "mock"
       },
       "stage": "approved_execution",
@@ -609,7 +609,7 @@
         {
           "artifact_id": "mock-execution-contract",
           "version": 1,
-          "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+          "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
           "provenance": "mock"
         }
       ],
@@ -617,7 +617,7 @@
         {
           "artifact_id": "mock-task-approval",
           "version": 1,
-          "sha256": "c514d520ce4d6e008ff531d2f5d757f8bb079b87724c96d8849fea3b7ada1581",
+          "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
           "provenance": "mock"
         }
       ],
@@ -631,7 +631,7 @@
           {
             "artifact_id": "mock-execution-contract",
             "version": 1,
-            "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+            "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
             "provenance": "mock"
           }
         ]

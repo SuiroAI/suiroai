@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.suiroai.invalid/retail-mvp/0.1.0-draft.2",
-  "title": "Retail MVP shared contracts \u2014 unagreed draft 0.1.0-draft.2",
+  "$id": "https://schemas.suiroai.invalid/retail-mvp/0.1.0-draft.3",
+  "title": "Retail MVP shared contracts \u2014 unagreed draft 0.1.0-draft.3",
   "description": "DSC-24 draft component interfaces only. This schema does not implement preparation, modeling, integration or customer acceptance. Semantic cross-artifact verification remains required.",
   "oneOf": [
     {
@@ -2160,7 +2160,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2232,7 +2232,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2365,7 +2365,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2492,7 +2492,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2672,7 +2672,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2818,7 +2818,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -2899,7 +2899,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3011,7 +3011,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3147,7 +3147,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3310,7 +3310,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3572,7 +3572,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3750,7 +3750,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -3909,7 +3909,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -4011,7 +4011,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -4140,7 +4140,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -4573,7 +4573,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {
@@ -4739,7 +4739,7 @@
           "description": "1. kind."
         },
         "schema_version": {
-          "const": "0.1.0-draft.2",
+          "const": "0.1.0-draft.3",
           "description": "2. schema version."
         },
         "artifact_id": {

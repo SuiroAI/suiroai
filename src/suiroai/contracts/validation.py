@@ -13,7 +13,7 @@ from typing import Any
 from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "0.1.0-draft.2"
+VERSION = "0.1.0-draft.3"
 ENVELOPE = {
     "kind", "schema_version", "artifact_id", "artifact_version", "provenance",
     "binding", "input_binding", "run_id",

@@ -1,11 +1,11 @@
 {
-  "schema_version": "0.1.0-draft.2",
+  "schema_version": "0.1.0-draft.3",
   "fixture_provenance": "mock",
   "mock_notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
   "records": [
     {
       "kind": "submission",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-submission",
       "artifact_version": 1,
       "provenance": "mock",
@@ -82,7 +82,7 @@
     },
     {
       "kind": "task_proposal",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-task-proposal",
       "artifact_version": 1,
       "provenance": "mock",
@@ -92,12 +92,12 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "submission_ref": {
         "artifact_id": "mock-submission",
         "version": 1,
-        "sha256": "954e3bb7fd673b026a95ee877b3784e511f8ac3ac4200fd4c793c76feb6a65d3",
+        "sha256": "96712ea3679682a7d69149d64d711ea2faa4974974814449cb9eab8d835493bf",
         "provenance": "mock"
       },
       "goal": "MOCK single retail replenishment illustration only.",
@@ -246,7 +246,7 @@
     },
     {
       "kind": "task_approval",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-task-approval",
       "artifact_version": 1,
       "provenance": "mock",
@@ -256,12 +256,12 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "proposal_ref": {
         "artifact_id": "mock-task-proposal",
         "version": 1,
-        "sha256": "1a2ae9da9522b5443244de55dd7f3b4f4d6c62dda2982f1974306e3fb3bd902f",
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
         "provenance": "mock"
       },
       "decision": "approved",
@@ -271,7 +271,7 @@
     },
     {
       "kind": "execution_contract",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-execution-contract",
       "artifact_version": 1,
       "provenance": "mock",
@@ -281,19 +281,19 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "approval_ref": {
         "artifact_id": "mock-task-approval",
         "version": 1,
-        "sha256": "c514d520ce4d6e008ff531d2f5d757f8bb079b87724c96d8849fea3b7ada1581",
+        "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
         "provenance": "mock"
       },
       "proposal_ref": {
         "artifact_id": "mock-task-proposal",
         "version": 1,
-        "sha256": "1a2ae9da9522b5443244de55dd7f3b4f4d6c62dda2982f1974306e3fb3bd902f",
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
         "provenance": "mock"
       },
       "source_refs": [
@@ -493,7 +493,7 @@
     },
     {
       "kind": "preparation_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-preparation-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -503,13 +503,13 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "prepared_development_data_ref": {
@@ -721,7 +721,7 @@
     },
     {
       "kind": "initial_evaluation_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-initial-evaluation-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -731,19 +731,19 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "preparation_result_ref": {
         "artifact_id": "mock-preparation-result",
         "version": 1,
-        "sha256": "4f5cb6e2e3879e19b28a77c6cdfe6c2e7500ff12d60117f306138fa2ad3d4f5b",
+        "sha256": "2c1a0510612f52ccecb4c4a10ddeab67c2cdb939dada3aeb7b55749c58c1703c",
         "provenance": "mock"
       },
       "evaluation_plan": {
@@ -879,7 +879,7 @@
     },
     {
       "kind": "feature_proposal",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-feature-proposal",
       "artifact_version": 1,
       "provenance": "mock",
@@ -889,25 +889,25 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "preparation_result_ref": {
         "artifact_id": "mock-preparation-result",
         "version": 1,
-        "sha256": "4f5cb6e2e3879e19b28a77c6cdfe6c2e7500ff12d60117f306138fa2ad3d4f5b",
+        "sha256": "2c1a0510612f52ccecb4c4a10ddeab67c2cdb939dada3aeb7b55749c58c1703c",
         "provenance": "mock"
       },
       "initial_evaluation_ref": {
         "artifact_id": "mock-initial-evaluation-result",
         "version": 1,
-        "sha256": "7118463d41718e4f1f2cc2291a27d4005706c98a1765cdda024273491028dec3",
+        "sha256": "11e1a7363f3b4a8d39462015f5af982371ab2e4870da53f5d53e393ded74438c",
         "provenance": "mock"
       },
       "generation": {
@@ -967,7 +967,7 @@
     },
     {
       "kind": "feature_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-feature-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -977,13 +977,13 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "feature_proposal_ref": {
         "artifact_id": "mock-feature-proposal",
         "version": 1,
-        "sha256": "c6ddb8a4f3e0c44c47a8dbc4e3fbd09f960fb02db4a383388e92011996fd6f5f",
+        "sha256": "8750ffdae28c34d9351d6ee75fed1016ac4e262107c99e7f047c921377561d31",
         "provenance": "mock"
       },
       "materialized_feature_set_ref": {
@@ -1107,7 +1107,7 @@
     },
     {
       "kind": "evaluation_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-evaluation-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -1117,25 +1117,25 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "preparation_result_ref": {
         "artifact_id": "mock-preparation-result",
         "version": 1,
-        "sha256": "4f5cb6e2e3879e19b28a77c6cdfe6c2e7500ff12d60117f306138fa2ad3d4f5b",
+        "sha256": "2c1a0510612f52ccecb4c4a10ddeab67c2cdb939dada3aeb7b55749c58c1703c",
         "provenance": "mock"
       },
       "llm_feature_result_ref": {
         "artifact_id": "mock-feature-result",
         "version": 1,
-        "sha256": "54c393ba3b19cf1739294a064b0af2cb6eac1ca0d0fc575f302768eb06e74b09",
+        "sha256": "bfb45eba9d4465f7378f83420043d75237869e6c59235da5555ec34d2c2fc6fa",
         "provenance": "mock"
       },
       "evaluation_plan": {
@@ -1449,7 +1449,7 @@
     },
     {
       "kind": "final_validation_result",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-final-validation-result",
       "artifact_version": 1,
       "provenance": "mock",
@@ -1459,19 +1459,19 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "evaluation_result_ref": {
         "artifact_id": "mock-evaluation-result",
         "version": 1,
-        "sha256": "1de9f17f768caff60fd72e434b02f0a46576acf039eaec407e75bce72ccf5717",
+        "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
         "provenance": "mock"
       },
       "frozen_result_ref": {
@@ -1607,7 +1607,7 @@
     },
     {
       "kind": "report_draft",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-report-draft",
       "artifact_version": 1,
       "provenance": "mock",
@@ -1617,20 +1617,20 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "execution_contract_ref": {
         "artifact_id": "mock-execution-contract",
         "version": 1,
-        "sha256": "d58cabe398b65eb61d7348e750006695ec53f8bd0553d340f4327e538a916432",
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
         "provenance": "mock"
       },
       "outcome": "validation_failure",
       "final_validation_ref": {
         "artifact_id": "mock-final-validation-result",
         "version": 1,
-        "sha256": "a8311a410c2eb6e3f75296cd1fa2726f3a816c29c75bb7f583c2856221642e61",
+        "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
         "provenance": "mock"
       },
       "frozen_result_ref": {
@@ -1658,7 +1658,7 @@
             {
               "artifact_id": "mock-final-validation-result",
               "version": 1,
-              "sha256": "a8311a410c2eb6e3f75296cd1fa2726f3a816c29c75bb7f583c2856221642e61",
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
               "provenance": "mock"
             }
           ]
@@ -1673,7 +1673,7 @@
             {
               "artifact_id": "mock-final-validation-result",
               "version": 1,
-              "sha256": "a8311a410c2eb6e3f75296cd1fa2726f3a816c29c75bb7f583c2856221642e61",
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
               "provenance": "mock"
             }
           ],
@@ -1689,7 +1689,7 @@
           {
             "artifact_id": "mock-final-validation-result",
             "version": 1,
-            "sha256": "a8311a410c2eb6e3f75296cd1fa2726f3a816c29c75bb7f583c2856221642e61",
+            "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
             "provenance": "mock"
           }
         ]
@@ -1704,7 +1704,7 @@
           {
             "artifact_id": "mock-final-validation-result",
             "version": 1,
-            "sha256": "a8311a410c2eb6e3f75296cd1fa2726f3a816c29c75bb7f583c2856221642e61",
+            "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
             "provenance": "mock"
           }
         ]
@@ -1712,7 +1712,7 @@
     },
     {
       "kind": "output_verification",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-output-verification",
       "artifact_version": 1,
       "provenance": "mock",
@@ -1722,13 +1722,13 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "report_draft_ref": {
         "artifact_id": "mock-report-draft",
         "version": 1,
-        "sha256": "3ca37e4daa127656222ad496f52c588de737f26a7d18cca634ed00169970fa95",
+        "sha256": "b8244118cb68f6c82db322b6e193bbdac028aa71b7fa945f4f822907a9a59669",
         "provenance": "mock"
       },
       "independent_verifier": "mock-independent-output-verifier",
@@ -1798,14 +1798,14 @@
         "report_ref": {
           "artifact_id": "mock-report-draft",
           "version": 1,
-          "sha256": "3ca37e4daa127656222ad496f52c588de737f26a7d18cca634ed00169970fa95",
+          "sha256": "b8244118cb68f6c82db322b6e193bbdac028aa71b7fa945f4f822907a9a59669",
           "provenance": "mock"
         }
       }
     },
     {
       "kind": "evidence_record",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-evidence-record",
       "artifact_version": 1,
       "provenance": "mock",
@@ -1815,7 +1815,7 @@
         "input_version": 1,
         "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
         "proposal_version": 1,
-        "proposal_digest": "5e2e657c77d8c10fcd8deba2d18d88713b47bdc2994ab52beb4ebb0eb4148682"
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
       },
       "run_id": "mock-run-1",
       "requirement_id": "mock-terminal-evidence-binding",
@@ -1824,7 +1824,7 @@
         {
           "artifact_id": "mock-report-draft",
           "version": 1,
-          "sha256": "3ca37e4daa127656222ad496f52c588de737f26a7d18cca634ed00169970fa95",
+          "sha256": "b8244118cb68f6c82db322b6e193bbdac028aa71b7fa945f4f822907a9a59669",
           "provenance": "mock"
         }
       ],

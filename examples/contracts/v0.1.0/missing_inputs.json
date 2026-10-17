@@ -1,11 +1,11 @@
 {
-  "schema_version": "0.1.0-draft.2",
+  "schema_version": "0.1.0-draft.3",
   "fixture_provenance": "mock",
   "mock_notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
   "records": [
     {
       "kind": "submission",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-submission",
       "artifact_version": 1,
       "provenance": "mock",
@@ -34,7 +34,7 @@
     },
     {
       "kind": "task_proposal",
-      "schema_version": "0.1.0-draft.2",
+      "schema_version": "0.1.0-draft.3",
       "artifact_id": "mock-task-proposal",
       "artifact_version": 1,
       "provenance": "mock",
@@ -44,12 +44,12 @@
         "input_version": 1,
         "input_digest": "cd87e07a10a2def943e081d2c8c06f8b0e361abd6bdbb3f3b99597148954d282",
         "proposal_version": 1,
-        "proposal_digest": "91fd407672e6fb1c10b9aa937eee3058132300b415f6c067874524d981957aa4"
+        "proposal_digest": "be23f600a6242a41f00ef45400ca93896f3a61cf5dea66dbb6b070dca6ae354b"
       },
       "submission_ref": {
         "artifact_id": "mock-submission",
         "version": 1,
-        "sha256": "b67353d467044a01c9a83eac2e4d7979bb04c5fa79368f65590d51e975be8be4",
+        "sha256": "5f154ea97b115b33a690e4e16f6b4255bde2f133faa66830547ae65b8006feb7",
         "provenance": "mock"
       },
       "goal": "MOCK single retail replenishment illustration only.",

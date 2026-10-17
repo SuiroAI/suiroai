@@ -1,6 +1,6 @@
 # Retail contract field index
 
-Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; the [schema](../../src/suiroai/contracts/schema/retail-contract.schema.json) defines exact fields. Objects reject unknown fields. Required fields may explicitly allow null.
+Snapshot `0.1.0-draft.3`. The [semantic guide](CONTRACT.md) explains behavior; the [schema](../../src/suiroai/contracts/schema/retail-contract.schema.json) defines exact fields. Objects reject unknown fields. Required fields may explicitly allow null.
 
 ## `artifact_ref`
 
@@ -413,7 +413,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"submission"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -428,7 +428,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"task_proposal"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -450,7 +450,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"task_approval"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -467,7 +467,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"execution_contract"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -493,7 +493,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"preparation_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -518,7 +518,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"feature_proposal"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -535,7 +535,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"feature_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -555,7 +555,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"evaluation_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -580,7 +580,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"final_validation_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -605,7 +605,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"report_draft"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -632,7 +632,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"output_verification"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -653,7 +653,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"evidence_record"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -674,7 +674,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"initial_evaluation_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -694,7 +694,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"capability_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -712,7 +712,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"stage_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -760,7 +760,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"quantity_result"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -783,7 +783,7 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | Field | Required | Type / constraints |
 | --- | --- | --- |
 | `kind` | yes | `{"const":"stage_request"}` |
-| `schema_version` | yes | `{"const":"0.1.0-draft.2"}` |
+| `schema_version` | yes | `{"const":"0.1.0-draft.3"}` |
 | `artifact_id` | yes | `{"type":"string"}` |
 | `artifact_version` | yes | `{"type":"integer","minimum":1}` |
 | `provenance` | yes | `{"type":"string","enum":["supplied","synthetic","derived","mock"]}` |
@@ -794,7 +794,18 @@ Snapshot `0.1.0-draft.2`. The [semantic guide](CONTRACT.md) explains behavior; t
 | `attempt` | yes | `{"type":"integer","minimum":1}` |
 | `parent_authorization` | yes | `{"$ref":"#/$defs/parent_decision"}` |
 | `released_input_refs` | yes | `{"type":"array","minItems":0,"items":{"$ref":"#/$defs/artifact_ref"}}` |
-| `remaining_limits` | yes | `{"$ref":"#/$defs/execution_limits"}` |
+| `remaining_limits` | yes | `{"$ref":"#/$defs/remaining_limits"}` |
 | `issued_at` | yes | `{"type":"string","format":"date-time"}` |
 | `deadline` | yes | `{"type":"string","format":"date-time"}` |
 | `output_namespace` | yes | `{"type":"string"}` |
+
+## `remaining_limits`
+
+| Field | Required | Type / constraints |
+| --- | --- | --- |
+| `max_candidates` | yes | `{"type":"integer","minimum":0}` |
+| `max_llm_feature_definitions` | yes | `{"type":"integer","minimum":0}` |
+| `max_defect_rechecks` | yes | `{"type":"integer","minimum":0}` |
+| `max_parent_reviews` | yes | `{"type":"integer","minimum":0}` |
+| `max_execution_seconds` | yes | `{"type":"integer","minimum":0}` |
+| `max_stage_attempts` | yes | `{"type":"integer","minimum":0}` |

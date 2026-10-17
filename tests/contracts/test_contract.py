@@ -556,6 +556,51 @@ class ContractBoundaries(unittest.TestCase):
                 self.assertEqual(validate_record(stage), [])
                 self.accepts(bundle)
 
+    def test_stage_can_dispatch_when_only_unrelated_budgets_are_exhausted(self):
+        bundle = self.fixture("approved_execution")
+        request = record(bundle, "stage_request")
+        request["remaining_limits"].update(max_candidates=0, max_llm_feature_definitions=0,
+                                           max_parent_reviews=0, max_defect_rechecks=0,
+                                           max_stage_attempts=1, max_execution_seconds=15)
+        self.accepts(bundle)
+
+    def test_stage_cannot_dispatch_without_remaining_attempts_or_time(self):
+        for field in ("max_stage_attempts", "max_execution_seconds"):
+            with self.subTest(exhausted=field):
+                bundle = self.fixture("approved_execution")
+                record(bundle, "stage_request")["remaining_limits"][field] = 0
+                self.rejects(bundle, "stage cannot dispatch with exhausted attempts or time")
+
+    def test_feature_stage_cannot_dispatch_with_exhausted_feature_budget(self):
+        bundle = self.fixture()
+        request = copy.deepcopy(record(self.fixture("approved_execution"), "stage_request"))
+        request["stage"] = "llm_features"
+        request["parent_authorization"]["checkpoint"] = "llm_features"
+        request["released_input_refs"] = [record(bundle, "preparation_result")["prepared_development_data_ref"]]
+        bundle["records"].append(request)
+        self.accepts(bundle)
+        request["remaining_limits"]["max_llm_feature_definitions"] = 0
+        self.rejects(bundle, "feature stage cannot dispatch with exhausted feature budget")
+
+    def test_model_stages_cannot_dispatch_with_exhausted_candidate_budget(self):
+        for stage in ("initial_baseline_evaluation", "comparison_and_freeze"):
+            with self.subTest(stage=stage):
+                bundle = self.fixture()
+                request = copy.deepcopy(record(self.fixture("approved_execution"), "stage_request"))
+                request["stage"] = stage
+                request["parent_authorization"]["checkpoint"] = stage
+                request["released_input_refs"] = [record(bundle, "preparation_result")["prepared_development_data_ref"]]
+                bundle["records"].append(request)
+                self.accepts(bundle)
+                request["remaining_limits"]["max_candidates"] = 0
+                self.rejects(bundle, "model stage cannot dispatch with exhausted candidate budget")
+
+    def test_stage_deadline_requires_positive_remaining_duration(self):
+        bundle = self.fixture("approved_execution")
+        request = record(bundle, "stage_request")
+        request["deadline"] = request["issued_at"]
+        self.rejects(bundle, "stage request deadline exceeds remaining execution bound")
+
 
 if __name__ == "__main__":
     unittest.main()

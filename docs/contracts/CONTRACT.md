@@ -1,6 +1,6 @@
 # Retail MVP contract snapshot
 
-Version: `0.1.0-draft.2`. Owner: DSC-24. Status: local draft for architecture and consumer review. DSC-3 and DSC-24 have mutually acknowledged the reserved ownership paths; exact schema snapshot agreement remains pending. This snapshot is not published and must not be described as an agreed consumer interface or production stable.
+Version: `0.1.0-draft.3`. Owner: DSC-24. Status: local draft for architecture and consumer review. DSC-3 and DSC-24 have mutually acknowledged the reserved ownership paths; exact schema snapshot agreement remains pending. This snapshot is not published and must not be described as an agreed consumer interface or production stable.
 
 The machine-readable definitions are in [schema/retail-contract.schema.json](../../src/suiroai/contracts/schema/retail-contract.schema.json). This document defines their meaning and cross-artifact requirements. Passing schema validation establishes structural conformance only. It does not establish business approval, source correctness, model quality, a functioning analytical pipeline, or integration acceptance.
 
@@ -187,3 +187,5 @@ Persist candidate quantity artifact version 1 with null approved quantities and 
 Optional `product_name` is display metadata only. Include it only when the versioned source/mapping evidence supports the exact ID; otherwise omit it or use null. The report copies approved names/IDs; humanizing cannot infer or invent names.
 
 The target's missing-date policy has separate branches: unknown/masked observations, zeros supported by verified complete extracts, or an explicit disclosed synthetic-zero scenario assumption. The synthetic branch requires `zero_assumption_ref` linked to a synthetic assumption in the approved task. It leaves source completeness unverified and must remain visible in limitations; it never turns a synthetic scenario into observed demand. A pending analytical policy may be resolved in preparation with `policy_evidence_refs` under the unchanged approved task, while material business facts remain subject to renewed proposal/signoff.
+
+`stage_request.remaining_limits` uses nonnegative remaining ceilings, including zero for exhausted resources. Dispatch requires positive remaining time and attempts, plus a positive candidate budget for modeling/comparison or feature-definition budget for LLM feature generation. Exhausted unrelated resources do not block other permitted stages. Whole-run execution limits remain separate positive capacities. The parent supplies truthful remaining counters; static contracts do not meter execution.
