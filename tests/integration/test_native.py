@@ -235,6 +235,56 @@ class NativeTests(unittest.TestCase):
         self.assertIsNone(observed("/bin/zsh -lc 'echo python3 intentional_failure.py'"))
         self.assertIsNone(observed("echo python3 intentional_failure.py"))
 
+    def test_actual_native_printf_then_python_and_shell_masks(self):
+        def observed(command):
+            item = {"id": "exec-c838dba9-c532-41b3-9018-c647228fd28f", "type": "commandExecution",
+                "command": command, "exitCode": 1, "status": "failed",
+                "aggregatedOutput": "  File \"intentional_failure.py\", line 1\n    def broken(:\nSyntaxError: invalid syntax\n"}
+            return _observed_invalid_code([{"turnId": "turn-mock", "item": item}],
+                [{"threadId": "thread-mock", "turnId": "turn-mock", "item": item}],
+                "thread-mock", "turn-mock")
+        inner = "printf '%s\\n' 'def broken(:' > intentional_failure.py\npython3 intentional_failure.py"
+        self.assertEqual(observed(f'/bin/zsh -c "{inner}"'),
+                         "exec-c838dba9-c532-41b3-9018-c647228fd28f")
+        self.assertIsNone(observed('/bin/zsh -c "python3 intentional_failure.py || false"'))
+        self.assertIsNone(observed('/bin/zsh -c "python3 intentional_failure.py; exit 1"'))
+        self.assertIsNone(observed('/bin/zsh -c "echo \'not a command\npython3 intentional_failure.py\'"'))
+        self.assertIsNone(observed('/bin/zsh -c "printf \'%s\\n\' \'prose\npython3 fake.py\'"'))
+
+    def test_final_unclassified_command_error_cannot_be_native_completion(self):
+        original = FakeTransport.request
+        def reply(transport, method, params, deadline, cancellation=None):
+            result = original(transport, method, params, deadline, cancellation)
+            if method == "thread/items/list":
+                item = {"id": "failed-exec", "type": "commandExecution", "command": "/bin/zsh -c false",
+                        "status": "failed", "exitCode": 1, "aggregatedOutput": "mock command failed"}
+                result["data"] = [{"turnId": "turn-real-shaped-mock", "item": item}]
+                transport.events = [{"threadId": "thread-mock", "turnId": "turn-real-shaped-mock", "item": item}]
+            return result
+        with patch.object(FakeTransport, "request", reply):
+            result = self.run_mock()
+        self.assertEqual(result.error_code, "runtime_error")
+        self.assertEqual(result.terminal_status, "completed")
+        self.assertEqual(result.evidence["diagnostic_failed_command_ids"], ["failed-exec"])
+
+    def test_later_successful_same_python_rerun_keeps_failure_diagnostic(self):
+        original = FakeTransport.request
+        def reply(transport, method, params, deadline, cancellation=None):
+            result = original(transport, method, params, deadline, cancellation)
+            if method == "thread/items/list":
+                failed = {"id": "failed-exec", "type": "commandExecution", "command": "python3 calculation.py",
+                          "status": "failed", "exitCode": 1, "aggregatedOutput": "SyntaxError: mock invalid syntax\n"}
+                corrected = {**failed, "id": "corrected-exec", "status": "completed", "exitCode": 0,
+                             "aggregatedOutput": "mock calculation executed"}
+                result["data"] = [{"turnId": "turn-real-shaped-mock", "item": item} for item in (failed, corrected)]
+                transport.events = [{"threadId": "thread-mock", "turnId": "turn-real-shaped-mock", "item": item}
+                                    for item in (failed, corrected)]
+            return result
+        with patch.object(FakeTransport, "request", reply):
+            result = self.run_mock()
+        self.assertEqual(result.outcome, "completed")
+        self.assertEqual(result.evidence["diagnostic_failed_command_ids"], ["failed-exec"])
+
     def test_repeated_pagination_cursor_fails_partial_retrieval(self):
         FakeTransport.page_cursor = "repeated"
         result = self.run_mock()

@@ -79,16 +79,39 @@ def _host_error(error):
     return "runtime_error"
 
 
-def _observed_invalid_code(items, events, thread_id, turn_id):
-    """Require matching streamed/persisted failed Python execution, not prose."""
+def _python_invocation(command):
+    """Recognize direct Python, or the observed exact printf/write then Python."""
+    try:
+        outer = shlex.split(command)
+        if (len(outer) == 3 and Path(outer[0]).name in ("sh", "bash", "zsh")
+                and outer[1] in ("-c", "-lc")):
+            command = outer[2]
+        lexer = shlex.shlex(command, posix=True, punctuation_chars=";&|<>\n")
+        lexer.whitespace, lexer.whitespace_split, lexer.commenters = " \t\r", True, ""
+        tokens = list(lexer)
+    except (TypeError, ValueError):
+        return None
+    if (len(tokens) == 8 and tokens[0] == "printf" and tokens[1] == "%s\\n"
+            and "\n" not in tokens[2] and tokens[3] == ">" and tokens[5] == "\n"
+            and tokens[4] == tokens[7]):
+        tokens = tokens[6:]
+    # No pipelines, conditional masks, quoted fake commands, or extra commands.
+    if (len(tokens) < 2 or not re.fullmatch(r"python(?:\d+(?:\.\d+)*)?", Path(tokens[0]).name)
+            or any(token in (";", "&", "&&", "|", "||", ">", ">>", "<", "\n") for token in tokens)):
+        return None
+    return tuple(tokens)
+
+
+def _matched_commands(items, events, thread_id, turn_id):
     observed = {(event.get("threadId"), event.get("turnId"),
                  (event.get("item") or {}).get("id")): event.get("item") or {}
                 for event in events}
+    commands = []
     for entry in items:
         item = entry.get("item") or {}
         event = observed.get((thread_id, turn_id, item.get("id")))
-        if (item.get("type") != "commandExecution" or not event
-                or type(item.get("exitCode")) is not int or item["exitCode"] == 0
+        if (entry.get("turnId") != turn_id or item.get("type") != "commandExecution" or not event
+                or type(item.get("exitCode")) is not int
                 or event.get("exitCode") != item["exitCode"]
                 or event.get("command") != item.get("command")
                 or item.get("status") not in ("completed", "failed")
@@ -97,17 +120,21 @@ def _observed_invalid_code(items, events, thread_id, turn_id):
         output = item.get("aggregatedOutput")
         if not isinstance(output, str) or event.get("aggregatedOutput") != output:
             continue
-        try:
-            tokens = shlex.split(item.get("command", ""))
-            if (len(tokens) == 3 and Path(tokens[0]).name in ("sh", "bash", "zsh")
-                    and tokens[1] in ("-c", "-lc")):
-                tokens = shlex.split(tokens[2])
-        except ValueError:
+        commands.append(item)
+    return commands
+
+
+def _observed_invalid_code(items, events, thread_id, turn_id):
+    """Require actual paired Python failure, allowing a later successful rerun."""
+    commands = _matched_commands(items, events, thread_id, turn_id)
+    for index, item in enumerate(commands):
+        invocation = _python_invocation(item.get("command", ""))
+        if item["exitCode"] == 0 or invocation is None:
             continue
-        # Detect the executed program, never a quoted mention in echo/prose.
-        python = bool(len(tokens) > 1 and re.fullmatch(
-            r"python(?:\d+(?:\.\d+)*)?", Path(tokens[0]).name))
-        if python and re.search(r"(?:^|\n)(?:\s*)?(?:SyntaxError|IndentationError|TabError):", output):
+        if any(later["exitCode"] == 0 and _python_invocation(later.get("command", "")) == invocation
+               for later in commands[index + 1:]):
+            continue
+        if re.search(r"(?:^|\n)(?:\s*)?(?:SyntaxError|IndentationError|TabError):", item["aggregatedOutput"]):
             return item["id"]
     return None
 
@@ -406,6 +433,14 @@ class NativeHost:
                     if failed_code:
                         run.evidence["invalid_code_command_id"] = failed_code
                         raise _Stop("invalid_code", "Matching native command/history contains an actual Python syntax failure")
+                    commands = _matched_commands(run.items, transport.events, run.thread_id, run.turn_id)
+                    run.evidence["diagnostic_failed_command_ids"] = [
+                        item["id"] for item in commands if item["exitCode"] != 0]
+                    if commands and commands[-1]["exitCode"] != 0:
+                        raise _Stop("runtime_error", "Native turn completed with a final failed command and no subsequent correction")
+                    # A completed native turn is not analytical acceptance.
+                    # Historical failures remain diagnostic; adapter/parent
+                    # checks must establish that retrieved outputs are valid.
                     run.outcome = "completed"
                 except _Stop as exc:
                     if run.terminal_status not in ("completed", "failed", "interrupted"):
