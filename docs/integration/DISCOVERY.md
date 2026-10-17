@@ -2,6 +2,8 @@
 
 Revision 0.1.0 · 2026-10-17 · **Integration blocked; no real analytical invocation demonstrated.**
 
+Later evidence: the user's normal Terminal successfully initialized this app-server and completed skill discovery, but its returned skills lacked Data. See [TERMINAL_DISCOVERY.md](TERMINAL_DISCOVERY.md). The managed-environment failures below remain historical observations. The [draft.3 contract review](CONTRACT_REVIEW.md) now records DSC-26's exact structural ACK; native Data execution is the remaining capability blocker.
+
 ## Observed result
 
 The installed Codex CLI reports `codex-cli 0.163.0`. Two engineering probes attempted the documented app-server stdio interface. Both child processes exited with code 1 before replying to `initialize`. Neither reached `skills/list`, `thread/start`, or `turn/start`. No synthetic calculation or customer analysis ran, and no analytical artifact was produced or retrieved.

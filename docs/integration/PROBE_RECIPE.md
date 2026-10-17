@@ -37,7 +37,7 @@ The two original JSON records were saved in `/private/tmp/dsc26-appserver-discov
 
 ## Follow-up host diagnostic
 
-The standalone [probe_host.py](../../evidence/integration/probe_host.py) now reproduces the initialization and skill-discovery check with a 20-second deadline. It never creates a thread or starts a model turn. Its default launch was exercised in this managed session and reproduced the SQLite startup failure; success-path discovery remains unverified.
+The standalone [probe_host.py](../../evidence/integration/probe_host.py) now reproduces the initialization and skill-discovery check with a 20-second deadline. It never creates a thread or starts a model turn. Its default launch reproduced the SQLite startup failure in this managed session. The user's normal Terminal subsequently completed initialization and discovery; the actual returned skill list lacked Data. See [TERMINAL_DISCOVERY.md](TERMINAL_DISCOVERY.md).
 
 Run from the user's ordinary signed-in macOS Terminal to compare environments:
 
@@ -48,3 +48,11 @@ python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_host.py
 It prints handshake/discovery status and the path to a temporary JSON observation. If initialization succeeds, it lists Data skills observed by that executing host. That is readiness evidence only; a real bounded Data turn, artifact retrieval and failure checks are still needed.
 
 A failed run in the ordinary Terminal calls for diagnosis of that host's specific error. A successful run there with failure here establishes a difference between launch environments, without by itself identifying which permission or configuration causes it. No policy bypass or broad permission change is part of this diagnostic.
+
+To inspect the executing CLI's plugin catalog as well, use:
+
+```sh
+python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_host.py --plugins
+```
+
+This first runs the supported read-only `codex plugin list --available --json` command, bounded to 25 seconds, then performs the same host check. It does not install, enable, remove or copy any plugin. The summary includes only matching Data catalog entries and catalog errors; the full native response stays in the local observation file. A remote-catalog error means a partial list cannot prove Data unavailable. This option was exercised inside the managed environment and retained its native remote-request warning and startup error; it has not yet been verified in the user's Terminal. [Official CLI reference](https://learn.chatgpt.com/docs/cli/reference)

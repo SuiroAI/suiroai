@@ -1,6 +1,6 @@
 # DSC-26 review of DSC-24 draft.1
 
-2026-10-17 · review only; **snapshot not yet acknowledged for adapter implementation**.
+2026-10-17 · Initial draft.1 review retained below. **DSC-26 now acknowledges draft.3 structural compatibility at the exact hash recorded in the follow-up section.** Native Data execution acceptance remains open.
 
 Reviewed `/private/tmp/suiroai-dsc24/src/suiroai/contracts/schema/retail-contract.schema.json`, version `0.1.0-draft.1`, SHA-256 `cdcddc358a515b8b6a9546f540ac399de94f9de7047aa5957bc5d2fb577992ac`, and the corresponding `validation.py`. This is an exact draft review, not a claim about subsequent owner revisions. The draft was read in its owner's worktree; no uncommitted shared source was copied or edited.
 
@@ -16,3 +16,11 @@ For eventual capability acceptance, agree what referenced evidence must contain:
 DSC-24 remains the sole schema/validation owner. DSC-26 requests these changes through the owner and will re-review the resulting exact snapshot. The [native startup blocker](DISCOVERY.md) independently prevents real adapter acceptance, regardless of mock/schema test results.
 
 Owner clarification received after the review: DSC-24 agrees that discovery logs remain engineering evidence outside customer `stage_result` instances, and that the observed failure is a runtime startup error rather than plugin absence or validation failure. This resolves the immediate discovery-serialization concern without inventing customer approval. Exact stage permission/bounds/result requirements above still need owner agreement.
+
+## Follow-up: exact draft.3 structural acknowledgment
+
+DSC-26 reviewed DSC-24 commit `dd3e0dd`, schema version `0.1.0-draft.3`, SHA-256 `1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46`. All seven schema/validator/example file hashes match the owner's `docs/contracts/SNAPSHOT.json`. Independent review ran the owner's 77 passing regression tests; these are contract tests, not Data invocation evidence.
+
+**ACK: this exact draft.3 snapshot is structurally compatible with DSC-26's adapter boundary.** The previous material concerns are resolved: standalone engineering discovery is separate from customer contracts; requests/results bind execution, parent permission, stage, attempt and released inputs; deadlines, remaining limits and output namespaces are explicit; missing-material, measured validation and native execution failures have appropriate details/evidence. Nonnegative remaining budgets can represent exhaustion, while dispatch checks reject exhausted resources required by that stage.
+
+This is an interface-only acknowledgment. DSC-24/DSC-3 own recording the agreement and releasing the snapshot; later edits require a new digest review. No adapter, customer permission or real analytical acceptance follows from the ACK. The Terminal readiness evidence is recorded separately in [TERMINAL_DISCOVERY.md](TERMINAL_DISCOVERY.md).

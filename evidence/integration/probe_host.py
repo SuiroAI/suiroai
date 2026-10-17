@@ -15,6 +15,8 @@ import time
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sqlite-home", type=Path)
+    parser.add_argument("--plugins", action="store_true",
+                        help="Also inspect the native CLI plugin catalog; does not install plugins.")
     args = parser.parse_args()
     executable = shutil.which("codex")
     if not executable:
@@ -35,6 +37,25 @@ def main():
         "handshake_completed": False, "skill_discovery_completed": False,
         "deadline_expired": False, "records": [],
     }
+    if args.plugins:
+        inventory_command = [executable, "plugin", "list", "--available", "--json"]
+        inventory = {"command": inventory_command, "data_entries": []}
+        try:
+            result = subprocess.run(inventory_command, cwd=cwd, capture_output=True,
+                                    text=True, timeout=25)
+            inventory.update({"exit_code": result.returncode, "stderr": result.stderr})
+            try:
+                catalog = json.loads(result.stdout)
+                inventory["native_result"] = catalog
+                for category in ("installed", "available"):
+                    for entry in catalog.get(category, []):
+                        if entry.get("name") == "data-analytics":
+                            inventory["data_entries"].append({"category": category, **entry})
+            except (ValueError, AttributeError):
+                inventory["unparsed_stdout"] = result.stdout
+        except subprocess.TimeoutExpired:
+            inventory["deadline_expired"] = True
+        report["plugin_inventory"] = inventory
     process = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE,
                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     selector = selectors.DefaultSelector()
@@ -110,11 +131,16 @@ def main():
         if record["direction"] == "stdout" and isinstance(message, dict) and message.get("id") == 2:
             for group in message.get("result", {}).get("data", []):
                 for skill in group.get("skills", []):
-                    if "data-analytics" in skill.get("path", ""):
-                        skills.append({k: skill.get(k) for k in ("name", "path", "enabled")})
+                    if ("data-analytics" in skill.get("path", "")
+                            or skill.get("name", "").startswith("data-analytics:")
+                            or "data-analytics" in (skill.get("pluginId") or "")):
+                        skills.append({k: skill.get(k) for k in ("name", "path", "enabled", "pluginId")})
     summary = {key: report[key] for key in ("handshake_completed", "skill_discovery_completed", "deadline_expired")}
     summary.update({"data_skills_observed": skills, "report": str(report_path),
                     "startup_stderr": [r["message"] for r in report["records"] if r["direction"] == "stderr"]})
+    if args.plugins:
+        summary["data_plugin_inventory"] = {k: v for k, v in report["plugin_inventory"].items()
+                                            if k != "native_result"}
     print(json.dumps(summary, indent=2))
     return 0 if report["skill_discovery_completed"] else 2
 
