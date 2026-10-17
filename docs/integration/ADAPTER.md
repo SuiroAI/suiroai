@@ -80,7 +80,7 @@ not infer acceptance from the presence of a stored object.
 
 ## Checks completed locally
 
-On October 17, 2026, 83 integration tests passed, including schema checks against
+On October 17, 2026, 89 integration tests passed, including schema checks against
 the installed native CLI, approval/version mutations, source-byte integrity,
 typed failure/gap distinctions, interruption requests and immutable output
 collisions. All simulated execution fixtures are explicitly mocked. The 77
@@ -100,11 +100,18 @@ Customer dispatch requires the demonstrated native controls to be verified in
 an actual Data turn and implemented in the adapter. The latest real synthetic
 control run passed sentinel/symlink read, protected-input/outside-output write
 and network denials, with positive released-input/output controls. Its thread
-acknowledged the selected profile, but no model turn ran: the old checker rejected
+acknowledged the selected profile, but that run had no model turn: the old checker rejected
 two explicitly disabled, empty-capability MCP records. The corrected checker
 retains and narrowly accepts those records; it still blocks active, unknown,
 incomplete or error-bearing inventories. See the [isolation review](ISOLATION_PROBE.md)
 and [actual control evidence](../../evidence/integration/native-command-isolation-controls-2026-10-17/review.json).
+The subsequent [Data-turn attempt](../../evidence/integration/native-isolated-data-incomplete-2026-10-17/review.json)
+completed without a native error, but had no calculation command or artifacts.
+The candidate had disabled the native code host required by the selected model's
+`code_mode_only` interface. The correction preserves that installed host and
+requires actual model-delegated command denial evidence under the same profile;
+it does not replace Data or restore external connectors. Source review and
+mocked checks cannot satisfy this outstanding real execution check.
 A fresh cwd, read-only copies and the legacy
 `workspace-write` write sandbox do not establish that boundary. The raw sales
 file contains December outcomes and must not enter development context. No

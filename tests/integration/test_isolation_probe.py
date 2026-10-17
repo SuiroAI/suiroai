@@ -4,6 +4,7 @@ import io
 import json
 from pathlib import Path
 import shutil
+import shlex
 import subprocess
 import struct
 import tempfile
@@ -27,6 +28,12 @@ def disabled_row(name="mock-disabled"):
     return {"name": name, "runtimeStatus": "disabled", "pluginId": None, "httpOrigin": None,
         "serverInfo": None, "serverCapabilities": None, "tools": {}, "toolsError": None,
         "resources": [], "resourceTemplates": [], "authStatus": "unsupported"}
+
+
+def control_payload():
+    return {"positive": {"row_count": 3, "group_totals": {"A": 5, "B": 5}, "total_units": 10},
+        "checks": {name: {"denied": True, "type": "PermissionError", "errno": 13}
+            for name in ("sentinel_open", "symlink_open", "input_write", "outside_write", "network")}}
 
 
 class MockRPC:
@@ -67,6 +74,8 @@ class MockRPC:
         if method == "thread/items/list":
             commands = [{"id": "read-mock", "type": "commandExecution", "command": "cat " + str(PROBE.DATA_ROOT / "skills/index/SKILL.md"),
                 "status": "completed", "exitCode": 0, "aggregatedOutput": "MOCK skill read"},
+                {"id": "control-mock", "type": "commandExecution", "command": shlex.join(PROBE.model_control_argv(self.paths)),
+                "status": "completed", "exitCode": 0, "aggregatedOutput": json.dumps(control_payload())},
                 {"id": "exec-mock", "type": "commandExecution", "command": "python3 isolation_calculation.py",
                 "status": "completed", "exitCode": 0, "aggregatedOutput": None}]
             for item in commands: item["cwd"] = str(self.paths["output"])
@@ -105,6 +114,7 @@ class IsolationProbeTests(unittest.TestCase):
             "input_bytes": b"product,units\nA,2\nA,3\nB,5\n", "sentinel": root / "denied.txt",
             "link": output / "denied-link", "control_result": output / "control.json",
             "outside_write": root / "outside-write-denied.txt",
+            "model_control_script": released / "control_check.py", "model_control_result": output / "model-control-result.json",
             "allowed_image": released / "allowed.png", "denied_image": root / "denied.png",
             "image_link": output / "denied-image-link"}
         self.paths["input"].write_bytes(self.paths["input_bytes"])
@@ -116,12 +126,19 @@ class IsolationProbeTests(unittest.TestCase):
         self.paths["control_result"].write_text(expected)
         (output / "isolation_result.json").write_text(expected)
         (output / "isolation_calculation.py").write_text("# MOCK ARTIFACT ONLY; NOT EXECUTED\n")
+        self.paths["model_control_result"].write_text(expected)
+        self.paths["model_control_script"].write_text(PROBE.control_code(self.paths["input"], self.paths["sentinel"],
+            self.paths["link"], self.paths["model_control_result"], self.paths["outside_write"], ("127.0.0.1", 12345)))
         self.rpc = MockRPC(self.schemas, self.paths, "mock-profile")
+
+    def model_report(self, **values):
+        return {"model_control_source": {"path": str(self.paths["model_control_script"]),
+            "sha256": PROBE.sha256(self.paths["model_control_script"].read_bytes()).hexdigest()}, **values}
 
     def test_all_actual_emitted_request_shapes_use_experimental_native_schema(self):
         PROBE.initialize(self.rpc, time.monotonic() + 20)
         self.rpc.request("config/read", {"cwd": str(self.paths["output"]), "includeLayers": False}, time.monotonic() + 20)
-        report = {"model_turn_requested": False}
+        report = self.model_report(model_turn_requested=False)
         listener = MagicMock()
         listener.__enter__.return_value = listener
         listener.getsockname.return_value = ("127.0.0.1", 12345)
@@ -145,7 +162,12 @@ class IsolationProbeTests(unittest.TestCase):
         turn = next(params for method, params in self.rpc.calls if method == "turn/start")
         self.assertEqual(turn["input"][1]["path"], "plugin://data-analytics@openai-curated-remote")
         self.assertNotIn("MOCK Data skill", turn["input"][0]["text"])
-        self.assertNotIn("10", turn["input"][0]["text"])
+        self.assertNotIn('"total_units": 10', turn["input"][0]["text"])
+        self.assertNotIn('"row_count": 3', turn["input"][0]["text"])
+        self.assertIn(shlex.join([str(Path(PROBE.sys.executable).resolve()), "-I", "-S",
+            str(self.paths["model_control_script"].resolve())]), turn["input"][0]["text"])
+        self.assertEqual(report["model_control_receipts"][0]["command_id"], "control-mock")
+        self.assertTrue(report["mcp_inventory_after"]["validated_disabled_only"])
         self.assertTrue(report["mcp_inventory"]["validated_disabled_only"])
         self.assertEqual(report["mcp_inventory"]["pages"][0]["rows"], [disabled_row()])
 
@@ -215,6 +237,7 @@ class IsolationProbeTests(unittest.TestCase):
         self.assertFalse(parsed["features"]["memories"])
         self.assertEqual(parsed["web_search"], "disabled")
         self.assertTrue(parsed["features"]["plugins"])
+        self.assertTrue(parsed["features"]["code_mode_host"])
         self.assertTrue(parsed["plugins"][PROBE.SPEC.plugin_id]["enabled"])
         self.assertFalse(parsed["plugins"]["browser@openai-bundled"]["enabled"])
         self.assertFalse(parsed["plugins"]["_default"]["enabled"])
@@ -335,6 +358,9 @@ class IsolationProbeTests(unittest.TestCase):
         PROBE.verify_effective_config(config, "mock-profile", fs)
         config["features"]["apps"] = True
         with self.assertRaises(_Stop): PROBE.verify_effective_config(config, "mock-profile", fs)
+        config["features"]["apps"] = False
+        config["features"]["code_mode_host"] = False
+        with self.assertRaises(_Stop): PROBE.verify_effective_config(config, "mock-profile", fs)
 
     def test_exact_native_serialized_null_metadata_is_equivalent_without_changing_grants(self):
         config = {}
@@ -417,7 +443,7 @@ class IsolationProbeTests(unittest.TestCase):
         fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest()
         with patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
              self.assertRaisesRegex(_Stop, "Unexpected native tool/item"):
-            PROBE.run_model(self.rpc, self.paths, "mock-profile", {})
+            PROBE.run_model(self.rpc, self.paths, "mock-profile", self.model_report())
 
     def test_other_script_or_echo_cannot_satisfy_exact_calculation_receipt(self):
         for command in ("echo python3 isolation_calculation.py", "python3 nested/isolation_calculation.py",
@@ -426,13 +452,127 @@ class IsolationProbeTests(unittest.TestCase):
             original = rpc.request
             def request(method, params, deadline, cancellation=None):
                 result = original(method, params, deadline, cancellation)
-                if method == "thread/items/list": result["data"][1]["item"]["command"] = command
+                if method == "thread/items/list":
+                    for entry in result["data"]:
+                        if entry["item"]["id"] == "exec-mock": entry["item"]["command"] = command
                 return result
             rpc.request = request
             fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest()
             with self.subTest(command=command), patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
-                 self.assertRaisesRegex(_Stop, "Actual Data calculation execution"):
-                PROBE.run_model(rpc, self.paths, "mock-profile", {})
+                 self.assertRaisesRegex(_Stop, "No verified execution of the exact calculation script"):
+                PROBE.run_model(rpc, self.paths, "mock-profile", self.model_report())
+
+    def test_completed_prose_only_turn_has_explicit_zero_command_evidence(self):
+        original = self.rpc.request
+        def request(method, params, deadline, cancellation=None):
+            result = original(method, params, deadline, cancellation)
+            if method == "thread/items/list":
+                result["data"] = [{"turnId": "mock-turn", "item": {"type": "agentMessage",
+                    "text": "MOCK unverified diagnostic: code-mode host is disabled"}}]
+                self.rpc.events = []
+            return result
+        self.rpc.request = request
+        fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest()
+        report = self.model_report()
+        with patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
+             self.assertRaisesRegex(_Stop, "without actual command execution evidence"):
+            PROBE.run_model(self.rpc, self.paths, "mock-profile", report)
+        self.assertEqual(report["native_turn_item_types"], ["agentMessage"])
+        self.assertEqual(report["command_execution_evidence"], {"persisted_count": 0, "streamed_count": 0,
+            "matched_count": 0, "matched_command_ids": [], "agent_reported_errors_are_unverified": True})
+
+    def test_unmatched_native_command_observations_are_distinct_from_no_commands(self):
+        original = self.rpc.request
+        def request(method, params, deadline, cancellation=None):
+            result = original(method, params, deadline, cancellation)
+            if method == "thread/items/list": self.rpc.events = []
+            return result
+        self.rpc.request = request
+        fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest()
+        report = self.model_report()
+        with patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
+             self.assertRaisesRegex(_Stop, "did not match persisted command execution evidence"):
+            PROBE.run_model(self.rpc, self.paths, "mock-profile", report)
+        self.assertEqual(report["command_execution_evidence"]["persisted_count"], 3)
+        self.assertEqual(report["command_execution_evidence"]["matched_count"], 0)
+
+    def test_delegated_control_receipt_rejects_echo_wrong_script_and_non_os_denials(self):
+        base = {"id": "mock-control", "command": shlex.join(PROBE.model_control_argv(self.paths)),
+            "cwd": str(self.paths["output"]), "exitCode": 0, "aggregatedOutput": json.dumps(control_payload())}
+        self.assertEqual(len(PROBE.model_control_receipts([base], self.paths)), 1)
+        shell = {**base, "command": "/bin/zsh -lc " + repr(base["command"])}
+        self.assertEqual(len(PROBE.model_control_receipts([shell], self.paths)), 1)
+        invalid = [{**base, "command": "echo " + base["command"]}, {**base, "exitCode": 7},
+            {**base, "command": base["command"] + " || true"},
+            {**base, "command": "python3 " + str(self.paths["output"] / "control_check.py")},
+            {**base, "cwd": str(self.paths["released"])}, {**base, "aggregatedOutput": "Permission denied (MOCK prose)"}]
+        for runner in ("python3", "./python3", str(self.paths["output"] / "python3"), str(self.paths["output"] / "bin/python3")):
+            invalid.append({**base, "command": shlex.join([runner, "-I", "-S", str(self.paths["model_control_script"].resolve())])})
+        for flags in ([], ["-I"], ["-S"], ["-S", "-I"], ["-I", "-S", "-B"]):
+            invalid.append({**base, "command": shlex.join([str(Path(PROBE.sys.executable).resolve()),
+                *flags, str(self.paths["model_control_script"].resolve())])})
+        for wrapper in ("zsh", "./sh", str(self.paths["output"] / "zsh"), str(self.paths["output"] / "bin/bash")):
+            invalid.append({**base, "command": shlex.join([wrapper, "-lc", base["command"]])})
+        invalid.append({**base, "command": "printf '%s\\n' '# fake' > other.py\n" + base["command"]})
+        for name in control_payload()["checks"]:
+            payload = control_payload(); payload["checks"][name] = {"denied": True, "type": "RuntimeError", "errno": 13}
+            invalid.append({**base, "aggregatedOutput": json.dumps(payload)})
+            payload = control_payload(); payload["checks"][name] = {"denied": False}
+            invalid.append({**base, "aggregatedOutput": json.dumps(payload)})
+        for item in invalid:
+            with self.subTest(item=item): self.assertEqual(PROBE.model_control_receipts([item], self.paths), [])
+
+    def test_released_control_integrity_is_measured_even_when_model_turn_fails(self):
+        for tamper in (False, True):
+            listener = MagicMock(); listener.__enter__.return_value = listener
+            listener.getsockname.return_value = ("127.0.0.1", 12345)
+            listener.accept.return_value = (MagicMock(), ("127.0.0.1", 11111))
+            def fail_model(*args):
+                if tamper: self.paths["model_control_script"].write_text("# MOCK altered source\n")
+                raise _Stop("runtime_error", "MOCK native failure")
+            report = {}
+            with self.subTest(tamper=tamper), patch.object(PROBE.socket, "socket", return_value=listener), \
+                 patch.object(PROBE.socket, "create_connection", return_value=MagicMock()), \
+                 patch.object(PROBE, "run_model", side_effect=fail_model), self.assertRaises(_Stop):
+                PROBE.run_model_with_control(self.rpc, self.paths, "mock-profile", report)
+            self.assertTrue(report["model_control_listener_positive"])
+            self.assertEqual(report["model_control_source"]["unchanged"], not tamper)
+            self.assertIn("sha256_after", report["model_control_source"])
+
+    def test_newly_active_mcp_after_data_turn_blocks_and_retains_both_inventories(self):
+        original = self.rpc.request
+        calls = 0
+        def request(method, params, deadline, cancellation=None):
+            nonlocal calls
+            result = original(method, params, deadline, cancellation)
+            if method == "mcpServerStatus/list":
+                calls += 1
+                if calls == 2: result["data"][0]["runtimeStatus"] = "connected"
+            return result
+        self.rpc.request = request
+        fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest(); report = self.model_report()
+        with patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
+             self.assertRaisesRegex(_Stop, "not safely disabled"):
+            PROBE.run_model(self.rpc, self.paths, "mock-profile", report)
+        self.assertTrue(report["mcp_inventory"]["validated_disabled_only"])
+        self.assertFalse(report["mcp_inventory_after"]["validated_disabled_only"])
+        self.assertEqual(report["mcp_inventory_after"]["pages"][0]["rows"][0]["runtimeStatus"], "connected")
+
+    def test_delegated_control_must_precede_calculation_and_outside_write_must_remain_absent(self):
+        for case in ("late_control", "outside_write"):
+            rpc = MockRPC(self.schemas, self.paths, "mock-profile"); original = rpc.request
+            def request(method, params, deadline, cancellation=None):
+                result = original(method, params, deadline, cancellation)
+                if method == "thread/items/list":
+                    if case == "late_control": result["data"][1], result["data"][2] = result["data"][2], result["data"][1]
+                    else: self.paths["outside_write"].write_text("MOCK denied-path violation")
+                return result
+            rpc.request = request; report = self.model_report()
+            fake_hash = PROBE.sha256(b"MOCK Data skill; no execution").hexdigest()
+            expected_error = "did not precede calculation" if case == "late_control" else "write outside"
+            with self.subTest(case=case), patch.object(PROBE, "SPEC", PROBE.DataPluginSpec(skill_sha256=fake_hash)), \
+                 self.assertRaisesRegex(_Stop, expected_error):
+                PROBE.run_model(rpc, self.paths, "mock-profile", report)
 
     def test_report_omits_all_reasoning_fields_and_redacts_credentials(self):
         result = PROBE.retained_report({"items": [{"type": "reasoning", "id": "r", "content": "PRIVATE",
