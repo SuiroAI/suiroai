@@ -249,19 +249,52 @@ def control_code(released_file, sentinel, link, output_file, outside_file, netwo
         + "raise SystemExit(0 if all(item.get('denied') for item in checks.values()) else 7)\n")
 
 
-def inventory_empty(rpc, thread_id, deadline):
-    cursor, seen = None, set()
+def disabled_mcp_row_errors(row):
+    fields = {"name", "runtimeStatus", "pluginId", "httpOrigin", "serverInfo", "serverCapabilities",
+              "tools", "toolsError", "resources", "resourceTemplates", "authStatus"}
+    if not isinstance(row, dict): return ["row is not an object"]
+    errors = []
+    if set(row) != fields: errors.append("missing/unknown inventory fields: " + repr(sorted(set(row) ^ fields)))
+    if not isinstance(row.get("name"), str) or not row["name"]: errors.append("server name absent")
+    if row.get("runtimeStatus") != "disabled": errors.append("runtimeStatus is not explicitly disabled")
+    if type(row.get("tools")) is not dict or row["tools"]: errors.append("tools are not an explicit empty object")
+    for field in ("resources", "resourceTemplates"):
+        if type(row.get(field)) is not list or row[field]: errors.append(field + " is not an explicit empty list")
+    for field in ("serverInfo", "serverCapabilities", "toolsError"):
+        if field not in row or row[field] is not None: errors.append(field + " is not explicitly null")
+    for field in ("pluginId", "httpOrigin"):
+        if field not in row or (row[field] is not None and not isinstance(row[field], str)):
+            errors.append(field + " has an invalid metadata type")
+    if row.get("authStatus") not in ("unknown", "unsupported", "notLoggedIn", "bearerToken", "oAuth"):
+        errors.append("authStatus metadata is missing or unknown")
+    return errors
+
+
+def inventory_disabled_only(rpc, thread_id, deadline, report):
+    # Exact native source: connection_manager.rs283-287 captures disabled config;
+    # 330-333 excludes those servers from active clients. status.rs13-17 reports
+    # them as Disabled, while tool_catalog.rs189-207 only lists active clients.
+    # Therefore disabled bookkeeping rows are allowed only with explicit, fully
+    # empty capability fields and no discovery error. Other rows still block.
+    cursor, seen, names = None, set(), set()
+    report["mcp_inventory"] = {"thread_id": thread_id, "detail": "full", "pages": [], "validated_disabled_only": False}
     for _ in range(20):
         params = {"threadId": thread_id, "detail": "full", "limit": 100}
         if cursor:
             params["cursor"] = cursor
         page = rpc.request("mcpServerStatus/list", params, deadline)
         require(isinstance(page.get("data"), list), "MCP inventory response is malformed")
-        # A nonempty server inventory is a scope blocker, including disabled or
-        # unresolved rows. Never infer emptiness from missing/failed tool lists.
-        require(not page["data"], "Thread MCP inventory is nonempty; model tool scope is not established")
+        report["mcp_inventory"]["pages"].append({"cursor": cursor, "rows": page["data"], "nextCursor": page.get("nextCursor")})
+        for index, row in enumerate(page["data"]):
+            errors = disabled_mcp_row_errors(row)
+            label = row.get("name", str(index)) if isinstance(row, dict) else str(index)
+            require(not errors, "Thread MCP inventory row is not safely disabled: " + str(label) + ": " + "; ".join(errors))
+            require(row["name"] not in names, "Thread MCP inventory contains a duplicate server row")
+            names.add(row["name"])
+        require("nextCursor" in page, "MCP inventory terminal/pagination acknowledgement is missing")
         cursor = page.get("nextCursor")
         if cursor is None:
+            report["mcp_inventory"]["validated_disabled_only"] = True
             return
         require(isinstance(cursor, str) and cursor and cursor not in seen, "MCP inventory pagination is incomplete")
         seen.add(cursor)
@@ -426,7 +459,7 @@ def run_model(rpc, paths, profile, report):
     thread_id = (thread.get("thread") or {}).get("id")
     require(isinstance(thread_id, str) and thread_id, "Native thread identity absent")
     report["thread_id"] = thread_id
-    inventory_empty(rpc, thread_id, deadline)
+    inventory_disabled_only(rpc, thread_id, deadline, report)
     skill = rpc.request("plugin/skill/read", {"remoteMarketplaceName": "openai-curated-remote",
         "remotePluginId": SPEC.remote_plugin_id, "skillName": "index"}, deadline)
     markdown = skill.get("contents")

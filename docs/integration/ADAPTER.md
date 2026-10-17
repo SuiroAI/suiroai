@@ -20,7 +20,8 @@ failure and exhausted-budget evidence remains in force.
   the release and upstream content-validation evidence.
 - `integration.native.NativeHost` uses the installed CLI and supported native
   app-server methods. Customer mode currently fails before launching a model:
-  released-input-only native read isolation has not yet been exercised. Explicit
+  the complete released-input-only Data execution boundary has not yet been
+  verified and wired into customer dispatch. Explicit
   engineering mode is reserved for synthetic probes. It does not grant customer
   permission or satisfy customer acceptance.
 - `integration.adapter.StageAdapter` consumes the existing submission, proposal,
@@ -79,7 +80,7 @@ not infer acceptance from the presence of a stored object.
 
 ## Checks completed locally
 
-On October 17, 2026, 80 integration tests passed, including schema checks against
+On October 17, 2026, 83 integration tests passed, including schema checks against
 the installed native CLI, approval/version mutations, source-byte integrity,
 typed failure/gap distinctions, interruption requests and immutable output
 collisions. All simulated execution fixtures are explicitly mocked. The 77
@@ -95,8 +96,16 @@ reviewed synthetic native stage.
 
 ## Current blockers
 
-Customer dispatch requires a demonstrated supported native read policy that
-excludes unreleased data. A fresh cwd, read-only copies and the legacy
+Customer dispatch requires the demonstrated native controls to be verified in
+an actual Data turn and implemented in the adapter. The latest real synthetic
+control run passed sentinel/symlink read, protected-input/outside-output write
+and network denials, with positive released-input/output controls. Its thread
+acknowledged the selected profile, but no model turn ran: the old checker rejected
+two explicitly disabled, empty-capability MCP records. The corrected checker
+retains and narrowly accepts those records; it still blocks active, unknown,
+incomplete or error-bearing inventories. See the [isolation review](ISOLATION_PROBE.md)
+and [actual control evidence](../../evidence/integration/native-command-isolation-controls-2026-10-17/review.json).
+A fresh cwd, read-only copies and the legacy
 `workspace-write` write sandbox do not establish that boundary. The raw sales
 file contains December outcomes and must not enter development context. No
 custom runtime or prompt-only substitute is implemented.
@@ -128,4 +137,4 @@ turns, each limited to 60 seconds plus bounded interruption/cleanup, and one
 zero-time noninvocation check. It records genuine results or incomplete evidence
 for manual review; it does not close the issue. Repeating the expensive native
 turns is not required merely to replay the corrected classifier against saved
-evidence. Native read isolation remains a separate, unexercised prerequisite.
+evidence. Data execution under the tested isolation profile remains unverified.

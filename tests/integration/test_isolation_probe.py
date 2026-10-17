@@ -22,6 +22,13 @@ PROBE = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(PROBE)
 
 
+def disabled_row(name="mock-disabled"):
+    """Actual native disabled-row shape; MOCK only, no connector invocation."""
+    return {"name": name, "runtimeStatus": "disabled", "pluginId": None, "httpOrigin": None,
+        "serverInfo": None, "serverCapabilities": None, "tools": {}, "toolsError": None,
+        "resources": [], "resourceTemplates": [], "authStatus": "unsupported"}
+
+
 class MockRPC:
     """Schema-check actual outgoing requests; responses/artifacts are mock only."""
     def __init__(self, schemas, paths, profile, mcp=False):
@@ -52,7 +59,8 @@ class MockRPC:
                 "runtimeWorkspaceRoots": [str(self.paths["output"])], "cwd": str(self.paths["output"]),
                 "approvalPolicy": "never", "sandbox": {"type": "readOnly", "networkAccess": False}}
         if method == "mcpServerStatus/list":
-            return {"data": [{"name": "unresolved-mock", "toolsError": "mock error"}] if self.mcp else []}
+            return {"data": [{"name": "unresolved-mock", "toolsError": "mock error"}] if self.mcp
+                else [disabled_row()], "nextCursor": None}
         if method == "plugin/skill/read": return {"contents": "MOCK Data skill; no execution"}
         if method == "turn/start": return {"turn": {"id": "mock-turn", "status": "inProgress"}}
         if method == "thread/read": return {"thread": {"id": "mock-thread"}}
@@ -138,12 +146,59 @@ class IsolationProbeTests(unittest.TestCase):
         self.assertEqual(turn["input"][1]["path"], "plugin://data-analytics@openai-curated-remote")
         self.assertNotIn("MOCK Data skill", turn["input"][0]["text"])
         self.assertNotIn("10", turn["input"][0]["text"])
+        self.assertTrue(report["mcp_inventory"]["validated_disabled_only"])
+        self.assertEqual(report["mcp_inventory"]["pages"][0]["rows"], [disabled_row()])
 
     def test_unresolved_mcp_inventory_blocks_before_any_model_turn(self):
         self.rpc.mcp = True
-        with self.assertRaisesRegex(_Stop, "MCP inventory is nonempty"):
+        with self.assertRaisesRegex(_Stop, "MCP inventory row is not safely disabled"):
             PROBE.run_model(self.rpc, self.paths, "mock-profile", {"model_turn_requested": False})
         self.assertNotIn("turn/start", [method for method, _ in self.rpc.calls])
+
+    def test_complete_disabled_inventory_is_retained_across_all_pages(self):
+        rpc = MagicMock()
+        rpc.request.side_effect = [{"data": [disabled_row("computer-use")], "nextCursor": "1"},
+            {"data": [disabled_row("node_repl")], "nextCursor": None}]
+        report = {}
+        PROBE.inventory_disabled_only(rpc, "actual-shaped-thread", time.monotonic() + 20, report)
+        calls = rpc.request.call_args_list
+        for call in calls:
+            Draft7Validator(self.schemas["v2/ListMcpServerStatusParams.json"]).validate(call.args[1])
+        self.assertNotIn("cursor", calls[0].args[1])
+        self.assertEqual(calls[1].args[1]["cursor"], "1")
+        self.assertTrue(report["mcp_inventory"]["validated_disabled_only"])
+        self.assertEqual([page["rows"][0]["name"] for page in report["mcp_inventory"]["pages"]],
+            ["computer-use", "node_repl"])
+
+    def test_only_explicit_disabled_complete_empty_capabilities_are_accepted(self):
+        invalid_rows = []
+        for status in ("connected", "starting", "failed", "notStarted", "authenticationRequired", "cancelled", None, "unknown"):
+            invalid_rows.append({**disabled_row(), "runtimeStatus": status})
+        for key, value in (("tools", {"mock_tool": {}}), ("tools", []), ("toolsError", "mock discovery failure"),
+            ("resources", [{"uri": "mock://resource"}]), ("resourceTemplates", [{"uriTemplate": "mock://{id}"}]),
+            ("serverInfo", {}), ("serverCapabilities", {}), ("authStatus", "unrecognized"), ("unknownCapability", {})):
+            invalid_rows.append({**disabled_row(), key: value})
+        for key in disabled_row():
+            row = disabled_row(); del row[key]; invalid_rows.append(row)
+        for row in invalid_rows:
+            rpc = MagicMock(); rpc.request.return_value = {"data": [row], "nextCursor": None}
+            report = {}
+            with self.subTest(row=row), self.assertRaisesRegex(_Stop, "not safely disabled"):
+                PROBE.inventory_disabled_only(rpc, "thread", time.monotonic() + 20, report)
+            self.assertFalse(report["mcp_inventory"]["validated_disabled_only"])
+            self.assertEqual(report["mcp_inventory"]["pages"][0]["rows"], [row])
+
+    def test_empty_inventory_still_requires_complete_terminal_pagination(self):
+        rpc = MagicMock(); rpc.request.return_value = {"data": [], "nextCursor": None}
+        report = {}
+        PROBE.inventory_disabled_only(rpc, "thread", time.monotonic() + 20, report)
+        self.assertTrue(report["mcp_inventory"]["validated_disabled_only"])
+        for pages in ([{"data": []}], [{"data": [], "nextCursor": "loop"}, {"data": [], "nextCursor": "loop"}],
+            [{"data": [disabled_row()], "nextCursor": "1"}, {"data": [disabled_row()], "nextCursor": None}]):
+            rpc = MagicMock(); rpc.request.side_effect = pages; report = {}
+            with self.subTest(pages=pages), self.assertRaises(_Stop):
+                PROBE.inventory_disabled_only(rpc, "thread", time.monotonic() + 20, report)
+            self.assertFalse(report["mcp_inventory"]["validated_disabled_only"])
 
     def test_override_values_are_native_toml_and_disable_each_known_source(self):
         values = PROBE.profile_overrides("mock-profile", self.paths["released"], self.paths["output"],
