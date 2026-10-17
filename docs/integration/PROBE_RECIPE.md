@@ -34,3 +34,17 @@ Neither was sent: the child exited before the initial response. No `thread/start
 The harness selected stdout/stderr in 0.5-second intervals with an overall 25-second monotonic deadline. It stopped on a discovery response, initialization error or process exit; cleanup requested process termination with a three-second wait and kill fallback. It saved received lines, actual sent requests, UTC time, child return code and `analytical_invocation: false`. Neither probe reached the deadline. This cleanup behavior is not an exercised Codex turn cancellation.
 
 The two original JSON records were saved in `/private/tmp/dsc26-appserver-discovery.json` and `/private/tmp/dsc26-appserver-discovery-writable-state.json`, then copied without modification into [the evidence directory](../../evidence/integration/discovery-2026-10-17/). Their byte hashes appear in `SHA256SUMS.json`. No model response, synthetic tool output, fixture result or mock was added to those records.
+
+## Follow-up host diagnostic
+
+The standalone [probe_host.py](../../evidence/integration/probe_host.py) now reproduces the initialization and skill-discovery check with a 20-second deadline. It never creates a thread or starts a model turn. Its default launch was exercised in this managed session and reproduced the SQLite startup failure; success-path discovery remains unverified.
+
+Run from the user's ordinary signed-in macOS Terminal to compare environments:
+
+```sh
+python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_host.py
+```
+
+It prints handshake/discovery status and the path to a temporary JSON observation. If initialization succeeds, it lists Data skills observed by that executing host. That is readiness evidence only; a real bounded Data turn, artifact retrieval and failure checks are still needed.
+
+A failed run in the ordinary Terminal calls for diagnosis of that host's specific error. A successful run there with failure here establishes a difference between launch environments, without by itself identifying which permission or configuration causes it. No policy bypass or broad permission change is part of this diagnostic.
