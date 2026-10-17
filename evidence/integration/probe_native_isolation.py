@@ -62,7 +62,74 @@ def toml(value):
     raise TypeError("Only strings, booleans and tables are used in probe overrides")
 
 
+def filesystem_value(value):
+    if isinstance(value, str) and value in ("read", "write", "deny"):
+        return value
+    return {"unexpected_value_type": type(value).__name__, "value_omitted": True}
+
+
+def selected_profile_projection(config, profile):
+    """Whitelist only this profile's permission metadata, never other config."""
+    profiles = config.get("permissions")
+    selected = profiles.get(profile) if isinstance(profiles, dict) else None
+    if not isinstance(selected, dict):
+        return {"profile": profile, "profile_shape_valid": False}
+    filesystem, network = selected.get("filesystem"), selected.get("network")
+    projected = {"profile": profile, "profile_shape_valid": True,
+        "filesystem_shape_valid": isinstance(filesystem, dict), "network_shape_valid": isinstance(network, dict)}
+    if isinstance(filesystem, dict):
+        projected["filesystem"] = {key: (value if key == "glob_scan_max_depth"
+            and (value is None or type(value) is int) else filesystem_value(value)) for key, value in filesystem.items()}
+    if isinstance(network, dict):
+        projected["network"] = {"enabled": network.get("enabled") if type(network.get("enabled")) is bool
+            else {"unexpected_value_type": type(network.get("enabled")).__name__, "value_omitted": True},
+            "other_present_field_names": sorted(key for key in network if key != "enabled"),
+            "other_nonnull_field_names": sorted(key for key, value in network.items() if key != "enabled" and value is not None)}
+    return projected
+
+
+def normalized_filesystem(filesystem):
+    if not isinstance(filesystem, dict): return None
+    result = dict(filesystem)
+    # rust-v0.163.0 config/src/permissions_toml.rs derives Serialize without
+    # skip_serializing_if for Option<usize> glob_scan_max_depth; config/read
+    # serializes typed ConfigToml (app-server/config_manager_service.rs137-149).
+    # Only its absent/null representation is equivalent. Non-null stays unequal.
+    if result.get("glob_scan_max_depth", object()) is None:
+        del result["glob_scan_max_depth"]
+    return result
+
+
+def profile_comparison(config, profile, expected_filesystem):
+    profiles = config.get("permissions")
+    selected = profiles.get(profile) if isinstance(profiles, dict) else None
+    selected = selected if isinstance(selected, dict) else {}
+    observed = selected_profile_projection(config, profile)
+    raw_filesystem = selected.get("filesystem")
+    filesystem = normalized_filesystem(raw_filesystem)
+    network = selected.get("network")
+    keys = set(filesystem or {}) | set(expected_filesystem)
+    differences = {}
+    for key in sorted(keys):
+        if filesystem is None or key not in filesystem:
+            differences[key] = {"expected": expected_filesystem.get(key), "observed": "[MISSING]"}
+        elif key not in expected_filesystem:
+            differences[key] = {"expected": "[ABSENT]", "observed": observed.get("filesystem", {}).get(key)}
+        elif filesystem[key] != expected_filesystem[key]:
+            differences[key] = {"expected": expected_filesystem[key], "observed": observed.get("filesystem", {}).get(key)}
+    return {"expected": {"filesystem": expected_filesystem, "network": {"enabled": False}},
+        "observed": observed, "filesystem_differences": differences,
+        "normalization": ["glob_scan_max_depth:null equivalent to absent"] if isinstance(raw_filesystem, dict)
+            and "glob_scan_max_depth" in raw_filesystem and raw_filesystem["glob_scan_max_depth"] is None else [],
+        "filesystem_matches": filesystem == expected_filesystem,
+        "network_matches": isinstance(network, dict) and network.get("enabled") is False}
+
+
 class ProjectedTransport(_Transport):
+    def __init__(self, *args, selected_profile=None, **kwargs):
+        self.selected_profile = selected_profile
+        super().__init__(*args, **kwargs)
+
     def record(self, direction, message, control=False):
         # Config responses may include credentials; project BEFORE logging.
         if (isinstance(message, dict) and isinstance(message.get("result"), dict)
@@ -71,12 +138,15 @@ class ProjectedTransport(_Transport):
             valid = isinstance(config, dict)
             config = config if valid else {}
             features = config.get("features") if isinstance(config.get("features"), dict) else {}
-            message = {"id": message.get("id"), "result": {"config_projection_only": True, "config_shape_valid": valid,
+            projection = {"config_projection_only": True, "config_shape_valid": valid,
                 "mcp_server_names": sorted(config["mcp_servers"]) if isinstance(config.get("mcp_servers"), dict) else None,
                 "plugin_config_ids": sorted(config["plugins"]) if isinstance(config.get("plugins"), dict) else None,
                 "default_permissions": config.get("default_permissions") if isinstance(config.get("default_permissions"), str) else None,
                 "web_search": config.get("web_search") if isinstance(config.get("web_search"), str) else None,
-                "feature_flags": {name: flag_enabled(features.get(name)) for name in (*DISABLED_FEATURES, "plugins")}}}
+                "feature_flags": {name: flag_enabled(features.get(name)) for name in (*DISABLED_FEATURES, "plugins")}}
+            if getattr(self, "selected_profile", None) is not None:
+                projection["selected_profile"] = selected_profile_projection(config, self.selected_profile)
+            message = {"id": message.get("id"), "result": projection}
         elif (isinstance(message, dict) and isinstance(message.get("result"), dict)
                 and isinstance(message["result"].get("contents"), str)):
             contents = message["result"]["contents"]
@@ -118,7 +188,7 @@ def verify_effective_config(config, profile, filesystem):
     profiles = config.get("permissions")
     require(isinstance(profiles, dict) and isinstance(profiles.get(profile), dict), "Effective native profile unavailable")
     active = profiles[profile]
-    require(active.get("filesystem") == filesystem and isinstance(active.get("network"), dict)
+    require(normalized_filesystem(active.get("filesystem")) == filesystem and isinstance(active.get("network"), dict)
             and active["network"].get("enabled") is False,
             "Effective native filesystem/network profile differs")
 
@@ -442,11 +512,13 @@ def main():
         overrides = profile_overrides(profile, released, output, servers, plugin_ids)
         report["config_overrides"] = overrides
         with (evidence / "native-rpc.jsonl").open("w") as log:
-            rpc = ProjectedTransport(executable, output, log, config_overrides=overrides)
+            rpc = ProjectedTransport(executable, output, log, config_overrides=overrides, selected_profile=profile)
             try:
                 report["host"] = initialize(rpc, deadline)
                 effective = config_maps(rpc.request("config/read", {"cwd": str(output), "includeLayers": False}, deadline))
-                verify_effective_config(effective, profile, tomllib.loads(overrides[1])["permissions"][profile]["filesystem"])
+                expected_filesystem = tomllib.loads(overrides[1])["permissions"][profile]["filesystem"]
+                report["effective_profile_comparison"] = profile_comparison(effective, profile, expected_filesystem)
+                verify_effective_config(effective, profile, expected_filesystem)
                 report["per_process_restrictions_acknowledged"] = True
                 run_control(rpc, paths, profile, report, deadline)
                 require(protected_hashes(paths) == protected_before, "Protected source changed during native controls")
@@ -475,6 +547,8 @@ def main():
     destination.write_text(json.dumps(retained_report(report), indent=2) + "\n")
     print(json.dumps({key: report.get(key) for key in ("status", "blocker", "model_turn_requested",
         "deterministic_native_controls_passed", "data_turn_artifacts_verified", "manual_review_required")}
+        | ({"effective_profile_comparison": retained_report(report["effective_profile_comparison"])}
+            if report.get("error_code") and "effective_profile_comparison" in report else {})
         | {"evidence": str(destination)}, indent=2))
     return 0 if report["status"] == "engineering_checks_observed_pending_manual_review" else 2
 

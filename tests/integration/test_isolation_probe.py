@@ -239,6 +239,57 @@ class IsolationProbeTests(unittest.TestCase):
         config["features"]["apps"] = True
         with self.assertRaises(_Stop): PROBE.verify_effective_config(config, "mock-profile", fs)
 
+    def test_exact_native_serialized_null_metadata_is_equivalent_without_changing_grants(self):
+        config = {}
+        for value in PROBE.profile_overrides("mock-profile", self.paths["released"], self.paths["output"], [], []):
+            config.update(tomllib.loads(value))
+        profile = config["permissions"]["mock-profile"]
+        expected = dict(profile["filesystem"])
+        # Exact Rust structs derive Serialize: absent Option fields become null.
+        profile.update({"description": None, "extends": None, "workspace_roots": None})
+        profile["filesystem"]["glob_scan_max_depth"] = None
+        profile["network"].update({"domains": None, "proxy_url": None, "allow_local_binding": None})
+        PROBE.verify_effective_config(config, "mock-profile", expected)
+        comparison = PROBE.profile_comparison(config, "mock-profile", expected)
+        self.assertEqual(comparison["filesystem_differences"], {})
+        self.assertTrue(comparison["filesystem_matches"])
+        self.assertTrue(comparison["network_matches"])
+        self.assertEqual(comparison["normalization"], ["glob_scan_max_depth:null equivalent to absent"])
+        self.assertIsNone(profile["filesystem"]["glob_scan_max_depth"])
+
+    def test_nonnull_metadata_extra_grant_or_wrong_network_still_fail_closed_with_diagnostic(self):
+        for case in ("depth", "extra", "grant", "network", "unknown_null"):
+            config = {}
+            for value in PROBE.profile_overrides("mock-profile", self.paths["released"], self.paths["output"], [], []):
+                config.update(tomllib.loads(value))
+            profile = config["permissions"]["mock-profile"]
+            expected = dict(profile["filesystem"])
+            if case == "depth": profile["filesystem"]["glob_scan_max_depth"] = 3
+            if case == "extra": profile["filesystem"]["/unexpected-read"] = "read"
+            if case == "grant": profile["filesystem"][":root"] = "read"
+            if case == "network": profile["network"]["enabled"] = True
+            if case == "unknown_null": profile["filesystem"]["unknown_metadata"] = None
+            with self.subTest(case=case), self.assertRaises(_Stop):
+                PROBE.verify_effective_config(config, "mock-profile", expected)
+            comparison = PROBE.profile_comparison(config, "mock-profile", expected)
+            self.assertFalse(comparison["filesystem_matches"] and comparison["network_matches"])
+            self.assertEqual(comparison["expected"]["filesystem"], expected)
+
+    def test_selected_profile_log_projection_omits_other_profiles_and_network_secrets(self):
+        config = {"permissions": {"mock-profile": {"filesystem": {":root": "deny", "glob_scan_max_depth": None},
+            "network": {"enabled": False, "proxy_url": "PRIVATE_PROXY_URL", "mitm": {"secret": "PRIVATE_MITM"}}},
+            "OTHER_PRIVATE_PROFILE": {"description": "PRIVATE_DESCRIPTION"}}, "private": "PRIVATE_CONFIG"}
+        transport = PROBE.ProjectedTransport.__new__(PROBE.ProjectedTransport)
+        transport.log, transport.log_bytes, transport.recording_exhausted = io.StringIO(), 0, False
+        transport.selected_profile = "mock-profile"
+        transport.record("received", {"id": 5, "result": {"config": config}})
+        captured = transport.log.getvalue()
+        self.assertNotIn("PRIVATE", captured)
+        result = json.loads(captured)["message"]["result"]["selected_profile"]
+        self.assertEqual(result["filesystem"], {":root": "deny", "glob_scan_max_depth": None})
+        self.assertEqual(result["network"]["enabled"], False)
+        self.assertEqual(result["network"]["other_nonnull_field_names"], ["mitm", "proxy_url"])
+
     def test_resource_read_receipt_preserves_truncation_without_faking_output_equality(self):
         item = {"type": "commandExecution", "id": "read", "status": "completed", "exitCode": 0,
                 "cwd": str(self.paths["output"]), "command": "cat " + str(PROBE.DATA_ROOT / "skills/index/SKILL.md"),
