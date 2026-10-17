@@ -260,8 +260,11 @@ def run_probe(rpc, stage, output, report):
         "name": "dsc26_bounded_data_engineering_probe", "version": "0.1.0"}})
     rpc.send({"method": "initialized", "params": {}})
     # Under-development metadata API: engineering discovery only, no mutations.
+    # In CLI 0.163.0 the remote branch uses this field as an exact backend ID,
+    # despite its name. A slug can resolve metadata yet miss installed state.
+    # See core-plugins/src/remote.rs at the matching rust-v0.163.0 tag.
     detail = rpc.request("plugin/read", {"remoteMarketplaceName": MARKETPLACE,
-                                         "pluginName": PLUGIN})
+                                         "pluginName": REMOTE_ID})
     plugin = detail.get("plugin") or {}
     summary = plugin.get("summary") or {}
     report["plugin_metadata"] = detail
