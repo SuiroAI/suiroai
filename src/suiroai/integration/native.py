@@ -114,11 +114,14 @@ def _matched_commands(items, events, thread_id, turn_id):
                 or type(item.get("exitCode")) is not int
                 or event.get("exitCode") != item["exitCode"]
                 or event.get("command") != item.get("command")
+                or event.get("cwd") != item.get("cwd")
                 or item.get("status") not in ("completed", "failed")
                 or event.get("status") != item.get("status")):
             continue
         output = item.get("aggregatedOutput")
-        if not isinstance(output, str) or event.get("aggregatedOutput") != output:
+        if output is not None and not isinstance(output, str):
+            continue
+        if event.get("aggregatedOutput") != output:
             continue
         commands.append(item)
     return commands
@@ -134,7 +137,8 @@ def _observed_invalid_code(items, events, thread_id, turn_id):
         if any(later["exitCode"] == 0 and _python_invocation(later.get("command", "")) == invocation
                for later in commands[index + 1:]):
             continue
-        if re.search(r"(?:^|\n)(?:\s*)?(?:SyntaxError|IndentationError|TabError):", item["aggregatedOutput"]):
+        if isinstance(item.get("aggregatedOutput"), str) and re.search(
+                r"(?:^|\n)(?:\s*)?(?:SyntaxError|IndentationError|TabError):", item["aggregatedOutput"]):
             return item["id"]
     return None
 
@@ -142,12 +146,19 @@ def _observed_invalid_code(items, events, thread_id, turn_id):
 class _Transport:
     """One stdio connection with finite RPC, output and cleanup bounds."""
 
-    def __init__(self, executable, cwd, log):
+    def __init__(self, executable, cwd, log, *, config_overrides=None):
         self.log = log
         self.log_bytes = 0
         self.recording_exhausted = False
+        overrides = [] if config_overrides is None else config_overrides
+        if not isinstance(overrides, list) or any(not isinstance(value, str) for value in overrides):
+            raise ValueError("Native config overrides must be a list of literal key=value strings")
+        command = [executable]
+        for value in overrides:
+            command.extend(["-c", value])
+        command.extend(["app-server", "--listen", "stdio://"])
         self.process = subprocess.Popen(
-            [executable, "app-server", "--listen", "stdio://"], cwd=cwd,
+            command, cwd=cwd,
             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
             start_new_session=True)
         self.selector = selectors.DefaultSelector()
