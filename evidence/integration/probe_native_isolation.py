@@ -7,6 +7,7 @@ Scope is a tabular worker with native view_image, browser, apps and connectors o
 import argparse
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import secrets
 import shlex
@@ -197,6 +198,21 @@ def profile_overrides(profile, released, output, configured_servers, plugin_ids)
     filesystem = {":root": "deny", ":minimal": "read", str(released.resolve()): "read",
                   str(output.resolve()): "write", str(DATA_ROOT): "read",
                   str(Path(sys.base_prefix).resolve()): "read"}
+    # Native macOS :minimal Process profiles add scratch access even with
+    # :root=deny. Explicit physical-root denies constrain those implicit grants;
+    # more-specific released/output grants remain separate allowed roots.
+    # rust-v0.163.0 sandboxing/seatbelt.rs899-907, seatbelt_scratch.rs35-67;
+    # protocol/permissions.rs100-102,1690-1691,1763-1791.
+    scratch_roots = {Path("/private/tmp"), Path("/private/var/tmp")}
+    tempdir = os.environ.get("TMPDIR")
+    if tempdir:
+        require(Path(tempdir).is_absolute(), "Native TMPDIR must be an absolute path")
+        canonical_tempdir = Path(tempdir).resolve()
+        require(canonical_tempdir != Path("/"), "Native TMPDIR cannot be filesystem root")
+        scratch_roots.add(canonical_tempdir)
+    for scratch_root in sorted(scratch_roots):
+        require(str(scratch_root) not in filesystem, "Native scratch deny collides with a required positive grant")
+        filesystem[str(scratch_root)] = "deny"
     plugins = {"_default": {"enabled": False}}
     plugins.update({name: {"enabled": False} for name in plugin_ids if name != "_default"})
     plugins[SPEC.plugin_id] = {"enabled": True}
@@ -287,17 +303,25 @@ def run_control(rpc, paths, profile, report, deadline):
         report["control_code_sha256"] = sha256(code.encode()).hexdigest()
         positive = rpc.request("command/exec", exec_params(profile, paths["output"], [sys.executable, "-c", code]), deadline)
     report["native_control_response"] = positive
-    require(positive.get("exitCode") == 0, "Deterministic native permission controls failed")
     try:
+        require(isinstance(positive.get("stdout"), str) and len(positive["stdout"].encode()) <= 16384,
+                "Native control stdout is missing or exceeds its bounded JSON receipt")
         parsed = json.loads(positive["stdout"])
     except (ValueError, KeyError) as exc:
         raise _Stop("integrity_error", "Native controls did not return inspectable JSON") from exc
+    require(isinstance(parsed, dict) and isinstance(parsed.get("checks"), dict), "Native control JSON receipt is malformed")
+    check_names = ("sentinel_open", "symlink_open", "input_write", "outside_write", "network")
+    checks = {name: parsed["checks"].get(name) if isinstance(parsed["checks"].get(name), dict) else {} for name in check_names}
+    report["native_control_checks"] = {name: {
+        "denied": value.get("denied") if type(value.get("denied")) is bool else None,
+        "error_type": value.get("type") if value.get("type") == "PermissionError" else None,
+        "errno": value.get("errno") if type(value.get("errno")) is int else None} for name, value in checks.items()}
+    report["allowed_when_denied"] = [name for name, value in checks.items() if value.get("denied") is False]
+    require(positive.get("exitCode") == 0, "Deterministic native permission controls failed")
     expected = {"row_count": 3, "group_totals": {"A": 5, "B": 5}, "total_units": 10}
     require(parsed.get("positive") == expected, "Native positive input/output calculation differs")
-    require(all(parsed.get("checks", {}).get(name, {}).get("denied") is True
-                and parsed["checks"][name].get("type") == "PermissionError"
-                and parsed["checks"][name].get("errno") in (1, 13)
-                for name in ("sentinel_open", "symlink_open", "input_write", "outside_write", "network")),
+    require(all(checks[name].get("denied") is True and checks[name].get("type") == "PermissionError"
+                and checks[name].get("errno") in (1, 13) for name in check_names),
             "Actual OS read/symlink/write denial is not established")
     cat = rpc.request("command/exec", exec_params(profile, paths["output"], ["/bin/cat", str(paths["sentinel"])]), deadline)
     report["native_cat_response"] = cat
@@ -546,9 +570,12 @@ def main():
     destination = evidence / "isolation-evidence.json"
     destination.write_text(json.dumps(retained_report(report), indent=2) + "\n")
     print(json.dumps({key: report.get(key) for key in ("status", "blocker", "model_turn_requested",
-        "deterministic_native_controls_passed", "data_turn_artifacts_verified", "manual_review_required")}
+        "deterministic_native_controls_passed", "data_turn_artifacts_verified", "manual_review_required",
+        "native_control_checks", "allowed_when_denied")}
         | ({"effective_profile_comparison": retained_report(report["effective_profile_comparison"])}
-            if report.get("error_code") and "effective_profile_comparison" in report else {})
+            if report.get("error_code") and "effective_profile_comparison" in report
+            and not (report["effective_profile_comparison"]["filesystem_matches"]
+                and report["effective_profile_comparison"]["network_matches"]) else {})
         | {"evidence": str(destination)}, indent=2))
     return 0 if report["status"] == "engineering_checks_observed_pending_manual_review" else 2
 

@@ -178,6 +178,48 @@ class IsolationProbeTests(unittest.TestCase):
                 _Transport("codex", self.paths["output"], io.StringIO(), config_overrides="")
             launch.assert_not_called()
 
+    def test_physical_scratch_and_current_tmpdir_denies_preserve_narrow_positive_grants(self):
+        current_tmpdir = self.paths["released"].parent / "native-current-temp"
+        with patch.dict(PROBE.os.environ, {"TMPDIR": str(current_tmpdir)}):
+            values = PROBE.profile_overrides("mock-profile", self.paths["released"], self.paths["output"], [], [])
+        filesystem = tomllib.loads(values[1])["permissions"]["mock-profile"]["filesystem"]
+        for root in ("/private/tmp", "/private/var/tmp", str(current_tmpdir.resolve())):
+            self.assertEqual(filesystem[root], "deny")
+        self.assertEqual(filesystem[str(self.paths["released"].resolve())], "read")
+        self.assertEqual(filesystem[str(self.paths["output"].resolve())], "write")
+        self.assertEqual(filesystem[str(PROBE.DATA_ROOT)], "read")
+        self.assertEqual(filesystem[str(Path(PROBE.sys.base_prefix).resolve())], "read")
+        self.assertEqual(filesystem[":root"], "deny")
+        self.assertEqual(filesystem[":minimal"], "read")
+        with patch.dict(PROBE.os.environ, {"TMPDIR": "/tmp"}):
+            values = PROBE.profile_overrides("mock-profile", self.paths["released"], self.paths["output"], [], [])
+        filesystem = tomllib.loads(values[1])["permissions"]["mock-profile"]["filesystem"]
+        self.assertEqual(filesystem[str(Path("/tmp").resolve())], "deny")
+
+    def test_actual_control_failure_shape_retains_allowed_when_denied_before_exit_guard(self):
+        original = self.rpc.request
+        def request(method, params, deadline, cancellation=None):
+            result = original(method, params, deadline, cancellation)
+            if method == "command/exec":
+                parsed = json.loads(result["stdout"])
+                for name in ("sentinel_open", "symlink_open", "outside_write"):
+                    parsed["checks"][name] = {"denied": False}
+                result.update({"exitCode": 7, "stdout": json.dumps(parsed)})
+            return result
+        self.rpc.request = request
+        listener = MagicMock()
+        listener.__enter__.return_value = listener
+        listener.getsockname.return_value = ("127.0.0.1", 12345)
+        listener.accept.return_value = (MagicMock(), ("127.0.0.1", 11111))
+        report = {"model_turn_requested": False}
+        with patch.object(PROBE.socket, "socket", return_value=listener), \
+             patch.object(PROBE.socket, "create_connection", return_value=MagicMock()), \
+             self.assertRaisesRegex(_Stop, "Deterministic native permission controls failed"):
+            PROBE.run_control(self.rpc, self.paths, "mock-profile", report, time.monotonic() + 20)
+        self.assertEqual(report["allowed_when_denied"], ["sentinel_open", "symlink_open", "outside_write"])
+        self.assertEqual(report["native_control_checks"]["network"], {"denied": True, "error_type": "PermissionError", "errno": 13})
+        self.assertFalse(report["model_turn_requested"])
+
     def test_control_code_is_harness_authored_compilable_without_execution(self):
         source = PROBE.control_code(self.paths["input"], self.paths["sentinel"], self.paths["link"],
             self.paths["control_result"], self.paths["outside_write"], ("127.0.0.1", 12345))
