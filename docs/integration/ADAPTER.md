@@ -79,7 +79,7 @@ not infer acceptance from the presence of a stored object.
 
 ## Checks completed locally
 
-On October 17, 2026, 78 integration tests passed, including schema checks against
+On October 17, 2026, 80 integration tests passed, including schema checks against
 the installed native CLI, approval/version mutations, source-byte integrity,
 typed failure/gap distinctions, interruption requests and immutable output
 collisions. All simulated execution fixtures are explicitly mocked. The 77

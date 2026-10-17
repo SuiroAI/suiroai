@@ -59,6 +59,23 @@ a safe comparison for the selected profile. This is a source-supported likely
 explanation, not a retrospective observation or passed isolation check.
 [Original blocked observation](../../evidence/integration/isolation-profile-comparison-2026-10-17/observation.json)
 
+The following real run accepted the requested profile but failed native controls:
+sentinel and symlink reads succeeded, and an actual empty file was created
+outside the output namespace. Input writes and networking were denied. No model
+turn ran. The [retained failure](../../evidence/integration/native-command-isolation-failure-2026-10-17/review.json)
+contains exact request/response receipts and verified artifacts.
+
+The exact native macOS source adds Process scratch reads/writes under
+`/private/tmp` and `/private/var/tmp` when `:minimal` is active. A filesystem-root
+deny alone does not exclude those implicit grants. This is shared native
+behavior, not evidence of a lossy `command/exec` conversion. Commit `11ec77e`
+adds explicit physical scratch-root and canonical current `TMPDIR` denies,
+preserving the narrower released-input and output grants. The same denied test
+fixtures remain under `/private/tmp`; they were not moved to conceal this
+failure. Actual enforcement of the strengthened profile still needs a real
+probe. The console now retains individual native control outcomes even when
+the checker exits nonzero. See the [source audit](ISOLATION_PROBE.md).
+
 ## Failure evidence
 
 `evidence/integration/probe_native_failures.py` provides one normal-Terminal command for three synthetic probes: intentional invalid Python without repair, cancellation only after an actual native `turn/started` event, and a finite timeout. Each turn has a 60-second total native-operation bound, with at most ten extra seconds for interrupt acknowledgement and bounded process cleanup. The script reports actual observed results or incomplete evidence; it never grants automatic acceptance.
