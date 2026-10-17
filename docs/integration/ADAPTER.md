@@ -117,6 +117,10 @@ or model turn. The engineering probe now uses a separate bounded discovery
 budget (60 seconds by default), preserving exact identity checks and the
 existing 90-second synthetic turn limit. This does not extend the adapter's
 customer execution budget. See the [discovery timeout evidence](../../evidence/integration/native-inventory-timeout-2026-10-17/observation.json).
+The subsequent [targeted catalogue diagnostic](../../evidence/integration/native-catalog-diagnostic-2026-10-17/observation.json)
+returned the exact installed/enabled Data `1.0.11` identity with empty stderr.
+That saved response narrows the discovery uncertainty; it does not establish
+the earlier timeout's cause or isolated execution acceptance.
 A fresh cwd, read-only copies and the legacy
 `workspace-write` write sandbox do not establish that boundary. The raw sales
 file contains December outcomes and must not enter development context. No
