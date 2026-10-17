@@ -48,6 +48,17 @@ bytes under the same profile. Missing receipts, unexpected tools, rejected
 configuration or partial inventory produce an honest blocker. No probe status
 automatically enables customer dispatch or closes DSC-26.
 
+The first isolation attempt stopped before native controls or a model turn with
+`Effective native filesystem/network profile differs`. Its original selected
+filesystem/network object was not retained, so the mismatched field is unknown.
+The exact CLI source serializes an absent optional `glob_scan_max_depth` as JSON
+`null`; the probe's raw dictionary comparison rejected that representation.
+Commit `5daa5b1` normalizes only this known absent/null metadata and preserves
+exact grant and disabled-network checks. Subsequent failures retain and print
+a safe comparison for the selected profile. This is a source-supported likely
+explanation, not a retrospective observation or passed isolation check.
+[Original blocked observation](../../evidence/integration/isolation-profile-comparison-2026-10-17/observation.json)
+
 ## Failure evidence
 
 `evidence/integration/probe_native_failures.py` provides one normal-Terminal command for three synthetic probes: intentional invalid Python without repair, cancellation only after an actual native `turn/started` event, and a finite timeout. Each turn has a 60-second total native-operation bound, with at most ten extra seconds for interrupt acknowledgement and bounded process cleanup. The script reports actual observed results or incomplete evidence; it never grants automatic acceptance.
