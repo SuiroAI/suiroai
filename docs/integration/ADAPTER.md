@@ -79,7 +79,7 @@ not infer acceptance from the presence of a stored object.
 
 ## Checks completed locally
 
-On October 17, 2026, 56 integration tests passed, including schema checks against
+On October 17, 2026, 59 integration tests passed, including schema checks against
 the installed native CLI, approval/version mutations, source-byte integrity,
 typed failure/gap distinctions, interruption requests and immutable output
 collisions. All simulated execution fixtures are explicitly mocked. The 77
@@ -101,21 +101,31 @@ excludes unreleased data. A fresh cwd, read-only copies and the legacy
 file contains December outcomes and must not enter development context. No
 custom runtime or prompt-only substitute is implemented.
 
-Native invalid-code and interruption checks require real Terminal execution;
-mocked transport tests alone cannot close them. The intended LiteLLM gateway
+The [real failure review](../../evidence/integration/native-failures-2026-10-17/review.json)
+records native cancellation and timeout interruptions. Cancellation occurred
+before analytical commands; timeout occurred after a Python command-start event.
+The terminal interruption is confirmed, but no OS process-exit observation is
+claimed. The real invalid Python command failed with exit 1 and `SyntaxError`.
+Its original adapter result incorrectly said `completed`; `ef8fcdb` fixes that
+classification, verified by offline replay of the unchanged recorded events and
+retrieved items. The original failed probe check remains preserved; no fresh
+model run with the fix is claimed. Mocked tests alone do not establish this
+native evidence. The intended LiteLLM gateway
 route is not demonstrated by a native `modelProvider: openai` field. Real
 customer execution also requires DSC-25 approval and DSC-10 permission for the
 exact approved versions. No customer analysis has run.
 
-The next bounded, synthetic-only check is:
+The bounded, synthetic-only failure check that produced that evidence is:
 
 ```sh
 python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_native_failures.py
 ```
 
-Run it in the user's normal Terminal, where the previous native invocation
+It ran in the user's normal Terminal, where the previous native invocation
 succeeded. The managed execution environment previously failed app-server
 startup with `Operation not permitted`. The command runs at most three model
 turns, each limited to 60 seconds plus bounded interruption/cleanup, and one
 zero-time noninvocation check. It records genuine results or incomplete evidence
-for manual review; it does not close the issue.
+for manual review; it does not close the issue. Repeating the expensive native
+turns is not required merely to replay the corrected classifier against saved
+evidence. Native read isolation remains a separate, unexercised prerequisite.
