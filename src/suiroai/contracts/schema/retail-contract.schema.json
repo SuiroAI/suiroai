@@ -1,0 +1,4895 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.suiroai.invalid/retail-mvp/0.1.0-draft.2",
+  "title": "Retail MVP shared contracts \u2014 unagreed draft 0.1.0-draft.2",
+  "description": "DSC-24 draft component interfaces only. This schema does not implement preparation, modeling, integration or customer acceptance. Semantic cross-artifact verification remains required.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/submission"
+    },
+    {
+      "$ref": "#/$defs/task_proposal"
+    },
+    {
+      "$ref": "#/$defs/task_approval"
+    },
+    {
+      "$ref": "#/$defs/execution_contract"
+    },
+    {
+      "$ref": "#/$defs/preparation_result"
+    },
+    {
+      "$ref": "#/$defs/feature_proposal"
+    },
+    {
+      "$ref": "#/$defs/feature_result"
+    },
+    {
+      "$ref": "#/$defs/evaluation_result"
+    },
+    {
+      "$ref": "#/$defs/final_validation_result"
+    },
+    {
+      "$ref": "#/$defs/report_draft"
+    },
+    {
+      "$ref": "#/$defs/output_verification"
+    },
+    {
+      "$ref": "#/$defs/evidence_record"
+    },
+    {
+      "$ref": "#/$defs/initial_evaluation_result"
+    },
+    {
+      "$ref": "#/$defs/capability_result"
+    },
+    {
+      "$ref": "#/$defs/stage_result"
+    },
+    {
+      "$ref": "#/$defs/quantity_result"
+    },
+    {
+      "$ref": "#/$defs/stage_request"
+    }
+  ],
+  "$defs": {
+    "artifact_ref": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. artifact id."
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. version."
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "3. sha256."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "4. Origin classification persists on every immutable reference, including external and mock artifacts."
+        }
+      },
+      "required": [
+        "artifact_id",
+        "version",
+        "sha256",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "input_binding": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. task id."
+        },
+        "task_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. task version."
+        },
+        "input_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "3. input version."
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "4. input digest."
+        },
+        "proposal_version": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "5. proposal version."
+        },
+        "proposal_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "6. proposal digest."
+        }
+      },
+      "required": [
+        "task_id",
+        "task_version",
+        "input_version",
+        "input_digest"
+      ],
+      "additionalProperties": false
+    },
+    "approved_binding": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. task id."
+        },
+        "task_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. task version."
+        },
+        "input_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "3. input version."
+        },
+        "input_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "4. input digest."
+        },
+        "proposal_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "5. proposal version."
+        },
+        "proposal_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "6. proposal digest."
+        }
+      },
+      "required": [
+        "task_id",
+        "task_version",
+        "input_version",
+        "input_digest",
+        "proposal_version",
+        "proposal_digest"
+      ],
+      "additionalProperties": false
+    },
+    "submission_file": {
+      "type": "object",
+      "properties": {
+        "file_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. file id."
+        },
+        "original_name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. original name."
+        },
+        "supplied_location": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. supplied location."
+        },
+        "source_role": {
+          "type": "string",
+          "enum": [
+            "transactions",
+            "dictionary",
+            "usable_stock",
+            "inbound_ledger",
+            "ordering_policy",
+            "other"
+          ],
+          "description": "4. source role."
+        },
+        "source_namespace": {
+          "type": "string",
+          "minLength": 1,
+          "description": "5. source namespace."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "mock"
+          ],
+          "description": "6. provenance."
+        },
+        "access": {
+          "type": "string",
+          "enum": [
+            "accessible",
+            "missing",
+            "inaccessible"
+          ],
+          "description": "7. access."
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "8. sha256."
+        },
+        "size_bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "9. size bytes."
+        },
+        "access_reason": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "10. access reason."
+        }
+      },
+      "required": [
+        "file_id",
+        "original_name",
+        "supplied_location",
+        "source_role",
+        "source_namespace",
+        "provenance",
+        "access",
+        "sha256",
+        "size_bytes",
+        "access_reason"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "access": {
+                "const": "accessible"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "size_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "access_reason": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "sha256": {
+                "type": "null"
+              },
+              "size_bytes": {
+                "type": "null"
+              },
+              "access_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "assumption": {
+      "type": "object",
+      "properties": {
+        "assumption_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. assumption id."
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "supplied_fact",
+            "supported_interpretation",
+            "synthetic_assumption",
+            "unknown"
+          ],
+          "description": "2. classification."
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. statement."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "proposed",
+            "unresolved"
+          ],
+          "description": "4. status."
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "5. source refs."
+        }
+      },
+      "required": [
+        "assumption_id",
+        "classification",
+        "statement",
+        "status",
+        "source_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "const": "unknown"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "unresolved"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "gap": {
+      "type": "object",
+      "properties": {
+        "gap_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. gap id."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. description."
+        },
+        "material": {
+          "type": "boolean",
+          "description": "3. material."
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "approval",
+              "execution",
+              "quantities",
+              "report"
+            ]
+          },
+          "minItems": 0,
+          "description": "4. blocks."
+        },
+        "request_to_user": {
+          "type": "string",
+          "minLength": 1,
+          "description": "5. request to user."
+        }
+      },
+      "required": [
+        "gap_id",
+        "description",
+        "material",
+        "blocks",
+        "request_to_user"
+      ],
+      "additionalProperties": false
+    },
+    "check": {
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. check id."
+        },
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. requirement id."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "unavailable",
+            "not_applicable"
+          ],
+          "description": "3. status."
+        },
+        "expected": {
+          "type": "string",
+          "minLength": 1,
+          "description": "4. expected."
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "5. actual."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "6. evidence refs."
+        },
+        "verifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. verifier."
+        }
+      },
+      "required": [
+        "check_id",
+        "requirement_id",
+        "status",
+        "expected",
+        "actual",
+        "evidence_refs",
+        "verifier"
+      ],
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. finding id."
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. statement."
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "verified_finding",
+            "material_limitation"
+          ],
+          "description": "3. classification."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "4. evidence refs."
+        },
+        "audience": {
+          "type": "string",
+          "enum": [
+            "internal",
+            "final_report"
+          ],
+          "description": "5. audience."
+        }
+      },
+      "required": [
+        "finding_id",
+        "statement",
+        "classification",
+        "evidence_refs",
+        "audience"
+      ],
+      "additionalProperties": false
+    },
+    "product_store_key": {
+      "type": "object",
+      "properties": {
+        "source_namespace": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. source namespace."
+        },
+        "product_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. product id."
+        },
+        "store_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. store id."
+        }
+      },
+      "required": [
+        "source_namespace",
+        "product_id",
+        "store_id"
+      ],
+      "additionalProperties": false
+    },
+    "pending_policy": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "pending",
+          "description": "1. status."
+        },
+        "unresolved_gap_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "2. unresolved gap ids."
+        }
+      },
+      "required": [
+        "status",
+        "unresolved_gap_ids"
+      ],
+      "additionalProperties": false
+    },
+    "defined_target_policy": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "defined",
+          "description": "1. status."
+        },
+        "policy_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. policy id."
+        },
+        "quantity_unit": {
+          "const": "product_unit",
+          "description": "3. quantity unit."
+        },
+        "aggregation_grain": {
+          "const": "product_store_day",
+          "description": "4. aggregation grain."
+        },
+        "target_measure": {
+          "type": "string",
+          "minLength": 1,
+          "description": "6. Explicit gross/fulfilled/net transaction quantity interpretation; no default demand inference."
+        },
+        "included_order_statuses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "6. included order statuses."
+        },
+        "returns_treatment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. returns treatment."
+        },
+        "nonpositive_quantity_treatment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "8. nonpositive quantity treatment."
+        },
+        "duplicate_treatment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "9. duplicate treatment."
+        },
+        "missing_date_treatment": {
+          "type": "string",
+          "enum": [
+            "unknown_not_zero",
+            "zero_only_with_completeness_evidence",
+            "explicit_observation_mask",
+            "zero_under_disclosed_synthetic_assumption"
+          ],
+          "description": "10. missing date treatment."
+        },
+        "extract_completeness": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "verified_complete",
+            "verified_partial"
+          ],
+          "description": "11. extract completeness."
+        },
+        "completeness_evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "12. completeness evidence refs."
+        },
+        "policy_evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "12. completeness evidence refs."
+        },
+        "zero_assumption_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "14. zero assumption ref."
+        }
+      },
+      "required": [
+        "status",
+        "policy_id",
+        "quantity_unit",
+        "aggregation_grain",
+        "target_measure",
+        "included_order_statuses",
+        "returns_treatment",
+        "nonpositive_quantity_treatment",
+        "duplicate_treatment",
+        "missing_date_treatment",
+        "extract_completeness",
+        "completeness_evidence_refs",
+        "policy_evidence_refs",
+        "zero_assumption_ref"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "missing_date_treatment": {
+                "const": "zero_only_with_completeness_evidence"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "extract_completeness": {
+                "const": "verified_complete"
+              },
+              "completeness_evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "missing_date_treatment": {
+                "const": "zero_under_disclosed_synthetic_assumption"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "zero_assumption_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "temporal_plan": {
+      "type": "object",
+      "properties": {
+        "as_of_date": {
+          "const": "2025-11-30",
+          "description": "1. as of date."
+        },
+        "date_interpretation": {
+          "const": "source_calendar_date",
+          "description": "2. date interpretation."
+        },
+        "initial_development_start": {
+          "const": "2022-01-01",
+          "description": "3. initial development start."
+        },
+        "initial_development_end": {
+          "const": "2024-12-31",
+          "description": "4. initial development end."
+        },
+        "rolling_validation_start": {
+          "const": "2025-01-01",
+          "description": "5. rolling validation start."
+        },
+        "development_target_end_cutoff": {
+          "const": "2025-11-30",
+          "description": "6. development target end cutoff."
+        },
+        "reserved_unseen_start": {
+          "const": "2025-12-01",
+          "description": "7. reserved unseen start."
+        },
+        "reserved_unseen_end": {
+          "const": "2025-12-31",
+          "description": "8. reserved unseen end."
+        },
+        "development_context_access": {
+          "const": "development_artifacts_only",
+          "description": "9. development context access."
+        },
+        "every_development_horizon_finishes_by_cutoff": {
+          "const": true,
+          "description": "10. every development horizon finishes by cutoff."
+        },
+        "score_fully_observed_horizons_only": {
+          "const": true,
+          "description": "11. score fully observed horizons only."
+        },
+        "freeze_before_holdout_access": {
+          "const": true,
+          "description": "12. freeze before holdout access."
+        },
+        "forecast_as_of_date": {
+          "const": "2025-11-30",
+          "description": "13. forecast as of date."
+        },
+        "december_must_not_change_saved_forecast": {
+          "const": true,
+          "description": "14. december must not change saved forecast."
+        }
+      },
+      "required": [
+        "as_of_date",
+        "date_interpretation",
+        "initial_development_start",
+        "initial_development_end",
+        "rolling_validation_start",
+        "development_target_end_cutoff",
+        "reserved_unseen_start",
+        "reserved_unseen_end",
+        "development_context_access",
+        "every_development_horizon_finishes_by_cutoff",
+        "score_fully_observed_horizons_only",
+        "freeze_before_holdout_access",
+        "forecast_as_of_date",
+        "december_must_not_change_saved_forecast"
+      ],
+      "additionalProperties": false
+    },
+    "metric_gate": {
+      "type": "object",
+      "properties": {
+        "metric_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. metric id."
+        },
+        "aggregation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. aggregation."
+        },
+        "population_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. population id."
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "upper_bound",
+            "lower_bound",
+            "minimum_improvement_over_baseline"
+          ],
+          "description": "4. direction."
+        },
+        "threshold": {
+          "type": "number",
+          "description": "5. threshold."
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "description": "6. unit."
+        }
+      },
+      "required": [
+        "metric_id",
+        "aggregation",
+        "population_id",
+        "direction",
+        "threshold",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "acceptance_rule": {
+      "type": "object",
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. rule id."
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. version."
+        },
+        "declared_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "3. declared at."
+        },
+        "metric_gates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_gate"
+          },
+          "minItems": 1,
+          "description": "4. metric gates."
+        },
+        "required_check_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "description": "5. required check ids."
+        },
+        "all_gates_required": {
+          "const": true,
+          "description": "6. all gates required."
+        },
+        "minimum_observation_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "7. minimum observation count."
+        }
+      },
+      "required": [
+        "rule_id",
+        "version",
+        "declared_at",
+        "metric_gates",
+        "required_check_ids",
+        "all_gates_required",
+        "minimum_observation_count"
+      ],
+      "additionalProperties": false
+    },
+    "execution_limits": {
+      "type": "object",
+      "properties": {
+        "max_candidates": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1. max candidates."
+        },
+        "max_llm_feature_definitions": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. max llm feature definitions."
+        },
+        "max_defect_rechecks": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "3. max defect rechecks."
+        },
+        "max_parent_reviews": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. max parent reviews."
+        },
+        "max_execution_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "5. max execution seconds."
+        },
+        "max_stage_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "6. max stage attempts."
+        }
+      },
+      "required": [
+        "max_candidates",
+        "max_llm_feature_definitions",
+        "max_defect_rechecks",
+        "max_parent_reviews",
+        "max_execution_seconds",
+        "max_stage_attempts"
+      ],
+      "additionalProperties": false
+    },
+    "parent_decision": {
+      "type": "object",
+      "properties": {
+        "checkpoint": {
+          "type": "string",
+          "enum": [
+            "approved_execution",
+            "preparation",
+            "initial_baseline_evaluation",
+            "llm_features",
+            "comparison_and_freeze",
+            "final_validation",
+            "recommendations",
+            "output_verification"
+          ],
+          "description": "1. checkpoint."
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "proceed",
+            "stop",
+            "request_material_facts",
+            "allow_defect_recheck",
+            "confirmed_failure",
+            "pass_after_recheck",
+            "review"
+          ],
+          "description": "2. decision."
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. actor."
+        },
+        "decided_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "4. decided at."
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "5. reason."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "6. evidence refs."
+        }
+      },
+      "required": [
+        "checkpoint",
+        "decision",
+        "actor",
+        "decided_at",
+        "reason",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "lineage_entry": {
+      "type": "object",
+      "properties": {
+        "output_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "1. output ref."
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "1. output ref."
+          },
+          "minItems": 1,
+          "description": "2. input refs."
+        },
+        "transformation_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. transformation id."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "4. description."
+        },
+        "row_lineage_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref",
+              "description": "1. output ref."
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "5. row lineage ref."
+        },
+        "preserved_raw_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "minItems": 1,
+          "description": "6. preserved raw hashes."
+        }
+      },
+      "required": [
+        "output_ref",
+        "input_refs",
+        "transformation_id",
+        "description",
+        "row_lineage_ref",
+        "preserved_raw_hashes"
+      ],
+      "additionalProperties": false
+    },
+    "artifact_availability": {
+      "type": "object",
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "1. artifact ref."
+        },
+        "permitted_use": {
+          "type": "string",
+          "enum": [
+            "development",
+            "reserved_unseen_evaluation",
+            "as_of_operations"
+          ],
+          "description": "2. permitted use."
+        },
+        "earliest_event_date": {
+          "type": "string",
+          "format": "date",
+          "description": "3. earliest event date."
+        },
+        "latest_event_date": {
+          "type": "string",
+          "format": "date",
+          "description": "4. latest event date."
+        },
+        "latest_information_available_date": {
+          "type": "string",
+          "format": "date",
+          "description": "5. latest information available date."
+        },
+        "event_time_column": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "6. event time column."
+        },
+        "availability_time_column": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "7. availability time column."
+        },
+        "contains_post_cutoff_rows": {
+          "type": "boolean",
+          "description": "8. contains post cutoff rows."
+        }
+      },
+      "required": [
+        "artifact_ref",
+        "permitted_use",
+        "earliest_event_date",
+        "latest_event_date",
+        "latest_information_available_date",
+        "event_time_column",
+        "availability_time_column",
+        "contains_post_cutoff_rows"
+      ],
+      "additionalProperties": false
+    },
+    "join_check": {
+      "type": "object",
+      "properties": {
+        "left_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "1. left ref."
+        },
+        "right_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "1. left ref."
+        },
+        "join_keys": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Product_ID",
+              "Store_ID",
+              "Order_Date"
+            ]
+          },
+          "minItems": 1,
+          "description": "3. join keys."
+        },
+        "expected_cardinality": {
+          "type": "string",
+          "enum": [
+            "one_to_one",
+            "many_to_one",
+            "one_to_many"
+          ],
+          "description": "4. expected cardinality."
+        },
+        "left_rows": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "5. left rows."
+        },
+        "right_rows": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "6. right rows."
+        },
+        "result_rows": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "7. result rows."
+        },
+        "unmatched_left_keys": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "8. unmatched left keys."
+        },
+        "unmatched_right_keys": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "9. unmatched right keys."
+        },
+        "check_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "1. left ref."
+        }
+      },
+      "required": [
+        "left_ref",
+        "right_ref",
+        "join_keys",
+        "expected_cardinality",
+        "left_rows",
+        "right_rows",
+        "result_rows",
+        "unmatched_left_keys",
+        "unmatched_right_keys",
+        "check_ref"
+      ],
+      "additionalProperties": false
+    },
+    "feature_definition": {
+      "type": "object",
+      "properties": {
+        "feature_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. feature id."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. name."
+        },
+        "expression": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. expression."
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "4. source refs."
+        },
+        "event_time_basis": {
+          "type": "string",
+          "minLength": 1,
+          "description": "5. event time basis."
+        },
+        "availability_time_basis": {
+          "type": "string",
+          "minLength": 1,
+          "description": "6. availability time basis."
+        },
+        "minimum_lag_calendar_days": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "7. minimum lag calendar days."
+        },
+        "timing_rule": {
+          "type": "string",
+          "minLength": 1,
+          "description": "8. timing rule."
+        },
+        "uses_only_information_available_at_origin": {
+          "const": true,
+          "description": "9. uses only information available at origin."
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "description": "10. rationale."
+        },
+        "fit_scope": {
+          "const": "training_fold_only",
+          "description": "11. Every learned feature transformation is fitted within its training fold and reused unchanged for that fold evaluation."
+        }
+      },
+      "required": [
+        "feature_id",
+        "name",
+        "expression",
+        "source_refs",
+        "event_time_basis",
+        "availability_time_basis",
+        "minimum_lag_calendar_days",
+        "timing_rule",
+        "uses_only_information_available_at_origin",
+        "rationale",
+        "fit_scope"
+      ],
+      "additionalProperties": false
+    },
+    "llm_generation_provenance": {
+      "type": "object",
+      "properties": {
+        "generation_kind": {
+          "const": "llm_generated",
+          "description": "1. generation kind."
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. model id."
+        },
+        "prompt_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "3. prompt ref."
+        },
+        "response_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "3. prompt ref."
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "5. generated at."
+        },
+        "development_context_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "3. prompt ref."
+          },
+          "minItems": 1,
+          "description": "6. development context refs."
+        },
+        "unrestricted_raw_future_access": {
+          "const": false,
+          "description": "7. unrestricted raw future access."
+        }
+      },
+      "required": [
+        "generation_kind",
+        "model_id",
+        "prompt_ref",
+        "response_ref",
+        "generated_at",
+        "development_context_refs",
+        "unrestricted_raw_future_access"
+      ],
+      "additionalProperties": false
+    },
+    "metric_score": {
+      "type": "object",
+      "properties": {
+        "metric_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. metric id."
+        },
+        "value": {
+          "type": "number",
+          "description": "2. value."
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. unit."
+        },
+        "population_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "4. population id."
+        },
+        "observation_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "5. observation count."
+        },
+        "forecast_origin_start": {
+          "type": "string",
+          "format": "date",
+          "description": "6. forecast origin start."
+        },
+        "forecast_origin_end": {
+          "type": "string",
+          "format": "date",
+          "description": "7. forecast origin end."
+        },
+        "target_end_max": {
+          "type": "string",
+          "format": "date",
+          "description": "8. target end max."
+        }
+      },
+      "required": [
+        "metric_id",
+        "value",
+        "unit",
+        "population_id",
+        "observation_count",
+        "forecast_origin_start",
+        "forecast_origin_end",
+        "target_end_max"
+      ],
+      "additionalProperties": false
+    },
+    "development_fold": {
+      "type": "object",
+      "properties": {
+        "fold_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. fold id."
+        },
+        "training_end": {
+          "type": "string",
+          "format": "date",
+          "description": "2. training end."
+        },
+        "forecast_origin": {
+          "type": "string",
+          "format": "date",
+          "description": "3. forecast origin."
+        },
+        "target_start": {
+          "type": "string",
+          "format": "date",
+          "description": "4. target start."
+        },
+        "target_end": {
+          "type": "string",
+          "format": "date",
+          "description": "5. target end."
+        },
+        "population_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "6. population ref."
+        }
+      },
+      "required": [
+        "fold_id",
+        "training_end",
+        "forecast_origin",
+        "target_start",
+        "target_end",
+        "population_ref"
+      ],
+      "additionalProperties": false
+    },
+    "metric_definition": {
+      "type": "object",
+      "properties": {
+        "metric_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. metric id."
+        },
+        "formula": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. formula."
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. unit."
+        },
+        "aggregation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "4. aggregation."
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "lower_is_better",
+            "higher_is_better"
+          ],
+          "description": "5. Predeclared optimization direction for comparable metric scores."
+        },
+        "tie_tolerance": {
+          "type": "number",
+          "minimum": 0,
+          "description": "6. Predeclared absolute difference at or below which the primary metric scores compare equal."
+        }
+      },
+      "required": [
+        "metric_id",
+        "formula",
+        "unit",
+        "aggregation",
+        "direction",
+        "tie_tolerance"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation_plan": {
+      "type": "object",
+      "properties": {
+        "plan_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. plan id."
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "2. version."
+        },
+        "declared_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "3. declared at."
+        },
+        "temporal_plan": {
+          "$ref": "#/$defs/temporal_plan",
+          "description": "4. temporal plan."
+        },
+        "metric_definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_definition"
+          },
+          "minItems": 1,
+          "description": "5. metric definitions."
+        },
+        "development_folds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/development_fold"
+          },
+          "minItems": 1,
+          "description": "6. development folds."
+        },
+        "common_population_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "7. common population ref."
+        },
+        "fully_observed_horizon_check_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "7. common population ref."
+        },
+        "primary_metric_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "8. The one predeclared metric used to classify initial baseline comparison."
+        }
+      },
+      "required": [
+        "plan_id",
+        "version",
+        "declared_at",
+        "temporal_plan",
+        "metric_definitions",
+        "development_folds",
+        "common_population_ref",
+        "fully_observed_horizon_check_ref",
+        "primary_metric_id"
+      ],
+      "additionalProperties": false
+    },
+    "candidate_result": {
+      "type": "object",
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. candidate id."
+        },
+        "model_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "2. model ref."
+        },
+        "feature_set_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "2. model ref."
+        },
+        "preprocessing_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "2. model ref."
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_score"
+          },
+          "minItems": 1,
+          "description": "5. scores."
+        },
+        "eligible_for_selection": {
+          "type": "boolean",
+          "description": "6. eligible for selection."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "2. model ref."
+          },
+          "minItems": 1,
+          "description": "7. evidence refs."
+        }
+      },
+      "required": [
+        "candidate_id",
+        "model_ref",
+        "feature_set_ref",
+        "preprocessing_ref",
+        "scores",
+        "eligible_for_selection",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "frozen_result": {
+      "type": "object",
+      "properties": {
+        "freeze_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. freeze id."
+        },
+        "frozen_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "2. frozen at."
+        },
+        "selected_candidate_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. selected candidate id."
+        },
+        "model_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "feature_set_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "preprocessing_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "evaluation_plan_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "acceptance_rule_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "development_input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. model ref."
+          },
+          "minItems": 1,
+          "description": "9. development input refs."
+        },
+        "november_30_forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. model ref."
+        },
+        "forecast_as_of_date": {
+          "const": "2025-11-30",
+          "description": "11. forecast as of date."
+        },
+        "forecast_input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. model ref."
+          },
+          "minItems": 1,
+          "description": "12. forecast input refs."
+        },
+        "no_reserved_outcomes_in_fit_selection_or_forecast": {
+          "const": true,
+          "description": "13. no reserved outcomes in fit selection or forecast."
+        }
+      },
+      "required": [
+        "freeze_id",
+        "frozen_at",
+        "selected_candidate_id",
+        "model_ref",
+        "feature_set_ref",
+        "preprocessing_ref",
+        "evaluation_plan_ref",
+        "acceptance_rule_ref",
+        "development_input_refs",
+        "november_30_forecast_ref",
+        "forecast_as_of_date",
+        "forecast_input_refs",
+        "no_reserved_outcomes_in_fit_selection_or_forecast"
+      ],
+      "additionalProperties": false
+    },
+    "defect_recheck": {
+      "type": "object",
+      "properties": {
+        "attempt": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "1. attempt."
+        },
+        "defect_description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. defect description."
+        },
+        "defect_evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "7. november 30 forecast ref."
+          },
+          "minItems": 1,
+          "description": "3. defect evidence refs."
+        },
+        "correction_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "7. november 30 forecast ref."
+          },
+          "minItems": 1,
+          "description": "4. correction refs."
+        },
+        "parent_authorization": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "5. parent authorization."
+        },
+        "model_selection_unchanged": {
+          "const": true,
+          "description": "6. model selection unchanged."
+        },
+        "november_30_forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "7. november 30 forecast ref."
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_score"
+          },
+          "minItems": 0,
+          "description": "8. scores."
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "9. checks."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "execution_failure"
+          ],
+          "description": "10. outcome."
+        }
+      },
+      "required": [
+        "attempt",
+        "defect_description",
+        "defect_evidence_refs",
+        "correction_refs",
+        "parent_authorization",
+        "model_selection_unchanged",
+        "november_30_forecast_ref",
+        "scores",
+        "checks",
+        "outcome"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "execution_failure"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "scores": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/metric_score"
+                },
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "scores": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/metric_score"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quantity_row": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/product_store_key",
+          "description": "1. key."
+        },
+        "quantity_unit": {
+          "const": "product_unit",
+          "description": "2. quantity unit."
+        },
+        "arithmetic_input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. forecast ref."
+          },
+          "minItems": 1,
+          "description": "3. arithmetic input refs."
+        },
+        "forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. forecast ref."
+        },
+        "forecast_horizon_start": {
+          "type": "string",
+          "format": "date",
+          "description": "5. forecast horizon start."
+        },
+        "forecast_horizon_end": {
+          "type": "string",
+          "format": "date",
+          "description": "6. forecast horizon end."
+        },
+        "forecast_quantity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "7. forecast quantity."
+        },
+        "usable_on_hand_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "8. usable on hand quantity."
+        },
+        "on_order_summary_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "9. on order summary quantity."
+        },
+        "eligible_receipt_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "10. eligible receipt quantity."
+        },
+        "supplier_lead_calendar_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "11. supplier lead calendar days."
+        },
+        "review_period_calendar_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "12. review period calendar days."
+        },
+        "safety_stock_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "13. safety stock quantity."
+        },
+        "order_multiple": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "14. order multiple."
+        },
+        "minimum_positive_order_quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "15. minimum positive order quantity."
+        },
+        "raw_order_need": {
+          "type": "number",
+          "description": "16. raw order need."
+        },
+        "rounded_order_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "17. rounded order quantity."
+        },
+        "approved_order_quantity": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "20. Parent-approved quantity; null while candidate awaits independent checking and parent decision."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. forecast ref."
+          },
+          "minItems": 1,
+          "description": "19. evidence refs."
+        },
+        "product_name": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "20. product name."
+        }
+      },
+      "required": [
+        "key",
+        "quantity_unit",
+        "arithmetic_input_refs",
+        "forecast_ref",
+        "forecast_horizon_start",
+        "forecast_horizon_end",
+        "forecast_quantity",
+        "usable_on_hand_quantity",
+        "on_order_summary_quantity",
+        "eligible_receipt_quantity",
+        "supplier_lead_calendar_days",
+        "review_period_calendar_days",
+        "safety_stock_quantity",
+        "order_multiple",
+        "minimum_positive_order_quantity",
+        "raw_order_need",
+        "rounded_order_quantity",
+        "approved_order_quantity",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "quantity_exception": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/product_store_key",
+          "description": "1. key."
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. reason."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "3. evidence refs."
+        }
+      },
+      "required": [
+        "key",
+        "reason",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "report_claim": {
+      "type": "object",
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "1. claim id."
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. statement."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "3. evidence refs."
+        }
+      },
+      "required": [
+        "claim_id",
+        "statement",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "failure_detail": {
+      "type": "object",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": [
+            "input_review",
+            "preparation",
+            "initial_evaluation",
+            "feature_generation",
+            "comparison",
+            "final_validation",
+            "quantity_calculation",
+            "output_verification",
+            "adapter_execution"
+          ],
+          "description": "1. stage."
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "2. reason."
+        },
+        "scope_limitation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. Must explain inability of this MVP to produce a reliable solution with these supplied inputs/scope, never universal impossibility."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "4. evidence refs."
+        },
+        "error_code": {
+          "type": "string",
+          "enum": [
+            "plugin_unavailable",
+            "unsupported_integration",
+            "inaccessible_input",
+            "invalid_code",
+            "timeout",
+            "cancelled",
+            "budget_exhausted",
+            "runtime_error",
+            "integrity_error"
+          ],
+          "description": "5. error code."
+        }
+      },
+      "required": [
+        "stage",
+        "reason",
+        "scope_limitation",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "permitted_customer_response": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "final_report",
+            "failure_explanation",
+            "missing_input_guidance",
+            "no_customer_response"
+          ],
+          "description": "1. kind."
+        },
+        "text": {
+          "type": "string",
+          "description": "2. text."
+        },
+        "report_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "3. report ref."
+        }
+      },
+      "required": [
+        "kind",
+        "text",
+        "report_ref"
+      ],
+      "additionalProperties": false
+    },
+    "submission": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "submission",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/input_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "original_request": {
+          "type": "string",
+          "minLength": 1,
+          "description": "8. original request."
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/submission_file"
+          },
+          "minItems": 0,
+          "description": "9. files."
+        },
+        "received_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "10. received at."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "original_request",
+        "files",
+        "received_at"
+      ],
+      "additionalProperties": false
+    },
+    "task_proposal": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "task_proposal",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "submission_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. submission ref."
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1,
+          "description": "9. goal."
+        },
+        "output": {
+          "const": "one_restocking_list_and_final_report_or_verified_failure_explanation",
+          "description": "10. output."
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "8. submission ref."
+          },
+          "minItems": 0,
+          "description": "11. source refs."
+        },
+        "readiness": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "needs_inputs",
+            "needs_material_facts"
+          ],
+          "description": "12. readiness."
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assumption"
+          },
+          "minItems": 0,
+          "description": "13. assumptions."
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gap"
+          },
+          "minItems": 0,
+          "description": "14. gaps."
+        },
+        "target_policy": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/pending_policy"
+            },
+            {
+              "$ref": "#/$defs/defined_target_policy"
+            }
+          ],
+          "description": "15. target policy."
+        },
+        "temporal_plan": {
+          "$ref": "#/$defs/temporal_plan",
+          "description": "16. temporal plan."
+        },
+        "acceptance_rule": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/pending_policy"
+            },
+            {
+              "$ref": "#/$defs/acceptance_rule"
+            }
+          ],
+          "description": "17. acceptance rule."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "submission_ref",
+        "goal",
+        "output",
+        "source_refs",
+        "readiness",
+        "assumptions",
+        "gaps",
+        "target_policy",
+        "temporal_plan",
+        "acceptance_rule"
+      ],
+      "additionalProperties": false
+    },
+    "task_approval": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "task_approval",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "proposal_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. proposal ref."
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "rejected",
+            "pending"
+          ],
+          "description": "9. decision."
+        },
+        "actor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "10. actor."
+        },
+        "decided_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "11. decided at."
+        },
+        "comment": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "12. comment."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "proposal_ref",
+        "decision",
+        "actor",
+        "decided_at",
+        "comment"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "approved"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "actor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decided_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "execution_contract": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "execution_contract",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "approval_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. approval ref."
+        },
+        "proposal_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. approval ref."
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "8. approval ref."
+          },
+          "minItems": 1,
+          "description": "10. source refs."
+        },
+        "allowed_actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "inspect",
+              "clean",
+              "join",
+              "aggregate",
+              "eda",
+              "materialize_features",
+              "train",
+              "evaluate",
+              "freeze",
+              "calculate_restocking",
+              "draft_report",
+              "verify_outputs"
+            ]
+          },
+          "minItems": 1,
+          "description": "11. allowed actions."
+        },
+        "limits": {
+          "$ref": "#/$defs/execution_limits",
+          "description": "12. limits."
+        },
+        "required_checkpoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "approved_execution",
+              "preparation",
+              "initial_baseline_evaluation",
+              "llm_features",
+              "comparison_and_freeze",
+              "final_validation",
+              "recommendations",
+              "output_verification"
+            ]
+          },
+          "minItems": 8,
+          "description": "13. required checkpoints.",
+          "uniqueItems": true
+        },
+        "temporal_plan": {
+          "$ref": "#/$defs/temporal_plan",
+          "description": "14. temporal plan."
+        },
+        "target_policy": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/pending_policy"
+            },
+            {
+              "$ref": "#/$defs/defined_target_policy"
+            }
+          ],
+          "description": "Approved pending investigation or explicit target policy; preparation must resolve policy with lineage and disclosed assumptions."
+        },
+        "acceptance_rule": {
+          "$ref": "#/$defs/acceptance_rule",
+          "description": "16. acceptance rule."
+        },
+        "source_assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/assumption"
+          },
+          "minItems": 0,
+          "description": "17. source assumptions."
+        },
+        "quantity_unit": {
+          "const": "product_unit",
+          "description": "18. quantity unit."
+        },
+        "inbound_ledger_policy": {
+          "type": "string",
+          "enum": [
+            "complete_synthetic_ledger_absence_is_zero",
+            "unknown_absence_not_zero"
+          ],
+          "description": "19. inbound ledger policy."
+        },
+        "inbound_summary_policy": {
+          "const": "reconcile_receipt_sum_never_double_count",
+          "description": "20. inbound summary policy."
+        },
+        "synthetic_operational_source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "8. approval ref."
+          },
+          "minItems": 0,
+          "description": "21. synthetic operational source refs."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "approval_ref",
+        "proposal_ref",
+        "source_refs",
+        "allowed_actions",
+        "limits",
+        "required_checkpoints",
+        "temporal_plan",
+        "target_policy",
+        "acceptance_rule",
+        "source_assumptions",
+        "quantity_unit",
+        "inbound_ledger_policy",
+        "inbound_summary_policy",
+        "synthetic_operational_source_refs"
+      ],
+      "additionalProperties": false
+    },
+    "preparation_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "preparation_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "prepared_development_data_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "reserved_unseen_data_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "initial_feature_set_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "initial_feature_definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feature_definition"
+          },
+          "minItems": 1,
+          "description": "12. initial feature definitions."
+        },
+        "target_policy": {
+          "$ref": "#/$defs/defined_target_policy",
+          "description": "13. target policy."
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lineage_entry"
+          },
+          "minItems": 1,
+          "description": "14. lineage."
+        },
+        "join_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/join_check"
+          },
+          "minItems": 0,
+          "description": "15. join checks."
+        },
+        "quality_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "16. quality checks."
+        },
+        "availability": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_availability"
+          },
+          "minItems": 1,
+          "description": "17. availability."
+        },
+        "development_context_allowlist": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "8. execution contract ref."
+          },
+          "minItems": 1,
+          "description": "18. development context allowlist."
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "minItems": 0,
+          "description": "19. findings."
+        },
+        "parent_decision": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "20. parent decision."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "prepared_development_data_ref",
+        "reserved_unseen_data_ref",
+        "initial_feature_set_ref",
+        "initial_feature_definitions",
+        "target_policy",
+        "lineage",
+        "join_checks",
+        "quality_checks",
+        "availability",
+        "development_context_allowlist",
+        "findings",
+        "parent_decision"
+      ],
+      "additionalProperties": false
+    },
+    "feature_proposal": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "feature_proposal",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "preparation_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "generation": {
+          "$ref": "#/$defs/llm_generation_provenance",
+          "description": "10. generation."
+        },
+        "definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feature_definition"
+          },
+          "minItems": 1,
+          "description": "11. definitions."
+        },
+        "initial_evaluation_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "12. initial evaluation ref."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "preparation_result_ref",
+        "generation",
+        "definitions",
+        "initial_evaluation_ref"
+      ],
+      "additionalProperties": false
+    },
+    "feature_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "feature_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "feature_proposal_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. feature proposal ref."
+        },
+        "materialized_feature_set_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. feature proposal ref."
+        },
+        "definitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feature_definition"
+          },
+          "minItems": 1,
+          "description": "10. definitions."
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lineage_entry"
+          },
+          "minItems": 1,
+          "description": "11. lineage."
+        },
+        "availability": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_availability"
+          },
+          "minItems": 1,
+          "description": "12. availability."
+        },
+        "validation_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "13. validation checks."
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "minItems": 0,
+          "description": "14. findings."
+        },
+        "parent_decision": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "15. parent decision."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "feature_proposal_ref",
+        "materialized_feature_set_ref",
+        "definitions",
+        "lineage",
+        "availability",
+        "validation_checks",
+        "findings",
+        "parent_decision"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "evaluation_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "preparation_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "llm_feature_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "evaluation_plan": {
+          "$ref": "#/$defs/evaluation_plan",
+          "description": "11. evaluation plan."
+        },
+        "baseline_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "12. baseline id."
+        },
+        "baseline_scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_score"
+          },
+          "minItems": 1,
+          "description": "13. baseline scores."
+        },
+        "initial_candidate_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "14. initial candidate id."
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate_result"
+          },
+          "minItems": 1,
+          "description": "15. candidates."
+        },
+        "selection_rule": {
+          "type": "string",
+          "minLength": 1,
+          "description": "16. selection rule."
+        },
+        "comparison_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "17. comparison checks."
+        },
+        "frozen": {
+          "$ref": "#/$defs/frozen_result",
+          "description": "18. frozen."
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "minItems": 0,
+          "description": "19. findings."
+        },
+        "parent_decision": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "20. parent decision."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "preparation_result_ref",
+        "llm_feature_result_ref",
+        "evaluation_plan",
+        "baseline_id",
+        "baseline_scores",
+        "initial_candidate_id",
+        "candidates",
+        "selection_rule",
+        "comparison_checks",
+        "frozen",
+        "findings",
+        "parent_decision"
+      ],
+      "additionalProperties": false
+    },
+    "final_validation_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "final_validation_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "evaluation_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "frozen_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "november_30_forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "acceptance_rule": {
+          "$ref": "#/$defs/acceptance_rule",
+          "description": "12. acceptance rule."
+        },
+        "reserved_unseen_data_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_score"
+          },
+          "minItems": 1,
+          "description": "14. scores."
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "15. checks."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail"
+          ],
+          "description": "16. outcome."
+        },
+        "parent_review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/parent_decision"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "17. parent review."
+        },
+        "defect_rechecks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/defect_recheck"
+          },
+          "minItems": 0,
+          "description": "18. defect rechecks."
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "minItems": 0,
+          "description": "19. findings."
+        },
+        "holdout_accessed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "20. holdout accessed at."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "evaluation_result_ref",
+        "frozen_result_ref",
+        "november_30_forecast_ref",
+        "acceptance_rule",
+        "reserved_unseen_data_ref",
+        "scores",
+        "checks",
+        "outcome",
+        "parent_review",
+        "defect_rechecks",
+        "findings",
+        "holdout_accessed_at"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "fail"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "parent_review": {
+                "$ref": "#/$defs/parent_decision"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "report_draft": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "report_draft",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "success",
+            "missing_inputs",
+            "validation_failure",
+            "execution_failure"
+          ],
+          "description": "9. outcome."
+        },
+        "final_validation_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref",
+              "description": "8. execution contract ref."
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "10. final validation ref."
+        },
+        "frozen_result_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref",
+              "description": "8. execution contract ref."
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "11. frozen result ref."
+        },
+        "november_30_forecast_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref",
+              "description": "8. execution contract ref."
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "12. november 30 forecast ref."
+        },
+        "arithmetic_source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "8. execution contract ref."
+          },
+          "minItems": 0,
+          "description": "13. arithmetic source refs."
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity_row"
+          },
+          "minItems": 0,
+          "description": "14. orders."
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity_exception"
+          },
+          "minItems": 0,
+          "description": "15. exceptions."
+        },
+        "arithmetic_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 0,
+          "description": "16. arithmetic checks."
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/report_claim"
+          },
+          "minItems": 0,
+          "description": "17. claims."
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "minItems": 0,
+          "description": "18. findings."
+        },
+        "customer_draft": {
+          "type": "string",
+          "minLength": 1,
+          "description": "19. customer draft."
+        },
+        "failure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/failure_detail"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "20. failure."
+        },
+        "parent_decision": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "21. parent decision."
+        },
+        "quantity_result_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "22. quantity result ref."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "outcome",
+        "final_validation_ref",
+        "frozen_result_ref",
+        "november_30_forecast_ref",
+        "arithmetic_source_refs",
+        "orders",
+        "exceptions",
+        "arithmetic_checks",
+        "claims",
+        "findings",
+        "customer_draft",
+        "failure",
+        "parent_decision",
+        "quantity_result_ref"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "success"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "final_validation_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              },
+              "frozen_result_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              },
+              "november_30_forecast_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              },
+              "arithmetic_source_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              },
+              "arithmetic_checks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/check"
+                },
+                "minItems": 1
+              },
+              "failure": {
+                "type": "null"
+              },
+              "quantity_result_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              },
+              "orders": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/approved_quantity_row"
+                },
+                "minItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "orders": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "$ref": "#/$defs/quantity_row"
+                }
+              },
+              "failure": {
+                "$ref": "#/$defs/failure_detail"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "output_verification": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "output_verification",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "report_draft_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. report draft ref."
+        },
+        "independent_verifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "9. independent verifier."
+        },
+        "independence_basis": {
+          "type": "string",
+          "minLength": 1,
+          "description": "10. independence basis."
+        },
+        "arithmetic_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 0,
+          "description": "11. arithmetic checks."
+        },
+        "claim_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 0,
+          "description": "11. arithmetic checks."
+        },
+        "binding_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "13. binding checks."
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "delivery_allowed",
+            "blocked"
+          ],
+          "description": "14. decision."
+        },
+        "parent_decision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/parent_decision"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "permitted_response": {
+          "$ref": "#/$defs/permitted_customer_response",
+          "description": "16. permitted response."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "report_draft_ref",
+        "independent_verifier",
+        "independence_basis",
+        "arithmetic_checks",
+        "claim_checks",
+        "binding_checks",
+        "decision",
+        "parent_decision",
+        "permitted_response"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "delivery_allowed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "parent_decision": {
+                "$ref": "#/$defs/parent_decision"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "permitted_response": {
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "no_customer_response",
+                      "failure_explanation",
+                      "missing_input_guidance"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "parent_decision": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "decision": {
+                "const": "blocked"
+              },
+              "permitted_response": {
+                "properties": {
+                  "kind": {
+                    "const": "no_customer_response"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "evidence_record": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "evidence_record",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "8. requirement id."
+        },
+        "requirement_source": {
+          "type": "string",
+          "minLength": 1,
+          "description": "9. requirement source."
+        },
+        "checked_artifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "10. checked artifacts."
+        },
+        "check": {
+          "$ref": "#/$defs/check",
+          "description": "11. check."
+        },
+        "evidence_mode": {
+          "type": "string",
+          "enum": [
+            "real",
+            "mock"
+          ],
+          "description": "12. evidence mode."
+        },
+        "verifier_decision": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "rejected",
+            "needs_evidence"
+          ],
+          "description": "13. verifier decision."
+        },
+        "verifier": {
+          "type": "string",
+          "minLength": 1,
+          "description": "14. verifier."
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "15. verified at."
+        },
+        "mock_limitation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "16. mock limitation."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "requirement_id",
+        "requirement_source",
+        "checked_artifacts",
+        "check",
+        "evidence_mode",
+        "verifier_decision",
+        "verifier",
+        "verified_at",
+        "mock_limitation"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "evidence_mode": {
+                "const": "mock"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "provenance": {
+                "const": "mock"
+              },
+              "mock_limitation": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "provenance": {
+                "type": "string",
+                "enum": [
+                  "supplied",
+                  "synthetic",
+                  "derived"
+                ]
+              },
+              "mock_limitation": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "initial_evaluation_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "initial_evaluation_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "preparation_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "evaluation_plan": {
+          "$ref": "#/$defs/evaluation_plan",
+          "description": "10. evaluation plan."
+        },
+        "baseline_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "11. baseline id."
+        },
+        "baseline_scores": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric_score"
+          },
+          "minItems": 1,
+          "description": "12. baseline scores."
+        },
+        "initial_candidate": {
+          "$ref": "#/$defs/candidate_result",
+          "description": "13. initial candidate."
+        },
+        "comparison": {
+          "type": "string",
+          "enum": [
+            "better",
+            "equal",
+            "worse"
+          ],
+          "description": "14. comparison."
+        },
+        "parent_decision": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "15. parent decision."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "preparation_result_ref",
+        "evaluation_plan",
+        "baseline_id",
+        "baseline_scores",
+        "initial_candidate",
+        "comparison",
+        "parent_decision"
+      ],
+      "additionalProperties": false
+    },
+    "capability_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "capability_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "unsupported",
+            "unavailable"
+          ],
+          "description": "8. status."
+        },
+        "host": {
+          "type": "string",
+          "minLength": 1,
+          "description": "9. host."
+        },
+        "interface": {
+          "type": "string",
+          "minLength": 1,
+          "description": "10. interface."
+        },
+        "demonstrated": {
+          "type": "boolean",
+          "description": "11. demonstrated."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "12. evidence refs."
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 0,
+          "description": "13. checks."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "status",
+        "host",
+        "interface",
+        "demonstrated",
+        "evidence_refs",
+        "checks"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "supported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "demonstrated": {
+                "const": true
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              },
+              "checks": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/check"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "stage_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "stage_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "approved_execution",
+            "preparation",
+            "initial_baseline_evaluation",
+            "llm_features",
+            "comparison_and_freeze",
+            "final_validation",
+            "recommendations",
+            "output_verification"
+          ],
+          "description": "8. stage."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "needs_inputs",
+            "needs_material_facts",
+            "validation_failed",
+            "execution_failed"
+          ],
+          "description": "9. outcome."
+        },
+        "output_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "10. output refs."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "11. evidence refs."
+        },
+        "parent_decision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/parent_decision"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "12. parent decision."
+        },
+        "failure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/failure_detail"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "13. failure."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "14. execution contract ref."
+        },
+        "stage_request_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "15. stage request ref."
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "16. attempt."
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gap"
+          },
+          "minItems": 0,
+          "description": "17. gaps."
+        },
+        "final_validation_result_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "18. final validation result ref."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "stage",
+        "outcome",
+        "output_refs",
+        "evidence_refs",
+        "parent_decision",
+        "failure",
+        "execution_contract_ref",
+        "stage_request_ref",
+        "attempt",
+        "gaps",
+        "final_validation_result_ref"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "execution_failed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "failure": {
+                "$ref": "#/$defs/failure_detail",
+                "required": [
+                  "error_code"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "completed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "failure": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "enum": [
+                  "needs_inputs",
+                  "needs_material_facts"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "gaps": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/gap"
+                },
+                "minItems": 1
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "validation_failed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "final_validation_result_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "execution_failed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "completed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "output_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "approved_quantity_row": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/product_store_key",
+          "description": "1. key."
+        },
+        "quantity_unit": {
+          "const": "product_unit",
+          "description": "2. quantity unit."
+        },
+        "arithmetic_input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. forecast ref."
+          },
+          "minItems": 1,
+          "description": "3. arithmetic input refs."
+        },
+        "forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "4. forecast ref."
+        },
+        "forecast_horizon_start": {
+          "type": "string",
+          "format": "date",
+          "description": "5. forecast horizon start."
+        },
+        "forecast_horizon_end": {
+          "type": "string",
+          "format": "date",
+          "description": "6. forecast horizon end."
+        },
+        "forecast_quantity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "7. forecast quantity."
+        },
+        "usable_on_hand_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "8. usable on hand quantity."
+        },
+        "on_order_summary_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "9. on order summary quantity."
+        },
+        "eligible_receipt_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "10. eligible receipt quantity."
+        },
+        "supplier_lead_calendar_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "11. supplier lead calendar days."
+        },
+        "review_period_calendar_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "12. review period calendar days."
+        },
+        "safety_stock_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "13. safety stock quantity."
+        },
+        "order_multiple": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "14. order multiple."
+        },
+        "minimum_positive_order_quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "15. minimum positive order quantity."
+        },
+        "raw_order_need": {
+          "type": "number",
+          "description": "16. raw order need."
+        },
+        "rounded_order_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "17. rounded order quantity."
+        },
+        "approved_order_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "20. Verified quantity authorized for the successful report."
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref",
+            "description": "4. forecast ref."
+          },
+          "minItems": 1,
+          "description": "19. evidence refs."
+        },
+        "product_name": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "20. product name."
+        }
+      },
+      "required": [
+        "key",
+        "quantity_unit",
+        "arithmetic_input_refs",
+        "forecast_ref",
+        "forecast_horizon_start",
+        "forecast_horizon_end",
+        "forecast_quantity",
+        "usable_on_hand_quantity",
+        "on_order_summary_quantity",
+        "eligible_receipt_quantity",
+        "supplier_lead_calendar_days",
+        "review_period_calendar_days",
+        "safety_stock_quantity",
+        "order_multiple",
+        "minimum_positive_order_quantity",
+        "raw_order_need",
+        "rounded_order_quantity",
+        "approved_order_quantity",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "quantity_result": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "quantity_result",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "final_validation_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "frozen_result_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "november_30_forecast_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "arithmetic_source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 1,
+          "description": "12. arithmetic source refs."
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity_row"
+          },
+          "minItems": 0,
+          "description": "13. orders."
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quantity_exception"
+          },
+          "minItems": 0,
+          "description": "14. exceptions."
+        },
+        "arithmetic_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/check"
+          },
+          "minItems": 1,
+          "description": "15. arithmetic checks."
+        },
+        "independent_check_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "16. independent check refs."
+        },
+        "parent_decision": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/parent_decision"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "17. parent decision."
+        },
+        "candidate_quantity_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/artifact_ref"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "18. candidate quantity ref."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "final_validation_ref",
+        "frozen_result_ref",
+        "november_30_forecast_ref",
+        "arithmetic_source_refs",
+        "orders",
+        "exceptions",
+        "arithmetic_checks",
+        "independent_check_refs",
+        "parent_decision",
+        "candidate_quantity_ref"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "artifact_version": {
+                "const": 1
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidate_quantity_ref": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "candidate_quantity_ref": {
+                "$ref": "#/$defs/artifact_ref"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "stage_request": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "stage_request",
+          "description": "1. kind."
+        },
+        "schema_version": {
+          "const": "0.1.0-draft.2",
+          "description": "2. schema version."
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "3. artifact id."
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "4. artifact version."
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "supplied",
+            "synthetic",
+            "derived",
+            "mock"
+          ],
+          "description": "5. provenance."
+        },
+        "binding": {
+          "$ref": "#/$defs/approved_binding",
+          "description": "6. binding."
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "7. run id."
+        },
+        "execution_contract_ref": {
+          "$ref": "#/$defs/artifact_ref",
+          "description": "8. execution contract ref."
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "approved_execution",
+            "preparation",
+            "initial_baseline_evaluation",
+            "llm_features",
+            "comparison_and_freeze",
+            "final_validation",
+            "recommendations",
+            "output_verification"
+          ],
+          "description": "1. checkpoint."
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "10. attempt."
+        },
+        "parent_authorization": {
+          "$ref": "#/$defs/parent_decision",
+          "description": "11. parent authorization."
+        },
+        "released_input_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifact_ref"
+          },
+          "minItems": 0,
+          "description": "12. released input refs."
+        },
+        "remaining_limits": {
+          "$ref": "#/$defs/remaining_limits",
+          "description": "13. remaining limits."
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "14. issued at."
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "description": "15. deadline."
+        },
+        "output_namespace": {
+          "type": "string",
+          "minLength": 1,
+          "description": "16. output namespace."
+        }
+      },
+      "required": [
+        "kind",
+        "schema_version",
+        "artifact_id",
+        "artifact_version",
+        "provenance",
+        "binding",
+        "run_id",
+        "execution_contract_ref",
+        "stage",
+        "attempt",
+        "parent_authorization",
+        "released_input_refs",
+        "remaining_limits",
+        "issued_at",
+        "deadline",
+        "output_namespace"
+      ],
+      "additionalProperties": false
+    },
+    "remaining_limits": {
+      "type": "object",
+      "properties": {
+        "max_candidates": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "1. max candidates."
+        },
+        "max_llm_feature_definitions": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "2. max llm feature definitions."
+        },
+        "max_defect_rechecks": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "3. max defect rechecks."
+        },
+        "max_parent_reviews": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "4. max parent reviews."
+        },
+        "max_execution_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "5. max execution seconds."
+        },
+        "max_stage_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "6. max stage attempts."
+        }
+      },
+      "required": [
+        "max_candidates",
+        "max_llm_feature_definitions",
+        "max_defect_rechecks",
+        "max_parent_reviews",
+        "max_execution_seconds",
+        "max_stage_attempts"
+      ],
+      "additionalProperties": false,
+      "description": "Nonnegative unconsumed ceilings supplied by the parent for this stage attempt."
+    }
+  }
+}

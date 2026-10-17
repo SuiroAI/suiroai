@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0-draft.2",
+  "owner": "DSC-24",
+  "status": "review_requested",
+  "schema_sha256": "847fc00f6618aca6ffccda60a33cbcebe6b98174871c0b7794e109c64e20c65b",
+  "files": {
+    "src/suiroai/contracts/schema/retail-contract.schema.json": "847fc00f6618aca6ffccda60a33cbcebe6b98174871c0b7794e109c64e20c65b",
+    "src/suiroai/contracts/validation.py": "dbb322a99dff8693948b6b09052726b02dfaf4d44edf3a7ee6f4e2d9b4f6c37f",
+    "examples/contracts/v0.1.0/approved_execution.json": "35c74d602e6eab0d004d7bca6de972d6a734ddaec4c4950f11c205c1fb8a8c21",
+    "examples/contracts/v0.1.0/execution_failed.json": "666c55abd1cbae71f5819f1b62b71b04cda3859542c420e59af92c83b04a1422",
+    "examples/contracts/v0.1.0/missing_inputs.json": "cc5fbe393bfa291da92fe12d716d7979b8144d9519fce82f1cce73a0c9df959b",
+    "examples/contracts/v0.1.0/successful_analysis.json": "a181275bb7aca03309a5c9519cf1f207a9e76723f0a52e2b16bf6c2e664bb774",
+    "examples/contracts/v0.1.0/validation_failed.json": "68b8ae5cf191b48e7bb3e7bffff10ac61f0c85f8c6cac5e8cdbdf427cd56de30"
+  },
+  "stable_after_owner_ack": [
+    "submission_and_approval_bindings",
+    "execution_and_stage_handoffs",
+    "preparation_feature_evaluation_validation_results",
+    "quantity_report_verification_and_evidence"
+  ],
+  "real_execution_accepted": false,
+  "source_audit_not_pipeline_evidence": true,
+  "consumer_owners": [
+    "DSC-3",
+    "DSC-10",
+    "DSC-25",
+    "DSC-26",
+    "DSC-27",
+    "DSC-28",
+    "DSC-29",
+    "DSC-30",
+    "DSC-56",
+    "DSC-31",
+    "DSC-9"
+  ]
+}
