@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0-draft.3",
   "owner": "DSC-24",
-  "status": "review_requested",
+  "status": "agreed_for_parallel_mvp_development",
   "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
   "files": {
     "src/suiroai/contracts/schema/retail-contract.schema.json": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
@@ -12,12 +12,6 @@
     "examples/contracts/v0.1.0/successful_analysis.json": "7256c8a570c6badfbddc89fd4c5171e1484974f444b7a84491078f2ae4f91aea",
     "examples/contracts/v0.1.0/validation_failed.json": "5a02591e447ba3e760230299e01a61a0c289bbf8fa2a38aaf383ded9f7bcfb67"
   },
-  "stable_after_owner_ack": [
-    "submission_and_approval_bindings",
-    "execution_and_stage_handoffs",
-    "preparation_feature_evaluation_validation_results",
-    "quantity_report_verification_and_evidence"
-  ],
   "real_execution_accepted": false,
   "source_audit_not_pipeline_evidence": true,
   "consumer_owners": [
@@ -35,5 +29,30 @@
   ],
   "regression_tests_passed": 77,
   "source_checks_passed": 41,
-  "source_checks_failed": 0
+  "source_checks_failed": 0,
+  "code_commit": "dd3e0dda1b759ebe5439e78e8cf10e3374eb700b",
+  "stable_definitions": [
+    "submission_and_approval_bindings",
+    "execution_and_stage_handoffs",
+    "preparation_feature_evaluation_validation_results",
+    "quantity_report_verification_and_evidence"
+  ],
+  "owner_acknowledgements": [
+    {
+      "owner": "DSC-3",
+      "thread_id": "01a14ad0-4645-7661-b396-a295d232196e",
+      "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "scope": "structural_development_interface_only",
+      "independent_regression_tests_passed": 77,
+      "snapshot_file_hashes_verified": 7
+    },
+    {
+      "owner": "DSC-26",
+      "thread_id": "01a14ad0-60c2-7c43-bdfa-3ce602d3794e",
+      "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "scope": "structural_handoff_interface_only",
+      "independent_regression_tests_passed": 77,
+      "snapshot_file_hashes_verified": 7
+    }
+  ]
 }
