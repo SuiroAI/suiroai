@@ -308,7 +308,7 @@ def run_probe(rpc, stage, output, report):
     (stage / "binding.json").write_bytes(binding_bytes)
     report["binding"] = binding
     thread = rpc.request("thread/start", {"cwd": str(stage), "approvalPolicy": "never",
-                                          "sandbox": "workspaceWrite"})
+                                          "sandbox": "workspace-write"})
     report["thread_start"] = thread
     thread_id = (thread.get("thread") or {}).get("id")
     require(isinstance(thread_id, str) and thread_id, "native_thread_id_absent")

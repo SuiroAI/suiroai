@@ -6,6 +6,8 @@ Later evidence: the user's normal Terminal successfully initialized this app-ser
 
 The user's subsequent native CLI catalog query also confirmed Data `1.0.11` installed and enabled as `data-analytics@openai-curated-remote`. Installation is therefore verified for that Terminal context. Its absent `skills/list` entry is not sufficient to declare remote Data unavailable: the official protocol separately documents on-demand remote skill retrieval. Native retrieval and actual invocation remain to be exercised; reinstalling or copying the cached skills is not justified by these results.
 
+Latest probe: the corrected remote-ID lookup verified installation/enabled state in the same app-server connection, and native remote skill retrieval succeeded. Its subsequent `thread/start` request was rejected for an incorrect sandbox enum in the probe. That request spelling is now corrected and covered by installed-protocol schema regressions. An analytical turn and real Data artifact retrieval remain unverified. See [SYNTHETIC_PROBE.md](SYNTHETIC_PROBE.md) for the ordered evidence and corrections.
+
 ## Observed result
 
 The installed Codex CLI reports `codex-cli 0.163.0`. Two engineering probes attempted the documented app-server stdio interface. Both child processes exited with code 1 before replying to `initialize`. Neither reached `skills/list`, `thread/start`, or `turn/start`. No synthetic calculation or customer analysis ran, and no analytical artifact was produced or retrieved.
