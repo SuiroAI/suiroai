@@ -18,6 +18,36 @@ A narrow future engineering probe can create a released synthetic file, an unrel
 
 Until this is exercised, customer dispatch returns `unsupported_integration`. A new cwd or a date-filter prompt is insufficient. No separate sandbox service or custom runtime is authorized.
 
+The next engineering check is now prepared:
+
+```sh
+python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_native_isolation.py
+```
+
+Run it in the normal Terminal that completed the earlier native probes. It uses
+fresh synthetic files and process-scoped configuration overrides. Global Codex
+configuration is not edited. Metadata and deterministic command controls have a
+120-second bound; at most one 90-second Data turn follows, with bounded cleanup.
+Named profile fields are explicitly experimental for CLI 0.163.0.
+
+The declared worker is tabular: native image/browser/web tools, memories, other
+plugins, apps and configured MCP servers are disabled for this process. The probe
+checks effective configuration and actual thread MCP inventory before the Data
+turn. Empty config tables are not treated as removing inherited connectors;
+each discovered connector is disabled explicitly. It does not test or claim
+native image-tool denial. See the [source audit](ISOLATION_PROBE.md) for the
+stable-history limitation that led to this explicit scope.
+
+Native command controls must show a real released-file calculation and output
+write, plus genuine permission errors for an existing unreleased sentinel,
+its symlink, protected-input/outside-output writes and a controlled network
+connection. Trusted-side hashes preserve the distinction between denial and a
+missing or changed fixture. If these checks pass, one native Data turn must
+read its actual installed resources, execute code, and return matching artifact
+bytes under the same profile. Missing receipts, unexpected tools, rejected
+configuration or partial inventory produce an honest blocker. No probe status
+automatically enables customer dispatch or closes DSC-26.
+
 ## Failure evidence
 
 `evidence/integration/probe_native_failures.py` provides one normal-Terminal command for three synthetic probes: intentional invalid Python without repair, cancellation only after an actual native `turn/started` event, and a finite timeout. Each turn has a 60-second total native-operation bound, with at most ten extra seconds for interrupt acknowledgement and bounded process cleanup. The script reports actual observed results or incomplete evidence; it never grants automatic acceptance.
