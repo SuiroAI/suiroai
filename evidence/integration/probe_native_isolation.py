@@ -10,6 +10,8 @@ import json
 import os
 from pathlib import Path
 import secrets
+import selectors
+import signal
 import shlex
 import shutil
 import socket
@@ -22,7 +24,7 @@ import tomllib
 import zlib
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from suiroai.integration.native import DataPluginSpec, NativeHost, NativeRun, _Stop, _Transport, _matched_commands, _python_invocation, _safe
+from suiroai.integration.native import DataPluginSpec, NativeHost, NativeRun, _Stop, _Transport, _check, _matched_commands, _python_invocation, _safe
 
 SPEC = DataPluginSpec(skill_sha256="a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e")
 DATA_ROOT = Path("/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11")
@@ -36,6 +38,153 @@ PNG = tiny_png()
 DISABLED_FEATURES = ("apps", "browser_use", "browser_use_external", "browser_use_full_cdp_access",
     "computer_use", "in_app_browser", "in_app_local_automation", "multi_agent", "memories", "view_image")
 ENABLED_FEATURES = ("plugins", "code_mode_host")
+FALLBACK_WARNING_PREFIX = "Warning: failed to list remote marketplace plugins:"
+
+
+def inventory_diagnostics(stderr):
+    # rust-v0.163.0 cli/src/plugin_cmd.rs895–897 emits this exact prefix before
+    # returning an empty remote listing. Keep its identity, never the error body.
+    fallback = any(line.startswith(FALLBACK_WARNING_PREFIX)
+        for line in stderr.decode(errors="replace").splitlines())
+    return {"fallback_observed": fallback, "raw_stderr_omitted": True,
+        "source_warning": FALLBACK_WARNING_PREFIX if fallback else None,
+        "source": "rust-v0.163.0/codex-rs/cli/src/plugin_cmd.rs:895"}
+
+
+def bounded_plugin_inventory(executable, cwd, deadline, report, cancellation=None):
+    """One actual CLI inventory, with finite capture and process-group cleanup."""
+    command = [str(executable), "plugin", "list", "--json"]
+    started = time.monotonic()
+    receipt = {"phase": "plugin_inventory", "command": command, "status": "starting",
+        "limit_seconds": max(0, deadline - started), "stdout_limit_bytes": 2 * 1024 * 1024,
+        "stderr_limit_bytes": 64 * 1024, "exit_code": None}
+    report["plugin_inventory_command"] = receipt
+    buffers = {"stdout": bytearray(), "stderr": bytearray()}
+    hashes = {name: sha256() for name in buffers}
+    counts = {name: 0 for name in buffers}
+    process = None
+    selector = selectors.DefaultSelector()
+    try:
+        _check(deadline, cancellation)
+        process = subprocess.Popen(command, cwd=cwd, stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        receipt["status"] = "running"
+        for name in buffers:
+            stream = getattr(process, name)
+            os.set_blocking(stream.fileno(), False)
+            selector.register(stream, selectors.EVENT_READ, name)
+        while selector.get_map():
+            _check(deadline, cancellation)
+            for key, _ in selector.select(min(0.05, max(0, deadline - time.monotonic()))):
+                try: chunk = os.read(key.fileobj.fileno(), 65536)
+                except BlockingIOError: continue
+                if not chunk:
+                    selector.unregister(key.fileobj)
+                    continue
+                name = key.data
+                counts[name] += len(chunk)
+                hashes[name].update(chunk)
+                limit = receipt[name + "_limit_bytes"]
+                if counts[name] > limit:
+                    raise _Stop("budget_exhausted", "Native plugin inventory " + name + " exceeded its byte limit")
+                buffers[name].extend(chunk)
+        while process.poll() is None:
+            _check(deadline, cancellation)
+            try: process.wait(timeout=min(0.05, max(0.001, deadline - time.monotonic())))
+            except subprocess.TimeoutExpired: pass
+        receipt["exit_code"] = process.returncode
+        receipt["diagnostics"] = inventory_diagnostics(buffers["stderr"])
+        require(process.returncode == 0, "Native installed-plugin inventory exited unsuccessfully")
+        require(not receipt["diagnostics"]["fallback_observed"],
+            "Native CLI used remote-marketplace fallback; complete installed inventory is not established")
+        try: inventory = json.loads(buffers["stdout"])
+        except (ValueError, UnicodeDecodeError) as exc:
+            raise _Stop("integrity_error", "Native installed-plugin inventory was not JSON") from exc
+        require(isinstance(inventory, dict) and isinstance(inventory.get("installed"), list),
+                "Native installed-plugin inventory has no installed list")
+        installed = inventory["installed"]
+        require(all(isinstance(entry, dict) and isinstance(entry.get("pluginId"), str) and entry["pluginId"]
+                    for entry in installed), "Native installed-plugin inventory entry is malformed")
+        selected = [entry for entry in installed if entry["pluginId"] == SPEC.plugin_id]
+        receipt["installed_count"] = len(installed)
+        receipt["selected_data_entry_count"] = len(selected)
+        receipt["data_entries"] = [{key: entry.get(key) for key in ("pluginId", "enabled", "installed", "version")}
+            | {"source_id": entry["source"].get("id") if isinstance(entry.get("source"), dict) else None}
+            for entry in selected]
+        require(len(selected) == 1 and selected[0].get("enabled") is True and selected[0].get("installed") is True
+            and selected[0].get("version") == SPEC.version and isinstance(selected[0].get("source"), dict)
+            and selected[0]["source"].get("id") == SPEC.remote_plugin_id,
+            "Exact installed Data inventory/version unavailable")
+        entry = selected[0]
+        receipt["data_entry"] = {key: entry[key] for key in ("pluginId", "enabled", "installed", "version")}
+        receipt["data_entry"]["source_id"] = entry["source"]["id"]
+        receipt["status"] = "verified"
+        return {entry["pluginId"] for entry in installed}
+    except BaseException as exc:
+        receipt["status"] = getattr(exc, "code", "interrupted" if isinstance(exc, KeyboardInterrupt) else "runtime_error")
+        raise
+    finally:
+        cleanup = {"term_sent": False, "kill_sent": False, "direct_child_reaped": process is None}
+        if process is not None:
+            for signum, field in ((signal.SIGTERM, "term_sent"), (signal.SIGKILL, "kill_sent")):
+                try:
+                    os.killpg(process.pid, signum)
+                    cleanup[field] = True
+                except ProcessLookupError: pass
+                except OSError as exc:
+                    cleanup[field + "_error_errno"] = exc.errno
+                try: process.wait(timeout=0.5)
+                except subprocess.TimeoutExpired: pass
+            cleanup["direct_child_reaped"] = process.poll() is not None
+            receipt["exit_code"] = process.returncode
+            for name in buffers:
+                getattr(process, name).close()
+        selector.close()
+        receipt["cleanup"] = cleanup
+        receipt["elapsed_seconds"] = round(time.monotonic() - started, 6)
+        for name in buffers:
+            receipt[name + "_observed_bytes"] = counts[name]
+            receipt[name + "_observed_sha256"] = hashes[name].hexdigest()
+        # Plugin diagnostics may contain account details: retain measurements only.
+        receipt["stderr_content_omitted"] = counts["stderr"] > 0
+        receipt["diagnostics"] = inventory_diagnostics(buffers["stderr"])
+        if not cleanup["direct_child_reaped"] or any(key.endswith("_error_errno") for key in cleanup):
+            receipt["status_before_cleanup_failure"] = receipt["status"]
+            receipt["status"] = "runtime_error"
+            raise _Stop("runtime_error", "Native plugin inventory process-group cleanup could not be completed within its limits")
+
+
+def discovery_timeout(value):
+    try: parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be an integer from 1 through 120") from exc
+    if not 1 <= parsed <= 120:
+        raise argparse.ArgumentTypeError("must be an integer from 1 through 120")
+    return parsed
+
+
+def discover_plugins(executable, output, evidence, timeout_seconds, report):
+    started = time.monotonic()
+    deadline = started + timeout_seconds
+    receipt = {"limit_seconds": timeout_seconds, "status": "running"}
+    report["discovery_phase"] = receipt
+    try:
+        with (evidence / "bootstrap.jsonl").open("w") as log:
+            rpc = ProjectedTransport(executable, output, log)
+            try:
+                initialize(rpc, deadline)
+                config = config_maps(rpc.request("config/read", {"cwd": str(output), "includeLayers": False}, deadline))
+                servers = list(config.get("mcp_servers") or {})
+                configured_plugins = set(config.get("plugins") or {})
+            finally: rpc.close()
+        plugin_ids = bounded_plugin_inventory(executable, output, deadline, report)
+        receipt["status"] = "verified"
+        return servers, configured_plugins | plugin_ids
+    except BaseException as exc:
+        receipt["status"] = getattr(exc, "code", "interrupted" if isinstance(exc, KeyboardInterrupt) else "runtime_error")
+        raise
+    finally:
+        receipt["elapsed_seconds"] = round(time.monotonic() - started, 6)
 
 
 def retained_report(value):
@@ -621,7 +770,9 @@ def run_model(rpc, paths, profile, report):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
+    parser.add_argument("--discovery-timeout-seconds", type=discovery_timeout, default=60,
+        help="Total bootstrap and installed-plugin discovery budget (1–120; default 60)")
+    args = parser.parse_args()
     root = Path(tempfile.mkdtemp(prefix="dsc26-native-isolation-", dir="/private/tmp"))
     released, output, evidence, denied = (root / name for name in ("released", "output", "evidence", "unreleased"))
     for directory in (released, output, evidence, denied): directory.mkdir()
@@ -648,29 +799,17 @@ def main():
         "declared_scope": "Tabular Data worker; view_image, browser, web, apps, external MCP and other plugins disabled",
         "unexercised": ["Native image helper denial (tool disabled)", "Native apply_patch negative permission control (source forwarding only)",
             "Customer analytical execution", "Upstream quota exhaustion"],
-        "status": "blocked_or_incomplete", "remaining_limits": "One Data turn <=90s; control phase <=120s; RPC <=20s"}
-    deadline = time.monotonic() + 120
+        "status": "blocked_or_incomplete", "remaining_limits": "Discovery <=" + str(args.discovery_timeout_seconds)
+            + "s; one Data turn <=90s; fresh control phase <=120s; RPC <=20s",
+        "limits": {"discovery_seconds": args.discovery_timeout_seconds, "control_seconds": 120, "model_seconds": 90}}
     try:
         executable = shutil.which("codex")
         require(executable, "Codex CLI unavailable")
-        with (evidence / "bootstrap.jsonl").open("w") as log:
-            rpc = ProjectedTransport(executable, output, log)
-            try:
-                initialize(rpc, deadline)
-                config = config_maps(rpc.request("config/read", {"cwd": str(output), "includeLayers": False}, deadline))
-                servers = list(config.get("mcp_servers") or {})
-                configured_plugins = set(config.get("plugins") or {})
-            finally: rpc.close()
-        inventory = subprocess.run([executable, "plugin", "list", "--json"], cwd=output,
-            capture_output=True, timeout=min(20, max(0.01, deadline - time.monotonic())), check=True)
-        installed = json.loads(inventory.stdout).get("installed", [])
-        selected = [entry for entry in installed if entry.get("pluginId") == SPEC.plugin_id]
-        require(len(selected) == 1 and selected[0].get("enabled") is True and selected[0].get("installed") is True
-            and selected[0].get("version") == SPEC.version and (selected[0].get("source") or {}).get("id") == SPEC.remote_plugin_id,
-            "Exact installed Data inventory/version unavailable")
-        plugin_ids = configured_plugins | {entry["pluginId"] for entry in installed}
+        servers, plugin_ids = discover_plugins(executable, output, evidence, args.discovery_timeout_seconds, report)
         overrides = profile_overrides(profile, released, output, servers, plugin_ids)
         report["config_overrides"] = overrides
+        # Discovery never consumes the bounded deterministic-control budget.
+        deadline = time.monotonic() + 120
         with (evidence / "native-rpc.jsonl").open("w") as log:
             rpc = ProjectedTransport(executable, output, log, config_overrides=overrides, selected_profile=profile)
             try:

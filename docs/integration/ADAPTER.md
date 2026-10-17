@@ -80,7 +80,7 @@ not infer acceptance from the presence of a stored object.
 
 ## Checks completed locally
 
-On October 17, 2026, 89 integration tests passed, including schema checks against
+On October 17, 2026, 99 integration tests passed, including schema checks against
 the installed native CLI, approval/version mutations, source-byte integrity,
 typed failure/gap distinctions, interruption requests and immutable output
 collisions. All simulated execution fixtures are explicitly mocked. The 77
@@ -112,6 +112,11 @@ The candidate had disabled the native code host required by the selected model's
 requires actual model-delegated command denial evidence under the same profile;
 it does not replace Data or restore external connectors. Source review and
 mocked checks cannot satisfy this outstanding real execution check.
+The following attempt timed out in local plugin inventory before any controls
+or model turn. The engineering probe now uses a separate bounded discovery
+budget (60 seconds by default), preserving exact identity checks and the
+existing 90-second synthetic turn limit. This does not extend the adapter's
+customer execution budget. See the [discovery timeout evidence](../../evidence/integration/native-inventory-timeout-2026-10-17/observation.json).
 A fresh cwd, read-only copies and the legacy
 `workspace-write` write sandbox do not establish that boundary. The raw sales
 file contains December outcomes and must not enter development context. No

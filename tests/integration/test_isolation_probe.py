@@ -9,6 +9,7 @@ import subprocess
 import struct
 import tempfile
 import time
+from threading import Event, Timer
 import tomllib
 import unittest
 from unittest.mock import patch, MagicMock
@@ -34,6 +35,183 @@ def control_payload():
     return {"positive": {"row_count": 3, "group_totals": {"A": 5, "B": 5}, "total_units": 10},
         "checks": {name: {"denied": True, "type": "PermissionError", "errno": 13}
             for name in ("sentinel_open", "symlink_open", "input_write", "outside_write", "network")}}
+
+
+class BoundedInventoryTests(unittest.TestCase):
+    """Local fake CLI subprocesses only; never invoke Codex or a model."""
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-inventory-")
+        self.addCleanup(self.directory.cleanup)
+        self.root = Path(self.directory.name)
+        self.executable = self.root / "fake-cli"
+        self.entry = {"pluginId": PROBE.SPEC.plugin_id, "installed": True, "enabled": True,
+            "version": PROBE.SPEC.version, "source": {"id": PROBE.SPEC.remote_plugin_id},
+            "private_account_detail": "DO_NOT_RETAIN"}
+
+    def fake_cli(self, source):
+        self.executable.write_text("#!" + str(Path(PROBE.sys.executable).resolve()) + "\n" + source)
+        self.executable.chmod(0o700)
+
+    def invoke(self, seconds=3, cancellation=None):
+        report = {}
+        try:
+            value = PROBE.bounded_plugin_inventory(self.executable, self.root,
+                time.monotonic() + seconds, report, cancellation)
+            return value, report["plugin_inventory_command"]
+        finally:
+            self.receipt = report.get("plugin_inventory_command")
+
+    def test_exact_identity_and_all_plugins_are_preserved_without_private_fields(self):
+        installed = [self.entry, {"pluginId": "mock-other-plugin"}]
+        self.fake_cli("import sys\nsys.stderr.write('Warning: benign PATH alias notice\\n')\nprint(" + repr(json.dumps({"installed": installed})) + ")\n")
+        plugins, receipt = self.invoke()
+        self.assertEqual(plugins, {PROBE.SPEC.plugin_id, "mock-other-plugin"})
+        self.assertEqual(receipt["status"], "verified")
+        self.assertEqual(receipt["exit_code"], 0)
+        self.assertFalse(receipt["diagnostics"]["fallback_observed"])
+        self.assertTrue(receipt["cleanup"]["direct_child_reaped"])
+        self.assertNotIn("DO_NOT_RETAIN", json.dumps(receipt))
+        self.assertNotIn("PATH alias", json.dumps(receipt))
+        self.assertEqual(receipt["data_entry"]["source_id"], PROBE.SPEC.remote_plugin_id)
+
+    def test_known_native_fallback_is_precise_and_other_diagnostics_do_not_block(self):
+        self.fake_cli("import sys\nsys.stderr.write(" + repr(PROBE.FALLBACK_WARNING_PREFIX + " PRIVATE_ERROR_BODY\n")
+            + ")\nprint(" + repr(json.dumps({"installed": [self.entry]})) + ")\n")
+        with self.assertRaisesRegex(_Stop, "remote-marketplace fallback"):
+            self.invoke()
+        self.assertTrue(self.receipt["diagnostics"]["fallback_observed"])
+        self.assertEqual(self.receipt["diagnostics"]["source_warning"], PROBE.FALLBACK_WARNING_PREFIX)
+        self.assertNotIn("PRIVATE_ERROR_BODY", json.dumps(self.receipt))
+
+    def test_identity_failure_and_invalid_json_retain_measured_receipts(self):
+        cases = [({"installed": [{**self.entry, "version": "wrong"}]}, "Exact installed Data"),
+            ({"installed": [self.entry, self.entry]}, "Exact installed Data"),
+            ({"installed": [{**self.entry, "enabled": False}]}, "Exact installed Data"),
+            ({"installed": [self.entry, {"pluginId": None}]}, "entry is malformed")]
+        for payload, error in cases:
+            self.fake_cli("print(" + repr(json.dumps(payload)) + ")\n")
+            with self.subTest(error=error), self.assertRaisesRegex(_Stop, error): self.invoke()
+            self.assertEqual(self.receipt["exit_code"], 0)
+            self.assertGreater(self.receipt["stdout_observed_bytes"], 0)
+            self.assertTrue(self.receipt["cleanup"]["direct_child_reaped"])
+        self.fake_cli("print('not json')\n")
+        with self.assertRaisesRegex(_Stop, "not JSON"): self.invoke()
+        self.assertEqual(self.receipt["status"], "integrity_error")
+
+    def test_stdout_and_stderr_caps_stop_capture_and_reap_child(self):
+        for stream, size in (("stdout", 2 * 1024 * 1024), ("stderr", 64 * 1024)):
+            self.fake_cli("import os,time\nos.write(" + str(1 if stream == "stdout" else 2)
+                + ", b'x' * " + str(size + 65536) + ")\ntime.sleep(10)\n")
+            with self.subTest(stream=stream), self.assertRaisesRegex(_Stop, "byte limit"): self.invoke()
+            self.assertEqual(self.receipt["status"], "budget_exhausted")
+            self.assertGreater(self.receipt[stream + "_observed_bytes"], size)
+            self.assertLessEqual(self.receipt[stream + "_observed_bytes"], size + 65536)
+            self.assertTrue(self.receipt["cleanup"]["direct_child_reaped"])
+            self.assertTrue(self.receipt["cleanup"]["term_sent"])
+
+    def test_timeout_stops_same_group_descendant_holding_capture_pipes(self):
+        heartbeat = self.root / "heartbeat"
+        child = "import pathlib,time\np=pathlib.Path(" + repr(str(heartbeat)) + ")\nwhile True:\n p.write_text(str(time.monotonic()))\n time.sleep(.02)\n"
+        self.fake_cli("import subprocess,sys,time\nsubprocess.Popen([sys.executable,'-c'," + repr(child) + "])\ntime.sleep(10)\n")
+        started = time.monotonic()
+        with self.assertRaisesRegex(_Stop, "finite deadline"): self.invoke(seconds=2)
+        self.assertLess(time.monotonic() - started, 4)
+        self.assertEqual(self.receipt["status"], "timeout")
+        self.assertTrue(self.receipt["cleanup"]["term_sent"])
+        self.assertTrue(self.receipt["cleanup"]["direct_child_reaped"])
+        self.assertTrue(heartbeat.exists(), "Fake descendant must actually start to exercise cleanup")
+        before = heartbeat.read_bytes()
+        time.sleep(.1)
+        self.assertEqual(heartbeat.read_bytes(), before)
+
+    def test_inflight_cancellation_has_cleanup_and_nonzero_stderr_is_not_dumped(self):
+        self.fake_cli("import time\ntime.sleep(10)\n")
+        cancelled = Event()
+        timer = Timer(.2, cancelled.set)
+        timer.start()
+        try:
+            with self.assertRaises(_Stop) as raised: self.invoke(cancellation=cancelled)
+            self.assertEqual(raised.exception.code, "cancelled")
+            self.assertTrue(self.receipt["cleanup"]["direct_child_reaped"])
+        finally: timer.cancel()
+        self.fake_cli("import sys\nsys.stderr.write('PRIVATE_NONZERO_ERROR')\nsys.exit(4)\n")
+        with self.assertRaisesRegex(_Stop, "exited unsuccessfully"): self.invoke()
+        self.assertEqual(self.receipt["exit_code"], 4)
+        self.assertGreater(self.receipt["stderr_observed_bytes"], 0)
+        self.assertNotIn("PRIVATE_NONZERO_ERROR", json.dumps(self.receipt))
+
+    def test_bootstrap_and_inventory_use_one_shared_discovery_deadline(self):
+        deadlines = []
+        class Bootstrap:
+            def __init__(self, *args): pass
+            def request(self, method, params, deadline):
+                deadlines.append(deadline)
+                return {"config": {"mcp_servers": {}, "plugins": {}}}
+            def close(self): pass
+        def inventory(executable, cwd, deadline, report):
+            deadlines.append(deadline)
+            return {PROBE.SPEC.plugin_id}
+        with patch.object(PROBE, "ProjectedTransport", Bootstrap), patch.object(PROBE, "initialize"), \
+             patch.object(PROBE, "bounded_plugin_inventory", side_effect=inventory):
+            report = {}
+            servers, plugins = PROBE.discover_plugins(self.executable, self.root, self.root, 60, report)
+        self.assertEqual(deadlines[0], deadlines[1])
+        self.assertEqual(servers, [])
+        self.assertEqual(plugins, {PROBE.SPEC.plugin_id})
+        self.assertEqual(report["discovery_phase"]["status"], "verified")
+
+    def test_consumed_discovery_time_does_not_shorten_control_budget(self):
+        root = self.root / "fresh-budget"
+        root.mkdir()
+        clock = {"now": 0}
+        def discovery(*args):
+            clock["now"] = 59
+            return [], {PROBE.SPEC.plugin_id}
+        class NativeControlTransport:
+            def __init__(self, *args, config_overrides, **kwargs):
+                self.config = {}
+                for value in config_overrides: self.config.update(tomllib.loads(value))
+                self.events, self.rejected_requests = [], []
+            def request(self, method, params, deadline): return {"config": self.config}
+            def close(self): pass
+        def control(rpc, paths, profile, report, deadline):
+            self.assertEqual(deadline, 179)
+            raise _Stop("runtime_error", "MOCK stop before actual controls")
+        with patch.object(PROBE.sys, "argv", ["probe"]), \
+             patch.object(PROBE.tempfile, "mkdtemp", return_value=str(root)), \
+             patch.object(PROBE.shutil, "which", return_value=str(self.executable)), \
+             patch.object(PROBE.time, "monotonic", side_effect=lambda: clock["now"]), \
+             patch.object(PROBE, "discover_plugins", side_effect=discovery), \
+             patch.object(PROBE, "ProjectedTransport", NativeControlTransport), patch.object(PROBE, "initialize", return_value={}), \
+             patch.object(PROBE, "run_control", side_effect=control) as controls, \
+             patch.object(PROBE, "run_model_with_control") as model, patch("sys.stdout", new=io.StringIO()):
+            self.assertEqual(PROBE.main(), 2)
+        controls.assert_called_once()
+        model.assert_not_called()
+
+    def test_discovery_failure_cannot_start_control_or_model_phase(self):
+        root = self.root / "probe"
+        root.mkdir()
+        with patch.object(PROBE.sys, "argv", ["probe"]), \
+             patch.object(PROBE.tempfile, "mkdtemp", return_value=str(root)), \
+             patch.object(PROBE.shutil, "which", return_value=str(self.executable)), \
+             patch.object(PROBE, "discover_plugins", side_effect=_Stop("timeout", "MOCK discovery timeout")), \
+             patch.object(PROBE, "run_control") as control, patch.object(PROBE, "run_model_with_control") as model, \
+             patch("sys.stdout", new=io.StringIO()):
+            self.assertEqual(PROBE.main(), 2)
+        control.assert_not_called()
+        model.assert_not_called()
+        report = json.loads((root / "evidence/isolation-evidence.json").read_text())
+        self.assertFalse(report["model_turn_requested"])
+        self.assertEqual(report["error_code"], "timeout")
+        self.assertEqual(report["limits"]["discovery_seconds"], 60)
+
+    def test_discovery_argument_has_a_finite_integer_range(self):
+        for value in ("1", "60", "120"):
+            self.assertEqual(PROBE.discovery_timeout(value), int(value))
+        for value in ("0", "121", "-1", "1.5", "nan"):
+            with self.subTest(value=value), self.assertRaises(PROBE.argparse.ArgumentTypeError):
+                PROBE.discovery_timeout(value)
 
 
 class MockRPC:
