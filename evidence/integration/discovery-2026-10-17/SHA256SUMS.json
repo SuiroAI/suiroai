@@ -1,0 +1,6 @@
+{
+  "appserver-default.json": "c0be36289b9c24046d235afc955504eb2424553e3431b7db679fcee0148c872e",
+  "appserver-writable-state.json": "64b4ee7d10c9692589d015904cd48f4fd1b6295f0c4559a44afda9e063ba9297",
+  "inventory.json": "8e7938da2f3d527f727d462ecb21ed0d8b237f0838cbe61bd2a600ee161c52be",
+  "observation-checks.json": "6c82f671e422bc1573a4396ab2d96bdae36ef43243943b0e03406d4fbf95e993"
+}

@@ -1,0 +1,36 @@
+# Actual DSC-26 engineering probe recipe
+
+2026-10-17. This is a record of a one-off capability probe, not an application transport or an analytical runtime.
+
+The local executable was inspected with `command -v codex`, `codex --version`, `codex exec --help`, and `codex app-server --help`. The executable was `/opt/homebrew/bin/codex`, reporting `codex-cli 0.163.0`.
+
+Two Python standard-library harness invocations used `subprocess.Popen` with separate stdin/stdout/stderr pipes, text mode, `bufsize=1`, and `selectors.DefaultSelector`. Working directory: `/Users/ceverson/Development/SuiroAI`. The child argument lists were:
+
+```json
+["codex", "app-server", "--listen", "stdio://"]
+```
+
+```json
+["codex", "app-server", "--listen", "stdio://", "-c", "sqlite_home=\"/private/tmp/dsc26-host-state\""]
+```
+
+The second harness created only the permitted temporary state directory with `Path.mkdir(exist_ok=True)`. It did not change `CODEX_HOME`, copy authentication, edit host configuration, enable experimental API capabilities, or override host permissions.
+
+The harness wrote this JSON request followed by a newline and flushed stdin:
+
+```json
+{"id":1,"method":"initialize","params":{"clientInfo":{"name":"dsc26_engineering_probe","title":"DSC-26 engineering capability probe","version":"0.1.0"}}}
+```
+
+Only after a successful response with `id: 1` would it have sent these messages:
+
+```json
+{"method":"initialized","params":{}}
+{"id":2,"method":"skills/list","params":{"cwds":["/Users/ceverson/Development/SuiroAI"],"forceReload":true}}
+```
+
+Neither was sent: the child exited before the initial response. No `thread/start`, `turn/start`, code execution, file-transfer or analytical request was included in either harness.
+
+The harness selected stdout/stderr in 0.5-second intervals with an overall 25-second monotonic deadline. It stopped on a discovery response, initialization error or process exit; cleanup requested process termination with a three-second wait and kill fallback. It saved received lines, actual sent requests, UTC time, child return code and `analytical_invocation: false`. Neither probe reached the deadline. This cleanup behavior is not an exercised Codex turn cancellation.
+
+The two original JSON records were saved in `/private/tmp/dsc26-appserver-discovery.json` and `/private/tmp/dsc26-appserver-discovery-writable-state.json`, then copied without modification into [the evidence directory](../../evidence/integration/discovery-2026-10-17/). Their byte hashes appear in `SHA256SUMS.json`. No model response, synthetic tool output, fixture result or mock was added to those records.
