@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "suiroai"
+version = "0.1.0"
+description = "SuiroAI single-case retail restocking MVP application"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.18,<5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/suiroai"]
