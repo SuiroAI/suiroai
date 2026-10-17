@@ -64,6 +64,28 @@ class MockArtifactStoreTests(unittest.TestCase):
             self.store.put_bytes("mock-immutable", 1, "derived", b"MOCK first")
         self.assertEqual(self.store.read_bytes(ref), b"MOCK first")
 
+    def test_identity_preflight_distinguishes_absence_collision_and_corruption(self):
+        prospective = {"artifact_id": "mock-preflight", "version": 1,
+                       "sha256": hashlib.sha256(b"MOCK").hexdigest(), "provenance": "mock"}
+        self.assertIsNone(self.store.check_identity(prospective))
+        self.assertEqual(list((self.store.root / "refs").iterdir()), [])
+        exact = self.store.put_bytes("mock-preflight", 1, "mock", b"MOCK")
+        self.assertIsNone(self.store.check_identity(exact))
+        for conflicting in [dict(exact, sha256="0" * 64), dict(exact, provenance="derived")]:
+            with self.subTest(ref=conflicting), self.assertRaises(ArtifactError):
+                self.store.check_identity(conflicting)
+        blob = self.store.root / "objects" / exact["sha256"]
+        blob.chmod(0o600)
+        blob.write_bytes(b"FAIL")
+        with self.assertRaisesRegex(ArtifactError, "measured artifact"):
+            self.store.check_identity(exact)
+        # A dangling receipt symlink is an unsafe existing identity, not absent.
+        registry = self.store.root / "refs" / self.store._registry_name(exact)
+        registry.unlink()
+        registry.symlink_to(self.directory / "nonexistent-receipt")
+        with self.assertRaises(ArtifactError):
+            self.store.check_identity(exact)
+
     def test_changed_blob_is_detected_even_at_same_size(self):
         ref = self.store.put_bytes("mock-tamper", 1, "mock", b"MOCK one")
         blob = self.store.root / "objects" / ref["sha256"]

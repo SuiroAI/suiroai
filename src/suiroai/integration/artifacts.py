@@ -140,6 +140,21 @@ class ArtifactStore:
         _, receipt = self._retrieve(ref)
         return receipt
 
+    def check_identity(self, ref):
+        """Allow a new or measured exact identity; reject collisions/corruption.
+
+        This is a read-only preflight, not a reservation or batch transaction.
+        A later writer must still use the immutable conditional write path.
+        Only a genuinely absent registry entry counts as a new identity.
+        """
+        ref = _checked_ref(ref)
+        with _directory(self.root / "refs") as fd:
+            try:
+                os.stat(self._registry_name(ref), dir_fd=fd, follow_symlinks=False)
+            except FileNotFoundError:
+                return
+        self._retrieve(ref)
+
     def _retrieve(self, ref):
         ref = _checked_ref(ref)
         with _directory(self.root / "refs") as fd:
