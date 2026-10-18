@@ -2,7 +2,7 @@
 
 This independent Python application supports implementation of one historical retail restocking case. The current foundation contains package configuration and reviewed architecture; it does not execute the customer workflow.
 
-Use Python 3.11 or later. From this directory, `uv sync --locked` installs the foundation after the lockfile is generated. `uv run --no-sync python -c "import suiroai"` checks package import. There is no customer executable, server or demo runner in this assignment.
+Use Python 3.11 or later. From this directory, `uv sync --locked` installs the foundation from the committed lockfile. `uv run --no-sync python -c "import suiroai"` checks package import. There is no customer executable, server or demo runner in this assignment.
 
 - [Architecture and integration blockers](docs/architecture/ARCHITECTURE.md)
 - [Exclusive component ownership](docs/architecture/OWNERSHIP.md)

@@ -6,7 +6,7 @@ This map was published before DSC-3 wrote application infrastructure. The select
 
 ## Coordination status
 
-The actual DSC-24 and DSC-26 session owners acknowledged the application layout and their exact reserved paths through cross-session messages. [COORDINATION.md](COORDINATION.md) records the session identities and acknowledgment evidence. The minimal foundation may now be written by DSC-3; concrete contract snapshot approval and real execution-boundary evidence remain separate waits. DSC-3's review subagents do not replace either actual owner. Consumers wait for the agreed DSC-24 interface snapshot, but not for every upstream implementation.
+The actual DSC-24 and DSC-26 session owners acknowledged the application layout, exact reserved paths and development contract snapshot `0.1.0-draft.3`. [COORDINATION.md](COORDINATION.md) records exact identities, hashes and evidence. The minimal DSC-3 foundation is committed; consumers may begin against that pinned snapshot without waiting for every upstream implementation. DSC-3's review subagents do not replace either actual owner. Real execution-boundary acceptance remains blocked on DSC-26 evidence.
 
 ## Exclusive write ownership
 
@@ -39,6 +39,6 @@ All paths are workspace-relative. An owner may create files only in its listed a
 ## Release of parallel work
 
 1. Layout/path acknowledgment is received from actual DSC-24 and DSC-26 sessions; exact evidence is recorded in [COORDINATION.md](COORDINATION.md). Each role uses an isolated Git worktree/branch from the DSC-3 foundation commit, retaining the same repository-relative paths. Do not write into another role's checkout.
-2. DSC-24 publishes a versioned, validated interface example set and compatibility rule. DSC-3 reviews that it covers every handoff in [ARCHITECTURE.md](ARCHITECTURE.md). Until then the proposed `v0.1.0` directory is a reservation, not a usable schema snapshot.
-3. DSC-3 writes only the agreed foundation; each role builds its own consumer against the agreed snapshot. DSC-24's initial draft version `0.1.0-draft.1` is not stable until owner review. Changing a shared file requires its owner's update.
+2. DSC-24's agreed development snapshot is `0.1.0-draft.3`, commit `dd3e0dda1b759ebe5439e78e8cf10e3374eb700b`, with five explicit mock chains in `examples/contracts/v0.1.0/` and a coordinated revision rule. The exact hashes and both owner ACKs are recorded in [COORDINATION.md](COORDINATION.md). The folder name does not promote it to a production release.
+3. DSC-3 writes only the agreed foundation; each role builds its own consumer from owner release commit `487a8dc9aedd3b4de34efe9d76f2eec94d58d2f8`, which preserves the pinned schema/validator/example hashes. The initial draft.1 was not released. Changing a shared file requires its owner's update and a coordinated revision; no consumer silently reinterprets an approved artifact.
 4. Mock consumer checks allow development only. Actual integration acceptance waits for DSC-26 capability/execution evidence and genuine upstream artifacts; native Linear blockers and named review remain in force. This assignment does not close DSC-3's broader V1 architecture.
