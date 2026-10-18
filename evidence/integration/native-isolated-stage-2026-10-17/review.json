@@ -1,0 +1,72 @@
+{
+  "record_kind": "independent_review_of_saved_real_isolated_stage",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "review_method": "Saved actual native report/logs and artifact bytes, independent CSV arithmetic, exact source/resource comparisons and AST parsing only. No native/model calls or reexecution of generated code.",
+  "offline_fidelity_check_count": 26,
+  "offline_fidelity_checks": {
+    "commands_actual_source_stream_and_report_same": true,
+    "exact_six_commands_five_equal_pairs": true,
+    "one_index_persistence_difference_valid": true,
+    "actual_control_interpreter_exact": true,
+    "control_source_hash_bound_before_after_actual": true,
+    "actual_control_five_denials": true,
+    "actual_control_result_file_matches": true,
+    "actual_calculation_result_file_matches_independent_csv": true,
+    "actual_artifact_hashes_match": true,
+    "calc_actual_separate_exit0": true,
+    "control_precedes_calc_in_actual_history": true,
+    "before_after_mcp_rows_complete_disabled": true,
+    "outside_write_actual_absent": true,
+    "bound_source_terminal_completed": true,
+    "input_actual_hash_unchanged": true,
+    "sentinel_actual_hash_unchanged": true,
+    "allowed_image_actual_hash_unchanged": true,
+    "denied_image_actual_hash_unchanged": true,
+    "actual_thread_profile_ack": true,
+    "actual_thread_cwd_roots_approval": true,
+    "actual_native_data_mention": true,
+    "native_index_read_pinned_hash": true,
+    "three_actual_resource_streams_exact_local_bytes_and_recorded_sha": true,
+    "sentinel_value_actual_absent_prompt": true,
+    "before_after_native_inventory_replies_match_saved": true,
+    "no_rejected_server_requests": true
+  },
+  "source_records": [
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/evidence/isolation-evidence.json",
+      "sha256": "f292887ae8960cb751e9de2182543e108e85f935c547dc3706049879d05b84a0",
+      "bytes": 283095
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/evidence/native-rpc.jsonl",
+      "sha256": "948e399d042840eccca9d1eefd4da0848cfd5eca880c5d2e0c3d0c554ed74690",
+      "bytes": 377358
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/evidence/bootstrap.jsonl",
+      "sha256": "866927e76b4dcaaee72bc9547c8a022c624c7714ffde3830989e3ca562626aad",
+      "bytes": 2281
+    }
+  ],
+  "acceptance_scope": "Real native Data resource use, model-generated and executed synthetic calculation, exact artifact retrieval and model-command filesystem/symlink/input-write/outside-write/network denial controls passed for the reviewed host/profile.",
+  "remaining_limits": [
+    "Engineering fixture is not a DSC-25-approved customer task or DSC-10 parent-approved run.",
+    "Native named profile/thread permissions fields are explicitly experimental; production adapter wiring and its supported deployment boundary remain separate work.",
+    "Actual model provider metadata says openai; intended LiteLLM/gateway route is not verified.",
+    "Image tool was disabled; native apply_patch negative permission control remains unexercised.",
+    "Cancellation, timeout and invalid-code evidence from other runs must remain distinct; this successful run does not independently exercise them.",
+    "Full adapter/customer acceptance and issue closure do not follow automatically."
+  ],
+  "retained_artifact_refs": [
+    "synthetic.csv",
+    "control_check.py",
+    "isolation_calculation.py",
+    "isolation_result.json",
+    "model-control-result.json",
+    "control-result.json"
+  ],
+  "scoped_observation_ref": "observation.json"
+}

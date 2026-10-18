@@ -1,0 +1,25 @@
+{
+  "record_kind": "separate_local_model_metadata_observation_not_thread_ack",
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "source": {
+    "path": "/Users/ceverson/.codex/models_cache.json",
+    "bytes": 399711,
+    "sha256": "6362a8af4e5745a839a424d9e37499883a4aea9c5bb0c21c64839a952fb36ca1",
+    "cache_fetched_at": "2026-10-17T23:03:40.995089Z"
+  },
+  "safe_selected_fields": [
+    {
+      "slug": "gpt-6.1-sol",
+      "tool_mode": "code_mode_only",
+      "shell_type": "unified_exec"
+    }
+  ],
+  "meaning": "This locally cached model metadata identifies gpt-6.1-sol as code_mode_only with unified_exec shell type. It can support exact-source diagnosis but is not a native tool-error receipt.",
+  "limitations": [
+    "Read from a local cache after the saved native run, not returned as a model tool-mode acknowledgement for that thread.",
+    "Does not independently prove the live provider/gateway route or the exact model metadata applied during that turn.",
+    "Does not upgrade the model diagnostic prose into a verified native error code or establish a successful execution."
+  ],
+  "omissions": "Full model cache, identity and ETag fields were not retained."
+}
