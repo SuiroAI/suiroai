@@ -1,6 +1,6 @@
 # DSC-10 component guard evidence
 
-Evidence mode: **mock**. Base: user-selected `nightly` at `83f134fb7674de64d7f3a6b62f984bb6486ec81d`. Contract: unchanged DSC-24 `0.1.0-draft.3`. All seven schema/validator/example snapshot hashes were checked against `docs/contracts/SNAPSHOT.json`. These results establish component behavior, not real retail analysis or integrated acceptance.
+Evidence mode: **mock**. Initial base: user-selected `nightly` at `83f134fb7674de64d7f3a6b62f984bb6486ec81d`; the frozen-release follow-up incorporates nightly `1418220` (DSC-28). Contract: unchanged DSC-24 `0.1.0-draft.3`. All seven schema/validator/example snapshot hashes were checked against `docs/contracts/SNAPSHOT.json`. These results establish component behavior, not real retail analysis or integrated acceptance.
 
 ## Executed checks
 
@@ -10,16 +10,24 @@ From the DSC-10 worktree with Python 3.13. The existing application virtualenv s
 PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/parent -q
 PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/contracts -q
 PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/integration -q
+PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/modeling -q
 git diff --check
 ```
 
 | Suite | Actual result | Evidence limit |
 | --- | --- | --- |
-| Parent transition/permission/recovery/delivery | 45 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
+| Parent transition/permission/recovery/delivery | 56 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
 | Unchanged shared contracts | 77 tests passed | Structural, reference and declared-semantic guards; no analytical execution. |
 | Existing integration component suite | 141 tests passed | Adapter/native protocol and isolation component regressions; no new customer or analytical acceptance inferred. |
+| Existing modeling component suite | 69 tests passed | Frozen-artifact/analytical kernel component regressions; no genuine source analysis or parent/modeling runtime acceptance. |
 | Snapshot integrity | 7 of 7 hashes matched | Shared contracts/examples were not changed. |
 | Whitespace | Passed | Source/docs formatting only. |
+
+## Frozen-release follow-up
+
+The initial parent PR #6 had 45 passing parent tests. The DSC-28 owner subsequently identified missing immutable metadata in the final-validation allowlist. The follow-up adds 11 tests (56 parent checks total) for exact bundle/manifest/plan/rule/forecast-input release; forged selection, bindings or execution digest; unreviewed bundles; extra or duplicate-key payload content; canonical bytes; and denial of bundle/holdout references to every development stage. These checks use the agreed DSC-28 bundle format with explicitly invented evidence and the real adapter/store. They do not run an unseen evaluation.
+
+A bundle must be cited in the adopted comparison checks, contain exactly the agreed envelope fields, and have canonical byte identity matching its parsed payload. Parent-decision evidence alone cannot authorize a bundle. The detached frozen manifest and plan/rule bytes must match the adopted selection and approved execution exactly. No model or feature fallback is introduced.
 
 ## Requirement-to-check evidence
 

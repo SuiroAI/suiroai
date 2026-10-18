@@ -16,7 +16,7 @@ The user explicitly authorized a dedicated branch, PR and consolidation into
 | --- | --- |
 | Modeling lead | Common types/metrics/models, prepared-data/inference adapters, shared-record mapping, exports and documentation |
 | Initial evaluation subagent | `evaluation.py`, `test_evaluation.py`; later `test_records.py` and read-only cross-module review |
-| LLM feature subagent | `features.py`, `test_features.py`; later `test_feature_records.py` and read-only adapter review |
+| LLM feature subagent | `features.py`, `test_llm_features.py` (renamed to avoid DSC-27 pytest module collision); later `test_feature_records.py` and read-only adapter review |
 | Frozen validation subagent | `frozen.py`, `test_frozen.py` |
 
 These were implementation assignments within one task, not runtime autonomous

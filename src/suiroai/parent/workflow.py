@@ -258,6 +258,57 @@ class ParentWorkflow:
             raise GuardRejected("missing " + kind + " checkpoint")
         return max(found, key=lambda r: r["artifact_version"])
 
+    def _frozen_release_refs(self):
+        """Resolve only immutable metadata of the already adopted frozen choice.
+
+        DSC-28 owns its bundle encoding. The parent only binds that consumer
+        envelope to the exact comparison checkpoint; it does not score it.
+        """
+        evaluation = self._one("evaluation_result")
+        if evaluation["frozen"] != self._frozen:
+            raise GuardRejected("frozen comparison changed before unseen release")
+        refs = [self._frozen["evaluation_plan_ref"], self._frozen["acceptance_rule_ref"]]
+        expected = [evaluation["evaluation_plan"], self._execution["acceptance_rule"]]
+        for ref, payload in zip(refs, expected):
+            if ref["sha256"] != digest(payload) or json.loads(self.store.read_bytes(ref)) != payload:
+                raise GuardRejected("frozen plan or acceptance bytes differ from the adopted contract")
+        reviewed = list(evaluation["parent_decision"]["evidence_refs"])
+        bundle_scope = set()
+        for check in evaluation["comparison_checks"]:
+            reviewed.extend(check["evidence_refs"])
+            bundle_scope.update(digest(ref) for ref in check["evidence_refs"])
+        bundle_keys = {"format", "frozen", "frozen_result_ref", "expected_observation_count",
+            "minimum_coverage_fraction", "binding", "run_id", "execution_contract_sha256"}
+        bundles = []
+        for ref in {digest(ref): ref for ref in reviewed}.values():
+            try:
+                payload = json.loads(self.store.read_bytes(ref))
+            except (ValueError, UnicodeError):
+                continue
+            if payload == self._frozen and ref["sha256"] == digest(self._frozen):
+                refs.append(ref)
+            if not isinstance(payload, dict) or payload.get("format") != "dsc28-frozen-v1":
+                continue
+            if digest(ref) not in bundle_scope:
+                continue
+            if (ref["sha256"] != digest(payload) or set(payload) != bundle_keys or payload["frozen"] != self._frozen
+                    or payload["binding"] != self._execution["binding"]
+                    or payload["run_id"] != self._execution["run_id"]
+                    or payload["execution_contract_sha256"] != digest(self._execution)
+                    or type(payload["expected_observation_count"]) is not int
+                    or payload["expected_observation_count"] < 1
+                    or type(payload["minimum_coverage_fraction"]) not in {int, float}
+                    or not 0 < payload["minimum_coverage_fraction"] <= 1):
+                raise GuardRejected("reviewed frozen bundle does not bind the adopted choice and run")
+            frozen_ref = payload["frozen_result_ref"]
+            if frozen_ref["sha256"] != digest(self._frozen) or json.loads(self.store.read_bytes(frozen_ref)) != self._frozen:
+                raise GuardRejected("bundle frozen-result bytes differ from the adopted choice")
+            bundles.append(ref)
+            refs.extend([ref, frozen_ref])
+        if len(bundles) > 1:
+            raise GuardRejected("one reviewed frozen bundle per selected choice")
+        return refs
+
     def _eligible(self, stage, refs):
         if not refs or len({digest(r) for r in refs}) != len(refs):
             raise GuardRejected("stage release needs a nonempty unique measured allowlist")
@@ -277,6 +328,7 @@ class ParentWorkflow:
                 raise GuardRejected("unseen data requires a passed frozen checkpoint")
             prep = self._one("preparation_result")
             allowed = [prep["reserved_unseen_data_ref"], *self._frozen["development_input_refs"],
+                *self._frozen["forecast_input_refs"], *self._frozen_release_refs(),
                 self._frozen["model_ref"], self._frozen["feature_set_ref"],
                 self._frozen["preprocessing_ref"], self._frozen["november_30_forecast_ref"]]
             if self._recheck_authorization_ref:

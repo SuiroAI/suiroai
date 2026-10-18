@@ -41,6 +41,8 @@ Both return exactly `{"status": "pass" | "fail" | "unavailable", "expected": <no
 
 For terminal drafts, structural checks reject orders and quantity-result references and require the declared scope limitation. The independent narrative reviewer must verify that the delivered explanation is specifically about this MVP and the supplied data/scope, does not claim universal impossibility, invent measured underperformance or substitute a runner-up after final failure. Execution failure requires the exact parent-reviewed failed stage; measured validation failure requires the current frozen failed evaluation and concluded parent review. Failure explanations do not require successful quantity artifacts.
 
+An execution explanation may cite the immutable failed-stage artifact rather than duplicate that stage's internal log references. Its stage, reason and error category must still match exactly; its evidence references must remain within that stage's evidence chain. Either the failure evidence or a separate report decision must identify the exact stage reference. The report may reuse the stage's authenticated concluded decision, avoiding circular self-references and an unnecessary new terminal review. Scoped customer wording still receives independent semantic review.
+
 ## Preexecution guidance
 
 `guidance.check_capability_guidance(submission, proposal, customer_text, *, resolve_bytes, review, verifier)` handles the shared missing-input snapshot consisting only of submission and proposal. It validates both records, source access/provenance, actual accessible source bytes/hash/size, exact submission reference and input/proposal digests, and material gaps/readiness. It rejects a fabricated run identity and never creates an execution contract or approval.

@@ -866,3 +866,105 @@ def test_concurrent_deliveries_reserve_same_approved_grant_only_once(tmp_path):
     assert "delivery already attempted" in str(rejected[0])
     assert store.read_bytes(delivered[0]["delivered_artifact_ref"]) == sent[0]
     assert store.read_record(delivered[0]["delivery_evidence_ref"])["verifier_decision"] == "accepted"
+
+
+def stage_review_failure_draft_fixture():
+    """MOCK DSC29 handoff shape: reuse reviewed stage decision without self refs.
+
+    The report humanizes scope and cites the immutable stage; it does not change
+    failure facts. This is an agreed interface example, not an actual DSC29 run.
+    """
+    bundle = fixture("execution_failed")
+    stage = record(bundle, "stage_result")
+    draft = record(bundle, "report_draft")
+    draft["failure"] = {
+        "stage": stage["failure"]["stage"],
+        "reason": stage["failure"]["reason"],
+        "error_code": stage["failure"]["error_code"],
+        "scope_limitation": ("This MVP could not produce a reliable solution with the supplied data/scope. "
+                             "This does not establish that the problem is universally impossible."),
+        "evidence_refs": [record_ref(stage)],
+    }
+    draft["parent_decision"] = deepcopy(stage["parent_decision"])
+    text = ("MOCK FAILURE EXPLANATION ONLY: " + draft["failure"]["reason"] + " " +
+            draft["failure"]["scope_limitation"] + " No valid restocking list is available.")
+    draft["customer_draft"] = text
+    draft["claims"][0]["statement"] = text
+    draft["claims"][0]["evidence_refs"] = [record_ref(stage)]
+    return rehash(bundle)
+
+
+def test_stage_reviewed_failure_draft_can_normalize_scope_and_reuse_parent_decision_without_self_reference(tmp_path):
+    bundle, store, verifier = load(tmp_path, stage_review_failure_draft_fixture())
+    stage = record(bundle, "stage_result")
+    draft = record(bundle, "report_draft")
+    assert draft["failure"] != stage["failure"]
+    assert draft["failure"]["scope_limitation"] != stage["failure"]["scope_limitation"]
+    assert draft["failure"]["evidence_refs"] == [record_ref(stage)]
+    assert draft["parent_decision"] == stage["parent_decision"]
+    assert record_ref(stage) not in stage["parent_decision"]["evidence_refs"]
+    assert draft["orders"] == [] and draft["quantity_result_ref"] is None
+    assert validate_handoff(bundle["records"], [a["ref"] for a in bundle["mock_artifacts"]]) == []
+    checked = check(verifier, bundle)
+    assert all(c["status"] == "pass" for c in checked["binding_checks"] + checked["claim_checks"])
+    terminal = next(c for c in checked["binding_checks"]
+                    if c["check_id"] == "terminal-execution-evidence")
+    assert terminal["status"] == "pass"
+    proposal = verifier.propose_delivery(record_ref(checked), parent_decision=parent_decision(bundle, checked))
+    assert proposal["permitted_response"]["kind"] == "failure_explanation"
+    approved_ref = store.put_record(proposal)
+    published = []
+    def publish(data):
+        published.append(data)
+        return {"reference": "mock-existing-normalized-failure-surface", "content": data}
+    receipt = verifier.deliver(approved_ref, authorize=lambda value: value == proposal, publish=publish)
+    assert published == [draft["customer_draft"].encode()]
+    assert store.read_bytes(receipt["delivered_artifact_ref"]) == published[0]
+    assert store.read_record(receipt["delivery_evidence_ref"])["verifier_decision"] == "accepted"
+    assert receipt["mock"] is True
+
+
+@pytest.mark.parametrize("change", ["reason", "error-code", "failure-stage", "unrelated-failure-evidence",
+                                     "altered-embedded-decision", "unreviewed-stage", "stage-review",
+                                     "report-review", "wrong-report-checkpoint", "no-exact-stage-anchor"])
+def test_stage_review_reuse_cannot_authorize_altered_failure_facts_or_unreviewed_reports(tmp_path, change):
+    bundle = stage_review_failure_draft_fixture()
+    stage = record(bundle, "stage_result")
+    draft = record(bundle, "report_draft")
+    if change == "reason":
+        draft["failure"]["reason"] = "MOCK invented outage inconsistent with source stage."
+    elif change == "error-code":
+        draft["failure"]["error_code"] = "timeout"
+    elif change == "failure-stage":
+        draft["failure"]["stage"] = "final_validation"
+    elif change == "unrelated-failure-evidence":
+        draft["failure"]["evidence_refs"] = [record_ref(record(bundle, "execution_contract"))]
+    elif change == "no-exact-stage-anchor":
+        # Sharing low-level capability evidence alone cannot identify which
+        # immutable failed stage the reused parent review approved.
+        draft["failure"]["evidence_refs"] = deepcopy(stage["failure"]["evidence_refs"])
+        assert draft["parent_decision"] == stage["parent_decision"]
+        assert record_ref(stage) not in draft["parent_decision"]["evidence_refs"]
+    elif change == "altered-embedded-decision":
+        draft["parent_decision"]["reason"] += " MOCK material altered review reason."
+    elif change == "unreviewed-stage":
+        stage["parent_decision"] = None
+    elif change == "stage-review":
+        stage["parent_decision"]["decision"] = "review"
+    elif change == "report-review":
+        draft["parent_decision"]["decision"] = "review"
+    else:
+        draft["parent_decision"]["checkpoint"] = "final_validation"
+    bundle, _, verifier = load(tmp_path, bundle)
+    if change == "error-code":
+        # The shared contract rejects contradictory typed error evidence first.
+        with pytest.raises(VerificationError, match="contradicts observed stage error"):
+            check(verifier, bundle)
+        return
+    checked = check(verifier, bundle)
+    terminal = next(c for c in checked["binding_checks"]
+                    if c["check_id"] == "terminal-execution-evidence")
+    assert terminal["status"] == "fail"
+    assert checked["permitted_response"]["kind"] == "no_customer_response"
+    with pytest.raises(VerificationError, match="failed or unavailable"):
+        verifier.propose_delivery(record_ref(checked), parent_decision=parent_decision(bundle, checked))
