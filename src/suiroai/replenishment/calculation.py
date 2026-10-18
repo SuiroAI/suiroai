@@ -242,6 +242,16 @@ def calculate_candidate(handoff: Handoff, *, artifact_id: str, scope_ref: dict,
         name_index[key].append((line, row))
         if key[0] != source_namespace:
             problems[key].append("product_name_mapping_source_namespace_mismatch")
+    product_names = defaultdict(set)
+    product_stores = defaultdict(set)
+    for key, rows in name_index.items():
+        product_stores[key[:2]].add(key[2])
+        for _, row in rows:
+            if isinstance(row.get("product_name"), str):
+                product_names[key[:2]].add(row["product_name"])
+    for key in name_index:
+        if len(product_names[key[:2]]) > 1 and len(product_stores[key[:2]]) > 1:
+            problems[key].append("conflicting_product_names_across_stores")
     # A duplicate receipt identifier poisons every affected key, including the
     # first occurrence. Never silently deduplicate or double-count it.
     ids = Counter(row["PO_Line_ID"] for row in receipts)
@@ -349,7 +359,7 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
     for line, row in receipt_rows:
         ordered = _day(row["Order_Date"])
         day = _day(row["Expected_Arrival_Date"])
-        quantity = _integer(row["Incoming_Qty"])
+        quantity = _integer(row["Incoming_Qty"], 1)
         if ordered > as_of or day <= as_of or day < ordered:
             raise InputError("future_order_or_overdue_receipt_requires_reconciled_asof_evidence")
         due[day] += quantity

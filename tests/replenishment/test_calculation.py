@@ -187,6 +187,7 @@ class IndependentArithmeticExamples(unittest.TestCase):
             ({"Quantity_Unit": "case"}, "incompatible_quantity_unit"),
             ({"Provenance": "unknown"}, "declared_synthetic"),
             ({"Incoming_Qty": "1.5"}, "integer quantity"),
+            ({"Incoming_Qty": "0"}, "integer quantity"),
         ):
             args = inputs(receipts=((2, 3),))
             args[1][1][KEY][0][1].update(changes)

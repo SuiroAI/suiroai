@@ -200,6 +200,16 @@ class PublicHandoffTests(unittest.TestCase):
         self.assertIn("missing_product_name_mapping", reasons["mock-retail"])
         self.assertIn("product_name_mapping_source_namespace_mismatch", reasons["mock-other-source"])
 
+    def test_conflicting_product_names_across_stores_withhold_each_affected_key(self):
+        other = name_mapping("MOCK conflicting store name")
+        other["key"]["store_id"] = "MOCK-OTHER-STORE"
+        h, scope, _ = scenario(name_rows=[name_mapping(), other])
+        result = calculate(h, scope, name_ref=name_reference(h), name_reader=json.loads)
+        self.assertEqual(result["orders"], [])
+        self.assertEqual(len(result["exceptions"]), 2)
+        self.assertTrue(all("conflicting_product_names_across_stores" in item["reason"]
+                            for item in result["exceptions"]))
+
     def test_exact_parent_checkpoint_authentication_precedes_reading(self):
         calls = []
         h, scope, _ = scenario(parent_confirms=lambda ref, decision: False)

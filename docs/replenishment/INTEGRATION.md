@@ -2,7 +2,7 @@
 
 This is component implementation evidence, not a successful retail run or
 customer-delivery authorization. The source branch began at `nightly` `83f134f`
-and incorporated `1418220` (including DSC-27/28/30 and the parent) before final
+and incorporated `f1a60b1` (including DSC-27/28/30 and the parent) before final
 verification. All new writes remain inside the six DSC-29-owned directories.
 The DSC-24 schema/validator and source datasets are unchanged.
 
@@ -63,7 +63,8 @@ approval; no report-time name enrichment changes approved rows.
 3. **Independent finished-draft verification.** DSC-30 must validate genuine
    numerical and narrative evidence and current bindings. Owner review found
    execution-failure lineage/decision compatibility in its verifier; that
-   owner handles the verifier correction. This component never weakens that
+   owner merged the correction in PR #10 before this branch's final checks.
+   This component never weakens that
    independent gate. Final delivery remains a separate parent decision.
 4. **Preexecution guidance envelope.** Draft.3's `report_draft` requires an
    execution binding even for `missing_inputs`. Genuine pre-signoff guidance

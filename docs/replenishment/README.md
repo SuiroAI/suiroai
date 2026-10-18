@@ -91,7 +91,7 @@ shared JSON numeric fields are rejected rather than silently rounded.
 All open receipt lines, including those beyond the protection horizon, must
 sum exactly to `On_Order_Qty`. The summary is only a reconciliation total; it
 is never subtracted a second time. Future order dates, overdue receipts,
-duplicate line IDs, invalid dates, negative quantities, incompatible units,
+duplicate line IDs, invalid dates, nonpositive receipt quantities, incompatible units,
 unknown completeness, and sum discrepancies become explicit exceptions.
 Missing ledger keys mean zero **only** with the approved complete-synthetic-ledger
 policy and the key's complete-ledger assertion; this never zero-fills demand.
