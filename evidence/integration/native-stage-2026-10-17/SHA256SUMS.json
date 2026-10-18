@@ -1,0 +1,30 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "binding.json",
+      "sha256": "4ab6b3a978c3c13dcf23d2fe74178e380a0fbe9ec9bc50776a762c93d6b2d002",
+      "bytes": 230
+    },
+    {
+      "path": "probe_calculation.py",
+      "sha256": "985ed5458c973cacb845527ee11a92e6ffb9a5ca82fed9578edff76a1cbadfeb",
+      "bytes": 992
+    },
+    {
+      "path": "probe_input.csv",
+      "sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "bytes": 26
+    },
+    {
+      "path": "probe_result.json",
+      "sha256": "271758f61b9548bf87903cecb67ace2f45a2da8dfdb2aec0fd70cd5bf2985a72",
+      "bytes": 346
+    },
+    {
+      "path": "review.json",
+      "sha256": "dcf0a11891c8702a64c13f8ebd1172b19959173f925679c202c9a163fe333d29",
+      "bytes": 14397
+    }
+  ]
+}

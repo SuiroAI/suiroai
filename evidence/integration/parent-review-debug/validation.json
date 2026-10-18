@@ -1,0 +1,26 @@
+{
+  "evidence_mode": "mock_adapter_and_shared_contract_validation",
+  "native_or_model_calls": 0,
+  "integration_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/integration -q",
+    "tests": 141,
+    "exit_code": 0
+  },
+  "shared_contract_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src /Users/ceverson/Development/SuiroAI/suiroai/.venv/bin/python -m unittest discover -s tests/contracts -q",
+    "tests": 77,
+    "exit_code": 0
+  },
+  "pinned_shared_files": [
+    {
+      "path": "src/suiroai/contracts/schema/retail-contract.schema.json",
+      "sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46"
+    },
+    {
+      "path": "src/suiroai/contracts/validation.py",
+      "sha256": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a"
+    }
+  ],
+  "independent_review": "Second subagent reviewed recursive authority coverage, exact receipt/replay/mutation behavior, prior-ledger authentication and deadline/publication boundary; no material defect found.",
+  "limitations": "Tests and debugger use explicitly mocked component packets. They do not implement parent orchestration or add real analytical invocation evidence."
+}
