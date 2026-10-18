@@ -1,5 +1,7 @@
 # DSC-26 normal Terminal discovery
 
+Historical observation for the run described below. Current isolated invocation, adapter wiring and remaining acceptance are documented in [ADAPTER.md](ADAPTER.md) and [NATIVE_BOUNDARY.md](NATIVE_BOUNDARY.md).
+
 2026-10-17 · supplementary engineering observation · **Data invocation remains unverified.**
 
 The user ran the host diagnostic in normal Terminal and supplied its actual [host-check.json](../../evidence/integration/terminal-discovery-2026-10-17/host-check.json). The report was copied byte-for-byte from `/var/folders/47/q5r4vm094rs50jyk76tdz7fr0000gn/T/dsc26-host-check-xifyv4af/host-check.json`; its SHA-256 is recorded in [SHA256SUMS.json](../../evidence/integration/terminal-discovery-2026-10-17/SHA256SUMS.json). The copied report is unmodified. This is a host diagnostic, not a shared stage-result instance or analytical acceptance evidence.

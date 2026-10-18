@@ -1,8 +1,8 @@
 # DSC-26 native isolation probe boundary
 
-2026-10-17 · source review and native synthetic control checks · **customer dispatch remains blocked**.
+2026-10-17 · source review and real isolated synthetic Data execution · **customer acceptance remains pending**.
 
-The source review made no model calls, read no customer records, and changed no host configuration. Subsequent native control runs are recorded separately below. A successful synthetic Data calculation does not establish released-input isolation. The probe must exercise the exact native permissions and reachable tool surface intended for a customer stage.
+The source review made no model calls, read no customer records, and changed no host configuration. Subsequent actual runs are recorded separately below, including the successful isolated Data turn. The adapter now implements the exercised native mechanism; genuine customer execution still requires the current DSC-25 approval and DSC-10 permission. This audit preserves earlier failures and their limits.
 
 ## What the native sources establish
 
@@ -44,7 +44,7 @@ The earlier profile disabled `code_mode_host`, which is incompatible with a mode
 
 The corrected candidate keeps the installed native `code_mode_host` enabled with Data while retaining the filesystem, network, approval, image, browser, app, external MCP and other-plugin restrictions. This is the CLI's existing tool-composition mechanism, not a separate analytical runtime. Its bare V8 context installs an explicit set of globals without Node filesystem/process or a fetch API; module imports are rejected. Its tools come from registered enabled tools, and nested tool dispatch retains the original step context and tool runtime. Those source observations support the candidate; actual delegated execution and denial evidence remain required. [Native globals](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/code-mode-runtime/src/runtime/globals.rs), [import rejection](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/code-mode-runtime/src/runtime/module_loader.rs), [nested dispatch](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/src/tools/code_mode/delegate.rs)
 
-The revised single-turn probe requires actual delegated execution of a harness-authored script in the read-only released directory. Its invocation uses the trusted interpreter's absolute path with `-I -S`; worker-created Python or shell substitutes, command chains and fabricated JSON alone cannot qualify. A live controller-owned loopback listener distinguishes permission denial from an unavailable service. Paired streamed/retrieved command receipts must contain all five actual permission exceptions and the positive calculation; the fixture source must remain unchanged, the outside file absent and the fetched positive result correct. The independently generated Data calculation and resource-read receipts are separate requirements. Full disabled-only MCP inventories are retained before and after the turn. None of these new model-delegated checks has yet run on the native host.
+The revised single-turn probe requires actual delegated execution of a harness-authored script in the read-only released directory. Its invocation uses the trusted interpreter's absolute path with `-I -S`; worker-created Python or shell substitutes, command chains and fabricated JSON alone cannot qualify. A live controller-owned loopback listener distinguishes permission denial from an unavailable service. Paired streamed/retrieved command receipts must contain all five actual permission exceptions and the positive calculation; the fixture source must remain unchanged, the outside file absent and the fetched positive result correct. The independently generated Data calculation and resource-read receipts are separate requirements. Full disabled-only MCP inventories are retained before and after the turn. The later successful run exercised these model-delegated checks on the native host; its scoped review appears below.
 
 ## Discovery timeout and separate budgets
 
@@ -60,9 +60,36 @@ Use the official CLI's `codex doctor --json` for a redacted installation/configu
 
 An inventory-only diagnostic can target `codex plugin list --marketplace openai-curated-remote --json` under a finite deadline. Unlike an unfiltered list, a remote-listing failure with an explicit marketplace returns an error instead of silently continuing with local marketplaces. This diagnostic is not a replacement for the full installed inventory used to restrict all other plugins. The remote code uses the ChatGPT plugins service (`/ps/plugins/list` and `/ps/plugins/installed`); the failed run has no evidence that a LiteLLM model request started. Capture elapsed time and a sanitized native error classification. Do not enable broad HTTP debug logging: the inspected client can log response headers, and the standalone plugin CLI does not install the app-server's tracing subscriber. [Remote listing error handling](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/cli/src/plugin_cmd.rs#L843-L900)
 
-The user's subsequent targeted diagnostic produced valid saved JSON with 16 installed entries, exactly one Data entry at version `1.0.11`, installed/enabled true and the expected remote ID. Saved stderr was empty. Six independent checks passed; see the [retained catalogue observation](../../evidence/integration/native-catalog-diagnostic-2026-10-17/observation.json). Recorded argv, elapsed duration and exit status are unavailable, so this establishes the saved response rather than a timed process receipt. It shows no catalogue error in that observation, not the cause of the earlier delay or continuing availability. The full all-marketplace inventory and actual isolated Data execution still require the bounded engineering probe.
+The user's subsequent targeted diagnostic produced valid saved JSON with 16 installed entries, exactly one Data entry at version `1.0.11`, installed/enabled true and the expected remote ID. Saved stderr was empty. Six independent checks passed; see the [retained catalogue observation](../../evidence/integration/native-catalog-diagnostic-2026-10-17/observation.json). Recorded argv, elapsed duration and exit status are unavailable, so this establishes the saved response rather than a timed process receipt. It shows no catalogue error in that observation, not the cause of the earlier delay or continuing availability. The later successful engineering probe retained a timed full all-marketplace inventory and actual isolated Data execution; it does not establish the earlier delay's cause.
 
 Research found [OpenAI Codex issue #54254](https://github.com/openai/codex/issues/54254), a user report of macOS code-mode network access despite a denied network setting on CLI 0.161.0/0.162.1. It also reports that disabling the code host leaves code-mode-only models unable to execute tools. At inspection the issue was open with no comments or linked fix. This is a relevant report, not maintainer-confirmed proof that installed 0.163.0 is affected or fixed. Keep the actual delegated network-denial check; neither source intent nor a settings acknowledgement establishes enforcement. Do not adopt the report's outer custom sandbox / danger-full-access workaround for this assignment.
+
+## Actual isolated Data pass
+
+The run `/private/tmp/dsc26-native-isolation-zkaavghj` completed the control and
+model phases. The actual model-delegated harness command produced all five
+`PermissionError` denials and the positive result. The native Data turn read the
+pinned resources, generated a CSV-derived calculation, executed it and returned
+three rows with A=5, B=5, total=10. Protected sources stayed unchanged. Both full
+MCP inventories contained only complete disabled empty-capability rows.
+
+The full installed-plugin inventory completed in 0.437 seconds with exit zero
+and no stderr/fallback. All six command identities were retrieved; five paired
+outputs are identical. The remaining Data index response is full in the stream
+and truncated in persistence with an independently verified native marker and
+matching prefix/suffix. This difference is explicitly retained, not silently
+counted as an exact match. Eight retained files and three original source records
+have measured byte/hash references.
+
+The [independent review](../../evidence/integration/native-isolated-stage-2026-10-17/review.json)
+records 26 checks and the [observation](../../evidence/integration/native-isolated-stage-2026-10-17/observation.json)
+retains command identities, native settings, artifact hashes and limitations.
+This is real synthetic engineering evidence. The full adapter-approved customer
+path, a negative patch permission control, arbitrary network destinations and
+LiteLLM routing remain unverified. No image-read denial is claimed because that
+tool is disabled. The adapter uses the same profile configuration, verified by
+an offline comparison against this actual run; mocked implementation tests do
+not extend the live acceptance scope.
 
 ## Evidence the synthetic probe must retain
 
@@ -72,4 +99,4 @@ Research found [OpenAI Codex issue #54254](https://github.com/openai/codex/issue
 4. Retrieve paginated `thread/items/list` results, retaining relevant canonical command/patch items and real stage artifacts. Do not infer that a schema union guarantees every tool failure is projected to it. A missing canonical error result remains an observability limitation. No internal raw-response notifications, hidden reasoning or complete skill contents are required. [Native item protocol](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/app-server-protocol/src/protocol/v2/item.rs)
 5. Preserve the thread's actual MCP/app/plugin capability inventory and effective disabling controls. Thread-scoped `mcpServerStatus/list` supports tools, resources, templates and discovery errors; paginate it. A failed catalog lookup is not an empty catalog. `disabledPluginIds`, command network denial or a prompt to avoid connectors does not establish that their tools are unreachable. `features.apps=false` and disabling configured/plugin MCP servers are candidate controls whose compatibility with Data must be demonstrated in this same run. Keep Data's required skill active; do not invent a replacement runtime. [MCP/plugin configuration assembly](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/src/config/mod.rs), [MCP resource dispatch](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/core/src/tools/handlers/mcp_resource/read_mcp_resource.rs)
 
-These checks can support a bounded isolation claim for the tested CLI version, host, profile and actual tool inventory. They cannot prove arbitrary future tools safe. Disabling `view_image` narrows the required surface; it does not prove that all extensions or connectors are disabled. Any exposed file/connector/browser capability that lacks an enforced restriction or genuine denial remains an integration blocker. A shell-only pass leaves such a blocker intact. Customer execution stays disabled until the reviewed mechanism is implemented in the adapter and the current DSC-25 approval and DSC-10 permission are present.
+These checks can support a bounded isolation claim for the tested CLI version, host, profile and actual tool inventory. They cannot prove arbitrary future tools safe. Disabling `view_image` narrows the required surface; it does not prove that all extensions or connectors are disabled. Any exposed file/connector/browser capability that lacks an enforced restriction or genuine denial remains an integration blocker. A shell-only pass leaves such a blocker intact. The reviewed mechanism is now implemented in the adapter. Customer execution still requires the current DSC-25 approval and DSC-10 permission; complete adapter/customer acceptance remains pending actual execution evidence.

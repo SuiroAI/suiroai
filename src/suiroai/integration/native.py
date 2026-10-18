@@ -1,7 +1,7 @@
 """Bounded native Codex/Data transport; no analytical or parent workflow logic.
 
-Customer dispatch fails closed pending exercised native input isolation. Explicit
-engineering mode can exercise the demonstrated host with synthetic inputs only.
+Customer stages use the exercised named permission profile. Engineering mode
+without released_root retains legacy synthetic-only probe compatibility.
 """
 from __future__ import annotations
 
@@ -19,7 +19,12 @@ import signal
 import subprocess
 from threading import Event
 import time
+import tomllib
+import uuid
 from typing import Literal
+
+from . import native_profile as policy
+from .artifacts import read_stage_file
 
 
 @dataclass(frozen=True)
@@ -28,7 +33,7 @@ class DataPluginSpec:
     remote_plugin_id: str = "Plugin_fc9843a6fb34819195d6c7802398a8a7"
     version: str = "1.0.11"
     skill_name: str = "index"
-    skill_sha256: str | None = None
+    skill_sha256: str | None = policy.SKILL_SHA256
 
 
 @dataclass
@@ -44,32 +49,9 @@ class NativeRun:
     mode: str = "customer"
 
 
-class _Stop(Exception):
-    def __init__(self, code: str, message: str):
-        super().__init__(message)
-        self.code = code
-
-
-def _safe(value):
-    if isinstance(value, dict):
-        if value.get("type") == "reasoning":
-            value = {**value, "content": "[RAW REASONING OMITTED]"}
-        return {key: ("[REDACTED]" if re.search(
-            r"token|secret|password|authorization|api.?key|cookie", key, re.I)
-            else _safe(item)) for key, item in value.items()}
-    if isinstance(value, list):
-        return [_safe(item) for item in value]
-    if isinstance(value, str):
-        value = re.sub(r"(?i)bearer\s+\S+", "Bearer [REDACTED]", value)
-        return re.sub(r"\bsk-[A-Za-z0-9_-]{12,}", "[REDACTED]", value)
-    return value
-
-
-def _check(deadline, cancellation=None):
-    if cancellation is not None and cancellation.is_set():
-        raise _Stop("cancelled", "Parent cancelled the native operation")
-    if time.monotonic() >= deadline:
-        raise _Stop("timeout", "Native operation exceeded its finite deadline")
+_Stop = policy.NativePolicyError
+_safe = policy.sanitize
+_check = policy.check
 
 
 def _host_error(error):
@@ -143,6 +125,42 @@ def _observed_invalid_code(items, events, thread_id, turn_id):
     return None
 
 
+def _matched_file_changes(items, events, thread_id, turn_id, cwd):
+    """Canonical paired writes plus actual bounded output bytes, never prose."""
+    observed = {(event.get("threadId"), event.get("turnId"), (event.get("item") or {}).get("id")):
+        event.get("item") or {} for event in events}
+    receipts, total = [], 0
+    for entry in items:
+        item = entry.get("item") or {}
+        event = observed.get((thread_id, turn_id, item.get("id")))
+        changes = item.get("changes")
+        if (entry.get("turnId") != turn_id or item.get("type") != "fileChange" or not event
+                or item.get("status") != "completed" or event.get("status") != "completed"
+                or not isinstance(changes, list) or not 0 < len(changes) <= 100 or event.get("changes") != changes):
+            continue
+        measured = []
+        for change in changes:
+            if (not isinstance(change, dict) or not isinstance(change.get("path"), str)
+                    or not isinstance(change.get("kind"), dict)
+                    or change["kind"].get("type") not in {"add", "update"}):
+                continue
+            path = Path(change["path"])
+            if not path.is_absolute() or not path.is_relative_to(cwd):
+                continue
+            try:
+                relative = str(path.relative_to(cwd))
+                data = read_stage_file(cwd, relative, max_bytes=16 * 1024 * 1024)
+            except (ValueError, OSError):
+                continue
+            total += len(data)
+            if total > 64 * 1024 * 1024:
+                raise _Stop("budget_exhausted", "Native file-change receipt bytes exceed 64 MiB")
+            measured.append({"relative_path": relative, "bytes": len(data), "sha256": sha256(data).hexdigest()})
+        if measured:
+            receipts.append({"item_id": item["id"], "files": measured})
+    return receipts
+
+
 class _Transport:
     """One stdio connection with finite RPC, output and cleanup bounds."""
 
@@ -164,6 +182,8 @@ class _Transport:
         self.selector = selectors.DefaultSelector()
         self.buffers = {"stdout": b"", "stderr": b""}
         self.responses = {}
+        self.received_bytes = 0
+        self.receiving_exhausted = False
         self.terminals = {}
         self.started = []
         self.events = []
@@ -175,17 +195,17 @@ class _Transport:
 
     def record(self, direction, message, control=False):
         if getattr(self, "recording_exhausted", False):
-            if not control or self.log_bytes >= 64 * 1024 * 1024 + 65536:
+            if not control or self.log_bytes >= policy.LOG_LIMIT + 65536:
                 return
             # Reserve a small control receipt without retaining bulk payloads.
             message = {"method": message.get("method"), "id": message.get("id"),
                        "bulk_omitted_after_evidence_limit": True}
         encoded = json.dumps({"monotonic": time.monotonic(), "direction": direction,
-                              "message": _safe(message)}, ensure_ascii=False) + "\n"
+                              "message": policy.project_message(message)}, ensure_ascii=False) + "\n"
         encoded_size = len(encoded.encode())
-        if not control and self.log_bytes + encoded_size > 64 * 1024 * 1024:
+        if not control and self.log_bytes + encoded_size > policy.LOG_LIMIT:
             self.recording_exhausted = True
-            raise _Stop("budget_exhausted", "Native evidence exceeded the 64 MiB transport bound")
+            raise _Stop("budget_exhausted", "Native evidence exceeded the 8 MiB transport bound")
         self.log_bytes += encoded_size
         self.log.write(encoded)
         self.log.flush()
@@ -197,7 +217,7 @@ class _Transport:
 
     def consume(self, name, line):
         if name == "stderr":
-            self.record(name, line.decode(errors="replace"))
+            self.record(name, {"content_omitted": True, "bytes": len(line), "sha256": sha256(line).hexdigest()})
             return
         try:
             message = json.loads(line)
@@ -244,6 +264,11 @@ class _Transport:
                     tail, self.buffers[name] = self.buffers[name], b""
                     self.consume(name, tail)
                 continue
+            self.received_bytes += len(chunk)
+            wire_limit = 64 * 1024 * 1024
+            if self.received_bytes > wire_limit + (65536 if self.receiving_exhausted else 0):
+                self.receiving_exhausted = True
+                raise _Stop("budget_exhausted", "Native incoming transport exceeded 64 MiB")
             self.buffers[name] += chunk
             if len(self.buffers[name]) > 16 * 1024 * 1024:
                 raise _Stop("budget_exhausted", "Native RPC line exceeded 16 MiB")
@@ -301,79 +326,105 @@ class NativeHost:
         self.plugin = plugin or DataPluginSpec()
 
     def _inventory(self, executable, cwd, deadline, cancellation):
-        _check(deadline, cancellation)
-        try:
-            result = subprocess.run([executable, "plugin", "list", "--json"], cwd=cwd,
-                capture_output=True, timeout=min(20, max(0.01, deadline - time.monotonic())))
-        except subprocess.TimeoutExpired as exc:
-            raise _Stop("timeout", "Native installed-plugin inventory timed out") from exc
-        _check(deadline, cancellation)
-        if result.returncode:
-            raise _Stop("plugin_unavailable", "Native installed-plugin inventory failed: "
-                        + result.stderr.decode(errors="replace"))
-        try:
-            inventory = json.loads(result.stdout)
-        except ValueError as exc:
-            raise _Stop("plugin_unavailable", "Native plugin inventory was not JSON") from exc
-        entries = inventory.get("installed", []) if isinstance(inventory, dict) else []
-        matches = [entry for entry in entries if isinstance(entry, dict)
-                   and entry.get("pluginId") == self.plugin.plugin_id]
-        if len(matches) != 1:
-            raise _Stop("plugin_unavailable", "Exact Data identity absent/ambiguous in native installed inventory")
-        entry = matches[0]
-        if entry.get("installed") is not True or entry.get("enabled") is not True:
-            raise _Stop("plugin_unavailable", "Native Data plugin is not installed and enabled")
-        if (entry.get("version") != self.plugin.version
-                or (entry.get("source") or {}).get("id") != self.plugin.remote_plugin_id):
-            raise _Stop("integrity_error", "Native Data version or remote identity differs from pinned specification")
-        return entry
+        receipt = {}
+        _, selected = policy.bounded_plugin_inventory(executable, cwd,
+            min(deadline, time.monotonic() + 20), receipt, self.plugin, cancellation)
+        return selected
 
     def execute(self, *, cwd: Path, prompt: str, evidence_dir: Path,
                 timeout_seconds: float, cancellation: Event | None = None,
-                mode: Literal["customer", "engineering"] = "customer") -> NativeRun:
-        """Run one stage; engineering callers must supply synthetic data only.
+                mode: Literal["customer", "engineering"] = "customer",
+                released_root: Path | None = None) -> NativeRun:
+        """One native turn; approval and task validation belong to StageAdapter.
 
-        No boolean can attest customer isolation. This implementation blocks all
-        customer dispatch until native release-only isolation has been exercised.
+        Customer calls must use disjoint physical released/output/evidence roots.
+        No caller attestation substitutes for native config/profile checks.
+        All discovery, execution and retrieval consume the same stage deadline.
         """
         run = NativeRun(mode=mode)
         evidence_dir = Path(evidence_dir)
         transport = None
+        evidence_allowed = False
         deadline = time.monotonic()
+        strict = released_root is not None
         try:
-            evidence_dir.mkdir(parents=True, exist_ok=True)
-            run.evidence = {"mode": mode, "customer_isolation_verified": False,
-                "automatic_acceptance": False, "log": str(evidence_dir / "native-rpc.jsonl")}
             if mode not in ("customer", "engineering"):
                 raise _Stop("integrity_error", "Unknown native dispatch mode")
-            if mode == "customer":
-                raise _Stop("unsupported_integration",
-                            "Customer dispatch blocked: released-input-only native isolation is not yet exercised")
             if (isinstance(timeout_seconds, bool) or not isinstance(timeout_seconds, (float, int))
                     or not math.isfinite(timeout_seconds) or timeout_seconds <= 0):
                 raise _Stop("budget_exhausted", "Native execution requires positive finite remaining time")
             deadline = time.monotonic() + timeout_seconds
             _check(deadline, cancellation)
-            cwd = Path(cwd).resolve(strict=True)
+            if mode == "customer" and not strict:
+                raise _Stop("unsupported_integration", "Customer dispatch requires a released-input root")
+            if strict:
+                released_root, cwd, evidence_dir = policy.validate_roots(released_root, cwd, evidence_dir)
+                policy.validate_supported_plugin(self.plugin)
+            else:
+                cwd = Path(cwd).resolve(strict=True)
             if not cwd.is_dir() or not isinstance(prompt, str) or not prompt.strip():
                 raise _Stop("integrity_error", "Native cwd and bounded stage prompt are required")
+            if len(prompt.encode()) > 2 * 1024 * 1024:
+                raise _Stop("budget_exhausted", "Native stage prompt exceeds 2 MiB")
+            evidence_dir.mkdir(parents=not strict, exist_ok=True)
+            evidence_allowed = True
+            run.evidence = {"mode": mode, "automatic_acceptance": False,
+                "isolation_policy": "native_named_profile" if strict else "engineering_legacy_workspace",
+                "experimental_profile_api": strict,
+                "log": str(evidence_dir / "native-rpc.jsonl"),
+                "total_stage_limit_seconds": timeout_seconds}
             executable = shutil.which(self.executable)
             if executable is None:
                 raise _Stop("unsupported_integration", "Codex executable is unavailable")
-            inventory = self._inventory(executable, cwd, deadline, cancellation)
-            run.evidence["native_inventory"] = inventory
             run.evidence["executable"] = executable
-            with (evidence_dir / "native-rpc.jsonl").open("w", encoding="utf-8") as log:
-                transport = _Transport(executable, cwd, log)
+            overrides, profile = None, None
+            if strict:
+                _check(deadline, cancellation)
+                with (evidence_dir / "native-bootstrap.jsonl").open("w", encoding="utf-8") as log:
+                    bootstrap = _Transport(executable, cwd, log)
+                    try:
+                        policy.verify_host(self._initialize(bootstrap, deadline, cancellation, experimental=True))
+                        config = policy.config_maps(bootstrap.request("config/read", {
+                            "cwd": str(cwd), "includeLayers": False}, deadline, cancellation))
+                        servers = set(config.get("mcp_servers", {}))
+                        configured_plugins = set(config.get("plugins", {}))
+                    finally:
+                        bootstrap.close()
+                inventory_receipt = {}
                 try:
-                    run.evidence["host"] = transport.request("initialize", {"clientInfo": {
-                        "name": "suiroai_dsc26_native", "version": "0.1.0"}}, deadline, cancellation)
-                    transport.send({"method": "initialized", "params": {}})
+                    plugin_ids, selected = policy.bounded_plugin_inventory(executable, cwd,
+                        min(deadline, time.monotonic() + 60), inventory_receipt, self.plugin, cancellation)
+                finally:
+                    run.evidence["inventory_command"] = inventory_receipt
+                plugin_ids |= configured_plugins
+                run.evidence["native_inventory"] = selected
+                profile = "dsc26-stage-" + uuid.uuid4().hex
+                overrides = policy.profile_overrides(profile, released_root, cwd, servers, plugin_ids, self.plugin)
+                filesystem = tomllib.loads(overrides[1])["permissions"][profile]["filesystem"]
+                run.evidence["profile"] = {"id": profile, "filesystem": filesystem, "network_enabled": False,
+                    "disabled_mcp_servers": sorted(servers), "disabled_plugin_ids": sorted(plugin_ids - {self.plugin.plugin_id})}
+            else:
+                run.evidence["native_inventory"] = self._inventory(executable, cwd, deadline, cancellation)
+            _check(deadline, cancellation)
+            with (evidence_dir / "native-rpc.jsonl").open("w", encoding="utf-8") as log:
+                transport = (_Transport(executable, cwd, log, config_overrides=overrides) if strict
+                    else _Transport(executable, cwd, log))
+                try:
+                    host = self._initialize(transport, deadline, cancellation, experimental=strict)
+                    run.evidence["host"] = host
+                    if strict:
+                        policy.verify_host(host)
+                        config = policy.config_maps(transport.request("config/read", {
+                            "cwd": str(cwd), "includeLayers": False}, deadline, cancellation))
+                        policy.verify_restrictions(config, profile, filesystem, servers, plugin_ids, self.plugin)
+                        run.evidence["effective_profile_verified"] = True
+                        profiles = transport.request("permissionProfile/list", {"cwd": str(cwd), "limit": 100}, deadline, cancellation)
+                        matches = [row for row in profiles.get("data", []) if isinstance(row, dict) and row.get("id") == profile]
+                        policy.require(len(matches) == 1 and matches[0].get("allowed") is True,
+                            "Selected native profile was not returned as allowed")
                     marketplace = self.plugin.plugin_id.rsplit("@", 1)[-1]
-                    skill = transport.request("plugin/skill/read", {
-                        "remoteMarketplaceName": marketplace,
-                        "remotePluginId": self.plugin.remote_plugin_id,
-                        "skillName": self.plugin.skill_name}, deadline, cancellation)
+                    skill = transport.request("plugin/skill/read", {"remoteMarketplaceName": marketplace,
+                        "remotePluginId": self.plugin.remote_plugin_id, "skillName": self.plugin.skill_name}, deadline, cancellation)
                     markdown = skill.get("contents")
                     if not isinstance(markdown, str) or not markdown.strip():
                         raise _Stop("plugin_unavailable", "Native Data skill contents unavailable")
@@ -381,28 +432,37 @@ class NativeHost:
                     run.evidence["skill_sha256"] = skill_hash
                     if self.plugin.skill_sha256 is not None and skill_hash != self.plugin.skill_sha256:
                         raise _Stop("integrity_error", "Native Data skill hash differs from pinned specification")
-                    skill_path = evidence_dir / "native-skill-evidence.txt"
-                    skill_path.write_text(markdown, encoding="utf-8")
-                    run.evidence["skill_evidence"] = str(skill_path)
-                    thread = transport.request("thread/start", {"cwd": str(cwd),
-                        "approvalPolicy": "never", "sandbox": "workspace-write"}, deadline, cancellation)
+                    thread_params = {"cwd": str(cwd), "approvalPolicy": "never"}
+                    if strict:
+                        thread_params.update(permissions=profile, runtimeWorkspaceRoots=[str(cwd)], model=policy.MODEL)
+                    else:
+                        thread_params["sandbox"] = "workspace-write"
+                    thread = transport.request("thread/start", thread_params, deadline, cancellation)
                     run.thread_id = (thread.get("thread") or {}).get("id")
-                    if not run.thread_id:
+                    if not isinstance(run.thread_id, str) or not run.thread_id:
                         raise _Stop("runtime_error", "Native thread identity missing")
                     run.evidence["thread_start"] = thread
-                    if (Path(thread.get("cwd", "")).resolve() != cwd
-                            or thread.get("approvalPolicy") != "never"
-                            or (thread.get("sandbox") or {}).get("type") != "workspaceWrite"
+                    if (thread.get("cwd") != str(cwd) or thread.get("approvalPolicy") != "never"
                             or (thread.get("sandbox") or {}).get("networkAccess") is not False):
-                        raise _Stop("integrity_error", "Native engineering cwd/approval/sandbox acknowledgement mismatch")
-                    attachment = {"type": "mention", "name": "Data",
-                                  "path": "plugin://" + self.plugin.plugin_id}
+                        raise _Stop("integrity_error", "Native cwd/approval/network acknowledgement mismatch")
+                    if strict:
+                        policy.require((thread.get("activePermissionProfile") or {}).get("id") == profile
+                            and thread.get("runtimeWorkspaceRoots") == [str(cwd)]
+                            and thread.get("model") == policy.MODEL
+                            and thread.get("modelProvider") == "openai"
+                            and (thread.get("thread") or {}).get("cliVersion") == policy.CLI_VERSION,
+                            "Native profile/workspace/model/CLI acknowledgement differs")
+                        before = {}
+                        run.evidence["mcp_inventory_before"] = before
+                        policy.disabled_inventory(transport, run.thread_id, deadline, cancellation, before)
+                    elif (thread.get("sandbox") or {}).get("type") != "workspaceWrite":
+                        raise _Stop("integrity_error", "Native engineering sandbox acknowledgement mismatch")
+                    attachment = {"type": "mention", "name": "Data", "path": "plugin://" + self.plugin.plugin_id}
                     run.evidence["attachment"] = attachment
                     started = transport.request("turn/start", {"threadId": run.thread_id,
-                        "input": [{"type": "text", "text": prompt}, attachment]},
-                        deadline, cancellation)
+                        "input": [{"type": "text", "text": prompt}, attachment]}, deadline, cancellation)
                     run.turn_id = (started.get("turn") or {}).get("id")
-                    if not run.turn_id:
+                    if not isinstance(run.turn_id, str) or not run.turn_id:
                         raise _Stop("runtime_error", "Native turn identity missing")
                     terminal = transport.wait_terminal(run.thread_id, run.turn_id, deadline, cancellation)
                     run.terminal_status = terminal.get("status")
@@ -420,13 +480,12 @@ class NativeHost:
                     run.evidence["retrieved_thread"] = read
                     cursor, cursors = None, set()
                     for _ in range(50):
-                        params = {"threadId": run.thread_id, "turnId": run.turn_id,
-                                  "limit": 100, "sortDirection": "asc"}
+                        params = {"threadId": run.thread_id, "turnId": run.turn_id, "limit": 100, "sortDirection": "asc"}
                         if cursor is not None:
                             params["cursor"] = cursor
                         page = transport.request("thread/items/list", params, deadline, cancellation)
                         entries = page.get("data")
-                        if not isinstance(entries, list) or any(
+                        if not isinstance(entries, list) or len(entries) > 100 or any(
                                 not isinstance(entry, dict) or entry.get("turnId") != run.turn_id for entry in entries):
                             raise _Stop("integrity_error", "Native item page shape or turn binding differs")
                         run.items.extend(entries)
@@ -438,25 +497,31 @@ class NativeHost:
                         cursors.add(cursor)
                     else:
                         raise _Stop("budget_exhausted", "Native item pagination limit exhausted; retrieval incomplete")
-                    if not run.items:
-                        raise _Stop("integrity_error", "Native turn history retrieval is empty")
+                    if strict:
+                        after = {}
+                        run.evidence["mcp_inventory_after"] = after
+                        policy.disabled_inventory(transport, run.thread_id, deadline, cancellation, after)
+                        allowed = {"userMessage", "agentMessage", "reasoning", "commandExecution", "fileChange", "plan"}
+                        item_types = {(entry.get("item") or {}).get("type") for entry in run.items}
+                        item_types.update((event.get("item") or {}).get("type") for event in transport.events
+                            if event.get("threadId") == run.thread_id and event.get("turnId") == run.turn_id)
+                        run.evidence["native_turn_item_types"] = sorted(item_types, key=str)
+                        policy.require(item_types <= allowed, "Native tool/item outside declared tabular profile")
                     failed_code = _observed_invalid_code(run.items, transport.events, run.thread_id, run.turn_id)
                     if failed_code:
                         run.evidence["invalid_code_command_id"] = failed_code
                         raise _Stop("invalid_code", "Matching native command/history contains an actual Python syntax failure")
                     commands = _matched_commands(run.items, transport.events, run.thread_id, run.turn_id)
-                    run.evidence["diagnostic_failed_command_ids"] = [
-                        item["id"] for item in commands if item["exitCode"] != 0]
+                    file_changes = _matched_file_changes(run.items, transport.events, run.thread_id, run.turn_id, cwd)
+                    run.evidence["matched_command_ids"] = [item["id"] for item in commands]
+                    run.evidence["matched_file_changes"] = file_changes
+                    run.evidence["diagnostic_failed_command_ids"] = [item["id"] for item in commands if item["exitCode"] != 0]
+                    if not commands and not file_changes:
+                        raise _Stop("runtime_error", "Native completion has no actual paired command or output-file-change evidence")
                     if commands and commands[-1]["exitCode"] != 0:
                         raise _Stop("runtime_error", "Native turn completed with a final failed command and no subsequent correction")
-                    # A completed native turn is not analytical acceptance.
-                    # Historical failures remain diagnostic; adapter/parent
-                    # checks must establish that retrieved outputs are valid.
+                    _check(deadline, cancellation)
                     run.outcome = "completed"
-                except _Stop as exc:
-                    if run.terminal_status not in ("completed", "failed", "interrupted"):
-                        self._interrupt(transport, run)
-                    raise
                 except BaseException:
                     if run.terminal_status not in ("completed", "failed", "interrupted"):
                         self._interrupt(transport, run)
@@ -478,13 +543,54 @@ class NativeHost:
                     transport.close()
                 except (OSError, subprocess.SubprocessError) as exc:
                     run.outcome, run.error_code, run.message = "execution_failed", "runtime_error", str(exc)
-            try:
-                report = evidence_dir / "native-run.json"
-                run.evidence["report"] = str(report)
-                report.write_text(json.dumps(_safe(asdict(run)), indent=2) + "\n", encoding="utf-8")
-            except OSError as exc:
-                run.outcome, run.error_code, run.message = "execution_failed", "runtime_error", str(exc)
+            run.items, run.evidence = _safe(run.items), _safe(run.evidence)
+            run.message = _safe(run.message)
+            if evidence_allowed:
+                try:
+                    self._write_evidence(run, evidence_dir)
+                except (OSError, ValueError) as exc:
+                    run.outcome, run.error_code, run.message = "execution_failed", "runtime_error", str(exc)
         return run
+
+    @staticmethod
+    def _initialize(transport, deadline, cancellation, *, experimental):
+        params = {"clientInfo": {"name": "suiroai_dsc26_native", "version": "0.1.0"}}
+        if experimental:
+            params["capabilities"] = {"experimentalApi": True}
+        host = transport.request("initialize", params, deadline, cancellation)
+        transport.send({"method": "initialized", "params": {}})
+        return host
+
+    @staticmethod
+    def _write_evidence(run, directory):
+        receipts = []
+        for name in ("native-bootstrap.jsonl", "native-rpc.jsonl"):
+            path = directory / name
+            if not path.exists():
+                continue
+            if path.is_symlink() or not path.is_file():
+                raise ValueError("Native evidence path was replaced")
+            with path.open("rb") as stream:
+                data = stream.read(policy.LOG_LIMIT + 65537)
+            if len(data) > policy.LOG_LIMIT + 65536:
+                raise ValueError("Native evidence file exceeds limit")
+            receipts.append({"path": str(path), "relative_path": name, "bytes": len(data), "sha256": sha256(data).hexdigest()})
+        run.evidence["artifact_receipts"] = receipts
+        report = directory / "native-run.json"
+        run.evidence["report"] = str(report)
+        data = (json.dumps(_safe(asdict(run)), indent=2) + "\n").encode()
+        if len(data) > policy.REPORT_LIMIT:
+            run.outcome, run.error_code, run.message = "execution_failed", "budget_exhausted", "Native report exceeded 16 MiB"
+            run.items = []
+            run.evidence = {"mode": run.mode, "automatic_acceptance": False, "report": str(report),
+                "artifact_receipts": receipts, "oversized_report_sha256": sha256(data).hexdigest(),
+                "oversized_report_bytes": len(data), "sanitized_items_retained_in_logs": True}
+            data = (json.dumps(asdict(run), indent=2) + "\n").encode()
+        if report.is_symlink():
+            raise ValueError("Native evidence report path was replaced")
+        report.write_bytes(data)
+        receipts.append({"path": str(report), "relative_path": "native-run.json", "bytes": len(data),
+            "sha256": sha256(data).hexdigest()})
 
     @staticmethod
     def _interrupt(transport, run):

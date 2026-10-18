@@ -5,14 +5,17 @@ from hashlib import sha256
 import io
 import importlib.util
 import json
+import shutil
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from threading import Event
 import unittest
+import tomllib
 from unittest.mock import patch
 
 from suiroai.integration.native import DataPluginSpec, NativeHost, _Stop, _Transport
 from suiroai.integration.native import _observed_invalid_code
+from suiroai.integration import native_profile as policy
 
 
 MARKDOWN = "# Data\nNative synthetic test skill.\n"
@@ -31,7 +34,9 @@ class FakeTransport:
     page_cursor = None
     markdown = MARKDOWN
 
-    def __init__(self, executable, cwd, log):
+    def __init__(self, executable, cwd, log, config_overrides=None):
+        self.config = {"mcp_servers": {"mock-mcp": {"enabled": True}}, "plugins": {"mock-other": {"enabled": True}}}
+        for value in config_overrides or []: self.config.update(tomllib.loads(value))
         self.cwd = Path(cwd)
         self.calls = []
         self.started = []
@@ -50,12 +55,22 @@ class FakeTransport:
         self.calls.append((method, params))
         self.log.write(json.dumps({"mock": True, "method": method}) + "\n")
         if method == "initialize":
-            return {"userAgent": "mock/0.163.0"}
+            return {"userAgent": "mock/0.163.0 (MOCK)", "platformFamily": "unix", "platformOs": "macos"}
+        if method == "config/read":
+            return {"config": self.config}
+        if method == "permissionProfile/list":
+            return {"data": [{"id": self.config["default_permissions"], "allowed": True}]}
+        if method == "mcpServerStatus/list":
+            return {"data": [], "nextCursor": None}
         if method == "plugin/skill/read":
             return {"contents": self.markdown}
         if method == "thread/start":
-            return {"thread": {"id": "thread-mock"}, "cwd": str(self.cwd),
+            result = {"thread": {"id": "thread-mock", "cliVersion": "0.163.0"}, "cwd": str(self.cwd),
                     "approvalPolicy": "never", "sandbox": {"type": "workspaceWrite", "networkAccess": False}}
+            if "permissions" in params:
+                result.update(activePermissionProfile={"id": params["permissions"]},
+                    runtimeWorkspaceRoots=[str(self.cwd)], model=policy.MODEL, modelProvider="openai")
+            return result
         if method == "turn/start":
             self.started.append(("thread-mock", "turn-real-shaped-mock"))
             return {"turn": {"id": "turn-real-shaped-mock", "status": "inProgress"}}
@@ -65,9 +80,10 @@ class FakeTransport:
         if method == "thread/read":
             return {"thread": {"id": "thread-mock"}}
         if method == "thread/items/list":
-            return {"data": [{"turnId": "turn-real-shaped-mock", "item": {
-                "id": "item-mock", "type": "agentMessage", "text": "mock only"}}],
-                "nextCursor": self.page_cursor}
+            item = {"id": "exec-mock", "type": "commandExecution", "command": "python3 mock_calculation.py",
+                "cwd": str(self.cwd), "status": "completed", "exitCode": 0, "aggregatedOutput": "MOCK ONLY"}
+            self.events = [{"threadId": "thread-mock", "turnId": "turn-real-shaped-mock", "item": item}]
+            return {"data": [{"turnId": "turn-real-shaped-mock", "item": item}], "nextCursor": self.page_cursor}
         raise AssertionError("Unexpected method " + method)
 
     def wait_terminal(self, thread_id, turn_id, deadline, cancellation=None):
@@ -109,9 +125,8 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(result.error_code, "unsupported_integration")
         launch.assert_not_called()
         command.assert_not_called()
-        saved = json.loads((self.evidence / "native-run.json").read_text())
-        self.assertFalse(saved["evidence"]["customer_isolation_verified"])
-        self.assertEqual(saved["mode"], "customer")
+        self.assertFalse((self.evidence / "native-run.json").exists())
+        self.assertEqual(result.mode, "customer")
 
     def test_invalid_time_fails_before_native_process(self):
         with patch("suiroai.integration.native.subprocess.Popen") as launch:
@@ -196,7 +211,7 @@ class NativeTests(unittest.TestCase):
 
     def test_bulk_evidence_cap_keeps_control_plane_receipt_available(self):
         transport = _Transport.__new__(_Transport)
-        transport.log, transport.log_bytes = io.StringIO(), 64 * 1024 * 1024 - 5
+        transport.log, transport.log_bytes = io.StringIO(), policy.LOG_LIMIT - 5
         transport.recording_exhausted = False
         with self.assertRaises(_Stop):
             transport.record("received", {"bulk": "oversized"})
@@ -291,18 +306,6 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(result.error_code, "integrity_error")
         self.assertEqual(result.outcome, "execution_failed")
 
-    def test_inventory_mismatch_is_not_silently_enabled_or_reinstalled(self):
-        class Command:
-            returncode = 0
-            stdout = json.dumps({"installed": [inventory("1.0.12")]}).encode()
-            stderr = b""
-        with patch("suiroai.integration.native.subprocess.run", return_value=Command()) as command:
-            with self.assertRaises(_Stop) as caught:
-                NativeHost(plugin=SPEC)._inventory("/mock/codex", self.cwd,
-                    __import__("time").monotonic() + 20, None)
-        self.assertEqual(caught.exception.code, "integrity_error")
-        self.assertEqual(command.call_args.args[0], ["/mock/codex", "plugin", "list", "--json"])
-
     def test_server_auth_request_rejected_without_parameter_capture(self):
         transport = _Transport.__new__(_Transport)
         transport.log, transport.log_bytes = io.StringIO(), 0
@@ -315,6 +318,198 @@ class NativeTests(unittest.TestCase):
         self.assertNotIn("sensitive", transport.log.getvalue())
         self.assertEqual(sent[0]["error"]["code"], -32601)
         self.assertEqual(transport.rejected_requests, [{"method": "account/chatgptAuthTokens/refresh", "id": "auth-1"}])
+
+
+class StrictNativeTests(unittest.TestCase):
+    """Customer-shaped MOCK calls; no Codex or model invocation/acceptance."""
+    def setUp(self):
+        NativeTests.setUp(self)
+        root = Path(self.temp.name).resolve()
+        self.cwd = self.cwd.resolve()
+        self.evidence = root / "evidence"
+        self.release = root / "released"
+        self.release.mkdir()
+        self.data_root = root / "mock-data-resource"
+        self.python_root = root / "mock-python-resource"
+        self.data_root.mkdir(); self.python_root.mkdir()
+
+    def run_strict(self, *, plugin=SPEC, timeout_seconds=90, **kwargs):
+        if self.evidence.exists():
+            shutil.rmtree(self.evidence)
+        with patch("suiroai.integration.native.shutil.which", return_value="/mock/codex"), \
+             patch.object(policy, "SKILL_SHA256", SPEC.skill_sha256), \
+             patch.object(policy, "DATA_ROOT", self.data_root), patch.object(policy, "PYTHON_ROOT", self.python_root), \
+             patch.object(policy.sys, "platform", "darwin"), \
+             patch.object(policy, "bounded_plugin_inventory", return_value=({SPEC.plugin_id, "mock-other"}, inventory())), \
+             patch("suiroai.integration.native._Transport", FakeTransport):
+            return NativeHost(plugin=plugin).execute(cwd=self.cwd, released_root=self.release,
+                prompt="MOCK same approved task; no real authorization", evidence_dir=self.evidence,
+                timeout_seconds=timeout_seconds, **kwargs)
+
+    def test_strict_dispatch_uses_exact_profile_and_one_deadline_without_attestation_flags(self):
+        deadlines = []
+        original = FakeTransport.request
+        def request(transport, method, params, deadline, cancellation=None):
+            deadlines.append(deadline)
+            return original(transport, method, params, deadline, cancellation)
+        with patch.object(FakeTransport, "request", request): result = self.run_strict()
+        self.assertEqual(result.outcome, "completed")
+        self.assertEqual(len(set(deadlines)), 1)
+        self.assertEqual(len(FakeTransport.instances), 2)
+        actual = FakeTransport.instances[-1]
+        start = next(params for method, params in actual.calls if method == "thread/start")
+        self.assertNotIn("sandbox", start)
+        self.assertEqual(start["permissions"], actual.config["default_permissions"])
+        self.assertEqual(start["model"], "gpt-6.1-sol")
+        self.assertEqual(start["runtimeWorkspaceRoots"], [str(self.cwd)])
+        self.assertTrue(result.evidence["mcp_inventory_before"]["validated_disabled_only"])
+        self.assertTrue(result.evidence["mcp_inventory_after"]["validated_disabled_only"])
+        self.assertEqual(result.evidence["matched_command_ids"], ["exec-mock"])
+        receipts = result.evidence["artifact_receipts"]
+        self.assertEqual({r["relative_path"] for r in receipts},
+            {"native-bootstrap.jsonl", "native-rpc.jsonl", "native-run.json"})
+        for receipt in receipts:
+            data = Path(receipt["path"]).read_bytes()
+            self.assertEqual(len(data), receipt["bytes"])
+            self.assertEqual(sha256(data).hexdigest(), receipt["sha256"])
+        self.assertNotIn("customer_isolation_verified", result.evidence)
+
+    def test_unverified_plugin_version_or_hash_never_launches(self):
+        for plugin in (DataPluginSpec(version="1.0.12"), DataPluginSpec(skill_sha256=None)):
+            result = self.run_strict(plugin=plugin)
+            self.assertEqual(result.error_code, "unsupported_integration")
+            self.assertEqual(FakeTransport.instances, [])
+
+    def test_zero_expired_or_cancelled_stage_never_launches(self):
+        for seconds in (0, -1, 1e-30):
+            with self.subTest(seconds=seconds):
+                result = self.run_strict(timeout_seconds=seconds)
+                self.assertIn(result.error_code, {"budget_exhausted", "timeout"})
+                self.assertEqual(FakeTransport.instances, [])
+        cancelled = Event(); cancelled.set()
+        result = self.run_strict(cancellation=cancelled)
+        self.assertEqual(result.error_code, "cancelled")
+        self.assertEqual(FakeTransport.instances, [])
+
+    def test_cancellation_after_discovery_cannot_launch_worker(self):
+        cancelled = Event()
+        original = FakeTransport.request
+        def request(transport, method, params, deadline, cancellation=None):
+            result = original(transport, method, params, deadline, cancellation)
+            if method == "config/read": cancelled.set()
+            return result
+        with patch.object(FakeTransport, "request", request): result = self.run_strict(cancellation=cancelled)
+        self.assertEqual(result.error_code, "cancelled")
+        self.assertEqual(len(FakeTransport.instances), 1)
+        self.assertTrue(FakeTransport.instances[0].closed)
+
+    def test_profile_config_or_thread_binding_changes_block_before_turn(self):
+        original = FakeTransport.request
+        for defect in ("network", "profile", "workspace", "model", "cli", "features", "plugins", "mcp"):
+            FakeTransport.instances = []
+            def request(transport, method, params, deadline, cancellation=None):
+                result = original(transport, method, params, deadline, cancellation)
+                if method == "config/read" and "default_permissions" in transport.config:
+                    if defect == "features": result["config"]["features"]["apps"] = True
+                    if defect == "plugins": result["config"]["plugins"]["mock-other"]["enabled"] = True
+                    if defect == "mcp": result["config"]["mcp_servers"]["mock-mcp"]["enabled"] = True
+                if method == "thread/start":
+                    if defect == "network": result["sandbox"]["networkAccess"] = True
+                    if defect == "profile": result["activePermissionProfile"]["id"] = "wrong"
+                    if defect == "workspace": result["runtimeWorkspaceRoots"] = ["/wrong"]
+                    if defect == "model": result["model"] = "wrong"
+                    if defect == "cli": result["thread"]["cliVersion"] = "0.164.0"
+                return result
+            with self.subTest(defect=defect), patch.object(FakeTransport, "request", request):
+                result = self.run_strict()
+                self.assertEqual(result.outcome, "execution_failed")
+                self.assertIsNone(result.turn_id)
+                self.assertFalse(any(method == "turn/start" for transport in FakeTransport.instances for method, _ in transport.calls))
+
+    def test_live_mcp_after_turn_fails_instead_of_releasing_stage(self):
+        original = FakeTransport.request
+        seen = 0
+        def request(transport, method, params, deadline, cancellation=None):
+            nonlocal seen
+            result = original(transport, method, params, deadline, cancellation)
+            if method == "mcpServerStatus/list":
+                seen += 1
+                if seen == 2: result["data"] = [{"name": "MOCK newly active", "runtimeStatus": "connected"}]
+            return result
+        with patch.object(FakeTransport, "request", request): result = self.run_strict()
+        self.assertEqual(result.outcome, "execution_failed")
+        self.assertTrue(result.evidence["mcp_inventory_before"]["validated_disabled_only"])
+        self.assertFalse(result.evidence["mcp_inventory_after"]["validated_disabled_only"])
+
+    def test_prose_only_or_unpaired_history_does_not_count_as_execution(self):
+        original = FakeTransport.request
+        for prose in (True, False):
+            def request(transport, method, params, deadline, cancellation=None):
+                result = original(transport, method, params, deadline, cancellation)
+                if method == "thread/items/list":
+                    if prose: result["data"] = [{"turnId": "turn-real-shaped-mock", "item": {"id": "p", "type": "agentMessage", "text": "I ran code (MOCK)"}}]
+                    transport.events = []
+                return result
+            with self.subTest(prose=prose), patch.object(FakeTransport, "request", request): result = self.run_strict()
+            self.assertEqual(result.error_code, "runtime_error")
+            self.assertEqual(result.evidence["matched_command_ids"], [])
+
+    def test_paired_file_write_allows_transport_completion_without_claiming_analysis(self):
+        original = FakeTransport.request
+        packet = b'{"outcome":"needs_material_facts","mock":true}\n'
+        for defect in (None, "unpaired", "missing"):
+            path = self.cwd / "stage-result.json"
+            if path.exists(): path.unlink()
+            def request(transport, method, params, deadline, cancellation=None):
+                result = original(transport, method, params, deadline, cancellation)
+                if method == "thread/items/list":
+                    if defect != "missing": path.write_bytes(packet)
+                    item = {"type": "fileChange", "id": "write-mock", "status": "completed",
+                        "changes": [{"path": str(path), "kind": {"type": "add"}, "diff": packet.decode()}]}
+                    result["data"] = [{"turnId": "turn-real-shaped-mock", "item": item}]
+                    transport.events = [] if defect == "unpaired" else [
+                        {"threadId": "thread-mock", "turnId": "turn-real-shaped-mock", "item": item}]
+                return result
+            with self.subTest(defect=defect), patch.object(FakeTransport, "request", request): result = self.run_strict()
+            self.assertEqual(result.outcome, "completed" if defect is None else "execution_failed")
+            self.assertEqual(result.evidence["matched_command_ids"], [])
+            if defect is None:
+                files = result.evidence["matched_file_changes"][0]["files"]
+                self.assertEqual(files, [{"relative_path": "stage-result.json", "bytes": len(packet),
+                    "sha256": sha256(packet).hexdigest()}])
+                self.assertFalse(result.evidence["automatic_acceptance"])
+
+    def test_returned_items_and_report_omit_reasoning_and_full_skill_outputs(self):
+        original = FakeTransport.request
+        def request(transport, method, params, deadline, cancellation=None):
+            result = original(transport, method, params, deadline, cancellation)
+            if method == "thread/items/list":
+                result["data"].append({"turnId": "turn-real-shaped-mock", "item": {"id": "r", "type": "reasoning",
+                    "content": "PRIVATE_REASONING", "summary": "PRIVATE_SUMMARY", "encrypted_content": "PRIVATE_ENCRYPTED"}})
+                skill = {"id": "s", "type": "commandExecution", "command": "cat /MOCK/SKILL.md", "cwd": str(self.cwd),
+                    "status": "completed", "exitCode": 0, "aggregatedOutput": "PRIVATE_SKILL_BODY"}
+                result["data"].append({"turnId": "turn-real-shaped-mock", "item": skill})
+                transport.events.append({"threadId": "thread-mock", "turnId": "turn-real-shaped-mock", "item": skill})
+            return result
+        with patch.object(FakeTransport, "request", request): result = self.run_strict()
+        self.assertEqual(result.outcome, "completed")
+        returned = json.dumps({"items": result.items, "evidence": result.evidence})
+        body = (self.evidence / "native-run.json").read_text()
+        self.assertNotIn("PRIVATE_", returned)
+        self.assertNotIn("PRIVATE_", body)
+        self.assertIn("resource_output_sha256", body)
+
+    def test_symlink_or_overlapping_roots_block_before_any_process(self):
+        link = Path(self.temp.name) / "release-link"
+        link.symlink_to(self.release, target_is_directory=True)
+        self.release = link
+        result = self.run_strict()
+        self.assertEqual(result.error_code, "unsupported_integration")
+        self.assertEqual(FakeTransport.instances, [])
+        self.release = self.cwd
+        result = self.run_strict()
+        self.assertEqual(result.error_code, "unsupported_integration")
+        self.assertEqual(FakeTransport.instances, [])
 
 
 class NativeGeneratedProtocolTests(unittest.TestCase):

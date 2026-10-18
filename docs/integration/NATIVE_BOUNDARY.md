@@ -1,80 +1,36 @@
 # Native Codex/Data boundary
 
-The supported synthetic invocation has been demonstrated with Codex CLI `0.163.0` and Data `1.0.11`. It does not establish customer input isolation. `NativeHost.execute` therefore rejects customer dispatch before starting a process. Explicit engineering mode is reserved for synthetic probes. The transport owns no analytical stages, parent decisions, retries or report logic.
+The reviewed native engineering run demonstrates Codex CLI `0.163.0`, Data `1.0.11`, real resource reads, generated CSV-derived code, actual execution and retrieved artifacts under the named release/output permission profile. The same model tool path executed a trusted immutable control script: unreleased direct/symlink reads, protected-input/outside-output writes and a live loopback connection each produced `PermissionError`. The independent review records 26 checks. [Actual isolated invocation](../../evidence/integration/native-isolated-stage-2026-10-17/review.json)
 
-The adapter uses native `codex plugin list --json` installed inventory, the exact Data plugin/config identity and remote ID, stable `plugin/skill/read`, and a documented native plugin mention in `turn/start`. It does not use the under-development `plugin/read` endpoint in production, invent a Data endpoint, install plugins or paste skill Markdown into the analytical prompt. It retains the fetched skill digest for inspection. Native mention acceptance alone does not establish skill application; reviewers must inspect actual Data resource reads and executed code/output.
+The transport owns no analytical stages, parent decisions, retries or report logic. Native completion is a transport outcome; the adapter and parent still validate the actual typed result and evidence. Engineering success does not grant DSC-25 approval or DSC-10 permission for a customer task.
 
-The request's legacy sandbox enum is `workspace-write`; returned policy type is `workspaceWrite`. The native CLI-generated `0.163.0` schema confirms this distinction. The transport checks the returned cwd, approval policy and policy acknowledgement. These controls restrict writes and approvals, and do not establish released-input-only reads.
+## Enforced adapter boundary
 
-## Native isolation findings
+Customer calls require separate physical sibling `released`, `output` and `native` roots. The immutable artifact store stages exactly the parent's released references in `released`; native cwd/runtime roots point only at `output`. The trusted adapter retains native evidence outside worker access. Root reads are denied, minimal platform/Data/Python runtime reads allowed, released inputs read-only and outputs writable. Explicit physical scratch and original TMPDIR denies constrain macOS implicit Process scratch grants. Networking and approvals are disabled. A fresh directory or legacy `workspace-write` alone would not establish this boundary.
 
-The generated stable `TurnStartParams` schema at `/private/tmp/dsc26-native-protocol/v2/TurnStartParams.json` has no `ReadOnlyAccess`, `readableRoots` or restricted-read field in its legacy `SandboxPolicy`. Newer online app-server examples must not be assumed compatible with this installed binary.
+The implementation pins the exercised CLI/platform/model, Data identity/version and skill hash. It verifies effective configuration, selected profile/cwd/runtime roots/network/approval acknowledgements and full paginated MCP inventories before and after the turn. Only the required native code host and Data plugin remain enabled; image, browser, web, apps, delegation, memories, other plugins and configured MCP servers are disabled. Explicitly disabled empty MCP bookkeeping rows are retained, not mistaken for active tools or silently discarded. Unsupported changes fail closed.
 
-The exact `rust-v0.163.0` source supports named permission profiles. The config format has filesystem read/write/deny entries and network settings. Native `thread/start.permissions` selects a named profile and cannot be combined with the legacy `sandbox` field; `runtimeWorkspaceRoots` and `activePermissionProfile` are also explicitly experimental protocol fields. [Native thread protocol](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/app-server-protocol/src/protocol/v2/thread.rs#L80), [permission config types](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/config/src/permissions_toml.rs#L112).
+The supported mechanism is native `codex plugin list --json`, stable `plugin/skill/read`, a native Data mention and app-server execution. No under-development `plugin/read` endpoint, external Data API, inline skill replacement, installation, Code Interpreter substitution or custom analytical runtime is used. Native skill contents are measured; logs and returned evidence omit full skill bodies, configuration credentials and reasoning content.
 
-Official documentation describes a root deny with minimal platform reads, explicit input reads and output writes. It also warns that legacy sandbox settings override permission profiles. This is a candidate native mechanism, not an exercised isolation claim for this host. No experimental profile selection or configuration change has been made here. [Permissions](https://learn.chatgpt.com/docs/permissions)
+Named `thread/start.permissions`, `runtimeWorkspaceRoots` and `activePermissionProfile` remain experimental protocol fields in installed CLI `0.163.0`. This is the exercised macOS workstation policy, not a portability guarantee. The configured runtime/Data resource roots are intentionally limited to the reviewed host; moving or upgrading them requires new review rather than an arbitrary caller read allowlist. [Native protocol](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/app-server-protocol/src/protocol/v2/thread.rs), [permission types](https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/config/src/permissions_toml.rs), [permission documentation](https://learn.chatgpt.com/docs/permissions)
 
-A narrow future engineering probe can create a released synthetic file, an unreleased synthetic sentinel outside the release root, and a writable output directory. A native permission profile would deny root reads, allow minimal runtime and installed Data resources, grant released files read access and outputs write access, and disable command networking. The probe must retrieve genuine events showing permitted input reads and output writes succeeding, direct sentinel reads failing, and effective native profile identity. It must also address connector/file-tool access rather than assuming a filesystem rule disables those tools. `disabledPluginIds` alone does not prove capabilities are filtered. Do not use customer files for this test.
+All production preflight, discovery, native setup, execution and retrieval consume one parent-approved stage deadline. There is no fresh engineering 120/90-second allowance in customer dispatch. Cancellation and expiry interrupt a known active native turn and retain acknowledgement/terminal or an explicit unconfirmed result, followed by finite cleanup grace. Plugin inventory capture is bounded; its source-specific remote-fallback warning blocks dispatch. Actual log/report bytes become measured immutable artifact references on success and failure. The adapter remeasures released files and manifest after the run, preserves exact task/run/input/proposal bindings and preflights output/evidence/result byte limits before publication. Mock handoffs cannot reach a real NativeHost, even in development mode.
 
-Until this is exercised, customer dispatch returns `unsupported_integration`. A new cwd or a date-filter prompt is insufficient. No separate sandbox service or custom runtime is authorized.
+## What the real evidence establishes
 
-The next engineering check is now prepared:
+The successful isolated turn is thread `01a14c3f-e981-7412-9040-dc2f1074d38a`, turn `01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc`; its terminal completed without error in 21,825 ms. Native Data resources matched installed bytes/hashes. A real file-change item created the 705-byte CSV reader, and a separate actual Python command produced the 90-byte result: three rows, A=5, B=5, total=10. Protected source hashes and symlinks stayed unchanged, and the denied outside file remained absent.
+
+All six command identities were retrieved. Five have exactly equal streamed/persisted output; the sixth is the Data index, whose full 66,898-byte stream matches the installed resource while native persistence retains 65,536 bytes with a verified truncation marker and matching prefix/suffix. It is not a missing execution. Actual successful file creation through `apply_patch` was observed only within output; a negative patch permission control remains unexercised. The image tool is disabled, so no image-read denial is claimed. The controlled network test establishes the tested loopback denial, not every destination/protocol or a confirmed fix for reported older-version networking bugs.
+
+Historical discovery, normalization, scratch-profile failure, disabled-MCP metadata, disabled-code-host and inventory-timeout findings remain in the [source and probe audit](ISOLATION_PROBE.md), with original failed evidence preserved. The subsequent isolated success does not retroactively change those failed runs. Full adapter dispatch through a genuine approved DSC-25/DSC-10 customer packet has not run. Gateway routing also remains unverified; a provider label is insufficient.
+
+The standalone engineering reproducer remains available for explicit synthetic diagnostics:
 
 ```sh
 python3 /private/tmp/suiroai-dsc26/evidence/integration/probe_native_isolation.py
 ```
 
-Run it in the normal Terminal that completed the earlier native probes. It uses
-fresh synthetic files and process-scoped configuration overrides. Global Codex
-configuration is not edited. Metadata and deterministic command controls have a
-120-second bound; at most one 90-second Data turn follows, with bounded cleanup.
-Named profile fields are explicitly experimental for CLI 0.163.0.
-
-The declared worker is tabular: native image/browser/web tools, memories, other
-plugins, apps and configured MCP servers are disabled for this process. The probe
-checks effective configuration and actual thread MCP inventory before the Data
-turn. Empty config tables are not treated as removing inherited connectors;
-each discovered connector is disabled explicitly. It does not test or claim
-native image-tool denial. See the [source audit](ISOLATION_PROBE.md) for the
-stable-history limitation that led to this explicit scope.
-
-Native command controls must show a real released-file calculation and output
-write, plus genuine permission errors for an existing unreleased sentinel,
-its symlink, protected-input/outside-output writes and a controlled network
-connection. Trusted-side hashes preserve the distinction between denial and a
-missing or changed fixture. If these checks pass, one native Data turn must
-read its actual installed resources, execute code, and return matching artifact
-bytes under the same profile. Missing receipts, unexpected tools, rejected
-configuration or partial inventory produce an honest blocker. No probe status
-automatically enables customer dispatch or closes DSC-26.
-
-The first isolation attempt stopped before native controls or a model turn with
-`Effective native filesystem/network profile differs`. Its original selected
-filesystem/network object was not retained, so the mismatched field is unknown.
-The exact CLI source serializes an absent optional `glob_scan_max_depth` as JSON
-`null`; the probe's raw dictionary comparison rejected that representation.
-Commit `5daa5b1` normalizes only this known absent/null metadata and preserves
-exact grant and disabled-network checks. Subsequent failures retain and print
-a safe comparison for the selected profile. This is a source-supported likely
-explanation, not a retrospective observation or passed isolation check.
-[Original blocked observation](../../evidence/integration/isolation-profile-comparison-2026-10-17/observation.json)
-
-The following real run accepted the requested profile but failed native controls:
-sentinel and symlink reads succeeded, and an actual empty file was created
-outside the output namespace. Input writes and networking were denied. No model
-turn ran. The [retained failure](../../evidence/integration/native-command-isolation-failure-2026-10-17/review.json)
-contains exact request/response receipts and verified artifacts.
-
-The exact native macOS source adds Process scratch reads/writes under
-`/private/tmp` and `/private/var/tmp` when `:minimal` is active. A filesystem-root
-deny alone does not exclude those implicit grants. This is shared native
-behavior, not evidence of a lossy `command/exec` conversion. Commit `11ec77e`
-adds explicit physical scratch-root and canonical current `TMPDIR` denies,
-preserving the narrower released-input and output grants. The same denied test
-fixtures remain under `/private/tmp`; they were not moved to conceal this
-failure. Actual enforcement of the strengthened profile still needs a real
-probe. The console now retains individual native control outcomes even when
-the checker exits nonzero. See the [source audit](ISOLATION_PROBE.md).
+It has a default 60-second discovery execution deadline (configurable 1–120), a fresh 120-second deterministic control bound and one 90-second Data turn, plus finite cleanup. Those separate phase bounds apply only to this synthetic probe. Global configuration and customer sources are untouched.
 
 ## Failure evidence
 

@@ -41,6 +41,31 @@ class MockFailureHost:
         )
 
 
+class MockReceiptHost(MockFailureHost):
+    """Actual local receipt files for a MOCK failure; no native invocation."""
+
+    def __init__(self, mutate=None):
+        super().__init__()
+        self.mutate = mutate
+        self.file_bytes = {"native-rpc.jsonl": b'{"fixture":"MOCK RPC; no native call"}\n',
+            "native-bootstrap.jsonl": b'{"fixture":"MOCK bootstrap"}\n',
+            "native-run.json": b'{"fixture":"MOCK failed run; no analysis"}\n'}
+
+    def execute(self, **kwargs):
+        run = super().execute(**kwargs)
+        root = kwargs["evidence_dir"]
+        receipts = []
+        for name, data in self.file_bytes.items():
+            path = root / name
+            path.write_bytes(data)
+            receipts.append({"path": str(path), "relative_path": name, "bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest()})
+        run.evidence["artifact_receipts"] = receipts
+        if self.mutate:
+            self.mutate(kwargs, run)
+        return run
+
+
 def replace_reference(value, old, new):
     if isinstance(value, dict):
         if value == old:
@@ -151,6 +176,17 @@ class MockStageAdapterTests(unittest.TestCase):
         self.assertEqual([a["ref"] for a in payload["released_files"]["artifacts"]],
                          self.request["released_input_refs"])
         self.assertEqual(payload["material_assumptions"], self.record("execution_contract")["source_assumptions"])
+        self.assertEqual(call["cwd"].name, "output")
+        self.assertEqual(call["released_root"].name, "released")
+        self.assertEqual(call["evidence_dir"].name, "native")
+        self.assertEqual(call["cwd"].parent, call["released_root"].parent)
+        self.assertEqual(call["cwd"].parent, call["evidence_dir"].parent)
+        self.assertEqual(payload["released_root"], str(call["released_root"]))
+        self.assertEqual(payload["output_root"], str(call["cwd"]))
+        self.assertEqual(payload["released_manifest_path"], str(call["released_root"] / "manifest.json"))
+        for entry in payload["released_files"]["artifacts"]:
+            self.assertTrue((call["released_root"] / entry["relative_path"]).is_file())
+            self.assertFalse((call["cwd"] / entry["relative_path"]).exists())
 
     def test_parent_must_authorize_exact_reference_and_return_literal_true(self):
         request_ref, handoff = self.seal()
@@ -273,14 +309,120 @@ class MockStageAdapterTests(unittest.TestCase):
                 self.host.code = code
                 self.assert_failure(self.execute(), code)
 
-    def test_customer_read_isolation_gate_fails_closed_without_native_process(self):
+    def test_mock_handoff_cannot_reach_real_native_even_in_development(self):
         request_ref, handoff = self.seal()
         with patch("subprocess.Popen") as spawn:
-            result = self.adapter(host=NativeHost()).execute(
-                request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+            with self.assertRaisesRegex(AdapterRejected, "mock handoff.*real NativeHost"):
+                self.adapter(host=NativeHost()).execute(
+                    request_ref, handoff_refs=handoff, external_refs=self.external_refs)
         spawn.assert_not_called()
-        self.assert_failure(result, "unsupported_integration")
-        self.assertIn("isolation", result["failure"]["reason"].lower())
+
+    def test_mock_external_references_cannot_authorize_a_real_host(self):
+        # Record provenance alone cannot hide the MOCK external input bytes.
+        for record in self.records:
+            record["provenance"] = "derived"
+        request_ref, handoff = self.seal()
+        with patch("subprocess.Popen") as spawn:
+            with self.assertRaisesRegex(AdapterRejected, "mock handoff.*real NativeHost"):
+                self.adapter(host=NativeHost()).execute(
+                    request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+        spawn.assert_not_called()
+
+    def test_native_failure_files_are_measured_and_survive_local_file_changes(self):
+        host = MockReceiptHost()
+        request_ref, handoff = self.seal()
+        result = self.adapter(host=host).execute(request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+        self.assertEqual(validate_record(result), [])
+        self.assertEqual(result["outcome"], "execution_failed")
+        self.assertEqual(result["failure"]["error_code"], "runtime_error")
+        self.assertEqual(result["evidence_refs"], result["failure"]["evidence_refs"])
+        self.assertEqual(len(result["evidence_refs"]), 4)
+        audit = json.loads(self.store.read_bytes(result["evidence_refs"][-1]))
+        self.assertEqual(audit["request_ref"], request_ref)
+        self.assertEqual(audit["binding"], self.request["binding"])
+        self.assertEqual(audit["native_evidence_refs"], result["evidence_refs"][:-1])
+        for artifact in audit["native_artifacts"]:
+            self.assertEqual(artifact["ref"]["provenance"], "mock")
+            self.assertEqual(self.store.read_bytes(artifact["ref"]), host.file_bytes[artifact["name"]])
+            (host.calls[0]["evidence_dir"] / artifact["name"]).write_bytes(b"Changed local mock log")
+            self.assertEqual(self.store.read_bytes(artifact["ref"]), host.file_bytes[artifact["name"]])
+        self.assertFalse(audit["stage_outputs_accepted"])
+        self.assertEqual(audit["published_refs"], [])
+
+    def test_untrusted_native_receipts_cannot_publish_any_analytical_outputs(self):
+        def change_hash(kwargs, run):
+            run.evidence["artifact_receipts"][0]["sha256"] = "0" * 64
+        def escape_path(kwargs, run):
+            run.evidence["artifact_receipts"][0]["path"] = str(self.root / "unreleased.jsonl")
+        def replace_with_symlink(kwargs, run):
+            path = kwargs["evidence_dir"] / "native-rpc.jsonl"
+            target = self.root / "mock-target.jsonl"
+            target.write_bytes(path.read_bytes()); path.unlink(); path.symlink_to(target)
+        def overflow(kwargs, run):
+            run.evidence["artifact_receipts"][0]["bytes"] = self.store.max_bytes + 1
+        for mutation, code in ((change_hash, "integrity_error"), (escape_path, "integrity_error"),
+                (replace_with_symlink, "integrity_error"), (overflow, "budget_exhausted")):
+            with self.subTest(mutation=mutation.__name__):
+                request_ref, handoff = self.seal()
+                host = MockReceiptHost(mutation)
+                result = self.adapter(host=host).execute(request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+                self.assertEqual(result["failure"]["error_code"], code)
+                self.assertEqual(result["output_refs"], [])
+                audit = json.loads(self.store.read_bytes(result["evidence_refs"][-1]))
+                self.assertEqual(audit["native_evidence_refs"], [])
+                self.assertEqual(audit["published_refs"], [])
+
+    def test_released_inputs_and_manifest_are_rechecked_even_on_native_failure(self):
+        for manifest_only in (False, True):
+            def mutate(kwargs, run):
+                if manifest_only:
+                    path = kwargs["released_root"] / "manifest.json"
+                else:
+                    staged = json.loads((kwargs["released_root"] / "manifest.json").read_bytes())
+                    path = kwargs["released_root"] / staged["artifacts"][0]["relative_path"]
+                path.chmod(0o600); path.write_bytes(path.read_bytes() + b" ")
+            with self.subTest(manifest_only=manifest_only):
+                request_ref, handoff = self.seal()
+                result = self.adapter(host=MockReceiptHost(mutate)).execute(
+                    request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+                self.assertEqual(result["failure"]["error_code"], "integrity_error")
+                self.assertIn("Worker changed", result["failure"]["reason"])
+                self.assertEqual(result["output_refs"], [])
+                self.assertEqual(len(result["evidence_refs"]), 4)
+
+    def test_large_native_details_are_not_duplicated_in_the_binding_audit(self):
+        def oversized_metadata(kwargs, run):
+            run.evidence["item_completed_events"] = [{"MOCK": "x" * (self.store.max_bytes + 1)}]
+            run.evidence["host"] = {"MOCK large native metadata": "x" * (self.store.max_bytes + 1)}
+        request_ref, handoff = self.seal()
+        result = self.adapter(host=MockReceiptHost(oversized_metadata)).execute(
+            request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+        self.assertEqual(result["failure"]["error_code"], "runtime_error")
+        audit_bytes = self.store.read_bytes(result["evidence_refs"][-1])
+        self.assertLess(len(audit_bytes), 16384)
+        audit = json.loads(audit_bytes)
+        self.assertTrue(audit["native"]["detail_omitted_due_limit"])
+
+    def test_failure_audit_and_result_obey_perfile_and_aggregate_caps(self):
+        def diagnostic(kwargs, run):
+            run.evidence["host"] = {"MOCK diagnostic": "d" * 12000}
+        for perfile, aggregate in ((8192, 64 * 1024 * 1024), (16 * 1024 * 1024, 8192)):
+            with self.subTest(perfile=perfile, aggregate=aggregate):
+                request_ref, handoff = self.seal()
+                self.store.max_bytes, self.store.max_total_bytes = perfile, aggregate
+                result = self.adapter(host=MockReceiptHost(diagnostic)).execute(
+                    request_ref, handoff_refs=handoff, external_refs=self.external_refs)
+                self.assertEqual(validate_record(result), [])
+                self.assertEqual(result["failure"]["error_code"], "runtime_error")
+                self.assertEqual(result["binding"], self.request["binding"])
+                retained = [self.store.read_bytes(ref) for ref in result["evidence_refs"]]
+                retained.append(self.store.read_bytes(record_ref(result)))
+                self.assertTrue(all(len(data) <= perfile for data in retained))
+                self.assertLessEqual(sum(map(len, retained)), aggregate)
+                audit = json.loads(retained[-2])
+                self.assertIn("audit_detail_compacted", audit)
+                self.assertEqual(audit["native_evidence_refs"], result["evidence_refs"][:-1])
+                self.assertEqual(audit["published_refs"], [])
 
     def mock_worker_packet(self, *, outcome="needs_inputs", blobs=None):
         """Make a mocked non-success receiver packet, never a native run."""
@@ -333,6 +475,76 @@ class MockStageAdapterTests(unittest.TestCase):
                 self.assertEqual(result["output_refs"], [])
                 self.assertEqual(result["provenance"], "mock")
         self.assertFalse(self.host.calls)
+
+    def test_final_envelope_counts_toward_budget_before_worker_outputs_publish(self):
+        packet = self.mock_worker_packet()
+        adapter, request_ref, directory, result, refs = packet
+        result["gaps"][0]["description"] = "MOCK material fact detail " * 1000
+        self.write_worker_result(directory, result)
+        self.store.max_total_bytes = 8192
+        guarded = adapter._retrieve(self.request, request_ref, "mock", directory,
+            self.records, self.external_refs,
+            {"evidence_mode": "mock", "published_refs": [], "stage_outputs_accepted": False},
+            lambda code, reason: {"guarded_error_code": code, "reason": reason})
+        self.assertEqual(guarded["guarded_error_code"], "budget_exhausted")
+        with self.assertRaises(ArtifactError):
+            self.store.read_bytes(refs[0])
+
+    def test_late_cancellation_counts_already_retained_controller_audit(self):
+        packet = self.mock_worker_packet()
+        adapter, request_ref, directory, _, refs = packet
+        self.store.max_total_bytes = 8192
+        audit = {"evidence_mode": "mock", "published_refs": [],
+                 "stage_outputs_accepted": False, "MOCK diagnostic": "d" * 3200}
+        cancellation = threading.Event()
+        put_bytes = self.store.put_bytes
+
+        def cancel_after_audit(artifact_id, *args):
+            ref = put_bytes(artifact_id, *args)
+            if artifact_id.startswith("native-audit-"):
+                cancellation.set()
+            return ref
+
+        def failure(code, reason):
+            data, ref, result = adapter._failure_packet(
+                self.request, request_ref, "mock", audit, code, reason)
+            put_bytes(ref["artifact_id"], 1, "mock", data)
+            self.store.put_record(result)
+            return result
+
+        with patch.object(self.store, "put_bytes", side_effect=cancel_after_audit):
+            result = adapter._retrieve(self.request, request_ref, "mock", directory,
+                self.records, self.external_refs, audit, failure,
+                lambda: ("cancelled", "MOCK cancellation during publication") if cancellation.is_set() else None)
+        self.assertTrue(cancellation.is_set())
+        self.assertEqual(result["failure"]["error_code"], "cancelled")
+        self.assertEqual(result["output_refs"], [])
+        self.assertEqual(validate_record(result), [])
+        self.assertEqual(len(audit["controller_evidence_refs"]), 1)
+        self.assertIn(audit["controller_evidence_refs"][0], result["evidence_refs"])
+        all_refs = refs + result["evidence_refs"] + [record_ref(result)]
+        self.assertLessEqual(sum(len(self.store.read_bytes(ref)) for ref in all_refs), 8192)
+
+    def test_final_result_publication_commits_the_checked_packet(self):
+        packet = self.mock_worker_packet()
+        adapter, request_ref, directory, _, _ = packet
+        cancellation = threading.Event()
+        put_record = self.store.put_record
+
+        def cancel_after_commit(record):
+            ref = put_record(record)
+            cancellation.set()
+            return ref
+
+        with patch.object(self.store, "put_record", side_effect=cancel_after_commit):
+            result = adapter._retrieve(self.request, request_ref, "mock", directory,
+                self.records, self.external_refs,
+                {"published_refs": [], "stage_outputs_accepted": False},
+                lambda *args: self.fail("Committed result must not be superseded"),
+                lambda: ("cancelled", "MOCK cancellation after commit") if cancellation.is_set() else None)
+        self.assertTrue(cancellation.is_set())
+        self.assertEqual(result["outcome"], "needs_inputs")
+        self.assertEqual(self.store.read_record(record_ref(result)), result)
 
     def test_worker_output_binding_tampering_never_publishes_pending_artifact(self):
         mutations = {

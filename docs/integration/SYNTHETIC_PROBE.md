@@ -1,5 +1,7 @@
 # Bounded native Data engineering probe
 
+Historical observation for the run described below. Current isolated invocation, adapter wiring and remaining acceptance are documented in [ADAPTER.md](ADAPTER.md) and [NATIVE_BOUNDARY.md](NATIVE_BOUNDARY.md).
+
 This probe exercises integration mechanics only. It is not the retail task, a customer analysis, a production adapter, a new runtime, or permission to bypass customer approval and parent checkpoints.
 
 Run in the same normal macOS Terminal where the CLI catalog confirmed Data installed/enabled:

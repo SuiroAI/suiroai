@@ -1,7 +1,7 @@
 """DSC-26 stage boundary; DSC-10 retains all checkpoint decisions.
 
-Customer dispatch is deliberately blocked by NativeHost until native read
-isolation has been demonstrated. Synthetic probes do not override that gate.
+Dispatch retains the existing approval chain and uses the reviewed native
+release/output boundary. Engineering evidence never authorizes a customer task.
 """
 
 from __future__ import annotations
@@ -17,12 +17,24 @@ import time
 import uuid
 
 from suiroai.contracts import VERSION, record_ref, validate_handoff, validate_record
-from .artifacts import ArtifactStore, read_stage_file
+from .artifacts import ArtifactStore, read_stage_file, _json_bytes
 from .native import NativeHost
 
 
 class AdapterRejected(ValueError):
     """Untrusted or invalid handoff: no worker was dispatched."""
+
+
+class _BudgetExceeded(ValueError):
+    pass
+
+
+def _compact(value, max_bytes=16384):
+    """Large native details live in measured files, not the binding summary."""
+    data = json.dumps(value, sort_keys=True, ensure_ascii=False).encode()
+    return value if len(data) <= max_bytes else {
+        "detail_omitted_due_limit": True, "bytes": len(data),
+        "sha256": hashlib.sha256(data).hexdigest(), "see_native_evidence_refs": True}
 
 
 def _refs(value):
@@ -72,7 +84,9 @@ class StageAdapter:
         if not callable(parent_permits) or not 0 < ceiling_seconds <= 3600:
             raise ValueError("trusted parent verifier and finite ceiling required")
         self.store = store
-        self.work_root = Path(work_root)
+        # The exercised native policy accepts physical roots. Resolve a trusted
+        # deployment alias such as /tmp before creating fresh sibling stages.
+        self.work_root = Path(work_root).resolve()
         self.parent_permits = parent_permits
         self.host = host or NativeHost()
         self.ceiling_seconds = ceiling_seconds
@@ -92,8 +106,14 @@ class StageAdapter:
             raise AdapterRejected("DSC-10 did not authorize this exact stage request")
         records = [self.store.read_record(ref) for ref in handoff_refs]
         records = [r for r in records if record_ref(r) != request_ref] + [request]
-        if not self.allow_mock_handoffs and any(r["provenance"] == "mock" for r in records):
+        mock_handoff = any(r["provenance"] == "mock" for r in records) or any(
+            ref.get("provenance") == "mock" for ref in external_refs)
+        if not self.allow_mock_handoffs and mock_handoff:
             raise AdapterRejected("mock handoff cannot authorize real execution")
+        if mock_handoff and isinstance(self.host, NativeHost):
+            raise AdapterRejected("mock handoff cannot dispatch a real NativeHost")
+        if not isinstance(self.host, NativeHost) and not (self.allow_mock_handoffs and mock_handoff):
+            raise AdapterRejected("an injected host is supported only for explicitly mocked development")
         # Measure referenced external bytes even though validate_handoff alone
         # only checks graph consistency. Reading occurs in the trusted adapter.
         total = 0
@@ -126,31 +146,30 @@ class StageAdapter:
         remaining_errors = [e for e in errors if not (exhausted and e in limit_errors)]
         if remaining_errors:
             raise AdapterRejected("; ".join(remaining_errors))
-        provenance = "mock" if any(r["provenance"] == "mock" for r in records) else "derived"
+        provenance = "mock" if mock_handoff else "derived"
         self.work_root.mkdir(parents=True, exist_ok=True)
         attempt_root = Path(tempfile.mkdtemp(prefix="stage-", dir=self.work_root))
         audit = {"request_ref": request_ref, "customer_model_turn_requested": False,
                  "mock_handoff": provenance == "mock", "events": [], "published_refs": [],
-                 "phase": "pre_dispatch"}
+                 "published_output_bytes": 0,
+                 "native_evidence_refs": [], "native_evidence_bytes": 0,
+                 "controller_evidence_refs": [], "controller_evidence_bytes": 0,
+                 "binding": deepcopy(request["binding"]), "run_id": request["run_id"],
+                 "stage": request["stage"], "attempt": request["attempt"], "phase": "pre_dispatch"}
 
         def failure(code, reason):
-            audit["phase"] = "execution_failed"
-            audit["events"].append({"error_code": code, "reason": reason})
-            audit["stage_outputs_accepted"] = False
-            audit["working_directory_released"] = False
-            evidence = self.store.put_bytes(
-                "adapter-audit-" + uuid.uuid4().hex, 1, provenance,
-                (json.dumps(audit, sort_keys=True, indent=2) + "\n").encode())
-            result = self._result(request, request_ref, provenance)
-            result.update(outcome="execution_failed", evidence_refs=[evidence], failure={
-                "stage": "adapter_execution", "error_code": code, "reason": reason,
-                "scope_limitation": "This MVP could not produce a reliable solution with the supplied data/scope in this stage.",
-                "evidence_refs": [evidence]})
+            audit_bytes, evidence, result = self._failure_packet(request, request_ref, provenance, audit, code, reason)
             if validate_record(result):
                 raise AdapterRejected("adapter generated invalid failure envelope")
+            if self.store.put_bytes(evidence["artifact_id"], 1, provenance, audit_bytes) != evidence:
+                raise AdapterRejected("failure evidence changed during publication")
             self.store.put_record(result)
             return result
 
+        try:
+            self._failure_packet(request, request_ref, provenance, audit, "integrity_error", "x" * 2048)
+        except _BudgetExceeded as exc:
+            raise AdapterRejected("artifact bounds cannot retain a minimal failure envelope") from exc
         if cancellation is not None and cancellation.is_set():
             return failure("cancelled", "Cancelled before native dispatch")
         if exhausted:
@@ -170,31 +189,54 @@ class StageAdapter:
                 return "timeout", "Stage deadline expired before output acceptance"
             return None
         try:
-            manifest = self.store.stage_released(request["released_input_refs"], attempt_root / "work")
-            prompt = self._prompt(request, request_ref, execution, records, manifest)
+            released_root, output_root, native_root = (attempt_root / name for name in ("released", "output", "native"))
+            manifest = self.store.stage_released(request["released_input_refs"], released_root)
+            manifest_bytes = read_stage_file(released_root, "manifest.json", max_bytes=self.store.max_bytes)
+            manifest_sha = hashlib.sha256(manifest_bytes).hexdigest()
+            output_root.mkdir(mode=0o700)
+            native_root.mkdir(mode=0o700)
+            audit["released_manifest"] = {"sha256": manifest_sha, "bytes": len(manifest_bytes),
+                "released_refs": deepcopy(request["released_input_refs"])}
+            prompt = self._prompt(request, request_ref, execution, records, manifest, released_root, output_root)
             seconds = min(monotonic_deadline - time.monotonic(),
                           (deadline - datetime.now(timezone.utc)).total_seconds())
             if seconds <= 0:
                 return failure("timeout", "Stage deadline expired during input staging")
-            run = self.host.execute(cwd=attempt_root / "work", prompt=prompt,
-                evidence_dir=attempt_root / "native", timeout_seconds=seconds,
+            run = self.host.execute(cwd=output_root, released_root=released_root, prompt=prompt,
+                evidence_dir=native_root, timeout_seconds=seconds,
                 cancellation=cancellation, mode="customer")
-            audit["native"] = run.evidence
+            # Full sanitized receipts become immutable measured artifacts below;
+            # the compact binding audit does not duplicate large tool outputs.
+            if not isinstance(run.evidence, dict):
+                raise ValueError("native evidence metadata is malformed")
+            audit["native"] = _compact({key: run.evidence[key] for key in (
+                "mode", "host", "skill_sha256", "native_inventory", "attachment", "isolation",
+                "interruption_confirmed", "interruption_error", "evidence_retention_truncated") if key in run.evidence})
+            terminal = run.evidence.get("terminal", {})
+            if not isinstance(terminal, dict):
+                raise ValueError("native terminal metadata is malformed")
+            audit["native_terminal"] = _compact({key: terminal.get(key) for key in ("id", "status", "error", "durationMs")})
+            audit["native_outcome"] = _compact({"outcome": run.outcome, "error_code": run.error_code, "message": run.message})
             audit["thread_id"], audit["turn_id"] = run.thread_id, run.turn_id
             audit["customer_model_turn_requested"] = bool(run.turn_id)
+            self._retain_native(run, native_root, provenance, audit, request, request_ref)
+            for entry in manifest["artifacts"]:
+                data = read_stage_file(released_root, entry["relative_path"])
+                if hashlib.sha256(data).hexdigest() != entry["byte_sha256"]:
+                    return failure("integrity_error", "Worker changed a released input")
+            if hashlib.sha256(read_stage_file(released_root, "manifest.json")).hexdigest() != manifest_sha:
+                return failure("integrity_error", "Worker changed the released manifest")
             if run.outcome != "completed":
                 return failure(run.error_code, run.message)
             if run.mode != "customer":
                 return failure("integrity_error", "Engineering execution cannot satisfy a customer stage")
             if stop := stop_reason():
                 return failure(*stop)
-            for entry in manifest["artifacts"]:
-                data = read_stage_file(attempt_root / "work", entry["relative_path"])
-                if hashlib.sha256(data).hexdigest() != entry["byte_sha256"]:
-                    return failure("integrity_error", "Worker changed a released input")
             # Native completion alone never establishes analytical success.
-            return self._retrieve(request, request_ref, provenance, attempt_root / "work",
+            return self._retrieve(request, request_ref, provenance, output_root,
                                   records, external_refs, audit, failure, stop_reason)
+        except _BudgetExceeded as exc:
+            return failure("budget_exhausted", str(exc))
         except (OSError, ValueError, KeyError, TypeError) as exc:
             return failure("integrity_error", str(exc))
 
@@ -209,8 +251,45 @@ class StageAdapter:
             "outcome": "execution_failed", "failure": None, "output_refs": [],
             "evidence_refs": [], "gaps": [], "final_validation_result_ref": None}
 
+    def _failure_packet(self, request, request_ref, provenance, audit, code, reason):
+        """Budget the failure envelope too; large optional details become hashes."""
+        raw_reason = str(reason).encode()
+        view = deepcopy(audit)
+        view.update(phase="execution_failed", stage_outputs_accepted=False, working_directory_released=False)
+        if len(raw_reason) > 2048:
+            view["full_failure_reason"] = {"bytes": len(raw_reason), "sha256": hashlib.sha256(raw_reason).hexdigest()}
+        reason = raw_reason[:2048].decode(errors="ignore") + (" [diagnostic shortened]" if len(raw_reason) > 2048 else "")
+        audit_id = "adapter-audit-" + uuid.uuid4().hex
+        result = self._result(request, request_ref, provenance)
+        for minimal in (False, True):
+            if minimal:
+                original = _json_bytes(view)
+                keep = ("request_ref", "run_id", "stage", "attempt", "mock_handoff", "thread_id", "turn_id",
+                    "customer_model_turn_requested", "published_refs", "published_output_bytes", "native_evidence_refs",
+                    "native_evidence_bytes", "controller_evidence_refs", "controller_evidence_bytes",
+                    "stage_outputs_accepted", "working_directory_released", "phase")
+                view = {key: view[key] for key in keep if key in view}
+                view["audit_detail_compacted"] = {"bytes": len(original), "sha256": hashlib.sha256(original).hexdigest(),
+                    "binding_preserved_in_stage_result": True, "see_native_evidence_refs": True}
+                reason = raw_reason[:256].decode(errors="ignore") + (" [diagnostic shortened]" if len(raw_reason) > 256 else "")
+            view["events"] = [{"error_code": code, "reason": reason}]
+            data = (json.dumps(view, sort_keys=True, indent=2, ensure_ascii=False) + "\n").encode()
+            ref = {"artifact_id": audit_id, "version": 1, "provenance": provenance, "sha256": hashlib.sha256(data).hexdigest()}
+            refs = audit.get("native_evidence_refs", []) + audit.get("controller_evidence_refs", []) + [ref]
+            result.update(outcome="execution_failed", evidence_refs=refs, failure={
+                "stage": "adapter_execution", "error_code": code, "reason": reason,
+                "scope_limitation": "This MVP could not produce a reliable solution with the supplied data/scope in this stage.",
+                "evidence_refs": refs})
+            result_bytes = _json_bytes(result)
+            retained = (audit.get("native_evidence_bytes", 0) + audit.get("published_output_bytes", 0)
+                        + audit.get("controller_evidence_bytes", 0))
+            if (len(data) <= self.store.max_bytes and len(result_bytes) <= self.store.max_bytes
+                    and retained + len(data) + len(result_bytes) <= self.store.max_total_bytes):
+                return data, ref, result
+        raise _BudgetExceeded("artifact bounds cannot retain a minimal failure envelope")
+
     @staticmethod
-    def _prompt(request, request_ref, execution, records, manifest):
+    def _prompt(request, request_ref, execution, records, manifest, released_root, output_root):
         from suiroai.contracts import schema_validator
         proposal = next(r for r in records if r["kind"] == "task_proposal")
         payload = {"goal": proposal["goal"], "output": proposal["output"],
@@ -221,31 +300,79 @@ class StageAdapter:
             "target_policy": execution["target_policy"],
             "acceptance_rule": execution["acceptance_rule"],
             "material_assumptions": execution["source_assumptions"],
-            "allowed_actions": execution["allowed_actions"], "released_files": manifest}
+            "allowed_actions": execution["allowed_actions"], "released_files": manifest,
+            "released_root": str(released_root), "released_manifest_path": str(released_root / "manifest.json"),
+            "output_root": str(output_root)}
         return ("Use OpenAI Data for this single parent-authorized stage of the existing approved task. "
             "Do not redefine its goal/output or advance another checkpoint. Read only released files. "
             "Keep routine progress internal. Return actionable gaps separately from measured validation "
             "failure and execution failure. Never claim unexecuted code succeeded. "
             "Write stage-result.json matching the shared stage_result schema, with parent_decision null; "
             "write artifact-manifest.json as a list of {ref,path,encoding} entries for each new artifact "
-            "(encoding bytes or record). Paths are relative to this stage directory. "
+            "(encoding bytes or record). Output paths are relative to output_root, the current directory. "
+            "Resolve released_files relative paths only under released_root; that directory and its manifest are read-only. "
             "Keep bindings/versions unchanged and retain actual code and execution evidence.\n" +
             json.dumps(payload, sort_keys=True))
+
+    def _retain_native(self, run, native_root, provenance, audit, request, request_ref):
+        """Measure controller-owned native receipts before accepting any outputs."""
+        receipts = run.evidence.get("artifact_receipts", [])
+        if not isinstance(receipts, list) or len(receipts) > 3:
+            raise ValueError("invalid native evidence receipt list")
+        allowed = {"native-run.json", "native-rpc.jsonl", "native-bootstrap.jsonl"}
+        seen, pending, total = set(), [], 0
+        for receipt in receipts:
+            if not isinstance(receipt, dict):
+                raise ValueError("invalid native evidence receipt")
+            name = receipt.get("relative_path")
+            if name not in allowed or name in seen:
+                raise ValueError("native evidence filename is invalid or duplicated")
+            seen.add(name)
+            if Path(receipt.get("path", "")).absolute() != (native_root / name).absolute():
+                raise ValueError("native evidence path escaped its controller namespace")
+            if type(receipt.get("bytes")) is int and receipt["bytes"] > self.store.max_bytes:
+                raise _BudgetExceeded("native evidence per-file byte limit exhausted")
+            data = read_stage_file(native_root, name, max_bytes=self.store.max_bytes)
+            digest = hashlib.sha256(data).hexdigest()
+            if type(receipt.get("bytes")) is not int or receipt["bytes"] != len(data) or receipt.get("sha256") != digest:
+                raise ValueError("native evidence receipt differs from actual bytes")
+            total += len(data)
+            if total > self.store.max_total_bytes // 2:
+                raise _BudgetExceeded("native evidence aggregate byte limit exhausted")
+            ref = {"artifact_id": "native-" + name.replace(".", "-") + "-" + uuid.uuid4().hex,
+                "version": 1, "provenance": provenance, "sha256": digest}
+            pending.append((name, data, digest, ref))
+        if isinstance(self.host, NativeHost) and run.outcome == "completed" and seen != allowed:
+            raise ValueError("completed native dispatch lacks its required measured evidence files")
+        audit["native_artifacts"] = []
+        projection = dict(audit, native_evidence_refs=audit["native_evidence_refs"] + [p[3] for p in pending],
+            native_evidence_bytes=audit["native_evidence_bytes"] + total)
+        self._failure_packet(request, request_ref, provenance, projection, "integrity_error", "x" * 2048)
+        # No analytical output is published here. Partial storage receipts, if
+        # a later write fails, remain explicit diagnostic evidence only.
+        for name, data, digest, ref in pending:
+            if self.store.put_bytes(ref["artifact_id"], 1, provenance, data) != ref:
+                raise ValueError("stored native evidence differs from its measured identity")
+            audit["native_evidence_refs"].append(ref)
+            audit["native_evidence_bytes"] += len(data)
+            audit["native_artifacts"].append({"name": name, "ref": ref, "bytes": len(data), "sha256": digest})
 
     def _retrieve(self, request, request_ref, provenance, root, records, external_refs, audit, failure,
                   stop_reason=lambda: None):
         def read_relative(name):
             return read_stage_file(root, name, max_bytes=self.store.max_bytes)
         entries = json.loads(read_relative("artifact-manifest.json"))
-        if not isinstance(entries, list) or len(entries) > 100:
-            raise ValueError("invalid or exhausted artifact manifest")
+        if not isinstance(entries, list):
+            raise ValueError("invalid artifact manifest")
+        if len(entries) > 100:
+            raise _BudgetExceeded("artifact manifest entry limit exhausted")
         fetched, new_records, pending, identities = [], [], [], set()
-        total_bytes = 0
+        total_bytes = audit.get("native_evidence_bytes", 0)
         for entry in entries:
             data, ref = read_relative(entry["path"]), entry["ref"]
             total_bytes += len(data)
             if total_bytes > self.store.max_total_bytes:
-                raise ValueError("output aggregate byte limit exhausted")
+                raise _BudgetExceeded("output aggregate byte limit exhausted")
             if ref["provenance"] != provenance:
                 raise ValueError("worker output provenance mismatch")
             identity = (ref["artifact_id"], ref["version"])
@@ -291,23 +418,53 @@ class StageAdapter:
         # Preflight immutable identities before publishing any of this batch.
         for encoding, ref, data in pending:
             self.store.check_identity(ref)
-        self.store.check_identity(record_ref(result))
         if stop := stop_reason():
             return failure(*stop)
+        audit.setdefault("published_output_bytes", 0)
+        projected_audit = dict(audit, published_refs=audit["published_refs"] + fetched,
+            published_output_bytes=audit["published_output_bytes"] + sum(len(data) for _, _, data in pending),
+            phase="retrieval_checks_passed_before_parent_decision")
+        projected_bytes = (json.dumps(projected_audit, sort_keys=True, indent=2) + "\n").encode()
+        audit_id = "native-audit-" + uuid.uuid4().hex
+        native_ref = {"artifact_id": audit_id, "version": 1, "provenance": provenance,
+            "sha256": hashlib.sha256(projected_bytes).hexdigest()}
+        projected_result = deepcopy(result)
+        projected_result["evidence_refs"].extend(audit.get("native_evidence_refs", []) + [native_ref])
+        result_bytes = _json_bytes(projected_result)
+        if (len(projected_bytes) > self.store.max_bytes or len(result_bytes) > self.store.max_bytes
+                or total_bytes + len(projected_bytes) + len(result_bytes) > self.store.max_total_bytes):
+            return failure("budget_exhausted", "Stage evidence and output aggregate byte limit exhausted")
+        try:
+            # A late cancellation or storage failure can occur after this audit
+            # is retained. Reserve its bytes and exact reference in that case.
+            failure_projection = dict(projected_audit,
+                controller_evidence_refs=audit.get("controller_evidence_refs", []) + [native_ref],
+                controller_evidence_bytes=audit.get("controller_evidence_bytes", 0) + len(projected_bytes))
+            self._failure_packet(request, request_ref, provenance, failure_projection, "integrity_error", "x" * 2048)
+        except _BudgetExceeded:
+            return failure("budget_exhausted", "Stage byte limits leave no bounded failure receipt capacity")
+        self.store.check_identity(record_ref(projected_result))
         for encoding, ref, data in pending:
             if encoding == "record":
                 self.store.put_record(json.loads(data))
             else:
                 self.store.put_bytes(ref["artifact_id"], ref["version"], ref["provenance"], data)
             audit["published_refs"].append(ref)
+            audit["published_output_bytes"] += len(data)
         # Retain native provenance as evidence without presenting routine logs.
         audit["phase"] = "retrieval_checks_passed_before_parent_decision"
-        native_ref = self.store.put_bytes("native-audit-" + uuid.uuid4().hex, 1, provenance,
-            (json.dumps(audit, sort_keys=True, indent=2) + "\n").encode())
-        result["evidence_refs"].append(native_ref)
+        audit_bytes = (json.dumps(audit, sort_keys=True, indent=2) + "\n").encode()
+        if audit_bytes != projected_bytes:
+            raise ValueError("binding audit changed after publication preflight")
+        if self.store.put_bytes(audit_id, 1, provenance, audit_bytes) != native_ref:
+            raise ValueError("stored native audit differs from preflight identity")
+        audit.setdefault("controller_evidence_refs", []).append(native_ref)
+        audit["controller_evidence_bytes"] = audit.get("controller_evidence_bytes", 0) + len(audit_bytes)
+        result = projected_result
         if stop := stop_reason():
             return failure(*stop)
+        # Final publication is the acceptance commit boundary. Cancellation is
+        # checked immediately before it; once committed, return this same result
+        # rather than publishing a superseding failure packet.
         self.store.put_record(result)
-        if stop := stop_reason():
-            return failure(*stop)
         return result
