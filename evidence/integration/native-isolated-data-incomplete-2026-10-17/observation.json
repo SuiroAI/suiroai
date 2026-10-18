@@ -1,0 +1,178 @@
+{
+  "record_kind": "scoped_real_native_isolated_data_missing_execution",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "actual_native_refs": {
+    "thread_id": "01a14c1b-02a3-7872-b1af-68d689e5d239",
+    "turn_id": "01a14c1b-060c-78d1-b7b9-2f06a25ee7f0",
+    "profile_id": "dsc26-synthetic-14b47fafb9bee995",
+    "cli_version": "0.163.0",
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai"
+  },
+  "native_terminal": {
+    "id": "01a14c1b-060c-78d1-b7b9-2f06a25ee7f0",
+    "rootTurnId": "01a14c1b-060c-78d1-b7b9-2f06a25ee7f0",
+    "status": "completed",
+    "error": null,
+    "startedAt": 1792278201,
+    "completedAt": 1792278209,
+    "durationMs": 7518
+  },
+  "native_data_receipts": {
+    "skill_request": {
+      "id": 8,
+      "method": "plugin/skill/read",
+      "params": {
+        "remoteMarketplaceName": "openai-curated-remote",
+        "remotePluginId": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+        "skillName": "index"
+      }
+    },
+    "skill_response_projection": {
+      "contents_omitted": true,
+      "contents_bytes": 66898,
+      "contents_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+    },
+    "turn_start_rpc_id": 9,
+    "actual_mention_input": [
+      {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    ]
+  },
+  "canonical_history": {
+    "request": {
+      "id": 11,
+      "method": "thread/items/list",
+      "params": {
+        "threadId": "01a14c1b-02a3-7872-b1af-68d689e5d239",
+        "turnId": "01a14c1b-060c-78d1-b7b9-2f06a25ee7f0",
+        "sortDirection": "asc",
+        "limit": 100
+      }
+    },
+    "retrieved_item_type_counts": {
+      "userMessage": 1,
+      "agentMessage": 2,
+      "reasoning": 1
+    },
+    "bound_completed_event_type_counts": {
+      "userMessage": 1,
+      "agentMessage": 2,
+      "reasoning": 1
+    },
+    "nonreasoning_items": [
+      {
+        "type": "userMessage",
+        "id": "01a14c1b-08c1-7702-8bbe-a8ada7c0bac0"
+      },
+      {
+        "type": "agentMessage",
+        "id": "msg_0311d13853d3cd56016ad3febb9c7081959faf695ccdb297cf"
+      },
+      {
+        "type": "agentMessage",
+        "id": "msg_0311d13853d3cd56016ad3fec0cccc819588f8d1f8e4ca075f"
+      }
+    ],
+    "actual_command_count": 0,
+    "actual_filechange_count": 0,
+    "observed_command_output_delta_count": 0
+  },
+  "actual_artifact_checks": {
+    "isolation_calculation.py": {
+      "source_path": "/private/tmp/dsc26-native-isolation-epb99q2i/output/isolation_calculation.py",
+      "exists": false
+    },
+    "isolation_result.json": {
+      "source_path": "/private/tmp/dsc26-native-isolation-epb99q2i/output/isolation_result.json",
+      "exists": false
+    }
+  },
+  "actual_protected_hashes": {
+    "input": {
+      "before_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "after_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "actual_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849"
+    },
+    "sentinel": {
+      "before_sha256": "dc50b22a5edd4027cce79c44267840b042cbd47a49644fe80d783fc43adc2a4d",
+      "after_sha256": "dc50b22a5edd4027cce79c44267840b042cbd47a49644fe80d783fc43adc2a4d",
+      "actual_sha256": "dc50b22a5edd4027cce79c44267840b042cbd47a49644fe80d783fc43adc2a4d"
+    }
+  },
+  "passing_native_controls": {
+    "native_python_rpc_id": 4,
+    "native_python_exit_code": 0,
+    "actual_denials": {
+      "sentinel_open": {
+        "denied": true,
+        "error_type": "PermissionError",
+        "errno": 1
+      },
+      "symlink_open": {
+        "denied": true,
+        "error_type": "PermissionError",
+        "errno": 1
+      },
+      "input_write": {
+        "denied": true,
+        "error_type": "PermissionError",
+        "errno": 1
+      },
+      "outside_write": {
+        "denied": true,
+        "error_type": "PermissionError",
+        "errno": 1
+      },
+      "network": {
+        "denied": true,
+        "error_type": "PermissionError",
+        "errno": 1
+      }
+    },
+    "native_cat_response": {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "cat: /private/tmp/dsc26-native-isolation-epb99q2i/unreleased/sentinel.txt: Operation not permitted\n"
+    },
+    "deterministic_native_controls_passed": true,
+    "profile_config_matches": true,
+    "thread_active_profile_ack": {
+      "id": "dsc26-synthetic-14b47fafb9bee995",
+      "extends": null
+    },
+    "disabled_inventory_validation": true
+  },
+  "model_diagnostic": {
+    "provenance": "agentMessage text only; not a native error receipt",
+    "message_id": "msg_0311d13853d3cd56016ad3fec0cccc819588f8d1f8e4ca075f",
+    "short_excerpt": "code-mode host is disabled",
+    "native_error_code_established": false,
+    "causal_explanation_verified": false
+  },
+  "configured_relevant_feature": {
+    "code_mode_host": false,
+    "causation_from_configuration_alone_established": false
+  },
+  "original_probe_result": {
+    "status": "blocked_or_incomplete",
+    "blocker": "Actual Data calculation execution not retrieved",
+    "error_code": "unsupported_integration",
+    "error_code_origin": "local probe fail-closed integration result, not native turn error",
+    "model_turn_requested": true,
+    "data_turn_artifacts_verified": false
+  },
+  "decision": "Restricted native turn completed without retrievable actual calculation execution or required artifacts; integration remains incomplete.",
+  "limitations": [
+    "Native skill/read and mention receipts do not prove that Data instructions were consumed or applied by a calculation.",
+    "Model prose is not a native tool-error code or independent proof of the causal failure mechanism.",
+    "Native canonical error observability is limited; absence of a canonical command/tool-error item does not prove no internal tool attempt occurred.",
+    "No analytical success or full isolation acceptance is claimed."
+  ]
+}
