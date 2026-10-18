@@ -1,0 +1,886 @@
+{
+  "notice": "MOCK DEVELOPMENT ARTIFACT ONLY. No real model ran, no real approval was granted, and no customer report is authorized. The numerical and reporting examples use separate test-specific input bindings; they are not one end-to-end run.",
+  "reproduce": "tests/reporting/test_drafts.py mock_handoff() + suiroai.reporting draft functions",
+  "artifacts": [
+    {
+      "kind": "report_draft",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-dsc29-report-success",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "execution_contract_ref": {
+        "artifact_id": "mock-execution-contract",
+        "version": 1,
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+        "provenance": "mock"
+      },
+      "outcome": "success",
+      "final_validation_ref": {
+        "artifact_id": "mock-final-validation-result",
+        "version": 1,
+        "sha256": "ff60eeb4093c95b82ae92726d41bdef525609d388bd6bd8f7614556e8244514c",
+        "provenance": "mock"
+      },
+      "frozen_result_ref": {
+        "artifact_id": "mock-freeze-manifest",
+        "version": 1,
+        "sha256": "ad40c355aa3bc0da143c9e7de8787887e3a0fa7dad5850db257f907507770a3a",
+        "provenance": "mock"
+      },
+      "november_30_forecast_ref": {
+        "artifact_id": "mock-november-30-forecast",
+        "version": 1,
+        "sha256": "8e198f28b8a3a2dc6b6de87e180a5bcd97c3b443a70b5f5756d6f14ea0abb785",
+        "provenance": "mock"
+      },
+      "arithmetic_source_refs": [
+        {
+          "artifact_id": "mock-november-30-forecast",
+          "version": 1,
+          "sha256": "8e198f28b8a3a2dc6b6de87e180a5bcd97c3b443a70b5f5756d6f14ea0abb785",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        }
+      ],
+      "orders": [
+        {
+          "key": {
+            "source_namespace": "mock-retail",
+            "product_id": "MOCK-P001",
+            "store_id": "MOCK-STORE"
+          },
+          "quantity_unit": "product_unit",
+          "arithmetic_input_refs": [
+            {
+              "artifact_id": "mock-november-30-forecast",
+              "version": 1,
+              "sha256": "8e198f28b8a3a2dc6b6de87e180a5bcd97c3b443a70b5f5756d6f14ea0abb785",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-stock",
+              "version": 1,
+              "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-receipts",
+              "version": 1,
+              "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-policy",
+              "version": 1,
+              "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+              "provenance": "mock"
+            }
+          ],
+          "forecast_ref": {
+            "artifact_id": "mock-november-30-forecast",
+            "version": 1,
+            "sha256": "8e198f28b8a3a2dc6b6de87e180a5bcd97c3b443a70b5f5756d6f14ea0abb785",
+            "provenance": "mock"
+          },
+          "forecast_horizon_start": "2025-12-01",
+          "forecast_horizon_end": "2025-12-14",
+          "forecast_quantity": 20,
+          "usable_on_hand_quantity": 5,
+          "on_order_summary_quantity": 5,
+          "eligible_receipt_quantity": 5,
+          "supplier_lead_calendar_days": 7,
+          "review_period_calendar_days": 7,
+          "safety_stock_quantity": 2,
+          "order_multiple": 5,
+          "minimum_positive_order_quantity": 5,
+          "raw_order_need": 12,
+          "rounded_order_quantity": 15,
+          "approved_order_quantity": 15,
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-quantity-arithmetic",
+              "version": 1,
+              "sha256": "811fabcdf263ac916ecedea611706e1967ded1801fc1a95348e4c50c73335343",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "exceptions": [],
+      "arithmetic_checks": [
+        {
+          "check_id": "quantity-arithmetic",
+          "requirement_id": "mock-quantity-arithmetic",
+          "status": "pass",
+          "expected": "MOCK raw need = 20+2-5-5 = 12; ceil(max(0,12)/5)*5 = 15; receipt summary counted once",
+          "actual": "MOCK candidate=15 product_unit; independent arithmetic agrees",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-quantity-arithmetic",
+              "version": 1,
+              "sha256": "811fabcdf263ac916ecedea611706e1967ded1801fc1a95348e4c50c73335343",
+              "provenance": "mock"
+            }
+          ],
+          "verifier": "mock-independent-numerical"
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "mock-notice",
+          "statement": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-execution-contract",
+              "version": 1,
+              "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "synthetic",
+          "statement": "Inventory, incoming receipts and purchasing policies are synthetic; these restocking recommendations are illustrative.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-stock",
+              "version": 1,
+              "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-receipts",
+              "version": 1,
+              "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-policy",
+              "version": 1,
+              "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "missing-product-name-mapping",
+          "statement": "No verified product-name mapping was supplied for some approved rows; those items are identified by source, product ID and store ID.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-quantity-result",
+              "version": 2,
+              "sha256": "ceb4d8a27c8ba4d5a70aa554e616e47195529729be27462956a7b2ff865c9f58",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "order-0",
+          "statement": "Source mock-retail; product ID MOCK-P001; store ID MOCK-STORE: approved order 15 product_unit for 2025-12-01 through 2025-12-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-quantity-result",
+              "version": 2,
+              "sha256": "ceb4d8a27c8ba4d5a70aa554e616e47195529729be27462956a7b2ff865c9f58",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "data-treatment-and-EDA-0",
+          "statement": "MOCK observation mask preserves unknown dates; this asserts no real-source completeness.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-preparation-result",
+              "version": 1,
+              "sha256": "2c1a0510612f52ccecb4c4a10ddeab67c2cdb939dada3aeb7b55749c58c1703c",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-preparation-quality",
+              "version": 1,
+              "sha256": "9f4a27037e3245545adbc40a351c102a9b576d7f332980158bfbd0ec738b79d7",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "generated-features-0",
+          "statement": "MOCK additional feature uses only available prior observations.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-feature-result",
+              "version": 1,
+              "sha256": "bfb45eba9d4465f7378f83420043d75237869e6c59235da5555ec34d2c2fc6fa",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-feature-timing",
+              "version": 1,
+              "sha256": "c1e9250ea047ed9ea9b511f107efb5e4ba0a687c01ad98c4b5e83aaf7ab4dc9a",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "comparison-0",
+          "statement": "MOCK additional feature candidate has development MAE 8 versus baseline 11; not real measured results.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-evaluation-result",
+              "version": 1,
+              "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-development-fully-observed",
+              "version": 1,
+              "sha256": "94a2e04058f1d571b5404c24c60b8d24f113f2624ecb0c6b0fed7d41564395b9",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-feature-timing",
+              "version": 1,
+              "sha256": "c1e9250ea047ed9ea9b511f107efb5e4ba0a687c01ad98c4b5e83aaf7ab4dc9a",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "unseen-0",
+          "statement": "MOCK reserved evaluation passes its declared MAE cap.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "ff60eeb4093c95b82ae92726d41bdef525609d388bd6bd8f7614556e8244514c",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-fully_observed",
+              "version": 1,
+              "sha256": "2d0938f053ce68f7f8cfbd496faf5c5a9ff81824198924b288bc0f743604ac29",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-acceptance-score",
+              "version": 1,
+              "sha256": "35b335446b65702dabbe66deeb53ff963da2fdc9adf5aaadf805cbb1c8bf70ae",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "generated-feature-definition-0",
+          "statement": "LLM-generated feature MOCK lagged observed quantity mean. Proposed rationale: MOCK LLM hypothesis about previous observed quantities; no measured real-world claim. Availability rule: MOCK observed rows only; no automatic zero filling; every information date <= origin",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-feature-result",
+              "version": 1,
+              "sha256": "bfb45eba9d4465f7378f83420043d75237869e6c59235da5555ec34d2c2fc6fa",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-prepared-development",
+              "version": 1,
+              "sha256": "ac7f13fb0692901ae9586131713818c3ed22ffc7a98ef46feb6003146a24c05f",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "baseline-0",
+          "statement": "Development baseline mock-baseline: mock-mae = 11 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-evaluation-result",
+              "version": 1,
+              "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "candidate-0-0",
+          "statement": "Development candidate mock-initial: mock-mae = 9 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-evaluation-result",
+              "version": 1,
+              "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "candidate-1-0",
+          "statement": "Development candidate mock-with-llm-feature: mock-mae = 8 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-evaluation-result",
+              "version": 1,
+              "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "frozen-choice",
+          "statement": "The frozen selected candidate is mock-with-llm-feature.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-evaluation-result",
+              "version": 1,
+              "sha256": "6c2fae6d4383ada9cc4219cd1d2b3b776ceceae750a7cdd923713fc3b56edc66",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "unseen-score-0",
+          "statement": "Reserved unseen evaluation: mock-mae = 8 product_unit; population mock-holdout-population, 1 observations, forecast origins 2025-11-30 to 2025-11-30, latest target end 2025-12-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "ff60eeb4093c95b82ae92726d41bdef525609d388bd6bd8f7614556e8244514c",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "unseen-outcome",
+          "statement": "The frozen model passed the predeclared final validation rule.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "ff60eeb4093c95b82ae92726d41bdef525609d388bd6bd8f7614556e8244514c",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "finding_id": "mock-finding",
+          "statement": "MOCK observation mask preserves unknown dates; this asserts no real-source completeness.",
+          "classification": "material_limitation",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-preparation-quality",
+              "version": 1,
+              "sha256": "9f4a27037e3245545adbc40a351c102a9b576d7f332980158bfbd0ec738b79d7",
+              "provenance": "mock"
+            }
+          ],
+          "audience": "final_report"
+        },
+        {
+          "finding_id": "mock-finding",
+          "statement": "MOCK additional feature uses only available prior observations.",
+          "classification": "verified_finding",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-feature-timing",
+              "version": 1,
+              "sha256": "c1e9250ea047ed9ea9b511f107efb5e4ba0a687c01ad98c4b5e83aaf7ab4dc9a",
+              "provenance": "mock"
+            }
+          ],
+          "audience": "final_report"
+        },
+        {
+          "finding_id": "mock-finding",
+          "statement": "MOCK additional feature candidate has development MAE 8 versus baseline 11; not real measured results.",
+          "classification": "verified_finding",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-development-fully-observed",
+              "version": 1,
+              "sha256": "94a2e04058f1d571b5404c24c60b8d24f113f2624ecb0c6b0fed7d41564395b9",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-feature-timing",
+              "version": 1,
+              "sha256": "c1e9250ea047ed9ea9b511f107efb5e4ba0a687c01ad98c4b5e83aaf7ab4dc9a",
+              "provenance": "mock"
+            }
+          ],
+          "audience": "final_report"
+        },
+        {
+          "finding_id": "mock-finding",
+          "statement": "MOCK reserved evaluation passes its declared MAE cap.",
+          "classification": "verified_finding",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-check-fully_observed",
+              "version": 1,
+              "sha256": "2d0938f053ce68f7f8cfbd496faf5c5a9ff81824198924b288bc0f743604ac29",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-check-acceptance-score",
+              "version": 1,
+              "sha256": "35b335446b65702dabbe66deeb53ff963da2fdc9adf5aaadf805cbb1c8bf70ae",
+              "provenance": "mock"
+            }
+          ],
+          "audience": "final_report"
+        }
+      ],
+      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.\n\nInventory, incoming receipts and purchasing policies are synthetic; these restocking recommendations are illustrative.\n\nNo verified product-name mapping was supplied for some approved rows; those items are identified by source, product ID and store ID.\n\nSource mock-retail; product ID MOCK-P001; store ID MOCK-STORE: approved order 15 product_unit for 2025-12-01 through 2025-12-14.\n\nMOCK observation mask preserves unknown dates; this asserts no real-source completeness.\n\nMOCK additional feature uses only available prior observations.\n\nMOCK additional feature candidate has development MAE 8 versus baseline 11; not real measured results.\n\nMOCK reserved evaluation passes its declared MAE cap.\n\nLLM-generated feature MOCK lagged observed quantity mean. Proposed rationale: MOCK LLM hypothesis about previous observed quantities; no measured real-world claim. Availability rule: MOCK observed rows only; no automatic zero filling; every information date <= origin\n\nDevelopment baseline mock-baseline: mock-mae = 11 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.\n\nDevelopment candidate mock-initial: mock-mae = 9 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.\n\nDevelopment candidate mock-with-llm-feature: mock-mae = 8 product_unit; population mock-development-population, 1 observations, forecast origins 2025-10-31 to 2025-10-31, latest target end 2025-11-14.\n\nThe frozen selected candidate is mock-with-llm-feature.\n\nReserved unseen evaluation: mock-mae = 8 product_unit; population mock-holdout-population, 1 observations, forecast origins 2025-11-30 to 2025-11-30, latest target end 2025-12-14.\n\nThe frozen model passed the predeclared final validation rule.",
+      "failure": null,
+      "parent_decision": {
+        "checkpoint": "recommendations",
+        "decision": "proceed",
+        "actor": "mock-parent",
+        "decided_at": "2026-10-17T09:03:00Z",
+        "reason": "MOCK checkpoint decision for component interface demonstration only.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-quantity-numerical-evidence",
+            "version": 1,
+            "sha256": "284915663161868acf7ed7cead5c2e8adb6661917003127b032162dd9b7dadf6",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "quantity_result_ref": {
+        "artifact_id": "mock-quantity-result",
+        "version": 2,
+        "sha256": "ceb4d8a27c8ba4d5a70aa554e616e47195529729be27462956a7b2ff865c9f58",
+        "provenance": "mock"
+      }
+    },
+    {
+      "kind": "report_draft",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-dsc29-report-validation-failure",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "execution_contract_ref": {
+        "artifact_id": "mock-execution-contract",
+        "version": 1,
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+        "provenance": "mock"
+      },
+      "outcome": "validation_failure",
+      "final_validation_ref": {
+        "artifact_id": "mock-final-validation-result",
+        "version": 1,
+        "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+        "provenance": "mock"
+      },
+      "frozen_result_ref": {
+        "artifact_id": "mock-freeze-manifest",
+        "version": 1,
+        "sha256": "ad40c355aa3bc0da143c9e7de8787887e3a0fa7dad5850db257f907507770a3a",
+        "provenance": "mock"
+      },
+      "november_30_forecast_ref": {
+        "artifact_id": "mock-november-30-forecast",
+        "version": 1,
+        "sha256": "8e198f28b8a3a2dc6b6de87e180a5bcd97c3b443a70b5f5756d6f14ea0abb785",
+        "provenance": "mock"
+      },
+      "arithmetic_source_refs": [],
+      "orders": [],
+      "exceptions": [],
+      "arithmetic_checks": [],
+      "claims": [
+        {
+          "claim_id": "mock-notice",
+          "statement": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-execution-contract",
+              "version": 1,
+              "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "terminal-scope",
+          "statement": "This MVP could not produce a reliable solution with the supplied data and scope.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "measured-failure",
+          "statement": "The frozen model failed the predeclared reserved unseen validation rule; parent review concluded this run.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "failed-score-0",
+          "statement": "Reserved unseen evaluation: mock-mae = 12 product_unit; population mock-holdout-population, 1 observations, forecast origins 2025-11-30 to 2025-11-30, latest target end 2025-12-14.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "failed-gate-0",
+          "statement": "Predeclared metric gate mock-mae: direction upper_bound, threshold 10 product_unit, population mock-holdout-population, aggregation macro_mean_over_mock_keys; minimum observation count 1.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "required-check-0",
+          "statement": "Required validation check fully_observed: pass.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "no-list",
+          "statement": "No reliable restocking list is available from this run.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-final-validation-result",
+              "version": 1,
+              "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "findings": [],
+      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.\n\nThis MVP could not produce a reliable solution with the supplied data and scope.\n\nThe frozen model failed the predeclared reserved unseen validation rule; parent review concluded this run.\n\nReserved unseen evaluation: mock-mae = 12 product_unit; population mock-holdout-population, 1 observations, forecast origins 2025-11-30 to 2025-11-30, latest target end 2025-12-14.\n\nPredeclared metric gate mock-mae: direction upper_bound, threshold 10 product_unit, population mock-holdout-population, aggregation macro_mean_over_mock_keys; minimum observation count 1.\n\nRequired validation check fully_observed: pass.\n\nNo reliable restocking list is available from this run.",
+      "failure": {
+        "stage": "final_validation",
+        "reason": "The frozen model failed the predeclared reserved unseen validation rule; parent review concluded this run.",
+        "scope_limitation": "This MVP could not produce a reliable solution with the supplied data and scope.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-final-validation-result",
+            "version": 1,
+            "sha256": "34b3d2bf2d73001f5c693b28fb34b831870f4b623b8e00c8695b4cbc2467de08",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "parent_decision": {
+        "checkpoint": "final_validation",
+        "decision": "confirmed_failure",
+        "actor": "mock-parent",
+        "decided_at": "2026-10-17T09:02:30Z",
+        "reason": "MOCK checkpoint decision for component interface demonstration only.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-check-fully_observed",
+            "version": 1,
+            "sha256": "2d0938f053ce68f7f8cfbd496faf5c5a9ff81824198924b288bc0f743604ac29",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-check-acceptance-score",
+            "version": 1,
+            "sha256": "64eba8aee351020f4c72eea9b2fbc759e611f79aab396eb9754c70f2f56a1a50",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "quantity_result_ref": null
+    },
+    {
+      "kind": "report_draft",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-dsc29-report-execution-failure",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "execution_contract_ref": {
+        "artifact_id": "mock-execution-contract",
+        "version": 1,
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+        "provenance": "mock"
+      },
+      "outcome": "execution_failure",
+      "final_validation_ref": null,
+      "frozen_result_ref": null,
+      "november_30_forecast_ref": null,
+      "arithmetic_source_refs": [],
+      "orders": [],
+      "exceptions": [],
+      "arithmetic_checks": [],
+      "claims": [
+        {
+          "claim_id": "mock-notice",
+          "statement": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-execution-contract",
+              "version": 1,
+              "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "terminal-scope",
+          "statement": "This MVP could not produce a reliable solution with the supplied data and scope.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-stage-result",
+              "version": 1,
+              "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "execution-error",
+          "statement": "Execution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-stage-result",
+              "version": 1,
+              "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "execution-reason",
+          "statement": "MOCK required OpenAI Data host integration is unavailable.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-stage-result",
+              "version": 1,
+              "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "no-list",
+          "statement": "No reliable restocking list is available from this run.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-stage-result",
+              "version": 1,
+              "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "findings": [],
+      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.\n\nThis MVP could not produce a reliable solution with the supplied data and scope.\n\nExecution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run.\n\nMOCK required OpenAI Data host integration is unavailable.\n\nNo reliable restocking list is available from this run.",
+      "failure": {
+        "stage": "adapter_execution",
+        "reason": "MOCK required OpenAI Data host integration is unavailable.",
+        "scope_limitation": "This MVP could not produce a reliable solution with the supplied data and scope.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-stage-result",
+            "version": 1,
+            "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
+            "provenance": "mock"
+          }
+        ],
+        "error_code": "plugin_unavailable"
+      },
+      "parent_decision": {
+        "checkpoint": "approved_execution",
+        "decision": "stop",
+        "actor": "mock-parent",
+        "decided_at": "2026-10-17T09:01:00Z",
+        "reason": "MOCK checkpoint decision for component interface demonstration only.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-capability-result",
+            "version": 1,
+            "sha256": "499d7d078db2daa5abf729fa96cf0950fbad49e227011ce8237e3968652baff3",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "quantity_result_ref": null
+    },
+    {
+      "outcome": "missing_inputs",
+      "contract_status": "component_local_pre_execution_guidance",
+      "source_ref": {
+        "artifact_id": "mock-task-proposal",
+        "version": 1,
+        "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+        "provenance": "mock"
+      },
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "cd87e07a10a2def943e081d2c8c06f8b0e361abd6bdbb3f3b99597148954d282",
+        "proposal_version": 1,
+        "proposal_digest": "be23f600a6242a41f00ef45400ca93896f3a61cf5dea66dbb6b070dca6ae354b"
+      },
+      "gaps": [
+        {
+          "gap_id": "missing-sales",
+          "description": "MOCK sales file is inaccessible; quantities cannot be inspected.",
+          "material": true,
+          "blocks": [
+            "approval",
+            "execution",
+            "quantities",
+            "report"
+          ],
+          "request_to_user": "Provide an accessible sales file and source dictionary; no demo substitution will occur."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "mock-notice",
+          "statement": "MOCK DEVELOPMENT EXAMPLE ONLY: no real input assessment or execution is established.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "unsupported-goal",
+          "statement": "The following proposed goal is currently blocked by the documented input gaps: MOCK single retail replenishment illustration only.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "gap-0",
+          "statement": "MOCK sales file is inaccessible; quantities cannot be inspected. Needed: Provide an accessible sales file and source dictionary; no demo substitution will occur. Blocks: approval, execution, quantities, report.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "supported-capability",
+          "statement": "No supplied source is currently accessible for read-only inspection.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-submission",
+              "version": 1,
+              "sha256": "5f154ea97b115b33a690e4e16f6b4255bde2f133faa66830547ae65b8006feb7",
+              "provenance": "mock"
+            }
+          ]
+        },
+        {
+          "claim_id": "next-step",
+          "statement": "Next step: provide the requested files or material facts above, then review the updated proposal for the same business goal before execution.",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-task-proposal",
+              "version": 1,
+              "sha256": "e9b20136b616987d6ac726744dbbcafc0600c1da9a5db5f8523c5b297fa1ba03",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: no real input assessment or execution is established.\n\nThe following proposed goal is currently blocked by the documented input gaps: MOCK single retail replenishment illustration only.\n\nMOCK sales file is inaccessible; quantities cannot be inspected. Needed: Provide an accessible sales file and source dictionary; no demo substitution will occur. Blocks: approval, execution, quantities, report.\n\nNo supplied source is currently accessible for read-only inspection.\n\nNext step: provide the requested files or material facts above, then review the updated proposal for the same business goal before execution.",
+      "orders": [],
+      "delivery_authorized": false
+    }
+  ]
+}
