@@ -23,14 +23,16 @@ Neither callback may come from model-generated code or a submitted packet.
 Graph validation alone cannot authenticate a checker or prove execution.
 
 `calculate_candidate(handoff, artifact_id=..., scope_ref=...,
-scope_reader=..., forecast_reader=..., source_namespace=...)` returns a
+scope_reader=..., forecast_reader=..., source_namespace=...,
+name_ref=None, name_reader=None)` returns a
 DSC-24 `quantity_result`. The consumer checks passed final validation, the exact
 frozen forecast binding, permitted arithmetic action, and authenticated parent
 final-validation permission before reading arithmetic inputs. Failed or
 unreviewed validation cannot construct real orders. Mock handoffs require
 explicit `allow_mock=True` and retain mock provenance throughout.
 
-The application supplies two format adapters. These are internal Python
+The application supplies two required format adapters and an optional name
+adapter. These are internal Python
 boundaries, **not new shared serialized schemas**:
 
 - `scope_reader(verified_bytes)` returns explicit requested keys with
@@ -45,6 +47,17 @@ boundaries, **not new shared serialized schemas**:
   present exactly once. Additional forecast dates are allowed but not included
   in that key's requirement. Aggregate horizons cannot be split uniformly or
   silently extrapolated. DSC-28 supplies genuine frozen daily predictions.
+- `name_reader(verified_bytes)` optionally returns dictionaries with `key`,
+  `product_name`, and `latest_information_available_date`. Supply `name_ref`
+  and the callable together. The immutable name reference must be an approved
+  source or frozen development input. Each requested key requires exactly one
+  name mapping, in the exact source namespace, with information available no
+  later than November 30. Earlier availability is allowed; no undeclared
+  freshness threshold is invented. Missing, duplicate, conflicting, future,
+  malformed or unsafe names withhold the key with an explicit exception.
+  Names must be nonempty, at most 256 characters, already free of leading or
+  trailing whitespace, control/format characters and markup delimiters. The
+  consumer copies accepted names exactly and never trims or rewrites them.
 
 Stock, receipt, and policy file references resolve through the actual approved
 submission roles and namespace, not ambient paths. CSV headers match the active
@@ -54,8 +67,14 @@ older policy/snapshot inputs need a separately reviewed effectivity/movement
 adapter. Every operational row must declare synthetic provenance, and the
 execution contract must explicitly classify those sources as synthetic.
 
-Product names are omitted by the numerical consumer because no independently
-bound name-mapping adapter is supplied. IDs remain exact. No name is inferred.
+With a name adapter, `product_name` becomes part of the immutable candidate
+row before independent checking and parent numerical approval. Its source
+reference, adapter row position and availability date remain in the evidence.
+Names cannot be attached later by the report renderer. Without the optional
+adapter, candidate rows retain exact source IDs and omit names; the reporting
+consumer discloses the missing verified mapping. DSC-30 may withhold final
+delivery until a reliable mapping or explicit approved exception is provided.
+No name is inferred.
 
 ## Arithmetic and dated coverage
 

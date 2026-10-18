@@ -93,6 +93,19 @@ receipt quantity/date, source row and daily shortage trace. Producer
 independent runtime verification. Candidates have no approved quantities,
 parent decision or independent check references.
 
+Optional product-name tests bind a JSON mapping to the explicitly approved
+`mock-sales` artifact bytes in a fresh mock task. The literal name
+`MOCK Oat & Almond Cereal`, available November 29, is copied into the candidate
+before numerical approval; its reference and adapter row position 1 remain
+attached, and the independently expected order remains 5. Altered name bytes
+fail hash verification before the reader runs. Missing, duplicate, conflicting,
+future or unsafe names produce per-key exceptions with no order row. A wrong
+namespace never supplies a name for the requested key. Names with surrounding
+whitespace are rejected rather than silently trimmed. Omitting both optional
+arguments preserves the original ID-only candidate behavior; supplying only
+one argument or an unapproved reference is a component input error. These
+mock mappings establish no genuine product-name evidence.
+
 Run the mock regression examples from this worktree:
 
 ```sh

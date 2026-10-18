@@ -13,6 +13,7 @@ from datetime import date, timedelta
 from decimal import Decimal, Inexact, InvalidOperation, localcontext
 import io
 import json
+import unicodedata
 
 from suiroai.contracts import record_ref
 from .context import Handoff, InputError
@@ -130,17 +131,41 @@ def _source_ref(execution, submission, role, namespace):
     return refs[0]
 
 
+def _product_name_mapping(rows, as_of):
+    if not rows:
+        raise InputError("missing_product_name_mapping")
+    if len(rows) != 1:
+        names = {row.get("product_name") for _, row in rows if isinstance(row.get("product_name"), str)}
+        code = "conflicting_product_name_mapping" if len(names) > 1 else "duplicate_product_name_mapping"
+        raise InputError(code)
+    mapping = rows[0][1]
+    if not {"key", "product_name", "latest_information_available_date"} <= set(mapping):
+        raise InputError("product_name_adapter_missing_fields")
+    available = _day(mapping["latest_information_available_date"])
+    if available > as_of:
+        raise InputError("product_name_mapping_uses_future_information")
+    name = mapping["product_name"]
+    if (not isinstance(name, str) or not name or name != name.strip() or len(name) > 256
+            or any(unicodedata.category(c) in {"Cc", "Cf", "Cs"} or c in "<>[]`*_~" for c in name)):
+        raise InputError("unsafe_or_empty_product_name_mapping")
+    return name, available.isoformat()
+
+
 def calculate_candidate(handoff: Handoff, *, artifact_id: str, scope_ref: dict,
                         scope_reader, forecast_reader, source_namespace: str,
-                        artifact_version: int = 1) -> dict:
+                        artifact_version: int = 1, name_ref: dict | None = None,
+                        name_reader=None) -> dict:
     """Return an unapproved DSC-24 quantity_result, including per-key exceptions.
 
     scope_reader(bytes) -> the explicitly bound requested key list.
     forecast_reader(bytes) -> daily dictionaries with key, date, quantity,
     quantity_unit, as_of_date, latest_information_available_date.
+    Optional name_reader(bytes) -> dictionaries with key, product_name and
+    latest_information_available_date; name_ref must bind an approved source
+    or frozen development input. Supply both optional arguments or neither.
 
     Source formats are supplied by DSC-28/parent adapters, not a new wire
-    contract. Both adapters receive verified bytes only. All daily values and
+    contract. All adapters receive verified bytes only. All daily values and
     source row positions remain in arithmetic check evidence for DSC-30.
 
     Date-only arrivals receive conservative end-of-day treatment. A key needing
@@ -173,18 +198,30 @@ def calculate_candidate(handoff: Handoff, *, artifact_id: str, scope_ref: dict,
         raise InputError("scope must bind an approved source or frozen development artifact")
     if not callable(scope_reader) or not callable(forecast_reader):
         raise InputError("explicit scope and frozen-forecast readers required")
+    if (name_ref is None) != (name_reader is None):
+        raise InputError("product name reference and reader must be supplied together")
+    if name_ref is not None:
+        if not callable(name_reader):
+            raise InputError("explicit product name reader required")
+        if name_ref not in execution["source_refs"] and name_ref not in frozen["development_input_refs"]:
+            raise InputError("product name mapping must bind an approved source or frozen development artifact")
     scope = [_key(k) for k in scope_reader(handoff.read(scope_ref))]
     if not scope or len(set(scope)) != len(scope):
         raise InputError("scope must contain unique explicit requested keys")
     if any(k[0] != source_namespace for k in scope):
         raise InputError("scope/source namespace mismatch")
     refs.append(scope_ref)
+    if name_ref is not None:
+        refs.append(name_ref)
     refs = list({json.dumps(r, sort_keys=True): r for r in refs}.values())
     input_data = {json.dumps(r, sort_keys=True): handoff.read(r) for r in refs}
     stocks = _csv(input_data[json.dumps(stock_ref, sort_keys=True)], STOCK_FIELDS)
     receipts = _csv(input_data[json.dumps(receipt_ref, sort_keys=True)], RECEIPT_FIELDS)
     policies = _csv(input_data[json.dumps(policy_ref, sort_keys=True)], POLICY_FIELDS)
     forecasts = list(forecast_reader(input_data[json.dumps(forecast_ref, sort_keys=True)]))
+    names = (list(name_reader(input_data[json.dumps(name_ref, sort_keys=True)]))
+             if name_ref is not None else [])
+    name_index = defaultdict(list)
     indexed = [defaultdict(list) for _ in range(4)]
     problems = defaultdict(list)
     for rows, index in ((stocks, indexed[0]), (receipts, indexed[1]), (policies, indexed[2])):
@@ -198,13 +235,20 @@ def calculate_candidate(handoff: Handoff, *, artifact_id: str, scope_ref: dict,
             raise InputError("forecast reader must return daily dictionaries")
         key = _key(row.get("key"))
         indexed[3][key].append((line, row))
+    for line, row in enumerate(names, 1):
+        if not isinstance(row, dict):
+            raise InputError("product name reader must return mapping dictionaries")
+        key = _key(row.get("key"))
+        name_index[key].append((line, row))
+        if key[0] != source_namespace:
+            problems[key].append("product_name_mapping_source_namespace_mismatch")
     # A duplicate receipt identifier poisons every affected key, including the
     # first occurrence. Never silently deduplicate or double-count it.
     ids = Counter(row["PO_Line_ID"] for row in receipts)
     for row in receipts:
         if not row["PO_Line_ID"].strip() or ids[row["PO_Line_ID"]] > 1:
             problems[(source_namespace, row["Product_ID"], row["Store_ID"])].append("duplicate_or_empty_receipt_line_id")
-    all_keys = set(scope).union(*(set(index) for index in indexed))
+    all_keys = set(scope).union(set(name_index), *(set(index) for index in indexed))
     result = handoff.envelope("quantity_result", artifact_id, artifact_version)
     result.update(final_validation_ref=record_ref(final),
                   frozen_result_ref=deepcopy(final["frozen_result_ref"]),
@@ -217,13 +261,20 @@ def calculate_candidate(handoff: Handoff, *, artifact_id: str, scope_ref: dict,
                  "quantity_unit": "product_unit", "receipt_convention": "end_of_day_conservative",
                  "source_rows": {label: [line for line, _ in index[key]] for label, index in
                                  zip(("stock", "receipts", "policy", "forecast"), indexed)}}
+        if name_ref is not None:
+            audit["source_rows"]["names"] = [line for line, _ in name_index[key]]
         reasons = list(dict.fromkeys(problems[key]))
         if key not in scope:
             reasons.append("unexpected_key_outside_requested_scope")
         try:
             if reasons:
                 raise InputError(", ".join(reasons))
+            if name_ref is not None:
+                name, available = _product_name_mapping(name_index[key], as_of)
+                audit.update(product_name=name, product_name_latest_information_available_date=available)
             row, key_audit = _calculate_key(key, indexed, execution, as_of, forecast_ref, refs)
+            if name_ref is not None:
+                row["product_name"] = name
             audit.update(key_audit)
             result["orders"].append(row)
         except InputError as exc:

@@ -705,19 +705,7 @@
         },
         {
           "claim_id": "execution-error",
-          "statement": "Execution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run.",
-          "evidence_refs": [
-            {
-              "artifact_id": "mock-stage-result",
-              "version": 1,
-              "sha256": "5c70fa53f7f9b2ca825dce0c06afc443bd32f381be1eda4506aee4af96cd8f78",
-              "provenance": "mock"
-            }
-          ]
-        },
-        {
-          "claim_id": "execution-reason",
-          "statement": "MOCK required OpenAI Data host integration is unavailable.",
+          "statement": "Execution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run. Observed reason: MOCK required OpenAI Data host integration is unavailable.",
           "evidence_refs": [
             {
               "artifact_id": "mock-stage-result",
@@ -741,7 +729,7 @@
         }
       ],
       "findings": [],
-      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.\n\nThis MVP could not produce a reliable solution with the supplied data and scope.\n\nExecution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run.\n\nMOCK required OpenAI Data host integration is unavailable.\n\nNo reliable restocking list is available from this run.",
+      "customer_draft": "MOCK DEVELOPMENT EXAMPLE ONLY: these artifacts do not establish real analytical or execution acceptance.\n\nThis MVP could not produce a reliable solution with the supplied data and scope.\n\nExecution ended at stage approved_execution with error category plugin_unavailable; parent review concluded this run. Observed reason: MOCK required OpenAI Data host integration is unavailable.\n\nNo reliable restocking list is available from this run.",
       "failure": {
         "stage": "adapter_execution",
         "reason": "MOCK required OpenAI Data host integration is unavailable.",

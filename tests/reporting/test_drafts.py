@@ -219,6 +219,20 @@ class ReportingTests(unittest.TestCase):
             with self.assertRaises(InputError):
                 draft_execution_failure(h, artifact_id="mock-unsafe-failure", failed_stage_ref=record_ref(h.one("stage_result")))
 
+    def test_execution_failure_reason_is_exact_observed_fact_without_wrapper(self):
+        reason = "MOCK host capability returned no supported OpenAI Data interface."
+        def mutate(record):
+            if record["kind"] == "stage_result":
+                record["failure"]["reason"] = reason
+        h = revise_mock(mock_handoff("execution_failed"), mutate)
+        failed = h.one("stage_result")
+        result = draft_execution_failure(h, artifact_id="mock-exact-observed-reason", failed_stage_ref=record_ref(failed))
+        self.assertEqual(result["failure"]["reason"], reason)
+        self.assertEqual(result["failure"]["evidence_refs"], [record_ref(failed)])
+        claim = next(c for c in result["claims"] if c["claim_id"] == "execution-error")
+        self.assertIn("error category plugin_unavailable", claim["statement"])
+        self.assertIn(f"Observed reason: {reason}", claim["statement"])
+
     def test_failed_required_check_is_named_in_validation_explanation(self):
         def mutate(record):
             if record["kind"] == "final_validation_result":

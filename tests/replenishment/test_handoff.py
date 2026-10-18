@@ -30,7 +30,8 @@ def csv_bytes(rows, fieldnames):
     return buffer.getvalue().encode()
 
 
-def scenario(*, mutate_inputs=None, mutate_records=None, parent_confirms=lambda ref, decision: True):
+def scenario(*, mutate_inputs=None, mutate_records=None, name_rows=None,
+             parent_confirms=lambda ref, decision: True):
     """Create a fresh explicit MOCK approval around test-specific source bytes.
 
     This is fixture construction only, never a technique to alter a live approved
@@ -50,6 +51,8 @@ def scenario(*, mutate_inputs=None, mutate_records=None, parent_confirms=lambda 
         content["mock-" + kind] = csv_bytes(rows, list(template))
     content["mock-november-30-forecast"] = canonical([row for values in args[1][3].values() for _, row in values])
     content["mock-prepared-development"] = canonical([dict(zip(("source_namespace", "product_id", "store_id"), KEY))])
+    if name_rows is not None:
+        content["mock-sales"] = canonical(name_rows)
     external_hashes = {ref["artifact_id"]: hashlib.sha256(content[ref["artifact_id"]]).hexdigest() for ref in refs}
     submission = next(r for r in records if r["kind"] == "submission")
     proposal = next(r for r in records if r["kind"] == "task_proposal")
@@ -90,6 +93,15 @@ def calculate(handoff, scope, **kwargs):
                                source_namespace="mock-retail", **kwargs)
 
 
+def name_mapping(name="MOCK Oat & Almond Cereal", available="2025-11-29"):
+    return {"key": dict(zip(("source_namespace", "product_id", "store_id"), KEY)),
+            "product_name": name, "latest_information_available_date": available}
+
+
+def name_reference(handoff):
+    return next(ref for ref in handoff.external_refs if ref["artifact_id"] == "mock-sales")
+
+
 class PublicHandoffTests(unittest.TestCase):
     def test_passed_mock_validation_produces_unapproved_candidate_with_exact_bindings(self):
         h, scope, _ = scenario()
@@ -107,6 +119,86 @@ class PublicHandoffTests(unittest.TestCase):
         self.assertEqual(audit["source_rows"], {"stock": [2], "receipts": [2], "policy": [2], "forecast": [1, 2, 3, 4]})
         self.assertEqual(audit["raw_order_need_exact"], "5")
         self.assertEqual(audit["receipt_convention"], "end_of_day_conservative")
+        self.assertNotIn("product_name", result["orders"][0])
+        self.assertNotIn("names", audit["source_rows"])
+
+    def test_optional_bound_name_is_present_before_numerical_approval(self):
+        mapping = name_mapping()
+        h, scope, _ = scenario(name_rows=[mapping])
+        ref = name_reference(h)
+        result = calculate(h, scope, name_ref=ref, name_reader=json.loads)
+        row = result["orders"][0]
+        self.assertEqual(row["product_name"], "MOCK Oat & Almond Cereal")
+        self.assertEqual(row["rounded_order_quantity"], 5)
+        self.assertIsNone(row["approved_order_quantity"])
+        self.assertIn(ref, result["arithmetic_source_refs"])
+        self.assertIn(ref, row["arithmetic_input_refs"])
+        self.assertIn(ref, row["evidence_refs"])
+        audit = json.loads(result["arithmetic_checks"][0]["actual"])
+        self.assertEqual(audit["product_name"], mapping["product_name"])
+        self.assertEqual(audit["product_name_latest_information_available_date"], "2025-11-29")
+        self.assertEqual(audit["source_rows"]["names"], [1])
+
+    def test_optional_name_bytes_are_immutable_before_adapter_runs(self):
+        h, scope, content = scenario(name_rows=[name_mapping()])
+        ref = name_reference(h)
+        content["mock-sales"] = canonical([name_mapping("MOCK altered name")])
+        called = []
+        with self.assertRaisesRegex(InputError, "immutable reference"):
+            calculate(h, scope, name_ref=ref,
+                      name_reader=lambda data: called.append(True) or json.loads(data))
+        self.assertEqual(called, [])
+
+    def test_missing_duplicate_conflicting_or_future_name_withholds_scoped_key(self):
+        for rows, reason in (
+            ([], "missing_product_name_mapping"),
+            ([name_mapping(), name_mapping()], "duplicate_product_name_mapping"),
+            ([name_mapping(), name_mapping("MOCK conflicting name")], "conflicting_product_name_mapping"),
+            ([name_mapping(available="2025-12-01")], "product_name_mapping_uses_future_information"),
+            ([{"key": name_mapping()["key"], "product_name": "MOCK incomplete"}], "product_name_adapter_missing_fields"),
+        ):
+            with self.subTest(mock_names=rows):
+                h, scope, _ = scenario(name_rows=rows)
+                ref = name_reference(h)
+                result = calculate(h, scope, name_ref=ref, name_reader=json.loads)
+                self.assertEqual(result["orders"], [])
+                self.assertEqual(len(result["exceptions"]), 1)
+                self.assertIn(reason, result["exceptions"][0]["reason"])
+                self.assertIn(ref, result["exceptions"][0]["evidence_refs"])
+                audit = json.loads(result["arithmetic_checks"][0]["actual"])
+                self.assertEqual(audit["source_rows"]["names"], list(range(1, len(rows) + 1)))
+
+    def test_unsafe_or_rewritten_names_never_enter_candidate(self):
+        for name in ("", " ", " MOCK leading space", "MOCK trailing space ",
+                     "MOCK\nlog", "MOCK\u202e15", "MOCK\u200bhidden", "MOCK<script>",
+                     "[click](https://example.com)", "```code```", "**MOCK**", "MOCK_name"):
+            with self.subTest(mock_name=name):
+                h, scope, _ = scenario(name_rows=[name_mapping(name)])
+                result = calculate(h, scope, name_ref=name_reference(h), name_reader=json.loads)
+                self.assertEqual(result["orders"], [])
+                self.assertIn("unsafe_or_empty_product_name_mapping", result["exceptions"][0]["reason"])
+
+    def test_name_adapter_requires_paired_arguments_and_approved_reference(self):
+        h, scope, _ = scenario(name_rows=[name_mapping()])
+        ref = name_reference(h)
+        for kwargs, reason in (
+            ({"name_ref": ref}, "supplied together"),
+            ({"name_reader": json.loads}, "supplied together"),
+            ({"name_ref": ref, "name_reader": "not callable"}, "explicit product name reader"),
+            ({"name_ref": h.one("evaluation_result")["frozen"]["model_ref"], "name_reader": json.loads}, "must bind an approved source"),
+        ):
+            with self.subTest(mock_args=kwargs), self.assertRaisesRegex(InputError, reason):
+                calculate(h, scope, **kwargs)
+
+    def test_wrong_name_namespace_does_not_join_into_requested_key(self):
+        mapping = name_mapping()
+        mapping["key"]["source_namespace"] = "mock-other-source"
+        h, scope, _ = scenario(name_rows=[mapping])
+        result = calculate(h, scope, name_ref=name_reference(h), name_reader=json.loads)
+        self.assertEqual(result["orders"], [])
+        reasons = {row["key"]["source_namespace"]: row["reason"] for row in result["exceptions"]}
+        self.assertIn("missing_product_name_mapping", reasons["mock-retail"])
+        self.assertIn("product_name_mapping_source_namespace_mismatch", reasons["mock-other-source"])
 
     def test_exact_parent_checkpoint_authentication_precedes_reading(self):
         calls = []

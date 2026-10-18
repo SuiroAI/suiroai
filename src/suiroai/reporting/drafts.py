@@ -226,10 +226,12 @@ def draft_execution_failure(h: Handoff, *, artifact_id: str, failed_stage_ref: d
     result = _start(h, artifact_id, version, stage["parent_decision"], "execution_failure")
     _authorize(h, stage, "parent_decision", {"stop", "confirmed_failure"}, stage["stage"])
     code = stage["failure"]["error_code"]
+    # The typed failure reason binds the exact observed field. Presentation
+    # context belongs in the customer claim, never in this immutable fact.
     reason = _text(stage["failure"]["reason"])
-    status = f"Execution ended at stage {stage['stage']} with error category {code}; parent review concluded this run."
+    status = f"Execution ended at stage {stage['stage']} with error category {code}; parent review concluded this run. Observed reason: {reason}"
     result["failure"] = {"stage": stage["failure"]["stage"], "reason": reason, "scope_limitation": SCOPE, "evidence_refs": [failed_stage_ref], "error_code": code}
-    return _finish(h, result, [_claim("terminal-scope", SCOPE, [failed_stage_ref]), _claim("execution-error", status, [failed_stage_ref]), _claim("execution-reason", reason, [failed_stage_ref]), _claim("no-list", "No reliable restocking list is available from this run.", [failed_stage_ref])], None)
+    return _finish(h, result, [_claim("terminal-scope", SCOPE, [failed_stage_ref]), _claim("execution-error", status, [failed_stage_ref]), _claim("no-list", "No reliable restocking list is available from this run.", [failed_stage_ref])], None)
 
 
 def draft_missing_inputs(h: Handoff, *, source_ref: dict | None = None) -> dict:
