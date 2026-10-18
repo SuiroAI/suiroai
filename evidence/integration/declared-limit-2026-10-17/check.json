@@ -1,0 +1,16 @@
+{
+  "kind": "actual_adapter_predispatch_limit_check",
+  "declared_seconds": 0,
+  "actual_error_code": "budget_exhausted",
+  "thread_id": null,
+  "turn_id": null,
+  "native_log_created": false,
+  "checks_passed": true,
+  "mock": false,
+  "analytical_invocation": false,
+  "upstream_quota_exhaustion_exercised": false,
+  "automatic_DSC26_acceptance": false,
+  "limitation": "Exercises the actual zero remaining-time guard only; not a model invocation or depletion of provider quota.",
+  "native_transport_sha256": "f8c60e14716fba76287ba341b734863b0dec1e9ea0012e5ead0b3ae854a13f4d",
+  "native_transport_commit": "b4d48ad"
+}
