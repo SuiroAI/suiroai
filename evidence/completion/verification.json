@@ -1,0 +1,930 @@
+{
+  "reviewed_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
+  "regression_executed_commit": "7af5a855ea98a47d332b2428bc1325f8154eb49e",
+  "code_test_tree_unchanged_on_refresh": true,
+  "nightly_refresh": "DSC-31 PR #13; five preparation documents/templates only; no actual recording",
+  "review_date": "2026-10-18",
+  "reviewer": "Codex DSC-9 reviewer (/root)",
+  "regression_verifier": "Codex regression_review (/root/regression_review)",
+  "milestone_decision": "Blocked",
+  "runtime_outcome": "not_executed_by_this_review",
+  "environment": {
+    "python": "3.13.0",
+    "pytest": "9.0.2",
+    "jsonschema": "4.25.1",
+    "numpy": "2.1.3",
+    "pandas": "2.3.1",
+    "scikit-learn": "1.7.2",
+    "langchain": "1.3.15",
+    "langgraph": "1.2.11",
+    "lock_resynced": false
+  },
+  "commands": [
+    {
+      "command": "python3 -m pytest tests -q",
+      "exit": 2,
+      "actual": "33 collection errors: src-layout package unavailable without PYTHONPATH",
+      "log": "evidence/completion/checks/pytest-no-src.log",
+      "classification": "invocation_diagnostic"
+    },
+    {
+      "command": "PYTHONPATH=src:tests/parent:tests/preparation python3 -m pytest tests --import-mode=importlib -q",
+      "exit": 2,
+      "actual": "Two collection errors: replenishment fixture helper imports absent",
+      "log": "evidence/completion/checks/pytest-importlib.log",
+      "classification": "historical_workaround_diagnostic"
+    },
+    {
+      "command": "PYTHONPATH=src:tests/parent:tests/preparation:tests/replenishment python3 -m pytest tests --import-mode=importlib -q",
+      "exit": 0,
+      "actual": "610 passed, 632 subtests passed in 28.22 seconds",
+      "log": "evidence/completion/checks/pytest-importlib-replenishment.log",
+      "classification": "component_regression"
+    },
+    {
+      "command": "PYTHONPATH=src python3 -m pytest tests -q",
+      "exit": 0,
+      "actual": "610 passed, 632 subtests passed in 28.37 seconds",
+      "log": "evidence/completion/checks/pytest-src.log",
+      "classification": "canonical_current_component_regression"
+    }
+  ],
+  "review_checks": [
+    {
+      "check": "DSC-24 exact source criterion coverage",
+      "expected": [
+        "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in DSC-27.",
+        "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required.",
+        "Missing-input assessment, runtime error and completed restocking have distinct outcomes.",
+        "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification.",
+        "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts.",
+        "No model/pipeline implementation is claimed by this planning update."
+      ],
+      "actual": [
+        "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in DSC-27.",
+        "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required.",
+        "Missing-input assessment, runtime error and completed restocking have distinct outcomes.",
+        "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification.",
+        "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts.",
+        "No model/pipeline implementation is claimed by this planning update."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-10 exact source criterion coverage",
+      "expected": [
+        "Fact/inference/assumption/synthetic/unknown provenance is testable.",
+        "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement.",
+        "Cleanup and model choices do not become customer statistical decisions.",
+        "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report.",
+        "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable."
+      ],
+      "actual": [
+        "Fact/inference/assumption/synthetic/unknown provenance is testable.",
+        "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement.",
+        "Cleanup and model choices do not become customer statistical decisions.",
+        "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report.",
+        "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-25 exact source criterion coverage",
+      "expected": [
+        "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off.",
+        "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution.",
+        "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting.",
+        "No unnecessary customer choice of imputation, algorithms or hyperparameters.",
+        "Material assumptions appear in the initial understanding and remain traceable."
+      ],
+      "actual": [
+        "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off.",
+        "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution.",
+        "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting.",
+        "No unnecessary customer choice of imputation, algorithms or hyperparameters.",
+        "Material assumptions appear in the initial understanding and remain traceable."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-26 exact source criterion coverage",
+      "expected": [
+        "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted.",
+        "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct.",
+        "Source/task/assumption versions and actual checkpoint evidence are returned.",
+        "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable.",
+        "No unsupported interface or completed engineering is claimed."
+      ],
+      "actual": [
+        "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted.",
+        "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct.",
+        "Source/task/assumption versions and actual checkpoint evidence are returned.",
+        "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable.",
+        "No unsupported interface or completed engineering is claimed."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-27 exact source criterion coverage",
+      "expected": [
+        "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted.",
+        "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked.",
+        "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained.",
+        "Aggregation and missingness decisions are made and tested by the agent.",
+        "Units and outliers are resolved, bounded or flagged with consequences\u2014not silently fabricated.",
+        "Future features and fitted preprocessing do not leak validation/holdout information.",
+        "No customer statistical-treatment gate is introduced."
+      ],
+      "actual": [
+        "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted.",
+        "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked.",
+        "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained.",
+        "Aggregation and missingness decisions are made and tested by the agent.",
+        "Units and outliers are resolved, bounded or flagged with consequences\u2014not silently fabricated.",
+        "Future features and fitted preprocessing do not leak validation/holdout information.",
+        "No customer statistical-treatment gate is introduced."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-28 exact source criterion coverage",
+      "expected": [
+        "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry.",
+        "The explicit sequence is initial-model/baseline evaluation (step6) \u2192 LLM-generated additional features (step7) \u2192 bounded model/feature comparison (step8) \u2192 frozen unseen validation.",
+        "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference.",
+        "Comparable baseline/candidate evidence and correct metric direction are recorded.",
+        "Train/development/holdout boundaries, eligibility and prediction-time features are checked.",
+        "Passing, worse and equal branches match the contract.",
+        "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization.",
+        "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone."
+      ],
+      "actual": [
+        "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry.",
+        "The explicit sequence is initial-model/baseline evaluation (step6) \u2192 LLM-generated additional features (step7) \u2192 bounded model/feature comparison (step8) \u2192 frozen unseen validation.",
+        "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference.",
+        "Comparable baseline/candidate evidence and correct metric direction are recorded.",
+        "Train/development/holdout boundaries, eligibility and prediction-time features are checked.",
+        "Passing, worse and equal branches match the contract.",
+        "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization.",
+        "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-29 exact source criterion coverage",
+      "expected": [
+        "Supported-input and insufficient-input customer responses are both grounded in evidence.",
+        "Alternatives are offered without silently replacing the requested task.",
+        "Synthetic provenance/material limitations remain clear.",
+        "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
+        "No false unsuitability or execution-success claims."
+      ],
+      "actual": [
+        "Supported-input and insufficient-input customer responses are both grounded in evidence.",
+        "Alternatives are offered without silently replacing the requested task.",
+        "Synthetic provenance/material limitations remain clear.",
+        "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
+        "No false unsuitability or execution-success claims."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-30 exact source criterion coverage",
+      "expected": [
+        "Final quantities reconcile to forecast, stock and eligible receipts without double counting.",
+        "Units, dates, rounding and applicable constraints are checked.",
+        "Missing/invalid/stale/conflicting inputs produce explicit correct handling.",
+        "Synthetic output is illustrative, not a real purchasing recommendation.",
+        "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response."
+      ],
+      "actual": [
+        "Final quantities reconcile to forecast, stock and eligible receipts without double counting.",
+        "Units, dates, rounding and applicable constraints are checked.",
+        "Missing/invalid/stale/conflicting inputs produce explicit correct handling.",
+        "Synthetic output is illustrative, not a real purchasing recommendation.",
+        "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-31 exact source criterion coverage",
+      "expected": [
+        "Future recording proves real execution of the one selected restocking case; no extra scenario suite.",
+        "Source, synthetic inputs, assumptions and actual outputs are distinguishable.",
+        "Missing-input success is not mislabeled as full end-to-end restocking success.",
+        "No app launch/delivery or extra V1 workflow is required.",
+        "Recording and versioned evidence agree."
+      ],
+      "actual": [
+        "Future recording proves real execution of the one selected restocking case; no extra scenario suite.",
+        "Source, synthetic inputs, assumptions and actual outputs are distinguishable.",
+        "Missing-input success is not mislabeled as full end-to-end restocking success.",
+        "No app launch/delivery or extra V1 workflow is required.",
+        "Recording and versioned evidence agree."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-56 exact source criterion coverage",
+      "expected": [
+        "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
+        "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
+        "The one end-to-end restocking case maps to actual execution and verification evidence.",
+        "Missing-input assessments and actual restocking completion are classified correctly.",
+        "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
+        "Full-input demo evidence and affected rechecks are required for gate closure.",
+        "Fixture-validation results are not misrepresented as product tests or implementation completion."
+      ],
+      "actual": [
+        "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
+        "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
+        "The one end-to-end restocking case maps to actual execution and verification evidence.",
+        "Missing-input assessments and actual restocking completion are classified correctly.",
+        "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
+        "Full-input demo evidence and affected rechecks are required for gate closure.",
+        "Fixture-validation results are not misrepresented as product tests or implementation completion."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-9 Completion gate",
+      "expected": [
+        "Step6 initial-model/baseline evidence precedes step7 LLM-generated additional features; step8 compares model/feature options before frozen unseen validation. Feature outputs and leakage checks are verified, and relevant findings appear in the final report.",
+        "Routine analysis progress remains internal; relevant step5 findings are included in the final customer report. Material clarifications/blockers still receive targeted handling.",
+        "All implementation sub-issues are complete and their acceptance criteria verified.",
+        "Runtime evidence, tests and versioned artifacts are linked; a diagram alone is not implementation completion.",
+        "Recorded demo, actual Codex/Data execution evidence and the delivered business output are reviewable.",
+        "Reviewer accepts the milestone outcome before the next milestone starts."
+      ],
+      "actual": [
+        "Step6 initial-model/baseline evidence precedes step7 LLM-generated additional features; step8 compares model/feature options before frozen unseen validation. Feature outputs and leakage checks are verified, and relevant findings appear in the final report.",
+        "Routine analysis progress remains internal; relevant step5 findings are included in the final customer report. Material clarifications/blockers still receive targeted handling.",
+        "All implementation sub-issues are complete and their acceptance criteria verified.",
+        "Runtime evidence, tests and versioned artifacts are linked; a diagram alone is not implementation completion.",
+        "Recorded demo, actual Codex/Data execution evidence and the delivered business output are reviewable.",
+        "Reviewer accepts the milestone outcome before the next milestone starts."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-9 Milestone-specific verification checklist",
+      "expected": [
+        "Exactly one named task, prepared dataset and final-output contract are locked; the demo completes that task only. A second task or generalized task support is not an acceptance requirement.",
+        "Real input loading and initial understanding/sign-off are demonstrated for the selected case; any material corrections preserve the same task boundary.",
+        "DSC-26 proves a supported Codex invocation with OpenAI Data enabled and actual analytical execution; unresolved integration cannot be treated as passed.",
+        "Measured baseline/comparison artifacts are genuine; development windows end by the cutoff, winner and final acceptance rule are frozen before holdout, and failed final validation blocks delivery without holdout-driven tuning.",
+        "The delivered output matches the confirmed business task, fields, units and rules; a restocking request yields one final report with the item-and-quantity list and concise verified EDA/feature findings.",
+        "Output values, logs, versions and limitations agree. No customer app/executable or mandatory separate report is required."
+      ],
+      "actual": [
+        "Exactly one named task, prepared dataset and final-output contract are locked; the demo completes that task only. A second task or generalized task support is not an acceptance requirement.",
+        "Real input loading and initial understanding/sign-off are demonstrated for the selected case; any material corrections preserve the same task boundary.",
+        "DSC-26 proves a supported Codex invocation with OpenAI Data enabled and actual analytical execution; unresolved integration cannot be treated as passed.",
+        "Measured baseline/comparison artifacts are genuine; development windows end by the cutoff, winner and final acceptance rule are frozen before holdout, and failed final validation blocks delivery without holdout-driven tuning.",
+        "The delivered output matches the confirmed business task, fields, units and rules; a restocking request yields one final report with the item-and-quantity list and concise verified EDA/feature findings.",
+        "Output values, logs, versions and limitations agree. No customer app/executable or mandatory separate report is required."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-9 Closure rules",
+      "expected": [
+        "Every child issue is complete with current evidence; no requirement or defect is silently waived.",
+        "Complete evidence ledger, milestone-specific checks and passing regression results are linked.",
+        "Output/handoff contracts match the next milestone's input contract; customer-output usability, correctness and requested format are reviewed where applicable.",
+        "A named verifier explicitly accepts the outcome and records remaining limitations. Material scope changes require recorded approval and updated requirements.",
+        "Completion-gate decision and current passing report agree before downstream execution advances."
+      ],
+      "actual": [
+        "Every child issue is complete with current evidence; no requirement or defect is silently waived.",
+        "Complete evidence ledger, milestone-specific checks and passing regression results are linked.",
+        "Output/handoff contracts match the next milestone's input contract; customer-output usability, correctness and requested format are reviewed where applicable.",
+        "A named verifier explicitly accepts the outcome and records remaining limitations. Material scope changes require recorded approval and updated requirements.",
+        "Completion-gate decision and current passing report agree before downstream execution advances."
+      ],
+      "decision": "Pass"
+    },
+    {
+      "check": "unique requirement IDs",
+      "expected": 97,
+      "actual": 97,
+      "decision": "Pass"
+    },
+    {
+      "check": "total ledger rows",
+      "expected": 97,
+      "actual": 97,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain requirement",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain artifacts",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain check",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain expected",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain actual",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain verifier",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain decision",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "all rows contain recheck",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned src/suiroai/contracts/schema/retail-contract.schema.json",
+      "expected": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "actual": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned src/suiroai/contracts/validation.py",
+      "expected": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+      "actual": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned examples/contracts/v0.1.0/approved_execution.json",
+      "expected": "65fce44c921d176d6696a7f8ae05f7d4b552cac9ac862b7451da368cac715bd8",
+      "actual": "65fce44c921d176d6696a7f8ae05f7d4b552cac9ac862b7451da368cac715bd8",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned examples/contracts/v0.1.0/execution_failed.json",
+      "expected": "f76851314ba3a440ddf9447ff32ed19af36f1a2613f6fba9bbd631dabbb98a5d",
+      "actual": "f76851314ba3a440ddf9447ff32ed19af36f1a2613f6fba9bbd631dabbb98a5d",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned examples/contracts/v0.1.0/missing_inputs.json",
+      "expected": "d860a3255e8381402165b2181ca25821e41b16fe1241fdf0092a731542ed780e",
+      "actual": "d860a3255e8381402165b2181ca25821e41b16fe1241fdf0092a731542ed780e",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned examples/contracts/v0.1.0/successful_analysis.json",
+      "expected": "7256c8a570c6badfbddc89fd4c5171e1484974f444b7a84491078f2ae4f91aea",
+      "actual": "7256c8a570c6badfbddc89fd4c5171e1484974f444b7a84491078f2ae4f91aea",
+      "decision": "Pass"
+    },
+    {
+      "check": "pinned examples/contracts/v0.1.0/validation_failed.json",
+      "expected": "5a02591e447ba3e760230299e01a61a0c289bbf8fa2a38aaf383ded9f7bcfb67",
+      "actual": "5a02591e447ba3e760230299e01a61a0c289bbf8fa2a38aaf383ded9f7bcfb67",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes dictionary",
+      "expected": "643497a5e8bb501e6dc3a7533f06eb555a94c1732a545c1d04d6698fe65399cb",
+      "actual": "643497a5e8bb501e6dc3a7533f06eb555a94c1732a545c1d04d6698fe65399cb",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes generation_manifest",
+      "expected": "d41f9e67467bb7e5bd955ed8a13bb54c61d21b5c59bfe54083a52441af254b8a",
+      "actual": "d41f9e67467bb7e5bd955ed8a13bb54c61d21b5c59bfe54083a52441af254b8a",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes inventory",
+      "expected": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "actual": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes policy",
+      "expected": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "actual": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes receipts",
+      "expected": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "actual": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes sales",
+      "expected": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "actual": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "decision": "Pass"
+    },
+    {
+      "check": "current source bytes shared_locations",
+      "expected": "d78fc0029931b2866406ed455093d653bd5e95b97424c13dde933d569a0efced",
+      "actual": "d78fc0029931b2866406ed455093d653bd5e95b97424c13dde933d569a0efced",
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/architecture/ARCHITECTURE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/architecture/COORDINATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/architecture/OWNERSHIP.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/contracts/CONTRACT.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/contracts/SNAPSHOT.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/contracts/audit/reconciliation.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/demo/CHECKLIST.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/demo/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/demo/RECORDING_SCRIPT.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/intake/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/intake/mock_conversations.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/integration/ADAPTER.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/integration/NATIVE_BOUNDARY.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/modeling/COMPONENT_EVIDENCE.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/modeling/INTERFACE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/modeling/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/parent/COORDINATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/parent/EVIDENCE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/parent/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/preparation/INTERFACE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/preparation/VALIDATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/replenishment/INTEGRATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/replenishment/NUMERICAL_EXAMPLES.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/replenishment/VALIDATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/reporting/MOCK_DRAFTS.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/verification/COORDINATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/verification/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/verification/VALIDATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/completion/sources/linear-2026-10-18.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/demo/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/demo/index.template.csv",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/integration/native-failures-2026-10-17/review.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/integration/native-isolated-stage-2026-10-17/review.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/contracts/test_contract.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/intake/test_conversation.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/intake/test_langchain_roles.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/integration/test_adapter.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/modeling/test_evaluation.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/modeling/test_frozen.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/modeling/test_llm_features.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/modeling/test_preparation_consumer.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/parent/test_adversarial.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/parent/test_frozen_release.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/parent/test_recovery_delivery.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/parent/test_workflow.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/preparation/test_features.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/preparation/test_result.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/preparation/test_worker.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/replenishment/test_handoff.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/reporting/test_drafts.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/verification/test_arithmetic.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/verification/test_claims.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/verification/test_engine.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "required evidence absent at reviewed revision: tests/acceptance",
+      "expected": false,
+      "actual": false,
+      "decision": "Pass"
+    },
+    {
+      "check": "required evidence absent at reviewed revision: docs/acceptance",
+      "expected": false,
+      "actual": false,
+      "decision": "Pass"
+    },
+    {
+      "check": "required evidence absent at reviewed revision: evidence/acceptance",
+      "expected": false,
+      "actual": false,
+      "decision": "Pass"
+    },
+    {
+      "check": "current regression successful",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "final milestone decision",
+      "expected": "Blocked",
+      "actual": "Blocked",
+      "decision": "Pass"
+    },
+    {
+      "check": "no accepted successful model validation",
+      "expected": false,
+      "actual": false,
+      "decision": "Pass"
+    },
+    {
+      "check": "no accepted successful restocking demonstration",
+      "expected": false,
+      "actual": false,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/completion/ledger.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/completion/sources/linear-2026-10-18.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/completion/checks/pytest-src.log",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../integration/NATIVE_BOUNDARY.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/integration/native-isolated-stage-2026-10-17/review.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/preparation/INTERFACE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/preparation/INTERFACE.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/modeling/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/parent/COORDINATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/intake/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/replenishment/INTEGRATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/parent/COORDINATION.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/modeling/COMPONENT_EVIDENCE.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../docs/architecture/OWNERSHIP.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/completion/sources/linear-2026-10-18.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../../evidence/integration/native-failures-2026-10-17/review.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "review local link ../architecture/OWNERSHIP.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    }
+  ],
+  "review_checks_summary": {
+    "passed": 115,
+    "failed": 0
+  },
+  "limits": [
+    "Passing metadata, hash and component checks do not establish milestone success.",
+    "No native model/customer execution was invoked by this review.",
+    "Existing source QA and real synthetic native records were inspected, not reexecuted.",
+    "No Linear state/comment/Miro update performed."
+  ]
+}

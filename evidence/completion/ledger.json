@@ -1,0 +1,3725 @@
+{
+  "format": "DSC-9 fixed milestone evidence ledger; static review document, not shared contract or runtime platform",
+  "review_date": "2026-10-18",
+  "source_of_truth": {
+    "branch": "origin/nightly",
+    "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
+    "contract_version": "0.1.0-draft.3",
+    "linear_snapshot": "evidence/completion/sources/linear-2026-10-18.json",
+    "prior_reviewed_commit": "7af5a855ea98a47d332b2428bc1325f8154eb49e",
+    "refresh_reason": "DSC-31 preparation-only PR #13 added five docs/index-template files; application/test tree unchanged."
+  },
+  "reviewer": "Codex DSC-9 reviewer (/root)",
+  "independent_reviewers": [
+    "Codex evidence_review (/root/evidence_review)",
+    "Codex closure_review (/root/closure_review)",
+    "Codex regression_review (/root/regression_review)"
+  ],
+  "milestone_decision": "Blocked",
+  "milestone_accepted": false,
+  "runtime_outcome": "not_executed_by_this_review",
+  "successful_model_validation_established": false,
+  "successful_restocking_demo_established": false,
+  "issue_status_changes_authorized": false,
+  "issue_status_changes_performed": false,
+  "named_final_acceptance": {
+    "accepted": false,
+    "designated_accepting_reviewer": null,
+    "reason": "Current Codex reviewer explicitly withholds acceptance. No human/owner acceptance inferred from tests, prose, merge or silence."
+  },
+  "coverage": {
+    "child_acceptance_criteria": 58,
+    "parent_checkboxes": 17,
+    "architecture_boundary_checkboxes": 6,
+    "supplemental_runtime_requirements": 16,
+    "total_rows": 97
+  },
+  "decision_semantics": {
+    "Pass": "Only the stated row's scoped check passed; never accepts an incomplete child or milestone.",
+    "Blocked": "Concrete partial evidence inspected, but required genuine/current evidence or authorized upstream correction is missing.",
+    "Fail": "A checked behavior contradicted expected behavior; invocation setup diagnostics do not automatically mean product failure."
+  },
+  "artifact_hash_index": "evidence/completion/artifact-index.json",
+  "rows": [
+    {
+      "requirement_id": "DSC-24-AC1",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in DSC-27.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect submission/intake and preparation separation; exercise receipt without calling preparation.",
+      "expected": "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in DSC-27.",
+      "actual": "Receipt/preparation boundaries are implemented and covered by mock component tests; no authenticated customer chain executed.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-24-AC2",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Reconcile selected task, source/Drive references and output fields against the pinned contract.",
+      "expected": "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required.",
+      "actual": "draft.3 is pinned and seven hashes match. Existing source QA reports 41/41 checks; full selected-case execution and current remote Drive byte identity unverified.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-24-AC3",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Missing-input assessment, runtime error and completed restocking have distinct outcomes.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise capability, execution-error and successful-restocking discriminators.",
+      "expected": "Missing-input assessment, runtime error and completed restocking have distinct outcomes.",
+      "actual": "Shared records and mock examples distinguish outcomes; no genuine completed restocking artifact.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-24-AC4",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review treatment investigation and material-fact escalation paths with uncertain inputs.",
+      "expected": "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification.",
+      "actual": "Preparation/modeling retain uncertainties; historical availability and complete daily target evidence remain unresolved.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-24-AC5",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare synthetic manifest/dictionary provenance with task and output claims.",
+      "expected": "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts.",
+      "actual": "Synthetic operational facts are labeled; no actual verified final customer report exists.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-24-AC6",
+      "source_issue": "DSC-24",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 6,
+      "requirement": "No model/pipeline implementation is claimed by this planning update.",
+      "artifacts": [
+        {
+          "path": "docs/contracts/CONTRACT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/SNAPSHOT.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/contracts/audit/reconciliation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/contracts/test_contract.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Read planning claims and source-audit disclaimers; reject fixture QA as pipeline completion.",
+      "expected": "No model/pipeline implementation is claimed by this planning update.",
+      "actual": "Planning/snapshot explicitly disclaim model/pipeline acceptance; this static truthfulness check passes.",
+      "evidence_class": "real_source_QA_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Pass",
+      "scope": "Static requirement only; does not accept child or milestone",
+      "correction_owner": "DSC-24",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-25-AC1",
+      "source_issue": "DSC-25",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/intake/mock_conversations.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_conversation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_langchain_roles.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise absent, inaccessible and partial supplied files; compare proposal/gaps to read-only inspected evidence.",
+      "expected": "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off.",
+      "actual": "Receipt and guidance tests use actual generated bytes and mocked role outputs; genuine supplied-file presentation/sign-off evidence absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-25",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-25-AC2",
+      "source_issue": "DSC-25",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/intake/mock_conversations.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_conversation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_langchain_roles.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise silence, rejection, correction, material new data and stale approval; verify same approved proposal handed onward.",
+      "expected": "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution.",
+      "actual": "Version binding and correction loops have component coverage; real authenticated consent\u2192parent\u2192native dispatch remains unexecuted.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-25",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-25-AC3",
+      "source_issue": "DSC-25",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/intake/mock_conversations.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_conversation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_langchain_roles.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise compatible partial schemas and out-of-scope goals without silent rerouting.",
+      "expected": "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting.",
+      "actual": "Local compatibility/unsupported-task behavior exists; real semantic reviewer is not wired.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-25",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-25-AC4",
+      "source_issue": "DSC-25",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "No unnecessary customer choice of imputation, algorithms or hyperparameters.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/intake/mock_conversations.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_conversation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_langchain_roles.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect focused prompts and proposed questions for agent-owned statistical decisions.",
+      "expected": "No unnecessary customer choice of imputation, algorithms or hyperparameters.",
+      "actual": "Prompts reserve statistical choices to the agent; no live customer conversation proves behavior.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-25",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-25-AC5",
+      "source_issue": "DSC-25",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Material assumptions appear in the initial understanding and remain traceable.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/intake/mock_conversations.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_conversation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/intake/test_langchain_roles.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Trace material assumptions from actual request/source to presentation, approval and execution.",
+      "expected": "Material assumptions appear in the initial understanding and remain traceable.",
+      "actual": "Proposal provenance is modeled; current real task/input/proposal/assumption chain absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-25",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-26-AC1",
+      "source_issue": "DSC-26",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted.",
+      "artifacts": [
+        {
+          "path": "docs/integration/NATIVE_BOUNDARY.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/integration/ADAPTER.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-failures-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/integration/test_adapter.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect saved real native Data invocation/calculation/retrieval and reproduce independent probe arithmetic; require actual approved-packet adapter dispatch.",
+      "expected": "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted.",
+      "actual": "Real isolated synthetic probe retained; independent review reports 26 fidelity checks, three rows A=5/B=5/total=10 and model-command denial controls. customer_analysis=false; full adapter/customer acceptance absent.",
+      "evidence_class": "real_synthetic_probe_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-26",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-26-AC2",
+      "source_issue": "DSC-26",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct.",
+      "artifacts": [
+        {
+          "path": "docs/integration/NATIVE_BOUNDARY.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/integration/ADAPTER.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-failures-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/integration/test_adapter.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check separate missing-data/capability, measured success and infrastructure failure evidence.",
+      "expected": "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct.",
+      "actual": "Probe/failure evidence is separate and component outcomes typed; not an authenticated customer capability/completion demonstration.",
+      "evidence_class": "real_synthetic_probe_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-26",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-26-AC3",
+      "source_issue": "DSC-26",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Source/task/assumption versions and actual checkpoint evidence are returned.",
+      "artifacts": [
+        {
+          "path": "docs/integration/NATIVE_BOUNDARY.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/integration/ADAPTER.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-failures-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/integration/test_adapter.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Trace source/task/assumption/checkpoint versions from approved packet to measured native results.",
+      "expected": "Source/task/assumption versions and actual checkpoint evidence are returned.",
+      "actual": "Measured probe artifacts have hashes/thread/turn; no current approved customer task/run checkpoint chain.",
+      "evidence_class": "real_synthetic_probe_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-26",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-26-AC4",
+      "source_issue": "DSC-26",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable.",
+      "artifacts": [
+        {
+          "path": "docs/integration/NATIVE_BOUNDARY.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/integration/ADAPTER.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-failures-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/integration/test_adapter.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect real failure/limit records and component invalid-code, timeout, cancellation and plugin checks.",
+      "expected": "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable.",
+      "actual": "Separate saved invalid-code/timeout/cancel/budget runs exist; isolated success alone proves none of those failure paths. Full approved-task failure handling unexecuted.",
+      "evidence_class": "real_synthetic_probe_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-26",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-26-AC5",
+      "source_issue": "DSC-26",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "No unsupported interface or completed engineering is claimed.",
+      "artifacts": [
+        {
+          "path": "docs/integration/NATIVE_BOUNDARY.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/integration/ADAPTER.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/integration/native-failures-2026-10-17/review.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/integration/test_adapter.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect current source boundary and evidence claims for invented APIs or excessive completion claims.",
+      "expected": "No unsupported interface or completed engineering is claimed.",
+      "actual": "Native profile adapter exists; no invented external @Data API is claimed. Historical probe review's wiring limitation is superseded by current source implementation, while customer dispatch remains unverified.",
+      "evidence_class": "real_synthetic_probe_plus_component_tests",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-26",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC1",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect retained verified findings and check that no routine EDA message is emitted before the final report.",
+      "expected": "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted.",
+      "actual": "Findings fields and no customer-progress emitter exist; actual approved preparation/final report absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC2",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise joins/cardinality/key coverage/receipt reconciliation and inspect real lineage.",
+      "expected": "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked.",
+      "actual": "Generated fixture checks cover joins and lineage. Safe derived CSV fails shared validator before dispatch; no real native preparation.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC3",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare raw hashes/counts/dictionary/transaction grain with preparation output and original source QA.",
+      "expected": "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained.",
+      "actual": "Source QA exists separately; preparation count tests deliberately generated 18,045/45 rows and do not establish actual supplied-source treatment.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC4",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Aggregation and missingness decisions are made and tested by the agent.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise sparse-day and target-treatment policies without assuming missing dates are zero.",
+      "expected": "Aggregation and missingness decisions are made and tested by the agent.",
+      "actual": "Missing days remain unknown and complete_daily_sales=false. Current source does not establish complete daily demand targets.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC5",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Units and outliers are resolved, bounded or flagged with consequences\u2014not silently fabricated.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check nonpositive quantities/status/returns/units/outlier decisions and explicit consequences.",
+      "expected": "Units and outliers are resolved, bounded or flagged with consequences\u2014not silently fabricated.",
+      "actual": "Mock treatments are tested; real eight nonpositive rows and retrospective status/return availability are not accepted as resolved by those tests.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC6",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 6,
+      "requirement": "Future features and fitted preprocessing do not leak validation/holdout information.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Poison future inputs and inspect partition/release/preprocessing availability controls.",
+      "expected": "Future features and fitted preprocessing do not leak validation/holdout information.",
+      "actual": "Future poisoning tests exist; both derived-release authorization and genuine historical information-availability evidence block the real handoff.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-27-AC7",
+      "source_issue": "DSC-27",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 7,
+      "requirement": "No customer statistical-treatment gate is introduced.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_worker.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_result.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/preparation/test_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect preparation clarification paths for prohibited customer statistical choices.",
+      "expected": "No customer statistical-treatment gate is introduced.",
+      "actual": "Statistical treatment is agent-owned in component; no genuine customer execution.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-27",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC1",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise parent-reviewed confirmed underperformance, authorized defect correction, failed recovery and terminal explanation without fallback.",
+      "expected": "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry.",
+      "actual": "Failure/recovery tests and mock numeric evidence exist; no genuine frozen-model failure or verified delivered explanation was observed.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC2",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "The explicit sequence is initial-model/baseline evaluation (step6) \u2192 LLM-generated additional features (step7) \u2192 bounded model/feature comparison (step8) \u2192 frozen unseen validation.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify ordered step6\u2192step7\u2192step8\u2192step9 records and genuine stage timestamps/artifacts.",
+      "expected": "The explicit sequence is initial-model/baseline evaluation (step6) \u2192 LLM-generated additional features (step7) \u2192 bounded model/feature comparison (step8) \u2192 frozen unseen validation.",
+      "actual": "Component sequence exists. COMPONENT_EVIDENCE.json explicitly evidence_mode=mock and real_execution_accepted=false.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC3",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Trace actual LLM prompt/response/model/feature definitions and materialization to development-only inputs, folds and parent check.",
+      "expected": "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference.",
+      "actual": "Injected mock LLM responses are validated in tests; no actual LLM-generated source-case features or native materialization evidence.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC4",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Comparable baseline/candidate evidence and correct metric direction are recorded.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Recompute comparable baseline/candidate metrics on common origins/horizons/population and metric direction.",
+      "expected": "Comparable baseline/candidate evidence and correct metric direction are recorded.",
+      "actual": "Actual arithmetic on synthetic fixtures exists; no genuine selected-case baseline/comparison scores.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC5",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Train/development/holdout boundaries, eligibility and prediction-time features are checked.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect source partition, target eligibility, feature knowledge dates and fold-fitted transformations.",
+      "expected": "Train/development/holdout boundaries, eligibility and prediction-time features are checked.",
+      "actual": "Source preparation lacks complete daily labels and historical knowledge-time evidence; current consumer cannot establish eligible full-demand horizons.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC6",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 6,
+      "requirement": "Passing, worse and equal branches match the contract.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise better/worse/equal initial-model branches and parent review decisions.",
+      "expected": "Passing, worse and equal branches match the contract.",
+      "actual": "Component branch checks are present; no genuine initial-model gate decision.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC7",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 7,
+      "requirement": "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify all horizon ends, pre-score frozen rule/population/model/forecast, fully observed holdout and immutable November30 quantities.",
+      "expected": "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization.",
+      "actual": "Frozen artifact controls tested with mock targets; no real frozen November30 forecast or December validation.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-28-AC8",
+      "source_issue": "DSC-28",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 8,
+      "requirement": "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_evaluation.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_llm_features.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_frozen.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/modeling/test_preparation_consumer.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review report claims for unsupported stockout/profit/cost benefits.",
+      "expected": "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone.",
+      "actual": "Docs explicitly disavow business-benefit inference; genuine final report remains absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-28",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-29-AC1",
+      "source_issue": "DSC-29",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Supported-input and insufficient-input customer responses are both grounded in evidence.",
+      "artifacts": [
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/reporting/MOCK_DRAFTS.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/reporting/test_drafts.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/replenishment/test_handoff.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check supported-input and insufficient-input narratives against authoritative measured artifacts.",
+      "expected": "Supported-input and insufficient-input customer responses are both grounded in evidence.",
+      "actual": "Evidence-bound mock drafts exist; native numerical-check\u2192parent-approval\u2192humanizer checkpoint remains missing.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-29",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-29-AC2",
+      "source_issue": "DSC-29",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Alternatives are offered without silently replacing the requested task.",
+      "artifacts": [
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/reporting/MOCK_DRAFTS.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/reporting/test_drafts.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/replenishment/test_handoff.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise narrower alternatives pending confirmation without replacing restocking.",
+      "expected": "Alternatives are offered without silently replacing the requested task.",
+      "actual": "Local capability guidance preserves objective; draft.3 preexecution report envelope still requires execution, so local guidance is intentionally separate.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-29",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-29-AC3",
+      "source_issue": "DSC-29",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Synthetic provenance/material limitations remain clear.",
+      "artifacts": [
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/reporting/MOCK_DRAFTS.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/reporting/test_drafts.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/replenishment/test_handoff.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify synthetic provenance and material limitations survive humanizing unchanged.",
+      "expected": "Synthetic provenance/material limitations remain clear.",
+      "actual": "Synthetic disclaimers preserved in examples; no genuine approved final report.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-29",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-29-AC4",
+      "source_issue": "DSC-29",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
+      "artifacts": [
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/reporting/MOCK_DRAFTS.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/reporting/test_drafts.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/replenishment/test_handoff.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare final list, concise EDA/feature/model findings and internal detailed diagnostics against approved artifacts.",
+      "expected": "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
+      "actual": "Report code copies approved quantities/claims, but real findings, scores, list and delivered report absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-29",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-29-AC5",
+      "source_issue": "DSC-29",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "No false unsuitability or execution-success claims.",
+      "artifacts": [
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/reporting/MOCK_DRAFTS.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/reporting/test_drafts.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/replenishment/test_handoff.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check outcome claims against actual capability/execution/validation results.",
+      "expected": "No false unsuitability or execution-success claims.",
+      "actual": "Failure variants distinguish measured and execution failure; no genuine run outcome or customer delivery claimed.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-29",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-30-AC1",
+      "source_issue": "DSC-30",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Final quantities reconcile to forecast, stock and eligible receipts without double counting.",
+      "artifacts": [
+        {
+          "path": "docs/verification/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_arithmetic.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_claims.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_engine.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Independently recompute forecast+safety\u2212usable stock\u2212eligible receipts, clamp and minimum/multiple rounding.",
+      "expected": "Final quantities reconcile to forecast, stock and eligible receipts without double counting.",
+      "actual": "Independent arithmetic tests exist, separate from producer; no real forecast/approved quantities to reconcile.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-30",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-30-AC2",
+      "source_issue": "DSC-30",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Units, dates, rounding and applicable constraints are checked.",
+      "artifacts": [
+        {
+          "path": "docs/verification/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_arithmetic.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_claims.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_engine.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify identity, product units, as-of/receipt dates, protection period, rounding and constraints.",
+      "expected": "Units, dates, rounding and applicable constraints are checked.",
+      "actual": "Component cases cover dates/units/rounding and earlier shortage; genuine artifacts absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-30",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-30-AC3",
+      "source_issue": "DSC-30",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Missing/invalid/stale/conflicting inputs produce explicit correct handling.",
+      "artifacts": [
+        {
+          "path": "docs/verification/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_arithmetic.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_claims.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_engine.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise stale/missing/conflicting data, late arrivals, duplicate receipts and per-key exceptions.",
+      "expected": "Missing/invalid/stale/conflicting inputs produce explicit correct handling.",
+      "actual": "Mutation/exception tests exist; trusted reviews and native verification check-only transport/failure-draft bridge unresolved.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-30",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-30-AC4",
+      "source_issue": "DSC-30",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Synthetic output is illustrative, not a real purchasing recommendation.",
+      "artifacts": [
+        {
+          "path": "docs/verification/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_arithmetic.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_claims.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_engine.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review final output labeling of synthetic operational inputs and illustrative recommendations.",
+      "expected": "Synthetic output is illustrative, not a real purchasing recommendation.",
+      "actual": "Mock outputs are illustrative; no real report delivered.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-30",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-30-AC5",
+      "source_issue": "DSC-30",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response.",
+      "artifacts": [
+        {
+          "path": "docs/verification/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_arithmetic.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_claims.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/verification/test_engine.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify report claims/list against exact artifacts, capability response against gaps, parent authority and publisher readback.",
+      "expected": "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response.",
+      "actual": "Verifier and publish-once/readback tests execute on mock chains; actual parent-authorized final output and readback absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-30",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-31-AC1",
+      "source_issue": "DSC-31",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Future recording proves real execution of the one selected restocking case; no extra scenario suite.",
+      "artifacts": [
+        {
+          "path": "docs/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/CHECKLIST.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/RECORDING_SCRIPT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/index.template.csv",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review actual recording from selected-case intake/sign-off through real Codex/Data work and verified successful restocking.",
+      "expected": "Future recording proves real execution of the one selected restocking case; no extra scenario suite.",
+      "actual": "DSC-31 runbook/script/checklist and blank index template are now present; they explicitly claim preparation only. No actual recording or successful restocking execution.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-31",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-31-AC2",
+      "source_issue": "DSC-31",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Source, synthetic inputs, assumptions and actual outputs are distinguishable.",
+      "artifacts": [
+        {
+          "path": "docs/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/CHECKLIST.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/RECORDING_SCRIPT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/index.template.csv",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare recording provenance labels, source/synthetic inputs, assumptions and measured outputs.",
+      "expected": "Source, synthetic inputs, assumptions and actual outputs are distinguishable.",
+      "actual": "Preparation instructions require provenance separation; no recording or completed source-to-output index.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-31",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-31-AC3",
+      "source_issue": "DSC-31",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Missing-input success is not mislabeled as full end-to-end restocking success.",
+      "artifacts": [
+        {
+          "path": "docs/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/CHECKLIST.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/RECORDING_SCRIPT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/index.template.csv",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Confirm recording distinguishes helpful missing-input behavior from successful full-input restocking.",
+      "expected": "Missing-input success is not mislabeled as full end-to-end restocking success.",
+      "actual": "Runbook distinguishes missing-input, measured failure, execution failure and success; full-input successful recording still absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-31",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-31-AC4",
+      "source_issue": "DSC-31",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "No app launch/delivery or extra V1 workflow is required.",
+      "artifacts": [
+        {
+          "path": "docs/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/CHECKLIST.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/RECORDING_SCRIPT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/index.template.csv",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check demonstration scope remains one task with no app/V1 deliverable.",
+      "expected": "No app launch/delivery or extra V1 workflow is required.",
+      "actual": "Current DSC-31 runbook and architecture explicitly exclude app/V1 delivery; this static scope check passes.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Pass",
+      "scope": "Static requirement only; does not accept child or milestone",
+      "correction_owner": "DSC-31",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-31-AC5",
+      "source_issue": "DSC-31",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Recording and versioned evidence agree.",
+      "artifacts": [
+        {
+          "path": "docs/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/CHECKLIST.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/demo/RECORDING_SCRIPT.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "evidence/demo/index.template.csv",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Reconcile recording with exact versions, native logs, metrics, final report and verifier decisions.",
+      "expected": "Recording and versioned evidence agree.",
+      "actual": "Blank index rows are not_recorded. No recording or completed evidence/version concordance packet.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-31",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-10-AC1",
+      "source_issue": "DSC-10",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Fact/inference/assumption/synthetic/unknown provenance is testable.",
+      "artifacts": [
+        {
+          "path": "docs/parent/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_workflow.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_adversarial.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_recovery_delivery.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_frozen_release.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Trace fact/interpretation/synthetic/unknown provenance through current task/run artifacts and reject relabeling.",
+      "expected": "Fact/inference/assumption/synthetic/unknown provenance is testable.",
+      "actual": "Typed provenance/guards covered with mock approvals; trusted real reviewers and genuine task/run chain absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-10",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-10-AC2",
+      "source_issue": "DSC-10",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement.",
+      "artifacts": [
+        {
+          "path": "docs/parent/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_workflow.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_adversarial.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_recovery_delivery.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_frozen_release.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise capability versus execution-error states for the same single retail task.",
+      "expected": "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement.",
+      "actual": "Component distinguishes states; real approved packet path remains unexecuted.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-10",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-10-AC3",
+      "source_issue": "DSC-10",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "Cleanup and model choices do not become customer statistical decisions.",
+      "artifacts": [
+        {
+          "path": "docs/parent/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_workflow.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_adversarial.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_recovery_delivery.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_frozen_release.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Reject imputation/algorithm/hyperparameter questions presented as material facts.",
+      "expected": "Cleanup and model choices do not become customer statistical decisions.",
+      "actual": "Mock adversarial statistical questions reject; real focused roles/provider and consent authentication remain unwired.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-10",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-10-AC4",
+      "source_issue": "DSC-10",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report.",
+      "artifacts": [
+        {
+          "path": "docs/parent/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_workflow.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_adversarial.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_recovery_delivery.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_frozen_release.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise material-fact escalation/internal progress and verify useful findings retained for final output.",
+      "expected": "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report.",
+      "actual": "Internal progress and clarification guards exist; no final customer report demonstrates preservation of findings.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-10",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-10-AC5",
+      "source_issue": "DSC-10",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable.",
+      "artifacts": [
+        {
+          "path": "docs/parent/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_workflow.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_adversarial.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_recovery_delivery.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "tests/parent/test_frozen_release.py",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check exact permissions, isolation, budgets, audit, gates, bounded recovery and final delivery authority.",
+      "expected": "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable.",
+      "actual": "Tests exercise real adapter/store with mock host. Safe preparation/step7/verification releases and pre-humanizer numerical checkpoint unresolved; restart restore unsupported, recorded as limitation.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-10",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC1",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 1,
+      "requirement": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Audit real terminal branch evidence and bounded parent review separately from successful restocking acceptance.",
+      "expected": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
+      "actual": "docs/acceptance/, evidence/acceptance/ and tests/acceptance/ absent; final named DSC-56 audit missing.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC2",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 2,
+      "requirement": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Audit real distinct step6/7/8 artifacts and final-holdout exclusion from LLM context.",
+      "expected": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
+      "actual": "Only mock modeling sequence present; no actual LLM feature generation or genuine holdout results.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC3",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 3,
+      "requirement": "The one end-to-end restocking case maps to actual execution and verification evidence.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Map selected-case successful recording to actual analytical and independent verification evidence.",
+      "expected": "The one end-to-end restocking case maps to actual execution and verification evidence.",
+      "actual": "Neither required recording nor real delivered list exists.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC4",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 4,
+      "requirement": "Missing-input assessments and actual restocking completion are classified correctly.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Audit classification of missing-input, runtime error, measured validation failure and success.",
+      "expected": "Missing-input assessments and actual restocking completion are classified correctly.",
+      "actual": "Component distinctions exist; independent final audit absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC5",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 5,
+      "requirement": "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review actual conversation/data/report for invented operations, silent task switch and statistical questions.",
+      "expected": "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
+      "actual": "Source semantics/guards documented; genuine execution and final audit absent.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC6",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 6,
+      "requirement": "Full-input demo evidence and affected rechecks are required for gate closure.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Require full-input demo plus failure\u2192authorized correction\u2192affected recheck and stale/missing/exhausted-budget evidence.",
+      "expected": "Full-input demo evidence and affected rechecks are required for gate closure.",
+      "actual": "No DSC-31 successful recording, final audit or actual correction/recheck packet.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-56-AC7",
+      "source_issue": "DSC-56",
+      "source_section": "Acceptance criteria",
+      "source_criterion": 7,
+      "requirement": "Fixture-validation results are not misrepresented as product tests or implementation completion.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/EVIDENCE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/verification/VALIDATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify fixture/component results cannot be presented as actual pipeline or milestone completion.",
+      "expected": "Fixture-validation results are not misrepresented as product tests or implementation completion.",
+      "actual": "Existing docs label mock/source-QA evidence honestly; no final DSC-56 decision exists.",
+      "evidence_class": "component_mock_or_missing",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
+      "decision": "Blocked",
+      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "correction_owner": "DSC-56",
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+    },
+    {
+      "requirement_id": "DSC-9-G1",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 1,
+      "requirement": "Step6 initial-model/baseline evidence precedes step7 LLM-generated additional features; step8 compares model/feature options before frozen unseen validation. Feature outputs and leakage checks are verified, and relevant findings appear in the final report.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify actual stage6 baseline, stage7 LLM definitions/materialization and stage8 comparison precede frozen evaluation; reconcile findings to report.",
+      "expected": "Step6 initial-model/baseline evidence precedes step7 LLM-generated additional features; step8 compares model/feature options before frozen unseen validation. Feature outputs and leakage checks are verified, and relevant findings appear in the final report.",
+      "actual": "Only mock stage calculations/features and no real final report.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-G2",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 2,
+      "requirement": "Routine analysis progress remains internal; relevant step5 findings are included in the final customer report. Material clarifications/blockers still receive targeted handling.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare customer transcript with internal analytical events and final findings.",
+      "expected": "Routine analysis progress remains internal; relevant step5 findings are included in the final customer report. Material clarifications/blockers still receive targeted handling.",
+      "actual": "No actual customer execution transcript or delivered report; internal-progress guard tests pass.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-G3",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 3,
+      "requirement": "All implementation sub-issues are complete and their acceptance criteria verified.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review every child row and native status/blocker.",
+      "expected": "All implementation sub-issues are complete and their acceptance criteria verified.",
+      "actual": "All ten child source statuses Backlog; 58 criteria mapped; required real evidence absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-G4",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 4,
+      "requirement": "Runtime evidence, tests and versioned artifacts are linked; a diagram alone is not implementation completion.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Remeasure artifact hashes and reconcile run/task/input/proposal/source versions with measured checks.",
+      "expected": "Runtime evidence, tests and versioned artifacts are linked; a diagram alone is not implementation completion.",
+      "actual": "Current source/tests indexed and regression passes; real run graph absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-G5",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 5,
+      "requirement": "Recorded demo, actual Codex/Data execution evidence and the delivered business output are reviewable.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review supported native proof plus actual successful recording and delivered report.",
+      "expected": "Recorded demo, actual Codex/Data execution evidence and the delivered business output are reviewable.",
+      "actual": "Real synthetic native probe exists; DSC-31 recording and delivered business output absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-G6",
+      "source_issue": "DSC-9",
+      "source_section": "Completion gate",
+      "source_criterion": 6,
+      "requirement": "Reviewer accepts the milestone outcome before the next milestone starts.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Require explicit named milestone acceptance before allowing DSC-9 native downstream blockers to advance.",
+      "expected": "Reviewer accepts the milestone outcome before the next milestone starts.",
+      "actual": "Codex reviewer withholds acceptance; no human/designated acceptance is fabricated.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M1",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 1,
+      "requirement": "Exactly one named task, prepared dataset and final-output contract are locked; the demo completes that task only. A second task or generalized task support is not an acceptance requirement.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect one locked restocking task/data/output contract and actual demonstrated task scope.",
+      "expected": "Exactly one named task, prepared dataset and final-output contract are locked; the demo completes that task only. A second task or generalized task support is not an acceptance requirement.",
+      "actual": "Contract draft.3 exists and is pinned; selected full-input task not demonstrated.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M2",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 2,
+      "requirement": "Real input loading and initial understanding/sign-off are demonstrated for the selected case; any material corrections preserve the same task boundary.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect measured real input receipt, read-only proposal, authenticated current approval and corrections.",
+      "expected": "Real input loading and initial understanding/sign-off are demonstrated for the selected case; any material corrections preserve the same task boundary.",
+      "actual": "Mock intake/parent coverage only; approved packet\u2192native run absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M3",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 3,
+      "requirement": "DSC-26 proves a supported Codex invocation with OpenAI Data enabled and actual analytical execution; unresolved integration cannot be treated as passed.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify supported Codex/Data invocation and exact approved-stage isolation/retrieval.",
+      "expected": "DSC-26 proves a supported Codex invocation with OpenAI Data enabled and actual analytical execution; unresolved integration cannot be treated as passed.",
+      "actual": "Real synthetic invocation is partial positive evidence; full customer adapter acceptance absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M4",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 4,
+      "requirement": "Measured baseline/comparison artifacts are genuine; development windows end by the cutoff, winner and final acceptance rule are frozen before holdout, and failed final validation blocks delivery without holdout-driven tuning.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Recompute actual comparable baseline/shortlist and check development horizon/cutoff plus immutable freeze/rule and failure branch.",
+      "expected": "Measured baseline/comparison artifacts are genuine; development windows end by the cutoff, winner and final acceptance rule are frozen before holdout, and failed final validation blocks delivery without holdout-driven tuning.",
+      "actual": "No genuine supplied-data measured comparison/freeze/holdout. Current sparse/availability gaps unresolved.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M5",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 5,
+      "requirement": "The delivered output matches the confirmed business task, fields, units and rules; a restocking request yields one final report with the item-and-quantity list and concise verified EDA/feature findings.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Independently reconcile delivered fields/units/list/findings to approved goal and numerical/claim checks.",
+      "expected": "The delivered output matches the confirmed business task, fields, units and rules; a restocking request yields one final report with the item-and-quantity list and concise verified EDA/feature findings.",
+      "actual": "No real forecast/quantities/verified report or delivery.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-M6",
+      "source_issue": "DSC-9",
+      "source_section": "Milestone-specific verification checklist",
+      "source_criterion": 6,
+      "requirement": "Output values, logs, versions and limitations agree. No customer app/executable or mandatory separate report is required.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Cross-check actual output/logs/version/limitations and customer requested format without app expansion.",
+      "expected": "Output values, logs, versions and limitations agree. No customer app/executable or mandatory separate report is required.",
+      "actual": "Component docs preserve limits and mock labels; no real output/log concordance packet.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-C1",
+      "source_issue": "DSC-9",
+      "source_section": "Closure rules",
+      "source_criterion": 1,
+      "requirement": "Every child issue is complete with current evidence; no requirement or defect is silently waived.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Require each child complete with current criterion evidence; preserve all native dependencies.",
+      "expected": "Every child issue is complete with current evidence; no requirement or defect is silently waived.",
+      "actual": "Ten children Backlog; missing recording/audit and unresolved integration blockers; no criteria waived.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-C2",
+      "source_issue": "DSC-9",
+      "source_section": "Closure rules",
+      "source_criterion": 2,
+      "requirement": "Complete evidence ledger, milestone-specific checks and passing regression results are linked.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Link complete ledger and current passing checks; require actual milestone-specific passing evidence.",
+      "expected": "Complete evidence ledger, milestone-specific checks and passing regression results are linked.",
+      "actual": "This ledger and current component regression exist; full-input success evidence and final audit absent.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-C3",
+      "source_issue": "DSC-9",
+      "source_section": "Closure rules",
+      "source_criterion": 3,
+      "requirement": "Output/handoff contracts match the next milestone's input contract; customer-output usability, correctness and requested format are reviewed where applicable.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Check locked output contract against downstream handoff and actual customer-output usability.",
+      "expected": "Output/handoff contracts match the next milestone's input contract; customer-output usability, correctness and requested format are reviewed where applicable.",
+      "actual": "draft.3 output schema exists; actual final output/handoff usability unreviewable without execution.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-C4",
+      "source_issue": "DSC-9",
+      "source_section": "Closure rules",
+      "source_criterion": 4,
+      "requirement": "A named verifier explicitly accepts the outcome and records remaining limitations. Material scope changes require recorded approval and updated requirements.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Record named reviewer explicit acceptance and limitations, plus approved requirement revisions if scope changes.",
+      "expected": "A named verifier explicitly accepts the outcome and records remaining limitations. Material scope changes require recorded approval and updated requirements.",
+      "actual": "Codex DSC-9 reviewer records Blocked; no named final acceptance or material scope waiver.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-9-C5",
+      "source_issue": "DSC-9",
+      "source_section": "Closure rules",
+      "source_criterion": 5,
+      "requirement": "Completion-gate decision and current passing report agree before downstream execution advances.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/replenishment/INTEGRATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Reconcile final gate decision with current passing audit before downstream execution.",
+      "expected": "Completion-gate decision and current passing report agree before downstream execution advances.",
+      "actual": "Decision remains Blocked; no passing DSC-56 audit; native DSC-9 blockers preserved.",
+      "evidence_class": "milestone_review_current_artifact_inventory",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-9 plus affected child owners",
+      "recheck": "Refresh source/nightly versions and every dependent row after correction; obtain DSC-31 recording, DSC-56 audit and named acceptance."
+    },
+    {
+      "requirement_id": "DSC-3-D1",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 1,
+      "requirement": "Major components and typed interfaces are shown.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "Major components and typed interfaces are shown.",
+      "actual": "Published architecture and independent application layout inspected; full runtime acceptance absent.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Pass",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "DSC-3-D2",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 2,
+      "requirement": "DSCraft vs SuiroAI boundary is explicit.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "DSCraft vs SuiroAI boundary is explicit.",
+      "actual": "Published architecture and independent application layout inspected; full runtime acceptance absent.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Pass",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "DSC-3-D3",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 3,
+      "requirement": "MVP vs later V1 components are distinguishable.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "MVP vs later V1 components are distinguishable.",
+      "actual": "Published architecture and independent application layout inspected; full runtime acceptance absent.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Pass",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "DSC-3-D4",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 4,
+      "requirement": "Supported Codex/Data integration is evidenced or clearly marked unresolved.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "Supported Codex/Data integration is evidenced or clearly marked unresolved.",
+      "actual": "Real synthetic Data probe supersedes early discovery-only status; full customer integration remains unresolved.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "DSC-3-D5",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 5,
+      "requirement": "Final delivery is the requested business output; model validation and verification remain explicit.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "Final delivery is the requested business output; model validation and verification remain explicit.",
+      "actual": "Published architecture and independent application layout inspected; full runtime acceptance absent.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Pass",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "DSC-3-D6",
+      "source_issue": "DSC-3",
+      "source_section": "Done when (architecture boundary; not a child closure)",
+      "source_criterion": 6,
+      "requirement": "Team has reviewed the architecture and implementation work is captured in Linear.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        },
+        {
+          "path": "docs/architecture/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
+      "expected": "Team has reviewed the architecture and implementation work is captured in Linear.",
+      "actual": "Published owner ACKs exist for layout/contracts; current named full milestone acceptance absent.",
+      "evidence_class": "static_architecture_review",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "scope": "MVP boundary only; does not accept broader DSC-3 V1 architecture",
+      "correction_owner": "DSC-3",
+      "recheck": "Architecture owner reviews affected layout/interface changes and current integration limits."
+    },
+    {
+      "requirement_id": "MVP-SOURCE-LINEAGE",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Preserve immutable raw files and distinguish supplied facts, supported interpretations, synthetic assumptions and unknowns.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Reconcile raw/dictionary/manifest/hash references and provenance to every downstream artifact.",
+      "expected": "Preserve immutable raw files and distinguish supplied facts, supported interpretations, synthetic assumptions and unknowns.",
+      "actual": "Source QA retained; no source edits; target/completeness and revision timing still unknown.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24/27 with DSC-3",
+      "discrepancy_ids": [
+        "R02"
+      ],
+      "recheck": "Reject absent/stale/unbound timing evidence; verify accepted timing against exact source and task/run."
+    },
+    {
+      "requirement_id": "MVP-STOCK-SEMANTICS",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Use usable stock snapshot and supplier policy; Inventory_Level and Delivery_Days are not those operational facts.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Review dictionary/source adapters and independently check quantity lineage.",
+      "expected": "Use usable stock snapshot and supplier policy; Inventory_Level and Delivery_Days are not those operational facts.",
+      "actual": "Contract and component guards preserve distinction; real recommendation lineage absent.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-27/28/29/30/10/26",
+      "discrepancy_ids": [
+        "R08"
+      ],
+      "recheck": "Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes."
+    },
+    {
+      "requirement_id": "MVP-RECEIPTS",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Never subtract On_Order_Qty summary plus incoming ledger twice; late receipt cannot cure earlier shortage; missing real lines are not automatically zero.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Independently recompute time-phased need, explicit complete-ledger zero keys, source dates/units/minima/multiples and per-key exceptions.",
+      "expected": "Never subtract On_Order_Qty summary plus incoming ledger twice; late receipt cannot cure earlier shortage; missing real lines are not automatically zero.",
+      "actual": "Mock independent/producer checks pass; actual selected-case orders absent.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-27/28/29/30/10/26",
+      "discrepancy_ids": [
+        "R08"
+      ],
+      "recheck": "Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes."
+    },
+    {
+      "requirement_id": "MVP-DEV-ISOLATION",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "All development targets end by November30; LLM/model selection sees only permitted development artifacts.",
+      "artifacts": [
+        {
+          "path": "docs/preparation/INTERFACE.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect physical parent/native release, context allowlist, temporal target windows and poison tests.",
+      "expected": "All development targets end by November30; LLM/model selection sees only permitted development artifacts.",
+      "actual": "Engineering poison tests pass; genuine derived release/context registration blocked.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24 coordinated with DSC-3; DSC-10/26/27",
+      "discrepancy_ids": [
+        "R01"
+      ],
+      "recheck": "Run derived partition\u2192exact parent permission\u2192native dispatch\u2192retrieval; reject raw/holdout release before freeze."
+    },
+    {
+      "requirement_id": "MVP-NOV30-FREEZE",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Save November30 forecast separately; December outcomes cannot alter fit, selection, preprocessing, feature inputs or order quantities.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare immutable before/after forecast/model/feature/quantity hashes through holdout evaluation.",
+      "expected": "Save November30 forecast separately; December outcomes cannot alter fit, selection, preprocessing, feature inputs or order quantities.",
+      "actual": "Mock frozen controls exist; real November30 forecast/quantities absent.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-27/28/29/30/10/26",
+      "discrepancy_ids": [
+        "R08"
+      ],
+      "recheck": "Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes."
+    },
+    {
+      "requirement_id": "MVP-HOLDOUT",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Freeze population, preprocessing/model/features and acceptance metric/direction/threshold/tolerance/coverage before scoring fully observed December horizons.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Recompute observed-horizon eligibility and scores from frozen artifacts and reserved source lineage.",
+      "expected": "Freeze population, preprocessing/model/features and acceptance metric/direction/threshold/tolerance/coverage before scoring fully observed December horizons.",
+      "actual": "No actual freeze/rule/holdout score; missing data is not measured validation failure.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-27/28 with parent review",
+      "discrepancy_ids": [
+        "R03"
+      ],
+      "recheck": "Recheck eligible target windows, sparse/missing dates, nonpositive/status/return choices and cutoff; do not zero-fill unknowns or fabricate model performance."
+    },
+    {
+      "requirement_id": "MVP-LLM-FEATURES",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Step7 requires actual LLM-generated additional definitions and Codex/Data materialization/validation; optional neural learning is distinct.",
+      "artifacts": [
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect actual prompt/response/model/time/definitions, safe context, materialized values and parent decision.",
+      "expected": "Step7 requires actual LLM-generated additional definitions and Codex/Data materialization/validation; optional neural learning is distinct.",
+      "actual": "Current exported modeling evidence and LLM tests explicitly mock.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24/3/10/28",
+      "discrepancy_ids": [
+        "R04"
+      ],
+      "recheck": "Run step6\u2192approved development-only LLM context\u2192actual feature generation/materialization; reject future/unknown/unregistered refs."
+    },
+    {
+      "requirement_id": "MVP-TERMINAL-REVIEW",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Failed frozen validation goes to bounded internal parent source/split/model/metric/runtime evidence review.",
+      "artifacts": [
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Exercise genuine underperformance, demonstrated defect, one authorized affected recheck and unresolved/exhausted recovery with unchanged freeze.",
+      "expected": "Failed frozen validation goes to bounded internal parent source/split/model/metric/runtime evidence review.",
+      "actual": "Mock branches covered; no genuine runtime failure outcome observed in this milestone review.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24/10/26/30",
+      "discrepancy_ids": [
+        "R07"
+      ],
+      "recheck": "Run actual check-only registration\u2192draft verification\u2192parent permission\u2192delivery/readback, plus failure variant and stale-ref rejection."
+    },
+    {
+      "requirement_id": "MVP-TERMINAL-NO-FALLBACK",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Terminal failure delivers no order list, runner-up retry, holdout tuning, changed threshold or indefinite review.",
+      "artifacts": [
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect actual model identity/recovery budget/event log and verified failure output.",
+      "expected": "Terminal failure delivers no order list, runner-up retry, holdout tuning, changed threshold or indefinite review.",
+      "actual": "Mock controls tested; actual integrated failure explanation and delivery absent.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24/10/26/30",
+      "discrepancy_ids": [
+        "R07"
+      ],
+      "recheck": "Run actual check-only registration\u2192draft verification\u2192parent permission\u2192delivery/readback, plus failure variant and stale-ref rejection."
+    },
+    {
+      "requirement_id": "MVP-TRUTHFUL-FAILURE",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Failure explanation says this MVP could not produce a reliable solution with supplied data/scope; distinguish measured underperformance from execution failure and do not claim universal impossibility.",
+      "artifacts": [
+        {
+          "path": "docs/parent/COORDINATION.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Verify exact final customer wording against parent-reviewed evidenced cause, no fabricated scores/quantities.",
+      "expected": "Failure explanation says this MVP could not produce a reliable solution with supplied data/scope; distinguish measured underperformance from execution failure and do not claim universal impossibility.",
+      "actual": "Separate mock failure drafts exist; no actual final customer failure delivery.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-24/10/26/30",
+      "discrepancy_ids": [
+        "R07"
+      ],
+      "recheck": "Run actual check-only registration\u2192draft verification\u2192parent permission\u2192delivery/readback, plus failure variant and stale-ref rejection."
+    },
+    {
+      "requirement_id": "MVP-SEPARATE-ACCEPTANCE",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "A terminal-failure branch may pass implementation checks; failed run is never successful validation or successful end-to-end restocking demonstration.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Audit ledger/run status taxonomy and require real successful recorded run independently.",
+      "expected": "A terminal-failure branch may pass implementation checks; failed run is never successful validation or successful end-to-end restocking demonstration.",
+      "actual": "This review decision Blocked; runtime outcome not_executed; mock failure tests not promoted.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-31 then DSC-56 then DSC-9",
+      "discrepancy_ids": [
+        "R09"
+      ],
+      "recheck": "Require actual successful restocking demo; terminal failure tests or helpful missing-input response cannot substitute."
+    },
+    {
+      "requirement_id": "MVP-FINAL-REPORT",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Customer receives one final report with list, concise verified EDA/features, measured model results and material limitations; routine analysis stays internal.",
+      "artifacts": [
+        {
+          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Compare approved claim IDs/quantity bytes to actual report and transcript; verify reliable Product_Name mapping and required fields.",
+      "expected": "Customer receives one final report with list, concise verified EDA/features, measured model results and material limitations; routine analysis stays internal.",
+      "actual": "Mock report controls exist; actual delivered report/transcript absent.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-27/28/29/30/10/26",
+      "discrepancy_ids": [
+        "R08"
+      ],
+      "recheck": "Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes."
+    },
+    {
+      "requirement_id": "MVP-RECHECK",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Missing/stale/failed evidence returns only affected work for authorized correction and rechecks within finite budgets; invalidate dependent stale approvals.",
+      "artifacts": [
+        {
+          "path": "evidence/completion/sources/linear-2026-10-18.json",
+          "git_commit": "review source snapshot"
+        }
+      ],
+      "check": "Trace discrepancy\u2192owner authorization\u2192correction commit\u2192failed/affected rechecks\u2192new verifier decision.",
+      "expected": "Missing/stale/failed evidence returns only affected work for authorized correction and rechecks within finite budgets; invalidate dependent stale approvals.",
+      "actual": "Current scoped correction requests recorded R01\u2013R11; no authorized owner corrections executed in this review.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "All child owners; DSC-9",
+      "discrepancy_ids": [
+        "R10"
+      ],
+      "recheck": "Refresh current Linear requirements/blockers and final accepted ledger before any downstream milestone advance."
+    },
+    {
+      "requirement_id": "MVP-GATE-AUTHORITY",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Preserve native blockers and named final milestone acceptance; do not change issue status under this assignment.",
+      "artifacts": [
+        {
+          "path": "evidence/completion/sources/linear-2026-10-18.json",
+          "git_commit": "review source snapshot"
+        }
+      ],
+      "check": "Compare current fetched native relations/statuses and named acceptance record against downstream permissions.",
+      "expected": "Preserve native blockers and named final milestone acceptance; do not change issue status under this assignment.",
+      "actual": "Ten children Backlog; issue statuses untouched; final acceptance explicitly withheld.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "All child owners; DSC-9",
+      "discrepancy_ids": [
+        "R10"
+      ],
+      "recheck": "Refresh current Linear requirements/blockers and final accepted ledger before any downstream milestone advance."
+    },
+    {
+      "requirement_id": "MVP-SCOPE",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "One restocking MVP; DSC-9 owns ledger/decision only; no V1 platform, task router, app/dashboard, neural mandate, DSCraft rewrite or Miro edit.",
+      "artifacts": [
+        {
+          "path": "docs/architecture/OWNERSHIP.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Inspect branch diff against architecture ownership and assignment scope.",
+      "expected": "One restocking MVP; DSC-9 owns ledger/decision only; no V1 platform, task router, app/dashboard, neural mandate, DSCraft rewrite or Miro edit.",
+      "actual": "Only docs/completion and evidence/completion written; ownership based on published DSC-3 allocation, no fresh ACK invented.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Pass",
+      "correction_owner": "DSC-9",
+      "discrepancy_ids": [],
+      "recheck": "Confirm owned-path-only diff and unchanged source/component files."
+    },
+    {
+      "requirement_id": "MVP-INTAKE-BOUNDARY",
+      "source_issue": "Embedded assignment and single-case contract",
+      "source_section": "Non-checkbox runtime/ownership requirement",
+      "requirement": "Receiving files performs no joining/preparation; same signed proposal executes, rejection/new material returns to step2, silence waits.",
+      "artifacts": [
+        {
+          "path": "docs/intake/README.md",
+          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+        }
+      ],
+      "check": "Trace receipt/proposal/approval/execution identity and ensure no preapproval analytical calls.",
+      "expected": "Receiving files performs no joining/preparation; same signed proposal executes, rejection/new material returns to step2, silence waits.",
+      "actual": "Current intake/parent mock checks pass; real authenticated current packet not demonstrated.",
+      "evidence_class": "reviewed_component_or_missing_runtime",
+      "verification_record": "evidence/completion/verification.json",
+      "verifier": "Codex DSC-9 reviewer (/root)",
+      "decision": "Blocked",
+      "correction_owner": "DSC-25/10/26 and deployment/DSC-3",
+      "discrepancy_ids": [
+        "R05"
+      ],
+      "recheck": "Run current sign-off\u2192same execution task\u2192exact stage permission\u2192native execution/adoption; reject stale input/proposal/approval and mock native dispatch."
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "R01",
+      "decision": "Blocked",
+      "owner": "DSC-24 coordinated with DSC-3; DSC-10/26/27",
+      "discrepancy": "Safe derived development release rejected by draft.3 validator and parent source allowlist.",
+      "evidence": "docs/preparation/INTERFACE.md",
+      "correction": "Agree owned derived-lineage/authorization representation; adopt through owners without exposing unrestricted raw December rows.",
+      "recheck": "Run derived partition\u2192exact parent permission\u2192native dispatch\u2192retrieval; reject raw/holdout release before freeze.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R02",
+      "decision": "Blocked",
+      "owner": "DSC-24/27 with DSC-3",
+      "discrepancy": "Historical information-availability evidence absent; event cutoff cannot stand in for revision timing.",
+      "evidence": "docs/preparation/INTERFACE.md",
+      "correction": "Provide genuine knowledge-time evidence or an explicitly approved truthful representation/scope decision; do not invent a cutoff claim.",
+      "recheck": "Reject absent/stale/unbound timing evidence; verify accepted timing against exact source and task/run.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R03",
+      "decision": "Blocked",
+      "owner": "DSC-27/28 with parent review",
+      "discrepancy": "Current daily artifact marks completeness false; missing dates/status-return availability do not support complete daily demand horizons.",
+      "evidence": "docs/modeling/README.md",
+      "correction": "Investigate justified target/completeness/availability policy within approved scope and record limitations. Escalate irreducible business facts only.",
+      "recheck": "Recheck eligible target windows, sparse/missing dates, nonpositive/status/return choices and cutoff; do not zero-fill unknowns or fabricate model performance.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R04",
+      "decision": "Blocked",
+      "owner": "DSC-24/3/10/28",
+      "discrepancy": "Step7 derived task/EDA/error summaries have no owner-agreed availability registration/release.",
+      "evidence": "docs/parent/COORDINATION.md",
+      "correction": "Agree measured derived availability/lineage registration under same task; do not mutate immutable preparation or leak reserved rows.",
+      "recheck": "Run step6\u2192approved development-only LLM context\u2192actual feature generation/materialization; reject future/unknown/unregistered refs.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R05",
+      "decision": "Blocked",
+      "owner": "DSC-25/10/26 and deployment/DSC-3",
+      "discrepancy": "Genuine consent, content/chronology/independent reviewers and focused provider callbacks remain test substitutions; exact approved-packet native execution absent.",
+      "evidence": "docs/intake/README.md",
+      "correction": "Wire authentic current consent/review/provider/configuration and genuine measured inputs through existing supported adapter.",
+      "recheck": "Run current sign-off\u2192same execution task\u2192exact stage permission\u2192native execution/adoption; reject stale input/proposal/approval and mock native dispatch.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R06",
+      "decision": "Blocked",
+      "owner": "DSC-10 coordinated with DSC-24/3; DSC-29/30",
+      "discrepancy": "Recommendations stage expects quantity/report atomically; native pre-humanizer numerical approval checkpoint absent.",
+      "evidence": "docs/replenishment/INTEGRATION.md",
+      "correction": "Agree same-task candidate\u2192independent arithmetic evidence\u2192parent approved quantity\u2192humanizer checkpoint and bounded resume.",
+      "recheck": "Use genuine frozen forecast/operations; reject humanizer before numerical approval; report must copy exact approved quantities.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R07",
+      "decision": "Blocked",
+      "owner": "DSC-24/10/26/30",
+      "discrepancy": "Native check-only verification artifact and failure-draft safe staging bridge unresolved.",
+      "evidence": "docs/parent/COORDINATION.md",
+      "correction": "Agree owner-controlled reference/release bridge; preserve independent prior check and exact report binding.",
+      "recheck": "Run actual check-only registration\u2192draft verification\u2192parent permission\u2192delivery/readback, plus failure variant and stale-ref rejection.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R08",
+      "decision": "Blocked",
+      "owner": "DSC-27/28/29/30/10/26",
+      "discrepancy": "No actual preparation, step6 evaluation, live LLM features, step8 comparison/freeze, step9 pass, November30 daily forecast or final verified list/report.",
+      "evidence": "docs/modeling/COMPONENT_EVIDENCE.json",
+      "correction": "Collect genuine supported-host selected-case artifacts after upstream corrections, with complete versions/lineage and finite budgets.",
+      "recheck": "Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R09",
+      "decision": "Blocked",
+      "owner": "DSC-31 then DSC-56 then DSC-9",
+      "discrepancy": "Recording, versioned demo index and final DSC-56 named audit absent in nightly.",
+      "evidence": "docs/architecture/OWNERSHIP.md",
+      "correction": "Record actual successful selected-case execution; audit recording and exact artifacts, then request named final milestone acceptance.",
+      "recheck": "Require actual successful restocking demo; terminal failure tests or helpful missing-input response cannot substitute.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R10",
+      "decision": "Blocked",
+      "owner": "All child owners; DSC-9",
+      "discrepancy": "All ten current child issues remain Backlog and DSC-9 native blockers remain active.",
+      "evidence": "evidence/completion/sources/linear-2026-10-18.json",
+      "correction": "Supply criterion evidence to authorized issue owners; this assignment authorizes no issue-status changes.",
+      "recheck": "Refresh current Linear requirements/blockers and final accepted ledger before any downstream milestone advance.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R11",
+      "decision": "Blocked",
+      "owner": "DSC-26",
+      "discrepancy": "Retained native failure evidence has narrower limits than complete failure-path acceptance.",
+      "evidence": "evidence/integration/native-failures-2026-10-17/review.json",
+      "correction": "After classifier correction, collect relevant actual rechecks; identify timeout process-exit uncertainty, pre-command cancellation and unexercised account quota distinctly.",
+      "recheck": "Do not count offline invalid-code replay as real corrected execution, declared zero budget as account exhaustion, or cancellation before command as mid-compute termination.",
+      "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    }
+  ]
+}
