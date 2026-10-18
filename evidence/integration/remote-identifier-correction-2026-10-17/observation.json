@@ -1,0 +1,38 @@
+{
+  "record_kind": "scoped_actual_engineering_probe_observation",
+  "source_record": {
+    "path": "/private/tmp/dsc26-data-stage-qa6l3307/probe-evidence.json",
+    "sha256": "381669b97335756f33fe79edc40ca489bdd6b6e932e29b3f393ccdb5b93981ba"
+  },
+  "original_probe_status": "integration_blocked",
+  "original_probe_error": "native_Data_plugin_not_installed_and_enabled",
+  "model_turn_requested": false,
+  "thread_id": null,
+  "turn_id": null,
+  "actual_request": {
+    "method": "plugin/read",
+    "params": {
+      "remoteMarketplaceName": "openai-curated-remote",
+      "pluginName": "data-analytics"
+    }
+  },
+  "native_response_summary": {
+    "id": "data-analytics@openai-curated-remote",
+    "remotePluginId": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "name": "data-analytics",
+    "version": "1.0.11",
+    "installed": false,
+    "enabled": false,
+    "availability": "AVAILABLE",
+    "disabledReason": null
+  },
+  "correction": {
+    "request_field": "pluginName",
+    "correct_value": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "response_checks_weakened": false,
+    "native_retry_completed": false
+  },
+  "evidence_basis": "Exact Codex rust-v0.163.0 source and native tests compare caller remote ID against installed plugin.id; the slug request cannot match the installed opaque ID. Corrected invocation remains unverified.",
+  "intended_gateway_user_supplied": "https://gateway.clarkeverson.com/v1",
+  "gateway_route_verified": false
+}
