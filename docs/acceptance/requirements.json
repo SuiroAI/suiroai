@@ -1,0 +1,317 @@
+{
+  "source": "Connected Linear read, 2026-10-18; source text is requirement evidence only, never execution evidence",
+  "issues": [
+    {
+      "id": "DSC-24",
+      "title": "M01.01 — Lock retail restocking dataset and output contract",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "updated_at": "2026-10-17T04:43:11.271Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-24-AC1",
+          "text": "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in [DSC-27](https://linear.app/gr3enarr0w/issue/DSC-27)."
+        },
+        {
+          "requirement_id": "DSC-24-AC2",
+          "text": "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required."
+        },
+        {
+          "requirement_id": "DSC-24-AC3",
+          "text": "Missing-input assessment, runtime error and completed restocking have distinct outcomes."
+        },
+        {
+          "requirement_id": "DSC-24-AC4",
+          "text": "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification."
+        },
+        {
+          "requirement_id": "DSC-24-AC5",
+          "text": "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts."
+        },
+        {
+          "requirement_id": "DSC-24-AC6",
+          "text": "No model/pipeline implementation is claimed by this planning update."
+        }
+      ]
+    },
+    {
+      "id": "DSC-25",
+      "title": "M01.02 — Build retail capability assessment and initial customer sign-off",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "updated_at": "2026-10-18T00:08:13.094Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-25-AC1",
+          "text": "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off."
+        },
+        {
+          "requirement_id": "DSC-25-AC2",
+          "text": "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution."
+        },
+        {
+          "requirement_id": "DSC-25-AC3",
+          "text": "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting."
+        },
+        {
+          "requirement_id": "DSC-25-AC4",
+          "text": "No unnecessary customer choice of imputation, algorithms or hyperparameters."
+        },
+        {
+          "requirement_id": "DSC-25-AC5",
+          "text": "Material assumptions appear in the initial understanding and remain traceable."
+        }
+      ]
+    },
+    {
+      "id": "DSC-26",
+      "title": "M01.03 — Integrate Codex with OpenAI Data and verify real analytical execution",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "updated_at": "2026-10-17T04:39:53.799Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-26-AC1",
+          "text": "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted."
+        },
+        {
+          "requirement_id": "DSC-26-AC2",
+          "text": "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct."
+        },
+        {
+          "requirement_id": "DSC-26-AC3",
+          "text": "Source/task/assumption versions and actual checkpoint evidence are returned."
+        },
+        {
+          "requirement_id": "DSC-26-AC4",
+          "text": "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable."
+        },
+        {
+          "requirement_id": "DSC-26-AC5",
+          "text": "No unsupported interface or completed engineering is claimed."
+        }
+      ]
+    },
+    {
+      "id": "DSC-27",
+      "title": "M01.04 — Execute cleanup, EDA and initial features",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "updated_at": "2026-10-17T04:47:39.707Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-27-AC1",
+          "text": "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted."
+        },
+        {
+          "requirement_id": "DSC-27-AC2",
+          "text": "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked."
+        },
+        {
+          "requirement_id": "DSC-27-AC3",
+          "text": "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained."
+        },
+        {
+          "requirement_id": "DSC-27-AC4",
+          "text": "Aggregation and missingness decisions are made and tested by the agent."
+        },
+        {
+          "requirement_id": "DSC-27-AC5",
+          "text": "Units and outliers are resolved, bounded or flagged with consequences—not silently fabricated."
+        },
+        {
+          "requirement_id": "DSC-27-AC6",
+          "text": "Future features and fitted preprocessing do not leak validation/holdout information."
+        },
+        {
+          "requirement_id": "DSC-27-AC7",
+          "text": "No customer statistical-treatment gate is introduced."
+        }
+      ]
+    },
+    {
+      "id": "DSC-28",
+      "title": "M01.05 — Implement initial benchmark, LLM feature generation, comparison and validation",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "updated_at": "2026-10-17T04:57:59.045Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-28-AC1",
+          "text": "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry."
+        },
+        {
+          "requirement_id": "DSC-28-AC2",
+          "text": "The explicit sequence is initial-model/baseline evaluation (step6) → LLM-generated additional features (step7) → bounded model/feature comparison (step8) → frozen unseen validation."
+        },
+        {
+          "requirement_id": "DSC-28-AC3",
+          "text": "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference."
+        },
+        {
+          "requirement_id": "DSC-28-AC4",
+          "text": "Comparable baseline/candidate evidence and correct metric direction are recorded."
+        },
+        {
+          "requirement_id": "DSC-28-AC5",
+          "text": "Train/development/holdout boundaries, eligibility and prediction-time features are checked."
+        },
+        {
+          "requirement_id": "DSC-28-AC6",
+          "text": "Passing, worse and equal branches match the contract."
+        },
+        {
+          "requirement_id": "DSC-28-AC7",
+          "text": "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization."
+        },
+        {
+          "requirement_id": "DSC-28-AC8",
+          "text": "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone."
+        }
+      ]
+    },
+    {
+      "id": "DSC-29",
+      "title": "M01.06 — Prepare the requested final business output",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "updated_at": "2026-10-17T04:57:59.896Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-29-AC1",
+          "text": "Supported-input and insufficient-input customer responses are both grounded in evidence."
+        },
+        {
+          "requirement_id": "DSC-29-AC2",
+          "text": "Alternatives are offered without silently replacing the requested task."
+        },
+        {
+          "requirement_id": "DSC-29-AC3",
+          "text": "Synthetic provenance/material limitations remain clear."
+        },
+        {
+          "requirement_id": "DSC-29-AC4",
+          "text": "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message."
+        },
+        {
+          "requirement_id": "DSC-29-AC5",
+          "text": "No false unsuitability or execution-success claims."
+        }
+      ]
+    },
+    {
+      "id": "DSC-30",
+      "title": "M01.07 — Verify and deliver the final business output",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "updated_at": "2026-10-17T04:58:01.438Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-30-AC1",
+          "text": "Final quantities reconcile to forecast, stock and eligible receipts without double counting."
+        },
+        {
+          "requirement_id": "DSC-30-AC2",
+          "text": "Units, dates, rounding and applicable constraints are checked."
+        },
+        {
+          "requirement_id": "DSC-30-AC3",
+          "text": "Missing/invalid/stale/conflicting inputs produce explicit correct handling."
+        },
+        {
+          "requirement_id": "DSC-30-AC4",
+          "text": "Synthetic output is illustrative, not a real purchasing recommendation."
+        },
+        {
+          "requirement_id": "DSC-30-AC5",
+          "text": "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response."
+        }
+      ]
+    },
+    {
+      "id": "DSC-31",
+      "title": "M01.08 — Record the real demonstration and collect review evidence",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "updated_at": "2026-10-17T03:43:38.260Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-31-AC1",
+          "text": "Future recording proves real execution of the one selected restocking case; no extra scenario suite."
+        },
+        {
+          "requirement_id": "DSC-31-AC2",
+          "text": "Source, synthetic inputs, assumptions and actual outputs are distinguishable."
+        },
+        {
+          "requirement_id": "DSC-31-AC3",
+          "text": "Missing-input success is not mislabeled as full end-to-end restocking success."
+        },
+        {
+          "requirement_id": "DSC-31-AC4",
+          "text": "No app launch/delivery or extra V1 workflow is required."
+        },
+        {
+          "requirement_id": "DSC-31-AC5",
+          "text": "Recording and versioned evidence agree."
+        }
+      ]
+    },
+    {
+      "id": "DSC-10",
+      "title": "M01 — Implement MVP human interaction and guardrail contract",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "updated_at": "2026-10-18T00:08:14.068Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-10-AC1",
+          "text": "Fact/inference/assumption/synthetic/unknown provenance is testable."
+        },
+        {
+          "requirement_id": "DSC-10-AC2",
+          "text": "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement."
+        },
+        {
+          "requirement_id": "DSC-10-AC3",
+          "text": "Cleanup and model choices do not become customer statistical decisions."
+        },
+        {
+          "requirement_id": "DSC-10-AC4",
+          "text": "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report."
+        },
+        {
+          "requirement_id": "DSC-10-AC5",
+          "text": "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable."
+        }
+      ]
+    },
+    {
+      "id": "DSC-56",
+      "title": "M01.09 — Verify the single retail restocking demo and evidence",
+      "url": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "updated_at": "2026-10-17T04:58:02.966Z",
+      "criteria": [
+        {
+          "requirement_id": "DSC-56-AC1",
+          "text": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration."
+        },
+        {
+          "requirement_id": "DSC-56-AC2",
+          "text": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation."
+        },
+        {
+          "requirement_id": "DSC-56-AC3",
+          "text": "The one end-to-end restocking case maps to actual execution and verification evidence."
+        },
+        {
+          "requirement_id": "DSC-56-AC4",
+          "text": "Missing-input assessments and actual restocking completion are classified correctly."
+        },
+        {
+          "requirement_id": "DSC-56-AC5",
+          "text": "No unsupported operational fact, silent task switch or unnecessary statistical question passes."
+        },
+        {
+          "requirement_id": "DSC-56-AC6",
+          "text": "Full-input demo evidence and affected rechecks are required for gate closure."
+        },
+        {
+          "requirement_id": "DSC-56-AC7",
+          "text": "Fixture-validation results are not misrepresented as product tests or implementation completion."
+        }
+      ]
+    }
+  ]
+}
