@@ -15,11 +15,17 @@ git diff --check
 
 | Suite | Actual result | Evidence limit |
 | --- | --- | --- |
-| Parent transition/permission/recovery/delivery | 45 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
+| Parent transition/permission/recovery/delivery | 56 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
 | Unchanged shared contracts | 77 tests passed | Structural, reference and declared-semantic guards; no analytical execution. |
 | Existing integration component suite | 141 tests passed | Adapter/native protocol and isolation component regressions; no new customer or analytical acceptance inferred. |
 | Snapshot integrity | 7 of 7 hashes matched | Shared contracts/examples were not changed. |
 | Whitespace | Passed | Source/docs formatting only. |
+
+## Frozen-release follow-up
+
+The initial parent PR #6 had 45 passing parent tests. The DSC-28 owner subsequently identified missing immutable metadata in the final-validation allowlist. The follow-up adds 11 tests (56 parent checks total) for exact bundle/manifest/plan/rule/forecast-input release; forged selection, bindings or execution digest; unreviewed bundles; extra or duplicate-key payload content; canonical bytes; and denial of bundle/holdout references to every development stage. These checks use the agreed DSC-28 bundle format with explicitly invented evidence and the real adapter/store. They do not run an unseen evaluation.
+
+A bundle must be cited in the adopted comparison checks, contain exactly the agreed envelope fields, and have canonical byte identity matching its parsed payload. Parent-decision evidence alone cannot authorize a bundle. The detached frozen manifest and plan/rule bytes must match the adopted selection and approved execution exactly. No model or feature fallback is introduced.
 
 ## Requirement-to-check evidence
 
