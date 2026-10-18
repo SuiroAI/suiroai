@@ -1,8 +1,8 @@
 {
-  "reviewed_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
-  "regression_executed_commit": "7af5a855ea98a47d332b2428bc1325f8154eb49e",
-  "code_test_tree_unchanged_on_refresh": true,
-  "nightly_refresh": "DSC-31 PR #13; five preparation documents/templates only; no actual recording",
+  "reviewed_commit": "c91ea224af2f8932e06027baad228ca469fb85e2",
+  "regression_executed_commit": "1888d75dfc3a372b3e0b23ebc00f712b8f807706",
+  "code_test_tree_unchanged_on_refresh": false,
+  "nightly_refresh": "DSC-31 PR #13 preparation plus DSC-56 PR #14 fixed mock checks; final audit blocked",
   "review_date": "2026-10-18",
   "reviewer": "Codex DSC-9 reviewer (/root)",
   "regression_verifier": "Codex regression_review (/root/regression_review)",
@@ -47,6 +47,14 @@
       "actual": "610 passed, 632 subtests passed in 28.37 seconds",
       "log": "evidence/completion/checks/pytest-src.log",
       "classification": "canonical_current_component_regression"
+    },
+    {
+      "command": "PYTHONPATH=src python3 -m pytest tests -q",
+      "code_commit": "1888d75dfc3a372b3e0b23ebc00f712b8f807706",
+      "exit": 0,
+      "actual": "639 passed, 659 subtests passed in 33.81 seconds",
+      "log": "evidence/completion/checks/pytest-current.log",
+      "classification": "expanded_current_component_and_fixed_mock_acceptance_regression"
     }
   ],
   "review_checks": [
@@ -449,6 +457,24 @@
       "decision": "Pass"
     },
     {
+      "check": "artifact exists docs/acceptance/README.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/acceptance/REVIEW.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists docs/acceptance/checklist.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
       "check": "artifact exists docs/architecture/ARCHITECTURE.md",
       "expected": true,
       "actual": true,
@@ -617,6 +643,18 @@
       "decision": "Pass"
     },
     {
+      "check": "artifact exists evidence/acceptance/affected-stale-recheck.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists evidence/acceptance/check-results.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
       "check": "artifact exists evidence/completion/sources/linear-2026-10-18.json",
       "expected": true,
       "actual": true,
@@ -648,6 +686,18 @@
     },
     {
       "check": "artifact exists evidence/integration/native-isolated-stage-2026-10-17/review.json",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/acceptance/test_data_output_acceptance.py",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "artifact exists tests/acceptance/test_workflow_acceptance.py",
       "expected": true,
       "actual": true,
       "decision": "Pass"
@@ -773,24 +823,6 @@
       "decision": "Pass"
     },
     {
-      "check": "required evidence absent at reviewed revision: tests/acceptance",
-      "expected": false,
-      "actual": false,
-      "decision": "Pass"
-    },
-    {
-      "check": "required evidence absent at reviewed revision: docs/acceptance",
-      "expected": false,
-      "actual": false,
-      "decision": "Pass"
-    },
-    {
-      "check": "required evidence absent at reviewed revision: evidence/acceptance",
-      "expected": false,
-      "actual": false,
-      "decision": "Pass"
-    },
-    {
       "check": "current regression successful",
       "expected": true,
       "actual": true,
@@ -827,7 +859,7 @@
       "decision": "Pass"
     },
     {
-      "check": "review local link ../../evidence/completion/checks/pytest-src.log",
+      "check": "review local link ../../evidence/completion/checks/pytest-current.log",
       "expected": true,
       "actual": true,
       "decision": "Pass"
@@ -893,7 +925,7 @@
       "decision": "Pass"
     },
     {
-      "check": "review local link ../../docs/architecture/OWNERSHIP.md",
+      "check": "review local link ../../evidence/acceptance/check-results.json",
       "expected": true,
       "actual": true,
       "decision": "Pass"
@@ -911,14 +943,38 @@
       "decision": "Pass"
     },
     {
+      "check": "review local link ../acceptance/REVIEW.md#reproduced-finding-identity-discrepancy",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
       "check": "review local link ../architecture/OWNERSHIP.md",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "expanded current regression successful",
+      "expected": true,
+      "actual": true,
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-56 final audit remains blocked",
+      "expected": "blocked",
+      "actual": "blocked",
+      "decision": "Pass"
+    },
+    {
+      "check": "DSC-31 index remains preparation-only",
       "expected": true,
       "actual": true,
       "decision": "Pass"
     }
   ],
   "review_checks_summary": {
-    "passed": 115,
+    "passed": 123,
     "failed": 0
   },
   "limits": [
@@ -926,5 +982,6 @@
     "No native model/customer execution was invoked by this review.",
     "Existing source QA and real synthetic native records were inspected, not reexecuted.",
     "No Linear state/comment/Miro update performed."
-  ]
+  ],
+  "baseline_regression_commit": "7af5a855ea98a47d332b2428bc1325f8154eb49e"
 }

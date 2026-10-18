@@ -1,16 +1,16 @@
 # DSC-9 MVP completion review
 
-**Decision: Blocked — milestone acceptance withheld.** Reviewed October 18, 2026 against `origin/nightly` commit `93f6cc9f7725ae0d9d5442bd64491c007f4d372c`. Reviewer: **Codex DSC-9 reviewer (/root)**. Independent read-only reviews: **evidence_review**, **closure_review**; regression verifier: **regression_review**. These identities record the actual review; no human/owner acceptance is inferred.
+**Decision: Blocked — milestone acceptance withheld.** Reviewed October 18, 2026 against `origin/nightly` commit `c91ea224af2f8932e06027baad228ca469fb85e2`. Reviewer: **Codex DSC-9 reviewer (/root)**. Independent read-only reviews: **evidence_review**, **closure_review**; regression verifier: **regression_review**. These identities record the actual review; no human/owner acceptance is inferred.
 
-The application has substantial component implementation and real isolated synthetic Codex/Data engineering evidence. It has no evidenced successful selected-case preparation→modeling→validated recommendation→final-report demonstration, DSC-31 recording, or DSC-56 final audit at this revision. No genuine failed customer/model run was executed in this review either: its runtime outcome is **not executed**, not `validation_failed`.
+The application has substantial component implementation and real isolated synthetic Codex/Data engineering evidence. It has no evidenced successful selected-case preparation→modeling→validated recommendation→final-report demonstration, DSC-31 recording, or passing DSC-56 final audit at this revision. No genuine failed customer/model run was executed in this review either: its runtime outcome is **not executed**, not `validation_failed`.
 
 ## Complete ledger and evidence
 
 - [Complete evidence ledger](../../evidence/completion/ledger.json): **97 rows** — every one of the **58** acceptance criteria from all ten children, **17** DSC-9 checklist boxes, **6** DSC-3 architecture-boundary boxes, and **16** supplemental runtime/ownership requirements. Each row carries its source, concrete artifact/version, meaningful check, expected/actual result, named verifier and decision. Compound criteria retain the full source requirement and multiple checks; no title-only child acceptance.
 - [Current source requirements and native blockers](../../evidence/completion/sources/linear-2026-10-18.json): read-only connected Linear retrieval of DSC-9, DSC-3, all ten children, and the single-case contract, with source update timestamps. Every child and DSC-9 was Backlog at retrieval.
-- [Actual verification record](../../evidence/completion/verification.json), [artifact/version hash index](../../evidence/completion/artifact-index.json), and [regression output](../../evidence/completion/checks/pytest-src.log).
+- [Actual verification record](../../evidence/completion/verification.json), [artifact/version hash index](../../evidence/completion/artifact-index.json), and [current regression output](../../evidence/completion/checks/pytest-current.log).
 
-**90 rows are Blocked; 7 narrowly scoped static checks Pass.** A static scope/provenance check is not child acceptance. No child or milestone is accepted from mock records, planning text, generated fixtures, probe arithmetic, passing unit tests, or this ledger's existence.
+**89 rows are Blocked; 1 report-composition check Fails; 7 narrowly scoped static checks Pass.** A static scope/provenance check is not child acceptance. No child or milestone is accepted from mock records, planning text, generated fixtures, probe arithmetic, passing unit tests, or this ledger's existence.
 
 | Child | Criteria mapped | Current evidence scope |
 | --- | ---: | --- |
@@ -23,13 +23,13 @@ The application has substantial component implementation and real isolated synth
 | [DSC-30](https://linear.app/gr3enarr0w/issue/DSC-30) | 5 | Component/source evidence; genuine current runtime acceptance pending |
 | [DSC-31](https://linear.app/gr3enarr0w/issue/DSC-31) | 5 | Runbook/checklist/blank template present; actual recording absent |
 | [DSC-10](https://linear.app/gr3enarr0w/issue/DSC-10) | 5 | Component/source evidence; genuine current runtime acceptance pending |
-| [DSC-56](https://linear.app/gr3enarr0w/issue/DSC-56) | 7 | Final audit absent |
+| [DSC-56](https://linear.app/gr3enarr0w/issue/DSC-56) | 7 | Fixed mock checks/checklist present; final audit explicitly Blocked |
 
 DSC-9 itself maps completion gate 6/6, milestone-specific checks 6/6, and closure rules 5/5. DSC-3's six rows review only the MVP boundary, not its broader V1 completion.
 
 ## Verification decision and limits
 
-The review refreshed from `7af5a855ea98a47d332b2428bc1325f8154eb49e` to the reviewed nightly revision after DSC-31 PR #13. That change adds only five preparation documents/template files; application source, tests, contracts and environment inputs are byte-identical. The following regression was executed at the earlier exact commit and remains applicable to that unchanged code/test tree.
+The initial review refreshed from `7af5a855ea98a47d332b2428bc1325f8154eb49e` to the reviewed nightly revision after DSC-31 PR #13. That change adds only five preparation documents/template files; application source, tests, contracts and environment inputs are byte-identical. That baseline regression is retained separately. The review then incorporated DSC-56 PR #14 from current nightly; its 29 fixed acceptance tests are explicitly mock, and its final audit is Blocked. The expanded full suite was rerun at the exact merge revision recorded in verification.json.
 
 From the isolated worktree with Python 3.13.0 and installed pytest 9.0.2:
 
@@ -37,7 +37,7 @@ From the isolated worktree with Python 3.13.0 and installed pytest 9.0.2:
 PYTHONPATH=src python3 -m pytest tests -q
 ```
 
-**Exit 0: 610 tests and 632 subtests passed in 28.37 seconds.** All seven `docs/contracts/SNAPSHOT.json` hashes match unchanged `0.1.0-draft.3`. Installed jsonschema was 4.25.1; this used the available environment, not a newly synchronized lock environment. The verification JSON records package versions and all commands. The initial bare command failed to import the src-layout package; a historical importlib workaround then omitted replenishment fixture paths. Both diagnostic logs are retained. The correct current command passes; those invocation errors are not classified as product defects.
+**Expanded current run: exit 0, 639 tests and 659 subtests passed in 33.81 seconds** at merge revision 1888d75dfc3a372b3e0b23ebc00f712b8f807706. The earlier 610-test/632-subtest baseline log remains retained separately. All seven `docs/contracts/SNAPSHOT.json` hashes match unchanged `0.1.0-draft.3`. Installed jsonschema was 4.25.1; this used the available environment, not a newly synchronized lock environment. The verification JSON records package versions and all commands. The initial bare command failed to import the src-layout package; a historical importlib workaround then omitted replenishment fixture paths. Both diagnostic logs are retained. The correct current command passes; those invocation errors are not classified as product defects.
 
 The current regression verifies component behavior, including bounded terminal branches, independent arithmetic and immutable artifact guards. Modeling/LLM approvals, analytical inputs and reviews in those checks are explicitly mock. Existing source reconciliation reports 41 passing local fixture QA checks; this reviewer checked its retained bytes/limits and source-file hashes, not a new analytical preparation. The actual source audit must not be confused with the generated preparation test that happens to use 18,045/45 rows.
 
@@ -111,9 +111,9 @@ Correction: Collect genuine supported-host selected-case artifacts after upstrea
 
 Required recheck: Recompute real metrics under frozen rule, verify fully observed horizons and independent arithmetic/claims; keep November30 quantities invariant to December outcomes.
 
-### R09 — Recording, versioned demo index and final DSC-56 named audit absent in nightly.
+### R09 — Actual recording, completed index and passing final audit absent; preparation and mock audit present.
 
-Owner: **DSC-31 then DSC-56 then DSC-9**. Evidence: [docs/architecture/OWNERSHIP.md](../../docs/architecture/OWNERSHIP.md).
+Owner: **DSC-31 then DSC-56 then DSC-9**. Evidence: [DSC-56 explicitly blocked final audit](../../evidence/acceptance/check-results.json).
 
 Correction: Record actual successful selected-case execution; audit recording and exact artifacts, then request named final milestone acceptance.
 
@@ -134,6 +134,13 @@ Owner: **DSC-26**. Evidence: [evidence/integration/native-failures-2026-10-17/re
 Correction: After classifier correction, collect relevant actual rechecks; identify timeout process-exit uncertainty, pre-command cancellation and unexercised account quota distinctly.
 
 Required recheck: Do not count offline invalid-code replay as real corrected execution, declared zero budget as account exhaustion, or cancellation before command as mid-compute termination.
+
+
+### R12 — Report composition produces colliding source-local finding identities
+
+Owner: **DSC-29 with DSC-24/3; DSC-30 enforces the agreed rule**. [DSC-56 reproduced discrepancy](../acceptance/REVIEW.md#reproduced-finding-identity-discrepancy) passes unchanged shared findings through the real producer and independent verifier: **18 declarations, 15 unique identities**. The verifier correctly blocks delivery. This is a concrete component interoperability defect on mock inputs, not a real customer/model failure.
+
+Correction: agree source-qualified IDs or namespace at composition while preserving immutable source/evidence references. Rewritten positive mock findings are not a fix. Recheck source findings → report composition → independent identity/claim/narrative checks → exact draft approval/delivery; preserve unaffected model/quantity evidence. No affected owner files were edited here.
 
 ## Final acceptance requirements
 

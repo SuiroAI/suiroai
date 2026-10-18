@@ -3,11 +3,11 @@
   "review_date": "2026-10-18",
   "source_of_truth": {
     "branch": "origin/nightly",
-    "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
+    "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2",
     "contract_version": "0.1.0-draft.3",
     "linear_snapshot": "evidence/completion/sources/linear-2026-10-18.json",
-    "prior_reviewed_commit": "7af5a855ea98a47d332b2428bc1325f8154eb49e",
-    "refresh_reason": "DSC-31 preparation-only PR #13 added five docs/index-template files; application/test tree unchanged."
+    "prior_reviewed_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
+    "refresh_reason": "DSC-31 preparation PR #13 plus DSC-56 fixed mock verification PR #14 incorporated; final audit still blocked."
   },
   "reviewer": "Codex DSC-9 reviewer (/root)",
   "independent_reviewers": [
@@ -50,19 +50,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect submission/intake and preparation separation; exercise receipt without calling preparation.",
@@ -85,19 +85,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Reconcile selected task, source/Drive references and output fields against the pinned contract.",
@@ -120,19 +120,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise capability, execution-error and successful-restocking discriminators.",
@@ -155,19 +155,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review treatment investigation and material-fact escalation paths with uncertain inputs.",
@@ -190,19 +190,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare synthetic manifest/dictionary provenance with task and output claims.",
@@ -225,19 +225,19 @@
       "artifacts": [
         {
           "path": "docs/contracts/CONTRACT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/SNAPSHOT.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/contracts/audit/reconciliation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/contracts/test_contract.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Read planning claims and source-audit disclaimers; reject fixture QA as pipeline completion.",
@@ -260,19 +260,19 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/intake/mock_conversations.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_conversation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_langchain_roles.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise absent, inaccessible and partial supplied files; compare proposal/gaps to read-only inspected evidence.",
@@ -295,19 +295,19 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/intake/mock_conversations.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_conversation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_langchain_roles.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise silence, rejection, correction, material new data and stale approval; verify same approved proposal handed onward.",
@@ -330,19 +330,19 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/intake/mock_conversations.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_conversation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_langchain_roles.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise compatible partial schemas and out-of-scope goals without silent rerouting.",
@@ -365,19 +365,19 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/intake/mock_conversations.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_conversation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_langchain_roles.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect focused prompts and proposed questions for agent-owned statistical decisions.",
@@ -400,19 +400,19 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/intake/mock_conversations.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_conversation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/intake/test_langchain_roles.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Trace material assumptions from actual request/source to presentation, approval and execution.",
@@ -435,27 +435,27 @@
       "artifacts": [
         {
           "path": "docs/integration/NATIVE_BOUNDARY.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/integration/ADAPTER.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-failures-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/integration/test_adapter.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect saved real native Data invocation/calculation/retrieval and reproduce independent probe arithmetic; require actual approved-packet adapter dispatch.",
@@ -478,27 +478,27 @@
       "artifacts": [
         {
           "path": "docs/integration/NATIVE_BOUNDARY.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/integration/ADAPTER.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-failures-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/integration/test_adapter.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check separate missing-data/capability, measured success and infrastructure failure evidence.",
@@ -521,27 +521,27 @@
       "artifacts": [
         {
           "path": "docs/integration/NATIVE_BOUNDARY.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/integration/ADAPTER.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-failures-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/integration/test_adapter.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Trace source/task/assumption/checkpoint versions from approved packet to measured native results.",
@@ -564,27 +564,27 @@
       "artifacts": [
         {
           "path": "docs/integration/NATIVE_BOUNDARY.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/integration/ADAPTER.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-failures-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/integration/test_adapter.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect real failure/limit records and component invalid-code, timeout, cancellation and plugin checks.",
@@ -607,27 +607,27 @@
       "artifacts": [
         {
           "path": "docs/integration/NATIVE_BOUNDARY.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/integration/ADAPTER.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-isolated-stage-2026-10-17/observation.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/integration/native-failures-2026-10-17/review.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/integration/test_adapter.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect current source boundary and evidence claims for invented APIs or excessive completion claims.",
@@ -650,23 +650,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect retained verified findings and check that no routine EDA message is emitted before the final report.",
@@ -689,23 +689,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise joins/cardinality/key coverage/receipt reconciliation and inspect real lineage.",
@@ -728,23 +728,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare raw hashes/counts/dictionary/transaction grain with preparation output and original source QA.",
@@ -767,23 +767,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise sparse-day and target-treatment policies without assuming missing dates are zero.",
@@ -806,23 +806,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check nonpositive quantities/status/returns/units/outlier decisions and explicit consequences.",
@@ -845,23 +845,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Poison future inputs and inspect partition/release/preprocessing availability controls.",
@@ -884,23 +884,23 @@
       "artifacts": [
         {
           "path": "docs/preparation/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_worker.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_result.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/preparation/test_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect preparation clarification paths for prohibited customer statistical choices.",
@@ -923,31 +923,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise parent-reviewed confirmed underperformance, authorized defect correction, failed recovery and terminal explanation without fallback.",
@@ -970,31 +970,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify ordered step6\u2192step7\u2192step8\u2192step9 records and genuine stage timestamps/artifacts.",
@@ -1017,31 +1017,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Trace actual LLM prompt/response/model/feature definitions and materialization to development-only inputs, folds and parent check.",
@@ -1064,31 +1064,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Recompute comparable baseline/candidate metrics on common origins/horizons/population and metric direction.",
@@ -1111,31 +1111,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect source partition, target eligibility, feature knowledge dates and fold-fitted transformations.",
@@ -1158,31 +1158,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise better/worse/equal initial-model branches and parent review decisions.",
@@ -1205,31 +1205,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify all horizon ends, pre-score frozen rule/population/model/forecast, fully observed holdout and immutable November30 quantities.",
@@ -1252,31 +1252,31 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_evaluation.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_llm_features.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_frozen.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/modeling/test_preparation_consumer.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review report claims for unsupported stockout/profit/cost benefits.",
@@ -1299,27 +1299,27 @@
       "artifacts": [
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/reporting/MOCK_DRAFTS.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/reporting/test_drafts.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/replenishment/test_handoff.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check supported-input and insufficient-input narratives against authoritative measured artifacts.",
@@ -1342,27 +1342,27 @@
       "artifacts": [
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/reporting/MOCK_DRAFTS.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/reporting/test_drafts.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/replenishment/test_handoff.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise narrower alternatives pending confirmation without replacing restocking.",
@@ -1385,27 +1385,27 @@
       "artifacts": [
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/reporting/MOCK_DRAFTS.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/reporting/test_drafts.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/replenishment/test_handoff.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify synthetic provenance and material limitations survive humanizing unchanged.",
@@ -1428,39 +1428,50 @@
       "artifacts": [
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/reporting/MOCK_DRAFTS.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/reporting/test_drafts.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/replenishment/test_handoff.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare final list, concise EDA/feature/model findings and internal detailed diagnostics against approved artifacts.",
       "expected": "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
-      "actual": "Report code copies approved quantities/claims, but real findings, scores, list and delivered report absent.",
+      "actual": "Reproduced mock integration defect: unchanged shared findings through actual draft_success yield 18 declarations but 15 unique identities; independent claims-unique-identities correctly rejects delivery. No genuine final report exists.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
-      "decision": "Blocked",
-      "scope": "Milestone criterion; existing component tests are partial evidence",
+      "decision": "Fail",
+      "scope": "Observed report composition interoperability failure; full runtime acceptance also withheld.",
       "correction_owner": "DSC-29",
-      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion."
+      "recheck": "After owner-authorized correction, rerun the mapped component suite and affected integrations; require genuine version-bound evidence and named acceptance before promotion.",
+      "discrepancy_ids": [
+        "R12"
+      ]
     },
     {
       "requirement_id": "DSC-29-AC5",
@@ -1471,27 +1482,27 @@
       "artifacts": [
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/NUMERICAL_EXAMPLES.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/reporting/MOCK_DRAFTS.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/reporting/test_drafts.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/replenishment/test_handoff.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check outcome claims against actual capability/execution/validation results.",
@@ -1514,27 +1525,27 @@
       "artifacts": [
         {
           "path": "docs/verification/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_arithmetic.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_claims.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_engine.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Independently recompute forecast+safety\u2212usable stock\u2212eligible receipts, clamp and minimum/multiple rounding.",
@@ -1557,27 +1568,27 @@
       "artifacts": [
         {
           "path": "docs/verification/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_arithmetic.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_claims.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_engine.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify identity, product units, as-of/receipt dates, protection period, rounding and constraints.",
@@ -1600,27 +1611,27 @@
       "artifacts": [
         {
           "path": "docs/verification/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_arithmetic.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_claims.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_engine.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise stale/missing/conflicting data, late arrivals, duplicate receipts and per-key exceptions.",
@@ -1643,27 +1654,27 @@
       "artifacts": [
         {
           "path": "docs/verification/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_arithmetic.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_claims.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_engine.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review final output labeling of synthetic operational inputs and illustrative recommendations.",
@@ -1686,27 +1697,27 @@
       "artifacts": [
         {
           "path": "docs/verification/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/verification/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_arithmetic.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_claims.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/verification/test_engine.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify report claims/list against exact artifacts, capability response against gaps, parent authority and publisher readback.",
@@ -1729,23 +1740,23 @@
       "artifacts": [
         {
           "path": "docs/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/CHECKLIST.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/RECORDING_SCRIPT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/index.template.csv",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review actual recording from selected-case intake/sign-off through real Codex/Data work and verified successful restocking.",
@@ -1768,23 +1779,23 @@
       "artifacts": [
         {
           "path": "docs/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/CHECKLIST.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/RECORDING_SCRIPT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/index.template.csv",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare recording provenance labels, source/synthetic inputs, assumptions and measured outputs.",
@@ -1807,23 +1818,23 @@
       "artifacts": [
         {
           "path": "docs/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/CHECKLIST.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/RECORDING_SCRIPT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/index.template.csv",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Confirm recording distinguishes helpful missing-input behavior from successful full-input restocking.",
@@ -1846,23 +1857,23 @@
       "artifacts": [
         {
           "path": "docs/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/CHECKLIST.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/RECORDING_SCRIPT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/index.template.csv",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check demonstration scope remains one task with no app/V1 deliverable.",
@@ -1885,23 +1896,23 @@
       "artifacts": [
         {
           "path": "docs/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/CHECKLIST.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/demo/RECORDING_SCRIPT.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "evidence/demo/index.template.csv",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Reconcile recording with exact versions, native logs, metrics, final report and verifier decisions.",
@@ -1924,31 +1935,31 @@
       "artifacts": [
         {
           "path": "docs/parent/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_workflow.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_adversarial.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_recovery_delivery.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_frozen_release.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Trace fact/interpretation/synthetic/unknown provenance through current task/run artifacts and reject relabeling.",
@@ -1971,31 +1982,31 @@
       "artifacts": [
         {
           "path": "docs/parent/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_workflow.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_adversarial.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_recovery_delivery.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_frozen_release.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise capability versus execution-error states for the same single retail task.",
@@ -2018,31 +2029,31 @@
       "artifacts": [
         {
           "path": "docs/parent/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_workflow.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_adversarial.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_recovery_delivery.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_frozen_release.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Reject imputation/algorithm/hyperparameter questions presented as material facts.",
@@ -2065,31 +2076,31 @@
       "artifacts": [
         {
           "path": "docs/parent/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_workflow.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_adversarial.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_recovery_delivery.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_frozen_release.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise material-fact escalation/internal progress and verify useful findings retained for final output.",
@@ -2112,31 +2123,31 @@
       "artifacts": [
         {
           "path": "docs/parent/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_workflow.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_adversarial.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_recovery_delivery.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "tests/parent/test_frozen_release.py",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check exact permissions, isolation, budgets, audit, gates, bounded recovery and final delivery authority.",
@@ -2158,25 +2169,37 @@
       "requirement": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Audit real terminal branch evidence and bounded parent review separately from successful restocking acceptance.",
       "expected": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
-      "actual": "docs/acceptance/, evidence/acceptance/ and tests/acceptance/ absent; final named DSC-56 audit missing.",
+      "actual": "DSC-56 fixed seam checks now cover mock reviewed failure/recovery; check-results final_audit.decision=blocked. No genuine terminal customer-run evidence.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2193,25 +2216,37 @@
       "requirement": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Audit real distinct step6/7/8 artifacts and final-holdout exclusion from LLM context.",
       "expected": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
-      "actual": "Only mock modeling sequence present; no actual LLM feature generation or genuine holdout results.",
+      "actual": "Fixed mock seam checks verify distinct ordered stages and restricted context; no actual LLM features/holdout results.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2228,25 +2263,37 @@
       "requirement": "The one end-to-end restocking case maps to actual execution and verification evidence.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Map selected-case successful recording to actual analytical and independent verification evidence.",
       "expected": "The one end-to-end restocking case maps to actual execution and verification evidence.",
-      "actual": "Neither required recording nor real delivered list exists.",
+      "actual": "Fixed 58-criterion checklist and 29 passing mock checks/27 subtests present; final_audit explicitly blocked. Successful actual run/recording absent.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2263,25 +2310,37 @@
       "requirement": "Missing-input assessments and actual restocking completion are classified correctly.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Audit classification of missing-input, runtime error, measured validation failure and success.",
       "expected": "Missing-input assessments and actual restocking completion are classified correctly.",
-      "actual": "Component distinctions exist; independent final audit absent.",
+      "actual": "Fixed tests verify mock capability/execution/measured-failure distinctions; actual final acceptance remains blocked.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2298,25 +2357,37 @@
       "requirement": "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review actual conversation/data/report for invented operations, silent task switch and statistical questions.",
       "expected": "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
-      "actual": "Source semantics/guards documented; genuine execution and final audit absent.",
+      "actual": "Fixed adversarial component tests exist; actual conversation/data/report audit still pending.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2333,25 +2404,37 @@
       "requirement": "Full-input demo evidence and affected rechecks are required for gate closure.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Require full-input demo plus failure\u2192authorized correction\u2192affected recheck and stale/missing/exhausted-budget evidence.",
       "expected": "Full-input demo evidence and affected rechecks are required for gate closure.",
-      "actual": "No DSC-31 successful recording, final audit or actual correction/recheck packet.",
+      "actual": "Recorded affected-only smoke check runs one stale-candidate case and marks 28 not_run; no actual authorized product correction or full demo.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2368,25 +2451,37 @@
       "requirement": "Fixture-validation results are not misrepresented as product tests or implementation completion.",
       "artifacts": [
         {
-          "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/README.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/parent/EVIDENCE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/REVIEW.md",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "docs/acceptance/checklist.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
-          "path": "docs/verification/VALIDATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "path": "evidence/acceptance/check-results.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "evidence/acceptance/affected-stale-recheck.json",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_data_output_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
+        },
+        {
+          "path": "tests/acceptance/test_workflow_acceptance.py",
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify fixture/component results cannot be presented as actual pipeline or milestone completion.",
       "expected": "Fixture-validation results are not misrepresented as product tests or implementation completion.",
-      "actual": "Existing docs label mock/source-QA evidence honestly; no final DSC-56 decision exists.",
+      "actual": "DSC-56 explicitly labels all check results mock and final audit blocked; fixture results not promoted to implementation completion.",
       "evidence_class": "component_mock_or_missing",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root), supported by evidence_review and closure_review",
@@ -2404,23 +2499,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify actual stage6 baseline, stage7 LLM definitions/materialization and stage8 comparison precede frozen evaluation; reconcile findings to report.",
@@ -2442,23 +2537,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare customer transcript with internal analytical events and final findings.",
@@ -2480,23 +2575,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review every child row and native status/blocker.",
@@ -2518,23 +2613,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Remeasure artifact hashes and reconcile run/task/input/proposal/source versions with measured checks.",
@@ -2556,23 +2651,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review supported native proof plus actual successful recording and delivered report.",
@@ -2594,23 +2689,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Require explicit named milestone acceptance before allowing DSC-9 native downstream blockers to advance.",
@@ -2632,23 +2727,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect one locked restocking task/data/output contract and actual demonstrated task scope.",
@@ -2670,23 +2765,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect measured real input receipt, read-only proposal, authenticated current approval and corrections.",
@@ -2708,23 +2803,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify supported Codex/Data invocation and exact approved-stage isolation/retrieval.",
@@ -2746,23 +2841,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Recompute actual comparable baseline/shortlist and check development horizon/cutoff plus immutable freeze/rule and failure branch.",
@@ -2784,23 +2879,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Independently reconcile delivered fields/units/list/findings to approved goal and numerical/claim checks.",
@@ -2822,23 +2917,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Cross-check actual output/logs/version/limitations and customer requested format without app expansion.",
@@ -2860,23 +2955,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Require each child complete with current criterion evidence; preserve all native dependencies.",
@@ -2898,23 +2993,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Link complete ledger and current passing checks; require actual milestone-specific passing evidence.",
@@ -2936,23 +3031,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Check locked output contract against downstream handoff and actual customer-output usability.",
@@ -2974,23 +3069,23 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Record named reviewer explicit acceptance and limitations, plus approved requirement revisions if scope changes.",
@@ -3012,28 +3107,28 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/replenishment/INTEGRATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Reconcile final gate decision with current passing audit before downstream execution.",
       "expected": "Completion-gate decision and current passing report agree before downstream execution advances.",
-      "actual": "Decision remains Blocked; no passing DSC-56 audit; native DSC-9 blockers preserved.",
+      "actual": "Decision remains Blocked; DSC-56 final audit explicitly blocked; native DSC-9 blockers preserved.",
       "evidence_class": "milestone_review_current_artifact_inventory",
       "verification_record": "evidence/completion/verification.json",
       "verifier": "Codex DSC-9 reviewer (/root)",
@@ -3050,15 +3145,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3081,15 +3176,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3112,15 +3207,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3143,15 +3238,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3174,15 +3269,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3205,15 +3300,15 @@
       "artifacts": [
         {
           "path": "docs/architecture/ARCHITECTURE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         },
         {
           "path": "docs/architecture/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare current architecture boundary and allocation with code, draft.3 and real integration evidence; distinguish historical records from current implementation.",
@@ -3235,7 +3330,7 @@
       "artifacts": [
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Reconcile raw/dictionary/manifest/hash references and provenance to every downstream artifact.",
@@ -3259,7 +3354,7 @@
       "artifacts": [
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Review dictionary/source adapters and independently check quantity lineage.",
@@ -3283,7 +3378,7 @@
       "artifacts": [
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Independently recompute time-phased need, explicit complete-ledger zero keys, source dates/units/minima/multiples and per-key exceptions.",
@@ -3307,7 +3402,7 @@
       "artifacts": [
         {
           "path": "docs/preparation/INTERFACE.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect physical parent/native release, context allowlist, temporal target windows and poison tests.",
@@ -3331,7 +3426,7 @@
       "artifacts": [
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare immutable before/after forecast/model/feature/quantity hashes through holdout evaluation.",
@@ -3355,7 +3450,7 @@
       "artifacts": [
         {
           "path": "docs/modeling/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Recompute observed-horizon eligibility and scores from frozen artifacts and reserved source lineage.",
@@ -3379,7 +3474,7 @@
       "artifacts": [
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect actual prompt/response/model/time/definitions, safe context, materialized values and parent decision.",
@@ -3403,7 +3498,7 @@
       "artifacts": [
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Exercise genuine underperformance, demonstrated defect, one authorized affected recheck and unresolved/exhausted recovery with unchanged freeze.",
@@ -3427,7 +3522,7 @@
       "artifacts": [
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect actual model identity/recovery budget/event log and verified failure output.",
@@ -3451,7 +3546,7 @@
       "artifacts": [
         {
           "path": "docs/parent/COORDINATION.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Verify exact final customer wording against parent-reviewed evidenced cause, no fabricated scores/quantities.",
@@ -3475,7 +3570,7 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Audit ledger/run status taxonomy and require real successful recorded run independently.",
@@ -3499,7 +3594,7 @@
       "artifacts": [
         {
           "path": "docs/modeling/COMPONENT_EVIDENCE.json",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Compare approved claim IDs/quantity bytes to actual report and transcript; verify reliable Product_Name mapping and required fields.",
@@ -3571,7 +3666,7 @@
       "artifacts": [
         {
           "path": "docs/architecture/OWNERSHIP.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Inspect branch diff against architecture ownership and assignment scope.",
@@ -3593,7 +3688,7 @@
       "artifacts": [
         {
           "path": "docs/intake/README.md",
-          "git_commit": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c"
+          "git_commit": "c91ea224af2f8932e06027baad228ca469fb85e2"
         }
       ],
       "check": "Trace receipt/proposal/approval/execution identity and ensure no preapproval analytical calls.",
@@ -3695,8 +3790,8 @@
       "id": "R09",
       "decision": "Blocked",
       "owner": "DSC-31 then DSC-56 then DSC-9",
-      "discrepancy": "Recording, versioned demo index and final DSC-56 named audit absent in nightly.",
-      "evidence": "docs/architecture/OWNERSHIP.md",
+      "discrepancy": "Actual recording, completed demo index and passing final DSC-56 audit absent; preparation and mock audit now present.",
+      "evidence": "evidence/acceptance/check-results.json",
       "correction": "Record actual successful selected-case execution; audit recording and exact artifacts, then request named final milestone acceptance.",
       "recheck": "Require actual successful restocking demo; terminal failure tests or helpful missing-input response cannot substitute.",
       "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
@@ -3720,6 +3815,16 @@
       "correction": "After classifier correction, collect relevant actual rechecks; identify timeout process-exit uncertainty, pre-command cancellation and unexercised account quota distinctly.",
       "recheck": "Do not count offline invalid-code replay as real corrected execution, declared zero budget as account exhaustion, or cancellation before command as mid-compute termination.",
       "authorization": "Correction request recorded for owner; no child implementation or Linear update performed."
+    },
+    {
+      "id": "R12",
+      "decision": "Fail",
+      "owner": "DSC-29 with DSC-24/3; DSC-30 enforces agreed identity rule",
+      "discrepancy": "Report composition retains colliding source-local finding IDs: 18 declarations, 15 unique identities; correct verifier blocks delivery.",
+      "evidence": "docs/acceptance/REVIEW.md",
+      "correction": "Agree source-qualified finding IDs or namespace during composition while retaining immutable source/evidence references. Positive rewritten mock inputs are not a producer fix.",
+      "recheck": "Run unchanged shared findings\u2192actual report composition\u2192independent identity/claim/narrative checks\u2192exact draft approval/delivery. Preserve unaffected quantity/model evidence.",
+      "authorization": "Owner correction request only; no DSC-29/24/30 files changed by DSC-9."
     }
   ]
 }
