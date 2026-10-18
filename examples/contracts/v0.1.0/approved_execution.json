@@ -1,0 +1,785 @@
+{
+  "schema_version": "0.1.0-draft.3",
+  "fixture_provenance": "mock",
+  "mock_notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+  "records": [
+    {
+      "kind": "submission",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-submission",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e"
+      },
+      "original_request": "MOCK request: illustrate one restocking list for MOCK-P001 at MOCK-STORE.",
+      "files": [
+        {
+          "file_id": "mock-sales",
+          "original_name": "mock-sales.csv",
+          "supplied_location": "mock://input/sales.csv",
+          "source_role": "transactions",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "accessible",
+          "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+          "size_bytes": 247,
+          "access_reason": null
+        },
+        {
+          "file_id": "mock-dictionary",
+          "original_name": "mock-dictionary.csv",
+          "supplied_location": "mock://input/dictionary.csv",
+          "source_role": "dictionary",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "accessible",
+          "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+          "size_bytes": 252,
+          "access_reason": null
+        },
+        {
+          "file_id": "mock-stock",
+          "original_name": "mock-stock.csv",
+          "supplied_location": "mock://input/stock.csv",
+          "source_role": "usable_stock",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "accessible",
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "size_bytes": 446,
+          "access_reason": null
+        },
+        {
+          "file_id": "mock-receipts",
+          "original_name": "mock-receipts.csv",
+          "supplied_location": "mock://input/receipts.csv",
+          "source_role": "inbound_ledger",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "accessible",
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "size_bytes": 448,
+          "access_reason": null
+        },
+        {
+          "file_id": "mock-policy",
+          "original_name": "mock-policy.csv",
+          "supplied_location": "mock://input/policy.csv",
+          "source_role": "ordering_policy",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "accessible",
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "size_bytes": 490,
+          "access_reason": null
+        }
+      ],
+      "received_at": "2026-10-17T09:00:00Z"
+    },
+    {
+      "kind": "task_proposal",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-task-proposal",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "submission_ref": {
+        "artifact_id": "mock-submission",
+        "version": 1,
+        "sha256": "96712ea3679682a7d69149d64d711ea2faa4974974814449cb9eab8d835493bf",
+        "provenance": "mock"
+      },
+      "goal": "MOCK single retail replenishment illustration only.",
+      "output": "one_restocking_list_and_final_report_or_verified_failure_explanation",
+      "source_refs": [
+        {
+          "artifact_id": "mock-sales",
+          "version": 1,
+          "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-dictionary",
+          "version": 1,
+          "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        }
+      ],
+      "readiness": "ready",
+      "assumptions": [
+        {
+          "assumption_id": "mock-policy-assumption",
+          "classification": "synthetic_assumption",
+          "statement": "MOCK target and operational numbers are hypothetical contract examples, not customer facts; no real-source daily completeness claim.",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "artifact_id": "mock-sales",
+              "version": 1,
+              "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-dictionary",
+              "version": 1,
+              "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-stock",
+              "version": 1,
+              "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-receipts",
+              "version": 1,
+              "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-policy",
+              "version": 1,
+              "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "gaps": [],
+      "target_policy": {
+        "status": "defined",
+        "policy_id": "mock-observed-fulfilled-quantity",
+        "quantity_unit": "product_unit",
+        "aggregation_grain": "product_store_day",
+        "target_measure": "MOCK hypothetical fulfilled transaction quantity on explicitly observed days; not unconstrained customer demand",
+        "included_order_statuses": [
+          "completed"
+        ],
+        "returns_treatment": "MOCK exclude flagged returns; not a customer fact",
+        "nonpositive_quantity_treatment": "MOCK quarantine pending source investigation",
+        "duplicate_treatment": "MOCK exact duplicate excess removed with source-row lineage",
+        "missing_date_treatment": "explicit_observation_mask",
+        "extract_completeness": "unverified",
+        "completeness_evidence_refs": [],
+        "policy_evidence_refs": [
+          {
+            "artifact_id": "mock-sales",
+            "version": 1,
+            "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-dictionary",
+            "version": 1,
+            "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+            "provenance": "mock"
+          }
+        ],
+        "zero_assumption_ref": null
+      },
+      "temporal_plan": {
+        "as_of_date": "2025-11-30",
+        "date_interpretation": "source_calendar_date",
+        "initial_development_start": "2022-01-01",
+        "initial_development_end": "2024-12-31",
+        "rolling_validation_start": "2025-01-01",
+        "development_target_end_cutoff": "2025-11-30",
+        "reserved_unseen_start": "2025-12-01",
+        "reserved_unseen_end": "2025-12-31",
+        "development_context_access": "development_artifacts_only",
+        "every_development_horizon_finishes_by_cutoff": true,
+        "score_fully_observed_horizons_only": true,
+        "freeze_before_holdout_access": true,
+        "forecast_as_of_date": "2025-11-30",
+        "december_must_not_change_saved_forecast": true
+      },
+      "acceptance_rule": {
+        "rule_id": "mock-mae-cap",
+        "version": 1,
+        "declared_at": "2026-10-17T09:00:15Z",
+        "metric_gates": [
+          {
+            "metric_id": "mock-mae",
+            "aggregation": "macro_mean_over_mock_keys",
+            "population_id": "mock-holdout-population",
+            "direction": "upper_bound",
+            "threshold": 10,
+            "unit": "product_unit"
+          }
+        ],
+        "required_check_ids": [
+          "fully_observed"
+        ],
+        "all_gates_required": true,
+        "minimum_observation_count": 1
+      }
+    },
+    {
+      "kind": "task_approval",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-task-approval",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "proposal_ref": {
+        "artifact_id": "mock-task-proposal",
+        "version": 1,
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
+        "provenance": "mock"
+      },
+      "decision": "approved",
+      "actor": "mock-user",
+      "decided_at": "2026-10-17T09:00:30Z",
+      "comment": "MOCK approval, not a real customer authorization."
+    },
+    {
+      "kind": "execution_contract",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-execution-contract",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "approval_ref": {
+        "artifact_id": "mock-task-approval",
+        "version": 1,
+        "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
+        "provenance": "mock"
+      },
+      "proposal_ref": {
+        "artifact_id": "mock-task-proposal",
+        "version": 1,
+        "sha256": "3204383fa44f1372a2908389cd01b77a1233dce0673d40230e80ffc9c7ba652b",
+        "provenance": "mock"
+      },
+      "source_refs": [
+        {
+          "artifact_id": "mock-sales",
+          "version": 1,
+          "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-dictionary",
+          "version": 1,
+          "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        }
+      ],
+      "allowed_actions": [
+        "inspect",
+        "clean",
+        "join",
+        "aggregate",
+        "eda",
+        "materialize_features",
+        "train",
+        "evaluate",
+        "freeze",
+        "calculate_restocking",
+        "draft_report",
+        "verify_outputs"
+      ],
+      "limits": {
+        "max_candidates": 2,
+        "max_llm_feature_definitions": 2,
+        "max_defect_rechecks": 1,
+        "max_parent_reviews": 2,
+        "max_execution_seconds": 300,
+        "max_stage_attempts": 2
+      },
+      "required_checkpoints": [
+        "approved_execution",
+        "preparation",
+        "initial_baseline_evaluation",
+        "llm_features",
+        "comparison_and_freeze",
+        "final_validation",
+        "recommendations",
+        "output_verification"
+      ],
+      "temporal_plan": {
+        "as_of_date": "2025-11-30",
+        "date_interpretation": "source_calendar_date",
+        "initial_development_start": "2022-01-01",
+        "initial_development_end": "2024-12-31",
+        "rolling_validation_start": "2025-01-01",
+        "development_target_end_cutoff": "2025-11-30",
+        "reserved_unseen_start": "2025-12-01",
+        "reserved_unseen_end": "2025-12-31",
+        "development_context_access": "development_artifacts_only",
+        "every_development_horizon_finishes_by_cutoff": true,
+        "score_fully_observed_horizons_only": true,
+        "freeze_before_holdout_access": true,
+        "forecast_as_of_date": "2025-11-30",
+        "december_must_not_change_saved_forecast": true
+      },
+      "target_policy": {
+        "status": "defined",
+        "policy_id": "mock-observed-fulfilled-quantity",
+        "quantity_unit": "product_unit",
+        "aggregation_grain": "product_store_day",
+        "target_measure": "MOCK hypothetical fulfilled transaction quantity on explicitly observed days; not unconstrained customer demand",
+        "included_order_statuses": [
+          "completed"
+        ],
+        "returns_treatment": "MOCK exclude flagged returns; not a customer fact",
+        "nonpositive_quantity_treatment": "MOCK quarantine pending source investigation",
+        "duplicate_treatment": "MOCK exact duplicate excess removed with source-row lineage",
+        "missing_date_treatment": "explicit_observation_mask",
+        "extract_completeness": "unverified",
+        "completeness_evidence_refs": [],
+        "policy_evidence_refs": [
+          {
+            "artifact_id": "mock-sales",
+            "version": 1,
+            "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-dictionary",
+            "version": 1,
+            "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+            "provenance": "mock"
+          }
+        ],
+        "zero_assumption_ref": null
+      },
+      "acceptance_rule": {
+        "rule_id": "mock-mae-cap",
+        "version": 1,
+        "declared_at": "2026-10-17T09:00:15Z",
+        "metric_gates": [
+          {
+            "metric_id": "mock-mae",
+            "aggregation": "macro_mean_over_mock_keys",
+            "population_id": "mock-holdout-population",
+            "direction": "upper_bound",
+            "threshold": 10,
+            "unit": "product_unit"
+          }
+        ],
+        "required_check_ids": [
+          "fully_observed"
+        ],
+        "all_gates_required": true,
+        "minimum_observation_count": 1
+      },
+      "source_assumptions": [
+        {
+          "assumption_id": "mock-policy-assumption",
+          "classification": "synthetic_assumption",
+          "statement": "MOCK target and operational numbers are hypothetical contract examples, not customer facts; no real-source daily completeness claim.",
+          "status": "confirmed",
+          "source_refs": [
+            {
+              "artifact_id": "mock-sales",
+              "version": 1,
+              "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-dictionary",
+              "version": 1,
+              "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-stock",
+              "version": 1,
+              "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-receipts",
+              "version": 1,
+              "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+              "provenance": "mock"
+            },
+            {
+              "artifact_id": "mock-policy",
+              "version": 1,
+              "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+              "provenance": "mock"
+            }
+          ]
+        }
+      ],
+      "quantity_unit": "product_unit",
+      "inbound_ledger_policy": "complete_synthetic_ledger_absence_is_zero",
+      "inbound_summary_policy": "reconcile_receipt_sum_never_double_count",
+      "synthetic_operational_source_refs": [
+        {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        }
+      ]
+    },
+    {
+      "kind": "stage_request",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-stage-request",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "execution_contract_ref": {
+        "artifact_id": "mock-execution-contract",
+        "version": 1,
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+        "provenance": "mock"
+      },
+      "stage": "approved_execution",
+      "attempt": 1,
+      "parent_authorization": {
+        "checkpoint": "approved_execution",
+        "decision": "proceed",
+        "actor": "mock-parent",
+        "decided_at": "2026-10-17T09:00:45Z",
+        "reason": "MOCK checkpoint decision for component interface demonstration only.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-task-approval",
+            "version": 1,
+            "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "released_input_refs": [
+        {
+          "artifact_id": "mock-sales",
+          "version": 1,
+          "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-dictionary",
+          "version": 1,
+          "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        }
+      ],
+      "remaining_limits": {
+        "max_candidates": 2,
+        "max_llm_feature_definitions": 2,
+        "max_defect_rechecks": 1,
+        "max_parent_reviews": 2,
+        "max_execution_seconds": 300,
+        "max_stage_attempts": 2
+      },
+      "issued_at": "2026-10-17T09:00:45Z",
+      "deadline": "2026-10-17T09:01:00Z",
+      "output_namespace": "artifacts/mock-retail-restocking/mock-run-1/approved-execution/attempt-1"
+    },
+    {
+      "kind": "stage_result",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-stage-result",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "proposal_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b"
+      },
+      "run_id": "mock-run-1",
+      "execution_contract_ref": {
+        "artifact_id": "mock-execution-contract",
+        "version": 1,
+        "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+        "provenance": "mock"
+      },
+      "stage_request_ref": {
+        "artifact_id": "mock-stage-request",
+        "version": 1,
+        "sha256": "ebbbdefab8700e9abfe6c13e6df75d11034213d7325bbfaa78d6bd428c2acc4e",
+        "provenance": "mock"
+      },
+      "stage": "approved_execution",
+      "attempt": 1,
+      "gaps": [],
+      "final_validation_result_ref": null,
+      "outcome": "completed",
+      "output_refs": [
+        {
+          "artifact_id": "mock-execution-contract",
+          "version": 1,
+          "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+          "provenance": "mock"
+        }
+      ],
+      "evidence_refs": [
+        {
+          "artifact_id": "mock-task-approval",
+          "version": 1,
+          "sha256": "1d69a49c873af19f0ed77df0691d76b7275edc2a1727c6d9e355561ca9672ce6",
+          "provenance": "mock"
+        }
+      ],
+      "parent_decision": {
+        "checkpoint": "approved_execution",
+        "decision": "proceed",
+        "actor": "mock-parent",
+        "decided_at": "2026-10-17T09:01:00Z",
+        "reason": "MOCK checkpoint decision for component interface demonstration only.",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-execution-contract",
+            "version": 1,
+            "sha256": "8903c173618ca0b31f4d5a2c6548401a8e06c58060e927add70a5c96f09349fb",
+            "provenance": "mock"
+          }
+        ]
+      },
+      "failure": null
+    }
+  ],
+  "mock_artifacts": [
+    {
+      "ref": {
+        "artifact_id": "mock-sales",
+        "version": 1,
+        "sha256": "3081860ab56cd7e341c6617280a9584279f616a55a4814e18c0eacbec3b1bd77",
+        "provenance": "mock"
+      },
+      "role": "source_transactions",
+      "content_marker": "MOCK supplied sales file; MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+      "availability": null
+    },
+    {
+      "ref": {
+        "artifact_id": "mock-dictionary",
+        "version": 1,
+        "sha256": "de0bea47eeb4b5fcb24b3d3e547bbd166c55014f71690be725d7e49df9e191dc",
+        "provenance": "mock"
+      },
+      "role": "source_dictionary",
+      "content_marker": "MOCK supplied dictionary file; MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+      "availability": null
+    },
+    {
+      "ref": {
+        "artifact_id": "mock-stock",
+        "version": 1,
+        "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+        "provenance": "mock"
+      },
+      "role": "source_usable_stock",
+      "content_marker": {
+        "notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+        "rows": [
+          {
+            "Product_ID": "MOCK-P001",
+            "Store_ID": "MOCK-STORE",
+            "Snapshot_Date": "2025-11-30",
+            "Usable_On_Hand_Qty": 5,
+            "On_Order_Qty": 5,
+            "Open_Order_Ledger_Complete": true,
+            "Quantity_Unit": "product_unit",
+            "Provenance": "mock"
+          }
+        ]
+      },
+      "availability": {
+        "artifact_ref": {
+          "artifact_id": "mock-stock",
+          "version": 1,
+          "sha256": "36716f0b684da3f4b1f7a08675b52082d81ed3c3b30313d3161769de5088bcff",
+          "provenance": "mock"
+        },
+        "permitted_use": "as_of_operations",
+        "earliest_event_date": "2025-11-30",
+        "latest_event_date": "2025-11-30",
+        "latest_information_available_date": "2025-11-30",
+        "event_time_column": "Order_Date",
+        "availability_time_column": "mock_available_date",
+        "contains_post_cutoff_rows": false
+      }
+    },
+    {
+      "ref": {
+        "artifact_id": "mock-receipts",
+        "version": 1,
+        "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+        "provenance": "mock"
+      },
+      "role": "source_inbound_ledger",
+      "content_marker": {
+        "notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+        "rows": [
+          {
+            "PO_Line_ID": "MOCK-PO-1",
+            "Product_ID": "MOCK-P001",
+            "Store_ID": "MOCK-STORE",
+            "Order_Date": "2025-11-30",
+            "Expected_Arrival_Date": "2025-12-07",
+            "Incoming_Qty": 5,
+            "Quantity_Unit": "product_unit",
+            "Provenance": "mock"
+          }
+        ]
+      },
+      "availability": {
+        "artifact_ref": {
+          "artifact_id": "mock-receipts",
+          "version": 1,
+          "sha256": "fc3d1a70aee1d52baf503ad66cb4005df98fa0b17a7bb44c0c4db99d73deab30",
+          "provenance": "mock"
+        },
+        "permitted_use": "as_of_operations",
+        "earliest_event_date": "2025-11-30",
+        "latest_event_date": "2025-11-30",
+        "latest_information_available_date": "2025-11-30",
+        "event_time_column": "Order_Date",
+        "availability_time_column": "mock_available_date",
+        "contains_post_cutoff_rows": false
+      }
+    },
+    {
+      "ref": {
+        "artifact_id": "mock-policy",
+        "version": 1,
+        "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+        "provenance": "mock"
+      },
+      "role": "source_ordering_policy",
+      "content_marker": {
+        "notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+        "rows": [
+          {
+            "Product_ID": "MOCK-P001",
+            "Store_ID": "MOCK-STORE",
+            "Effective_Date": "2025-11-30",
+            "Supplier_Lead_Time_Days": 7,
+            "Review_Period_Days": 7,
+            "Order_Multiple_Qty": 5,
+            "Minimum_Order_Qty": 5,
+            "Safety_Stock_Qty": 2,
+            "Quantity_Unit": "product_unit",
+            "Provenance": "mock"
+          }
+        ]
+      },
+      "availability": {
+        "artifact_ref": {
+          "artifact_id": "mock-policy",
+          "version": 1,
+          "sha256": "b40a8609278532e4fa84b56c87c38bc5ccdb5139f4053b9b74ebe160c60bb7c3",
+          "provenance": "mock"
+        },
+        "permitted_use": "as_of_operations",
+        "earliest_event_date": "2025-11-30",
+        "latest_event_date": "2025-11-30",
+        "latest_information_available_date": "2025-11-30",
+        "event_time_column": "Order_Date",
+        "availability_time_column": "mock_available_date",
+        "contains_post_cutoff_rows": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "record_kind": "scoped_saved_native_catalog_diagnostic",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "invocation_provenance": {
+    "basis": "User-reported completion of prescribed native catalog diagnostic; saved stdout/stderr files independently inspected.",
+    "reported_scope": "Targeted openai-curated-remote marketplace only",
+    "recorded_argv": null,
+    "exit_code": null,
+    "elapsed_seconds": null,
+    "limitation": "The saved files do not independently record the command argv, elapsed duration or exit status; reported invocation scope is not a captured request receipt."
+  },
+  "saved_result": {
+    "valid_json": true,
+    "root_fields": [
+      "available",
+      "installed"
+    ],
+    "installed_entry_count_within_reported_scope": 16,
+    "selected_data_entry": {
+      "pluginId": "data-analytics@openai-curated-remote",
+      "name": "data-analytics",
+      "marketplaceName": "openai-curated-remote",
+      "version": "1.0.11",
+      "installed": true,
+      "enabled": true,
+      "source": {
+        "source": "remote",
+        "id": "Plugin_fc9843a6fb34819195d6c7802398a8a7"
+      },
+      "installPolicy": "AVAILABLE",
+      "authPolicy": "ON_USE"
+    },
+    "stderr_bytes": 0
+  },
+  "verifier_decision": "The saved targeted catalog response contains the exact installed/enabled native Data version and remote identity, with no recorded stderr diagnostic in this observation.",
+  "offline_check_count": 6,
+  "offline_checks": {
+    "saved_stdout_valid_json_object": true,
+    "sixteen_installed_entries_in_saved_scope": true,
+    "exactly_one_data_entry": true,
+    "exact_installed_enabled_data_version": true,
+    "exact_remote_data_identity": true,
+    "saved_stderr_empty": true
+  },
+  "source_records": [
+    {
+      "path": "/private/tmp/dsc26-plugins.json",
+      "sha256": "fb428667c5e95e9123f6ad1d27f05a4609ce9277bc1501524cdc0b8b8918d66a",
+      "bytes": 6766
+    },
+    {
+      "path": "/private/tmp/dsc26-plugins.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "limitations": [
+    "This is one targeted-marketplace observation, not a complete all-marketplace catalog or guarantee of ongoing availability.",
+    "No persistent authentication/catalog error is evidenced by these saved outputs; plugin authentication or model execution was not exercised here.",
+    "This run does not establish the cause of the earlier catalog timeout, its recovery mechanism or a universal healthy-state claim.",
+    "No native permission controls, isolated model/Data turn or customer stage was run by this review; no isolation or full adapter acceptance follows."
+  ],
+  "omissions": "Only selected Data metadata and aggregate count retained; no other plugin entries, full catalog, credentials or secrets copied."
+}
