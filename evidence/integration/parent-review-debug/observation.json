@@ -1,0 +1,43 @@
+{
+  "evidence_mode": "mock_adapter_control_flow_debug",
+  "native_or_model_calls": 0,
+  "customer_analysis": false,
+  "shared_contract_changes": false,
+  "baseline_commit": "e02055407d20ec69b7199aef5fb2aba0824ad426",
+  "baseline_source_sha256": "baa1ed1e8b07de590dd1413029fc0decab2038cc239355376a6dc326ed9da50e",
+  "fixed_source_sha256": "7f00492017dcb2d57382f71871f5b30e3e3c333daaefee1419e5d08c892d0e18",
+  "baseline": {
+    "schema_valid_preparation_rejected": "worker cannot author a parent decision",
+    "forged_nested_prior_authorization_published": true
+  },
+  "fixed": {
+    "schema_valid_preparation_accepted_after_trusted_review": true,
+    "forged_nested_prior_authorization_rejected_without_publication": true
+  },
+  "pdb_boundary_observations": [
+    {
+      "stage": "preparation",
+      "checkpoint_paths": [
+        "/parent_decision"
+      ],
+      "prior_authorization_paths": []
+    },
+    {
+      "stage": "preparation",
+      "checkpoint_paths": [
+        "/parent_decision"
+      ],
+      "prior_authorization_paths": [],
+      "exact_receipt_matches": true,
+      "candidate_sha256": "a345e49303404ce4f9ae7d8968648f95b5bef807397829202b7068c7d8a1f762"
+    },
+    {
+      "stage": "final_validation",
+      "checkpoint_paths": [],
+      "prior_authorization_paths": [
+        "/defect_rechecks/0/parent_authorization"
+      ]
+    }
+  ],
+  "limitations": "MOCK component packets only. Real Codex/Data invocation evidence remains separate; this does not implement DSC-10 parent policy."
+}
