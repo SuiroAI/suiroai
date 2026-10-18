@@ -1,0 +1,33 @@
+{
+  "record_kind": "scoped_engineering_observation_not_customer_stage",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "observed": {
+    "status": "blocked_or_incomplete",
+    "blocker": "Effective native filesystem/network profile differs",
+    "profile": "dsc26-synthetic-7da50e3c918f7646",
+    "model_turn_requested": false,
+    "deterministic_native_controls_passed": false,
+    "data_turn_artifacts_verified": false,
+    "protected_sources_unchanged": true
+  },
+  "evidence_limitations": [
+    "The original projected config log omitted the selected filesystem/network object; the exact mismatched fields cannot be reconstructed.",
+    "No native analytical turn or deterministic permission check was executed."
+  ],
+  "source_supported_hypothesis": {
+    "claim": "Absent FilesystemPermissionsToml.glob_scan_max_depth can serialize as null; exact raw dict equality then rejects otherwise identical access entries.",
+    "observed_in_original_run": false,
+    "references": [
+      "https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/config/src/permissions_toml.rs",
+      "https://github.com/openai/codex/blob/rust-v0.163.0/codex-rs/app-server/src/config_manager_service.rs"
+    ]
+  },
+  "permitted_fix": "Normalize only absent/null glob_scan_max_depth metadata; preserve exact filesystem grants and disabled networking, and retain a selected-profile-only expected/observed comparison.",
+  "raw_evidence": {
+    "path": "/private/tmp/dsc26-native-isolation-o9lzk71r/evidence/isolation-evidence.json",
+    "sha256": "593c529c6232d449f43559e6935705a43a23bf8ace551194b5dbbe6cb38df2d7"
+  },
+  "omissions": "No unrelated plugin inventory, complete config, credentials, skill contents or reasoning copied."
+}

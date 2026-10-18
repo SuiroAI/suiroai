@@ -1,0 +1,112 @@
+{
+  "record_kind": "reviewed_actual_engineering_failure_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "native_identity": {
+    "mode": "engineering",
+    "thread_id": "01a14b85-0a0d-7f03-b653-031de7152136",
+    "turn_id": "01a14b85-0a66-78f2-a88f-89d6cdac3247",
+    "host_user_agent": "suiroai_dsc26_native/0.163.0 (Mac OS 26.5.2; arm64) ghostty/1.3.1 (suiroai_dsc26_native; 0.1.0)",
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "plugin_id": "data-analytics@openai-curated-remote",
+    "remote_plugin_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11",
+    "installed": true,
+    "enabled": true,
+    "attachment": {
+      "type": "mention",
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote"
+    },
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+    "effective_sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": false,
+      "excludeSlashTmp": false
+    }
+  },
+  "native_turn_terminal": {
+    "id": "01a14b85-0a66-78f2-a88f-89d6cdac3247",
+    "rootTurnId": "01a14b85-0a66-78f2-a88f-89d6cdac3247",
+    "status": "completed",
+    "error": null,
+    "startedAt": 1792268372,
+    "completedAt": 1792268391,
+    "durationMs": 18432
+  },
+  "original_adapter_result": {
+    "outcome": "completed",
+    "error_code": null,
+    "message": null,
+    "terminal_status": "completed"
+  },
+  "actual_command": {
+    "id": "exec-c838dba9-c532-41b3-9018-c647228fd28f",
+    "command": "/bin/zsh -c \"printf '%s\\\\n' 'def broken(:' > intentional_failure.py\npython3 intentional_failure.py\"",
+    "cwd": "/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/synthetic-stage",
+    "status": "failed",
+    "exitCode": 1,
+    "durationMs": 41,
+    "aggregatedOutput": "  File \"/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/synthetic-stage/intentional_failure.py\", line 1\n    def broken(:\n               ^\nSyntaxError: invalid syntax\n"
+  },
+  "script": {
+    "retained_path": "intentional_failure.py",
+    "original_path": "/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/synthetic-stage/intentional_failure.py",
+    "bytes": 13,
+    "sha256": "e5c39b5d9e483c96898f2970978fee4d8e5a3814e685d9ab37365a5aa333b5ad",
+    "independent_compile": {
+      "exception": "SyntaxError",
+      "message": "invalid syntax",
+      "line": 1
+    }
+  },
+  "checks": {
+    "streamed_and_persisted_failed_item_exact": true,
+    "native_thread_and_turn_match": true,
+    "actual_exit_one_and_SyntaxError": true,
+    "independent_invalid_compile": true,
+    "original_adapter_misclassified_completed": true
+  },
+  "review": {
+    "decision": "actual_invalid_code_execution_failure_demonstrated; original_adapter_classification_defect_preserved",
+    "independent_classification": {
+      "outcome": "execution_failed",
+      "error_code": "invalid_code"
+    },
+    "classification_basis": "The actual executed compound printf/newline/python command failed with exit 1 and SyntaxError, corroborated by the retained script bytes.",
+    "patched_adapter_status": "Offline replay of the corrected classifier recognizes the original real failed command; corrected native return has not been rerun.",
+    "native_turn_completion_is_not_analytical_success": true
+  },
+  "raw_evidence_references": [
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/evidence/native-run.json",
+      "sha256": "157f1ccbefe9d0a1ede1be86aa46ebbeab6c5a48712d06265a4ebd1eab0dd88f",
+      "bytes": 201679
+    },
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/evidence/native-rpc.jsonl",
+      "sha256": "9ce0a536503e74696d9d37fd30300d43ef6dc908bb4e260c4c7c6388e0bf32b3",
+      "bytes": 437780
+    }
+  ],
+  "offline_replay_of_real_saved_evidence": {
+    "new_model_call": false,
+    "function": "suiroai.integration.native._observed_invalid_code",
+    "source_commit": "ef8fcdbff36646ce83f345c6db4b0f1d7f9920a1",
+    "source_path": "src/suiroai/integration/native.py",
+    "source_sha256": "cc3b1ccc28ae1eaa97de1e05e4d5dd3f2267f31d003405df98f5b6a889661056",
+    "input_record_reference": {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/invalid_code/evidence/native-run.json",
+      "sha256": "157f1ccbefe9d0a1ede1be86aa46ebbeab6c5a48712d06265a4ebd1eab0dd88f",
+      "bytes": 201679
+    },
+    "observed_return_command_id": "exec-c838dba9-c532-41b3-9018-c647228fd28f",
+    "expected_command_id": "exec-c838dba9-c532-41b3-9018-c647228fd28f",
+    "passed": true,
+    "limitation": "Offline replay on the original real command/history evidence. Original adapter return remains completed/error_code null; no corrected live model turn or NativeRun return is claimed."
+  }
+}

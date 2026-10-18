@@ -1,0 +1,62 @@
+{
+  "record_kind": "engineering_discovery_observation_only",
+  "shared_contract_instance": false,
+  "observed_at_utc": "2026-10-17T18:32:23.512810+00:00",
+  "host": {
+    "executable": "/opt/homebrew/bin/codex",
+    "reported_version": "0.163.0",
+    "interface_attempted": "app-server stdio",
+    "current_task_id": "01a14ad0-60c2-7c43-bdfa-3ce602d3794e"
+  },
+  "plugin": {
+    "name": "data-analytics",
+    "display_name": "Data",
+    "version": "1.0.11",
+    "developer": "OpenAI",
+    "manifest_has_execution_mcp_mapping": false,
+    "discovered_by_executing_appserver": false
+  },
+  "files": [
+    {
+      "local_reference": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/.codex-plugin/plugin.json",
+      "sha256": "100ee5a9e1387d81276cb1fa40e7e4ebda94f0750cb99465545c540da16d43c4",
+      "bytes": 10859
+    },
+    {
+      "local_reference": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+      "sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "bytes": 66898
+    },
+    {
+      "local_reference": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md",
+      "sha256": "91a1a7f03544d4136544a60ef98e750ed694ab85768815861bbc7c4eec08a987",
+      "bytes": 14433
+    }
+  ],
+  "scope": {
+    "engineering_probe": true,
+    "customer_execution": false,
+    "customer_data_read": false,
+    "task_reference": "DSC-26 supported-interface discovery",
+    "approved_customer_task": null,
+    "proposal_version": null,
+    "approval_version": null,
+    "input_versions": [],
+    "assumption_version": null,
+    "reason_customer_bindings_absent": "No customer stage was invoked; discovery only."
+  },
+  "result": {
+    "native_handshake_completed": false,
+    "analytical_execution_completed": false,
+    "artifact_retrieval_from_analytical_turn": false,
+    "integration_acceptance": "blocked",
+    "blocker": "App-server exits before initialization in the current managed environment; no Data execution capability can be verified."
+  },
+  "git": {
+    "root": "/Users/ceverson/Development/SuiroAI/suiroai",
+    "worktree": "/private/tmp/suiroai-dsc26",
+    "branch": "codex/dsc-26-capability",
+    "base": "7e1dbb531a20f0ad4e4f82ec5764177e87550b3c",
+    "remote": null
+  }
+}

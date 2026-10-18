@@ -1,0 +1,83 @@
+{
+  "record_kind": "reviewed_actual_engineering_failure_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "native_identity": {
+    "mode": "engineering",
+    "thread_id": "01a14b85-56a4-7be0-a71d-1bae0a1b0a1e",
+    "turn_id": "01a14b85-58cb-77c3-8316-3afb826368e3",
+    "host_user_agent": "suiroai_dsc26_native/0.163.0 (Mac OS 26.5.2; arm64) ghostty/1.3.1 (suiroai_dsc26_native; 0.1.0)",
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "plugin_id": "data-analytics@openai-curated-remote",
+    "remote_plugin_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11",
+    "installed": true,
+    "enabled": true,
+    "attachment": {
+      "type": "mention",
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote"
+    },
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+    "effective_sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": false,
+      "excludeSlashTmp": false
+    }
+  },
+  "original_adapter_result": {
+    "outcome": "execution_failed",
+    "error_code": "cancelled",
+    "message": "Parent cancelled the native operation",
+    "terminal_status": "interrupted"
+  },
+  "actual_interrupt_request": {
+    "id": 5,
+    "method": "turn/interrupt",
+    "params": {
+      "threadId": "01a14b85-56a4-7be0-a71d-1bae0a1b0a1e",
+      "turnId": "01a14b85-58cb-77c3-8316-3afb826368e3"
+    }
+  },
+  "actual_interrupt_acknowledgment": {
+    "id": 5,
+    "result": {}
+  },
+  "native_turn_terminal": {
+    "id": "01a14b85-58cb-77c3-8316-3afb826368e3",
+    "rootTurnId": "01a14b85-58cb-77c3-8316-3afb826368e3",
+    "status": "interrupted",
+    "error": null,
+    "startedAt": 1792268392,
+    "completedAt": 1792268392,
+    "durationMs": 183
+  },
+  "completed_command_events": 0,
+  "checks": {
+    "interrupt_targets_exact_thread_turn": true,
+    "native_interrupt_acknowledged": true,
+    "matching_interrupted_terminal_observed": true,
+    "original_adapter_cancelled_classification_matches": true,
+    "no_analytical_command_completed": true
+  },
+  "review": {
+    "decision": "actual_native_turn_cancellation_demonstrated",
+    "limitation": "Interruption occurred 183 ms after turn start, before any analytical command event. This does not demonstrate termination of an already running Python process."
+  },
+  "raw_evidence_references": [
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/cancelled/evidence/native-run.json",
+      "sha256": "c61c3f00f4d598e71dc5e677612e374f509dd818b474083b63cdb3a48c36e6a5",
+      "bytes": 5932
+    },
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/cancelled/evidence/native-rpc.jsonl",
+      "sha256": "ed96d1e60c2e089dfcc1f823eb1884dafb6c88e5ee851980f0e930bb60159957",
+      "bytes": 80973
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "probe_kind": "engineering_capability_discovery",
+  "customer_analysis": false,
+  "utc": "2026-10-17T18:27:51.918386+00:00",
+  "cli_version": "0.163.0",
+  "configuration_override": {
+    "sqlite_home": "/private/tmp/dsc26-host-state"
+  },
+  "completed_rpc": false,
+  "records": [
+    {
+      "direction": "request",
+      "message": {
+        "id": 1,
+        "method": "initialize",
+        "params": {
+          "clientInfo": {
+            "name": "dsc26_engineering_probe",
+            "title": "DSC-26 engineering capability probe",
+            "version": "0.1.0"
+          }
+        }
+      }
+    },
+    {
+      "direction": "stderr",
+      "message": "WARNING: proceeding, even though we could not create PATH aliases: Operation not permitted (os error 1)"
+    },
+    {
+      "direction": "stderr",
+      "message": "Error: Operation not permitted (os error 1)"
+    }
+  ],
+  "process_exit": 1,
+  "analytical_invocation": false
+}

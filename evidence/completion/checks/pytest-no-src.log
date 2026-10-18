@@ -1,0 +1,380 @@
+
+==================================== ERRORS ====================================
+______________ ERROR collecting tests/contracts/test_contract.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/contracts/test_contract.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/contracts/test_contract.py:13: in <module>
+    from suiroai.contracts.validation import digest, input_digest, proposal_digest, record_ref, validate_bundle, validate_record, walk
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/intake/test_conversation.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/intake/test_conversation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/intake/test_conversation.py:14: in <module>
+    from suiroai.contracts import record_ref, validate_handoff
+E   ModuleNotFoundError: No module named 'suiroai'
+____________ ERROR collecting tests/intake/test_langchain_roles.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/intake/test_langchain_roles.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/intake/test_langchain_roles.py:12: in <module>
+    from suiroai.intake import (
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/integration/test_adapter.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_adapter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_adapter.py:18: in <module>
+    from suiroai.contracts import record_ref, validate_handoff, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+_______ ERROR collecting tests/integration/test_adapter_parent_review.py _______
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_adapter_parent_review.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_adapter_parent_review.py:17: in <module>
+    from suiroai.contracts import record_ref, validate_handoff, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/integration/test_artifacts.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_artifacts.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_artifacts.py:10: in <module>
+    from suiroai.contracts import digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+__________ ERROR collecting tests/integration/test_isolation_probe.py __________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_isolation_probe.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_isolation_probe.py:19: in <module>
+    from suiroai.integration.native import _Stop, _Transport
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/integration/test_native.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_native.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_native.py:16: in <module>
+    from suiroai.integration.native import DataPluginSpec, NativeHost, _Stop, _Transport
+E   ModuleNotFoundError: No module named 'suiroai'
+__________ ERROR collecting tests/integration/test_native_profile.py ___________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/integration/test_native_profile.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_native_profile.py:14: in <module>
+    from suiroai.integration import native_profile as policy
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/modeling/test_core_models.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_core_models.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_core_models.py:5: in <module>
+    from suiroai.modeling.core import Example, Prediction, Window, ModelingError
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/modeling/test_evaluation.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_evaluation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_evaluation.py:7: in <module>
+    from suiroai.modeling.core import CUTOFF, Example, ModelingError, Window
+E   ModuleNotFoundError: No module named 'suiroai'
+___________ ERROR collecting tests/modeling/test_feature_records.py ____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_feature_records.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_feature_records.py:13: in <module>
+    from suiroai.contracts import digest, record_ref, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+________________ ERROR collecting tests/modeling/test_frozen.py ________________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_frozen.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_frozen.py:7: in <module>
+    from suiroai.integration.artifacts import ArtifactError, ArtifactStore
+E   ModuleNotFoundError: No module named 'suiroai'
+__________ ERROR collecting tests/modeling/test_inference_adapters.py __________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_inference_adapters.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_inference_adapters.py:8: in <module>
+    from suiroai.contracts import record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/modeling/test_llm_features.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_llm_features.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_llm_features.py:9: in <module>
+    from suiroai.contracts import digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+_________ ERROR collecting tests/modeling/test_preparation_consumer.py _________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_preparation_consumer.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_preparation_consumer.py:14: in <module>
+    from suiroai.integration.artifacts import ArtifactStore
+E   ModuleNotFoundError: No module named 'suiroai'
+_______________ ERROR collecting tests/modeling/test_prepared.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_prepared.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_prepared.py:6: in <module>
+    from suiroai.modeling.core import Window, ModelingError
+E   ModuleNotFoundError: No module named 'suiroai'
+_______________ ERROR collecting tests/modeling/test_records.py ________________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/modeling/test_records.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/modeling/test_records.py:14: in <module>
+    from suiroai.contracts import digest, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/parent/test_adversarial.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/parent/test_adversarial.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/parent/test_adversarial.py:6: in <module>
+    import test_workflow as fixtures
+tests/parent/test_workflow.py:14: in <module>
+    from suiroai.contracts import digest, input_digest, proposal_digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/parent/test_frozen_release.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/parent/test_frozen_release.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/parent/test_frozen_release.py:6: in <module>
+    import test_workflow as fixtures
+tests/parent/test_workflow.py:14: in <module>
+    from suiroai.contracts import digest, input_digest, proposal_digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+___________ ERROR collecting tests/parent/test_recovery_delivery.py ____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/parent/test_recovery_delivery.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/parent/test_recovery_delivery.py:7: in <module>
+    import test_workflow as fixtures
+tests/parent/test_workflow.py:14: in <module>
+    from suiroai.contracts import digest, input_digest, proposal_digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+________________ ERROR collecting tests/parent/test_workflow.py ________________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/parent/test_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/parent/test_workflow.py:14: in <module>
+    from suiroai.contracts import digest, input_digest, proposal_digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/preparation/test_features.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/preparation/test_features.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/preparation/test_features.py:5: in <module>
+    from mock_data import packet, sale
+tests/preparation/mock_data.py:6: in <module>
+    from suiroai.contracts import record_ref, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/preparation/test_result.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/preparation/test_result.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/preparation/test_result.py:10: in <module>
+    from mock_data import ROOT, artifact, packet, sale
+tests/preparation/mock_data.py:6: in <module>
+    from suiroai.contracts import record_ref, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/preparation/test_worker.py _______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/preparation/test_worker.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/preparation/test_worker.py:5: in <module>
+    from mock_data import artifact, authority, operations, packet, sale
+tests/preparation/mock_data.py:6: in <module>
+    from suiroai.contracts import record_ref, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+___________ ERROR collecting tests/replenishment/test_calculation.py ___________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/replenishment/test_calculation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/replenishment/test_calculation.py:12: in <module>
+    from suiroai.replenishment.calculation import _calculate_key, _csv, STOCK_FIELDS
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/replenishment/test_handoff.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/replenishment/test_handoff.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/replenishment/test_handoff.py:10: in <module>
+    from suiroai.contracts.validation import digest, input_digest, proposal_digest, record_ref, walk
+E   ModuleNotFoundError: No module named 'suiroai'
+______ ERROR collecting tests/replenishment/test_independent_verifier.py _______
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/replenishment/test_independent_verifier.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/replenishment/test_independent_verifier.py:7: in <module>
+    from suiroai.verification.arithmetic import reconcile_orders
+E   ModuleNotFoundError: No module named 'suiroai'
+_______________ ERROR collecting tests/reporting/test_drafts.py ________________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/reporting/test_drafts.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/reporting/test_drafts.py:7: in <module>
+    from suiroai.contracts.validation import input_digest, proposal_digest, record_ref, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+____________ ERROR collecting tests/verification/test_arithmetic.py ____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/verification/test_arithmetic.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/verification/test_arithmetic.py:7: in <module>
+    from suiroai.verification.arithmetic import reconcile_orders
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/verification/test_claims.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/verification/test_claims.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/verification/test_claims.py:6: in <module>
+    from suiroai.verification.claims import check_claims
+E   ModuleNotFoundError: No module named 'suiroai'
+______________ ERROR collecting tests/verification/test_engine.py ______________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/verification/test_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/verification/test_engine.py:19: in <module>
+    from suiroai.contracts import record_ref, validate_handoff, validate_record
+E   ModuleNotFoundError: No module named 'suiroai'
+_____________ ERROR collecting tests/verification/test_guidance.py _____________
+ImportError while importing test module '/private/tmp/suiroai-dsc9/tests/verification/test_guidance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/verification/test_guidance.py:9: in <module>
+    from suiroai.contracts import input_digest, proposal_digest, record_ref
+E   ModuleNotFoundError: No module named 'suiroai'
+=========================== short test summary info ============================
+ERROR tests/contracts/test_contract.py
+ERROR tests/intake/test_conversation.py
+ERROR tests/intake/test_langchain_roles.py
+ERROR tests/integration/test_adapter.py
+ERROR tests/integration/test_adapter_parent_review.py
+ERROR tests/integration/test_artifacts.py
+ERROR tests/integration/test_isolation_probe.py
+ERROR tests/integration/test_native.py
+ERROR tests/integration/test_native_profile.py
+ERROR tests/modeling/test_core_models.py
+ERROR tests/modeling/test_evaluation.py
+ERROR tests/modeling/test_feature_records.py
+ERROR tests/modeling/test_frozen.py
+ERROR tests/modeling/test_inference_adapters.py
+ERROR tests/modeling/test_llm_features.py
+ERROR tests/modeling/test_preparation_consumer.py
+ERROR tests/modeling/test_prepared.py
+ERROR tests/modeling/test_records.py
+ERROR tests/parent/test_adversarial.py
+ERROR tests/parent/test_frozen_release.py
+ERROR tests/parent/test_recovery_delivery.py
+ERROR tests/parent/test_workflow.py
+ERROR tests/preparation/test_features.py
+ERROR tests/preparation/test_result.py
+ERROR tests/preparation/test_worker.py
+ERROR tests/replenishment/test_calculation.py
+ERROR tests/replenishment/test_handoff.py
+ERROR tests/replenishment/test_independent_verifier.py
+ERROR tests/reporting/test_drafts.py
+ERROR tests/verification/test_arithmetic.py
+ERROR tests/verification/test_claims.py
+ERROR tests/verification/test_engine.py
+ERROR tests/verification/test_guidance.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 33 errors during collection !!!!!!!!!!!!!!!!!!!
+33 errors in 0.99s

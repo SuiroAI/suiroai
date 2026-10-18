@@ -1,0 +1,40 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "cancelled.json",
+      "sha256": "b56e5bd4c5d483cf55282835b92eaf689fda45ba26139090e936f49b61742b9e",
+      "bytes": 2918
+    },
+    {
+      "path": "declared_zero_time.json",
+      "sha256": "5f255ec168d1a66f76571f112df981523606e7822635f8d0347a8766c9baf265",
+      "bytes": 1111
+    },
+    {
+      "path": "intentional_failure.py",
+      "sha256": "e5c39b5d9e483c96898f2970978fee4d8e5a3814e685d9ab37365a5aa333b5ad",
+      "bytes": 13
+    },
+    {
+      "path": "invalid_code.json",
+      "sha256": "0052cae3363a2c27b85ad6678b50f37ea9d15cca01739a99c56f4c0bf2b651ea",
+      "bytes": 4867
+    },
+    {
+      "path": "review.json",
+      "sha256": "47ca24f5be08bc21310361b09465b032c01ccfeaf2f0c681376255c266d91f66",
+      "bytes": 2051
+    },
+    {
+      "path": "timeout.json",
+      "sha256": "92e48724936c54c7e0b10b38c801f1d809728feb58e4d066708c481865dcb66a",
+      "bytes": 4018
+    },
+    {
+      "path": "waiting_probe.py",
+      "sha256": "4449da139e98391e7e710283e678f08eed8d714223a7a629597a7facf4655080",
+      "bytes": 127
+    }
+  ]
+}
