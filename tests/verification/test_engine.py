@@ -791,3 +791,78 @@ def test_nonmock_parser_rejects_unbound_stale_inconsistent_or_mislabeled_sources
     verifier, readers, draft, execution, records, _ = engineering_source_parser_sample(tmp_path, change)
     with pytest.raises(VerificationError, match=message):
         verifier._read_sources(readers, draft, execution, records)
+
+
+def test_delivery_grant_cannot_publish_again_after_successful_readback(tmp_path):
+    _, store, verifier, _, _, ref = approved(tmp_path)
+    sent = []
+    def publish(data):
+        sent.append(data)
+        return {"reference": "mock-once-only-surface", "content": data}
+    receipt = verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    original_evidence = store.read_record(receipt["delivery_evidence_ref"])
+    with pytest.raises(VerificationError, match="delivery already attempted"):
+        verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    assert len(sent) == 1
+    assert store.read_record(receipt["delivery_evidence_ref"]) == original_evidence
+
+
+def test_delivery_grant_cannot_publish_again_after_mismatched_readback(tmp_path):
+    _, store, verifier, _, _, ref = approved(tmp_path)
+    sent = []
+    def publish(data):
+        sent.append(data)
+        return {"reference": "mock-once-only-surface", "content": b"wrong readback"}
+    with pytest.raises(VerificationError, match="readback differs") as first:
+        verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    mismatch = store.read_record(first.value.evidence_ref)
+    assert mismatch["verifier_decision"] == "rejected"
+    with pytest.raises(VerificationError, match="delivery already attempted"):
+        verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    assert len(sent) == 1
+    assert store.read_record(first.value.evidence_ref) == mismatch
+
+
+def test_delivery_grant_cannot_retry_after_publisher_crash(tmp_path):
+    _, _, verifier, _, _, ref = approved(tmp_path)
+    sent = []
+    def publish(data):
+        sent.append(data)
+        raise RuntimeError("Mock transport crashed after potentially publishing")
+    with pytest.raises(RuntimeError, match="Mock transport crashed"):
+        verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    with pytest.raises(VerificationError, match="delivery already attempted"):
+        verifier.deliver(ref, authorize=lambda *args: True, publish=publish)
+    assert len(sent) == 1
+
+
+def test_concurrent_deliveries_reserve_same_approved_grant_only_once(tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier, Lock
+
+    _, store, verifier, _, _, ref = approved(tmp_path)
+    before_reservation = Barrier(2)
+    publisher_lock = Lock()
+    sent = []
+    def authorize(value):
+        assert record_ref(value) == ref
+        before_reservation.wait(timeout=10)
+        return True
+    def publish(data):
+        with publisher_lock:
+            sent.append(data)
+        return {"reference": "mock-concurrent-output-surface", "content": data}
+    def attempt():
+        try:
+            return verifier.deliver(ref, authorize=authorize, publish=publish)
+        except VerificationError as exc:
+            return exc
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [executor.submit(attempt) for _ in range(2)]
+        outcomes = [future.result(timeout=20) for future in futures]
+    delivered = [value for value in outcomes if isinstance(value, dict)]
+    rejected = [value for value in outcomes if isinstance(value, VerificationError)]
+    assert len(sent) == len(delivered) == len(rejected) == 1
+    assert "delivery already attempted" in str(rejected[0])
+    assert store.read_bytes(delivered[0]["delivered_artifact_ref"]) == sent[0]
+    assert store.read_record(delivered[0]["delivery_evidence_ref"])["verifier_decision"] == "accepted"
