@@ -2,7 +2,7 @@
 
 The reviewed native engineering run demonstrates Codex CLI `0.163.0`, Data `1.0.11`, real resource reads, generated CSV-derived code, actual execution and retrieved artifacts under the named release/output permission profile. The same model tool path executed a trusted immutable control script: unreleased direct/symlink reads, protected-input/outside-output writes and a live loopback connection each produced `PermissionError`. The independent review records 26 checks. [Actual isolated invocation](../../evidence/integration/native-isolated-stage-2026-10-17/review.json)
 
-The transport owns no analytical stages, parent decisions, retries or report logic. Native completion is a transport outcome; the adapter and parent still validate the actual typed result and evidence. Engineering success does not grant DSC-25 approval or DSC-10 permission for a customer task.
+The transport owns no analytical stages, parent decisions, retries or report logic. Native completion is a transport outcome; the adapter and parent still validate the actual typed result and evidence. Schema-required parent values in worker component records remain private claims until the trusted parent adopts/verifies an exact candidate-bound receipt. Nested recheck authorizations require prior ledger authority; the adapter never grants retrospective permission. See [the callback boundary](ADAPTER.md). Engineering success does not grant DSC-25 approval or DSC-10 permission for a customer task.
 
 ## Enforced adapter boundary
 

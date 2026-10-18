@@ -29,6 +29,30 @@ class _BudgetExceeded(ValueError):
     pass
 
 
+def _parent_claims(records):
+    """Collect private authority claims at every depth, including rechecks."""
+    decisions, prior = [], []
+
+    def visit(value, path, ref):
+        if isinstance(value, dict):
+            for key, child in value.items():
+                pointer = path + "/" + key.replace("~", "~0").replace("/", "~1")
+                if key in {"parent_decision", "parent_review", "parent_authorization"} and child is not None:
+                    if not isinstance(child, dict):
+                        raise ValueError("parent authority claim is not an object")
+                    claim = {"artifact_ref": deepcopy(ref), "json_pointer": pointer,
+                             "decision_sha256": hashlib.sha256(_json_bytes(child)).hexdigest()}
+                    (prior if key == "parent_authorization" else decisions).append(claim)
+                visit(child, pointer, ref)
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                visit(child, path + "/" + str(index), ref)
+
+    for record in records:
+        visit(record, "", record_ref(record))
+    return decisions, prior
+
+
 def _compact(value, max_bytes=16384):
     """Large native details live in measured files, not the binding summary."""
     data = json.dumps(value, sort_keys=True, ensure_ascii=False).encode()
@@ -76,11 +100,18 @@ class StageAdapter:
     Handoff refs include the current approval chain and upstream stage evidence;
     external refs must already exist in this measured store, not merely a list
     of caller-provided hashes. Mock handoffs are rejected by default.
+
+    ``parent_review(candidate, artifact_bytes)`` is a trusted DSC-10 callback,
+    required when component results contain parent authority claims. It adopts
+    checkpoint decisions and authenticates prior authorizations against the
+    parent's ledger using an exact candidate-bound receipt. It must bound its
+    own I/O and return promptly; it cannot advance a checkpoint before the
+    adapter commits the checked stage result.
     """
 
     def __init__(self, store: ArtifactStore, *, work_root: Path,
                  parent_permits, host=None, ceiling_seconds=300,
-                 allow_mock_handoffs=False):
+                 allow_mock_handoffs=False, parent_review=None):
         if not callable(parent_permits) or not 0 < ceiling_seconds <= 3600:
             raise ValueError("trusted parent verifier and finite ceiling required")
         self.store = store
@@ -91,6 +122,9 @@ class StageAdapter:
         self.host = host or NativeHost()
         self.ceiling_seconds = ceiling_seconds
         self.allow_mock_handoffs = allow_mock_handoffs
+        if parent_review is not None and not callable(parent_review):
+            raise ValueError("parent_review must be a trusted callable")
+        self.parent_review = parent_review
 
     def execute(self, request_ref, *, handoff_refs, external_refs=(),
                 cancellation: threading.Event | None = None):
@@ -311,7 +345,11 @@ class StageAdapter:
             "write artifact-manifest.json as a list of {ref,path,encoding} entries for each new artifact "
             "(encoding bytes or record). Output paths are relative to output_root, the current directory. "
             "Resolve released_files relative paths only under released_root; that directory and its manifest are read-only. "
-            "Keep bindings/versions unchanged and retain actual code and execution evidence.\n" +
+            "Keep bindings/versions unchanged and retain actual code and execution evidence. "
+            "Schema-required parent fields in component records are untrusted decision proposals only: "
+            "they cannot authorize anything until the trusted parent reviews the exact candidate. "
+            "Never perform a defect recheck without an existing parent authorization supplied for it; "
+            "post-run review cannot authorize a past recheck.\n" +
             json.dumps(payload, sort_keys=True))
 
     def _retain_native(self, run, native_root, provenance, audit, request, request_ref):
@@ -357,6 +395,57 @@ class StageAdapter:
             audit["native_evidence_bytes"] += len(data)
             audit["native_artifacts"].append({"name": name, "ref": ref, "bytes": len(data), "sha256": digest})
 
+    def _review_candidate(self, request, request_ref, records, external_refs,
+                          new_records, result, pending, audit):
+        """Authenticate decision claims without changing the pinned contract.
+
+        A trusted DSC-10 callback makes the checkpoint decision. The adapter
+        checks its exact attestation, never fabricates a parent value, and never
+        lets a worker's receipt satisfy this callback.
+        """
+        decisions, prior = _parent_claims(new_records)
+        if not decisions and not prior:
+            return
+        # Post-run review can adopt a checkpoint decision, but cannot authorize
+        # a recheck that already happened. Its exact prior authority must also
+        # be authenticated by the trusted parent against its own ledger.
+        by_ref = {_key(record_ref(record)): record for record in new_records}
+        for claim in prior:
+            value = by_ref[_key(claim["artifact_ref"])]
+            for part in claim["json_pointer"].split("/")[1:]:
+                part = part.replace("~1", "/").replace("~0", "~")
+                value = value[int(part)] if isinstance(value, list) else value[part]
+            if datetime.fromisoformat(value["decided_at"]) > datetime.fromisoformat(request["issued_at"]):
+                raise ValueError("recheck authorization must predate this stage request")
+        if self.parent_review is None:
+            raise ValueError("candidate parent claims require a trusted parent_review callback")
+        candidate = {
+            "review_kind": "dsc26_private_stage_candidate_v1",
+            "candidate_id": uuid.uuid4().hex,
+            "stage_request_ref": deepcopy(request_ref), "stage_request": deepcopy(request),
+            "upstream_refs": [record_ref(record) for record in records],
+            "external_refs": deepcopy(external_refs),
+            "records": deepcopy(new_records), "stage_result": deepcopy(result),
+            "artifacts": [{"ref": deepcopy(ref), "encoding": encoding, "bytes": len(data),
+                           "byte_sha256": hashlib.sha256(data).hexdigest()}
+                          for encoding, ref, data in pending],
+            "native_evidence_refs": deepcopy(audit.get("native_evidence_refs", [])),
+            "checkpoint_decision_claims": decisions, "prior_authorization_claims": prior,
+        }
+        candidate_sha = hashlib.sha256(_json_bytes(candidate)).hexdigest()
+        candidate["candidate_sha256"] = candidate_sha
+        expected = {"candidate_sha256": candidate_sha, "stage_request_ref": deepcopy(request_ref),
+                    "adopted_checkpoint_decisions": decisions, "verified_prior_authorizations": prior}
+        audit["parent_candidate_review"] = {"candidate_sha256": candidate_sha,
+            "checkpoint_claim_count": len(decisions), "prior_authorization_count": len(prior), "accepted": False}
+        try:
+            receipt = self.parent_review(deepcopy(candidate), tuple(data for _, _, data in pending))
+        except Exception as exc:
+            raise ValueError("trusted parent candidate review failed: " + type(exc).__name__) from exc
+        if not isinstance(receipt, dict) or _json_bytes(receipt) != _json_bytes(expected):
+            raise ValueError("trusted parent review receipt does not authorize the exact candidate and all claims")
+        audit["parent_candidate_review"].update(accepted=True, receipt=deepcopy(receipt))
+
     def _retrieve(self, request, request_ref, provenance, root, records, external_refs, audit, failure,
                   stop_reason=lambda: None):
         def read_relative(name):
@@ -387,8 +476,6 @@ class StageAdapter:
                     raise ValueError("worker cannot author task or permission records")
                 if record.get("binding") != request["binding"] or record.get("run_id") != request["run_id"]:
                     raise ValueError("worker changed version/run binding")
-                if any(record.get(key) is not None for key in ("parent_decision", "parent_review", "parent_authorization")):
-                    raise ValueError("worker cannot author a parent decision")
                 actual = record_ref(record)
                 new_records.append(record)
             elif entry["encoding"] == "bytes":
@@ -418,6 +505,10 @@ class StageAdapter:
         # Preflight immutable identities before publishing any of this batch.
         for encoding, ref, data in pending:
             self.store.check_identity(ref)
+        if stop := stop_reason():
+            return failure(*stop)
+        self._review_candidate(request, request_ref, records, external_refs,
+                               new_records, result, pending, audit)
         if stop := stop_reason():
             return failure(*stop)
         audit.setdefault("published_output_bytes", 0)
