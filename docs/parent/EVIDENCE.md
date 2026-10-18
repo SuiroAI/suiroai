@@ -15,7 +15,7 @@ git diff --check
 
 | Suite | Actual result | Evidence limit |
 | --- | --- | --- |
-| Parent transition/permission/recovery/delivery | 44 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
+| Parent transition/permission/recovery/delivery | 45 tests passed | Real adapter and measured local artifact store, invented shared packets and mock host/reviewers; no native invocation. |
 | Unchanged shared contracts | 77 tests passed | Structural, reference and declared-semantic guards; no analytical execution. |
 | Existing integration component suite | 141 tests passed | Adapter/native protocol and isolation component regressions; no new customer or analytical acceptance inferred. |
 | Snapshot integrity | 7 of 7 hashes matched | Shared contracts/examples were not changed. |

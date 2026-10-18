@@ -380,6 +380,8 @@ class ParentWorkflow:
             raise GuardRejected("frozen selection cannot be replaced")
         if stage == "final_validation":
             final = self._one("final_validation_result", records)
+            if final["outcome"] == "pass" and any(check["status"] != "pass" for check in final["checks"]):
+                raise GuardRejected("passed final validation cannot advance with failed or unavailable checks")
             if self._one("evaluation_result")["frozen"] != self._frozen:
                 raise GuardRejected("frozen model/features/preprocessing/chronology changed")
             expected = "completed" if final["outcome"] == "pass" else "validation_failed"

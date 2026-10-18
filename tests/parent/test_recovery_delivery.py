@@ -233,6 +233,18 @@ class RecoveryDeliveryTests(unittest.TestCase):
         self.assertEqual(result["outcome"], "completed", result.get("failure"))
         self.assertEqual(self.parent.take_response()["kind"], "final_report")
 
+    def test_failed_additional_final_check_blocks_nominal_metric_pass(self):
+        self.to_final()
+        final = deepcopy(self.r("final_validation_result"))
+        extra = deepcopy(final["checks"][0])
+        extra.update(check_id="mock-safety-check", status="fail", actual="MOCK runtime safety check failed")
+        final["checks"].append(extra)
+        result, _ = self.stage(records=[final])
+        self.assertEqual(result["outcome"], "execution_failed")
+        self.assertEqual(self.parent.state, "failure_reporting")
+        with self.assertRaises(GuardRejected):
+            self.parent.take_response()
+
     def test_approved_actions_cannot_be_reduced_to_inspection(self):
         self.r("execution_contract")["allowed_actions"] = ["inspect"]
         with self.assertRaisesRegex(GuardRejected, "actions required"):
