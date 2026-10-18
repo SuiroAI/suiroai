@@ -248,14 +248,32 @@ class OutputVerifier:
             # artifacts, and never mistake a pending review for a terminal run.
             stages = [r for r in records if r["kind"] == "stage_result"]
             if report["outcome"] == "execution_failure":
-                matching = [s for s in stages if s["outcome"] == "execution_failed"
-                            and s["failure"] == report["failure"]
-                            and s["parent_decision"] is not None
-                            and s["parent_decision"]["checkpoint"] == s["stage"]
-                            and s["parent_decision"]["decision"] in {"stop", "confirmed_failure"}
-                            and report["parent_decision"]["checkpoint"] == s["stage"]
-                            and report["parent_decision"]["decision"] in {"stop", "confirmed_failure"}
-                            and record_ref(s) in report["parent_decision"]["evidence_refs"]]
+                def matches_terminal(stage):
+                    if stage["outcome"] != "execution_failed" or stage["parent_decision"] is None:
+                        return False
+                    failure, draft_failure = stage["failure"], report["failure"]
+                    stage_decision, draft_decision = stage["parent_decision"], report["parent_decision"]
+                    stage_ref = record_ref(stage)
+                    allowed_evidence = [stage_ref, *failure["evidence_refs"]]
+                    # DSC-29 cites the failed stage instead of copying its
+                    # internal log refs, and can reuse its authenticated parent
+                    # decision. Neither needs a new terminal review or a
+                    # circular decision reference to the stage containing it.
+                    same_facts = all(draft_failure.get(field) == failure.get(field)
+                                     for field in ("stage", "reason", "error_code"))
+                    scoped_evidence = (bool(draft_failure["evidence_refs"])
+                                       and all(ref in allowed_evidence for ref in draft_failure["evidence_refs"]))
+                    exact_stage_edge = (stage_ref in draft_failure["evidence_refs"]
+                                        or stage_ref in draft_decision["evidence_refs"])
+                    reviewed = (stage_decision["checkpoint"] == stage["stage"]
+                                and draft_decision["checkpoint"] == stage["stage"]
+                                and stage_decision["decision"] in {"stop", "confirmed_failure"}
+                                and draft_decision["decision"] in {"stop", "confirmed_failure"}
+                                and (draft_decision == stage_decision
+                                     or stage_ref in draft_decision["evidence_refs"]))
+                    return same_facts and scoped_evidence and exact_stage_edge and reviewed
+
+                matching = [stage for stage in stages if matches_terminal(stage)]
                 binding_checks.append(self._check("terminal-execution-evidence", bool(matching),
                     "failure exactly matches a parent-reviewed failed stage",
                     f"matching failed stages: {len(matching)}", refs))
