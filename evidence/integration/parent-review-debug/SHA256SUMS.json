@@ -1,0 +1,20 @@
+{
+  "evidence_mode": "mock_adapter_debug_file_integrity",
+  "files": [
+    {
+      "path": "reproduce.py",
+      "bytes": 6000,
+      "sha256": "2ac3b8f515755c206930be5fe71f601a7c62dcdcdb924ef3e2b54c2e22282187"
+    },
+    {
+      "path": "observation.json",
+      "bytes": 1508,
+      "sha256": "656f4f14ad4e9871107715c3dedf106ee5e9692b92ffae70b9ea5b6feebcdb42"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 1292,
+      "sha256": "991104c726c1f3047a8bc0a4c4483ffdd40a822d60d3b0b801b7376ed61bf2ae"
+    }
+  ]
+}
