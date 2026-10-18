@@ -1,0 +1,100 @@
+{
+  "record_kind": "actual_native_thread_and_disabled_inventory_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "thread_start_request": {
+    "id": 6,
+    "method": "thread/start",
+    "params": {
+      "cwd": "/private/tmp/dsc26-native-isolation-21l6k7je/output",
+      "runtimeWorkspaceRoots": [
+        "/private/tmp/dsc26-native-isolation-21l6k7je/output"
+      ],
+      "approvalPolicy": "never",
+      "permissions": "dsc26-synthetic-444c6f55f3300505"
+    }
+  },
+  "thread_start_response_projection": {
+    "thread_id": "01a14c16-7eb2-70a1-a4fb-cefbea253732",
+    "cliVersion": "0.163.0",
+    "activePermissionProfile": {
+      "id": "dsc26-synthetic-444c6f55f3300505",
+      "extends": null
+    },
+    "cwd": "/private/tmp/dsc26-native-isolation-21l6k7je/output",
+    "runtimeWorkspaceRoots": [
+      "/private/tmp/dsc26-native-isolation-21l6k7je/output"
+    ],
+    "approvalPolicy": "never",
+    "sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": true,
+      "excludeSlashTmp": true
+    },
+    "model": "gpt-6.1-sol",
+    "modelProvider": "openai"
+  },
+  "inventory_request": {
+    "id": 7,
+    "method": "mcpServerStatus/list",
+    "params": {
+      "threadId": "01a14c16-7eb2-70a1-a4fb-cefbea253732",
+      "detail": "full",
+      "limit": 100
+    }
+  },
+  "inventory_actual_response": {
+    "data": [
+      {
+        "name": "computer-use",
+        "runtimeStatus": "disabled",
+        "pluginId": null,
+        "httpOrigin": null,
+        "serverInfo": null,
+        "serverCapabilities": null,
+        "tools": {},
+        "toolsError": null,
+        "resources": [],
+        "resourceTemplates": [],
+        "authStatus": "unsupported"
+      },
+      {
+        "name": "node_repl",
+        "runtimeStatus": "disabled",
+        "pluginId": null,
+        "httpOrigin": null,
+        "serverInfo": null,
+        "serverCapabilities": null,
+        "tools": {},
+        "toolsError": null,
+        "resources": [],
+        "resourceTemplates": [],
+        "authStatus": "unsupported"
+      }
+    ],
+    "nextCursor": null
+  },
+  "original_probe_outcome": {
+    "status": "blocked_or_incomplete",
+    "blocker": "Thread MCP inventory is nonempty; model tool scope is not established",
+    "error_code": "unsupported_integration",
+    "deterministic_native_controls_passed": true,
+    "model_turn_requested": false,
+    "data_turn_artifacts_verified": false
+  },
+  "no_turn_start_in_actual_log": true,
+  "offline_gate_review": {
+    "kind": "offline_review_of_saved_real_rows_not_new_native_execution",
+    "rows_meet_proposed_complete_disabled_empty_predicate": true,
+    "predicate_source_at_review": {
+      "path": "/private/tmp/suiroai-dsc26/evidence/integration/probe_native_isolation.py",
+      "sha256": "29b879e5ab052896459581023c2023688f9c97f4d8fc06dfe7234bb00fd953aa",
+      "bytes": 39328
+    },
+    "meaning": "The saved rows are explicit disabled bookkeeping with complete empty capabilities and no errors. The original probe was not rerun and still ended blocked before turn/start."
+  },
+  "omissions": "Only actual empty disabled row metadata and selected thread/profile fields retained; no complete config, skill text, hidden reasoning, sentinel values or customer data."
+}
