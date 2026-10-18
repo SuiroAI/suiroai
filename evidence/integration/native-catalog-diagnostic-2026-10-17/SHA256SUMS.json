@@ -1,0 +1,10 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "observation.json",
+      "sha256": "d60bba30a08958e13c0c527eb71e7144159bd231293f081dba75a61373f39f36",
+      "bytes": 2920
+    }
+  ]
+}
