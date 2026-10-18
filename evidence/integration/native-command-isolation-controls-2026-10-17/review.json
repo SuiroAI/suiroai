@@ -1,0 +1,51 @@
+{
+  "record_kind": "independently_reviewed_native_command_controls",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "decision": "Native deterministic command controls passed for this exact requested profile; original probe stopped at its inventory gate before model turn. Full Data/model isolation acceptance remains incomplete.",
+  "offline_fidelity_check_count": 15,
+  "offline_fidelity_checks": {
+    "control_exact_reviewed_harness_code": true,
+    "control_sha_matches_report": true,
+    "native_control_exit0_response_matches_report": true,
+    "all_five_actual_permission_errors": true,
+    "positive_artifact_matches_actual_stdout_and_expected": true,
+    "outside_write_absent": true,
+    "thread_selected_profile_ack_matches_request": true,
+    "thread_cwd_roots_approval_ack_exact": true,
+    "thread_inventory_bound_no_model_turn": true,
+    "inventory_exact_disabled_empty_rows_and_terminal_page": true,
+    "input_hash_same_actual_before_after": true,
+    "sentinel_hash_same_actual_before_after": true,
+    "allowed_image_hash_same_actual_before_after": true,
+    "denied_image_hash_same_actual_before_after": true,
+    "native_cat_actual_denial_and_profile": true
+  },
+  "review_method": "Read saved actual RPC/report records and existing files; recompute hashes and exact control-code equality without executing the control code, starting a native host or invoking a model.",
+  "source_records": [
+    {
+      "path": "/private/tmp/dsc26-native-isolation-21l6k7je/evidence/isolation-evidence.json",
+      "sha256": "9c63501100d588b5311ef684e420daa5c335f66dec0bf2b799d11d232b31ceff",
+      "bytes": 11416
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-21l6k7je/evidence/native-rpc.jsonl",
+      "sha256": "3f7893b8f2c3f0ba713e43a25a489b1167f6894d07eb322a893401ccdce58c41",
+      "bytes": 12236
+    }
+  ],
+  "references": {
+    "actual_controls": "command-controls.json",
+    "actual_thread_inventory": "thread-inventory.json",
+    "exact_request_code": "control_code.py",
+    "actual_positive_file": "control-result.json"
+  },
+  "remaining_limits": [
+    "No turn/start was sent, so native Data use and model-tool enforcement were not exercised in this run.",
+    "Model provider was openai; any separate gateway route remains unverified.",
+    "The later inventory gate predicate review is offline and cannot revise the original blocked runtime outcome.",
+    "Raw temporary source records are indexed by path, bytes and SHA256 rather than copied wholesale."
+  ]
+}

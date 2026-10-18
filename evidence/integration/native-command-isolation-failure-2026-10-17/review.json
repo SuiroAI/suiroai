@@ -1,0 +1,82 @@
+{
+  "record_kind": "independently_reviewed_real_native_command_isolation_failure",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "verifier": "acceptance_review read-only review of saved real source records and actual files; retained copies written separately",
+  "decision": "Failed deterministic command/exec isolation controls; retain blocker and do not proceed to analytical turn.",
+  "observed_outcomes": [
+    {
+      "check": "released CSV read and output write",
+      "expected": "permitted with three rows, A=5, B=5, total=10",
+      "actual": "matched actual native stdout and fetched output file",
+      "passes_intended_control": true
+    },
+    {
+      "check": "unreleased sentinel read",
+      "expected": "PermissionError",
+      "actual": "open plus one-byte read succeeded",
+      "passes_intended_control": false
+    },
+    {
+      "check": "output symlink into unreleased sentinel",
+      "expected": "PermissionError",
+      "actual": "open plus one-byte read succeeded",
+      "passes_intended_control": false
+    },
+    {
+      "check": "released input write",
+      "expected": "PermissionError",
+      "actual": "PermissionError errno=1; input hash unchanged",
+      "passes_intended_control": true
+    },
+    {
+      "check": "new file in unreleased directory",
+      "expected": "PermissionError and no file",
+      "actual": "exclusive create succeeded; actual empty regular file retained",
+      "passes_intended_control": false
+    },
+    {
+      "check": "controlled loopback connection",
+      "expected": "PermissionError",
+      "actual": "PermissionError errno=1; trusted listener positive control recorded",
+      "passes_intended_control": true
+    }
+  ],
+  "offline_review_check_count": 13,
+  "offline_review_checks": {
+    "code_matches_reviewed_harness_without_execution": true,
+    "code_sha_matches_source_report": true,
+    "rpc_response_matches_source_report": true,
+    "explicit_requested_permission_profile_matches_report": true,
+    "request_cwd_matches_output": true,
+    "positive_file_matches_actual_rpc_result": true,
+    "outside_write_actual_regular_empty_file": true,
+    "no_thread_or_turn_dispatch": true,
+    "input_actual_sha_matches_before_after": true,
+    "sentinel_actual_sha_matches_before_after": true,
+    "allowed_image_actual_sha_matches_before_after": true,
+    "denied_image_actual_sha_matches_before_after": true,
+    "symlink_target_matches_before_after": true
+  },
+  "offline_review_meaning": "These checks establish fidelity of the retained failure evidence; they do not make failed native controls pass.",
+  "source_probe": {
+    "path": "/private/tmp/suiroai-dsc26/evidence/integration/probe_native_isolation.py",
+    "sha256": "326c9aeed52b8cd95c98bad21c09537ee9b4be2453f4be95d11a208b9a8598f4",
+    "bytes": 34758
+  },
+  "reviewed_repository_head": "7ca38d04a700766d0c71833693d3e59a64d6a251",
+  "references": {
+    "actual_command": "command-observation.json",
+    "control_code": "control_code.py",
+    "positive_artifact": "control-result.json",
+    "outside_created_empty_file": "outside-created-file.bin"
+  },
+  "remaining_limits": [
+    "command/exec request selection does not itself prove an effective full filesystem policy acknowledgement.",
+    "The native model-worker selected-turn context is a distinct path and was not exercised by this stopped probe.",
+    "No customer data or analytical execution occurred; no unsupported-universally or model-worker-unsafe claim follows.",
+    "Raw temporary source files are referenced by path, byte count and cryptographic digest rather than copied wholesale."
+  ]
+}
