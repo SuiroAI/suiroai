@@ -1,8 +1,8 @@
 # SuiroAI retail MVP
 
-This independent Python application supports implementation of one historical retail restocking case. The current foundation contains package configuration and reviewed architecture; it does not execute the customer workflow.
+This independent Python application supports implementation of one historical retail restocking case. The repository contains the backend components and a local Streamlit integration build. The visual build currently stops after approval and genuine runtime discovery; it does not yet execute the complete customer workflow or produce a verified report.
 
-Use Python 3.11 or later. From this directory, `uv sync --locked` installs the foundation from the committed lockfile. `uv run --no-sync python -c "import suiroai"` checks package import. There is no customer executable, server or demo runner in this assignment.
+Use Python 3.11 or later. From this directory, `uv sync --locked` installs the foundation from the committed lockfile. `uv run --no-sync python -c "import suiroai"` checks package import. For the new visual demo, run `uv run --no-sync streamlit run streamlit_app.py --server.address 127.0.0.1 --browser.gatherUsageStats false` and open localhost:8501. See [the exact example, limits, and remaining integration work](docs/demo/STREAMLIT.md). This is a local Python demo surface; no packaged customer executable is produced.
 
 - [Architecture and integration blockers](docs/architecture/ARCHITECTURE.md)
 - [Exclusive component ownership](docs/architecture/OWNERSHIP.md)

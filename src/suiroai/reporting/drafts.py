@@ -7,8 +7,11 @@ output callable can implement this interface; no host/API is assumed here.
 Present approved quantities with concise EDA/feature findings and material
 limitations in one report. Preserve synthetic provenance and distinct capability,
 validation-failure, and execution-failure explanations without inventing orders.
+Namespace source-local finding identities when combining stages so independent
+delivery review can distinguish every finding in the end-to-end demo.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-29
+Integration: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from __future__ import annotations
 
@@ -175,7 +178,11 @@ def draft_success(h: Handoff, *, artifact_id: str,
         if not findings:
             raise InputError(f"Missing evidence-backed final-report findings: {category}")
         for i, finding in enumerate(findings):
-            result["findings"].append(deepcopy(finding))
+            report_finding = deepcopy(finding)
+            # Stage records own local IDs; the combined report owns global IDs.
+            # Keep the original statement, classification and evidence untouched.
+            report_finding["finding_id"] = f"{category}-{i}-{finding['finding_id']}"
+            result["findings"].append(report_finding)
             claims.append(_claim(f"{category}-{i}", finding["statement"], [record_ref(source), *finding["evidence_refs"]]))
     for i, definition in enumerate(feature["definitions"]):
         claims.append(_claim(f"generated-feature-definition-{i}",

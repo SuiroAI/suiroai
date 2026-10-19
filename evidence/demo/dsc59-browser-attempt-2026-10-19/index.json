@@ -1,0 +1,57 @@
+{
+  "analytical_model_turn_requested": false,
+  "analytical_success": false,
+  "captured_files": {
+    "01-proposal.png": "70ccb29bf01d8fe57ff2f69d0080bb43c48d0605823d11dec2b24fac0373e5e3",
+    "02-outcome.png": "04e26304f703bfe836891a77aebb336c9950a26efcc63ae056aead0fbc0f5bf7",
+    "attempt.json": "3d90cc5ad5d29b90f8462949a9e20b4802d69c2633b8e0073ca0f52e282f01df"
+  },
+  "controller_audit": {
+    "analytical_model_inputs_released": false,
+    "audit_ref": {
+      "artifact_id": "demo-release-audit-a66e85789dfe4e20b7308bfee12028d6-audit",
+      "provenance": "derived",
+      "sha256": "9f3ae349b18dcc235a29966ae45b6e282571d7be42766000185c01dce170d26c",
+      "version": 1
+    },
+    "development_product_store_pairs": 336,
+    "development_source_records": 17406,
+    "development_unobserved_pair_dates": 463462
+  },
+  "format": "dsc59-attempt-evidence-index-v1",
+  "local_attempt_sha256": "7f192cc2ad5863dce12368ce6eb2b1f1df5167d6b06cee390afc53e409943341",
+  "regression_result": {
+    "command": "uv run --no-sync python -m pytest tests -q",
+    "passed": 666,
+    "subtests_passed": 659
+  },
+  "runtime_inventory_fallback_observed": false,
+  "runtime_inventory_status": "verified",
+  "selected_data_plugin": {
+    "enabled": true,
+    "installed": true,
+    "pluginId": "data-analytics@openai-curated-remote",
+    "source_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11"
+  },
+  "source_files": {
+    "pyproject.toml": "9c942736ef65c18911c4dc21cc6c73edf551dd61c888eff2a9626be271722f80",
+    "scripts/check_demo_browser.py": "36372a36a892f40c66b475ede3b097030ea4ca59050a58b1060e2a114f073431",
+    "src/suiroai/demo/__init__.py": "e34988283b12ad55c3bb35d57d77c39414e67f33c81f95c017ff1ffc81d806a0",
+    "src/suiroai/demo/app.py": "504b08174a09370d3a124c522af14d9eb6ebbb268088ff957168fee9f4c41771",
+    "src/suiroai/demo/backend.py": "b3e5eb3f80b9dd355df7591cf4525624dc5bd6b17537b2ea10fa6a4a8ab803fb",
+    "src/suiroai/demo/runtime.py": "8cbf8ae7693003a52660a50be585802869d8535d679348cbed645b598990c028",
+    "src/suiroai/demo/service.py": "de5b0ca5d02b1d20132094bad86db341bbd4980e0d710f59f364047c0ccb7804",
+    "src/suiroai/demo/worker.py": "3aa4fca60370a47fcaf3b7edd6393d64c96a171f8f7560d12065784dcdd5ef9e",
+    "src/suiroai/reporting/drafts.py": "478a888ec17af71a130281d73ce5e2bb4052792df1b1b13669899ac4c018e492",
+    "streamlit_app.py": "2447c8ad567559c1562a272f0e1ac5f00c132829434ec95930255928b49b55f1",
+    "tests/acceptance/test_data_output_acceptance.py": "b5ccd9b883155ac2ddc1f1d0c861bc645420907e746f0c9210db7b5e0c6c197c",
+    "tests/demo/test_app.py": "dab813c133bd9b5e0b2d31eec35ba0ee7efd4c9e4fe655f87ebc368edc6364c2",
+    "tests/demo/test_backend.py": "ad30868e04f2a3d8afead2668f647a14d53c43ed3dbd4d7354a50ecbf4b88a8b",
+    "tests/demo/test_service.py": "4721f37626e8b6a9855a95c41b5b91d3b324c9fe7820a10ddb7048565e647cf7",
+    "tests/reporting/test_drafts.py": "df396e84cab01273aea45b40aeed1928c0179aa95a920104a62ddf47e109a742",
+    "uv.lock": "079ba66a9b3811f94a809ab663c1c6d5c0971d699029767bed933532439f39cc"
+  },
+  "technical_blocker": "Preparation cannot safely dispatch a model turn: the pinned parent contract permits original source references only, while development preparation requires a controller-created partition excluding December 2025. A reviewed derived-input release bridge is required. Historical information availability and daily-series completeness also remain unverified. Controller audit preserved 17406 development records across 336 product/store pairs; 463462 pair dates have no records and remain unknown. No execution contract was started: a justified acceptance rule and safe derived-input release are still required.",
+  "verified_report_available": false
+}

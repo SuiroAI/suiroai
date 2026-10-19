@@ -292,22 +292,61 @@ def test_mock_previously_accepted_candidate_evidence_cannot_accept_changed_candi
     assert rechecked["verifier_decision"] == "rejected"
 
 
-def test_mock_unmodified_shared_findings_collide_after_real_report_composition_and_block(tmp_path):
-    """Concrete seam discrepancy: source-local IDs collide in the report list.
+def test_mock_unmodified_shared_findings_compose_with_unique_report_identities(tmp_path):
+    """Compose actual source-local IDs without rewriting the shared findings.
 
-    The independent verifier correctly blocks. Owners must agree run-wide
-    finding IDs or composition-time namespacing before a real report uses this
-    pattern. This check does not change the shared interface or waive the gap.
+    The report owns its combined identities while preserving each upstream
+    finding's statement, classification, audience, and exact evidence links.
+    This MOCK seam verifies composition, not live analytical acceptance.
     """
     bundle, store, report, report_ref = _produced_report(tmp_path, namespace_mock_findings=False)
+    assert validate_record(report) == []
+    source_findings = [finding for source in bundle["records"]
+                       if source["kind"] in {"preparation_result", "feature_result", "evaluation_result", "final_validation_result"}
+                       for finding in source["findings"] if finding["audience"] == "final_report"]
+    source_ids = [finding["finding_id"] for finding in source_findings]
+    assert len(source_ids) > len(set(source_ids))
+    report_ids = [finding["finding_id"] for finding in report["findings"]]
+    assert len(report_ids) == len(set(report_ids))
+    content = lambda finding: json.dumps({key: value for key, value in finding.items()
+                                        if key != "finding_id"}, sort_keys=True)
+    assert sorted(map(content, report["findings"])) == sorted(map(content, source_findings))
+    verifier = OutputVerifier(store, current_records=[record_ref(r) for r in bundle["records"]] + [report_ref],
+                              current_artifacts=[a["ref"] for a in bundle["mock_artifacts"]],
+                              authenticate=lambda *_: True, allow_mock=True,
+                              review_claim=_review_report_claim,
+                              review_narrative=lambda *_: OUTPUT.passed("Bounded MOCK prose review only"))
+    checked = verifier.verify_draft(report_ref, verification_id="mock-dsc56-composed-findings",
+                                    readers=OUTPUT.success_readers(bundle))
+    identity_check = next(c for c in checked["claim_checks"] if c["check_id"] == "claims-unique-identities")
+    assert identity_check["status"] == "pass"
+    assert all(c["status"] == "pass" for c in checked["claim_checks"] + checked["arithmetic_checks"] + checked["binding_checks"])
+
+
+def test_mock_forged_duplicate_report_finding_identity_blocks_independent_delivery(tmp_path):
+    """Keep duplicate rejection independent of the corrected report producer.
+
+    A schema-valid forged report reuses one final finding's identity while
+    retaining its other content. The verifier must detect the collision and
+    refuse delivery despite otherwise valid source evidence.
+    """
+    def forge(report):
+        assert len(report["findings"]) >= 2
+        report["findings"][1]["finding_id"] = report["findings"][0]["finding_id"]
+
+    bundle, store, report, report_ref = _produced_report(tmp_path, forge, namespace_mock_findings=False)
     assert validate_record(report) == []
     verifier = OutputVerifier(store, current_records=[record_ref(r) for r in bundle["records"]] + [report_ref],
                               current_artifacts=[a["ref"] for a in bundle["mock_artifacts"]],
                               authenticate=lambda *_: True, allow_mock=True,
                               review_claim=_review_report_claim,
                               review_narrative=lambda *_: OUTPUT.passed("Bounded MOCK prose review only"))
-    checked = verifier.verify_draft(report_ref, verification_id="mock-dsc56-colliding-findings",
-                                    readers=OUTPUT.success_readers(bundle))
+    readers = OUTPUT.success_readers(bundle)
+    checked = verifier.verify_draft(report_ref, verification_id="mock-dsc56-forged-duplicate-finding", readers=readers)
     identity_check = next(c for c in checked["claim_checks"] if c["check_id"] == "claims-unique-identities")
     assert identity_check["status"] == "fail"
     assert checked["permitted_response"]["kind"] == "no_customer_response"
+    with pytest.raises(VerificationError, match="failed or unavailable"):
+        verifier.propose_delivery(record_ref(checked), parent_decision={
+            **report["parent_decision"], "checkpoint": "output_verification", "decision": "proceed",
+            "evidence_refs": [report_ref, record_ref(checked)]}, readers=readers)

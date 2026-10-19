@@ -7,8 +7,11 @@ Requirement context for these component checks:
 Present approved quantities with concise EDA/feature findings and material
 limitations in one report. Preserve synthetic provenance and distinct capability,
 validation-failure, and execution-failure explanations without inventing orders.
+Exercise source-local finding identity collisions at the combined demo report
+boundary, preserving upstream evidence and customer-facing statements.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-29
+Integration: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from copy import deepcopy
 import json
@@ -77,6 +80,29 @@ class ReportingTests(unittest.TestCase):
                 draft_success(mock_handoff(), artifact_id="mock-rejected", humanizer=humanizer)
         result = draft_success(mock_handoff(), artifact_id="mock-reordered", humanizer=lambda claims: [c["claim_id"] for c in reversed(claims)])
         self.assertEqual(result["customer_draft"], "\n\n".join(c["statement"] for c in reversed(result["claims"])))
+
+    def test_source_local_finding_ids_are_unique_in_combined_report(self):
+        def mutate(record):
+            for finding in record.get("findings", []):
+                finding["finding_id"] = "shared-local-finding"
+
+        h = revise_mock(mock_handoff(), mutate)
+        upstream = deepcopy(h.records)
+        kinds = ("preparation_result", "feature_result", "evaluation_result", "final_validation_result")
+        findings = [deepcopy(finding) for kind in kinds for finding in h.one(kind)["findings"]
+                    if finding["audience"] == "final_report"]
+        self.assertGreater(len(findings), 1)
+        report = draft_success(h, artifact_id="mock-local-finding-collision")
+        ids = [finding["finding_id"] for finding in report["findings"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertEqual(len(report["findings"]), len(findings))
+        for original, combined in zip(findings, report["findings"]):
+            self.assertTrue(combined["finding_id"].endswith("-shared-local-finding"))
+            self.assertEqual({k: v for k, v in combined.items() if k != "finding_id"},
+                             {k: v for k, v in original.items() if k != "finding_id"})
+            self.assertIn(original["statement"], report["customer_draft"])
+        self.assertEqual(h.records[:len(upstream)], upstream)
+        self.assertEqual(validate_record(report), [])
 
     def test_parent_approval_precedes_humanizing(self):
         called = []
