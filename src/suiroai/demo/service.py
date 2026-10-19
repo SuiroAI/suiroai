@@ -91,15 +91,33 @@ def _fingerprint(question, uploads):
         for file in uploads], key=lambda row: (row["role"] or "", row["name"], row["sha256"]))})
 
 
+def current_process_request(question, current_approach=None, continue_without=False):
+    """Bind explicit process context or absence to the exact user-approved request.
+
+    Never substitute a detector summary for the user's original question.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    if continue_without:
+        return question + "\n\nThe user chose to continue without a current approach. Do not invent an incumbent."
+    if current_approach and current_approach.strip():
+        return question + "\n\nHow do you do this now?\n" + current_approach.strip()
+    return question
+
+
 class DemoSession:
     """Keep one in-process task, proposal, consent event, and bounded attempt.
 
     Consent is checked against a private exact-record ledger, never inferred
     from a worker's JSON or restored from browser session data after restart.
     """
-    def __init__(self, *, artifact_root=None, backend=None):
+    def __init__(self, *, artifact_root=None, backend=None, context_detector=None):
         self._root = Path(artifact_root or Path.cwd() / "artifacts" / "demo").resolve() / uuid.uuid4().hex
         self._task = "retail-" + uuid.uuid4().hex
+        from .current_process import detect_current_process
+
+        self._context_detector = context_detector or detect_current_process
+        self._context_cache = {}
+        self._context_inflight = {}
         self._backend = backend or run_approved
         self._lock = threading.RLock()
         self._fingerprint = None
@@ -137,9 +155,88 @@ class DemoSession:
             self._revision += 1
             self._view = {"status": "draft", "message": "Edit the question or files, then select Review task again.", "errors": []}
 
-    def review(self, question, uploads):
+    def context_for(self, question, uploads):
+        """Return detected context only for the exact current question and file bytes.
+
+        The UI uses a missing result to show one optional process question.
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+        """
+        key = _fingerprint(question, uploads)
+        with self._lock:
+            value = self._context_cache.get(key)
+            return {**deepcopy(value), "input_key": key} if value else None
+
+    def review(self, question, uploads, *, current_approach=None, continue_without=False):
+        """Inspect existing context before asking, then propose the exact current task.
+
+        Review authorizes only context inspection. Analysis still requires the
+        resulting proposal's separate explicit approval. Late detection results
+        cannot overwrite edits, revisions, or a newer review.
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+        """
         uploads = tuple(uploads)
-        self.invalidate(question, uploads)
+        request = current_process_request(question, current_approach, continue_without)
+        self.invalidate(request, uploads)
+        with self._lock:
+            if self._proposal is not None and self._view["status"] == "awaiting_approval":
+                return self.view
+            # Validate the existing input contract before any model inspection.
+            _, errors = _identify_uploads(uploads)
+            if not question.strip() or not re.search(r"restock|replenish|reorder|order quantit", question, re.I) or errors:
+                return self._propose(request, uploads)
+            revision = self._revision
+            key = _fingerprint(question, uploads)
+            context = self._context_cache.get(key)
+            if not continue_without and not (current_approach and current_approach.strip()) and context is None:
+                if self._context_inflight.get(key) == revision:
+                    return self.view
+                self._context_inflight[key] = revision
+                self._view = {"status": "checking_context", "message": "Checking your question and files for your current approach…", "errors": []}
+        if not continue_without and not (current_approach and current_approach.strip()) and context is None:
+            try:
+                context = self._context_detector(question, uploads, self._root / "context")
+                if (not isinstance(context, dict) or context.get("status") not in {"found", "missing", "none"}
+                        or not isinstance(context.get("summary"), str)
+                        or (context["status"] == "found" and not context["summary"].strip())):
+                    raise ValueError("Invalid current-process inspection result")
+            except Exception:
+                with self._lock:
+                    if self._context_inflight.get(key) == revision:
+                        self._context_inflight.pop(key, None)
+                    if revision != self._revision:
+                        return self.view
+                    self._view = {"status": "context_failed", "message": "We couldn't check your files for your current approach. Select Review task to try again.", "errors": []}
+                    return self.view
+            except BaseException:
+                # A user/runtime interruption must not leave the same snapshot
+                # permanently marked as inspecting on the next Review action.
+                with self._lock:
+                    if self._context_inflight.get(key) == revision:
+                        self._context_inflight.pop(key, None)
+                raise
+            with self._lock:
+                if self._context_inflight.get(key) == revision:
+                    self._context_inflight.pop(key, None)
+                if revision != self._revision:
+                    return self.view
+                self._context_cache[key] = {field: deepcopy(context[field]) for field in
+                    ("status", "summary", "evidence", "evidence_path", "result_sha256", "native_outcome", "released_files")
+                    if field in context}
+        with self._lock:
+            if revision != self._revision:
+                return self.view
+            if not continue_without and not (current_approach and current_approach.strip()):
+                if context["status"] == "missing":
+                    self._view = {"status": "awaiting_current_process", "message": "How do you do this now?", "errors": []}
+                    return self.view
+                if context["status"] == "found":
+                    request += "\n\nCurrent approach described in the supplied question or files:\n" + context["summary"]
+                else:
+                    request += "\n\nThe supplied context explicitly says there is no current approach. Do not invent an incumbent."
+            return self._propose(request, uploads)
+
+    def _propose(self, question, uploads):
+        uploads = tuple(uploads)
         with self._lock:
             if self._proposal is not None and self._view["status"] == "awaiting_approval":
                 return self.view

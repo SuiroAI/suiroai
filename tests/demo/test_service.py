@@ -11,6 +11,18 @@ import pytest
 from suiroai.demo.service import DemoSession, ROLES, UploadedInput
 
 
+@pytest.fixture(autouse=True)
+def isolated_context_inspection(monkeypatch):
+    """Mock only native context inspection in the existing consent unit checks.
+
+    Dedicated context tests below inject missing/found/failure behavior; genuine
+    inspection is separately exercised by the native detector tests/live checks.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    monkeypatch.setattr("suiroai.demo.current_process.detect_current_process",
+                        lambda *args: {"status": "none", "summary": "No current approach in this test."})
+
+
 @pytest.fixture
 def uploads():
     """Supply small measured CSVs with each required role's actual field names.

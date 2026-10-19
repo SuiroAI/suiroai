@@ -87,7 +87,8 @@ def approved(tmp_path, request):
         calls.append(args)
         return SimpleNamespace(status="blocked", message="TEST capture", evidence_path=None)
 
-    session = DemoSession(artifact_root=tmp_path / "session", backend=backend)
+    session = DemoSession(artifact_root=tmp_path / "session", backend=backend,
+        context_detector=lambda *args: {"status": "none", "summary": "No current approach in this unit fixture."})
     view = session.review("Please restock with findings and limitations.",
         [UploadedInput(name=name, data=data) for name, data in files.items()])
     session.approve_and_run(view["proposal_digest"])

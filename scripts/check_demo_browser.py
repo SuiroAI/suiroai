@@ -74,7 +74,6 @@ def main():
         record["accepts_multiple_files"] = page.locator('input[type="file"]').get_attribute("multiple") is not None
         page.screenshot(path=str(args.output / "00-upload.png"), full_page=True)
         page.get_by_label("What are you trying to solve for?").fill(QUESTION)
-        page.get_by_text("We don't have a current approach", exact=True).click()
         inputs = page.locator('input[type="file"]')
         expect(inputs).to_have_count(1)
         inputs.set_input_files([str((args.data_root / relative).resolve()) for relative in selected_files.values()])
@@ -84,6 +83,13 @@ def main():
             page.get_by_role("button", name="Remove " + source.name, exact=True).wait_for(timeout=15000)
             record["files"].append({"role": role, "name": source.name, "bytes": len(data), "sha256": sha256(data).hexdigest()})
         page.get_by_role("button", name="Review task", exact=True).click()
+        # Missing current-process context has an explicit user-owned continue path.
+        continue_button = page.get_by_role("button", name="Continue without a current approach", exact=True)
+        page.get_by_role("heading", name="Review the proposed task", exact=True).or_(continue_button).or_(
+            page.get_by_text("We couldn't check your files for your current approach. Select Review task to try again.", exact=True)
+        ).first.wait_for(timeout=0)
+        if continue_button.count():
+            continue_button.click()
         page.get_by_role("heading", name="Review the proposed task").wait_for(timeout=30000)
         record["proposal_shown"] = True
         page.screenshot(path=str(args.output / "01-proposal.png"), full_page=True)

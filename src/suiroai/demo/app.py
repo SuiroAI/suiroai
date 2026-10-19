@@ -69,8 +69,10 @@ def _show_outcome(session: object, view: dict) -> None:
         st.info(message or "Upload your data and describe what you are trying to solve for.")
     elif status in {"blocked", "unsupported_task"}:
         st.warning(message or "The task is blocked. Review the required changes below.")
-    elif status in {"failure", "failed", "execution_failed", "validation_failed"}:
+    elif status in {"failure", "failed", "execution_failed", "validation_failed", "context_failed"}:
         st.error(message or "The run failed. No restocking list is available.")
+    elif status == "awaiting_current_process":
+        st.info("Describe your current approach above, or choose Continue without a current approach.")
     elif status == "running":
         st.info(message or "Working on your approved task.")
     elif status == "investigation_completed":
@@ -108,7 +110,7 @@ def run_app(session_factory: Callable | None = None) -> None:
     The injected factory supports UI checks without executing the real backend.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
-    from suiroai.demo.service import DemoSession, UploadedInput
+    from suiroai.demo.service import DemoSession, UploadedInput, current_process_request
 
     st.set_page_config(page_title="SuiroAI local demo", page_icon="📊")
     st.title("SuiroAI local demo")
@@ -120,30 +122,35 @@ def run_app(session_factory: Callable | None = None) -> None:
     session = st.session_state.demo_session
 
     question = st.text_area("What are you trying to solve for?", key="business_question")
-    current_source = st.radio(
-        "Have you shared how you do this today?",
-        ("I'll describe it here", "It's in my question or uploaded files", "We don't have a current approach"),
-        index=None, key="current_approach_source",
-    )
-    current_approach = ""
-    if current_source == "I'll describe it here":
-        current_approach = st.text_area(
-            "How do you do this now?", key="current_approach",
-            help="For example, describe your usual steps or how you decide what to order.",
-        )
-    context = current_approach.strip() if current_source == "I'll describe it here" else current_source or ""
-    approved_question = question + ("\n\nHow do you do this now?\n" + context if context else "")
     uploaded_files = st.file_uploader("Upload your data", accept_multiple_files=True, key="upload_files")
     uploads = [UploadedInput(name=file.name, data=file.getvalue()) for file in uploaded_files]
-    session.invalidate(approved_question, uploads)
+    context = session.context_for(question, uploads)
+    missing_context = context is not None and context["status"] == "missing"
+    current_approach = ""
+    if missing_context:
+        clear_answer = st.session_state.pop("clear_current_approach", False)
+        if clear_answer or st.session_state.get("current_approach_input_key") != context["input_key"]:
+            st.session_state["current_approach"] = ""
+        st.session_state["current_approach_input_key"] = context["input_key"]
+        current_approach = st.text_area(
+            "How do you do this now?", key="current_approach",
+            help="Describe your usual steps, or continue below if you don't have a current approach.",
+        )
+    continue_without = bool(missing_context and not current_approach.strip()
+                            and st.session_state.get("continue_without_current") == context["input_key"])
+    session.invalidate(current_process_request(question, current_approach, continue_without), uploads)
 
     if st.button("Review task", key="review_task"):
-        if not current_source or (current_source == "I'll describe it here" and not current_approach.strip()):
-            st.info("Tell us how you do this now, or select where you've already shared it. If you don't have a current approach, select that option.")
-        elif not question.strip():
-            st.info("Describe what you are trying to solve for.")
-        else:
-            session.review(approved_question, uploads)
+        with st.spinner("Checking your question and files for your current approach…"):
+            result = session.review(question, uploads, current_approach=current_approach,
+                                    continue_without=continue_without)
+        if result.get("status") == "awaiting_current_process" and not missing_context:
+            st.rerun()
+    if missing_context and st.button("Continue without a current approach", key="continue_without_current_approach"):
+        st.session_state["continue_without_current"] = context["input_key"]
+        st.session_state["clear_current_approach"] = True
+        session.review(question, uploads, continue_without=True)
+        st.rerun()
 
     view = session.view
     if view.get("proposal_digest") and view.get("status") in {"proposal", "awaiting_approval", "review"}:

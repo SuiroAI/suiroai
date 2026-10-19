@@ -23,6 +23,7 @@ class FakeSession:
         """
         self.question = None
         self.runs = 0
+        self.context = {"status": "found", "input_key": "test-context", "summary": "Test process supplied"}
         self.view = {"status": "missing", "errors": []}
 
     def invalidate(self, question, uploads):
@@ -34,11 +35,21 @@ class FakeSession:
             self.question = question
             self.view = {"status": "missing", "errors": []}
 
-    def review(self, question, uploads):
+    def context_for(self, question, uploads):
+        """Return explicit test context without calling a real model."""
+        return self.context
+
+    def review(self, question, uploads, *, current_approach=None, continue_without=False):
         """Publish the exact test proposal without requesting execution.
 
         Linear: https://linear.app/gr3enarr0w/issue/DSC-59
         """
+        from suiroai.demo.service import current_process_request
+        if self.context["status"] == "missing" and not current_approach and not continue_without:
+            self.view = {"status": "awaiting_current_process", "errors": []}
+            return self.view
+        question = current_process_request(question, current_approach, continue_without)
+        self.question = question
         self.view = {"status": "awaiting_approval", "proposal_digest": "exact-digest",
                      "proposal_summary": {
                          "question": question,
@@ -49,6 +60,8 @@ class FakeSession:
                          "assumptions": ["A disclosed assumption", "An unresolved limitation"],
                          "execution": "Approval permits one bounded attempt, with no guaranteed result.",
                      }}
+
+        return self.view
 
     def revise(self):
         """Revoke the unchanged test proposal upon an explicit revision.
@@ -85,7 +98,7 @@ def app(monkeypatch):
 
     monkeypatch.setattr(service, "DemoSession", FakeSession)
     app = AppTest.from_string("from suiroai.demo.app import run_app\nrun_app()").run()
-    return app.radio(key="current_approach_source").set_value("We don't have a current approach").run()
+    return app
 
 
 def test_review_and_approval_require_explicit_actions(app):
@@ -328,33 +341,64 @@ def test_html_media_is_inline_and_removed_when_no_longer_referenced(monkeypatch)
         storage.get_file(url.rsplit("/", 1)[-1])
 
 
-def test_current_approach_is_requested_and_changes_revoke_approval(app):
-    """Bind the user's current process to consent without asking cleaning questions.
+
+def test_missing_current_approach_can_be_answered_and_edits_revoke_approval(app):
+    """Ask only for missing context and bind typed current steps to consent.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
+    session = app.session_state["demo_session"]
+    session.context = {"status": "missing", "input_key": "test-context"}
     app.text_area(key="business_question").input("What should we replenish?").run()
-    app.radio(key="current_approach_source").set_value("I'll describe it here").run()
     assert app.text_area(key="current_approach").label == "How do you do this now?"
     app.button(key="review_task").click().run()
     assert not any(button.key == "approve_and_run" for button in app.button)
-    app.text_area(key="current_approach").input("We order the last week's sales every Monday.").run()
+    app.text_area(key="current_approach").input("We order last week's sales every Monday.").run()
     app.button(key="review_task").click().run()
-    session = app.session_state["demo_session"]
-    assert "We order the last week's sales every Monday." in session.view["proposal_summary"]["question"]
+    assert "We order last week's sales every Monday." in session.view["proposal_summary"]["question"]
     app.text_area(key="current_approach").input("We top up to ten units.").run()
     assert not any(button.key == "approve_and_run" for button in app.button)
     assert session.runs == 0
 
 
-def test_current_approach_already_supplied_does_not_require_retyping(app):
-    """Accept an existing process description or an explicit lack of one.
+def test_detected_current_approach_does_not_ask_user_to_identify_or_retype_it(app):
+    """Review detected context automatically with no manual source selector.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     app.text_area(key="business_question").input("We order ten units weekly. What should we replenish?").run()
-    app.radio(key="current_approach_source").set_value("It's in my question or uploaded files").run()
+    assert not app.radio
     assert not any(area.key == "current_approach" for area in app.text_area)
     app.button(key="review_task").click().run()
     assert any(button.key == "approve_and_run" for button in app.button)
-    assert "We order ten units weekly" in app.session_state["demo_session"].view["proposal_summary"]["question"]
+
+
+def test_user_can_continue_without_current_approach(app):
+    """An explicit continue action skips the missing method without inventing one.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = app.session_state["demo_session"]
+    session.context = {"status": "missing", "input_key": "test-context"}
+    app.text_area(key="business_question").input("What should we replenish?").run()
+    app.button(key="continue_without_current_approach").click().run()
+    assert not app.exception
+    assert "continue without a current approach" in session.view["proposal_summary"]["question"]
+    assert any(button.key == "approve_and_run" for button in app.button)
+    assert session.runs == 0
+
+
+def test_answer_and_continuation_do_not_carry_to_changed_inputs(app):
+    """A new question/file snapshot must not silently inherit an old process answer.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = app.session_state["demo_session"]
+    session.context = {"status": "missing", "input_key": "old-inputs"}
+    app.text_area(key="business_question").input("What should we replenish?").run()
+    app.text_area(key="current_approach").input("We order ten each week.").run()
+    app.button(key="review_task").click().run()
+    session.context = {"status": "missing", "input_key": "changed-inputs"}
+    app.run()
+    assert app.text_area(key="current_approach").value == ""
+    assert not any(button.key == "approve_and_run" for button in app.button)

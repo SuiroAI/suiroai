@@ -5,7 +5,7 @@ Authoritative user clarifications recorded October 19, 2026. These supersede con
 ## User experience
 
 - One generic area accepts multiple uploaded files. Intro: **Upload your data.** Question label: **What are you trying to solve for?**
-- Before review, ask whether the current approach is already in the question/files. If absent, ask **How do you do this now?** in plain language. Accept an explicit **We don't have a current approach** answer; never invent one or demand a file. Include the answer in the approved task and invalidate approval/results if it changes. This business-context question is the explicit exception to autonomous analytical decision-making.
+- On **Review task**, automatically check the question and uploaded contents for a description of the current approach. If one is already described, proceed to the readable review without asking the user to confirm its presence or repeat it. A policy filename, column names or operational constraints alone do not establish how the business actually works today. If the approach is missing, ask **How do you do this now?** and show **Continue without a current approach**. Accept an explicit statement that no current approach exists; never invent one or demand a file. Bind the detected context, supplied answer or explicit continuation without an approach to the exact reviewed inputs. Changing those inputs or that answer invalidates approval/results. This business-context question is the explicit exception to autonomous analytical decision-making. The preapproval check only establishes whether context was supplied; analytical investigation still requires explicit approval.
 - Review the proposed task in ordinary readable language, not raw JSON. Show the goal, files, intended result, material assumptions, and approval scope. Do not show a Technical details section or proposal ID anywhere in the product UI; retain identifiers internally.
 - Users never need to provide or understand a data dictionary. Do not request or mention one in the product flow.
 - After explicit approval, genuine ChatGPT Data inspects and analyzes the actual uploaded data and returns the actual downloadable output file. No fixtures substituted silently, mock success, or inventory-only endpoint.
@@ -27,7 +27,7 @@ Do not ask the user follow-up questions about cleaning, business interpretation,
 ## Execution and acceptance
 
 - No overall elapsed-time execution limit. Let healthy analysis take as long as needed; monitor actual failures, process/transport termination and user cancellation. Individual control-request responsiveness checks are not a deadline on model analysis.
-- Material input changes revoke stale approval/results. Reruns, repeated clicks and downloads must not repeat execution or bypass current consent.
+- Material input changes revoke stale approval/results and context detection. A detection result from an older input revision cannot populate the current review. Reruns and repeated review clicks on unchanged inputs reuse the resolved context; they must not repeat analysis or bypass current consent. Downloads must not execute analysis.
 - The supplied November 30 retail example must preserve its December sales holdout boundary while allowing Data to choose development methods.
 - Run the actual supplied example through the visible app and download its file before closure. Unit tests and preflight checks alone are insufficient.
 - Keep generated-output provenance accurate. Do not call a Data-generated file independently verified without genuine verification evidence.
@@ -38,7 +38,7 @@ Do not ask the user follow-up questions about cleaning, business interpretation,
 
 1. The initial UI has the exact generic copy and one multiple-file upload widget.
 2. The review is readable and approves the actual Data scope.
-3. No user-facing requirement asks for metadata or cleaning decisions. Missing current-process context is requested before approval, with already-supplied and no-current-process options.
+3. No user-facing requirement asks for metadata or cleaning decisions. Current-process context already described in the question or uploaded contents is detected automatically, without a confirmation question. Only missing context triggers **How do you do this now?**, with **Continue without a current approach** available. Explicitly absent approaches and policy-only uploads are handled accurately; the context check cannot start analytical investigation before approval.
 4. Approval reaches genuine Data with exact permitted file bytes and original question.
 5. Data handles missingness and analytical choices autonomously and returns the supported result.
 6. Healthy analysis is not interrupted by an overall elapsed-time deadline; failures/cancellation still work.
