@@ -2,17 +2,18 @@
 
 Tracking: https://linear.app/gr3enarr0w/issue/DSC-59
 
-Exploratory preparation belongs to genuine ChatGPT @Data. Missing dates,
-optional dictionaries, and pending target/acceptance rules do not prevent that
-handoff. `demo.investigation.run_investigation` now sends the approved question,
+Exploratory preparation belongs to genuine ChatGPT @Data. Missing observations,
+absent metadata documents, and pending target/acceptance rules do not prevent
+that handoff. `demo.investigation.run_investigation` now sends the approved question,
 controller-partitioned development transactions, and approved operational inputs
 to the existing real `NativeHost`, which attaches @Data and enforces its native
 permission profile. Data owns interpretation, supported treatment, methods,
 assumptions and sensitivity analysis without asking user clarification questions.
-Data may perform supported development
-analysis and produce a useful downloadable HTML report. The result is explicitly
-marked as Data-generated and unverified; native completion, byte integrity and
-passive HTML checks do not prove numerical or claim correctness.
+Data performs supported development analysis and writes a plain-language app
+response plus a separate downloadable restocking list in CSV, matching the
+supplied input format, and a self-contained HTML demo view. The response explains its methods, assumptions and
+scientific limitations. Internal provenance and byte-integrity records do not
+become blanket product disclaimers.
 
 The following table distinguishes the legacy committed-modeling components
 from the new exploratory handoff. These are compatibility observations and
@@ -27,7 +28,7 @@ remaining implementation work, not owner-approval prerequisites for using Data.
 | Additional metadata | The legacy deterministic preparation requires a fixed five-role source map. | The Data handoff accepts approved files without that requirement, including multiple unfamiliar or same-role files. Every transaction file receives the controller cutoff; Data determines how the files should be used. |
 | Historical information | The legacy non-mock `build_result` requires historical availability evidence. | Data can investigate now without inventing timestamps. Bind truthful evidence or explicit scenario assumptions if later modeling needs them. |
 | Complete daily labels | Legacy modeling excludes incomplete horizons. | Data investigates supported missing-date treatment and an appropriate model/target itself; missing dates do not block entry to Data. Data must choose a supported treatment, quantify uncertainty or sensitivity, and explain the effect on the answer; unsupported quantities become evidenced report limitations rather than questions. |
-| Delivery | Data emits result.json declaring analysis, plus report.html containing supported findings and evidenced limits. | Fixed-path bounded reads, exact digest comparison, passive HTML validation and immutable byte readback protect delivery. The download remains explicitly unverified; independent numerical/claim approval and holdout acceptance remain separate. |
+| Delivery | Data emits result.json, restocking.csv, report.html for the demo, and a plain-language response.md for the app. | Fixed-path bounded reads, exact digest comparison, CSV shape checks and immutable byte readback protect delivery. The separate CSV preserves every cell exactly; interpretation and scientific limits appear in the app response. Independent approval and holdout acceptance remain separate internal evidence states. |
 
 The controller audit now calls the same pure measured partition implementation
 as the guarded preparation prelude. The guarded entry point still requires the
@@ -50,16 +51,41 @@ This inspection verifies deterministic partition/reconciliation behavior. It is
 not evidence of historical information availability, completeness, forecasting
 accuracy, independent analytical review, or successful end-to-end delivery.
 
-The native output contract is deliberately small: `result.json` has exactly
-`disposition`, `report_file`, and `report_sha256`. Analysis requires `report.html`
-and its exact SHA-256. Data always produces the best supported answer and
-explains evidenced limitations; user clarification questions are not an output.
-Report HTML is UTF-8, bounded to 16 MiB, and checked for passive self-contained
-content before immutable publication. Scripts, event attributes, embedded active
-content, forms, remote assets and active URL/CSS constructs are rejected. This
-is a transport safety check, not analytical verification. Native turn/receipt
-references remain linked if output validation fails. There is no overall elapsed-time limit by default: the native host monitors
+The current native output contract has five keys: `disposition`, `output_file`,
+`output_sha256`, `html_file`, and `html_sha256`. Analysis names `restocking.csv`
+and `report.html` with each file's exact SHA-256. The CSV is the operational
+restocking deliverable; HTML remains available as the demo view. The file includes product/store identifiers, supported
+order quantities, units and useful additional fields. Unsupported quantities
+are not silently replaced with zeros. A header-only CSV plus an evidenced
+explanation is supported when quantities cannot responsibly be produced.
+`response.md` contains the concise plain-language app explanation; legacy
+`investigation.md` remains an input fallback for completed runs. No user
+clarification questions are requested. Existing completed `restocking_list.csv`
+files can be retained without rerunning the model or recomputing values.
+
+CSV output is UTF-8, bounded to 16 MiB, checked for valid product/store records
+and nonnegative integer order quantities, and published with exact immutable
+readback. Native original refs and digests remain available. CSV presentation
+is an identity transformation: product names, quantities, all other cells and
+formatting bytes stay unchanged. An identity lineage record binds the original
+and deliverable references. The HTML companion has a separate immutable native original, digest,
+presented reference and presentation lineage. Fixed-path bounded reads, exact
+hash comparison and passive self-contained HTML checks protect retrieval;
+known boilerplate-only presentation preserves scientific content and table
+values. The prompt requires the HTML table to be rendered from the same CSV
+recommendations and checked for agreement. Earlier CSV-only manifests remain
+accepted for compatibility.
+
+There is no overall elapsed-time limit by default: the native host monitors
 actual failures, process closure and cancellation. Explicit finite caller budgets
 remain supported; individual discovery/RPC operations retain their own bounds.
 Current consent is rechecked immediately before dispatch and after native
-execution and output adoption.
+execution and output adoption. Native evidence stays linked if output checks
+fail.
+
+Plain-language response presentation removes only three exact known generic
+house-copy notices through `present_data_output`; it performs no analytical
+rewriting or numeric edits. Original response bytes remain immutable, and a
+`dsc59-presentation-v1` lineage record records original/presented refs, digests
+and exact literal replacements. Methods, assumptions and substantive limits
+remain unchanged. Presentation never promotes an internal verification state.

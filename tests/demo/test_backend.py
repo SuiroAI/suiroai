@@ -120,13 +120,17 @@ class ApprovedInvestigationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
             root = Path(directory)
             store = ArtifactStore(root / "store")
-            ref = store.put_bytes("TEST-report", 1, "derived", b"<html>TEST findings</html>")
+            ref = store.put_bytes("TEST-report", 1, "derived", b"Product_ID,Store_ID,Order_Qty\nTEST-P,TEST-S,5\n")
             record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
             native = {"native_outcome": "completed", "unverified_report_ref": ref}
             with patch("suiroai.demo.backend.run_investigation", return_value=native):
                 result = run_approved(store, record, record, record, None,
                     root / "runs", lambda *_: True)
             self.assertEqual(result.status, "analysis_completed")
+            self.assertEqual(result.message, "Analysis complete. Your restocking list is ready to download.")
+            self.assertEqual(result.download_name, "restocking.csv")
+            self.assertEqual(result.download_mime, "text/csv")
+            self.assertEqual(Path(result.report_path).suffix, ".csv")
             self.assertEqual(result.download_bytes, store.read_bytes(ref))
             self.assertEqual(Path(result.report_path).read_bytes(), store.read_bytes(ref))
             self.assertFalse(result.report_verified)
@@ -149,3 +153,40 @@ class ApprovedInvestigationTests(unittest.TestCase):
             self.assertEqual(receipt["stage_result"]["thread_id"], "TEST-real-thread")
             self.assertEqual(receipt["stage_result"]["native_outcome"], "completed")
             self.assertIsNone(result.download_bytes)
+
+    def test_csv_deliverable_cannot_be_a_renamed_html_report(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / "store")
+            ref = store.put_bytes("TEST-html", 1, "derived", b"<html>TEST findings</html>")
+            record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
+            native = {"native_outcome": "completed", "unverified_report_ref": ref,
+                "unverified_report_name": "report.html", "unverified_report_mime": "text/html"}
+            with patch("suiroai.demo.backend.run_investigation", return_value=native):
+                result = run_approved(store, record, record, record, None,
+                    root / "runs", lambda *_: True)
+            self.assertEqual(result.status, "execution_failed")
+            self.assertIn("CSV file", result.message)
+            self.assertIsNone(result.report_path)
+            self.assertIsNone(result.download_bytes)
+
+    def test_primary_csv_and_secondary_html_keep_exact_stored_bytes(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / "store")
+            csv_ref = store.put_bytes("TEST-csv", 1, "derived", b"Product_ID,Store_ID,Order_Qty\nP,S,5\n")
+            html_ref = store.put_bytes("TEST-html", 1, "derived", b"<html>TEST demo</html>")
+            record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
+            native = {"native_outcome": "completed", "unverified_report_ref": csv_ref,
+                "unverified_report_name": "restocking.csv", "unverified_report_mime": "text/csv",
+                "html_report_ref": html_ref, "html_report_name": "report.html", "html_report_mime": "text/html"}
+            with patch("suiroai.demo.backend.run_investigation", return_value=native):
+                result = run_approved(store, record, record, record, None,
+                    root / "runs", lambda *_: True)
+            self.assertEqual(result.status, "analysis_completed")
+            self.assertEqual(result.download_bytes, store.read_bytes(csv_ref))
+            self.assertEqual(result.html_download_bytes, store.read_bytes(html_ref))
+            self.assertEqual(result.html_download_name, "report.html")
+            self.assertEqual(Path(result.html_report_path).read_bytes(), store.read_bytes(html_ref))

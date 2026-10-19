@@ -15,7 +15,7 @@ from types import SimpleNamespace
 import pytest
 
 from suiroai.contracts import proposal_digest, record_ref
-from suiroai.demo.investigation import run_investigation
+from suiroai.demo.investigation import present_data_output, run_investigation
 from suiroai.demo.service import DemoSession, UploadedInput
 from suiroai.integration.native import NativeRun
 
@@ -67,6 +67,9 @@ def test_pending_policies_and_no_dictionary_reach_native_data_boundary(approved)
             assert "dictionary" not in kwargs["prompt"].lower()
             assert "Do not ask the user any clarification questions" in kwargs["prompt"]
             assert "Own the analytical decisions" in kwargs["prompt"]
+            assert "independent verification has not been completed" not in kwargs["prompt"]
+            assert "analytical deliverable" in kwargs["prompt"]
+            assert "substantive scientific limitations" in kwargs["prompt"]
             assert "Please restock with findings and limitations." in kwargs["prompt"]
             assert "fit and compare models using development data" in kwargs["prompt"]
             (kwargs["cwd"] / "investigation.md").write_text("TEST unverified investigation")
@@ -265,3 +268,145 @@ def test_explicit_finite_native_budget_is_still_forwarded(approved):
             return NativeRun(outcome="completed")
     result = run_investigation(*approved, host=Host(), timeout_seconds=120)
     assert result["disposition"] == "analysis"
+
+
+def test_presentation_retains_native_digest_and_every_analytical_value(approved):
+    """Known house-copy removal creates lineage without rewriting scientific content."""
+    analytical = "<h1>Restocking</h1><p>Missing dates remain unknown; proxy uses 28 days.</p><table><tr><td>336 pairs</td><td>927 inbound units</td><td>42 duplicates</td></tr></table>"
+    notice = "Data-generated analysis; independent verification has not been completed."
+    check_notice = "These checks share the analysis inputs and do not establish independent numerical or claim verification."
+    original = ("<html><body><p>" + notice + "</p>" + analytical + "<p>" + check_notice + "</p></body></html>").encode()
+    expected = ("<html><body><p>Data-generated analysis.</p>" + analytical + "<p></p></body></html>").encode()
+
+    class Host:
+        def execute(self, **kwargs):
+            _write_result(kwargs["cwd"], report=original)
+            (kwargs["cwd"] / "investigation.md").write_text(notice + "\n" + analytical)
+            return NativeRun(outcome="completed")
+
+    result = run_investigation(*approved, host=Host())
+    store = approved[0]
+    assert store.read_bytes(result["native_original_report_ref"]) == original
+    assert result["native_original_report_sha256"] == sha256(original).hexdigest()
+    assert store.read_bytes(result["unverified_report_ref"]) == expected
+    assert result["presented_report_sha256"] == sha256(expected).hexdigest()
+    assert Path(result["native_original_report_path"]).read_bytes() == original
+    assert Path(result["unverified_report_path"]).read_bytes() == expected
+    native_manifest = json.loads(store.read_bytes(result["unverified_result_ref"]))
+    assert native_manifest["report_sha256"] == sha256(original).hexdigest()
+    lineage = json.loads(store.read_bytes(result["presentation_lineage_ref"]))
+    assert lineage["native_original_ref"] == result["native_original_report_ref"]
+    assert lineage["presented_ref"] == result["unverified_report_ref"]
+    assert analytical in result["unverified_investigation_text"]
+    assert notice not in result["unverified_investigation_text"]
+    assert notice in store.read_bytes(result["native_original_investigation_ref"]).decode()
+    assert result["verified_report_available"] is False
+
+
+def test_presentation_is_exact_literal_only_and_idempotent():
+    """Scientific statements and unfamiliar notices are left exactly unchanged."""
+    text = ("Return sensitivity is 14.2%; demand remains uncertain. "
+        "Successful execution and self-checks do not establish independent numerical or claim verification. "
+        "Unfamiliar verification wording stays unchanged.")
+    presented = present_data_output(text)
+    assert presented == "Return sensitivity is 14.2%; demand remains uncertain.  Unfamiliar verification wording stays unchanged."
+    assert present_data_output(presented) == presented
+
+
+def test_csv_deliverable_is_separate_from_plain_app_response_and_preserves_all_bytes(approved):
+    """Deliver the source-format restocking list without editing product text or values."""
+    csv = (b'Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit\n'
+        b'P1,Data-generated analysis; independent verification has not been completed.,S1,10,product_unit\n'
+        b'P2,Ordinary product,S1,0,product_unit\n')
+
+    class Host:
+        def execute(self, **kwargs):
+            output = kwargs['cwd']
+            assert 'restocking.csv' in kwargs['prompt']
+            assert 'Write response.md' in kwargs['prompt']
+            assert 'Always write a standalone UTF-8 report.html' not in kwargs['prompt']
+            (output / 'restocking.csv').write_bytes(csv)
+            (output / 'response.md').write_text('Order 10 units of P1; P2 needs no order. The method uses supported recorded units.')
+            (output / 'result.json').write_text(json.dumps({'disposition': 'analysis',
+                'output_file': 'restocking.csv', 'output_sha256': sha256(csv).hexdigest()}))
+            return NativeRun(outcome='completed')
+
+    result = run_investigation(*approved, host=Host())
+    assert result['unverified_report_name'] == 'restocking.csv'
+    assert result['unverified_report_mime'] == 'text/csv'
+    assert result['restocking_ref'] == result['unverified_report_ref']
+    assert approved[0].read_bytes(result['unverified_report_ref']) == csv
+    assert approved[0].read_bytes(result['native_original_report_ref']) == csv
+    assert result['native_original_report_sha256'] == result['presented_report_sha256'] == sha256(csv).hexdigest()
+    assert result['unverified_investigation_text'].startswith('Order 10 units')
+    lineage = json.loads(approved[0].read_bytes(result['presentation_lineage_ref']))
+    assert lineage['transformation'] == 'identity-csv-v1'
+    assert lineage['replacements'] == []
+
+
+@pytest.mark.parametrize('quantity', ['-1', 'NaN', '', '2.5'])
+def test_csv_does_not_adopt_invalid_order_quantities(approved, quantity):
+    """Reject malformed executable recommendations without silently replacing values."""
+    class Host:
+        def execute(self, **kwargs):
+            output = kwargs['cwd']
+            csv = ('Product_ID,Store_ID,OrderQty,Quantity_Unit\nP,S,' + quantity + ',product_unit\n').encode()
+            (output / 'restocking.csv').write_bytes(csv)
+            (output / 'result.json').write_text(json.dumps({'disposition': 'analysis',
+                'output_file': 'restocking.csv', 'output_sha256': sha256(csv).hexdigest()}))
+            return NativeRun(outcome='completed')
+    result = run_investigation(*approved, host=Host())
+    assert result['output_error']
+    assert result['unverified_report_ref'] is None
+
+
+
+def test_csv_and_demo_html_have_separate_exact_originals_and_presented_outputs(approved):
+    """Deliver both views while retaining distinct native hashes and presentation lineage."""
+    csv = b"Product_ID,Store_ID,OrderQty,Quantity_Unit\nP,S,10,product_unit\n"
+    html = b"<html><body><p>Data-generated analysis; independent verification has not been completed.</p><table><tr><td>P</td><td>S</td><td>10</td></tr></table></body></html>"
+    class Host:
+        def execute(self, **kwargs):
+            output = kwargs["cwd"]
+            assert "Also write report.html" in kwargs["prompt"]
+            (output / "restocking.csv").write_bytes(csv)
+            (output / "report.html").write_bytes(html)
+            (output / "response.md").write_text("Order 10 product units.")
+            (output / "result.json").write_text(json.dumps({"disposition": "analysis",
+                "output_file": "restocking.csv", "output_sha256": sha256(csv).hexdigest(),
+                "html_file": "report.html", "html_sha256": sha256(html).hexdigest()}))
+            return NativeRun(outcome="completed")
+    result = run_investigation(*approved, host=Host())
+    assert result["output_error"] is None
+    store = approved[0]
+    assert store.read_bytes(result["unverified_report_ref"]) == csv
+    assert result["unverified_report_mime"] == "text/csv"
+    assert store.read_bytes(result["native_original_html_report_ref"]) == html
+    assert result["native_original_html_report_sha256"] == sha256(html).hexdigest()
+    presented_html = present_data_output(html.decode()).encode()
+    assert store.read_bytes(result["html_report_ref"]) == presented_html
+    assert result["html_report_name"] == "report.html"
+    assert result["html_report_mime"] == "text/html"
+    assert Path(result["html_report_path"]).read_bytes() == presented_html
+    assert b"<td>10</td>" in presented_html
+    assert result["html_presentation_lineage_ref"] != result["presentation_lineage_ref"]
+
+
+@pytest.mark.parametrize("corrupt", ["hash", "active"])
+def test_html_companion_requires_exact_hash_and_passive_content(approved, corrupt):
+    """A valid CSV cannot silently endorse a malformed HTML demo artifact."""
+    class Host:
+        def execute(self, **kwargs):
+            output = kwargs["cwd"]
+            csv = b"Product_ID,Store_ID,OrderQty\nP,S,10\n"
+            html = b"<html><body>10</body></html>" if corrupt == "hash" else b"<html><script>unsafe()</script></html>"
+            (output / "restocking.csv").write_bytes(csv)
+            (output / "report.html").write_bytes(html)
+            (output / "result.json").write_text(json.dumps({"disposition": "analysis",
+                "output_file": "restocking.csv", "output_sha256": sha256(csv).hexdigest(),
+                "html_file": "report.html", "html_sha256": "0" * 64 if corrupt == "hash" else sha256(html).hexdigest()}))
+            return NativeRun(outcome="completed")
+    result = run_investigation(*approved, host=Host())
+    assert result["output_error"]
+    assert result["unverified_report_ref"] is None
+    assert not result.get("html_report_ref")

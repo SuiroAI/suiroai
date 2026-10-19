@@ -1,8 +1,8 @@
 """Connect explicit browser consent to the actual DSC-59 Data investigation.
 
-Retain actual native execution evidence and development findings. An execution
-receipt and any downloadable Data report remain distinct from an independently
-verified final analytical report.
+Retain native execution evidence, a dedicated restocking CSV, optional demo HTML and the Data
+explanation shown in the app. Exact stored output bytes remain bound to the
+current approval and original runtime receipt.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
@@ -31,6 +31,12 @@ class BackendResult:
     report_path: str | None = None
     report_ref: dict | None = None
     report_verified: bool = False
+    download_mime: str = "text/csv"
+    html_download_bytes: bytes | None = None
+    html_download_name: str | None = None
+    html_download_mime: str = "text/html"
+    html_report_ref: dict | None = None
+    html_report_path: str | None = None
 
 
 def run_approved(store, submission, proposal, approval, execution, work_root,
@@ -51,6 +57,7 @@ def run_approved(store, submission, proposal, approval, execution, work_root,
     result, error = None, None
     investigation_text = investigation_path = native_outcome = None
     download_bytes = download_name = report_path = report_ref = None
+    html_download_bytes = html_download_name = html_report_path = html_report_ref = None
     try:
         result = run_investigation(store, submission, proposal, approval, root,
             consent_validator, progress=progress)
@@ -61,16 +68,29 @@ def run_approved(store, submission, proposal, approval, execution, work_root,
             status = "execution_failed"
             message = "Data returned output that could not be safely published: " + result["output_error"]
         elif native_outcome == "completed" and report_ref:
+            download_name = result.get("unverified_report_name", "restocking.csv")
+            if (download_name != "restocking.csv"
+                    or result.get("unverified_report_mime", "text/csv") != "text/csv"):
+                raise ValueError("Data must return the restocking list as a CSV file")
             download_bytes = store.read_bytes(report_ref)
-            download_name = "data-development-report.html"
-            report_file = root / ("data-development-report-" + uuid.uuid4().hex + ".html")
+            report_file = root / ("restocking-" + uuid.uuid4().hex + ".csv")
             report_file.write_bytes(download_bytes)
             report_path = str(report_file)
+            html_report_ref = result.get("html_report_ref")
+            if html_report_ref:
+                html_download_name = result.get("html_report_name", "report.html")
+                if (html_download_name != "report.html"
+                        or result.get("html_report_mime", "text/html") != "text/html"):
+                    raise ValueError("The demo report must be an HTML file")
+                html_download_bytes = store.read_bytes(html_report_ref)
+                html_path = root / ("demo-report-" + uuid.uuid4().hex + ".html")
+                html_path.write_bytes(html_download_bytes)
+                html_report_path = str(html_path)
             status = "analysis_completed"
-            message = "Data produced a development report with its assumptions and limitations. It has not been independently verified."
+            message = "Analysis complete. Your restocking list is ready to download."
         elif native_outcome == "completed" and investigation_text:
             status = "investigation_completed"
-            message = "Data completed a development investigation. Its findings have not been independently verified."
+            message = "Data completed the analysis. Findings are shown below."
         else:
             status = "blocked"
             message = "Data could not complete the investigation. " + result.get("message", "No investigation output was returned.")
@@ -93,4 +113,6 @@ def run_approved(store, submission, proposal, approval, execution, work_root,
     return BackendResult(status, message, evidence_path=str(receipt_path), evidence_ref=evidence_ref,
         investigation_text=investigation_text, investigation_path=investigation_path,
         native_outcome=native_outcome, download_bytes=download_bytes, download_name=download_name,
-        report_path=report_path, report_ref=report_ref)
+        report_path=report_path, report_ref=report_ref,
+        html_download_bytes=html_download_bytes, html_download_name=html_download_name,
+        html_report_ref=html_report_ref, html_report_path=html_report_path)

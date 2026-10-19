@@ -314,17 +314,18 @@ def test_development_report_download_retains_unverified_provenance_and_revokes(t
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     def backend(*args):
-        ref = args[0].put_bytes("TEST-development-report", 1, "derived", b"<html>TEST findings</html>")
+        ref = args[0].put_bytes("TEST-development-report", 1, "derived", b"Product_ID,Store_ID,Order_Qty\nTEST-P,TEST-S,5\n")
         return SimpleNamespace(status="analysis_completed", message="Data output; unverified.",
-            evidence_path=None, report_ref=ref, report_path="/test/report.html",
-            download_name="development.html", download_bytes=args[0].read_bytes(ref))
+            evidence_path=None, report_ref=ref, report_path="/test/restocking.csv",
+            download_name="restocking.csv", download_bytes=args[0].read_bytes(ref))
     session = DemoSession(artifact_root=tmp_path, backend=backend)
     proposal = session.review("What should we replenish?", uploads)
     view = session.approve_and_run(proposal["proposal_digest"])
     assert view["report_available"]
+    assert view["download_mime"] == "text/csv"
     assert not view["report_verified"]
     assert not view["verified_report_available"]
-    assert session.download() == ("development.html", b"<html>TEST findings</html>")
+    assert session.download() == ("restocking.csv", b"Product_ID,Store_ID,Order_Qty\nTEST-P,TEST-S,5\n")
     session.invalidate("Replenish another store", uploads)
     assert session.download() is None
 
@@ -356,7 +357,8 @@ def test_approval_authorizes_autonomous_treatment_and_report_without_followup(tm
     """
     view = DemoSession(artifact_root=tmp_path).review("What should we replenish?", uploads)
     summary = view["proposal_summary"]
-    assert "downloadable" in summary["output"].lower()
+    assert "restocking csv" in summary["output"].lower()
+    assert "shown in the app" in summary["output"].lower()
     assert "sensitivities" in summary["output"].lower()
     assert "No follow-up answers are required" in summary["understanding"]
     assert "ask only" not in str(summary).lower()
@@ -380,3 +382,45 @@ def test_inbound_order_dates_do_not_route_receipts_as_sales(tmp_path, uploads):
     session.approve_and_run(view["proposal_digest"])
     source = next(file for file in captured[0]["files"] if file["original_name"] == "incoming.csv")
     assert source["source_role"] == "inbound_ledger"
+
+
+def test_proposal_uses_neutral_report_copy_and_keeps_scientific_assumptions(tmp_path, uploads):
+    """Present Data's deliverable without blanket draft or verification labels.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    summary = DemoSession(artifact_root=tmp_path).review("What should we replenish?", uploads)["proposal_summary"]
+    copy = str(summary).lower()
+    for phrase in ("unverified", "independently verified", "final model selection", "development report", "draft"):
+        assert phrase not in copy
+    assert "sensitivities" in copy
+    assert "november 30, 2025" in copy
+
+
+@pytest.mark.parametrize("revoke", ["edit", "revise", "review"])
+def test_csv_and_html_downloads_share_exact_bytes_and_revocation(tmp_path, uploads, revoke):
+    """Bind both output artifacts to the same current browser approval.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    def backend(*args):
+        csv_data, html_data = b"Product_ID,Store_ID,Order_Qty\nP,S,5\n", b"<html>TEST demo</html>"
+        csv_ref = args[0].put_bytes("TEST-csv", 1, "derived", csv_data)
+        html_ref = args[0].put_bytes("TEST-html", 1, "derived", html_data)
+        return SimpleNamespace(status="analysis_completed", message="Analysis complete.", evidence_path=None,
+            report_ref=csv_ref, download_name="restocking.csv", download_bytes=csv_data,
+            html_report_ref=html_ref, html_download_name="report.html", html_download_bytes=html_data)
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    proposal = session.review("What should we replenish?", uploads)
+    view = session.approve_and_run(proposal["proposal_digest"])
+    assert view["report_available"] and view["html_report_available"]
+    assert session.download() == ("restocking.csv", b"Product_ID,Store_ID,Order_Qty\nP,S,5\n")
+    assert session.download_html() == ("report.html", b"<html>TEST demo</html>")
+    if revoke == "edit":
+        session.invalidate("Replenish another store", uploads)
+    elif revoke == "revise":
+        session.revise()
+    else:
+        session.review("What should we replenish?", uploads)
+    assert session.download() is None
+    assert session.download_html() is None

@@ -2,8 +2,8 @@
 
 Upload explicitly named source files, inspect the proposal, click approval once,
 and record the visible terminal outcome plus source hashes and screenshots.
-A blocked attempt exits with code 2 and never counts as successful end-to-end
-acceptance. No fixture success or prewritten report is injected.
+A blocked attempt exits with code 2. Successful browser-to-file checks remain
+separate from full milestone acceptance. No prewritten result is injected.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
@@ -16,12 +16,11 @@ import json
 from pathlib import Path
 import sys
 
-from playwright.sync_api import sync_playwright, expect
+from suiroai.integration.artifacts import ArtifactStore
 
 
 FILES = {
     "sales": "supplied_sales/Sales_transactions_2022_2025.csv",
-    "dictionary": "supplied_sales/sales_data_dictionary.csv",
     "inventory": "synthetic_inventory/inventory_position.csv",
     "receipts": "synthetic_inventory/inbound_deliveries.csv",
     "policy": "synthetic_ordering_rules/ordering_policy.csv",
@@ -29,18 +28,39 @@ FILES = {
 QUESTION = "Using these files, produce an illustrative product/store restocking list as of November 30, 2025, with findings and limitations."
 
 
+def matching_artifact(artifact_root, expected_sources, data, ref_field):
+    """Match downloaded bytes to an immutable receipt for the supplied files.
+
+    This checks transport identity, not analytical quality or milestone approval.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    checksum = sha256(data).hexdigest()
+    for receipt_path in artifact_root.glob("*/runs/attempt-*.json"):
+        receipt = json.loads(receipt_path.read_bytes())
+        stage = receipt.get("stage_result") or {}
+        ref = stage.get(ref_field)
+        sources = {item["approved_source_ref"]["sha256"] for item in stage.get("released_files", [])}
+        if ref and sources == expected_sources and ref["sha256"] == checksum:
+            if ArtifactStore(receipt_path.parents[1] / "store").read_bytes(ref) == data:
+                return str(receipt_path)
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default="http://127.0.0.1:8501")
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--include-dictionary", action="store_true", help="Also supply the optional data dictionary")
+    parser.add_argument("--artifact-root", type=Path, default=Path("artifacts/demo"))
     args = parser.parse_args()
+    from playwright.sync_api import sync_playwright, expect
+
     args.output.mkdir(parents=True, exist_ok=True)
-    selected_files = {role: path for role, path in FILES.items()
-                      if role != "dictionary" or args.include_dictionary}
+    selected_files = FILES
     record = {"format": "dsc59-real-browser-attempt-v1", "started_at": datetime.now(timezone.utc).isoformat(),
-        "question": QUESTION, "files": [], "success": False, "download_verified": False}
+        "question": QUESTION, "files": [], "success": False,
+        "download_matches_stored_artifact": False, "html_matches_stored_artifact": False,
+        "full_milestone_accepted": False}
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(accept_downloads=True, viewport={"width": 1200, "height": 1100})
@@ -65,37 +85,53 @@ def main():
         page.get_by_role("button", name="Review task", exact=True).click()
         page.get_by_role("heading", name="Review the proposed task").wait_for(timeout=30000)
         record["proposal_shown"] = True
-        record["proposal_id"] = page.get_by_text("Proposal ID:", exact=False).inner_text()
         page.screenshot(path=str(args.output / "01-proposal.png"), full_page=True)
-        assert page.get_by_role("button", name="Download verified HTML report").count() == 0
+        assert page.get_by_role("button", name="Download restocking list (CSV)", exact=True).count() == 0
         page.get_by_role("button", name="Approve and run", exact=True).click()
-        page.get_by_role("button", name="Approve and run", exact=True).wait_for(state="detached", timeout=90000)
-        # The rerun removes the approval action only after the synchronous bounded attempt.
+        page.get_by_role("button", name="Approve and run", exact=True).wait_for(state="detached", timeout=0)
+        # Wait for completion/failure without an overall analytical time limit.
         body = page.locator("body").inner_text()
         record["approved_once"] = True
         record["terminal_page"] = body
         record["javascript_errors"] = errors
         page.screenshot(path=str(args.output / "02-outcome.png"), full_page=True)
-        download = page.get_by_role("button", name="Download verified HTML report", exact=True)
+        download = page.get_by_role("button", name="Download restocking list (CSV)", exact=True)
         if download.count():
             with page.expect_download() as event:
                 download.click()
             file = event.value
-            file.save_as(args.output / file.suggested_filename)
-            record["download_sha256"] = sha256((args.output / file.suggested_filename).read_bytes()).hexdigest()
-            # A download alone is insufficient: compare it with the backend's retained verified artifact.
-            record["outcome"] = "download_present_verification_pending"
+            destination = args.output / Path(file.suggested_filename).name
+            file.save_as(destination)
+            data = destination.read_bytes()
+            record["download_sha256"] = sha256(data).hexdigest()
+            expected_sources = {item["sha256"] for item in record["files"]}
+            record["matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, data, "unverified_report_ref")
+            record["download_matches_stored_artifact"] = record["matching_receipt"] is not None
+            html = page.get_by_role("button", name="Download HTML report", exact=True)
+            if html.count():
+                with page.expect_download() as event:
+                    html.click()
+                html_file = event.value
+                html_path = args.output / Path(html_file.suggested_filename).name
+                html_file.save_as(html_path)
+                html_data = html_path.read_bytes()
+                record["html_sha256"] = sha256(html_data).hexdigest()
+                record["html_matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, html_data, "html_report_ref")
+                record["html_matches_stored_artifact"] = record["html_matching_receipt"] is not None
+            record["outcome"] = "outputs_downloaded"
         else:
-            record["outcome"] = "blocked_no_verified_report"
+            record["outcome"] = "no_report_returned"
         context.close()
         browser.close()
     record["source_files_unchanged"] = all(
         sha256((args.data_root / FILES[file["role"]]).read_bytes()).hexdigest() == file["sha256"]
         for file in record["files"])
     record["finished_at"] = datetime.now(timezone.utc).isoformat()
+    record["success"] = (record["download_matches_stored_artifact"]
+        and record["html_matches_stored_artifact"] and record["source_files_unchanged"])
     (args.output / "attempt.json").write_text(json.dumps(record, indent=2) + "\n")
-    print(json.dumps({key: record[key] for key in ("outcome", "success", "download_verified", "proposal_shown", "approved_once")}))
-    return 0 if record["success"] and record["download_verified"] else 2
+    print(json.dumps({key: record[key] for key in ("outcome", "success", "download_matches_stored_artifact", "proposal_shown", "approved_once")}))
+    return 0 if record["success"] else 2
 
 
 if __name__ == "__main__":

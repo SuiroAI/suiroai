@@ -8,6 +8,8 @@ Authoritative user clarifications recorded October 19, 2026. These supersede con
 - Review the proposed task in ordinary readable language, not raw JSON. Show the goal, files, intended result, material assumptions, and approval scope. Keep technical identifiers out of the main flow.
 - Users never need to provide or understand a data dictionary. Do not request or mention one in the product flow.
 - After explicit approval, genuine ChatGPT Data inspects and analyzes the actual uploaded data and returns the actual downloadable output file. No fixtures substituted silently, mock success, or inventory-only endpoint.
+- The restocking list is a separate downloadable data file in the same file format as the supplied inputs. The supplied example uses CSV, so deliver an importable restocking CSV with identifiers, reliable names, quantities and units. Keep the HTML report available as a second download for the demo. The plain-language explanation of findings and decisions also appears in the app response.
+- Data is the data scientist and its report is the deliverable. Present it neutrally as Data's analysis/report. Do not show generic draft, unverified, or “independent verification has not been completed” disclaimers. Keep substantive methods, assumptions, measured results and relevant scientific limitations.
 
 ## Data owns analytical decisions
 
@@ -33,5 +35,5 @@ Do not ask the user follow-up questions about cleaning, business interpretation,
 4. Approval reaches genuine Data with exact permitted file bytes and original question.
 5. Data handles missingness and analytical choices autonomously and returns the supported result.
 6. Healthy analysis is not interrupted by an overall elapsed-time deadline; failures/cancellation still work.
-7. Downloaded bytes match the actual stored generated artifact and verification labels remain truthful.
+7. Both the standalone restocking CSV and the demo HTML report are downloadable and match their stored output artifacts byte-for-byte. Plain-language findings and explanation also appear in the app, using neutral result language without generic verification disclaimers.
 8. The real visible example, outcome, input/output hashes, tested revision and screenshots are retained.

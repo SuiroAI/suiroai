@@ -109,6 +109,7 @@ class DemoSession:
         self._attempted = set()
         self._store = None
         self._download = None
+        self._html_download = None
         self._view = {"status": "draft", "message": "", "errors": []}
 
     @property
@@ -126,13 +127,13 @@ class DemoSession:
             self._fingerprint = current
             self._revision += 1
             self._receipt = self._proposal = self._approval = self._consent = None
-            self._download = None
+            self._download = self._html_download = None
             self._view = {"status": "draft", "message": "Inputs changed. Review the task before approving a new run." if had_proposal else "", "errors": []}
 
     def revise(self):
         with self._lock:
             self._proposal = self._approval = self._consent = None
-            self._download = None
+            self._download = self._html_download = None
             self._revision += 1
             self._view = {"status": "draft", "message": "Edit the question or files, then select Review task again.", "errors": []}
 
@@ -144,7 +145,7 @@ class DemoSession:
                 return self.view
             self._revision += 1
             self._consent = self._approval = None
-            self._download = None
+            self._download = self._html_download = None
             self._receipt = self._proposal = None
             errors = []
             if not question.strip():
@@ -184,16 +185,16 @@ class DemoSession:
             temporal = {key: value["const"] for key, value in schema_validator().schema["$defs"]["temporal_plan"]["properties"].items()}
             assumptions = [
                 {"assumption_id": "demo-scope", "classification": "synthetic_assumption", "status": "proposed", "source_refs": [],
-                 "statement": "This is an illustrative November 30, 2025 retail scenario in same-product units. Operational inputs must be validated as synthetic before any recommendation."},
+                 "statement": "Use November 30, 2025 as the planning date and same-product units. Data will assess whether supplied operational inputs are synthetic and explain how their provenance affects the results."},
                 {"assumption_id": "demo-unknown-history", "classification": "unknown", "status": "unresolved", "source_refs": receipt.external_refs,
-                 "statement": "Historical information availability and complete daily sales coverage are unverified. Missing dates remain unknown; this proposal does not authorize silent zero filling."},
+                 "statement": "Data will assess historical availability and daily coverage from the files, choose supported treatment for missing observations, and explain assumptions and sensitivities."},
                 {"assumption_id": "demo-inferred-measures", "classification": "supported_interpretation", "status": "proposed", "source_refs": receipt.external_refs,
                  "statement": "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. Use supported assumptions, methods and sensitivity analysis to resolve uncertainty; state any remaining limitations in the report."},
             ]
             assumptions.append({"assumption_id": "development_investigation",
                 "classification": "synthetic_assumption", "status": "proposed",
                 "source_refs": receipt.external_refs,
-                "statement": "Send these approved files and question to Data for development analysis through November 30, 2025, with later transaction outcomes withheld. Data will determine supported treatment and methods, compare sensitive assumptions, and produce the best useful report with limitations without asking follow-up questions."})
+                "statement": "Send these approved files and question to Data for analysis through November 30, 2025, with later transaction outcomes withheld. Data will determine supported treatment and methods, compare sensitive assumptions, and produce the best useful report with limitations without asking follow-up questions."})
             pending = lambda name: {"status": "pending", "unresolved_gap_ids": [name]}
             proposal = {"kind": "task_proposal", "schema_version": VERSION, "artifact_id": self._task + ":proposal",
                 "artifact_version": self._revision, "provenance": "derived",
@@ -217,10 +218,10 @@ class DemoSession:
             self._store.put_record(receipt.submission)
             self._store.put_record(proposal)
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
-                "review_date": "2025-11-30", "output": "A downloadable Data development report with the best supported result, assumptions, sensitivities and limitations.",
-                "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain uncertainty and limitations in the report. No follow-up answers are required.",
+                "review_date": "2025-11-30", "output": "A dedicated restocking CSV file and an HTML demo report, with the explanation, assumptions, sensitivities and limitations shown in the app.",
+                "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
                 "assumptions": [item["statement"] for item in assumptions],
-                "execution": "Approve one real Data analysis attempt using this question and these files, with transaction outcomes after November 30, 2025 withheld. Findings remain unverified until independently checked; this approval does not authorize final model selection or holdout evaluation."}
+                "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."}
             self._view = {"status": "awaiting_approval", "proposal_digest": proposal["binding"]["proposal_digest"],
                 "proposal_summary": summary, "message": "Review this exact task and its limitations before approving.", "errors": []}
             return self.view
@@ -261,7 +262,7 @@ class DemoSession:
                 details = message
                 if status == "completed":
                     status = "blocked"
-                    message = "The backend has not supplied an independently verified delivery receipt. No report can be downloaded."
+                    message = "The analysis did not return a report file for download."
                 report_available = (status == "analysis_completed"
                     and getattr(result, "report_ref", None) is not None
                     and getattr(result, "download_bytes", None) is not None)
@@ -270,8 +271,19 @@ class DemoSession:
                     if persisted != result.download_bytes:
                         raise ValueError("Data report differs from its immutable receipt")
                     self._download = (result.download_name, persisted)
+                html_available = (report_available
+                    and getattr(result, "html_report_ref", None) is not None
+                    and getattr(result, "html_download_bytes", None) is not None)
+                if html_available:
+                    html_persisted = self._store.read_bytes(result.html_report_ref)
+                    if html_persisted != result.html_download_bytes:
+                        raise ValueError("Demo HTML differs from its immutable receipt")
+                    self._html_download = (result.html_download_name, html_persisted)
                 self._view.update(status=status, message=message, technical_details=details,
                     report_available=report_available, report_verified=False,
+                    download_mime=getattr(result, "download_mime", "text/csv"),
+                    html_report_available=html_available, html_download_mime="text/html",
+                    html_report_path=getattr(result, "html_report_path", None),
                     report_path=getattr(result, "report_path", None),
                     evidence_path=result.evidence_path,
                     investigation_text=getattr(result, "investigation_text", None),
@@ -281,7 +293,7 @@ class DemoSession:
         except Exception:
             with self._lock:
                 if self._fingerprint == fingerprint and consent(approval, proposal):
-                    self._view.update(status="execution_failed", message="The backend attempt failed. No verified report is available.", errors=[])
+                    self._view.update(status="execution_failed", message="The analysis attempt failed. No report is available.", errors=[])
         return self.view
 
     def download(self):
@@ -292,3 +304,8 @@ class DemoSession:
         """
         with self._lock:
             return self._download if self._view.get("report_available") else None
+
+    def download_html(self):
+        """Return the current consent-bound demo HTML alongside the primary CSV."""
+        with self._lock:
+            return self._html_download if self._view.get("html_report_available") else None

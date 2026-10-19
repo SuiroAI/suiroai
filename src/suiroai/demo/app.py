@@ -7,6 +7,8 @@ Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 from __future__ import annotations
 
 from collections.abc import Callable
+import mimetypes
+from pathlib import Path
 
 import streamlit as st
 
@@ -41,9 +43,9 @@ def _show_proposal(view: dict) -> None:
 
 
 def _show_outcome(session: object, view: dict) -> None:
-    """Render actual findings and distinguish generated files from verified reports.
+    """Explain findings and offer separate restocking data and demo HTML files.
 
-    Download exact service bytes and state their independent verification status.
+    Keep scientific assumptions and limitations in the analysis itself.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     status = view.get("status", "missing")
@@ -55,38 +57,38 @@ def _show_outcome(session: object, view: dict) -> None:
     elif status in {"blocked", "unsupported_task"}:
         st.warning(message or "The task is blocked. Review the required changes below.")
     elif status in {"failure", "failed", "execution_failed", "validation_failed"}:
-        st.error(message or "The run failed. No verified report is available.")
+        st.error(message or "The run failed. No restocking list is available.")
     elif status == "running":
         st.info(message or "Working on your approved task.")
     elif status == "investigation_completed":
-        st.info(message or "The data investigation is complete. These findings are not a verified final report.")
+        st.info(message or "The data investigation is complete.")
     elif status == "analysis_completed":
         st.info(message or "Data has produced an analysis output.")
     elif status in {"success", "completed"}:
-        result = session.download()
-        if result is None or view.get("report_verified") is not True:
-            st.error("The run has no verified report available for download.")
-        else:
-            name, data = result
-            st.success(message or "Analysis completed and the report passed verification.")
-            st.download_button("Download verified HTML report", data=data, file_name=name,
-                               mime="text/html", key="download_verified_report")
-    if view.get("report_available") and view.get("report_verified") is False:
+        st.success(message or "Analysis complete.")
+    if view.get("report_available") or status in {"success", "completed"}:
         result = session.download()
         if result is not None:
             name, data = result
-            st.caption("Data-generated development report; not independently verified.")
-            st.download_button("Download Data output", data=data, file_name=name,
-                               mime="text/html", key="download_data_output")
+            extension = Path(name).suffix.lower()
+            mime = view.get("download_mime") or mimetypes.guess_type(name)[0] or "application/octet-stream"
+            if extension not in {".html", ".htm"} and mime != "text/html":
+                label = "Download restocking list (CSV)" if extension == ".csv" else "Download restocking list"
+                st.download_button(label, data=data, file_name=name,
+                                   mime=mime, key="download_restocking_list")
+    if view.get("html_report_available"):
+        html_result = session.download_html()
+        if html_result is not None:
+            name, data = html_result
+            st.download_button("Download HTML report", data=data, file_name=name,
+                               mime=view.get("html_download_mime") or "text/html",
+                               key="download_html_report")
     investigation = view.get("investigation_text")
     if investigation:
         st.subheader("What we found")
         st.write(investigation)
     for error in view.get("errors", []):
         st.write(error)
-    if view.get("technical_details"):
-        with st.expander("Technical details"):
-            st.text(view["technical_details"])
 
 
 def run_app(session_factory: Callable | None = None) -> None:
@@ -99,7 +101,7 @@ def run_app(session_factory: Callable | None = None) -> None:
 
     st.set_page_config(page_title="SuiroAI local demo", page_icon="📊")
     st.title("SuiroAI local demo")
-    st.caption("Review the proposed task before allowing analysis. Downloaded outputs state whether they have been independently verified.")
+    st.caption("Review the proposed task before allowing analysis.")
     st.write("Upload your data.")
     st.caption("Changing the question or a file clears the previous approval and result.")
     if "demo_session" not in st.session_state:

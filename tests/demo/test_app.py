@@ -64,15 +64,15 @@ class FakeSession:
         """
         assert digest == self.view["proposal_digest"] == "exact-digest"
         self.runs += 1
-        self.view = {"status": "completed", "message": "Verified test completion", "report_verified": True}
+        self.view = {"status": "completed", "message": "Analysis complete.", "report_available": True}
 
     def download(self):
-        """Return known test bytes only after the simulated verified result.
+        """Return known test bytes only after the simulated completed result.
 
         Linear: https://linear.app/gr3enarr0w/issue/DSC-59
         """
         assert self.view["status"] == "completed"
-        return "verified.html", b"<html>verified test bytes</html>"
+        return "restocking.csv", b"Product_ID,Store_ID,Order_Qty\nP1,S1,12\n"
 
 
 @pytest.fixture
@@ -147,7 +147,7 @@ def test_revise_revokes_proposal_without_running(app):
 @pytest.mark.parametrize("status,element", [("blocked", "warning"), ("execution_failed", "error"),
                                           ("validation_failed", "error"), ("needs_inputs", "info"),
                                           ("unsupported_task", "warning"), ("investigation_completed", "info")])
-def test_unverified_states_never_offer_downloads(app, status, element):
+def test_states_without_report_never_offer_downloads(app, status, element):
     """Keep blocked, failed, and missing-input outcomes visibly distinct.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
@@ -159,7 +159,7 @@ def test_unverified_states_never_offer_downloads(app, status, element):
 
 
 @pytest.mark.parametrize("status", ["investigation_completed", "analysis_completed"])
-def test_investigation_is_readable_and_never_claims_verified_delivery(app, status):
+def test_investigation_preserves_scientific_methods_and_limits(app, status):
     """Display actual data treatment and limitations without claiming verification.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
@@ -167,7 +167,7 @@ def test_investigation_is_readable_and_never_claims_verified_delivery(app, statu
     note = "Dates with no transactions were evaluated under two treatments; the report quantifies sensitivity and limits."
     app.session_state["demo_session"].view = {
         "status": status, "message": "Data investigation response",
-        "investigation_text": note, "verified_report_available": False,
+        "investigation_text": note, "report_available": False,
         "technical_details": "Native execution receipt retained locally.",
     }
     app.run()
@@ -175,30 +175,49 @@ def test_investigation_is_readable_and_never_claims_verified_delivery(app, statu
     assert app.subheader[0].value == "What we found"
     assert note in [element.value for element in app.markdown]
     assert len(app.json) == len(app.success) == len(app.get("download_button")) == 0
-    assert app.expander[0].label == "Technical details"
-    assert app.expander[0].proto.expanded is False
+    assert len(app.expander) == 0
     assert not any("Add your answer" in element.value for element in app.markdown)
     assert not any(button.key == "approve_and_run" for button in app.button)
     assert app.session_state["demo_session"].runs == 0
 
 
-def test_real_generated_output_is_downloadable_with_truthful_label(app):
-    """Offer persisted Data output while clearly disclosing absent verification.
+@pytest.mark.parametrize("verification", [None, False, True])
+def test_real_generated_output_is_downloadable_with_neutral_label(app, verification, monkeypatch):
+    """Offer exact CSV bytes with the correct MIME and readable analysis in the app.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     session = app.session_state["demo_session"]
     session.view = {"status": "analysis_completed", "message": "Data produced an analysis output.",
-                    "report_available": True, "report_verified": False}
-    session.download = lambda: ("data-output.html", b"<html>actual test output</html>")
+                    "report_available": True, "report_verified": verification}
+    data = b"Product_ID,Store_ID,Order_Qty\nP1,S1,12\n"
+    session.download = lambda: ("restocking.csv", data)
+    import streamlit as st
+    original_download = st.download_button
+    calls = []
+
+    def capture_download(*args, **kwargs):
+        """Observe exact bytes and MIME while retaining the actual Streamlit widget.
+
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+        """
+        calls.append(kwargs)
+        return original_download(*args, **kwargs)
+
+    monkeypatch.setattr(st, "download_button", capture_download)
     app.run()
     assert not app.exception
     assert len(app.success) == 0
     downloads = app.get("download_button")
     assert len(downloads) == 1
-    assert downloads[0].label == "Download Data output"
-    assert downloads[0].key == "download_data_output"
-    assert "Data-generated development report; not independently verified." in [item.value for item in app.caption]
+    assert downloads[0].label == "Download restocking list (CSV)"
+    assert downloads[0].key == "download_restocking_list"
+    assert calls[0]["data"] == data
+    assert calls[0]["file_name"] == "restocking.csv"
+    assert calls[0]["mime"] == "text/csv"
+    product_copy = " ".join(item.value for collection in (app.caption, app.markdown, app.info, app.warning)
+                            for item in collection).lower()
+    assert "verif" not in product_copy
     assert "Questions for you" not in [item.value for item in app.subheader]
     assert not any("Add your answer" in item.value for item in app.markdown)
     app.run()
@@ -216,3 +235,60 @@ def test_report_availability_without_service_bytes_does_not_create_download(app)
     app.run()
     assert not app.exception
     assert len(app.get("download_button")) == len(app.success) == 0
+
+
+def test_html_report_is_not_offered_as_restocking_data(app):
+    """Keep an old HTML report out of the dedicated restocking-file download.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = app.session_state["demo_session"]
+    session.view = {"status": "analysis_completed", "report_available": True, "download_mime": "text/html"}
+    session.download = lambda: ("old-report.html", b"<html>old report</html>")
+    app.run()
+    assert not app.exception
+    assert len(app.get("download_button")) == 0
+
+
+@pytest.mark.parametrize("html_available", [True, False])
+def test_csv_and_demo_html_are_separate_downloads_with_plain_response(app, monkeypatch, html_available):
+    """Keep the restocking CSV primary while optionally offering the actual demo HTML.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    import streamlit as st
+
+    session = app.session_state["demo_session"]
+    response = "Order 12 units for this store. The selected method accounts for missing dates and supplier lead time."
+    csv_data = b"Product_ID,Store_ID,Order_Qty\nP1,S1,12\n"
+    html_data = b"<!doctype html><html><body>Analysis and decisions</body></html>"
+    session.view = {"status": "analysis_completed", "report_available": True,
+                    "download_mime": "text/csv", "html_report_available": True,
+                    "html_download_mime": "text/html", "investigation_text": response}
+    session.download = lambda: ("restocking.csv", csv_data)
+    session.download_html = lambda: ("demo-report.html", html_data) if html_available else None
+    calls = []
+    original_download = st.download_button
+
+    def capture_download(*args, **kwargs):
+        """Observe the two exact output payloads without replacing their real widgets.
+
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+        """
+        calls.append(kwargs)
+        return original_download(*args, **kwargs)
+
+    monkeypatch.setattr(st, "download_button", capture_download)
+    app.run()
+    assert not app.exception
+    buttons = app.get("download_button")
+    expected = ["Download restocking list (CSV)"] + (["Download HTML report"] if html_available else [])
+    assert [button.label for button in buttons] == expected
+    assert calls[0]["data"] == csv_data and calls[0]["mime"] == "text/csv"
+    if html_available:
+        assert calls[1]["data"] == html_data and calls[1]["mime"] == "text/html"
+        assert calls[1]["file_name"] == "demo-report.html"
+    assert response in [item.value for item in app.markdown]
+    assert len(app.json) == 0
+    app.run()
+    assert session.runs == 0
