@@ -53,8 +53,6 @@ def _show_proposal(view: dict) -> None:
                     st.write(f"• {item}")
             else:
                 st.write(value)
-    with st.expander("Technical details"):
-        st.caption(f"Proposal ID: {view['proposal_digest']}")
 
 
 def _show_outcome(session: object, view: dict) -> None:

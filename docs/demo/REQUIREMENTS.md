@@ -5,7 +5,7 @@ Authoritative user clarifications recorded October 19, 2026. These supersede con
 ## User experience
 
 - One generic area accepts multiple uploaded files. Intro: **Upload your data.** Question label: **What are you trying to solve for?**
-- Review the proposed task in ordinary readable language, not raw JSON. Show the goal, files, intended result, material assumptions, and approval scope. Keep technical identifiers out of the main flow.
+- Review the proposed task in ordinary readable language, not raw JSON. Show the goal, files, intended result, material assumptions, and approval scope. Do not show a Technical details section or proposal ID anywhere in the product UI; retain identifiers internally.
 - Users never need to provide or understand a data dictionary. Do not request or mention one in the product flow.
 - After explicit approval, genuine ChatGPT Data inspects and analyzes the actual uploaded data and returns the actual downloadable output file. No fixtures substituted silently, mock success, or inventory-only endpoint.
 - The restocking list is a separate downloadable data file in the same file format as the supplied inputs. The supplied example uses CSV, so deliver an importable restocking CSV with identifiers, reliable names, quantities and units. Keep the HTML report available through an **Open HTML report** link that opens a new browser tab; CSV remains a download. The plain-language explanation of findings and decisions also appears in the app response.

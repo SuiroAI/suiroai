@@ -113,9 +113,9 @@ def test_review_and_approval_require_explicit_actions(app):
     for label in ("Your goal", "Files to use", "Review date", "What you'll receive",
                   "How the data will be understood", "Assumptions to review", "When you approve"):
         assert f"**{label}**" in rendered
-    assert app.expander[0].label == "Technical details"
-    assert app.expander[0].proto.expanded is False
-    assert "exact-digest" in app.expander[0].caption[0].value
+    assert len(app.expander) == 0
+    assert not any("exact-digest" in item.value or "Proposal ID" in item.value
+                   for item in list(app.caption) + list(app.markdown))
     app.run()
     assert session.runs == 0
     app.button(key="approve_and_run").click().run()
