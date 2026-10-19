@@ -1,0 +1,182 @@
+{
+  "format": "dsc59-genuine-synthetic-context-checks-v1",
+  "started_at": "2026-10-19T23:39:27.231390+00:00",
+  "payload_scope": "Only nonsensitive synthetic CSV examples authored as literals by this script; no actual uploaded retail CSV was read or released.",
+  "destination": "Existing authenticated native OpenAI Codex model gpt-6.1-sol, verified by NativeHost.",
+  "actual_private_file_live_check_performed": false,
+  "question": "Please provide a restocking list for December 2025 using the supplied retail data.",
+  "question_sha256": "688a9c7f4cac8af8e9c92ba65f541662250c63999d27fc66441fa399022e34b5",
+  "input_files": [
+    {
+      "name": "sales.csv",
+      "sha256": "f5e9b1e5a18d2d17c36287d6b0bfaf592745cd7245ba24fbaa2a8de3495422d4",
+      "bytes": 107
+    },
+    {
+      "name": "inventory.csv",
+      "sha256": "36851fd0ce9d7e833e7c1c1046772ca692f194706fd406454f322d5027156fbd",
+      "bytes": 95
+    },
+    {
+      "name": "receipts.csv",
+      "sha256": "c4e23bccbc838bb9acad6ef8ce5311cf90ec1870fbdf642d56f5142d52828951",
+      "bytes": 82
+    },
+    {
+      "name": "policy.csv",
+      "sha256": "885b38596bee24bf08e2b8764a2fb0dd2234f591f65e40ae2d1ed07f6b88671f",
+      "bytes": 141
+    }
+  ],
+  "controlled_note": {
+    "name": "notes.csv",
+    "sha256": "ad2aae3991fe076006fa29cb65191cd1fe7696115bd72c8293078a59b4f7a8aa",
+    "bytes": 218,
+    "text": "Context,Description\nCurrent restocking process,We currently place replenishment orders every Monday using the average daily sales over the last 90 days to estimate demand until the next review plus supplier lead time.\n",
+    "demo_only": true
+  },
+  "genuine_native": true,
+  "injected_detector_or_host_or_backend": false,
+  "analysis_approval_granted": false,
+  "cases": [
+    {
+      "case": "current_process_in_uploaded_note",
+      "review_status": "awaiting_approval",
+      "context": {
+        "status": "found",
+        "summary": "The current restocking process places replenishment orders every Monday, using average daily sales over the last 90 days to estimate demand until the next review plus supplier lead time.",
+        "evidence": [
+          {
+            "source": "input-5.csv",
+            "quote": "Current restocking process,We currently place replenishment orders every Monday using the average daily sales over the last 90 days to estimate demand until the next review plus supplier lead time."
+          }
+        ],
+        "result_sha256": "a3d95b5e9b6eb17ba740121d1eb0d4d6f3b67614e7631862d11f64eb73d6a45f",
+        "native_outcome": "completed",
+        "released_files": [
+          {
+            "relative_path": "input-1.csv",
+            "original_name": "sales.csv",
+            "source_sha256": "f5e9b1e5a18d2d17c36287d6b0bfaf592745cd7245ba24fbaa2a8de3495422d4",
+            "released_byte_sha256": "f5e9b1e5a18d2d17c36287d6b0bfaf592745cd7245ba24fbaa2a8de3495422d4",
+            "released_bytes": 107,
+            "development_partition": true
+          },
+          {
+            "relative_path": "input-2.csv",
+            "original_name": "inventory.csv",
+            "source_sha256": "36851fd0ce9d7e833e7c1c1046772ca692f194706fd406454f322d5027156fbd",
+            "released_byte_sha256": "36851fd0ce9d7e833e7c1c1046772ca692f194706fd406454f322d5027156fbd",
+            "released_bytes": 95,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-3.csv",
+            "original_name": "receipts.csv",
+            "source_sha256": "c4e23bccbc838bb9acad6ef8ce5311cf90ec1870fbdf642d56f5142d52828951",
+            "released_byte_sha256": "c4e23bccbc838bb9acad6ef8ce5311cf90ec1870fbdf642d56f5142d52828951",
+            "released_bytes": 82,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-4.csv",
+            "original_name": "policy.csv",
+            "source_sha256": "885b38596bee24bf08e2b8764a2fb0dd2234f591f65e40ae2d1ed07f6b88671f",
+            "released_byte_sha256": "885b38596bee24bf08e2b8764a2fb0dd2234f591f65e40ae2d1ed07f6b88671f",
+            "released_bytes": 141,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-5.csv",
+            "original_name": "notes.csv",
+            "source_sha256": "ad2aae3991fe076006fa29cb65191cd1fe7696115bd72c8293078a59b4f7a8aa",
+            "released_byte_sha256": "ad2aae3991fe076006fa29cb65191cd1fe7696115bd72c8293078a59b4f7a8aa",
+            "released_bytes": 218,
+            "development_partition": false
+          }
+        ],
+        "input_key": "98b6acc35cce53a9f8d8aa896044c7f3ced467a778367e4fc12d2f85654c57fd"
+      },
+      "analysis_attempt_count": 0,
+      "approval_exists": false,
+      "native_provenance": {
+        "format": "dsc59-current-process-inspection-v1",
+        "question_sha256": "688a9c7f4cac8af8e9c92ba65f541662250c63999d27fc66441fa399022e34b5",
+        "native_outcome": "completed",
+        "error_code": null,
+        "message": null,
+        "thread_id": "01a15688-cced-7101-b826-726cfc0a72c5",
+        "turn_id": "01a15688-cf3d-77b0-8c2d-7bfaa60c1c46"
+      },
+      "native_provenance_sha256": "2861f546e57492d6869fb646e015e3bfdaf0afce78cde7d83a3d21a442d8df70",
+      "passed": true,
+      "analysis_attempt_count_after": 0,
+      "approval_exists_after": false
+    },
+    {
+      "case": "retail_parameters_without_process",
+      "review_status": "awaiting_current_process",
+      "context": {
+        "status": "missing",
+        "summary": "The question requests a restocking list for December 2025. The complete released CSV contents provide sales records, inventory quantities, expected receipts, and policy parameters, but do not explicitly describe how the user currently determines restocking needs or order quantities.",
+        "evidence": [],
+        "result_sha256": "aab5d221a54f176d87d59e1c39e7e20341f3e05818fd722d3c8c115c1da4624b",
+        "native_outcome": "completed",
+        "released_files": [
+          {
+            "relative_path": "input-1.csv",
+            "original_name": "sales.csv",
+            "source_sha256": "f5e9b1e5a18d2d17c36287d6b0bfaf592745cd7245ba24fbaa2a8de3495422d4",
+            "released_byte_sha256": "f5e9b1e5a18d2d17c36287d6b0bfaf592745cd7245ba24fbaa2a8de3495422d4",
+            "released_bytes": 107,
+            "development_partition": true
+          },
+          {
+            "relative_path": "input-2.csv",
+            "original_name": "inventory.csv",
+            "source_sha256": "36851fd0ce9d7e833e7c1c1046772ca692f194706fd406454f322d5027156fbd",
+            "released_byte_sha256": "36851fd0ce9d7e833e7c1c1046772ca692f194706fd406454f322d5027156fbd",
+            "released_bytes": 95,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-3.csv",
+            "original_name": "receipts.csv",
+            "source_sha256": "c4e23bccbc838bb9acad6ef8ce5311cf90ec1870fbdf642d56f5142d52828951",
+            "released_byte_sha256": "c4e23bccbc838bb9acad6ef8ce5311cf90ec1870fbdf642d56f5142d52828951",
+            "released_bytes": 82,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-4.csv",
+            "original_name": "policy.csv",
+            "source_sha256": "885b38596bee24bf08e2b8764a2fb0dd2234f591f65e40ae2d1ed07f6b88671f",
+            "released_byte_sha256": "885b38596bee24bf08e2b8764a2fb0dd2234f591f65e40ae2d1ed07f6b88671f",
+            "released_bytes": 141,
+            "development_partition": false
+          }
+        ],
+        "input_key": "c0237a26b266f5cff8232fd878f80b04d08d21938d2bd459ce2345464a667960"
+      },
+      "analysis_attempt_count": 0,
+      "approval_exists": false,
+      "native_provenance": {
+        "format": "dsc59-current-process-inspection-v1",
+        "question_sha256": "688a9c7f4cac8af8e9c92ba65f541662250c63999d27fc66441fa399022e34b5",
+        "native_outcome": "completed",
+        "error_code": null,
+        "message": null,
+        "thread_id": "01a15689-0420-7d83-9f7f-fdef9437217b",
+        "turn_id": "01a15689-04ae-7c60-8b96-03d139ebd7b5"
+      },
+      "native_provenance_sha256": "61f2c02a854ea9b265f0536182ff0277e5e73ab0cfeb2a60e9778745404b2b5b",
+      "initial_expectation_met": true,
+      "continued_status": "awaiting_approval",
+      "passed": true,
+      "analysis_attempt_count_after": 0,
+      "approval_exists_after": false
+    }
+  ],
+  "completed_at": "2026-10-19T23:39:51.679922+00:00",
+  "all_passed": true
+}

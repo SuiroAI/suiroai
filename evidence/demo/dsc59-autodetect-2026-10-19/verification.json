@@ -1,0 +1,21 @@
+{
+  "format": "dsc59-autodetect-source-checks-v1",
+  "code_commit": "54a7a42",
+  "recorded_at": "2026-10-19T23:42:12.411931+00:00",
+  "full_regression": {
+    "passed": 774,
+    "subtests_passed": 659,
+    "failed": 0
+  },
+  "demo_tests_passed": 130,
+  "genuine_synthetic_native_checks_passed": 2,
+  "actual_private_file_live_check_performed": false,
+  "source_bindings": {
+    "src/suiroai/demo/current_process.py": "4dd3233d9db97ebd88495767272cf5e6936d8af8e83f97540cd9c68dcc25e0c6",
+    "src/suiroai/demo/service.py": "3e0092d4ef37105288567bfb360a958a30f86b6277627d657c9d9451c6539aec",
+    "src/suiroai/demo/app.py": "4bc8d8642b3d2222568a69fdb0a15ad357f6a8693b295396d47f4f88d7b90d2c",
+    "tests/demo/test_current_process.py": "1c312da71791717296b4b23d7d575b36780c57f77605138c1af1285bcae36142",
+    "tests/demo/test_context_flow.py": "c96dfc89117fa946ca14fed40997574934ee29a6e1de22134a0f0dbdb7c05282",
+    "tests/demo/test_app.py": "bd7d5f53a20bf6ec8fe70dee29d0b2f2e7d8d966e2783d976e1cc3b1b55fcd9c"
+  }
+}

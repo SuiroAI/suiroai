@@ -1,0 +1,2 @@
+Product_ID,Store_ID,Supplier_Lead_Time_Days,Review_Period_Days,Safety_Stock_Qty,Minimum_Order_Qty,Order_Multiple_Qty
+P_DEMO,S_DEMO,1,7,1,1,1

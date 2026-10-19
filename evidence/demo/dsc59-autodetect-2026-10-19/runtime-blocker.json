@@ -1,0 +1,14 @@
+{
+  "format": "dsc59-genuine-context-check-blocker-v1",
+  "genuine_checks_complete": false,
+  "sandbox_attempt_results": "sandbox-attempt.json",
+  "sandbox_outcome": "Both Review task checks returned context_failed because NativeHost reported runtime_error: Operation not permitted. Neither case performed analysis or minted approval.",
+  "normal_permission_attempt": "rejected_by_automatic_approval_review_before_execution",
+  "rejected_action": "Run the genuine pre-consent Review context checks using the four real supplied retail CSV files and a controlled process note through NativeHost with normal local permissions.",
+  "review_reason": "The script sends real uploaded CSV contents, including sales data, through NativeHost to an external/unclear destination; the user did not explicitly authorize exposing that sensitive payload to that destination.",
+  "followup_required": "Establish explicit user authorization for sending the released historical retail CSV content to the existing authenticated native OpenAI Codex model for read-only context inspection before retrying. No workaround or indirect execution was attempted.",
+  "transport_source": "src/suiroai/integration/native.py configures the native Codex app-server customer thread and verifies modelProvider openai and model gpt-6.1-sol; native_profile.py fixes that model. Raw native/account logs remain private.",
+  "analysis_approval_granted": false,
+  "analytical_execution_performed": false,
+  "safer_alternative": "The runner was subsequently changed to read only tiny nonsensitive synthetic CSV files authored as literals in its source. Normal-permission execution of that safer synthetic-only check was approved and both genuine native context checks passed; see results.json. This does not establish a successful live check on actual private CSV files."
+}
