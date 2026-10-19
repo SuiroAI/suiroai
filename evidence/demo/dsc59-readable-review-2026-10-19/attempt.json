@@ -1,0 +1,204 @@
+{
+  "analytical_success": false,
+  "approval_ref": {
+    "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:approval",
+    "provenance": "derived",
+    "sha256": "3b1a715e7bcc1773b62d2c0e1e0df3ccf9b63f8e302caf0e9974e807576d263d",
+    "version": 6
+  },
+  "error": null,
+  "execution_contract_ref": null,
+  "format": "dsc59-demo-attempt-v1",
+  "message": "Preparation cannot safely dispatch a model turn: the pinned parent contract permits original source references only, while development preparation requires a controller-created partition excluding December 2025. A reviewed derived-input release bridge is required. Historical information availability and daily-series completeness also remain unverified. Controller audit preserved 17406 development records across 336 product/store pairs; 463462 pair dates have no records and remain unknown. No execution contract was started: a justified acceptance rule and safe derived-input release are still required.",
+  "parent": {
+    "active_request_ref": null,
+    "attempts": {},
+    "defect_rechecks": 0,
+    "delivery_blocker": null,
+    "events": [
+      {
+        "action": "material_input_received_approval_invalidated",
+        "at": "2026-10-19T16:25:15.075312+00:00",
+        "audit_ref": {
+          "artifact_id": "parent-event-e8705d3c40ff478f9e7e0c576746bafe",
+          "provenance": "supplied",
+          "sha256": "c39a8947f67db624b20b38620517b164a07d3147aaddd7898472312794371afd",
+          "version": 1
+        },
+        "submission_ref": {
+          "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:submission",
+          "provenance": "supplied",
+          "sha256": "954de2230dc9e200bf44ab18f9f5064ae41d9814ee480a43220c9b17accc8995",
+          "version": 6
+        }
+      },
+      {
+        "action": "proposal_presented_approval_invalidated",
+        "at": "2026-10-19T16:25:15.078252+00:00",
+        "audit_ref": {
+          "artifact_id": "parent-event-6d601c7dad10413d857c6e46608eb69e",
+          "provenance": "derived",
+          "sha256": "91a7511b630a1154e8d45dbf62719e2963187280e7a587c1df0ad5697458d4f7",
+          "version": 1
+        },
+        "proposal_ref": {
+          "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:proposal",
+          "provenance": "derived",
+          "sha256": "8815311830024c31fc66d70525d3ce3d6e00ca18133de5acdd6edbaf10e30e58",
+          "version": 6
+        }
+      },
+      {
+        "action": "customer_approval",
+        "approval_ref": {
+          "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:approval",
+          "provenance": "derived",
+          "sha256": "3b1a715e7bcc1773b62d2c0e1e0df3ccf9b63f8e302caf0e9974e807576d263d",
+          "version": 6
+        },
+        "at": "2026-10-19T16:25:15.080622+00:00",
+        "audit_ref": {
+          "artifact_id": "parent-event-1ae7d499b88f481e965c16e998850ef4",
+          "provenance": "derived",
+          "sha256": "7e9645bf22c4dff5c4fecec0c0bd75d2cc85ddf8b0678031a60bd9d0f97dbc6d",
+          "version": 1
+        },
+        "decision": "approved"
+      }
+    ],
+    "frozen": null,
+    "outcome": null,
+    "record_refs": [
+      {
+        "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:submission",
+        "provenance": "supplied",
+        "sha256": "954de2230dc9e200bf44ab18f9f5064ae41d9814ee480a43220c9b17accc8995",
+        "version": 6
+      },
+      {
+        "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:proposal",
+        "provenance": "derived",
+        "sha256": "8815311830024c31fc66d70525d3ce3d6e00ca18133de5acdd6edbaf10e30e58",
+        "version": 6
+      },
+      {
+        "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:approval",
+        "provenance": "derived",
+        "sha256": "3b1a715e7bcc1773b62d2c0e1e0df3ccf9b63f8e302caf0e9974e807576d263d",
+        "version": 6
+      }
+    ],
+    "reviews": 0,
+    "state": "approved"
+  },
+  "proposal_ref": {
+    "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:proposal",
+    "provenance": "derived",
+    "sha256": "8815311830024c31fc66d70525d3ce3d6e00ca18133de5acdd6edbaf10e30e58",
+    "version": 6
+  },
+  "remaining_requirements": [
+    "Preparation cannot safely dispatch a model turn: the pinned parent contract permits original source references only, while development preparation requires a controller-created partition excluding December 2025. A reviewed derived-input release bridge is required. Historical information availability and daily-series completeness also remain unverified.",
+    "Numerical checkpoint review and check-only output-verification transport must be connected before a verified recommendation can be delivered."
+  ],
+  "reviews": [],
+  "stage_result": {
+    "analytical_model_turn_requested": false,
+    "development_release_audit": {
+      "analytical_model_inputs_released": false,
+      "audit_ref": {
+        "artifact_id": "demo-release-audit-4470bd3be4d0477f98d2cf58d6e40912-audit",
+        "provenance": "derived",
+        "sha256": "dbabeb0184e2968f633a68adf8cd7db3f484f8aff6ee74bf27d8f37f293dc59d",
+        "version": 1
+      },
+      "development_product_store_pairs": 336,
+      "development_source_records": 17406,
+      "development_unobserved_pair_dates": 463462
+    },
+    "error_code": "unsupported_integration",
+    "evidence": {
+      "analytical_model_turn_requested": false,
+      "artifact_receipts": [
+        {
+          "bytes": 2551,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e39ffdb8c39d412587bfbb42271d7b92/runs/preflight-69dc142d39864b27886dcb3ae5cb234b/native/native-run.json",
+          "relative_path": "native-run.json",
+          "sha256": "c8d171c72acf6e4c14290700d9eb2d6e5827dea6e66b8b2953d92d60b17dfd85"
+        }
+      ],
+      "automatic_acceptance": false,
+      "full_native_profile_verified": false,
+      "mode": "customer",
+      "phase": "native_inventory_preflight",
+      "plugin_inventory_command": {
+        "cleanup": {
+          "direct_child_reaped": true,
+          "kill_sent": false,
+          "term_sent": false
+        },
+        "command": [
+          "/opt/homebrew/bin/codex",
+          "plugin",
+          "list",
+          "--json"
+        ],
+        "data_entries": [
+          {
+            "enabled": true,
+            "installed": true,
+            "pluginId": "data-analytics@openai-curated-remote",
+            "source_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+            "version": "1.0.11"
+          }
+        ],
+        "data_entry": {
+          "enabled": true,
+          "installed": true,
+          "pluginId": "data-analytics@openai-curated-remote",
+          "source_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+          "version": "1.0.11"
+        },
+        "diagnostics": {
+          "fallback_observed": false,
+          "raw_stderr_omitted": true,
+          "source": "rust-v0.163.0/codex-rs/cli/src/plugin_cmd.rs:895",
+          "source_warning": null
+        },
+        "elapsed_seconds": 0.421158,
+        "exit_code": 0,
+        "installed_count": 28,
+        "limit_seconds": 19.999998582992703,
+        "phase": "plugin_inventory",
+        "selected_data_entry_count": 1,
+        "status": "verified",
+        "stderr_content_omitted": false,
+        "stderr_limit_bytes": 65536,
+        "stderr_observed_bytes": 0,
+        "stderr_observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_limit_bytes": 2097152,
+        "stdout_observed_bytes": 14198,
+        "stdout_observed_sha256": "783c050ed3821c474653a554acca3cb398c0b7c8e73a2ecf15b85c5de334e7b2"
+      },
+      "report": "/private/tmp/suiroai-dsc59/artifacts/demo/e39ffdb8c39d412587bfbb42271d7b92/runs/preflight-69dc142d39864b27886dcb3ae5cb234b/native/native-run.json"
+    },
+    "immutable_native_evidence_refs": [
+      {
+        "artifact_id": "demo-native-e0d6a27e48444967b9ceaf8f92c9e779",
+        "provenance": "derived",
+        "sha256": "c8d171c72acf6e4c14290700d9eb2d6e5827dea6e66b8b2953d92d60b17dfd85",
+        "version": 1
+      }
+    ],
+    "message": "Preparation cannot safely dispatch a model turn: the pinned parent contract permits original source references only, while development preparation requires a controller-created partition excluding December 2025. A reviewed derived-input release bridge is required. Historical information availability and daily-series completeness also remain unverified.",
+    "preflight_only": true
+  },
+  "status": "blocked",
+  "submission_ref": {
+    "artifact_id": "retail-2a40e69d300a49bba7181965b018292a:submission",
+    "provenance": "supplied",
+    "sha256": "954de2230dc9e200bf44ab18f9f5064ae41d9814ee480a43220c9b17accc8995",
+    "version": 6
+  },
+  "verified_report_available": false
+}

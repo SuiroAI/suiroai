@@ -34,6 +34,7 @@ ROLES = {
     "receipts": ("inbound_ledger", {"Product_ID", "Store_ID", "Expected_Arrival_Date", "Incoming_Qty"}),
     "policy": ("ordering_policy", {"Product_ID", "Store_ID", "Supplier_Lead_Time_Days", "Review_Period_Days", "Safety_Stock_Qty", "Minimum_Order_Qty", "Order_Multiple_Qty"}),
 }
+REQUIRED_ROLES = set(ROLES) - {"dictionary"}
 
 
 @dataclass(frozen=True)
@@ -76,7 +77,7 @@ def _identify_uploads(uploads):
             role = candidates[0]
             seen.add(role)
             identified.append(UploadedInput(name=file.name, role=role, data=file.data))
-    errors.extend("This task needs " + role + " data." for role in ROLES if role not in seen)
+    errors.extend("This task needs " + role + " data." for role in sorted(REQUIRED_ROLES) if role not in seen)
     return tuple(identified), errors
 
 
@@ -182,6 +183,8 @@ class DemoSession:
                  "statement": "This is an illustrative November 30, 2025 retail scenario in same-product units. Operational inputs must be validated as synthetic before any recommendation."},
                 {"assumption_id": "demo-unknown-history", "classification": "unknown", "status": "unresolved", "source_refs": receipt.external_refs,
                  "statement": "Historical information availability and complete daily sales coverage are unverified. Missing dates remain unknown; this proposal does not authorize silent zero filling."},
+                {"assumption_id": "demo-inferred-measures", "classification": "supported_interpretation", "status": "proposed", "source_refs": receipt.external_refs,
+                 "statement": "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. A data dictionary is optional; ask only if consequential business ambiguity remains."},
             ]
             pending = lambda name: {"status": "pending", "unresolved_gap_ids": [name]}
             proposal = {"kind": "task_proposal", "schema_version": VERSION, "artifact_id": self._task + ":proposal",
@@ -206,9 +209,10 @@ class DemoSession:
             self._store.put_record(receipt.submission)
             self._store.put_record(proposal)
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
-                "review_date": "2025-11-30", "output": "One verified HTML restocking report, only if all gates pass.",
+                "review_date": "2025-11-30", "output": "One HTML restocking report you can download, after the calculations and findings pass verification.",
+                "understanding": "We will inspect the columns and compare the files to understand your data. You do not need a data dictionary. We will ask about any unclear business meaning that could change the answer before calculating quantities.",
                 "assumptions": [item["statement"] for item in assumptions],
-                "execution": "Approval permits one bounded attempt. Current runtime discovery and safe-input-release blockers may prevent analysis. No successful report has been produced."}
+                "execution": "Approve one attempt using this question and these files. This development build can check the inputs, but the analysis and verified report are not connected yet. This attempt will stop before analysis and will not produce a report."}
             self._view = {"status": "awaiting_approval", "proposal_digest": proposal["binding"]["proposal_digest"],
                 "proposal_summary": summary, "message": "Review this exact task and its limitations before approving.", "errors": []}
             return self.view

@@ -19,19 +19,20 @@ The current intake is deterministic and restricted to the selected retail schema
 
 ## Try the actual supplied example
 
-Add these CSV files together in the single **Upload your data** area, from the explicitly selected `data/retail_mvp/sales_2022_2025/` directory. The backend identifies their meaning from actual column headers; filenames and selection order do not assign roles:
+Add these four operational CSV files together in the single **Upload your data** area, from the explicitly selected `data/retail_mvp/sales_2022_2025/` directory. The backend identifies their meaning from actual column headers; filenames and selection order do not assign roles:
 
 | Source | File |
 | --- | --- |
 | Sales | `supplied_sales/Sales_transactions_2022_2025.csv` |
-| Data dictionary | `supplied_sales/sales_data_dictionary.csv` |
 | Inventory | `synthetic_inventory/inventory_position.csv` |
 | Receipts | `synthetic_inventory/inbound_deliveries.csv` |
 | Replenishment policy | `synthetic_ordering_rules/ordering_policy.csv` |
 
+A data dictionary is optional. If available, you can also add `supplied_sales/sales_data_dictionary.csv` in the same area. Missing a dictionary does not block task review. The backend should investigate Quantity, status, and return treatment from the actual file contents and cross-file consistency, and ask only if consequential ambiguity remains.
+
 Question: “Using these files, produce an illustrative product/store restocking list as of November 30, 2025, with findings and limitations.”
 
-Select **Review task**, inspect the proposed task and disclosed unknowns, then **Approve and run**. No file is auto-loaded from the fixture directory. Missing, unrecognized, ambiguous, or duplicate source data produces specific guidance during review. A changed question, filename, or file byte revokes the old proposal/result. Repeated review is idempotent; a run permission is consumed once. Revise explicitly revokes consent even when input bytes are unchanged. Old results and exceptions cannot overwrite a newer proposal.
+Select **Review task**, inspect the proposed task and disclosed unknowns, then **Approve and run**. The review uses readable sections for your goal, files, date, expected report, data understanding, assumptions, and what approval allows. Its technical identifier is collapsed under **Technical details**. No file is auto-loaded from the fixture directory. Missing, unrecognized, ambiguous, or duplicate source data produces specific guidance during review. A changed question, filename, or file byte revokes the old proposal/result. Repeated review is idempotent; a run permission is consumed once. Revise explicitly revokes consent even when input bytes are unchanged. Old results and exceptions cannot overwrite a newer proposal.
 
 Current expected result: **blocked before model execution**, with no recommendation file. This is correct blocker handling, not completion of the successful example. Records and approved source copies are retained in ignored `artifacts/demo/<session>/`; each native discovery receipt and controller audit has an immutable reference. These artifacts are local and must not be committed wholesale.
 
@@ -58,6 +59,6 @@ uv run --no-sync playwright install chromium
 uv run --no-sync python scripts/check_demo_browser.py --data-root /absolute/path/to/data/retail_mvp/sales_2022_2025 --output /absolute/path/to/attempt-record
 ```
 
-Start the app separately before running that command. The driver uploads the actual selected files, checks the proposal, clicks approval once, retains input hashes and screenshots, and records whether a verified download is available. It currently exits **2** for the honest blocked result. It cannot establish acceptance from a download alone; independent delivery/readback still has to be connected. UI/component tests use explicit test doubles and are not real analytical evidence.
+Start the app separately before running that command. The driver uploads the four actual operational files by default; add `--include-dictionary` to include the optional dictionary. It checks the proposal, clicks approval once, retains input hashes and screenshots, and records whether a verified download is available. It currently exits **2** for the honest blocked result. It cannot establish acceptance from a download alone; independent delivery/readback still has to be connected. UI/component tests use explicit test doubles and are not real analytical evidence.
 
 A network-restricted terminal may cause Codex plugin inventory to return its remote-marketplace fallback warning. The existing policy rejects that incomplete inventory. The normal network-enabled host inventory was checked successfully; no fallback or guard relaxation was added. Native permission, browser-launch, and localhost-bind errors from a restricted executor must be distinguished from app failures.

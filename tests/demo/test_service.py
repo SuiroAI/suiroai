@@ -252,3 +252,63 @@ def test_missing_source_is_guidance_after_review(tmp_path, uploads):
     assert view["status"] == "needs_inputs"
     assert "policy" in " ".join(view["errors"]).lower()
     assert "proposal_digest" not in view
+
+
+def test_dictionary_is_optional_without_fabricated_source_or_semantics(tmp_path, uploads):
+    """Review four operational sources while retaining evidence-based investigation.
+
+    Column names identify source structure; they do not prove quantity semantics.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    files = [file for file in uploads if file.name != "dictionary.csv"]
+    captured = []
+
+    def backend(*args):
+        """Capture the exact approved four-source submission and investigation plan.
+
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+        """
+        captured.append((args[1], args[2]))
+        return SimpleNamespace(status="blocked", message="Unverified semantics", evidence_path=None)
+
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    view = session.review("What should we replenish?", files)
+    assert view["status"] == "awaiting_approval"
+    assert len(view["proposal_summary"]["inputs"]) == 4
+    assert set(view["proposal_summary"]["inputs"]) == {file.name for file in files}
+    session.approve_and_run(view["proposal_digest"])
+    submission, proposal = captured[0]
+    assert len(submission["files"]) == len(proposal["source_refs"]) == 4
+    assert all(file["source_role"] != "dictionary" for file in submission["files"])
+    assert proposal["target_policy"]["status"] == "pending"
+    interpretations = [item["statement"].lower() for item in proposal["assumptions"]]
+    assert any("quantity" in statement and "investigat" in statement
+               for statement in interpretations)
+    assert session.download() is None
+
+
+def test_optional_dictionary_is_retained_when_supplied(tmp_path, uploads):
+    """Keep an optional measured dictionary as a fifth source when provided.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", uploads)
+    assert view["status"] == "awaiting_approval"
+    assert len(view["proposal_summary"]["inputs"]) == 5
+    assert "dictionary.csv" in view["proposal_summary"]["inputs"]
+
+
+def test_missing_policy_remains_required_without_dictionary(tmp_path, uploads):
+    """Request actual missing ordering policy without demanding a dictionary.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    files = [file for file in uploads if file.name not in {"dictionary.csv", "policy.csv"}]
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", files)
+    assert view["status"] == "needs_inputs"
+    guidance = " ".join(view["errors"]).lower()
+    assert "policy" in guidance
+    assert "dictionary" not in guidance
+    assert "proposal_digest" not in view

@@ -14,16 +14,30 @@ import streamlit as st
 def _show_proposal(view: dict) -> None:
     """Show the exact service proposal that the approval digest identifies.
 
-    Display structured content without rewriting any proposed scope or terms.
+    Present labelled prose without rewriting any proposed scope or terms.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     st.subheader("Review the proposed task")
     proposal = view.get("proposal_summary")
     if isinstance(proposal, str):
-        st.text(proposal)
+        st.write(proposal)
     else:
-        st.json(proposal)
-    st.caption(f"Proposal ID: {view['proposal_digest']}")
+        for field, label in (("question", "Your goal"), ("inputs", "Files to use"),
+                             ("review_date", "Review date"), ("output", "What you'll receive"),
+                             ("understanding", "How the data will be understood"),
+                             ("assumptions", "Assumptions to review"),
+                             ("execution", "When you approve")):
+            value = proposal.get(field)
+            if value is None:
+                continue
+            st.markdown(f"**{label}**")
+            if isinstance(value, list):
+                for item in value:
+                    st.write(f"• {item}")
+            else:
+                st.write(value)
+    with st.expander("Technical details"):
+        st.caption(f"Proposal ID: {view['proposal_digest']}")
 
 
 def _show_outcome(session: object, view: dict) -> None:

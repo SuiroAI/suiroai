@@ -34,8 +34,11 @@ def main():
     parser.add_argument("--url", default="http://127.0.0.1:8501")
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--include-dictionary", action="store_true", help="Also supply the optional data dictionary")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
+    selected_files = {role: path for role, path in FILES.items()
+                      if role != "dictionary" or args.include_dictionary}
     record = {"format": "dsc59-real-browser-attempt-v1", "started_at": datetime.now(timezone.utc).isoformat(),
         "question": QUESTION, "files": [], "success": False, "download_verified": False}
     with sync_playwright() as p:
@@ -53,8 +56,8 @@ def main():
         page.get_by_label("What are you trying to solve for?").fill(QUESTION)
         inputs = page.locator('input[type="file"]')
         expect(inputs).to_have_count(1)
-        inputs.set_input_files([str((args.data_root / relative).resolve()) for relative in FILES.values()])
-        for i, (role, relative) in enumerate(FILES.items()):
+        inputs.set_input_files([str((args.data_root / relative).resolve()) for relative in selected_files.values()])
+        for role, relative in selected_files.items():
             source = (args.data_root / relative).resolve()
             data = source.read_bytes()
             page.get_by_role("button", name="Remove " + source.name, exact=True).wait_for(timeout=15000)

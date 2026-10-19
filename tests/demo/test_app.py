@@ -40,7 +40,15 @@ class FakeSession:
         Linear: https://linear.app/gr3enarr0w/issue/DSC-59
         """
         self.view = {"status": "awaiting_approval", "proposal_digest": "exact-digest",
-                     "proposal_summary": {"question": question, "scope": "Exact reviewed scope"}}
+                     "proposal_summary": {
+                         "question": question,
+                         "inputs": ["sales.csv", "inventory.csv"],
+                         "review_date": "2025-11-30",
+                         "output": "Exact reviewed deliverable",
+                         "understanding": "Exact reviewed interpretation",
+                         "assumptions": ["A disclosed assumption", "An unresolved limitation"],
+                         "execution": "Approval permits one bounded attempt, with no guaranteed result.",
+                     }}
 
     def revise(self):
         """Revoke the unchanged test proposal upon an explicit revision.
@@ -96,8 +104,18 @@ def test_review_and_approval_require_explicit_actions(app):
     app.text_area(key="business_question").input("What should we replenish?").run()
     app.button(key="review_task").click().run()
     assert session.runs == 0
-    assert "Exact reviewed scope" in app.json[0].value
-    assert "exact-digest" in app.caption[-1].value
+    assert len(app.json) == 0
+    rendered = [element.value for element in app.markdown]
+    proposal = session.view["proposal_summary"]
+    for value in proposal.values():
+        for item in value if isinstance(value, list) else [value]:
+            assert item in rendered or f"• {item}" in rendered
+    for label in ("Your goal", "Files to use", "Review date", "What you'll receive",
+                  "How the data will be understood", "Assumptions to review", "When you approve"):
+        assert f"**{label}**" in rendered
+    assert app.expander[0].label == "Technical details"
+    assert app.expander[0].proto.expanded is False
+    assert "exact-digest" in app.expander[0].caption[0].value
     app.run()
     assert session.runs == 0
     app.button(key="approve_and_run").click().run()
