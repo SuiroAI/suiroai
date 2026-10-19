@@ -85,7 +85,12 @@ def test_review_and_approval_require_explicit_actions(app):
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     assert not app.exception
-    assert len(app.get("file_uploader")) == 5
+    uploaders = app.get("file_uploader")
+    assert len(uploaders) == 1
+    assert uploaders[0].proto.multiple_files
+    assert uploaders[0].label == "Upload your data"
+    assert app.text_area(key="business_question").label == "What are you trying to solve for?"
+    assert "Upload your data." in [element.value for element in app.markdown]
     assert len(app.get("download_button")) == 0
     session = app.session_state["demo_session"]
     app.text_area(key="business_question").input("What should we replenish?").run()

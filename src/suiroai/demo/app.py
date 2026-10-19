@@ -11,15 +11,6 @@ from collections.abc import Callable
 import streamlit as st
 
 
-UPLOAD_ROLES = (
-    ("sales", "Sales"),
-    ("dictionary", "Data dictionary"),
-    ("inventory", "Inventory"),
-    ("receipts", "Receipts"),
-    ("policy", "Replenishment policy"),
-)
-
-
 def _show_proposal(view: dict) -> None:
     """Show the exact service proposal that the approval digest identifies.
 
@@ -43,8 +34,10 @@ def _show_outcome(session: object, view: dict) -> None:
     """
     status = view.get("status", "missing")
     message = view.get("message") or ""
+    if status == "draft" and not message:
+        return
     if status in {"draft", "missing", "missing_inputs", "needs_inputs"}:
-        st.info(message or "Add your business question and required source files, then select Review task.")
+        st.info(message or "Upload your data and describe what you are trying to solve for.")
     elif status in {"blocked", "unsupported_task", "needs_material_facts"}:
         st.warning(message or "The task is blocked. Review the required changes below.")
     elif status in {"failure", "failed", "execution_failed", "validation_failed"}:
@@ -75,19 +68,15 @@ def run_app(session_factory: Callable | None = None) -> None:
     st.set_page_config(page_title="SuiroAI local demo", page_icon="📊")
     st.title("SuiroAI local demo")
     st.caption("Development build: intake and runtime checks work; verified report generation is not yet connected.")
-    st.write("Upload your retail data, review the proposed task, then approve the analysis.")
+    st.write("Upload your data.")
     st.caption("Changing the question or a file clears the previous approval and result.")
     if "demo_session" not in st.session_state:
         st.session_state.demo_session = (session_factory or DemoSession)()
     session = st.session_state.demo_session
 
-    question = st.text_area("Business question", key="business_question",
-                            placeholder="What should we replenish, and why?")
-    uploads = []
-    for role, label in UPLOAD_ROLES:
-        uploaded = st.file_uploader(label, type=["csv"], key=f"upload_{role}")
-        if uploaded is not None:
-            uploads.append(UploadedInput(name=uploaded.name, role=role, data=uploaded.getvalue()))
+    question = st.text_area("What are you trying to solve for?", key="business_question")
+    uploaded_files = st.file_uploader("Upload your data", accept_multiple_files=True, key="upload_files")
+    uploads = [UploadedInput(name=file.name, data=file.getvalue()) for file in uploaded_files]
     session.invalidate(question, uploads)
 
     if st.button("Review task", key="review_task"):

@@ -46,13 +46,17 @@ def main():
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.goto(args.url)
         page.get_by_role("heading", name="SuiroAI local demo").wait_for(timeout=30000)
-        page.get_by_label("Business question").fill(QUESTION)
+        record["question_label"] = "What are you trying to solve for?"
+        record["upload_areas"] = page.locator('input[type="file"]').count()
+        record["accepts_multiple_files"] = page.locator('input[type="file"]').get_attribute("multiple") is not None
+        page.screenshot(path=str(args.output / "00-upload.png"), full_page=True)
+        page.get_by_label("What are you trying to solve for?").fill(QUESTION)
         inputs = page.locator('input[type="file"]')
-        expect(inputs).to_have_count(5)
+        expect(inputs).to_have_count(1)
+        inputs.set_input_files([str((args.data_root / relative).resolve()) for relative in FILES.values()])
         for i, (role, relative) in enumerate(FILES.items()):
             source = (args.data_root / relative).resolve()
             data = source.read_bytes()
-            inputs.nth(i).set_input_files(str(source))
             page.get_by_role("button", name="Remove " + source.name, exact=True).wait_for(timeout=15000)
             record["files"].append({"role": role, "name": source.name, "bytes": len(data), "sha256": sha256(data).hexdigest()})
         page.get_by_role("button", name="Review task", exact=True).click()

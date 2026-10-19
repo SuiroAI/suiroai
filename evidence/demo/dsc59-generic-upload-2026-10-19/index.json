@@ -1,0 +1,28 @@
+{
+  "accepts_multiple_files": true,
+  "analytical_success": false,
+  "browser_outcome": "blocked_no_verified_report",
+  "capture_files": {
+    "00-upload.png": "8040907ba42dd5a4ec7bde1292bf0d6997f8d7303a5f903637ca99d3e54ce57a",
+    "01-proposal.png": "2bcd5e452f025b9e7c0c23ce0744024c3a8a657ba34c96aa5c5c03771bfde636",
+    "02-outcome.png": "5056c6b1bd7dc08fb3045e4b2fd299f51fbb2ba1ae30b703dbca0cfaead98af4",
+    "attempt.json": "d682eceb80b9f14b128a8c60cc3c8e9039efc412e5e853ae43aa25e33a5f395d"
+  },
+  "download_verified": false,
+  "format": "dsc59-generic-upload-evidence-v1",
+  "intro": "Upload your data.",
+  "question_label": "What are you trying to solve for?",
+  "regression": {
+    "command": "uv run --no-sync python -m pytest tests -q",
+    "passed": 672,
+    "subtests_passed": 659
+  },
+  "source_files": {
+    "scripts/check_demo_browser.py": "fe1cf0fcd3aed5c0c9ff99d793f4c7b019556bd4ec6f4bb844008f150ad1acce",
+    "src/suiroai/demo/app.py": "37c08711544423998ea3833b3878f877e2824f3b5cfd931fddf29955d55faaec",
+    "src/suiroai/demo/service.py": "f017ef994f07ac97a6159003af3373d8218589c45edbcca828530df71b828806",
+    "tests/demo/test_app.py": "ee885643d5a71996ee53f75d49fcb7f30e1b8a79dabe76e63d092eb6fd389554",
+    "tests/demo/test_service.py": "9f93b951e0b842fed629560cad5a10308b17a655259f974317389daecafde272"
+  },
+  "upload_areas": 1
+}

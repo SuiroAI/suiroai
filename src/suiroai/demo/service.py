@@ -13,7 +13,9 @@ from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
-import json
+import csv
+import codecs
+import io
 from pathlib import Path
 import re
 import threading
@@ -36,10 +38,46 @@ ROLES = {
 
 @dataclass(frozen=True)
 class UploadedInput:
-    """Carry a role-labelled upload without trusting its original path."""
+    """Carry generic uploaded bytes; the backend identifies their content role."""
     name: str
-    role: str
-    data: bytes
+    role: str | None = None
+    data: bytes = b""
+
+
+def _identify_uploads(uploads):
+    """Identify this backend's input roles from bounded headers, never names.
+
+    The browser stays generic. Unsupported, ambiguous, and duplicate inputs
+    remain explicit rather than being silently assigned to an analytical role.
+    """
+    identified, errors, seen = [], [], set()
+    for file in uploads:
+        if len(file.data) > 16 * 1024 * 1024:
+            errors.append(f"{file.name}: exceeds the 16 MiB file limit.")
+            continue
+        try:
+            # Only inspect a bounded header here; source rows remain untouched.
+            text = codecs.getincrementaldecoder("utf-8-sig")().decode(
+                file.data[:65536], final=len(file.data) <= 65536)
+            columns = next(csv.reader(io.StringIO(text)), [])
+        except (UnicodeError, csv.Error):
+            columns = []
+        if not columns or len(columns) > 256 or any(len(column) > 256 for column in columns):
+            errors.append(f"{file.name}: unrecognized format; this demo's backend currently reads CSV data.")
+            continue
+        candidates = [role for role, (_, fields) in ROLES.items() if fields <= set(columns)]
+        if not candidates:
+            errors.append(f"{file.name}: unrecognized input columns; its purpose could not be established for this task.")
+        elif len(candidates) > 1:
+            errors.append(f"{file.name}: ambiguous input matches {', '.join(candidates)}; its purpose needs clarification.")
+        elif candidates[0] in seen:
+            errors.append(f"{file.name}: duplicate {candidates[0]} input; supply one authoritative file for that input.")
+        else:
+            role = candidates[0]
+            seen.add(role)
+            identified.append(UploadedInput(name=file.name, role=role, data=file.data))
+    errors.extend("This task needs " + role + " data." for role in ROLES if role not in seen)
+    return tuple(identified), errors
 
 
 def _now():
@@ -49,7 +87,7 @@ def _now():
 def _fingerprint(question, uploads):
     return digest({"question": question, "files": sorted([
         {"name": file.name, "role": file.role, "sha256": sha256(file.data).hexdigest()}
-        for file in uploads], key=lambda row: (row["role"], row["name"], row["sha256"]))})
+        for file in uploads], key=lambda row: (row["role"] or "", row["name"], row["sha256"]))})
 
 
 class DemoSession:
@@ -69,7 +107,7 @@ class DemoSession:
         self._consent = None
         self._attempted = set()
         self._store = None
-        self._view = {"status": "draft", "message": "Upload the five retail files and enter your question.", "errors": []}
+        self._view = {"status": "draft", "message": "", "errors": []}
 
     @property
     def view(self):
@@ -82,10 +120,11 @@ class DemoSession:
         with self._lock:
             if current == self._fingerprint:
                 return
+            had_proposal = self._proposal is not None or self._approval is not None
             self._fingerprint = current
             self._revision += 1
             self._receipt = self._proposal = self._approval = self._consent = None
-            self._view = {"status": "draft", "message": "Inputs changed. Review the task before approving a new run.", "errors": []}
+            self._view = {"status": "draft", "message": "Inputs changed. Review the task before approving a new run." if had_proposal else "", "errors": []}
 
     def revise(self):
         with self._lock:
@@ -104,16 +143,14 @@ class DemoSession:
             self._receipt = self._proposal = None
             errors = []
             if not question.strip():
-                errors.append("Enter the retail restocking question you want answered.")
-            roles = [file.role for file in uploads]
-            if len(set(roles)) != len(roles) or any(role not in ROLES for role in roles):
-                errors.append("Supply one file for each labelled input role.")
-            errors.extend("Provide the " + role + " file." for role in ROLES if role not in roles)
+                errors.append("Describe what you are trying to solve for.")
+            elif not re.search(r"restock|replenish|reorder|order quantit", question, re.I):
+                self._view = {"status": "unsupported_task", "message": "This backend currently supports the historical retail restocking demo. Your requested task is not connected yet.", "errors": []}
+                return self.view
+            uploads, input_errors = _identify_uploads(uploads)
+            errors.extend(input_errors)
             if errors:
                 self._view = {"status": "needs_inputs", "message": "More information is needed before review.", "errors": errors}
-                return self.view
-            if not re.search(r"restock|replenish|reorder|order quantit", question, re.I):
-                self._view = {"status": "unsupported_task", "message": "This demo supports the historical retail restocking task. Please state that request explicitly.", "errors": []}
                 return self.view
             lookup = {}
             files = []

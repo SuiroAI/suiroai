@@ -19,9 +19,9 @@ The current intake is deterministic and restricted to the selected retail schema
 
 ## Try the actual supplied example
 
-Upload these five separate CSV files from the explicitly selected `data/retail_mvp/sales_2022_2025/` directory:
+Add these CSV files together in the single **Upload your data** area, from the explicitly selected `data/retail_mvp/sales_2022_2025/` directory. The backend identifies their meaning from actual column headers; filenames and selection order do not assign roles:
 
-| Control | File |
+| Source | File |
 | --- | --- |
 | Sales | `supplied_sales/Sales_transactions_2022_2025.csv` |
 | Data dictionary | `supplied_sales/sales_data_dictionary.csv` |
@@ -31,7 +31,7 @@ Upload these five separate CSV files from the explicitly selected `data/retail_m
 
 Question: “Using these files, produce an illustrative product/store restocking list as of November 30, 2025, with findings and limitations.”
 
-Select **Review task**, inspect the proposed task and disclosed unknowns, then **Approve and run**. No file is auto-loaded from the fixture directory. An absent or incompatible file produces specific guidance. A changed question, filename, role, or file byte revokes the old proposal/result. Repeated review is idempotent; a run permission is consumed once. Revise explicitly revokes consent even when input bytes are unchanged. Old results and exceptions cannot overwrite a newer proposal.
+Select **Review task**, inspect the proposed task and disclosed unknowns, then **Approve and run**. No file is auto-loaded from the fixture directory. Missing, unrecognized, ambiguous, or duplicate source data produces specific guidance during review. A changed question, filename, or file byte revokes the old proposal/result. Repeated review is idempotent; a run permission is consumed once. Revise explicitly revokes consent even when input bytes are unchanged. Old results and exceptions cannot overwrite a newer proposal.
 
 Current expected result: **blocked before model execution**, with no recommendation file. This is correct blocker handling, not completion of the successful example. Records and approved source copies are retained in ignored `artifacts/demo/<session>/`; each native discovery receipt and controller audit has an immutable reference. These artifacts are local and must not be committed wholesale.
 

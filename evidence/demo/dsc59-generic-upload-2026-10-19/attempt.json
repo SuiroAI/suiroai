@@ -1,0 +1,50 @@
+{
+  "format": "dsc59-real-browser-attempt-v1",
+  "started_at": "2026-10-19T15:33:22.388353+00:00",
+  "question": "Using these files, produce an illustrative product/store restocking list as of November 30, 2025, with findings and limitations.",
+  "files": [
+    {
+      "role": "sales",
+      "name": "Sales_transactions_2022_2025.csv",
+      "bytes": 5190513,
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707"
+    },
+    {
+      "role": "dictionary",
+      "name": "sales_data_dictionary.csv",
+      "bytes": 2871,
+      "sha256": "643497a5e8bb501e6dc3a7533f06eb555a94c1732a545c1d04d6698fe65399cb"
+    },
+    {
+      "role": "inventory",
+      "name": "inventory_position.csv",
+      "bytes": 18799,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "role": "receipts",
+      "name": "inbound_deliveries.csv",
+      "bytes": 10740,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "role": "policy",
+      "name": "ordering_policy.csv",
+      "bytes": 19279,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    }
+  ],
+  "success": false,
+  "download_verified": false,
+  "question_label": "What are you trying to solve for?",
+  "upload_areas": 1,
+  "accepts_multiple_files": true,
+  "proposal_shown": true,
+  "proposal_id": "Proposal ID: a7500ed9eb0770f8db26d6e04d58b912101d9d3d498ce3b314c68af613a00be2",
+  "approved_once": true,
+  "terminal_page": "Skip to main content\nDeploy\nSuiroAI local demo\n\nDevelopment build: intake and runtime checks work; verified report generation is not yet connected.\n\nUpload your data.\n\nChanging the question or a file clears the previous approval and result.\n\nWhat are you trying to solve for?\n\nUpload your data\n\nSales_t...2_2025.csv\n5.2MB\nsales_d...ionary.csv\n2.9KB\ninvento...sition.csv\n18.8KB\ninbound...veries.csv\n10.7KB\nordering_policy.csv\n19.3KB\nadd icon\nadd\n\nReview task\n\nThe demo stopped before model execution. Development-only data release and a supported policy for missing daily sales are not yet connected, so no verified restocking report is available.",
+  "javascript_errors": [],
+  "outcome": "blocked_no_verified_report",
+  "source_files_unchanged": true,
+  "finished_at": "2026-10-19T15:33:24.154354+00:00"
+}

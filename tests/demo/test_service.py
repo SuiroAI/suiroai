@@ -17,7 +17,7 @@ def uploads():
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
-    return [UploadedInput(f"{role}.csv", role,
+    return [UploadedInput(name=f"{role}.csv", data=
             (",".join(sorted(fields)) + "\n" + ",".join("1" for _ in fields) + "\n").encode())
             for role, (_, fields) in ROLES.items()]
 
@@ -51,9 +51,9 @@ def test_review_never_runs_and_approval_is_exact_and_single_use(tmp_path, upload
     assert session.download() is None
 
 
-@pytest.mark.parametrize("change", ["question", "bytes", "name", "role", "remove"])
+@pytest.mark.parametrize("change", ["question", "bytes", "name", "remove"])
 def test_input_edits_revoke_displayed_proposal(tmp_path, uploads, change):
-    """Bind consent to every question, file byte, name, and role edit.
+    """Bind consent to every question, file byte, name, and removal edit.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
@@ -68,8 +68,6 @@ def test_input_edits_revoke_displayed_proposal(tmp_path, uploads, change):
         changed[0] = replace(changed[0], data=changed[0].data + b"\n")
     elif change == "name":
         changed[0] = replace(changed[0], name="different.csv")
-    elif change == "role":
-        changed[0] = replace(changed[0], role="inventory")
     else:
         changed.pop()
     session.invalidate(question, changed)
@@ -169,3 +167,88 @@ def test_new_review_during_run_survives_stale_outcome(tmp_path, uploads, raises)
     assert fresh["status"] == "awaiting_approval"
     assert fresh["proposal_digest"] != original["proposal_digest"]
     assert session.download() is None
+
+
+def test_renamed_shuffled_uploads_are_identified_from_headers(tmp_path, uploads):
+    """Infer source meaning from measured columns regardless of names or order.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    renamed = [replace(file, name=f"document-{index}.csv")
+               for index, file in enumerate(reversed(uploads))]
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", renamed)
+    assert view["status"] == "awaiting_approval"
+    assert set(view["proposal_summary"]["inputs"]) == {file.name for file in renamed}
+    assert session.download() is None
+
+
+def test_role_hints_cannot_override_measured_headers(tmp_path, uploads):
+    """Ignore legacy role hints when determining what uploaded data contains.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    misleading = [replace(file, role="sales") for file in uploads]
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", misleading)
+    assert view["status"] == "awaiting_approval"
+    assert session.download() is None
+
+
+def test_reordering_unchanged_uploads_keeps_review_identity(tmp_path, uploads):
+    """Keep identical measured input sets approved for review across reordering.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", uploads)
+    session.invalidate("What should we replenish?", list(reversed(uploads)))
+    assert session.view == view
+
+
+@pytest.mark.parametrize("kind", ["unknown", "ambiguous", "duplicate"])
+def test_unidentifiable_or_duplicate_uploads_require_guidance(tmp_path, uploads, kind):
+    """Reject uncertain file identity rather than guessing a source to execute.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    files = list(uploads)
+    if kind == "unknown":
+        files.append(UploadedInput(name="unrelated.csv", data=b"Unrelated,Other\n1,2\n"))
+        filename = "unrelated.csv"
+    elif kind == "ambiguous":
+        fields = sorted(ROLES["sales"][1] | ROLES["inventory"][1])
+        files.append(UploadedInput(name="mixed.csv", data=(",".join(fields) + "\n").encode()))
+        filename = "mixed.csv"
+    else:
+        files.append(replace(uploads[0], name="another-sales.csv"))
+        filename = "another-sales.csv"
+    session = DemoSession(artifact_root=tmp_path)
+    view = session.review("What should we replenish?", files)
+    assert view["status"] == "needs_inputs"
+    guidance = " ".join(view["errors"]).lower()
+    assert filename in guidance
+    assert "proposal_digest" not in view
+    if kind == "ambiguous":
+        assert "sales" in guidance and "inventory" in guidance
+    elif kind == "duplicate":
+        assert "sales" in guidance
+    else:
+        assert "column" in guidance or "recogniz" in guidance or "identif" in guidance
+    assert session.download() is None
+
+
+def test_missing_source_is_guidance_after_review(tmp_path, uploads):
+    """Request missing source data only after the user's generic upload review.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    session = DemoSession(artifact_root=tmp_path)
+    session.invalidate("", [])
+    assert session.view["status"] == "draft"
+    assert "inputs changed" not in session.view["message"].lower()
+    assert session.view["errors"] == []
+    view = session.review("What should we replenish?", uploads[:-1])
+    assert view["status"] == "needs_inputs"
+    assert "policy" in " ".join(view["errors"]).lower()
+    assert "proposal_digest" not in view
