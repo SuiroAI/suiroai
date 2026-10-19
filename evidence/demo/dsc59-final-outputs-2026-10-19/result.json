@@ -1,0 +1,7 @@
+{
+  "disposition": "analysis",
+  "output_file": "restocking.csv",
+  "output_sha256": "179b7ba0a5b1cb6f9680a9d412e5bd065454e45d77c0ca85df01774c46658489",
+  "html_file": "report.html",
+  "html_sha256": "ccd57d7c73dd953fec9e2ce64d80182c83fc70d8db6a23cdbe3ef9f0fb02c164"
+}

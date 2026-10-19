@@ -1,0 +1,28 @@
+{
+  "source_commit": "5b0eee4",
+  "status": "analysis_completed",
+  "message": "Analysis complete. Your restocking list is ready to download.",
+  "customer_questions": [],
+  "files": {
+    "restocking.csv": {
+      "bytes": 36407,
+      "sha256": "179b7ba0a5b1cb6f9680a9d412e5bd065454e45d77c0ca85df01774c46658489"
+    },
+    "report.html": {
+      "bytes": 114525,
+      "sha256": "ccd57d7c73dd953fec9e2ce64d80182c83fc70d8db6a23cdbe3ef9f0fb02c164"
+    },
+    "response.md": {
+      "bytes": 7046,
+      "sha256": "cddee0706a1aca4a562f0e7b3cf33632b04bbdb1c0f765bf2b6e0af85e636862"
+    }
+  },
+  "artifact_binding_verified": true,
+  "browser_download_acceptance": false,
+  "browser_observation": "Both download controls clicked and native Save panels completed. No files persisted; browser displayed restocking.csv: Blocked by your organization. Security settings unchanged. Evidence files copied directly from local run output, not represented as browser downloads.",
+  "csv_rows": 336,
+  "test_result": "726 passed, 659 subtests passed",
+  "native_summary": {
+    "thread_id": "01a15534-5de4-7932-9d3b-1f6bcf058679"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "format": "dsc59-final-independent-audit-v1",
+  "scope": "Independent bounded recomputation; not full milestone verification",
+  "generated_code_executed": false,
+  "run": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "rows": 336,
+  "html_csv_exact_cell_agreement": true,
+  "html_sha256": "ccd57d7c73dd953fec9e2ce64d80182c83fc70d8db6a23cdbe3ef9f0fb02c164",
+  "folds": 66,
+  "candidate_models": 6,
+  "selected_model": {
+    "Window": "365",
+    "Shrink": "60",
+    "Seasonal": "True",
+    "AbsoluteError": "4518.1924214532355",
+    "SquaredError": "13381.381854119034",
+    "ActualUnits": "3738.0",
+    "BiasUnits": "-323.0841055407123",
+    "WAPE": "1.2087192138719196",
+    "RMSE": "1.9027621365816667"
+  },
+  "totals": {
+    "units": 888,
+    "positive_pairs": 113,
+    "zero_pairs": 223,
+    "prearrival_risk_pairs": 52,
+    "onhand": 2869,
+    "inbound": 927
+  },
+  "sensitivities": {
+    "Demand_Minus25Pct": {
+      "total_units": 879,
+      "positive_pairs": 111,
+      "changed_pairs": 9
+    },
+    "Demand_Plus25Pct": {
+      "total_units": 902,
+      "positive_pairs": 113,
+      "changed_pairs": 10
+    },
+    "Demand_Double": {
+      "total_units": 957,
+      "positive_pairs": 118,
+      "changed_pairs": 32
+    },
+    "No_Inbound_Arrives": {
+      "total_units": 1295,
+      "positive_pairs": 164,
+      "changed_pairs": 66
+    },
+    "Exclude_Returned_Sales": {
+      "total_units": 884,
+      "positive_pairs": 112,
+      "changed_pairs": 4
+    }
+  },
+  "source_sha256": {
+    "input-1.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+    "input-2.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "input-3.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-4.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+  },
+  "output_sha256": "179b7ba0a5b1cb6f9680a9d412e5bd065454e45d77c0ca85df01774c46658489",
+  "limits": [
+    "Checks declared Data treatment; does not establish transaction semantics, complete latent demand, or historical information availability.",
+    "Selection and performance use same11development origins; no untouchedDecember holdout used.",
+    "Selected model chosen byRMSE, WAPE120.87%; measured improvement over zero forecast does not prove high precision.",
+    "HTML recommendation table matches all CSV cells; browser rendering and downloaded-byte acceptance are handled separately by the parent."
+  ]
+}
