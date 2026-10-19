@@ -1,0 +1,121 @@
+{
+  "raw_rows": 17406,
+  "duplicate_rows_removed": 42,
+  "invalid_quantity_rows": 8,
+  "clean_rows": 17364,
+  "fulfilled_rows": 15142,
+  "fulfilled_units": 32198,
+  "excluded_status_counts": {
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "returned_flag_status_disagreements": 271,
+  "sales_missing_names": 135,
+  "store_observed_dates": {
+    "AUS-01": 957,
+    "CHI-01": 923,
+    "COL-01": 638,
+    "LA-01": 1080,
+    "LON-01": 968,
+    "MAN-01": 771,
+    "MUC-01": 763,
+    "NYC-01": 1064,
+    "PAR-01": 930,
+    "SYD-01": 757,
+    "TOR-01": 917,
+    "VAN-01": 777
+  },
+  "total_calendar_days": 1430,
+  "global_observed_dates": 1430,
+  "recent_90day_pairs": 315,
+  "chosen": "history_baseline",
+  "comparison": [
+    {
+      "method": "history_baseline",
+      "mae": 1.26691432725619,
+      "rmse": 1.9623766088367698,
+      "bias": -0.12106901031133499
+    },
+    {
+      "method": "recent_365",
+      "mae": 1.2790662157791683,
+      "rmse": 1.9823350509517823,
+      "bias": -0.100708000609085
+    },
+    {
+      "method": "pooled_365",
+      "mae": 1.2746888258695914,
+      "rmse": 1.9582470841524873,
+      "bias": -0.08596692946814584
+    }
+  ],
+  "evaluation_origins": 13,
+  "evaluation_pair_windows": 4368,
+  "absolute_error_80pct": 1.4948833183528083,
+  "scenarios": [
+    {
+      "scenario": "Chosen",
+      "order_units": 874,
+      "positive_pairs": 110,
+      "changed_pairs": 0
+    },
+    {
+      "scenario": "Demand minus 25%",
+      "order_units": 869,
+      "positive_pairs": 109,
+      "changed_pairs": 5
+    },
+    {
+      "scenario": "Demand plus 25%",
+      "order_units": 877,
+      "positive_pairs": 110,
+      "changed_pairs": 3
+    },
+    {
+      "scenario": "Exclude all returned or flagged orders",
+      "order_units": 872,
+      "positive_pairs": 109,
+      "changed_pairs": 2
+    },
+    {
+      "scenario": "Include processing orders",
+      "order_units": 875,
+      "positive_pairs": 110,
+      "changed_pairs": 1
+    },
+    {
+      "scenario": "Hypothetical: absent store dates have typical active-date activity",
+      "order_units": 884,
+      "positive_pairs": 110,
+      "changed_pairs": 10
+    }
+  ],
+  "order_units": 874,
+  "positive_pairs": 110,
+  "zero_pairs": 226,
+  "pre_arrival_risk_pairs": 58,
+  "inbound_units": 927,
+  "inbound_lines": 126,
+  "sources": [
+    {
+      "file": "input-1.csv",
+      "bytes": 5006997,
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    },
+    {
+      "file": "input-2.csv",
+      "bytes": 18799,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "file": "input-3.csv",
+      "bytes": 10740,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "file": "input-4.csv",
+      "bytes": 19279,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    }
+  ]
+}

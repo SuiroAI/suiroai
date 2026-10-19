@@ -1,0 +1,29 @@
+{
+  "source_revision": "437c3d0",
+  "status": "analysis_completed",
+  "customer_questions": [],
+  "html_opened_in_new_tab": true,
+  "observed_report_url": "http://localhost:8501/media/3133357d27227d0fd372492697abf5b2.html",
+  "artifact_bindings_verified": true,
+  "files": {
+    "restocking.csv": {
+      "sha256": "e958cdf671f22d9232a84f7fb0382115160fed4ca5ac3f228f8b10fbcc638593",
+      "bytes": 27445
+    },
+    "report.html": {
+      "sha256": "0743c770fa4232c6eec4df548015b30588b95840f8eb13c83b64ba4d9f850a5f",
+      "bytes": 84127
+    },
+    "response.md": {
+      "sha256": "3f7461a70aa42af53cc8cea6fbb46f918892156af0e1e454446190c409451f4c",
+      "bytes": 1529
+    }
+  },
+  "test_result": "729 passed and 659 subtests; final wording/UI refinements: 48 focused tests passed",
+  "limits": [
+    "Run used first concise-response prompt; final prompt additionally prohibits decimal diagnostic lists and technical phrasing found during review.",
+    "Technical details panel removed in source c780f07 and tested. Refresh of completed live session was rejected by automatic approval review because it could lose nontrivial session state; no bypass attempted.",
+    "CSV control remains a download; a fresh browser save was not repeated in this run.",
+    "Numeric operating/analysis cost unavailable because usage and applicable pricing were not exposed."
+  ]
+}

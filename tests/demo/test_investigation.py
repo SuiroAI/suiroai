@@ -29,6 +29,11 @@ def test_app_response_prompt_requires_customer_actions_and_evidence_based_compar
     assert "Do not invent a prior/current approach" in prompt
     assert "baseline, not the customer's incumbent" in prompt
     assert "comparisons show no improvement, are mixed, or could not be performed, say so plainly" in prompt
+    assert "Say 'products at stores' instead of 'product/store combinations'" in prompt
+    assert "Avoid raw field names, acronyms, decimal diagnostic lists and audit terminology" in prompt
+    assert "one rounded, meaningful comparison" in prompt
+    assert "differences are too small to matter" in prompt
+    assert "limitations that change the customer's decision or next action" in prompt
     assert "detailed methods, model diagnostics and long audit prose in report.html" in prompt
 
 
