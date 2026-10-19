@@ -1,0 +1,6 @@
+Observed through native Brave accessibility after Save:
+Recent Download History
+browser-restocking.csv
+Blocked by your organization
+
+No browser policy changed or bypassed. No browser-saved CSV file exists at the chosen destination. generated-restocking.csv is an exact immutable run artifact copy.

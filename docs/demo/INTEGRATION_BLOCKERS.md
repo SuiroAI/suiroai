@@ -11,7 +11,7 @@ permission profile. Data owns interpretation, supported treatment, methods,
 assumptions and sensitivity analysis without asking user clarification questions.
 Data performs supported development analysis and writes a plain-language app
 response plus a separate downloadable restocking list in CSV, matching the
-supplied input format, and a self-contained HTML demo view. The response explains its methods, assumptions and
+supplied input format. The app creates a table-only HTML view directly from that CSV. The response explains its methods, assumptions and
 scientific limitations. Internal provenance and byte-integrity records do not
 become blanket product disclaimers.
 
@@ -28,7 +28,7 @@ remaining implementation work, not owner-approval prerequisites for using Data.
 | Additional metadata | The legacy deterministic preparation requires a fixed five-role source map. | The Data handoff accepts approved files without that requirement, including multiple unfamiliar or same-role files. Every transaction file receives the controller cutoff; Data determines how the files should be used. |
 | Historical information | The legacy non-mock `build_result` requires historical availability evidence. | Data can investigate now without inventing timestamps. Bind truthful evidence or explicit scenario assumptions if later modeling needs them. |
 | Complete daily labels | Legacy modeling excludes incomplete horizons. | Data investigates supported missing-date treatment and an appropriate model/target itself; missing dates do not block entry to Data. Data must choose a supported treatment, quantify uncertainty or sensitivity, and explain the effect on the answer; unsupported quantities become evidenced report limitations rather than questions. |
-| Delivery | Data emits result.json, restocking.csv, report.html for the demo, and a plain-language response.md for the app. | Fixed-path bounded reads, exact digest comparison, CSV shape checks and immutable byte readback protect delivery. The separate CSV preserves every cell exactly; interpretation and scientific limits appear in the app response. Independent approval and holdout acceptance remain separate internal evidence states. |
+| Delivery | Data emits result.json, restocking.csv and plain-language response.md. The app deterministically renders the exact CSV as the table-only HTML demo view. | Fixed-path bounded reads, exact digest comparison, CSV shape checks and immutable byte readback protect delivery. The separate CSV preserves every cell exactly; interpretation and scientific limits appear in the app response. Independent approval and holdout acceptance remain separate internal evidence states. |
 
 The controller audit now calls the same pure measured partition implementation
 as the guarded preparation prelude. The guarded entry point still requires the
@@ -51,30 +51,31 @@ This inspection verifies deterministic partition/reconciliation behavior. It is
 not evidence of historical information availability, completeness, forecasting
 accuracy, independent analytical review, or successful end-to-end delivery.
 
-The current native output contract has five keys: `disposition`, `output_file`,
-`output_sha256`, `html_file`, and `html_sha256`. Analysis names `restocking.csv`
-and `report.html` with each file's exact SHA-256. The CSV is the operational
-restocking deliverable; HTML remains available as the demo view. The file includes product/store identifiers, supported
-order quantities, units and useful additional fields. Unsupported quantities
-are not silently replaced with zeros. A header-only CSV plus an evidenced
-explanation is supported when quantities cannot responsibly be produced.
-`response.md` contains the concise plain-language app explanation; legacy
-`investigation.md` remains an input fallback for completed runs. No user
-clarification questions are requested. Existing completed `restocking_list.csv`
-files can be retained without rerunning the model or recomputing values.
+The current native output contract has three keys: `disposition`, `output_file`,
+and `output_sha256`. Analysis names `restocking.csv` with its exact SHA-256.
+The CSV is the operational restocking deliverable and includes product/store
+identifiers, supported order quantities, units and useful additional fields.
+Unsupported quantities are not silently replaced with zeros. A header-only CSV
+plus an evidenced explanation is supported when quantities cannot responsibly
+be produced. `response.md` contains all concise plain-language explanation,
+including current-process comparison and the non-LLM model's routine running
+cost/local-computer assessment, separate from AI-assisted analysis/build cost.
+Legacy `investigation.md` remains an input fallback for completed runs. No
+analytical clarification questions are requested after approval. Current-process
+context is gathered before review, with already-supplied/no-process options.
 
 CSV output is UTF-8, bounded to 16 MiB, checked for valid product/store records
 and nonnegative integer order quantities, and published with exact immutable
 readback. Native original refs and digests remain available. CSV presentation
 is an identity transformation: product names, quantities, all other cells and
 formatting bytes stay unchanged. An identity lineage record binds the original
-and deliverable references. The HTML companion has a separate immutable native original, digest,
-presented reference and presentation lineage. Fixed-path bounded reads, exact
-hash comparison and passive self-contained HTML checks protect retrieval;
-known boilerplate-only presentation preserves scientific content and table
-values. The prompt requires the HTML table to be rendered from the same CSV
-recommendations and checked for agreement. Earlier CSV-only manifests remain
-accepted for compatibility.
+and deliverable references. The app derives HTML from those exact CSV bytes,
+escapes all cell text, preserves headers/rows/cell strings and order, and stores
+its digest and source lineage. It shows only one table and a generic heading;
+findings, methods, comparisons, costs and limitations stay in the app response.
+The HTML opens inline in a new HTTP browser tab; CSV remains a download.
+Legacy HTML-bearing manifests are accepted and checked for compatibility, but
+native-authored HTML stays internal and is never the presented table preview.
 
 There is no overall elapsed-time limit by default: the native host monitors
 actual failures, process closure and cancellation. Explicit finite caller budgets

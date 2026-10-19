@@ -1,0 +1,74 @@
+{
+  "format": "dsc59-independent-arithmetic-audit-v1",
+  "reviewer": "Codex / plain-language-and-CSV-preview reviewer",
+  "reviewed_at": "2026-10-19T23:16:04.313612+00:00",
+  "code_commit": "fa56747e4da166e70e415bccbb033764d7ffa5a7",
+  "run_root": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009",
+  "auditor_sha256": "6a17728964ad103e3ff9d5f528a7e8c2c0797e3030454b3e21d0a52e1c42995c",
+  "decision": "pass_for_chosen_scenario_arithmetic_only",
+  "measured_files": {
+    "released/input-1.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997,
+      "rows": 17406,
+      "columns": 36
+    },
+    "released/input-2.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799,
+      "rows": 336,
+      "columns": 8
+    },
+    "released/input-3.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740,
+      "rows": 126,
+      "columns": 8
+    },
+    "released/input-4.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279,
+      "rows": 336,
+      "columns": 10
+    },
+    "output/restocking.csv": {
+      "sha256": "eb4f85e78b510f013956171a0b5a7f786cc239ec8e74c93499bec04fc9a12628",
+      "bytes": 33256,
+      "rows": 336,
+      "columns": 20
+    },
+    "output/result.json": {
+      "sha256": "a8e9ef7459a07e2c7b92a84de66346241ddc5a712273c1b0f63d6291dcb7e06d",
+      "bytes": 154
+    }
+  },
+  "observed": {
+    "rows_checked": 336,
+    "exact_duplicate_transactions_removed": 42,
+    "order_units": 857,
+    "positive_order_rows": 108,
+    "zero_order_rows": 228,
+    "incoming_units_reconciled": 927,
+    "prearrival_risk_rows": 49
+  },
+  "checks_passed": [
+    "source December outcomes absent",
+    "source and output key coverage",
+    "exact duplicate removal",
+    "eligible 90-day recorded quantities",
+    "stock and policy as-of dates",
+    "receipt dates and ledger reconciliation",
+    "lead plus review coverage",
+    "stock/buffer/eligible receipt subtraction",
+    "minimum and order-multiple rounding",
+    "units and delivered calculation columns",
+    "prearrival risk under stated timing convention",
+    "manifest binds exact CSV bytes"
+  ],
+  "limits": [
+    "Validates the selected recorded-demand scenario, not complete underlying demand.",
+    "Does not establish model superiority or frozen December holdout acceptance.",
+    "Assumes expected receipts arrive before demand on their stated arrival date; new orders arrive after the checked prearrival interval.",
+    "Separate reviewer calculation, not authenticated runtime verifier/parent approval or full milestone acceptance."
+  ]
+}

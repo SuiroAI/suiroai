@@ -1,0 +1,11 @@
+file '01-inputs.jpg'
+duration 6
+file '02-proposal.jpg'
+duration 6
+file '03-running.jpg'
+duration 6
+file '04-completed-response.jpg'
+duration 6
+file '05-table-preview.jpg'
+duration 6
+file '05-table-preview.jpg'

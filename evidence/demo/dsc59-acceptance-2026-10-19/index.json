@@ -1,0 +1,103 @@
+{
+  "format": "dsc59-evidence-index-v1",
+  "generated_at": "2026-10-19T23:17:42.664670+00:00",
+  "video_is_edited_screenshots_not_continuous": true,
+  "files": [
+    {
+      "path": "01-inputs.jpg",
+      "bytes": 96399,
+      "sha256": "f4530bee8211dbf9e87671bafe2dcb456b1063e97519e3fad2bffd67c0f01afd",
+      "filesystem_modified_utc": "2026-10-19T23:11:41.956283+00:00"
+    },
+    {
+      "path": "02-proposal.jpg",
+      "bytes": 179497,
+      "sha256": "f7cda37f0c479b709ee0aa509eb1b2e6ab75bc025e62ac8c8f269316caf5973d",
+      "filesystem_modified_utc": "2026-10-19T23:12:00.089471+00:00"
+    },
+    {
+      "path": "03-running.jpg",
+      "bytes": 199541,
+      "sha256": "a6e5e52e44ae23672581e58a1ae3e181bdc236c33fb4cd1b63441151c2c280ea",
+      "filesystem_modified_utc": "2026-10-19T23:13:14.566393+00:00"
+    },
+    {
+      "path": "04-completed-response.jpg",
+      "bytes": 212278,
+      "sha256": "d9503c5ab6200c52473bee682c442f8dfea7c6a297fdfb661d15a756a50d8723",
+      "filesystem_modified_utc": "2026-10-19T23:15:55.680977+00:00"
+    },
+    {
+      "path": "05-table-preview.jpg",
+      "bytes": 259242,
+      "sha256": "4d579de39c6cefc5b97252a5def8e6035b208dfc22d607596706700645a007a4",
+      "filesystem_modified_utc": "2026-10-19T23:16:36.022071+00:00"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3785,
+      "sha256": "7f243a6eb6a80e3a4a6beb8a6236fba3292faf82e4f3bb35c8cf996c93974979",
+      "filesystem_modified_utc": "2026-10-19T23:17:42.663793+00:00"
+    },
+    {
+      "path": "audit.json",
+      "bytes": 2794,
+      "sha256": "d4f7336610c86211b93c7587e14f1662f44f148976da033ee4b9255e17d2ee96",
+      "filesystem_modified_utc": "2026-10-19T23:16:04.333748+00:00"
+    },
+    {
+      "path": "audit_arithmetic.py",
+      "bytes": 7875,
+      "sha256": "6a17728964ad103e3ff9d5f528a7e8c2c0797e3030454b3e21d0a52e1c42995c",
+      "filesystem_modified_utc": "2026-10-19T23:16:03.968454+00:00"
+    },
+    {
+      "path": "download-blocker.txt",
+      "bytes": 298,
+      "sha256": "208eabc04dd6487f460e9896d43d1bfeabfe4304feb9a659c3de7538dc09d8fb",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.331467+00:00"
+    },
+    {
+      "path": "edited-walkthrough.mp4",
+      "bytes": 270102,
+      "sha256": "5c5dd8635a1b2afd8e2efd8770ea3d67fa7628712c4d0a573eb3b812c2f0f7f4",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.672732+00:00"
+    },
+    {
+      "path": "generated-restocking.csv",
+      "bytes": 33256,
+      "sha256": "eb4f85e78b510f013956171a0b5a7f786cc239ec8e74c93499bec04fc9a12628",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.331079+00:00"
+    },
+    {
+      "path": "intake.json",
+      "bytes": 1664,
+      "sha256": "5004fcdef21c2382d3caee00dcfb968c904cece65e40e5751d395e749477e360",
+      "filesystem_modified_utc": "2026-10-19T23:13:37.229604+00:00"
+    },
+    {
+      "path": "response.md",
+      "bytes": 1594,
+      "sha256": "995ea42b5ab1325728003a992768f8079bb5639c33428872b3a1248e32cff858",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.331382+00:00"
+    },
+    {
+      "path": "restocking-preview.html",
+      "bytes": 91580,
+      "sha256": "34caf0b289802ab11f03ef37664bb73483eae7e3aae0ce2f24e2aec6850c0cc2",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.331211+00:00"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1891,
+      "sha256": "9f29e094ba4752829776d3e68af1bb6decdf012e289af8ce9bad5d337ca2fd6d",
+      "filesystem_modified_utc": "2026-10-19T23:17:42.664647+00:00"
+    },
+    {
+      "path": "walkthrough-frames.txt",
+      "bytes": 210,
+      "sha256": "dd7584dbbdc2121f7b6f279cb70ce0dfe06d0dbc0ce0bd127ef21f831a8a54af",
+      "filesystem_modified_utc": "2026-10-19T23:17:10.331664+00:00"
+    }
+  ]
+}

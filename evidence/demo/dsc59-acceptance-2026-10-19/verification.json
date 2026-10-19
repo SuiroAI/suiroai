@@ -1,0 +1,49 @@
+{
+  "code_commit": "fa56747e4da166e70e415bccbb033764d7ffa5a7",
+  "native_completed": true,
+  "approval_clicks": 1,
+  "session": "93766d853daf4889a9fdbbe52e9b817e",
+  "receipt": "attempt-d48841da93ba4998a5a4f382af98d61c.json",
+  "native_outcome": "completed",
+  "error": null,
+  "browser_table_matches_csv_all_cells_and_order": true,
+  "csv_rows": 336,
+  "csv_columns": 20,
+  "csv_sha256": "eb4f85e78b510f013956171a0b5a7f786cc239ec8e74c93499bec04fc9a12628",
+  "html_sha256": "34caf0b289802ab11f03ef37664bb73483eae7e3aae0ce2f24e2aec6850c0cc2",
+  "browser_download_saved": false,
+  "browser_download_outcome": "Blocked by your organization",
+  "table_opened_in_new_tab": true,
+  "table_url": "http://localhost:8502/media/a819eb1e4f6052e754ca0c8a21ad315b.html",
+  "latest_current_process_cost_prompt_rerun": true,
+  "full_regression": {
+    "passed": 740,
+    "subtests_passed": 659,
+    "failed": 0
+  },
+  "fixed_acceptance_checks": 30,
+  "full_milestone_accepted": false,
+  "continuous_recording_exists": false,
+  "nightly_ref_reviewed": "7716f509d103465e06dd8fcd5e8fd3d31a7e7422",
+  "native_evidence_refs": [
+    {
+      "artifact_id": "demo-investigation-native-1f2ebbaf5c7742a3bd798e09548a5aeb",
+      "provenance": "derived",
+      "sha256": "451f09462d24cb256dc5314f9d92cdda0b611e861b6aeb6a6734ca8f3994e6ee",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-investigation-native-daae16fad1b94efa9d8b11aa990011f4",
+      "provenance": "derived",
+      "sha256": "884a466e28cf8f32506a9b6738ba934e66134c0beb69ebd3e4c5d5682ef72b00",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-investigation-native-be1f8d7fd24b46d0b26a21b0810a22d1",
+      "provenance": "derived",
+      "sha256": "5fb75ac95f806470d253c1ed256f9d3a399f256e0a7c0770522763f3bec84a20",
+      "version": 1
+    }
+  ],
+  "receipt_sha256": "a60103923ff41a70d5ff0ea490d7b25e75fae4f4761ea8b9aa09b8fb56b305fd"
+}

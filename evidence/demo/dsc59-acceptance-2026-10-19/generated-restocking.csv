@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,As_Of_Date,Coverage_Through,Recorded_90Day_Units,Store_Dates_With_Records,Usable_Stock,Incoming_Within_Coverage,Stock_Buffer,Pack_Size,Minimum_Order,OrderQty_ObservedDates_Scenario,OrderQty_YearHistory_Scenario,OrderQty_NoIncoming_Scenario,OrderQty_ExcludeReturns_Scenario,OrderQty_IncludePending_Scenario,Possible_Shortage_Before_New_Order_Arrives
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,2025-11-30,2025-12-13,6,74,20,0,0,10,10,0,0,0,0,0,False
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,2025-11-30,2025-12-08,26,74,10,10,5,5,5,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,2025-11-30,2025-12-11,11,74,10,10,5,5,5,0,0,0,0,0,False
+P004,Vision 27 Monitor,AUS-01,0,product_unit,2025-11-30,2025-12-08,3,74,20,0,5,5,5,0,0,0,0,0,False
+P005,Office Keyboard,AUS-01,0,product_unit,2025-11-30,2025-12-11,6,74,9,3,5,1,1,0,0,0,0,0,False
+P006,Precision Mouse,AUS-01,0,product_unit,2025-11-30,2025-12-13,10,74,20,10,10,10,10,0,0,0,0,0,False
+P007,NoiseCancel Headset,AUS-01,10,product_unit,2025-11-30,2025-12-09,4,74,0,0,0,10,10,10,10,10,0,10,True
+P008,SmartDock USB-C,AUS-01,5,product_unit,2025-11-30,2025-12-13,4,74,5,0,5,5,5,5,5,5,5,5,False
+P009,Office Chair Pro,AUS-01,5,product_unit,2025-11-30,2025-12-09,13,74,0,0,0,5,5,5,5,5,5,5,True
+P010,Standing Desk,AUS-01,1,product_unit,2025-11-30,2025-12-12,6,74,0,5,5,1,1,1,2,6,1,1,True
+P011,Meeting Table,AUS-01,0,product_unit,2025-11-30,2025-12-13,7,74,2,2,2,1,1,0,0,2,0,0,False
+P012,Ergo Footrest,AUS-01,10,product_unit,2025-11-30,2025-12-10,3,74,10,0,10,10,10,10,10,10,10,10,False
+P013,Desk Lamp,AUS-01,0,product_unit,2025-11-30,2025-12-11,12,74,10,0,0,5,5,0,0,0,0,0,False
+P014,Filing Cabinet,AUS-01,0,product_unit,2025-11-30,2025-12-14,12,74,5,5,5,5,5,0,0,5,0,0,False
+P015,Printer Plus,AUS-01,0,product_unit,2025-11-30,2025-12-13,3,74,10,10,10,10,10,0,0,10,0,0,False
+P016,Laser Toner,AUS-01,2,product_unit,2025-11-30,2025-12-12,11,74,0,2,2,1,1,2,2,4,2,2,True
+P017,Copy Paper Box,AUS-01,0,product_unit,2025-11-30,2025-12-14,3,74,20,0,5,5,5,0,0,0,0,0,False
+P018,Premium Pens,AUS-01,0,product_unit,2025-11-30,2025-12-09,15,74,20,0,10,10,10,0,0,0,0,0,False
+P019,Notebook Pack,AUS-01,5,product_unit,2025-11-30,2025-12-08,6,74,5,0,5,5,5,5,5,5,5,5,False
+P020,Presentation Kit,AUS-01,0,product_unit,2025-11-30,2025-12-12,5,74,5,5,3,1,1,0,0,0,0,0,False
+P021,Coffee Machine,AUS-01,0,product_unit,2025-11-30,2025-12-09,12,74,10,0,0,10,10,0,0,0,0,0,False
+P022,Air Purifier,AUS-01,0,product_unit,2025-11-30,2025-12-08,5,74,10,0,5,5,5,0,0,0,0,0,False
+P023,Portable Heater,AUS-01,0,product_unit,2025-11-30,2025-12-11,9,74,20,10,10,10,10,0,0,0,0,0,False
+P024,Desk Fan,AUS-01,0,product_unit,2025-11-30,2025-12-14,14,74,10,0,0,10,10,0,0,0,0,0,False
+P025,USB Power Hub,AUS-01,0,product_unit,2025-11-30,2025-12-13,22,74,10,0,5,5,5,0,0,0,0,0,False
+P026,Webcam HD,AUS-01,0,product_unit,2025-11-30,2025-12-14,8,74,20,0,10,10,10,0,0,0,0,0,False
+P027,Security Camera,AUS-01,15,product_unit,2025-11-30,2025-12-13,8,74,0,0,10,5,5,15,15,15,15,15,True
+P028,Backup Drive 2TB,AUS-01,0,product_unit,2025-11-30,2025-12-13,6,74,14,0,4,1,1,0,0,0,0,0,False
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,2025-11-30,2025-12-13,5,63,21,0,0,1,1,0,0,0,0,0,False
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,2025-11-30,2025-12-11,5,63,0,0,0,5,5,5,5,5,5,5,True
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,2025-11-30,2025-12-12,6,63,10,10,10,10,10,0,0,10,0,0,False
+P004,Vision 27 Monitor,CHI-01,1,product_unit,2025-11-30,2025-12-09,6,63,4,0,4,1,1,1,2,1,1,1,False
+P005,Office Keyboard,CHI-01,10,product_unit,2025-11-30,2025-12-12,3,63,0,0,0,10,10,10,10,10,10,10,True
+P006,Precision Mouse,CHI-01,0,product_unit,2025-11-30,2025-12-10,9,63,5,5,0,5,5,0,0,0,0,0,False
+P007,NoiseCancel Headset,CHI-01,0,product_unit,2025-11-30,2025-12-13,3,63,20,10,5,5,5,0,0,0,0,0,False
+P008,SmartDock USB-C,CHI-01,1,product_unit,2025-11-30,2025-12-14,3,63,0,2,2,1,1,1,1,3,1,1,True
+P009,Office Chair Pro,CHI-01,1,product_unit,2025-11-30,2025-12-11,6,63,0,0,0,1,1,2,1,1,1,1,True
+P010,Standing Desk,CHI-01,0,product_unit,2025-11-30,2025-12-11,2,63,20,0,5,5,5,0,0,0,0,0,False
+P011,Meeting Table,CHI-01,0,product_unit,2025-11-30,2025-12-13,2,63,4,0,2,1,1,0,0,0,0,0,False
+P012,Ergo Footrest,CHI-01,0,product_unit,2025-11-30,2025-12-11,8,63,8,0,1,1,1,0,0,0,0,0,False
+P013,Desk Lamp,CHI-01,0,product_unit,2025-11-30,2025-12-12,7,63,8,4,4,1,1,0,0,0,0,0,False
+P014,Filing Cabinet,CHI-01,0,product_unit,2025-11-30,2025-12-09,2,63,10,0,5,5,5,0,0,0,0,0,False
+P015,Printer Plus,CHI-01,5,product_unit,2025-11-30,2025-12-13,1,63,0,0,4,1,1,5,5,5,5,5,True
+P016,Laser Toner,CHI-01,0,product_unit,2025-11-30,2025-12-14,10,63,5,5,5,5,5,0,0,5,0,0,False
+P017,Copy Paper Box,CHI-01,0,product_unit,2025-11-30,2025-12-08,14,63,20,0,10,10,10,0,0,0,0,0,False
+P018,Premium Pens,CHI-01,0,product_unit,2025-11-30,2025-12-11,10,63,10,0,0,10,10,0,0,0,0,0,False
+P019,Notebook Pack,CHI-01,5,product_unit,2025-11-30,2025-12-09,11,63,0,0,0,5,5,5,5,5,5,5,True
+P020,Presentation Kit,CHI-01,10,product_unit,2025-11-30,2025-12-08,7,63,10,0,10,10,10,10,10,10,10,10,False
+P021,Coffee Machine,CHI-01,0,product_unit,2025-11-30,2025-12-14,11,63,5,5,0,5,5,0,0,0,0,0,False
+P022,Air Purifier,CHI-01,0,product_unit,2025-11-30,2025-12-12,0,63,5,5,5,5,5,0,0,0,0,0,False
+P023,Portable Heater,CHI-01,0,product_unit,2025-11-30,2025-12-14,12,63,5,5,5,5,5,0,0,5,0,0,False
+P024,Desk Fan,CHI-01,0,product_unit,2025-11-30,2025-12-12,12,63,5,10,5,5,5,0,0,5,0,0,False
+P025,USB Power Hub,CHI-01,0,product_unit,2025-11-30,2025-12-12,18,63,3,5,0,1,1,0,0,0,0,0,False
+P026,Webcam HD,CHI-01,0,product_unit,2025-11-30,2025-12-11,12,63,10,10,5,5,5,0,0,0,0,0,False
+P027,Security Camera,CHI-01,0,product_unit,2025-11-30,2025-12-12,1,63,20,0,10,10,10,0,0,0,0,0,False
+P028,Backup Drive 2TB,CHI-01,0,product_unit,2025-11-30,2025-12-13,10,63,20,0,10,10,10,0,0,0,0,0,False
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,2025-11-30,2025-12-10,1,42,10,10,0,5,5,0,0,0,0,0,False
+P002,ProBook 16 Laptop,COL-01,10,product_unit,2025-11-30,2025-12-09,1,42,0,0,5,5,5,10,10,10,10,10,True
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,2025-11-30,2025-12-11,3,42,10,10,10,10,10,0,0,10,0,0,False
+P004,Vision 27 Monitor,COL-01,0,product_unit,2025-11-30,2025-12-14,0,42,18,0,0,1,1,0,0,0,0,0,False
+P005,Office Keyboard,COL-01,0,product_unit,2025-11-30,2025-12-12,1,42,20,10,10,10,10,0,0,0,0,0,False
+P006,Precision Mouse,COL-01,0,product_unit,2025-11-30,2025-12-09,9,42,21,0,2,1,1,0,0,0,0,0,False
+P007,NoiseCancel Headset,COL-01,0,product_unit,2025-11-30,2025-12-14,27,42,10,10,0,10,10,0,0,0,0,0,False
+P008,SmartDock USB-C,COL-01,0,product_unit,2025-11-30,2025-12-09,2,42,18,3,3,1,1,0,0,0,0,0,False
+P009,Office Chair Pro,COL-01,0,product_unit,2025-11-30,2025-12-08,4,42,10,0,0,10,10,0,0,0,0,0,False
+P010,Standing Desk,COL-01,10,product_unit,2025-11-30,2025-12-09,1,42,10,0,10,10,10,10,10,10,10,10,False
+P011,Meeting Table,COL-01,0,product_unit,2025-11-30,2025-12-08,1,42,5,10,5,5,5,0,0,5,0,0,False
+P012,Ergo Footrest,COL-01,10,product_unit,2025-11-30,2025-12-10,3,42,10,0,10,10,10,10,10,10,10,10,False
+P013,Desk Lamp,COL-01,5,product_unit,2025-11-30,2025-12-08,7,42,5,0,5,5,5,5,5,5,5,5,False
+P014,Filing Cabinet,COL-01,3,product_unit,2025-11-30,2025-12-10,4,42,0,0,2,1,1,3,3,3,3,3,True
+P015,Printer Plus,COL-01,6,product_unit,2025-11-30,2025-12-10,2,42,0,0,5,1,1,6,6,6,6,6,True
+P016,Laser Toner,COL-01,0,product_unit,2025-11-30,2025-12-12,1,42,10,10,5,5,5,0,0,0,0,0,False
+P017,Copy Paper Box,COL-01,0,product_unit,2025-11-30,2025-12-09,3,42,19,10,5,1,1,0,0,0,0,0,False
+P018,Premium Pens,COL-01,0,product_unit,2025-11-30,2025-12-11,8,42,20,0,3,1,1,0,0,0,0,0,False
+P019,Notebook Pack,COL-01,0,product_unit,2025-11-30,2025-12-11,2,42,10,10,10,10,10,0,0,10,0,0,False
+P020,Presentation Kit,COL-01,0,product_unit,2025-11-30,2025-12-14,2,42,10,10,10,10,10,0,0,10,0,0,False
+P021,Coffee Machine,COL-01,5,product_unit,2025-11-30,2025-12-12,2,42,5,0,5,5,5,5,5,5,5,5,False
+P022,Air Purifier,COL-01,0,product_unit,2025-11-30,2025-12-11,4,42,8,8,1,1,1,0,0,0,0,0,False
+P023,Portable Heater,COL-01,0,product_unit,2025-11-30,2025-12-14,10,42,0,9,5,1,1,0,0,7,0,0,True
+P024,Desk Fan,COL-01,20,product_unit,2025-11-30,2025-12-10,2,42,0,0,10,10,10,20,20,20,20,20,True
+P025,USB Power Hub,COL-01,0,product_unit,2025-11-30,2025-12-08,0,42,19,0,2,1,1,0,0,0,0,0,False
+P026,Webcam HD,COL-01,0,product_unit,2025-11-30,2025-12-09,0,42,10,0,0,10,10,0,0,0,0,0,False
+P027,Security Camera,COL-01,5,product_unit,2025-11-30,2025-12-14,13,42,5,0,5,5,5,5,5,5,5,5,False
+P028,Backup Drive 2TB,COL-01,0,product_unit,2025-11-30,2025-12-09,6,42,0,10,2,1,1,0,0,3,0,0,False
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,2025-11-30,2025-12-09,13,77,10,10,10,10,10,0,0,10,0,0,False
+P002,ProBook 16 Laptop,LA-01,0,product_unit,2025-11-30,2025-12-14,13,77,10,0,0,10,10,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,2025-11-30,2025-12-10,15,77,20,0,0,5,5,0,0,0,0,0,False
+P004,Vision 27 Monitor,LA-01,0,product_unit,2025-11-30,2025-12-11,6,77,10,10,10,10,10,0,0,10,0,0,False
+P005,Office Keyboard,LA-01,0,product_unit,2025-11-30,2025-12-08,17,77,3,0,0,1,1,0,0,0,0,0,False
+P006,Precision Mouse,LA-01,5,product_unit,2025-11-30,2025-12-12,17,77,5,0,5,5,5,5,5,5,5,5,False
+P007,NoiseCancel Headset,LA-01,10,product_unit,2025-11-30,2025-12-10,14,77,10,0,10,10,10,10,10,10,10,10,False
+P008,SmartDock USB-C,LA-01,0,product_unit,2025-11-30,2025-12-08,27,77,10,0,5,5,5,0,0,0,0,0,False
+P009,Office Chair Pro,LA-01,0,product_unit,2025-11-30,2025-12-12,3,77,15,0,0,5,5,0,0,0,0,0,False
+P010,Standing Desk,LA-01,0,product_unit,2025-11-30,2025-12-10,7,77,10,0,5,5,5,0,0,0,0,0,False
+P011,Meeting Table,LA-01,0,product_unit,2025-11-30,2025-12-13,3,77,3,0,0,1,1,0,0,0,0,0,False
+P012,Ergo Footrest,LA-01,10,product_unit,2025-11-30,2025-12-13,1,77,0,10,10,10,10,10,10,20,10,10,True
+P013,Desk Lamp,LA-01,9,product_unit,2025-11-30,2025-12-14,19,77,0,0,6,1,1,10,8,9,9,9,True
+P014,Filing Cabinet,LA-01,0,product_unit,2025-11-30,2025-12-09,3,77,20,0,0,10,10,0,0,0,0,0,False
+P015,Printer Plus,LA-01,0,product_unit,2025-11-30,2025-12-13,5,77,10,0,5,5,5,0,0,0,0,0,False
+P016,Laser Toner,LA-01,0,product_unit,2025-11-30,2025-12-14,11,77,25,0,10,5,5,0,0,0,0,0,False
+P017,Copy Paper Box,LA-01,3,product_unit,2025-11-30,2025-12-08,24,77,4,0,4,1,1,3,3,3,3,3,False
+P018,Premium Pens,LA-01,10,product_unit,2025-11-30,2025-12-11,19,77,10,0,10,10,10,10,10,10,10,10,False
+P019,Notebook Pack,LA-01,4,product_unit,2025-11-30,2025-12-13,44,77,0,3,0,1,1,5,1,7,4,4,True
+P020,Presentation Kit,LA-01,1,product_unit,2025-11-30,2025-12-10,2,77,3,0,3,1,1,1,1,1,0,1,False
+P021,Coffee Machine,LA-01,0,product_unit,2025-11-30,2025-12-13,3,77,20,0,10,10,10,0,0,0,0,0,False
+P022,Air Purifier,LA-01,0,product_unit,2025-11-30,2025-12-13,7,77,15,5,5,5,5,0,0,0,0,0,False
+P023,Portable Heater,LA-01,0,product_unit,2025-11-30,2025-12-13,3,77,3,0,0,1,1,0,0,0,0,0,False
+P024,Desk Fan,LA-01,0,product_unit,2025-11-30,2025-12-10,8,77,10,10,10,10,10,0,0,10,0,0,False
+P025,USB Power Hub,LA-01,5,product_unit,2025-11-30,2025-12-12,34,77,5,0,5,5,5,10,5,5,5,5,False
+P026,Webcam HD,LA-01,0,product_unit,2025-11-30,2025-12-14,20,77,20,0,10,10,10,0,0,0,0,0,False
+P027,Security Camera,LA-01,0,product_unit,2025-11-30,2025-12-11,6,77,5,5,0,5,5,0,0,0,0,0,False
+P028,Backup Drive 2TB,LA-01,5,product_unit,2025-11-30,2025-12-10,11,77,5,0,5,5,5,5,5,5,5,5,False
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,2025-11-30,2025-12-14,6,61,0,0,10,10,10,20,20,20,20,20,True
+P002,ProBook 16 Laptop,LON-01,0,product_unit,2025-11-30,2025-12-08,8,61,10,10,0,10,10,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,2025-11-30,2025-12-10,5,61,5,5,5,5,5,0,0,5,0,0,False
+P004,Vision 27 Monitor,LON-01,10,product_unit,2025-11-30,2025-12-10,7,61,0,10,10,10,10,10,10,20,10,10,False
+P005,Office Keyboard,LON-01,0,product_unit,2025-11-30,2025-12-08,12,61,20,0,10,10,10,0,0,0,0,0,False
+P006,Precision Mouse,LON-01,20,product_unit,2025-11-30,2025-12-14,14,61,0,0,10,10,10,20,20,20,20,20,True
+P007,NoiseCancel Headset,LON-01,0,product_unit,2025-11-30,2025-12-14,20,61,10,10,0,10,10,0,0,0,0,0,False
+P008,SmartDock USB-C,LON-01,0,product_unit,2025-11-30,2025-12-11,4,61,10,10,0,10,10,0,0,0,0,0,False
+P009,Office Chair Pro,LON-01,0,product_unit,2025-11-30,2025-12-08,0,61,10,10,10,10,10,0,0,0,0,0,False
+P010,Standing Desk,LON-01,10,product_unit,2025-11-30,2025-12-09,2,61,0,0,5,5,5,10,10,10,10,10,True
+P011,Meeting Table,LON-01,10,product_unit,2025-11-30,2025-12-14,8,61,10,0,10,10,10,10,10,10,10,10,False
+P012,Ergo Footrest,LON-01,0,product_unit,2025-11-30,2025-12-09,9,61,10,10,10,10,10,0,0,10,0,0,False
+P013,Desk Lamp,LON-01,5,product_unit,2025-11-30,2025-12-08,8,61,5,0,5,5,5,5,5,5,5,5,False
+P014,Filing Cabinet,LON-01,10,product_unit,2025-11-30,2025-12-11,5,61,10,0,10,10,10,10,10,10,10,10,False
+P015,Printer Plus,LON-01,0,product_unit,2025-11-30,2025-12-09,5,61,2,3,2,1,1,0,0,1,0,0,False
+P016,Laser Toner,LON-01,0,product_unit,2025-11-30,2025-12-14,15,61,19,0,2,1,1,0,0,0,0,0,False
+P017,Copy Paper Box,LON-01,10,product_unit,2025-11-30,2025-12-10,6,61,10,0,10,10,10,10,10,10,10,10,False
+P018,Premium Pens,LON-01,0,product_unit,2025-11-30,2025-12-10,21,61,20,5,5,5,5,0,0,0,0,0,False
+P019,Notebook Pack,LON-01,20,product_unit,2025-11-30,2025-12-08,13,61,0,0,10,10,10,20,20,20,20,20,False
+P020,Presentation Kit,LON-01,0,product_unit,2025-11-30,2025-12-14,1,61,20,0,10,10,10,0,0,0,0,0,False
+P021,Coffee Machine,LON-01,2,product_unit,2025-11-30,2025-12-10,7,61,0,0,1,1,1,3,2,2,2,2,True
+P022,Air Purifier,LON-01,0,product_unit,2025-11-30,2025-12-08,0,61,10,0,5,5,5,0,0,0,0,0,False
+P023,Portable Heater,LON-01,0,product_unit,2025-11-30,2025-12-10,8,61,4,0,1,1,1,0,0,0,0,0,False
+P024,Desk Fan,LON-01,6,product_unit,2025-11-30,2025-12-14,5,61,0,0,5,1,1,7,7,6,6,6,True
+P025,USB Power Hub,LON-01,5,product_unit,2025-11-30,2025-12-13,7,61,5,0,5,5,5,5,5,5,5,5,False
+P026,Webcam HD,LON-01,2,product_unit,2025-11-30,2025-12-13,15,61,0,3,2,1,1,3,1,5,2,2,True
+P027,Security Camera,LON-01,0,product_unit,2025-11-30,2025-12-10,3,61,4,0,0,1,1,0,0,0,0,0,False
+P028,Backup Drive 2TB,LON-01,0,product_unit,2025-11-30,2025-12-13,5,61,9,3,5,1,1,0,0,0,0,0,False
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,2025-11-30,2025-12-12,2,48,5,5,0,5,5,0,0,0,0,0,False
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,2025-11-30,2025-12-11,5,48,9,9,2,1,1,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,2025-11-30,2025-12-13,13,48,4,0,1,1,1,1,0,0,0,0,False
+P004,Vision 27 Monitor,MAN-01,10,product_unit,2025-11-30,2025-12-11,2,48,0,0,5,5,5,10,10,10,10,10,True
+P005,Office Keyboard,MAN-01,0,product_unit,2025-11-30,2025-12-11,6,48,20,10,0,10,10,0,0,0,0,0,False
+P006,Precision Mouse,MAN-01,10,product_unit,2025-11-30,2025-12-09,1,48,10,0,10,10,10,10,10,10,10,10,False
+P007,NoiseCancel Headset,MAN-01,0,product_unit,2025-11-30,2025-12-14,0,48,15,0,5,5,5,0,0,0,0,0,False
+P008,SmartDock USB-C,MAN-01,10,product_unit,2025-11-30,2025-12-10,4,48,10,0,10,10,10,10,10,10,10,10,False
+P009,Office Chair Pro,MAN-01,0,product_unit,2025-11-30,2025-12-09,0,48,0,10,0,1,1,0,0,0,0,0,False
+P010,Standing Desk,MAN-01,0,product_unit,2025-11-30,2025-12-12,4,48,20,0,10,10,10,0,0,0,0,0,False
+P011,Meeting Table,MAN-01,0,product_unit,2025-11-30,2025-12-08,0,48,7,0,4,1,1,0,0,0,0,0,False
+P012,Ergo Footrest,MAN-01,0,product_unit,2025-11-30,2025-12-08,3,48,8,4,4,1,1,0,0,0,0,0,False
+P013,Desk Lamp,MAN-01,5,product_unit,2025-11-30,2025-12-11,10,48,0,0,0,5,5,5,5,5,5,5,True
+P014,Filing Cabinet,MAN-01,5,product_unit,2025-11-30,2025-12-10,4,48,5,0,5,5,5,5,5,5,5,5,False
+P015,Printer Plus,MAN-01,10,product_unit,2025-11-30,2025-12-09,4,48,10,0,10,10,10,10,10,10,10,10,False
+P016,Laser Toner,MAN-01,0,product_unit,2025-11-30,2025-12-14,9,48,5,5,5,5,5,0,0,5,0,0,False
+P017,Copy Paper Box,MAN-01,10,product_unit,2025-11-30,2025-12-12,6,48,0,10,10,10,10,10,10,20,10,10,True
+P018,Premium Pens,MAN-01,20,product_unit,2025-11-30,2025-12-10,13,48,0,0,10,10,10,20,20,20,20,20,True
+P019,Notebook Pack,MAN-01,10,product_unit,2025-11-30,2025-12-12,4,48,10,0,10,10,10,10,10,10,10,10,False
+P020,Presentation Kit,MAN-01,0,product_unit,2025-11-30,2025-12-08,7,48,4,4,4,1,1,0,0,1,0,0,False
+P021,Coffee Machine,MAN-01,0,product_unit,2025-11-30,2025-12-08,1,48,10,10,0,10,10,0,0,0,0,0,False
+P022,Air Purifier,MAN-01,1,product_unit,2025-11-30,2025-12-11,0,48,0,0,1,1,1,1,2,1,1,1,False
+P023,Portable Heater,MAN-01,0,product_unit,2025-11-30,2025-12-11,1,48,5,5,0,5,5,0,0,0,0,0,False
+P024,Desk Fan,MAN-01,20,product_unit,2025-11-30,2025-12-09,14,48,0,0,10,10,10,20,20,20,20,20,True
+P025,USB Power Hub,MAN-01,10,product_unit,2025-11-30,2025-12-10,16,48,10,0,10,10,10,10,10,10,10,10,False
+P026,Webcam HD,MAN-01,0,product_unit,2025-11-30,2025-12-10,12,48,5,0,0,5,5,0,0,0,0,0,False
+P027,Security Camera,MAN-01,5,product_unit,2025-11-30,2025-12-10,14,48,5,0,5,5,5,5,5,5,5,5,False
+P028,Backup Drive 2TB,MAN-01,0,product_unit,2025-11-30,2025-12-08,18,48,0,4,0,1,1,0,0,2,0,0,False
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,2025-11-30,2025-12-09,4,50,0,0,0,10,10,10,10,10,10,10,True
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,2025-11-30,2025-12-09,17,50,10,0,10,10,10,10,10,10,10,10,False
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,2025-11-30,2025-12-12,10,50,20,0,5,5,5,0,0,0,0,0,False
+P004,Vision 27 Monitor,MUC-01,0,product_unit,2025-11-30,2025-12-12,4,50,3,0,0,1,1,0,0,0,0,0,False
+P005,Office Keyboard,MUC-01,0,product_unit,2025-11-30,2025-12-12,12,50,5,0,0,5,5,0,0,0,0,0,False
+P006,Precision Mouse,MUC-01,0,product_unit,2025-11-30,2025-12-08,2,50,20,0,10,10,10,0,0,0,0,0,False
+P007,NoiseCancel Headset,MUC-01,0,product_unit,2025-11-30,2025-12-14,6,50,20,0,5,5,5,0,0,0,0,0,False
+P008,SmartDock USB-C,MUC-01,1,product_unit,2025-11-30,2025-12-10,6,50,0,5,5,1,1,2,2,6,1,1,False
+P009,Office Chair Pro,MUC-01,0,product_unit,2025-11-30,2025-12-14,9,50,15,0,5,5,5,0,0,0,0,0,False
+P010,Standing Desk,MUC-01,0,product_unit,2025-11-30,2025-12-14,14,50,3,5,3,1,1,0,0,3,0,0,False
+P011,Meeting Table,MUC-01,0,product_unit,2025-11-30,2025-12-09,0,50,5,3,5,1,1,0,0,0,0,0,False
+P012,Ergo Footrest,MUC-01,0,product_unit,2025-11-30,2025-12-12,5,50,10,0,5,5,5,0,0,0,0,0,False
+P013,Desk Lamp,MUC-01,10,product_unit,2025-11-30,2025-12-08,5,50,0,10,10,10,10,10,10,20,10,10,False
+P014,Filing Cabinet,MUC-01,0,product_unit,2025-11-30,2025-12-10,2,50,5,0,0,5,5,0,0,0,0,0,False
+P015,Printer Plus,MUC-01,0,product_unit,2025-11-30,2025-12-10,0,50,5,0,0,5,5,0,0,0,0,0,False
+P016,Laser Toner,MUC-01,0,product_unit,2025-11-30,2025-12-13,11,50,6,0,0,1,1,0,0,0,0,0,False
+P017,Copy Paper Box,MUC-01,0,product_unit,2025-11-30,2025-12-09,12,50,10,10,0,10,10,0,0,0,0,0,False
+P018,Premium Pens,MUC-01,0,product_unit,2025-11-30,2025-12-14,4,50,10,0,5,5,5,0,0,0,0,0,False
+P019,Notebook Pack,MUC-01,0,product_unit,2025-11-30,2025-12-08,6,50,19,0,5,1,1,0,0,0,0,0,False
+P020,Presentation Kit,MUC-01,0,product_unit,2025-11-30,2025-12-13,0,50,5,0,5,5,5,0,5,0,0,5,False
+P021,Coffee Machine,MUC-01,0,product_unit,2025-11-30,2025-12-08,3,50,20,0,10,10,10,0,0,0,0,0,False
+P022,Air Purifier,MUC-01,0,product_unit,2025-11-30,2025-12-10,3,50,5,10,0,5,5,0,0,0,0,0,False
+P023,Portable Heater,MUC-01,0,product_unit,2025-11-30,2025-12-14,2,50,10,0,5,5,5,0,0,0,0,0,False
+P024,Desk Fan,MUC-01,5,product_unit,2025-11-30,2025-12-13,3,50,0,0,0,5,5,5,5,5,5,5,True
+P025,USB Power Hub,MUC-01,10,product_unit,2025-11-30,2025-12-14,7,50,0,10,10,10,10,10,10,20,10,10,True
+P026,Webcam HD,MUC-01,0,product_unit,2025-11-30,2025-12-11,9,50,10,0,0,10,10,0,0,0,0,0,False
+P027,Security Camera,MUC-01,0,product_unit,2025-11-30,2025-12-11,0,50,24,0,3,1,1,0,0,0,0,0,False
+P028,Backup Drive 2TB,MUC-01,0,product_unit,2025-11-30,2025-12-08,10,50,5,5,5,5,5,0,0,5,0,0,False
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,2025-11-30,2025-12-12,19,78,18,5,0,1,1,0,0,0,0,0,False
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,2025-11-30,2025-12-08,10,78,20,5,5,5,5,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,NYC-01,3,product_unit,2025-11-30,2025-12-14,33,78,3,0,0,1,1,3,1,3,2,3,False
+P004,Vision 27 Monitor,NYC-01,15,product_unit,2025-11-30,2025-12-08,9,78,0,0,10,5,5,15,15,15,15,15,False
+P005,Office Keyboard,NYC-01,0,product_unit,2025-11-30,2025-12-11,14,78,9,0,0,1,1,0,0,0,0,0,False
+P006,Precision Mouse,NYC-01,5,product_unit,2025-11-30,2025-12-13,28,78,5,0,5,5,5,5,5,5,5,5,False
+P007,NoiseCancel Headset,NYC-01,0,product_unit,2025-11-30,2025-12-10,17,78,10,10,0,10,10,0,0,0,0,0,False
+P008,SmartDock USB-C,NYC-01,0,product_unit,2025-11-30,2025-12-14,14,78,5,5,0,5,5,0,0,0,0,0,False
+P009,Office Chair Pro,NYC-01,0,product_unit,2025-11-30,2025-12-10,13,78,15,0,5,5,5,0,0,0,0,0,False
+P010,Standing Desk,NYC-01,0,product_unit,2025-11-30,2025-12-09,5,78,10,10,10,10,10,0,0,10,0,0,False
+P011,Meeting Table,NYC-01,10,product_unit,2025-11-30,2025-12-14,3,78,0,0,5,5,5,10,10,10,10,10,True
+P012,Ergo Footrest,NYC-01,5,product_unit,2025-11-30,2025-12-10,16,78,5,0,5,5,5,5,5,5,5,5,False
+P013,Desk Lamp,NYC-01,0,product_unit,2025-11-30,2025-12-12,7,78,10,10,10,10,10,0,0,10,0,0,False
+P014,Filing Cabinet,NYC-01,0,product_unit,2025-11-30,2025-12-13,7,78,15,8,4,1,1,0,0,0,0,0,False
+P015,Printer Plus,NYC-01,0,product_unit,2025-11-30,2025-12-14,1,78,10,0,5,5,5,0,0,0,0,0,False
+P016,Laser Toner,NYC-01,0,product_unit,2025-11-30,2025-12-08,24,78,15,0,5,5,5,0,0,0,0,0,False
+P017,Copy Paper Box,NYC-01,2,product_unit,2025-11-30,2025-12-14,45,78,5,3,3,1,1,4,1,5,2,3,False
+P018,Premium Pens,NYC-01,0,product_unit,2025-11-30,2025-12-13,16,78,6,12,2,1,1,0,0,0,0,0,False
+P019,Notebook Pack,NYC-01,0,product_unit,2025-11-30,2025-12-13,21,78,5,0,0,1,1,0,0,0,0,0,False
+P020,Presentation Kit,NYC-01,10,product_unit,2025-11-30,2025-12-14,6,78,10,0,10,10,10,10,10,10,10,10,False
+P021,Coffee Machine,NYC-01,10,product_unit,2025-11-30,2025-12-14,5,78,10,0,10,10,10,10,10,10,10,10,False
+P022,Air Purifier,NYC-01,0,product_unit,2025-11-30,2025-12-13,1,78,4,0,1,1,1,0,0,0,0,0,False
+P023,Portable Heater,NYC-01,0,product_unit,2025-11-30,2025-12-13,1,78,4,0,1,1,1,0,0,0,0,0,False
+P024,Desk Fan,NYC-01,10,product_unit,2025-11-30,2025-12-13,16,78,0,0,0,10,10,10,10,10,10,10,True
+P025,USB Power Hub,NYC-01,0,product_unit,2025-11-30,2025-12-08,31,78,20,0,10,10,10,0,0,0,0,0,False
+P026,Webcam HD,NYC-01,0,product_unit,2025-11-30,2025-12-10,13,78,20,10,10,10,10,0,0,0,0,0,False
+P027,Security Camera,NYC-01,0,product_unit,2025-11-30,2025-12-14,32,78,30,10,10,10,10,0,0,0,0,0,False
+P028,Backup Drive 2TB,NYC-01,4,product_unit,2025-11-30,2025-12-13,21,78,5,0,5,1,1,4,4,4,3,4,False
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,2025-11-30,2025-12-11,6,64,10,0,5,5,5,0,0,0,0,0,False
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,2025-11-30,2025-12-14,12,64,10,10,10,10,10,0,0,10,0,0,False
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,2025-11-30,2025-12-13,5,64,10,0,0,10,10,0,0,0,0,0,False
+P004,Vision 27 Monitor,PAR-01,0,product_unit,2025-11-30,2025-12-08,5,64,5,5,5,5,5,0,0,5,0,0,False
+P005,Office Keyboard,PAR-01,0,product_unit,2025-11-30,2025-12-09,16,64,5,5,5,5,5,0,0,5,0,0,False
+P006,Precision Mouse,PAR-01,0,product_unit,2025-11-30,2025-12-09,11,64,10,10,0,10,10,0,0,0,0,0,False
+P007,NoiseCancel Headset,PAR-01,0,product_unit,2025-11-30,2025-12-08,11,64,0,9,0,1,1,0,0,1,0,0,False
+P008,SmartDock USB-C,PAR-01,0,product_unit,2025-11-30,2025-12-14,13,64,10,0,0,10,10,0,0,0,0,0,False
+P009,Office Chair Pro,PAR-01,0,product_unit,2025-11-30,2025-12-08,2,64,15,0,5,5,5,0,0,0,0,0,False
+P010,Standing Desk,PAR-01,0,product_unit,2025-11-30,2025-12-14,5,64,4,0,1,1,1,0,0,0,0,0,False
+P011,Meeting Table,PAR-01,0,product_unit,2025-11-30,2025-12-08,12,64,25,0,5,5,5,0,0,0,0,0,False
+P012,Ergo Footrest,PAR-01,0,product_unit,2025-11-30,2025-12-11,2,64,0,5,0,5,5,0,0,5,0,0,True
+P013,Desk Lamp,PAR-01,0,product_unit,2025-11-30,2025-12-12,5,64,20,0,10,10,10,0,0,0,0,0,False
+P014,Filing Cabinet,PAR-01,0,product_unit,2025-11-30,2025-12-13,4,64,10,10,10,10,10,0,0,10,0,0,False
+P015,Printer Plus,PAR-01,0,product_unit,2025-11-30,2025-12-08,5,64,10,10,10,10,10,0,0,10,0,0,False
+P016,Laser Toner,PAR-01,10,product_unit,2025-11-30,2025-12-10,6,64,10,0,10,10,10,10,10,10,10,10,False
+P017,Copy Paper Box,PAR-01,10,product_unit,2025-11-30,2025-12-10,8,64,0,0,0,10,10,10,10,10,10,10,True
+P018,Premium Pens,PAR-01,0,product_unit,2025-11-30,2025-12-12,4,64,20,0,10,10,10,0,0,0,0,0,False
+P019,Notebook Pack,PAR-01,0,product_unit,2025-11-30,2025-12-10,4,64,10,10,10,10,10,0,0,10,0,0,False
+P020,Presentation Kit,PAR-01,0,product_unit,2025-11-30,2025-12-12,2,64,10,10,10,10,10,0,0,10,0,0,False
+P021,Coffee Machine,PAR-01,0,product_unit,2025-11-30,2025-12-11,6,64,10,5,5,5,5,0,0,0,0,0,False
+P022,Air Purifier,PAR-01,0,product_unit,2025-11-30,2025-12-11,10,64,20,10,0,5,5,0,0,0,0,0,False
+P023,Portable Heater,PAR-01,0,product_unit,2025-11-30,2025-12-14,2,64,7,0,0,1,1,0,0,0,0,0,False
+P024,Desk Fan,PAR-01,0,product_unit,2025-11-30,2025-12-13,21,64,20,0,5,5,5,0,0,0,0,0,False
+P025,USB Power Hub,PAR-01,0,product_unit,2025-11-30,2025-12-12,15,64,20,5,0,5,5,0,0,0,0,0,False
+P026,Webcam HD,PAR-01,4,product_unit,2025-11-30,2025-12-11,9,64,2,0,4,1,1,4,4,4,4,4,False
+P027,Security Camera,PAR-01,20,product_unit,2025-11-30,2025-12-08,1,64,0,0,10,10,10,20,20,20,20,20,False
+P028,Backup Drive 2TB,PAR-01,0,product_unit,2025-11-30,2025-12-09,4,64,0,5,0,5,5,0,0,5,0,0,False
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,2025-11-30,2025-12-14,8,51,5,0,0,5,5,0,0,0,0,0,False
+P002,ProBook 16 Laptop,SYD-01,0,product_unit,2025-11-30,2025-12-12,0,51,5,0,5,5,5,0,5,0,0,0,False
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,2025-11-30,2025-12-10,9,51,10,5,5,5,5,0,0,0,0,0,False
+P004,Vision 27 Monitor,SYD-01,0,product_unit,2025-11-30,2025-12-10,5,51,5,5,0,1,1,0,0,0,0,0,False
+P005,Office Keyboard,SYD-01,20,product_unit,2025-11-30,2025-12-11,6,51,0,0,10,10,10,20,20,20,20,20,True
+P006,Precision Mouse,SYD-01,4,product_unit,2025-11-30,2025-12-14,3,51,0,0,3,1,1,4,5,4,4,4,True
+P007,NoiseCancel Headset,SYD-01,0,product_unit,2025-11-30,2025-12-08,7,51,0,4,1,1,1,0,0,2,0,0,False
+P008,SmartDock USB-C,SYD-01,0,product_unit,2025-11-30,2025-12-10,2,51,0,10,0,10,10,0,0,10,0,0,True
+P009,Office Chair Pro,SYD-01,10,product_unit,2025-11-30,2025-12-14,5,51,10,0,10,10,10,10,10,10,10,10,False
+P010,Standing Desk,SYD-01,0,product_unit,2025-11-30,2025-12-12,3,51,10,0,5,5,5,0,0,0,0,0,False
+P011,Meeting Table,SYD-01,0,product_unit,2025-11-30,2025-12-09,4,51,5,5,5,5,5,0,0,5,0,0,False
+P012,Ergo Footrest,SYD-01,5,product_unit,2025-11-30,2025-12-08,8,51,0,0,4,1,1,6,6,5,5,5,False
+P013,Desk Lamp,SYD-01,10,product_unit,2025-11-30,2025-12-08,3,51,0,0,5,5,5,10,10,10,10,10,False
+P014,Filing Cabinet,SYD-01,10,product_unit,2025-11-30,2025-12-14,1,51,10,0,10,10,10,10,10,10,10,10,False
+P015,Printer Plus,SYD-01,0,product_unit,2025-11-30,2025-12-09,2,51,2,0,1,1,1,0,0,0,0,0,False
+P016,Laser Toner,SYD-01,0,product_unit,2025-11-30,2025-12-10,16,51,10,0,5,5,5,0,0,0,0,0,False
+P017,Copy Paper Box,SYD-01,10,product_unit,2025-11-30,2025-12-13,7,51,10,0,10,10,10,10,10,10,10,10,False
+P018,Premium Pens,SYD-01,5,product_unit,2025-11-30,2025-12-11,6,51,5,0,5,5,5,5,5,5,5,5,False
+P019,Notebook Pack,SYD-01,0,product_unit,2025-11-30,2025-12-08,23,51,9,0,2,1,1,0,0,0,0,0,False
+P020,Presentation Kit,SYD-01,10,product_unit,2025-11-30,2025-12-14,2,51,10,0,10,10,10,10,10,10,10,10,False
+P021,Coffee Machine,SYD-01,0,product_unit,2025-11-30,2025-12-13,1,51,0,3,0,1,1,0,0,1,0,0,True
+P022,Air Purifier,SYD-01,0,product_unit,2025-11-30,2025-12-14,0,51,5,0,5,5,5,0,5,0,0,0,False
+P023,Portable Heater,SYD-01,0,product_unit,2025-11-30,2025-12-14,9,51,10,0,0,5,5,0,0,0,0,0,False
+P024,Desk Fan,SYD-01,0,product_unit,2025-11-30,2025-12-11,14,51,15,8,4,1,1,0,0,0,0,0,False
+P025,USB Power Hub,SYD-01,0,product_unit,2025-11-30,2025-12-14,7,51,0,10,0,10,10,0,0,10,0,0,True
+P026,Webcam HD,SYD-01,0,product_unit,2025-11-30,2025-12-11,0,51,5,5,5,5,5,0,0,0,0,0,False
+P027,Security Camera,SYD-01,5,product_unit,2025-11-30,2025-12-10,5,51,0,5,5,5,5,5,5,10,5,5,True
+P028,Backup Drive 2TB,SYD-01,0,product_unit,2025-11-30,2025-12-13,4,51,10,0,0,5,5,0,0,0,0,0,False
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,2025-11-30,2025-12-09,4,66,3,3,2,1,1,0,0,0,0,0,False
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,2025-11-30,2025-12-09,2,66,20,0,10,10,10,0,0,0,0,0,False
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,2025-11-30,2025-12-11,3,66,10,0,5,5,5,0,0,0,0,0,False
+P004,Vision 27 Monitor,TOR-01,0,product_unit,2025-11-30,2025-12-14,23,66,10,0,0,10,10,0,0,0,0,0,False
+P005,Office Keyboard,TOR-01,0,product_unit,2025-11-30,2025-12-09,11,66,16,8,1,1,1,0,0,0,0,0,False
+P006,Precision Mouse,TOR-01,0,product_unit,2025-11-30,2025-12-12,13,66,10,0,5,1,1,0,0,0,0,0,False
+P007,NoiseCancel Headset,TOR-01,0,product_unit,2025-11-30,2025-12-10,3,66,20,0,0,5,5,0,0,0,0,0,False
+P008,SmartDock USB-C,TOR-01,0,product_unit,2025-11-30,2025-12-10,4,66,5,5,5,1,1,0,0,1,0,0,False
+P009,Office Chair Pro,TOR-01,0,product_unit,2025-11-30,2025-12-11,2,66,4,2,2,1,1,0,0,0,0,0,False
+P010,Standing Desk,TOR-01,0,product_unit,2025-11-30,2025-12-12,4,66,20,10,10,10,10,0,0,0,0,0,False
+P011,Meeting Table,TOR-01,0,product_unit,2025-11-30,2025-12-08,3,66,4,0,0,1,1,0,0,0,0,0,False
+P012,Ergo Footrest,TOR-01,0,product_unit,2025-11-30,2025-12-09,2,66,15,0,0,5,5,0,0,0,0,0,False
+P013,Desk Lamp,TOR-01,0,product_unit,2025-11-30,2025-12-11,9,66,10,0,5,5,5,0,0,0,0,0,False
+P014,Filing Cabinet,TOR-01,4,product_unit,2025-11-30,2025-12-11,15,66,3,0,5,1,1,5,4,4,4,4,False
+P015,Printer Plus,TOR-01,0,product_unit,2025-11-30,2025-12-14,3,66,5,0,0,5,5,0,0,0,0,0,False
+P016,Laser Toner,TOR-01,0,product_unit,2025-11-30,2025-12-14,6,66,5,0,0,5,5,0,0,0,0,0,False
+P017,Copy Paper Box,TOR-01,10,product_unit,2025-11-30,2025-12-13,18,66,0,0,5,5,5,10,10,10,10,10,True
+P018,Premium Pens,TOR-01,5,product_unit,2025-11-30,2025-12-08,18,66,5,0,5,5,5,5,5,5,5,5,False
+P019,Notebook Pack,TOR-01,0,product_unit,2025-11-30,2025-12-10,11,66,20,0,10,10,10,0,0,0,0,0,False
+P020,Presentation Kit,TOR-01,10,product_unit,2025-11-30,2025-12-09,2,66,10,0,10,10,10,10,10,10,10,10,False
+P021,Coffee Machine,TOR-01,0,product_unit,2025-11-30,2025-12-09,0,66,20,0,10,10,10,0,0,0,0,0,False
+P022,Air Purifier,TOR-01,10,product_unit,2025-11-30,2025-12-12,2,66,10,0,10,10,10,10,10,10,10,10,False
+P023,Portable Heater,TOR-01,0,product_unit,2025-11-30,2025-12-11,7,66,7,0,2,1,1,0,0,0,0,0,False
+P024,Desk Fan,TOR-01,0,product_unit,2025-11-30,2025-12-11,2,66,20,10,10,10,10,0,0,0,0,0,False
+P025,USB Power Hub,TOR-01,10,product_unit,2025-11-30,2025-12-08,4,66,10,0,10,10,10,10,10,10,10,10,False
+P026,Webcam HD,TOR-01,10,product_unit,2025-11-30,2025-12-13,4,66,0,0,5,5,5,10,10,10,10,10,True
+P027,Security Camera,TOR-01,20,product_unit,2025-11-30,2025-12-13,6,66,0,0,10,10,10,20,20,20,20,20,True
+P028,Backup Drive 2TB,TOR-01,0,product_unit,2025-11-30,2025-12-13,19,66,2,4,2,1,1,0,0,3,0,0,False
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,2025-11-30,2025-12-14,7,58,5,0,5,5,5,5,5,5,5,5,False
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,2025-11-30,2025-12-09,10,58,10,0,10,10,10,10,10,10,10,10,False
+P003,EdgeTab 11 Tablet,VAN-01,4,product_unit,2025-11-30,2025-12-10,10,58,3,0,5,1,1,4,4,4,3,5,False
+P004,Vision 27 Monitor,VAN-01,0,product_unit,2025-11-30,2025-12-12,8,58,20,10,0,10,10,0,0,0,0,0,False
+P005,Office Keyboard,VAN-01,0,product_unit,2025-11-30,2025-12-08,5,58,10,0,0,10,10,0,0,0,0,0,False
+P006,Precision Mouse,VAN-01,0,product_unit,2025-11-30,2025-12-10,6,58,10,10,0,5,5,0,0,0,0,0,False
+P007,NoiseCancel Headset,VAN-01,1,product_unit,2025-11-30,2025-12-11,4,58,0,0,0,1,1,1,1,1,1,1,True
+P008,SmartDock USB-C,VAN-01,2,product_unit,2025-11-30,2025-12-08,0,58,0,0,2,1,1,2,3,2,2,2,False
+P009,Office Chair Pro,VAN-01,0,product_unit,2025-11-30,2025-12-11,7,58,20,10,10,10,10,0,0,0,0,0,False
+P010,Standing Desk,VAN-01,5,product_unit,2025-11-30,2025-12-08,1,58,5,0,5,5,5,5,5,5,5,5,False
+P011,Meeting Table,VAN-01,0,product_unit,2025-11-30,2025-12-10,0,58,0,5,5,5,5,0,5,5,0,5,False
+P012,Ergo Footrest,VAN-01,0,product_unit,2025-11-30,2025-12-09,3,58,8,8,0,1,1,0,0,0,0,0,False
+P013,Desk Lamp,VAN-01,4,product_unit,2025-11-30,2025-12-13,2,58,0,0,3,1,1,4,4,4,4,4,True
+P014,Filing Cabinet,VAN-01,0,product_unit,2025-11-30,2025-12-13,2,58,15,0,0,5,5,0,0,0,0,0,False
+P015,Printer Plus,VAN-01,0,product_unit,2025-11-30,2025-12-13,0,58,10,0,10,10,10,0,10,0,0,0,False
+P016,Laser Toner,VAN-01,0,product_unit,2025-11-30,2025-12-13,8,58,10,10,10,10,10,0,0,10,0,0,False
+P017,Copy Paper Box,VAN-01,0,product_unit,2025-11-30,2025-12-14,17,58,20,0,5,5,5,0,0,0,0,0,False
+P018,Premium Pens,VAN-01,0,product_unit,2025-11-30,2025-12-10,2,58,0,10,0,10,10,0,0,10,0,0,True
+P019,Notebook Pack,VAN-01,0,product_unit,2025-11-30,2025-12-12,1,58,5,10,10,5,5,0,0,10,0,0,False
+P020,Presentation Kit,VAN-01,0,product_unit,2025-11-30,2025-12-12,5,58,9,9,2,1,1,0,0,0,0,0,False
+P021,Coffee Machine,VAN-01,0,product_unit,2025-11-30,2025-12-09,7,58,20,0,10,10,10,0,0,0,0,0,False
+P022,Air Purifier,VAN-01,1,product_unit,2025-11-30,2025-12-10,1,58,2,2,4,1,1,1,1,3,1,1,False
+P023,Portable Heater,VAN-01,0,product_unit,2025-11-30,2025-12-14,2,58,10,0,0,10,10,0,0,0,0,0,False
+P024,Desk Fan,VAN-01,0,product_unit,2025-11-30,2025-12-14,2,58,4,0,0,1,1,0,0,0,0,0,False
+P025,USB Power Hub,VAN-01,0,product_unit,2025-11-30,2025-12-09,14,58,10,10,0,10,10,0,0,0,0,0,False
+P026,Webcam HD,VAN-01,0,product_unit,2025-11-30,2025-12-09,5,58,20,0,10,10,10,0,0,0,0,0,False
+P027,Security Camera,VAN-01,0,product_unit,2025-11-30,2025-12-11,6,58,24,0,2,1,1,0,0,0,0,0,False
+P028,Backup Drive 2TB,VAN-01,10,product_unit,2025-11-30,2025-12-08,5,58,10,0,10,10,10,10,10,10,10,10,False
