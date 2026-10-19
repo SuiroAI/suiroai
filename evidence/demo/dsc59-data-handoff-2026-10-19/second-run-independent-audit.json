@@ -1,0 +1,51 @@
+{
+  "format": "dsc59-second-run-independent-development-audit-v1",
+  "scope": "Read-only independent recomputation of declared development scenario; not final milestone verification",
+  "run": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660",
+  "generated_code_executed": false,
+  "arithmetic_and_fold_comparison_pass": true,
+  "error_count": 0,
+  "errors": [],
+  "output_rows": 336,
+  "development_folds": 66,
+  "candidate_models": 11,
+  "selected_model": {
+    "method": "90d / 100% pooled / flat",
+    "window": "90",
+    "pool_weight": "1.0",
+    "seasonal": "False",
+    "WAPE": "0.9039075109226935",
+    "bias": "-0.1116130696878006"
+  },
+  "totals": {
+    "recommended_units": 877,
+    "recommended_pairs": 111,
+    "expedite_pairs": 52,
+    "unrounded_gap_units": 351
+  },
+  "sensitivity_totals": {
+    "Order_Qty_Low_Demand": 873,
+    "Order_Qty_High_Demand": 884,
+    "Order_Qty_Returns_Excluded": 876,
+    "Order_Qty_Inbound_7d_Late": 877,
+    "Order_Qty_Store_Active_Day_Sensitivity": 888,
+    "Order_Qty_Historical_December_Uplift": 884,
+    "Order_Qty_Near_Tied_Model": 876
+  },
+  "source_hygiene": {
+    "raw_rows": 17406,
+    "exact_duplicates_removed": 42,
+    "nonpositive_rows": 8,
+    "gross_lines": 15142,
+    "gross_units": 32198,
+    "latest_sales_date": "2025-11-30"
+  },
+  "limits": [
+    "No independent source of transaction status semantics, latent demand, daily completeness, or historical information availability.",
+    "Missing recorded observations are a Data-selected recorded-throughput scenario; store-active-day exposure and demand sensitivities do not prove latent demand.",
+    "Model selection uses the same six June-November2025 development folds used for score reporting; performance is selection performance, not an untouched validation result.",
+    "Selected WAPE is approximately90.39%, poor absolute forecast accuracy; near-tied runner-up differs by only0.0106 percentage points.",
+    "Seasonal ratios for early2022 can have less than a full preceding lookback; denominator still uses full configured window. This affects seasonal comparisons, not selected flat model.",
+    "This script checks primary and all seven sensitivity quantities plus all66 model-fold scores; it does not establish final acceptance or visually validate the HTML report."
+  ]
+}

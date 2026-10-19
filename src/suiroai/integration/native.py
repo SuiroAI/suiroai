@@ -4,7 +4,9 @@ Customer stages use the exercised named permission profile. Engineering mode
 without released_root retains legacy synthetic-only probe compatibility.
 
 Support invocation and evidence retrieval through the demonstrated native
-Codex/Data interface, with inspectable timeout and invalid-code outcomes.
+Codex/Data interface, with inspectable failures and optional caller deadlines.
+Unrestricted-duration analysis still polls cancellation and transport health;
+individual control requests and cleanup retain their own responsiveness bounds.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
@@ -303,6 +305,11 @@ class _Transport:
 
     def wait_terminal(self, thread_id, turn_id, deadline, cancellation=None):
         while (thread_id, turn_id) not in self.terminals:
+            for event in self.errors:
+                if (event.get("threadId") == thread_id and event.get("turnId") == turn_id
+                        and event.get("willRetry") is False):
+                    error = event.get("error") or {}
+                    raise _Stop(_host_error(error), "Native turn failed: " + json.dumps(_safe(error)))
             self.pump(deadline, cancellation)
         return self.terminals[(thread_id, turn_id)]
 
@@ -337,14 +344,15 @@ class NativeHost:
         return selected
 
     def execute(self, *, cwd: Path, prompt: str, evidence_dir: Path,
-                timeout_seconds: float, cancellation: Event | None = None,
+                timeout_seconds: float | None, cancellation: Event | None = None,
                 mode: Literal["customer", "engineering"] = "customer",
                 released_root: Path | None = None) -> NativeRun:
         """One native turn; approval and task validation belong to StageAdapter.
 
         Customer calls must use disjoint physical released/output/evidence roots.
         No caller attestation substitutes for native config/profile checks.
-        All discovery, execution and retrieval consume the same stage deadline.
+        Finite callers share one discovery/execution/retrieval deadline. None
+        lets analysis run until completion, cancellation or an actual failure.
         """
         run = NativeRun(mode=mode)
         evidence_dir = Path(evidence_dir)
@@ -355,10 +363,11 @@ class NativeHost:
         try:
             if mode not in ("customer", "engineering"):
                 raise _Stop("integrity_error", "Unknown native dispatch mode")
-            if (isinstance(timeout_seconds, bool) or not isinstance(timeout_seconds, (float, int))
+            if timeout_seconds is not None and (isinstance(timeout_seconds, bool)
+                    or not isinstance(timeout_seconds, (float, int))
                     or not math.isfinite(timeout_seconds) or timeout_seconds <= 0):
                 raise _Stop("budget_exhausted", "Native execution requires positive finite remaining time")
-            deadline = time.monotonic() + timeout_seconds
+            deadline = math.inf if timeout_seconds is None else time.monotonic() + timeout_seconds
             _check(deadline, cancellation)
             if mode == "customer" and not strict:
                 raise _Stop("unsupported_integration", "Customer dispatch requires a released-input root")
@@ -464,8 +473,11 @@ class NativeHost:
                         raise _Stop("integrity_error", "Native engineering sandbox acknowledgement mismatch")
                     attachment = {"type": "mention", "name": "Data", "path": "plugin://" + self.plugin.plugin_id}
                     run.evidence["attachment"] = attachment
-                    started = transport.request("turn/start", {"threadId": run.thread_id,
-                        "input": [{"type": "text", "text": prompt}, attachment]}, deadline, cancellation)
+                    turn_params = {"threadId": run.thread_id,
+                        "input": [{"type": "text", "text": prompt}, attachment]}
+                    if strict:
+                        turn_params["effort"] = "medium"
+                    started = transport.request("turn/start", turn_params, deadline, cancellation)
                     run.turn_id = (started.get("turn") or {}).get("id")
                     if not isinstance(run.turn_id, str) or not run.turn_id:
                         raise _Stop("runtime_error", "Native turn identity missing")

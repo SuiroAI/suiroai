@@ -1,6 +1,6 @@
 """Present the local, consent-gated retail analysis demo in Streamlit.
 
-Keep execution and verified downloads behind the session service so browser
+Keep execution and output downloads behind the session service so browser
 reruns cannot authorize work or reuse a result after an input edit.
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
@@ -41,9 +41,9 @@ def _show_proposal(view: dict) -> None:
 
 
 def _show_outcome(session: object, view: dict) -> None:
-    """Render distinct outcomes and offer only the service's verified HTML.
+    """Render actual findings and distinguish generated files from verified reports.
 
-    Never build a report download from an intermediate artifact or UI text.
+    Download exact service bytes and state their independent verification status.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     status = view.get("status", "missing")
@@ -52,23 +52,41 @@ def _show_outcome(session: object, view: dict) -> None:
         return
     if status in {"draft", "missing", "missing_inputs", "needs_inputs"}:
         st.info(message or "Upload your data and describe what you are trying to solve for.")
-    elif status in {"blocked", "unsupported_task", "needs_material_facts"}:
+    elif status in {"blocked", "unsupported_task"}:
         st.warning(message or "The task is blocked. Review the required changes below.")
     elif status in {"failure", "failed", "execution_failed", "validation_failed"}:
         st.error(message or "The run failed. No verified report is available.")
     elif status == "running":
-        st.info(message or "Analysis is running.")
+        st.info(message or "Working on your approved task.")
+    elif status == "investigation_completed":
+        st.info(message or "The data investigation is complete. These findings are not a verified final report.")
+    elif status == "analysis_completed":
+        st.info(message or "Data has produced an analysis output.")
     elif status in {"success", "completed"}:
         result = session.download()
-        if result is None:
+        if result is None or view.get("report_verified") is not True:
             st.error("The run has no verified report available for download.")
         else:
             name, data = result
             st.success(message or "Analysis completed and the report passed verification.")
             st.download_button("Download verified HTML report", data=data, file_name=name,
                                mime="text/html", key="download_verified_report")
+    if view.get("report_available") and view.get("report_verified") is False:
+        result = session.download()
+        if result is not None:
+            name, data = result
+            st.caption("Data-generated development report; not independently verified.")
+            st.download_button("Download Data output", data=data, file_name=name,
+                               mime="text/html", key="download_data_output")
+    investigation = view.get("investigation_text")
+    if investigation:
+        st.subheader("What we found")
+        st.write(investigation)
     for error in view.get("errors", []):
         st.write(error)
+    if view.get("technical_details"):
+        with st.expander("Technical details"):
+            st.text(view["technical_details"])
 
 
 def run_app(session_factory: Callable | None = None) -> None:
@@ -81,7 +99,7 @@ def run_app(session_factory: Callable | None = None) -> None:
 
     st.set_page_config(page_title="SuiroAI local demo", page_icon="📊")
     st.title("SuiroAI local demo")
-    st.caption("Development build: intake and runtime checks work; verified report generation is not yet connected.")
+    st.caption("Review the proposed task before allowing analysis. Downloaded outputs state whether they have been independently verified.")
     st.write("Upload your data.")
     st.caption("Changing the question or a file clears the previous approval and result.")
     if "demo_session" not in st.session_state:
@@ -104,7 +122,7 @@ def run_app(session_factory: Callable | None = None) -> None:
             session.revise()
             st.rerun()
         if approve.button("Approve and run", key="approve_and_run"):
-            with st.spinner("Analysis is running…"):
+            with st.spinner("Working on your approved task…"):
                 session.approve_and_run(view["proposal_digest"])
             st.rerun()
     _show_outcome(session, view)

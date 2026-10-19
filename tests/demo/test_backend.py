@@ -1,4 +1,4 @@
-"""Exercise DSC-59 blocked execution boundaries with explicit test doubles.
+"""Exercise DSC-59 execution boundaries with explicit test doubles.
 
 These tests verify receipt retention and refusal to invent analytical success;
 patched inventory calls do not establish live native integration acceptance.
@@ -11,12 +11,11 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from suiroai.demo.backend import MeasuredReview
 from suiroai.demo.runtime import DemoNativeHost
 from suiroai.demo.worker import audit_development_partition
 from suiroai.integration.artifacts import ArtifactStore
 from suiroai.integration.native import NativeHost
-from suiroai.integration.native_profile import NativePolicyError
+from suiroai.preparation.worker import PreparationError, inspect_sales_partition
 
 
 class NativeBoundaryTests(unittest.TestCase):
@@ -34,46 +33,8 @@ class NativeBoundaryTests(unittest.TestCase):
         return DemoNativeHost().execute(cwd=self.output, prompt="TEST preflight only",
             evidence_dir=self.evidence, timeout_seconds=5, released_root=self.release)
 
-    def test_actual_discovery_failure_retains_receipt_and_never_starts_model(self):
-        with patch("suiroai.demo.runtime.policy.validate_supported_plugin"), \
-             patch("suiroai.demo.runtime.shutil.which", return_value="/test/codex"), \
-             patch("suiroai.demo.runtime.policy.bounded_plugin_inventory",
-                side_effect=NativePolicyError("unsupported_integration", "TEST marketplace fallback")), \
-             patch.object(NativeHost, "_initialize") as initialize:
-            result = self.attempt()
-        self.assertEqual(result.error_code, "unsupported_integration")
-        self.assertEqual(result.message, "TEST marketplace fallback")
-        self.assertFalse(result.evidence["analytical_model_turn_requested"])
-        self.assertIsNone(result.thread_id)
-        initialize.assert_not_called()
-        self.assertTrue((self.evidence / "native-run.json").is_file())
-        self.assertEqual(result.evidence["artifact_receipts"][-1]["relative_path"], "native-run.json")
-
-    def test_successful_inventory_still_blocks_unsafe_development_release(self):
-        with patch("suiroai.demo.runtime.policy.validate_supported_plugin"), \
-             patch("suiroai.demo.runtime.shutil.which", return_value="/test/codex"), \
-             patch("suiroai.demo.runtime.policy.bounded_plugin_inventory", return_value=({}, {})), \
-             patch.object(NativeHost, "_initialize") as initialize:
-            result = self.attempt()
-        self.assertEqual(result.outcome, "execution_failed")
-        self.assertIn("excluding December", result.message)
-        self.assertIsNone(result.turn_id)
-        initialize.assert_not_called()
-
-    def test_symlinked_release_is_rejected_without_evidence_write(self):
-        self.release.rmdir()
-        self.release.symlink_to(self.output, target_is_directory=True)
-        result = self.attempt()
-        self.assertEqual(result.error_code, "unsupported_integration")
-        self.assertFalse((self.evidence / "native-run.json").exists())
-
-    def test_exact_bytes_cannot_substitute_for_independent_numerical_review(self):
-        store = ArtifactStore(self.root / "store")
-        reviewer = MeasuredReview(store, {})
-        self.assertFalse(reviewer.evidence({"artifacts": [{"bytes": 0,
-            "byte_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}, (b"",)))
-        self.assertTrue(reviewer.events[-1]["measured_bytes_match"])
-        self.assertFalse(reviewer.events[-1]["accepted"])
+    def test_demo_host_uses_shared_native_execution_without_a_preflight_stop(self):
+        self.assertIs(DemoNativeHost.execute, NativeHost.execute)
 
     def test_controller_audit_preserves_duplicates_and_never_zero_fills_or_asserts_availability(self):
         store = ArtifactStore(self.root / "store")
@@ -90,8 +51,101 @@ class NativeBoundaryTests(unittest.TestCase):
         self.assertNotIn(b"2025-12-01", development)
         self.assertIn(b"2025-12-01", reserved)
         self.assertEqual(development.count(b"2025-11-29"), 2)
+        expected = inspect_sales_partition(raw, source)
+        self.assertEqual(development, expected["development_csv"])
+        self.assertEqual(reserved, expected["reserved_csv"])
+        lineage = json.loads(store.read_bytes(audit["controller_only_partition_lineage_ref"]))
+        self.assertEqual(lineage, expected["controller_audit"])
+        self.assertEqual([row["duplicate_of"] for row in lineage["row_lineage"]], [None, 1, None])
+        self.assertEqual(audit["development_distinct_records"], 1)
+        self.assertEqual(audit["development_exact_duplicate_excess"], 1)
+        self.assertEqual(audit["development_receipt"], expected["development_receipt"])
+        self.assertNotIn("reserved", str(audit["development_receipt"]))
+        self.assertEqual(set(summary), {"audit_ref", "development_source_records",
+            "development_product_store_pairs", "development_unobserved_pair_dates",
+            "analytical_model_inputs_released"})
         self.assertEqual(audit["development_observed_pair_dates"], 1)
         self.assertFalse(audit["missing_dates_zero_filled"])
         self.assertIsNone(audit["latest_information_available_date"])
         self.assertFalse(audit["analytical_model_inputs_released"])
         self.assertEqual(store.read_bytes(source), raw)
+
+    def test_controller_inspection_rejects_forged_source_identity_and_lineage_columns(self):
+        store = ArtifactStore(self.root / "store")
+        raw = b"Product_ID,Store_ID,Transaction_ID,Order_ID,Order_Date,Quantity,Order_Status,Return_Flag,Product_Name,Store_Name,_duplicate_of\n"
+        source = store.put_bytes("test-sales", 1, "supplied", raw)
+        with self.assertRaisesRegex(PreparationError, "reserved lineage"):
+            inspect_sales_partition(raw, source)
+        with self.assertRaisesRegex(PreparationError, "hash mismatch"):
+            inspect_sales_partition(raw + b"changed", source)
+
+class ApprovedInvestigationTests(unittest.TestCase):
+    """Verify production backend dispatch and honest investigation publication.
+
+    Test doubles prove wiring only, never live Data acceptance.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+
+    def test_approved_backend_calls_real_investigation_entrypoint(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / "store")
+            record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
+            native = {"native_outcome": "completed", "unverified_investigation_text": "TEST findings"}
+            consent = lambda approval, proposal: True
+            with patch("suiroai.demo.backend.run_investigation", return_value=native) as investigate:
+                result = run_approved(store, record, record, record, None, root / "runs", consent)
+            investigate.assert_called_once()
+            self.assertIs(investigate.call_args.args[5], consent)
+            self.assertEqual(result.status, "investigation_completed")
+            self.assertEqual(Path(result.investigation_path).read_text(), "TEST findings")
+            receipt = json.loads(Path(result.evidence_path).read_text())
+            self.assertFalse(receipt["verified_report_available"])
+            self.assertEqual(store.read_bytes(result.evidence_ref), Path(result.evidence_path).read_bytes())
+            self.assertIsNone(result.download_bytes)
+
+    def test_revoked_investigation_cannot_publish_result(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            with patch("suiroai.demo.backend.run_investigation", return_value={"native_outcome": "completed"}):
+                with self.assertRaisesRegex(ValueError, "revoked"):
+                    run_approved(ArtifactStore(root / "store"), {}, {}, {}, None,
+                        root / "runs", lambda approval, proposal: False)
+            self.assertEqual(list((root / "runs").glob("attempt-*.json")), [])
+
+    def test_report_download_uses_immutable_reference_and_stays_unverified(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / "store")
+            ref = store.put_bytes("TEST-report", 1, "derived", b"<html>TEST findings</html>")
+            record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
+            native = {"native_outcome": "completed", "unverified_report_ref": ref}
+            with patch("suiroai.demo.backend.run_investigation", return_value=native):
+                result = run_approved(store, record, record, record, None,
+                    root / "runs", lambda *_: True)
+            self.assertEqual(result.status, "analysis_completed")
+            self.assertEqual(result.download_bytes, store.read_bytes(ref))
+            self.assertEqual(Path(result.report_path).read_bytes(), store.read_bytes(ref))
+            self.assertFalse(result.report_verified)
+
+    def test_output_contract_failure_preserves_real_native_receipt(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / "store")
+            record = {"artifact_id": "test", "artifact_version": 1, "provenance": "derived"}
+            native = {"native_outcome": "completed", "thread_id": "TEST-real-thread",
+                "immutable_native_evidence_refs": [], "output_error": "TEST report hash mismatch",
+                "unverified_investigation_text": "TEST partial findings"}
+            with patch("suiroai.demo.backend.run_investigation", return_value=native):
+                result = run_approved(store, record, record, record, None,
+                    root / "runs", lambda *_: True)
+            self.assertEqual(result.status, "execution_failed")
+            self.assertIn("hash mismatch", result.message)
+            receipt = json.loads(Path(result.evidence_path).read_text())
+            self.assertEqual(receipt["stage_result"]["thread_id"], "TEST-real-thread")
+            self.assertEqual(receipt["stage_result"]["native_outcome"], "completed")
+            self.assertIsNone(result.download_bytes)

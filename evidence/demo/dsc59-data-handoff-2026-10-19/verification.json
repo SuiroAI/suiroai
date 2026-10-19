@@ -1,0 +1,136 @@
+{
+  "format": "dsc59-live-data-browser-attempt-v1",
+  "interaction": "Computer Use, visible Brave localhost:8501",
+  "question": "Using these files, produce an illustrative product/store restocking list as of November 30, 2025, with findings and limitations.",
+  "model": "gpt-6.1-sol",
+  "effort": "medium",
+  "native_thread_id": "01a15521-745c-72a1-8d6c-b17593dafd1d",
+  "source_files": [
+    {
+      "relative_path": "supplied_sales/Sales_transactions_2022_2025.csv",
+      "bytes": 5190513,
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "staged_bytes_match": true,
+      "after_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "unchanged": true
+    },
+    {
+      "relative_path": "synthetic_inventory/inventory_position.csv",
+      "bytes": 18799,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "staged_bytes_match": true,
+      "after_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "unchanged": true
+    },
+    {
+      "relative_path": "synthetic_inventory/inbound_deliveries.csv",
+      "bytes": 10740,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "staged_bytes_match": true,
+      "after_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "unchanged": true
+    },
+    {
+      "relative_path": "synthetic_ordering_rules/ordering_policy.csv",
+      "bytes": 19279,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "staged_bytes_match": true,
+      "after_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "unchanged": true
+    }
+  ],
+  "tests": {
+    "passed": 705,
+    "subtests_passed": 659
+  },
+  "full_milestone_accepted": false,
+  "implementation_files": [
+    {
+      "path": "README.md",
+      "sha256": "c0bce1240d083521f2da56842e783cf3b0c070307d5bce16ddcc39d12f8fb8b3"
+    },
+    {
+      "path": "docs/demo/INTEGRATION_BLOCKERS.md",
+      "sha256": "444d0795374c93a9c2e06f116fbebe261399da29f57f3f89706809dbe2732708"
+    },
+    {
+      "path": "docs/demo/RECORDING_SCRIPT.md",
+      "sha256": "c8b6d621d22352865707e4d3ff3016919636d251e00420065609f095879a1024"
+    },
+    {
+      "path": "docs/demo/REQUIREMENTS.md",
+      "sha256": "04bf79ee095872faa4ed75cd2b1b5403b8b09e1f245ca0eec14e114a0ca6c96c"
+    },
+    {
+      "path": "docs/demo/STREAMLIT.md",
+      "sha256": "e5d1a1ecd23d719527d050bc08b15ba37dce4ea22d98d0d82d1fea4e7945565c"
+    },
+    {
+      "path": "src/suiroai/demo/app.py",
+      "sha256": "53d0aa0a877af70388b5263d2ec3dadb282464b0bc88573c6e2cf5236a693fef"
+    },
+    {
+      "path": "src/suiroai/demo/backend.py",
+      "sha256": "96be98c59440ed722055913224a306cf9afa01a94331a37a497db23e673aca1b"
+    },
+    {
+      "path": "src/suiroai/demo/investigation.py",
+      "sha256": "4c7337b68f8f0efefa49d4e135f216cb22c29678b7cb55c59ea866923dda76c0"
+    },
+    {
+      "path": "src/suiroai/demo/runtime.py",
+      "sha256": "118c40f5e69bfa945837005cda658d16e98dd7c492fcf3f92e9016c37ad6d725"
+    },
+    {
+      "path": "src/suiroai/demo/service.py",
+      "sha256": "f6ea5b9a1579b05eff8f3784f7b67290768648594144e8ed011dc669beab9254"
+    },
+    {
+      "path": "src/suiroai/demo/worker.py",
+      "sha256": "fcd6f5a6cb14171a37ec7b8ffe011f30e059c447f4d0eed28cf182ac0417f31b"
+    },
+    {
+      "path": "src/suiroai/integration/native.py",
+      "sha256": "49b92213b240caa609a6921c3306cd7ecb018c7b9c96b74bea1e138a6238f9c3"
+    },
+    {
+      "path": "src/suiroai/preparation/worker.py",
+      "sha256": "0da9556ead0c70aa2c1c0b090e81e5e543957a0b604d7e7847b3bec064f501d2"
+    },
+    {
+      "path": "tests/demo/test_app.py",
+      "sha256": "d8f66739bdf21b02f659a1aeb7e7842f6bd500ce2767131f74a4c690ca4927ff"
+    },
+    {
+      "path": "tests/demo/test_backend.py",
+      "sha256": "5821070e6c196c065b9a68f23023a7413644d570559a4d9e50f75c8765486693"
+    },
+    {
+      "path": "tests/demo/test_investigation.py",
+      "sha256": "5a3449a1510487a11b3885dd68d530ed08337df096ff32845bd00f76e417b35c"
+    },
+    {
+      "path": "tests/demo/test_service.py",
+      "sha256": "95ee8db6528429303ae5a0a9663951ee2316c223a9a4c06ba44cdc796d779429"
+    },
+    {
+      "path": "tests/integration/test_native.py",
+      "sha256": "7d3bf193b68dd9e2d56e21da5c7139b45a47f0406bd14f99e14f3acada0d5aa5"
+    }
+  ],
+  "native_turn_id": "01a15521-76b7-7cf1-b724-cacbd9e1704f",
+  "native_outcome": "completed",
+  "visual_question_to_download_flow_completed": true,
+  "source_files_unchanged": true,
+  "final_demo_default_execution_limit_seconds": null,
+  "download": {
+    "control": "Download Data output",
+    "saved_using": "native browser Save dialog through Computer Use",
+    "bytes": 73003,
+    "sha256": "f1de5a2881a2b575e8051329cdbdaffdc41981e2d239c378250776ed5188ba51",
+    "matches_native_artifact": true,
+    "matches_immutable_store_ref": true,
+    "visually_opened_in_browser": true
+  },
+  "live_run_budget_note": "This successful turn was initiated with an explicit 900-second budget before the user requested no overall limit. It completed without hitting that budget. Final code defaults to no overall deadline; None forwarding, native completion, failure detection and cancellation are covered by tests."
+}

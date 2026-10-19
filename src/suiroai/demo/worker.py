@@ -11,7 +11,7 @@ import hashlib
 import json
 import uuid
 
-from suiroai.preparation.worker import SALES, calendar, csv_bytes, table
+from suiroai.preparation.worker import SALES, inspect_sales_partition, table
 
 PREPARATION_BLOCKER = (
     "Preparation cannot safely dispatch a model turn: the pinned parent contract "
@@ -47,33 +47,28 @@ def audit_development_partition(store, submission, proposal):
         raise ValueError("Transaction source does not match the approved proposal")
     source_ref = matching[0]
     raw = store.read_bytes(source_ref)
-    columns, rows = table(raw, SALES)
-    if "_source_record" in columns:
-        raise ValueError("Transaction source uses a reserved audit lineage column")
-    development, reserved = [], []
+    partition = inspect_sales_partition(raw, source_ref)
+    _, development = table(partition["development_csv"], SALES)
     dates = defaultdict(set)
-    for index, row in enumerate(rows, 1):
-        when = calendar(row["Order_Date"])
-        if not "2022-01-01" <= when <= "2025-12-31":
-            raise ValueError("Transaction date falls outside the approved historical scope")
-        item = dict(row, _source_record=str(index))
-        if when <= "2025-11-30":
-            development.append(item)
-            dates[(row["Product_ID"], row["Store_ID"])].add(when)
-        else:
-            reserved.append(item)
+    for row in development:
+        dates[(row["Product_ID"], row["Store_ID"])].add(row["Order_Date"])
     if not development:
         raise ValueError("No development transaction records precede the holdout boundary")
     prefix = "demo-release-audit-" + uuid.uuid4().hex
     refs = []
-    for suffix, partition in (("development", development), ("reserved", reserved)):
-        data = csv_bytes(columns + ["_source_record"], partition)
-        refs.append(store.put_bytes(prefix + "-" + suffix, 1, "derived", data))
+    for suffix in ("development", "reserved"):
+        refs.append(store.put_bytes(prefix + "-" + suffix, 1, "derived", partition[suffix + "_csv"]))
+    lineage_ref = store.put_bytes(prefix + "-partition-lineage", 1, "derived",
+        (json.dumps(partition["controller_audit"], sort_keys=True, indent=2) + "\n").encode())
     span = (date(2025, 11, 30) - date(2022, 1, 1)).days + 1
     observed = sum(len(values) for values in dates.values())
     audit = {"format": "dsc59-controller-release-audit-v1", "source_ref": source_ref,
         "source_raw_sha256": hashlib.sha256(raw).hexdigest(),
         "development_ref": refs[0], "controller_only_reserved_ref": refs[1],
+        "controller_only_partition_lineage_ref": lineage_ref,
+        "development_receipt": partition["development_receipt"],
+        "development_distinct_records": partition["controller_audit"]["counts"]["development_distinct"],
+        "development_exact_duplicate_excess": partition["controller_audit"]["counts"]["development_duplicate_excess"],
         "development_source_records": len(development), "development_product_store_pairs": len(dates),
         "development_observed_pair_dates": observed,
         "development_possible_pair_dates": span * len(dates),

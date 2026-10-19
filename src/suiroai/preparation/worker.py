@@ -2,14 +2,17 @@
 
 The controller runs partition_sales in the preparation stage before releasing
 development bytes to a model. prepare_development never receives December rows.
-Neither function starts a host or grants execution authority. Both require the
-trusted caller's exact-request permit, including in explicitly mocked tests.
+Neither execution entry starts a host or grants execution authority. Both
+require the trusted caller's exact-request permit, including in explicitly
+mocked tests. inspect_sales_partition provides the same measurement kernel for
+controller-only intake auditing; it grants no execution or release permit.
 
 Reconcile exact duplicate transactions and operational keys after approval,
 retain sparse-date and target-treatment consequences, and keep future outcomes
 out of development inputs rather than treating missing dates as proven zeros.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-27
+Demo integration: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from __future__ import annotations
 
@@ -130,6 +133,18 @@ def partition_sales(data, source_ref, *, execution, request, parent_permits):
     guard(execution, request, parent_permits)
     if source_ref not in execution["source_refs"] or source_ref not in request["released_input_refs"]:
         raise PreparationError("raw sales reference is not approved/released")
+    return inspect_sales_partition(data, source_ref)
+
+
+def inspect_sales_partition(data, source_ref):
+    """Measure source partition lineage without granting execution authority.
+
+    This pure controller inspection shares exact partition semantics with the
+    authorized preparation prelude. Its entire result includes reserved data;
+    never send it to a development model. A browser/controller must authenticate
+    consent before reading customer bytes, and release still requires the parent
+    stage permit. This helper creates no stage request or preparation result.
+    """
     measured(data, source_ref)
     columns, rows = table(data, SALES)
     if "_source_record" in columns or "_duplicate_of" in columns:

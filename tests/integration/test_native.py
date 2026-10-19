@@ -21,7 +21,7 @@ from tempfile import TemporaryDirectory
 from threading import Event
 import unittest
 import tomllib
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from suiroai.integration.native import DataPluginSpec, NativeHost, _Stop, _Transport
 from suiroai.integration.native import _observed_invalid_code
@@ -316,6 +316,27 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(result.error_code, "integrity_error")
         self.assertEqual(result.outcome, "execution_failed")
 
+    def test_wait_without_deadline_detects_nonretrying_turn_failure(self):
+        transport = _Transport.__new__(_Transport)
+        transport.terminals = {}
+        transport.errors = [{"threadId": "thread", "turnId": "turn",
+            "willRetry": False, "error": {"message": "Native analytical failure"}}]
+        transport.pump = MagicMock()
+        with self.assertRaisesRegex(_Stop, "Native analytical failure"):
+            transport.wait_terminal("thread", "turn", float("inf"))
+        transport.pump.assert_not_called()
+
+    def test_retry_notifications_do_not_stop_healthy_unlimited_work(self):
+        transport = _Transport.__new__(_Transport)
+        transport.terminals = {}
+        transport.errors = [{"threadId": "thread", "turnId": "turn",
+            "willRetry": True, "error": {"message": "Retry in progress"}}]
+        def complete(*args):
+            transport.terminals[("thread", "turn")] = {"status": "completed"}
+        transport.pump = complete
+        self.assertEqual(transport.wait_terminal("thread", "turn", float("inf")),
+                         {"status": "completed"})
+
     def test_server_auth_request_rejected_without_parameter_capture(self):
         transport = _Transport.__new__(_Transport)
         transport.log, transport.log_bytes = io.StringIO(), 0
@@ -371,6 +392,8 @@ class StrictNativeTests(unittest.TestCase):
         self.assertNotIn("sandbox", start)
         self.assertEqual(start["permissions"], actual.config["default_permissions"])
         self.assertEqual(start["model"], "gpt-6.1-sol")
+        turn = next(params for method, params in actual.calls if method == "turn/start")
+        self.assertEqual(turn["effort"], "medium")
         self.assertEqual(start["runtimeWorkspaceRoots"], [str(self.cwd)])
         self.assertTrue(result.evidence["mcp_inventory_before"]["validated_disabled_only"])
         self.assertTrue(result.evidence["mcp_inventory_after"]["validated_disabled_only"])
@@ -383,6 +406,19 @@ class StrictNativeTests(unittest.TestCase):
             self.assertEqual(len(data), receipt["bytes"])
             self.assertEqual(sha256(data).hexdigest(), receipt["sha256"])
         self.assertNotIn("customer_isolation_verified", result.evidence)
+
+    def test_no_overall_deadline_can_complete_and_still_honors_cancellation(self):
+        """Unlimited-duration work keeps the same isolation and cancel boundary."""
+        result = self.run_strict(timeout_seconds=None)
+        self.assertEqual(result.outcome, "completed")
+        self.assertIsNone(result.evidence["total_stage_limit_seconds"])
+        self.assertTrue(result.evidence["effective_profile_verified"])
+        receipt = json.loads((self.evidence / "native-run.json").read_text())
+        self.assertIsNone(receipt["evidence"]["total_stage_limit_seconds"])
+        cancelled = Event()
+        cancelled.set()
+        result = self.run_strict(timeout_seconds=None, cancellation=cancelled)
+        self.assertEqual(result.error_code, "cancelled")
 
     def test_unverified_plugin_version_or_hash_never_launches(self):
         for plugin in (DataPluginSpec(version="1.0.12"), DataPluginSpec(skill_sha256=None)):

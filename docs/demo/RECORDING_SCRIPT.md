@@ -22,7 +22,7 @@ end-to-end retail command. Do not invent one or replay prewritten outcomes.
    echo reviewers, manufactured approvals or Code Interpreter substitution.
 3. Preserve the actual request and supplied file identities. The intended local
    root is `/Users/ceverson/Development/SuiroAI/data/retail_mvp/sales_2022_2025/`.
-   Record the five inputs and two provenance documents below. Measure hashes
+   Record the four operational inputs and two provenance documents below. Measure hashes
    before and after; stop on unexplained changes. These commands only inspect
    bytes and versions and must run in the trusted capture/controller context,
    outside the restricted feature/model-selection context. Run this first block
@@ -40,7 +40,7 @@ end-to-end retail command. Do not invent one or replay prewritten outcomes.
    From the data root:
 
    ```sh
-   shasum -a 256 supplied_sales/Sales_transactions_2022_2025.csv supplied_sales/sales_data_dictionary.csv synthetic_inventory/inventory_position.csv synthetic_inventory/inbound_deliveries.csv synthetic_ordering_rules/ordering_policy.csv documentation/synthetic_generation_manifest.json documentation/shared_locations.json
+   shasum -a 256 supplied_sales/Sales_transactions_2022_2025.csv synthetic_inventory/inventory_position.csv synthetic_inventory/inbound_deliveries.csv synthetic_ordering_rules/ordering_policy.csv documentation/synthetic_generation_manifest.json documentation/shared_locations.json
    ```
 
 4. Reconcile measured source hashes with the generation manifest, preserve Drive

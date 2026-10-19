@@ -2,8 +2,8 @@
 
 Use the existing intake records and immutable artifact store for the fixed
 retail task. Browser reruns only display state; edited inputs revoke consent
-and downloads. The current backend can retain a real blocked preflight, but
-cannot publish an unverified report as a successful analytical result.
+and downloads. Approved development files reach the actual Data runtime;
+unverified findings remain distinct from an independently verified report.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
@@ -34,7 +34,7 @@ ROLES = {
     "receipts": ("inbound_ledger", {"Product_ID", "Store_ID", "Expected_Arrival_Date", "Incoming_Qty"}),
     "policy": ("ordering_policy", {"Product_ID", "Store_ID", "Supplier_Lead_Time_Days", "Review_Period_Days", "Safety_Stock_Qty", "Minimum_Order_Qty", "Order_Multiple_Qty"}),
 }
-REQUIRED_ROLES = set(ROLES) - {"dictionary"}
+REQUIRED_ROLES = {"sales"}
 
 
 @dataclass(frozen=True)
@@ -48,8 +48,8 @@ class UploadedInput:
 def _identify_uploads(uploads):
     """Identify this backend's input roles from bounded headers, never names.
 
-    The browser stays generic. Unsupported, ambiguous, and duplicate inputs
-    remain explicit rather than being silently assigned to an analytical role.
+    The browser stays generic. Unknown and duplicate inputs remain available to Data. The controller uses
+    a transaction date column only to isolate later outcomes.
     """
     identified, errors, seen = [], [], set()
     for file in uploads:
@@ -67,17 +67,17 @@ def _identify_uploads(uploads):
             errors.append(f"{file.name}: unrecognized format; this demo's backend currently reads CSV data.")
             continue
         candidates = [role for role, (_, fields) in ROLES.items() if fields <= set(columns)]
-        if not candidates:
-            errors.append(f"{file.name}: unrecognized input columns; its purpose could not be established for this task.")
-        elif len(candidates) > 1:
-            errors.append(f"{file.name}: ambiguous input matches {', '.join(candidates)}; its purpose needs clarification.")
-        elif candidates[0] in seen:
-            errors.append(f"{file.name}: duplicate {candidates[0]} input; supply one authoritative file for that input.")
-        else:
-            role = candidates[0]
-            seen.add(role)
-            identified.append(UploadedInput(name=file.name, role=role, data=file.data))
-    errors.extend("This task needs " + role + " data." for role in sorted(REQUIRED_ROLES) if role not in seen)
+        if "Order_Date" in columns and not candidates:
+            candidates = ["sales"]
+        # Structural routing is solely for the confidential date partition.
+        # Duplicate sources and uncertain meanings are retained for Data to
+        # reconcile from their contents rather than decided by this app.
+        role = candidates[0] if len(candidates) == 1 else "other"
+        seen.add(role)
+        identified.append(UploadedInput(name=file.name,
+            role=role + ":" + str(len(identified)), data=file.data))
+    if "sales" not in seen:
+        errors.append("Supply the dated transaction CSV for this historical retail task so later outcomes can be kept separate.")
     return tuple(identified), errors
 
 
@@ -108,6 +108,7 @@ class DemoSession:
         self._consent = None
         self._attempted = set()
         self._store = None
+        self._download = None
         self._view = {"status": "draft", "message": "", "errors": []}
 
     @property
@@ -125,11 +126,13 @@ class DemoSession:
             self._fingerprint = current
             self._revision += 1
             self._receipt = self._proposal = self._approval = self._consent = None
+            self._download = None
             self._view = {"status": "draft", "message": "Inputs changed. Review the task before approving a new run." if had_proposal else "", "errors": []}
 
     def revise(self):
         with self._lock:
             self._proposal = self._approval = self._consent = None
+            self._download = None
             self._revision += 1
             self._view = {"status": "draft", "message": "Edit the question or files, then select Review task again.", "errors": []}
 
@@ -141,6 +144,7 @@ class DemoSession:
                 return self.view
             self._revision += 1
             self._consent = self._approval = None
+            self._download = None
             self._receipt = self._proposal = None
             errors = []
             if not question.strip():
@@ -158,7 +162,7 @@ class DemoSession:
             for file in uploads:
                 file_id = self._task + ":" + file.role
                 lookup[file_id] = file.data
-                files.append(SuppliedFile(file_id, "upload://" + file_id, ROLES[file.role][0], self._task,
+                files.append(SuppliedFile(file_id, "upload://" + file_id, ROLES.get(file.role.split(":", 1)[0], ("other", set()))[0], self._task,
                     provenance="supplied", version=self._revision, original_name=Path(file.name).name))
             receipt = receive_submission(original_request=question.strip(), files=files,
                 task_id=self._task, task_version=1, input_version=self._revision, received_at=_now(),
@@ -168,7 +172,7 @@ class DemoSession:
                 source = measured.get(self._task + ":" + file.role)
                 if source is None:
                     continue
-                missing = ROLES[file.role][1] - set(source.inspection["columns"])
+                missing = ({"Order_Date"} if file.role.split(":", 1)[0] == "sales" else set()) - set(source.inspection["columns"])
                 if missing:
                     errors.append(f"{file.role}: required fields are absent: {', '.join(sorted(missing))}.")
             for file in receipt.submission["files"]:
@@ -184,8 +188,12 @@ class DemoSession:
                 {"assumption_id": "demo-unknown-history", "classification": "unknown", "status": "unresolved", "source_refs": receipt.external_refs,
                  "statement": "Historical information availability and complete daily sales coverage are unverified. Missing dates remain unknown; this proposal does not authorize silent zero filling."},
                 {"assumption_id": "demo-inferred-measures", "classification": "supported_interpretation", "status": "proposed", "source_refs": receipt.external_refs,
-                 "statement": "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. A data dictionary is optional; ask only if consequential business ambiguity remains."},
+                 "statement": "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. Use supported assumptions, methods and sensitivity analysis to resolve uncertainty; state any remaining limitations in the report."},
             ]
+            assumptions.append({"assumption_id": "development_investigation",
+                "classification": "synthetic_assumption", "status": "proposed",
+                "source_refs": receipt.external_refs,
+                "statement": "Send these approved files and question to Data for development analysis through November 30, 2025, with later transaction outcomes withheld. Data will determine supported treatment and methods, compare sensitive assumptions, and produce the best useful report with limitations without asking follow-up questions."})
             pending = lambda name: {"status": "pending", "unresolved_gap_ids": [name]}
             proposal = {"kind": "task_proposal", "schema_version": VERSION, "artifact_id": self._task + ":proposal",
                 "artifact_version": self._revision, "provenance": "derived",
@@ -209,10 +217,10 @@ class DemoSession:
             self._store.put_record(receipt.submission)
             self._store.put_record(proposal)
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
-                "review_date": "2025-11-30", "output": "One HTML restocking report you can download, after the calculations and findings pass verification.",
-                "understanding": "We will inspect the columns and compare the files to understand your data. You do not need a data dictionary. We will ask about any unclear business meaning that could change the answer before calculating quantities.",
+                "review_date": "2025-11-30", "output": "A downloadable Data development report with the best supported result, assumptions, sensitivities and limitations.",
+                "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain uncertainty and limitations in the report. No follow-up answers are required.",
                 "assumptions": [item["statement"] for item in assumptions],
-                "execution": "Approve one attempt using this question and these files. This development build can check the inputs, but the analysis and verified report are not connected yet. This attempt will stop before analysis and will not produce a report."}
+                "execution": "Approve one real Data analysis attempt using this question and these files, with transaction outcomes after November 30, 2025 withheld. Findings remain unverified until independently checked; this approval does not authorize final model selection or holdout evaluation."}
             self._view = {"status": "awaiting_approval", "proposal_digest": proposal["binding"]["proposal_digest"],
                 "proposal_summary": summary, "message": "Review this exact task and its limitations before approving.", "errors": []}
             return self.view
@@ -251,15 +259,25 @@ class DemoSession:
                 status = result.status
                 message = result.message
                 details = message
-                if status == "blocked":
-                    message = ("The demo stopped before model execution. Development-only data release "
-                        "and a supported policy for missing daily sales are not yet connected, "
-                        "so no verified restocking report is available.")
                 if status == "completed":
                     status = "blocked"
                     message = "The backend has not supplied an independently verified delivery receipt. No report can be downloaded."
+                report_available = (status == "analysis_completed"
+                    and getattr(result, "report_ref", None) is not None
+                    and getattr(result, "download_bytes", None) is not None)
+                if report_available:
+                    persisted = self._store.read_bytes(result.report_ref)
+                    if persisted != result.download_bytes:
+                        raise ValueError("Data report differs from its immutable receipt")
+                    self._download = (result.download_name, persisted)
                 self._view.update(status=status, message=message, technical_details=details,
-                    evidence_path=result.evidence_path, errors=[])
+                    report_available=report_available, report_verified=False,
+                    report_path=getattr(result, "report_path", None),
+                    evidence_path=result.evidence_path,
+                    investigation_text=getattr(result, "investigation_text", None),
+                    investigation_path=getattr(result, "investigation_path", None),
+                    native_outcome=getattr(result, "native_outcome", None),
+                    verified_report_available=False, errors=[])
         except Exception:
             with self._lock:
                 if self._fingerprint == fingerprint and consent(approval, proposal):
@@ -267,9 +285,10 @@ class DemoSession:
         return self.view
 
     def download(self):
-        """Return no bytes until the backend implements verified final delivery.
+        """Return only the current approved Data output with explicit provenance.
 
-        An intermediate native receipt or unverified generated HTML is never a
-        customer report. The current preflight-only backend cannot mint one.
+        Unverified development output is available as such; it never sets the
+        verified final report flag. Revise and changed inputs discard the bytes.
         """
-        return None
+        with self._lock:
+            return self._download if self._view.get("report_available") else None

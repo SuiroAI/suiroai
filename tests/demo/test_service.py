@@ -206,52 +206,29 @@ def test_reordering_unchanged_uploads_keeps_review_identity(tmp_path, uploads):
     assert session.view == view
 
 
-@pytest.mark.parametrize("kind", ["unknown", "ambiguous", "duplicate"])
-def test_unidentifiable_or_duplicate_uploads_require_guidance(tmp_path, uploads, kind):
-    """Reject uncertain file identity rather than guessing a source to execute.
+def test_unknown_csv_reaches_data_without_an_application_semantics_gate(tmp_path, uploads):
+    """Retain unfamiliar data for Data to interpret after approval.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
-    files = list(uploads)
-    if kind == "unknown":
-        files.append(UploadedInput(name="unrelated.csv", data=b"Unrelated,Other\n1,2\n"))
-        filename = "unrelated.csv"
-    elif kind == "ambiguous":
-        fields = sorted(ROLES["sales"][1] | ROLES["inventory"][1])
-        files.append(UploadedInput(name="mixed.csv", data=(",".join(fields) + "\n").encode()))
-        filename = "mixed.csv"
-    else:
-        files.append(replace(uploads[0], name="another-sales.csv"))
-        filename = "another-sales.csv"
+    files = list(uploads) + [UploadedInput(name="extra.csv", data=b"Unrelated,Other\n1,2\n")]
     session = DemoSession(artifact_root=tmp_path)
     view = session.review("What should we replenish?", files)
-    assert view["status"] == "needs_inputs"
-    guidance = " ".join(view["errors"]).lower()
-    assert filename in guidance
-    assert "proposal_digest" not in view
-    if kind == "ambiguous":
-        assert "sales" in guidance and "inventory" in guidance
-    elif kind == "duplicate":
-        assert "sales" in guidance
-    else:
-        assert "column" in guidance or "recogniz" in guidance or "identif" in guidance
-    assert session.download() is None
+    assert view["status"] == "awaiting_approval"
+    assert "extra.csv" in view["proposal_summary"]["inputs"]
 
 
-def test_missing_source_is_guidance_after_review(tmp_path, uploads):
-    """Request missing source data only after the user's generic upload review.
+def test_only_dated_transactions_are_required_for_confidential_partition(tmp_path, uploads):
+    """Let Data determine analytical input sufficiency after the release boundary.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
-    session = DemoSession(artifact_root=tmp_path)
-    session.invalidate("", [])
-    assert session.view["status"] == "draft"
-    assert "inputs changed" not in session.view["message"].lower()
-    assert session.view["errors"] == []
-    view = session.review("What should we replenish?", uploads[:-1])
-    assert view["status"] == "needs_inputs"
-    assert "policy" in " ".join(view["errors"]).lower()
-    assert "proposal_digest" not in view
+    sales = [file for file in uploads if file.name == "sales.csv"]
+    view = DemoSession(artifact_root=tmp_path).review("What should we replenish?", sales)
+    assert view["status"] == "awaiting_approval"
+    summary = str(view["proposal_summary"])
+    assert "data dictionary" not in summary.lower()
+    assert "stop before analysis" not in summary.lower()
 
 
 def test_dictionary_is_optional_without_fabricated_source_or_semantics(tmp_path, uploads):
@@ -299,16 +276,107 @@ def test_optional_dictionary_is_retained_when_supplied(tmp_path, uploads):
     assert "dictionary.csv" in view["proposal_summary"]["inputs"]
 
 
-def test_missing_policy_remains_required_without_dictionary(tmp_path, uploads):
-    """Request actual missing ordering policy without demanding a dictionary.
+def test_missing_policy_is_left_for_data_to_investigate(tmp_path, uploads):
+    """Pass partial operational data rather than demanding policy before Data.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
     files = [file for file in uploads if file.name not in {"dictionary.csv", "policy.csv"}]
     session = DemoSession(artifact_root=tmp_path)
     view = session.review("What should we replenish?", files)
-    assert view["status"] == "needs_inputs"
-    guidance = " ".join(view["errors"]).lower()
-    assert "policy" in guidance
-    assert "dictionary" not in guidance
-    assert "proposal_digest" not in view
+    assert view["status"] == "awaiting_approval"
+
+
+def test_actual_investigation_result_is_visible_but_not_verified(tmp_path, uploads):
+    """Expose native findings without promoting them into verified delivery.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    def backend(*args):
+        assert args[6](args[3], args[2])
+        assert any(a["assumption_id"] == "development_investigation" for a in args[2]["assumptions"])
+        return SimpleNamespace(status="investigation_completed", message="Data finished; unverified.",
+            evidence_path="/test/attempt.json", investigation_text="Findings and questions",
+            investigation_path="/test/investigation.md", native_outcome="completed")
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    proposal = session.review("What should we replenish?", uploads)
+    view = session.approve_and_run(proposal["proposal_digest"])
+    assert view["status"] == "investigation_completed"
+    assert view["investigation_text"] == "Findings and questions"
+    assert view["native_outcome"] == "completed"
+    assert not view["verified_report_available"]
+    assert session.download() is None
+
+
+def test_development_report_download_retains_unverified_provenance_and_revokes(tmp_path, uploads):
+    """Expose approved development output and remove it on any new input.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    def backend(*args):
+        ref = args[0].put_bytes("TEST-development-report", 1, "derived", b"<html>TEST findings</html>")
+        return SimpleNamespace(status="analysis_completed", message="Data output; unverified.",
+            evidence_path=None, report_ref=ref, report_path="/test/report.html",
+            download_name="development.html", download_bytes=args[0].read_bytes(ref))
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    proposal = session.review("What should we replenish?", uploads)
+    view = session.approve_and_run(proposal["proposal_digest"])
+    assert view["report_available"]
+    assert not view["report_verified"]
+    assert not view["verified_report_available"]
+    assert session.download() == ("development.html", b"<html>TEST findings</html>")
+    session.invalidate("Replenish another store", uploads)
+    assert session.download() is None
+
+
+def test_split_and_overlapping_sources_are_left_for_data_to_reconcile(tmp_path, uploads):
+    """Keep duplicate role files under unique measured file identities.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    captured = []
+    def backend(*args):
+        captured.append(args[1])
+        return SimpleNamespace(status="blocked", message="TEST boundary", evidence_path=None)
+    files = list(uploads) + [replace(uploads[0], name="sales-part-two.csv")]
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    view = session.review("What should we replenish?", files)
+    assert view["status"] == "awaiting_approval"
+    session.approve_and_run(view["proposal_digest"])
+    records = captured[0]["files"]
+    assert len(records) == len(files)
+    assert len({file["file_id"] for file in records}) == len(files)
+    assert sum(file["source_role"] == "transactions" for file in records) == 2
+
+
+def test_approval_authorizes_autonomous_treatment_and_report_without_followup(tmp_path, uploads):
+    """Describe Data's supported result and limitations without a question gate.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    view = DemoSession(artifact_root=tmp_path).review("What should we replenish?", uploads)
+    summary = view["proposal_summary"]
+    assert "downloadable" in summary["output"].lower()
+    assert "sensitivities" in summary["output"].lower()
+    assert "No follow-up answers are required" in summary["understanding"]
+    assert "ask only" not in str(summary).lower()
+    assert "follow-up questions if" not in str(summary).lower()
+
+
+def test_inbound_order_dates_do_not_route_receipts_as_sales(tmp_path, uploads):
+    """Retain planned arrivals when an inbound ledger includes placement dates.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    fields = sorted(ROLES["receipts"][1] | {"Order_Date"})
+    inbound = UploadedInput(name="incoming.csv", data=(",".join(fields) + "\n").encode())
+    captured = []
+    def backend(*args):
+        captured.append(args[1])
+        return SimpleNamespace(status="blocked", message="TEST boundary", evidence_path=None)
+    files = [file for file in uploads if file.name != "receipts.csv"] + [inbound]
+    session = DemoSession(artifact_root=tmp_path, backend=backend)
+    view = session.review("What should we replenish?", files)
+    session.approve_and_run(view["proposal_digest"])
+    source = next(file for file in captured[0]["files"] if file["original_name"] == "incoming.csv")
+    assert source["source_role"] == "inbound_ledger"
