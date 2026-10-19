@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,As_Of_Date,Usable_Stock_Units,Incoming_Within_Cover_Units,Incoming_Later_Units,Cover_Days,Safety_Stock_Units,Expected_Demand_Units,Order_Multiple_Units,Minimum_Order_Units,Before_New_Delivery,Daily_Recorded_Demand_Estimate
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,2025-11-30,0,0,0,14,10,1.611,10,10,Check faster delivery,0.115068
+P005,Office Keyboard,SYD-01,20,product_unit,2025-11-30,0,0,0,11,10,0.6329,10,10,Check faster delivery,0.057534
+P006,Precision Mouse,LON-01,20,product_unit,2025-11-30,0,0,0,14,10,2.1863,10,10,Check faster delivery,0.156164
+P018,Premium Pens,MAN-01,20,product_unit,2025-11-30,0,0,0,10,10,1.0685,10,10,Check faster delivery,0.106849
+P019,Notebook Pack,LON-01,20,product_unit,2025-11-30,0,0,0,8,10,0.8986,10,10,No expected shortfall before delivery,0.112329
+P024,Desk Fan,COL-01,20,product_unit,2025-11-30,0,0,0,10,10,0.5479,10,10,Check faster delivery,0.054795
+P024,Desk Fan,MAN-01,20,product_unit,2025-11-30,0,0,0,9,10,0.6411,10,10,Check faster delivery,0.071233
+P027,Security Camera,PAR-01,20,product_unit,2025-11-30,0,0,0,8,10,0.1973,10,10,No expected shortfall before delivery,0.024658
+P027,Security Camera,TOR-01,20,product_unit,2025-11-30,0,0,0,13,10,0.5699,10,10,Check faster delivery,0.043836
+P004,Vision 27 Monitor,NYC-01,15,product_unit,2025-11-30,0,0,0,8,10,1.0959,5,5,No expected shortfall before delivery,0.136986
+P027,Security Camera,AUS-01,15,product_unit,2025-11-30,0,0,0,13,10,0.8548,5,5,Check faster delivery,0.065753
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,2025-11-30,0,0,0,9,0,0.3452,10,10,Check faster delivery,0.038356
+P002,ProBook 16 Laptop,COL-01,10,product_unit,2025-11-30,0,0,0,9,5,0.2959,5,5,Check faster delivery,0.032877
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,2025-11-30,10,0,0,9,10,0.5425,10,10,No expected shortfall before delivery,0.060274
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,2025-11-30,10,0,0,9,10,0.5671,10,10,No expected shortfall before delivery,0.063014
+P004,Vision 27 Monitor,LON-01,10,product_unit,2025-11-30,0,10,0,10,10,0.5205,10,10,No expected shortfall before delivery,0.052055
+P004,Vision 27 Monitor,MAN-01,10,product_unit,2025-11-30,0,0,0,11,5,0.6027,5,5,Check faster delivery,0.054795
+P005,Office Keyboard,CHI-01,10,product_unit,2025-11-30,0,0,0,12,0,0.4932,10,10,Check faster delivery,0.041096
+P006,Precision Mouse,MAN-01,10,product_unit,2025-11-30,10,0,0,9,10,0.789,10,10,No expected shortfall before delivery,0.087671
+P007,NoiseCancel Headset,AUS-01,10,product_unit,2025-11-30,0,0,0,9,0,0.8384,10,10,Check faster delivery,0.093151
+P007,NoiseCancel Headset,LA-01,10,product_unit,2025-11-30,10,0,0,10,10,1.589,10,10,No expected shortfall before delivery,0.158904
+P008,SmartDock USB-C,MAN-01,10,product_unit,2025-11-30,10,0,0,10,10,0.7397,10,10,No expected shortfall before delivery,0.073973
+P009,Office Chair Pro,SYD-01,10,product_unit,2025-11-30,10,0,0,14,10,0.9205,10,10,No expected shortfall before delivery,0.065753
+P010,Standing Desk,COL-01,10,product_unit,2025-11-30,10,0,0,9,10,0.2219,10,10,No expected shortfall before delivery,0.024658
+P010,Standing Desk,LON-01,10,product_unit,2025-11-30,0,0,0,9,5,0.7151,5,5,Check faster delivery,0.079452
+P011,Meeting Table,LON-01,10,product_unit,2025-11-30,10,0,0,14,10,0.3836,10,10,No expected shortfall before delivery,0.027397
+P011,Meeting Table,NYC-01,10,product_unit,2025-11-30,0,0,0,14,5,0.4986,5,5,Check faster delivery,0.035616
+P012,Ergo Footrest,AUS-01,10,product_unit,2025-11-30,10,0,0,10,10,0.9315,10,10,No expected shortfall before delivery,0.093151
+P012,Ergo Footrest,COL-01,10,product_unit,2025-11-30,10,0,0,10,10,0.7397,10,10,No expected shortfall before delivery,0.073973
+P012,Ergo Footrest,LA-01,10,product_unit,2025-11-30,0,10,0,13,10,1.1753,10,10,Check faster delivery,0.090411
+P013,Desk Lamp,MUC-01,10,product_unit,2025-11-30,0,10,0,8,10,0.6356,10,10,No expected shortfall before delivery,0.079452
+P013,Desk Lamp,SYD-01,10,product_unit,2025-11-30,0,0,0,8,5,0.526,5,5,No expected shortfall before delivery,0.065753
+P014,Filing Cabinet,LON-01,10,product_unit,2025-11-30,10,0,0,11,10,0.9945,10,10,No expected shortfall before delivery,0.090411
+P014,Filing Cabinet,SYD-01,10,product_unit,2025-11-30,10,0,0,14,10,0.4219,10,10,No expected shortfall before delivery,0.030137
+P015,Printer Plus,MAN-01,10,product_unit,2025-11-30,10,0,0,9,10,0.4438,10,10,No expected shortfall before delivery,0.049315
+P015,Printer Plus,VAN-01,10,product_unit,2025-11-30,10,0,0,13,10,0.3918,10,10,No expected shortfall before delivery,0.030137
+P016,Laser Toner,PAR-01,10,product_unit,2025-11-30,10,0,0,10,10,1.0137,10,10,No expected shortfall before delivery,0.10137
+P017,Copy Paper Box,LON-01,10,product_unit,2025-11-30,10,0,0,10,10,1.1781,10,10,No expected shortfall before delivery,0.117808
+P017,Copy Paper Box,MAN-01,10,product_unit,2025-11-30,0,10,0,12,10,0.9863,10,10,Check faster delivery,0.082192
+P017,Copy Paper Box,PAR-01,10,product_unit,2025-11-30,0,0,0,10,0,1.0959,10,10,Check faster delivery,0.109589
+P017,Copy Paper Box,SYD-01,10,product_unit,2025-11-30,10,0,0,13,10,1.0685,10,10,No expected shortfall before delivery,0.082192
+P017,Copy Paper Box,TOR-01,10,product_unit,2025-11-30,0,0,0,13,5,2.0301,5,5,Check faster delivery,0.156164
+P018,Premium Pens,LA-01,10,product_unit,2025-11-30,10,0,0,11,10,1.5068,10,10,No expected shortfall before delivery,0.136986
+P019,Notebook Pack,MAN-01,10,product_unit,2025-11-30,10,0,0,12,10,1.0521,10,10,No expected shortfall before delivery,0.087671
+P020,Presentation Kit,CHI-01,10,product_unit,2025-11-30,10,0,0,8,10,0.4603,10,10,No expected shortfall before delivery,0.057534
+P020,Presentation Kit,NYC-01,10,product_unit,2025-11-30,10,0,0,14,10,1.2274,10,10,No expected shortfall before delivery,0.087671
+P020,Presentation Kit,SYD-01,10,product_unit,2025-11-30,10,0,0,14,10,0.1534,10,10,No expected shortfall before delivery,0.010959
+P020,Presentation Kit,TOR-01,10,product_unit,2025-11-30,10,0,0,9,10,0.2959,10,10,No expected shortfall before delivery,0.032877
+P021,Coffee Machine,NYC-01,10,product_unit,2025-11-30,10,0,0,14,10,0.8822,10,10,No expected shortfall before delivery,0.063014
+P022,Air Purifier,TOR-01,10,product_unit,2025-11-30,10,0,0,12,10,0.5918,10,10,No expected shortfall before delivery,0.049315
+P024,Desk Fan,NYC-01,10,product_unit,2025-11-30,0,0,0,13,0,1.211,10,10,Check faster delivery,0.093151
+P025,USB Power Hub,MAN-01,10,product_unit,2025-11-30,10,0,0,10,10,1.0411,10,10,No expected shortfall before delivery,0.10411
+P025,USB Power Hub,MUC-01,10,product_unit,2025-11-30,0,10,0,14,10,0.3836,10,10,Check faster delivery,0.027397
+P025,USB Power Hub,TOR-01,10,product_unit,2025-11-30,10,0,0,8,10,0.9425,10,10,No expected shortfall before delivery,0.117808
+P026,Webcam HD,TOR-01,10,product_unit,2025-11-30,0,0,0,13,5,0.8192,5,5,Check faster delivery,0.063014
+P028,Backup Drive 2TB,VAN-01,10,product_unit,2025-11-30,10,0,0,8,10,0.1534,10,10,No expected shortfall before delivery,0.019178
+P013,Desk Lamp,LA-01,8,product_unit,2025-11-30,0,0,0,14,6,1.5726,1,1,Check faster delivery,0.112329
+P024,Desk Fan,LON-01,7,product_unit,2025-11-30,0,0,0,14,5,1.074,1,1,Check faster delivery,0.076712
+P015,Printer Plus,COL-01,6,product_unit,2025-11-30,0,0,0,10,5,0.2466,1,1,Check faster delivery,0.024658
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,2025-11-30,5,0,0,14,5,1.5342,5,5,No expected shortfall before delivery,0.109589
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,2025-11-30,0,0,0,11,0,0.9041,5,5,Check faster delivery,0.082192
+P002,ProBook 16 Laptop,SYD-01,5,product_unit,2025-11-30,5,0,0,12,5,0.6575,5,5,No expected shortfall before delivery,0.054795
+P006,Precision Mouse,LA-01,5,product_unit,2025-11-30,5,0,0,12,5,1.6438,5,5,No expected shortfall before delivery,0.136986
+P006,Precision Mouse,NYC-01,5,product_unit,2025-11-30,5,0,0,13,5,2.9918,5,5,No expected shortfall before delivery,0.230137
+P006,Precision Mouse,SYD-01,5,product_unit,2025-11-30,0,0,0,14,3,1.074,1,1,Check faster delivery,0.076712
+P008,SmartDock USB-C,AUS-01,5,product_unit,2025-11-30,5,0,0,13,5,1.3534,5,5,No expected shortfall before delivery,0.10411
+P009,Office Chair Pro,AUS-01,5,product_unit,2025-11-30,0,0,0,9,0,0.6411,5,5,Check faster delivery,0.071233
+P010,Standing Desk,VAN-01,5,product_unit,2025-11-30,5,0,0,8,5,0.2192,5,5,No expected shortfall before delivery,0.027397
+P011,Meeting Table,VAN-01,5,product_unit,2025-11-30,0,5,0,10,5,0.1644,5,5,Check faster delivery,0.016438
+P012,Ergo Footrest,NYC-01,5,product_unit,2025-11-30,5,0,0,10,5,1.1781,5,5,No expected shortfall before delivery,0.117808
+P012,Ergo Footrest,SYD-01,5,product_unit,2025-11-30,0,0,0,8,4,0.6137,1,1,No expected shortfall before delivery,0.076712
+P013,Desk Lamp,COL-01,5,product_unit,2025-11-30,5,0,0,8,5,0.6795,5,5,No expected shortfall before delivery,0.084932
+P013,Desk Lamp,LON-01,5,product_unit,2025-11-30,5,0,0,8,5,0.6356,5,5,No expected shortfall before delivery,0.079452
+P013,Desk Lamp,MAN-01,5,product_unit,2025-11-30,0,0,0,11,0,0.6329,5,5,Check faster delivery,0.057534
+P014,Filing Cabinet,MAN-01,5,product_unit,2025-11-30,5,0,0,10,5,0.3288,5,5,No expected shortfall before delivery,0.032877
+P015,Printer Plus,CHI-01,5,product_unit,2025-11-30,0,0,0,13,4,0.4986,1,1,Check faster delivery,0.038356
+P018,Premium Pens,SYD-01,5,product_unit,2025-11-30,5,0,0,11,5,1.0548,5,5,No expected shortfall before delivery,0.09589
+P018,Premium Pens,TOR-01,5,product_unit,2025-11-30,5,0,0,8,5,1.1397,5,5,No expected shortfall before delivery,0.142466
+P019,Notebook Pack,AUS-01,5,product_unit,2025-11-30,5,0,0,8,5,1.0959,5,5,No expected shortfall before delivery,0.136986
+P019,Notebook Pack,CHI-01,5,product_unit,2025-11-30,0,0,0,9,0,0.937,5,5,Check faster delivery,0.10411
+P020,Presentation Kit,MUC-01,5,product_unit,2025-11-30,5,0,0,13,5,0.5699,5,5,No expected shortfall before delivery,0.043836
+P021,Coffee Machine,COL-01,5,product_unit,2025-11-30,5,0,0,12,5,0.5589,5,5,No expected shortfall before delivery,0.046575
+P022,Air Purifier,SYD-01,5,product_unit,2025-11-30,5,0,0,14,5,0.3068,5,5,No expected shortfall before delivery,0.021918
+P024,Desk Fan,MUC-01,5,product_unit,2025-11-30,0,0,0,13,0,0.3205,5,5,Check faster delivery,0.024658
+P025,USB Power Hub,LA-01,5,product_unit,2025-11-30,5,0,0,12,5,1.9068,5,5,No expected shortfall before delivery,0.158904
+P025,USB Power Hub,LON-01,5,product_unit,2025-11-30,5,0,0,13,5,1.7808,5,5,No expected shortfall before delivery,0.136986
+P027,Security Camera,COL-01,5,product_unit,2025-11-30,5,0,0,14,5,0.9973,5,5,No expected shortfall before delivery,0.071233
+P027,Security Camera,MAN-01,5,product_unit,2025-11-30,5,0,0,10,5,0.6301,5,5,No expected shortfall before delivery,0.063014
+P027,Security Camera,SYD-01,5,product_unit,2025-11-30,0,5,0,10,5,0.4384,5,5,Check faster delivery,0.043836
+P028,Backup Drive 2TB,LA-01,5,product_unit,2025-11-30,5,0,0,10,5,1.0685,5,5,No expected shortfall before delivery,0.106849
+P003,EdgeTab 11 Tablet,VAN-01,4,product_unit,2025-11-30,3,0,0,10,5,1.3425,1,1,No expected shortfall before delivery,0.134247
+P013,Desk Lamp,VAN-01,4,product_unit,2025-11-30,0,0,0,13,3,0.3562,1,1,Check faster delivery,0.027397
+P026,Webcam HD,PAR-01,4,product_unit,2025-11-30,2,0,0,11,4,1.1753,1,1,No expected shortfall before delivery,0.106849
+P008,SmartDock USB-C,VAN-01,3,product_unit,2025-11-30,0,0,0,8,2,0.3726,1,1,No expected shortfall before delivery,0.046575
+P014,Filing Cabinet,COL-01,3,product_unit,2025-11-30,0,0,0,10,2,0.411,1,1,Check faster delivery,0.041096
+P014,Filing Cabinet,TOR-01,3,product_unit,2025-11-30,3,0,0,11,5,0.7233,1,1,No expected shortfall before delivery,0.065753
+P028,Backup Drive 2TB,NYC-01,3,product_unit,2025-11-30,5,0,0,13,5,2.4219,1,1,No expected shortfall before delivery,0.186301
+P010,Standing Desk,AUS-01,2,product_unit,2025-11-30,0,5,0,12,5,1.3151,1,1,Check faster delivery,0.109589
+P016,Laser Toner,AUS-01,2,product_unit,2025-11-30,0,2,0,12,2,1.1178,1,1,Check faster delivery,0.093151
+P017,Copy Paper Box,LA-01,2,product_unit,2025-11-30,4,0,0,8,4,1.7315,1,1,No expected shortfall before delivery,0.216438
+P021,Coffee Machine,LON-01,2,product_unit,2025-11-30,0,0,0,10,1,0.5205,1,1,Check faster delivery,0.052055
+P022,Air Purifier,MAN-01,2,product_unit,2025-11-30,0,0,0,11,1,0.211,1,1,Check faster delivery,0.019178
+P003,EdgeTab 11 Tablet,NYC-01,1,product_unit,2025-11-30,3,0,0,14,0,3.0301,1,1,No expected shortfall before delivery,0.216438
+P004,Vision 27 Monitor,CHI-01,1,product_unit,2025-11-30,4,0,0,9,4,0.9863,1,1,No expected shortfall before delivery,0.109589
+P007,NoiseCancel Headset,VAN-01,1,product_unit,2025-11-30,0,0,0,11,0,0.4521,1,1,Check faster delivery,0.041096
+P008,SmartDock USB-C,CHI-01,1,product_unit,2025-11-30,0,2,0,14,2,0.6521,1,1,Check faster delivery,0.046575
+P008,SmartDock USB-C,MUC-01,1,product_unit,2025-11-30,0,5,0,10,5,0.8767,1,1,No expected shortfall before delivery,0.087671
+P009,Office Chair Pro,CHI-01,1,product_unit,2025-11-30,0,0,0,11,0,0.4521,1,1,Check faster delivery,0.041096
+P020,Presentation Kit,LA-01,1,product_unit,2025-11-30,3,0,0,10,3,0.6301,1,1,No expected shortfall before delivery,0.063014
+P022,Air Purifier,VAN-01,1,product_unit,2025-11-30,2,2,0,10,4,0.0822,1,1,No expected shortfall before delivery,0.008219
+P026,Webcam HD,LON-01,1,product_unit,2025-11-30,0,3,0,13,2,1.4603,1,1,Check faster delivery,0.112329
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,2025-11-30,20,0,0,13,0,0.7123,10,10,No expected shortfall before delivery,0.054795
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,2025-11-30,21,0,0,13,0,1.8164,1,1,No expected shortfall before delivery,0.139726
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,2025-11-30,10,10,0,10,0,0.6575,5,5,No expected shortfall before delivery,0.065753
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,2025-11-30,10,10,0,9,10,1.4795,10,10,No expected shortfall before delivery,0.164384
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,2025-11-30,5,5,0,12,0,0.3616,5,5,No expected shortfall before delivery,0.030137
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,2025-11-30,18,5,0,12,0,1.611,1,1,No expected shortfall before delivery,0.134247
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,2025-11-30,10,0,0,11,5,0.9644,5,5,No expected shortfall before delivery,0.087671
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,2025-11-30,5,0,0,14,0,1.5342,5,5,No expected shortfall before delivery,0.109589
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,2025-11-30,3,3,0,9,2,0.4685,1,1,No expected shortfall before delivery,0.052055
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,2025-11-30,10,10,0,8,5,0.8548,5,5,No expected shortfall before delivery,0.106849
+P002,ProBook 16 Laptop,LA-01,0,product_unit,2025-11-30,10,0,0,14,0,1.2658,10,10,No expected shortfall before delivery,0.090411
+P002,ProBook 16 Laptop,LON-01,0,product_unit,2025-11-30,10,10,0,8,0,0.6356,10,10,No expected shortfall before delivery,0.079452
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,2025-11-30,9,9,0,11,2,0.5425,1,1,No expected shortfall before delivery,0.049315
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,2025-11-30,20,5,0,8,5,0.6137,5,5,No expected shortfall before delivery,0.076712
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,2025-11-30,10,10,0,14,10,1.074,10,10,No expected shortfall before delivery,0.076712
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,2025-11-30,20,0,0,9,10,0.3945,10,10,No expected shortfall before delivery,0.043836
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,2025-11-30,10,10,0,11,5,1.1452,5,5,No expected shortfall before delivery,0.10411
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,2025-11-30,10,10,0,12,10,1.0192,10,10,No expected shortfall before delivery,0.084932
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,2025-11-30,10,10,0,11,10,0.874,10,10,No expected shortfall before delivery,0.079452
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,2025-11-30,20,0,0,10,0,1.2055,5,5,No expected shortfall before delivery,0.120548
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,2025-11-30,5,5,0,10,5,1.2055,5,5,No expected shortfall before delivery,0.120548
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,2025-11-30,4,0,0,13,1,1.1397,1,1,No expected shortfall before delivery,0.087671
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,2025-11-30,20,0,0,12,5,0.9863,5,5,No expected shortfall before delivery,0.082192
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,2025-11-30,10,0,0,13,0,1.1041,10,10,No expected shortfall before delivery,0.084932
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,2025-11-30,10,5,0,10,5,0.8219,5,5,No expected shortfall before delivery,0.082192
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,2025-11-30,10,0,0,11,5,1.0849,5,5,No expected shortfall before delivery,0.09863
+P004,Vision 27 Monitor,AUS-01,0,product_unit,2025-11-30,20,0,0,8,5,0.7233,5,5,No expected shortfall before delivery,0.090411
+P004,Vision 27 Monitor,COL-01,0,product_unit,2025-11-30,18,0,0,14,0,0.6137,1,1,No expected shortfall before delivery,0.043836
+P004,Vision 27 Monitor,LA-01,0,product_unit,2025-11-30,10,10,0,11,10,1.4466,10,10,No expected shortfall before delivery,0.131507
+P004,Vision 27 Monitor,MUC-01,0,product_unit,2025-11-30,3,0,0,12,0,1.5452,1,1,No expected shortfall before delivery,0.128767
+P004,Vision 27 Monitor,PAR-01,0,product_unit,2025-11-30,5,5,0,8,5,0.5699,5,5,No expected shortfall before delivery,0.071233
+P004,Vision 27 Monitor,SYD-01,0,product_unit,2025-11-30,5,5,0,10,0,0.7671,1,1,No expected shortfall before delivery,0.076712
+P004,Vision 27 Monitor,TOR-01,0,product_unit,2025-11-30,10,0,0,14,0,1.6493,10,10,No expected shortfall before delivery,0.117808
+P004,Vision 27 Monitor,VAN-01,0,product_unit,2025-11-30,20,10,0,12,0,0.5918,10,10,No expected shortfall before delivery,0.049315
+P005,Office Keyboard,AUS-01,0,product_unit,2025-11-30,9,3,0,11,5,1.1452,1,1,No expected shortfall before delivery,0.10411
+P005,Office Keyboard,COL-01,0,product_unit,2025-11-30,20,10,0,12,10,0.3616,10,10,No expected shortfall before delivery,0.030137
+P005,Office Keyboard,LA-01,0,product_unit,2025-11-30,3,0,0,8,0,1.2493,1,1,No expected shortfall before delivery,0.156164
+P005,Office Keyboard,LON-01,0,product_unit,2025-11-30,20,0,0,8,10,1.3589,10,10,No expected shortfall before delivery,0.169863
+P005,Office Keyboard,MAN-01,0,product_unit,2025-11-30,20,10,0,11,0,1.0548,10,10,No expected shortfall before delivery,0.09589
+P005,Office Keyboard,MUC-01,0,product_unit,2025-11-30,5,0,0,12,0,1.6767,5,5,No expected shortfall before delivery,0.139726
+P005,Office Keyboard,NYC-01,0,product_unit,2025-11-30,9,0,0,11,0,1.3863,1,1,No expected shortfall before delivery,0.126027
+P005,Office Keyboard,PAR-01,0,product_unit,2025-11-30,5,5,0,9,5,1.0603,5,5,No expected shortfall before delivery,0.117808
+P005,Office Keyboard,TOR-01,0,product_unit,2025-11-30,16,8,0,9,1,0.937,1,1,No expected shortfall before delivery,0.10411
+P005,Office Keyboard,VAN-01,0,product_unit,2025-11-30,10,0,0,8,0,0.9205,10,10,No expected shortfall before delivery,0.115068
+P006,Precision Mouse,AUS-01,0,product_unit,2025-11-30,20,10,0,13,10,1.7096,10,10,No expected shortfall before delivery,0.131507
+P006,Precision Mouse,CHI-01,0,product_unit,2025-11-30,5,5,0,10,0,1.3151,5,5,No expected shortfall before delivery,0.131507
+P006,Precision Mouse,COL-01,0,product_unit,2025-11-30,21,0,0,9,2,0.7644,1,1,No expected shortfall before delivery,0.084932
+P006,Precision Mouse,MUC-01,0,product_unit,2025-11-30,20,0,0,8,10,0.3945,10,10,No expected shortfall before delivery,0.049315
+P006,Precision Mouse,PAR-01,0,product_unit,2025-11-30,10,10,0,9,0,0.9616,10,10,No expected shortfall before delivery,0.106849
+P006,Precision Mouse,TOR-01,0,product_unit,2025-11-30,10,0,0,12,5,1.0192,1,1,No expected shortfall before delivery,0.084932
+P006,Precision Mouse,VAN-01,0,product_unit,2025-11-30,10,10,0,10,0,0.8493,5,5,No expected shortfall before delivery,0.084932
+P007,NoiseCancel Headset,CHI-01,0,product_unit,2025-11-30,20,10,0,13,5,1.5315,5,5,No expected shortfall before delivery,0.117808
+P007,NoiseCancel Headset,COL-01,0,product_unit,2025-11-30,10,10,0,14,0,1.6877,10,10,No expected shortfall before delivery,0.120548
+P007,NoiseCancel Headset,LON-01,0,product_unit,2025-11-30,10,10,0,14,0,2.1863,10,10,No expected shortfall before delivery,0.156164
+P007,NoiseCancel Headset,MAN-01,0,product_unit,2025-11-30,15,0,0,14,5,0.8438,5,5,No expected shortfall before delivery,0.060274
+P007,NoiseCancel Headset,MUC-01,0,product_unit,2025-11-30,20,0,0,14,5,0.6904,5,5,No expected shortfall before delivery,0.049315
+P007,NoiseCancel Headset,NYC-01,0,product_unit,2025-11-30,10,10,0,10,0,1.4247,10,10,No expected shortfall before delivery,0.142466
+P007,NoiseCancel Headset,PAR-01,0,product_unit,2025-11-30,0,9,0,8,0,0.6356,1,1,No expected shortfall before delivery,0.079452
+P007,NoiseCancel Headset,SYD-01,0,product_unit,2025-11-30,0,4,0,8,1,0.2849,1,1,No expected shortfall before delivery,0.035616
+P007,NoiseCancel Headset,TOR-01,0,product_unit,2025-11-30,20,0,0,10,0,0.8219,5,5,No expected shortfall before delivery,0.082192
+P008,SmartDock USB-C,COL-01,0,product_unit,2025-11-30,18,3,0,9,3,0.1233,1,1,No expected shortfall before delivery,0.013699
+P008,SmartDock USB-C,LA-01,0,product_unit,2025-11-30,10,0,0,8,5,1.0082,5,5,No expected shortfall before delivery,0.126027
+P008,SmartDock USB-C,LON-01,0,product_unit,2025-11-30,10,10,0,11,0,1.2356,10,10,No expected shortfall before delivery,0.112329
+P008,SmartDock USB-C,NYC-01,0,product_unit,2025-11-30,5,5,0,14,0,1.726,5,5,No expected shortfall before delivery,0.123288
+P008,SmartDock USB-C,PAR-01,0,product_unit,2025-11-30,10,0,0,14,0,1.189,10,10,No expected shortfall before delivery,0.084932
+P008,SmartDock USB-C,SYD-01,0,product_unit,2025-11-30,0,10,0,10,0,0.3288,10,10,Check faster delivery,0.032877
+P008,SmartDock USB-C,TOR-01,0,product_unit,2025-11-30,5,5,0,10,5,0.8219,1,1,No expected shortfall before delivery,0.082192
+P009,Office Chair Pro,COL-01,0,product_unit,2025-11-30,10,0,0,8,0,0.1096,10,10,No expected shortfall before delivery,0.013699
+P009,Office Chair Pro,LA-01,0,product_unit,2025-11-30,15,0,0,12,0,0.9863,5,5,No expected shortfall before delivery,0.082192
+P009,Office Chair Pro,LON-01,0,product_unit,2025-11-30,10,10,0,8,10,0.263,10,10,No expected shortfall before delivery,0.032877
+P009,Office Chair Pro,MAN-01,0,product_unit,2025-11-30,0,10,0,9,0,0.5671,1,1,Check faster delivery,0.063014
+P009,Office Chair Pro,MUC-01,0,product_unit,2025-11-30,15,0,0,14,5,0.9589,5,5,No expected shortfall before delivery,0.068493
+P009,Office Chair Pro,NYC-01,0,product_unit,2025-11-30,15,0,0,10,5,0.8493,5,5,No expected shortfall before delivery,0.084932
+P009,Office Chair Pro,PAR-01,0,product_unit,2025-11-30,15,0,0,8,5,0.5479,5,5,No expected shortfall before delivery,0.068493
+P009,Office Chair Pro,TOR-01,0,product_unit,2025-11-30,4,2,0,11,2,0.5123,1,1,No expected shortfall before delivery,0.046575
+P009,Office Chair Pro,VAN-01,0,product_unit,2025-11-30,20,10,0,11,10,0.3616,10,10,No expected shortfall before delivery,0.032877
+P010,Standing Desk,CHI-01,0,product_unit,2025-11-30,20,0,0,11,5,0.9945,5,5,No expected shortfall before delivery,0.090411
+P010,Standing Desk,LA-01,0,product_unit,2025-11-30,10,0,0,10,5,0.6575,5,5,No expected shortfall before delivery,0.065753
+P010,Standing Desk,MAN-01,0,product_unit,2025-11-30,20,0,0,12,10,0.4603,10,10,No expected shortfall before delivery,0.038356
+P010,Standing Desk,MUC-01,0,product_unit,2025-11-30,3,5,0,14,3,1.0356,1,1,No expected shortfall before delivery,0.073973
+P010,Standing Desk,NYC-01,0,product_unit,2025-11-30,10,10,0,9,10,0.6904,10,10,No expected shortfall before delivery,0.076712
+P010,Standing Desk,PAR-01,0,product_unit,2025-11-30,4,0,0,14,1,0.4986,1,1,No expected shortfall before delivery,0.035616
+P010,Standing Desk,SYD-01,0,product_unit,2025-11-30,10,0,0,12,5,0.0986,5,5,No expected shortfall before delivery,0.008219
+P010,Standing Desk,TOR-01,0,product_unit,2025-11-30,20,10,0,12,10,0.4932,10,10,No expected shortfall before delivery,0.041096
+P011,Meeting Table,AUS-01,0,product_unit,2025-11-30,2,2,0,13,2,0.5699,1,1,No expected shortfall before delivery,0.043836
+P011,Meeting Table,CHI-01,0,product_unit,2025-11-30,4,0,0,13,2,0.4986,1,1,No expected shortfall before delivery,0.038356
+P011,Meeting Table,COL-01,0,product_unit,2025-11-30,5,10,0,8,5,0.0438,5,5,No expected shortfall before delivery,0.005479
+P011,Meeting Table,LA-01,0,product_unit,2025-11-30,3,0,0,13,0,0.3205,1,1,No expected shortfall before delivery,0.024658
+P011,Meeting Table,MAN-01,0,product_unit,2025-11-30,7,0,0,8,4,0.1096,1,1,No expected shortfall before delivery,0.013699
+P011,Meeting Table,MUC-01,0,product_unit,2025-11-30,5,3,0,9,5,0.2712,1,1,No expected shortfall before delivery,0.030137
+P011,Meeting Table,PAR-01,0,product_unit,2025-11-30,25,0,0,8,5,0.7014,5,5,No expected shortfall before delivery,0.087671
+P011,Meeting Table,SYD-01,0,product_unit,2025-11-30,5,5,0,9,5,0.2466,5,5,No expected shortfall before delivery,0.027397
+P011,Meeting Table,TOR-01,0,product_unit,2025-11-30,4,0,0,8,0,0.3288,1,1,No expected shortfall before delivery,0.041096
+P012,Ergo Footrest,CHI-01,0,product_unit,2025-11-30,8,0,0,11,1,0.7233,1,1,No expected shortfall before delivery,0.065753
+P012,Ergo Footrest,LON-01,0,product_unit,2025-11-30,10,10,0,9,10,0.7397,10,10,No expected shortfall before delivery,0.082192
+P012,Ergo Footrest,MAN-01,0,product_unit,2025-11-30,8,4,0,8,4,0.6137,1,1,No expected shortfall before delivery,0.076712
+P012,Ergo Footrest,MUC-01,0,product_unit,2025-11-30,10,0,0,12,5,1.0849,5,5,No expected shortfall before delivery,0.090411
+P012,Ergo Footrest,PAR-01,0,product_unit,2025-11-30,0,5,0,11,0,0.874,5,5,Check faster delivery,0.079452
+P012,Ergo Footrest,TOR-01,0,product_unit,2025-11-30,15,0,0,9,0,0.3205,5,5,No expected shortfall before delivery,0.035616
+P012,Ergo Footrest,VAN-01,0,product_unit,2025-11-30,8,8,0,9,0,0.3205,1,1,No expected shortfall before delivery,0.035616
+P013,Desk Lamp,AUS-01,0,product_unit,2025-11-30,10,0,0,11,0,1.2658,5,5,No expected shortfall before delivery,0.115068
+P013,Desk Lamp,CHI-01,0,product_unit,2025-11-30,8,4,0,12,4,1.2822,1,1,No expected shortfall before delivery,0.106849
+P013,Desk Lamp,NYC-01,0,product_unit,2025-11-30,10,10,0,12,10,0.8548,10,10,No expected shortfall before delivery,0.071233
+P013,Desk Lamp,PAR-01,0,product_unit,2025-11-30,20,0,0,12,10,0.8548,10,10,No expected shortfall before delivery,0.071233
+P013,Desk Lamp,TOR-01,0,product_unit,2025-11-30,10,0,0,11,5,0.9644,5,5,No expected shortfall before delivery,0.087671
+P014,Filing Cabinet,AUS-01,0,product_unit,2025-11-30,5,5,0,14,5,0.6904,5,5,No expected shortfall before delivery,0.049315
+P014,Filing Cabinet,CHI-01,0,product_unit,2025-11-30,10,0,0,9,5,0.4685,5,5,No expected shortfall before delivery,0.052055
+P014,Filing Cabinet,LA-01,0,product_unit,2025-11-30,20,0,0,9,0,0.9616,10,10,No expected shortfall before delivery,0.106849
+P014,Filing Cabinet,MUC-01,0,product_unit,2025-11-30,5,0,0,10,0,0.4658,5,5,No expected shortfall before delivery,0.046575
+P014,Filing Cabinet,NYC-01,0,product_unit,2025-11-30,15,8,0,13,4,1.211,1,1,No expected shortfall before delivery,0.093151
+P014,Filing Cabinet,PAR-01,0,product_unit,2025-11-30,10,10,0,13,10,0.4986,10,10,No expected shortfall before delivery,0.038356
+P014,Filing Cabinet,VAN-01,0,product_unit,2025-11-30,15,0,0,13,0,1.0329,5,5,No expected shortfall before delivery,0.079452
+P015,Printer Plus,AUS-01,0,product_unit,2025-11-30,10,10,0,13,10,0.7123,10,10,No expected shortfall before delivery,0.054795
+P015,Printer Plus,LA-01,0,product_unit,2025-11-30,10,0,0,13,5,0.8548,5,5,No expected shortfall before delivery,0.065753
+P015,Printer Plus,LON-01,0,product_unit,2025-11-30,2,3,0,9,2,0.3205,1,1,No expected shortfall before delivery,0.035616
+P015,Printer Plus,MUC-01,0,product_unit,2025-11-30,5,0,0,10,0,0.1644,5,5,No expected shortfall before delivery,0.016438
+P015,Printer Plus,NYC-01,0,product_unit,2025-11-30,10,0,0,14,5,0.9205,5,5,No expected shortfall before delivery,0.065753
+P015,Printer Plus,PAR-01,0,product_unit,2025-11-30,10,10,0,8,10,0.4822,10,10,No expected shortfall before delivery,0.060274
+P015,Printer Plus,SYD-01,0,product_unit,2025-11-30,2,0,0,9,1,0.2712,1,1,No expected shortfall before delivery,0.030137
+P015,Printer Plus,TOR-01,0,product_unit,2025-11-30,5,0,0,14,0,1.1507,5,5,No expected shortfall before delivery,0.082192
+P016,Laser Toner,CHI-01,0,product_unit,2025-11-30,5,5,0,14,5,1.6877,5,5,No expected shortfall before delivery,0.120548
+P016,Laser Toner,COL-01,0,product_unit,2025-11-30,10,10,0,12,5,0.0658,5,5,No expected shortfall before delivery,0.005479
+P016,Laser Toner,LA-01,0,product_unit,2025-11-30,25,0,0,14,10,1.9562,5,5,No expected shortfall before delivery,0.139726
+P016,Laser Toner,LON-01,0,product_unit,2025-11-30,19,0,0,14,2,1.6493,1,1,No expected shortfall before delivery,0.117808
+P016,Laser Toner,MAN-01,0,product_unit,2025-11-30,5,5,0,14,5,1.8027,5,5,No expected shortfall before delivery,0.128767
+P016,Laser Toner,MUC-01,0,product_unit,2025-11-30,6,0,0,13,0,1.4247,1,1,No expected shortfall before delivery,0.109589
+P016,Laser Toner,NYC-01,0,product_unit,2025-11-30,15,0,0,8,5,1.2493,5,5,No expected shortfall before delivery,0.156164
+P016,Laser Toner,SYD-01,0,product_unit,2025-11-30,10,0,0,10,5,0.9589,5,5,No expected shortfall before delivery,0.09589
+P016,Laser Toner,TOR-01,0,product_unit,2025-11-30,5,0,0,14,0,1.7644,5,5,No expected shortfall before delivery,0.126027
+P016,Laser Toner,VAN-01,0,product_unit,2025-11-30,10,10,0,13,10,0.926,10,10,No expected shortfall before delivery,0.071233
+P017,Copy Paper Box,AUS-01,0,product_unit,2025-11-30,20,0,0,14,5,1.2274,5,5,No expected shortfall before delivery,0.087671
+P017,Copy Paper Box,CHI-01,0,product_unit,2025-11-30,20,0,0,8,10,1.8192,10,10,No expected shortfall before delivery,0.227397
+P017,Copy Paper Box,COL-01,0,product_unit,2025-11-30,19,10,0,9,5,0.7397,1,1,No expected shortfall before delivery,0.082192
+P017,Copy Paper Box,MUC-01,0,product_unit,2025-11-30,10,10,0,9,0,1.0356,10,10,No expected shortfall before delivery,0.115068
+P017,Copy Paper Box,NYC-01,0,product_unit,2025-11-30,5,3,0,14,3,4.0658,1,1,No expected shortfall before delivery,0.290411
+P017,Copy Paper Box,VAN-01,0,product_unit,2025-11-30,20,0,0,14,5,0.8822,5,5,No expected shortfall before delivery,0.063014
+P018,Premium Pens,AUS-01,0,product_unit,2025-11-30,20,0,0,9,10,1.6521,10,10,No expected shortfall before delivery,0.183562
+P018,Premium Pens,CHI-01,0,product_unit,2025-11-30,10,0,0,11,0,1.326,10,10,No expected shortfall before delivery,0.120548
+P018,Premium Pens,COL-01,0,product_unit,2025-11-30,20,0,0,11,3,0.7233,1,1,No expected shortfall before delivery,0.065753
+P018,Premium Pens,LON-01,0,product_unit,2025-11-30,20,5,0,10,5,0.8493,5,5,No expected shortfall before delivery,0.084932
+P018,Premium Pens,MUC-01,0,product_unit,2025-11-30,10,0,0,14,5,1.189,5,5,No expected shortfall before delivery,0.084932
+P018,Premium Pens,NYC-01,0,product_unit,2025-11-30,6,12,0,13,2,1.8521,1,1,No expected shortfall before delivery,0.142466
+P018,Premium Pens,PAR-01,0,product_unit,2025-11-30,20,0,0,12,10,0.8877,10,10,No expected shortfall before delivery,0.073973
+P018,Premium Pens,VAN-01,0,product_unit,2025-11-30,0,10,0,10,0,0.7123,10,10,Check faster delivery,0.071233
+P019,Notebook Pack,COL-01,0,product_unit,2025-11-30,10,10,0,11,10,0.9945,10,10,No expected shortfall before delivery,0.090411
+P019,Notebook Pack,LA-01,0,product_unit,2025-11-30,0,3,0,13,0,2.9918,1,1,Check faster delivery,0.230137
+P019,Notebook Pack,MUC-01,0,product_unit,2025-11-30,19,0,0,8,5,0.8548,1,1,No expected shortfall before delivery,0.106849
+P019,Notebook Pack,NYC-01,0,product_unit,2025-11-30,5,0,0,13,0,2.4932,1,1,No expected shortfall before delivery,0.191781
+P019,Notebook Pack,PAR-01,0,product_unit,2025-11-30,10,10,0,10,10,0.7123,10,10,No expected shortfall before delivery,0.071233
+P019,Notebook Pack,SYD-01,0,product_unit,2025-11-30,9,0,0,8,2,0.9205,1,1,No expected shortfall before delivery,0.115068
+P019,Notebook Pack,TOR-01,0,product_unit,2025-11-30,20,0,0,10,10,1.2055,10,10,No expected shortfall before delivery,0.120548
+P019,Notebook Pack,VAN-01,0,product_unit,2025-11-30,5,10,0,12,10,0.526,5,5,No expected shortfall before delivery,0.043836
+P020,Presentation Kit,AUS-01,0,product_unit,2025-11-30,5,5,0,12,3,0.6904,1,1,No expected shortfall before delivery,0.057534
+P020,Presentation Kit,COL-01,0,product_unit,2025-11-30,10,10,0,14,10,0.8822,10,10,No expected shortfall before delivery,0.063014
+P020,Presentation Kit,LON-01,0,product_unit,2025-11-30,20,0,0,14,10,1.189,10,10,No expected shortfall before delivery,0.084932
+P020,Presentation Kit,MAN-01,0,product_unit,2025-11-30,4,4,0,8,4,0.4164,1,1,No expected shortfall before delivery,0.052055
+P020,Presentation Kit,PAR-01,0,product_unit,2025-11-30,10,10,0,12,10,0.5918,10,10,No expected shortfall before delivery,0.049315
+P020,Presentation Kit,VAN-01,0,product_unit,2025-11-30,9,9,0,12,2,0.9534,1,1,No expected shortfall before delivery,0.079452
+P021,Coffee Machine,AUS-01,0,product_unit,2025-11-30,10,0,0,9,0,0.6411,10,10,No expected shortfall before delivery,0.071233
+P021,Coffee Machine,CHI-01,0,product_unit,2025-11-30,5,5,0,14,0,1.074,5,5,No expected shortfall before delivery,0.076712
+P021,Coffee Machine,LA-01,0,product_unit,2025-11-30,20,0,0,13,10,0.7123,10,10,No expected shortfall before delivery,0.054795
+P021,Coffee Machine,MAN-01,0,product_unit,2025-11-30,10,10,0,8,0,0.263,10,10,No expected shortfall before delivery,0.032877
+P021,Coffee Machine,MUC-01,0,product_unit,2025-11-30,20,0,0,8,10,0.263,10,10,No expected shortfall before delivery,0.032877
+P021,Coffee Machine,PAR-01,0,product_unit,2025-11-30,10,5,0,11,5,0.4521,5,5,No expected shortfall before delivery,0.041096
+P021,Coffee Machine,SYD-01,0,product_unit,2025-11-30,0,3,0,13,0,0.3562,1,1,Check faster delivery,0.027397
+P021,Coffee Machine,TOR-01,0,product_unit,2025-11-30,20,0,0,9,10,0.6411,10,10,No expected shortfall before delivery,0.071233
+P021,Coffee Machine,VAN-01,0,product_unit,2025-11-30,20,0,0,9,10,0.1973,10,10,No expected shortfall before delivery,0.021918
+P022,Air Purifier,AUS-01,0,product_unit,2025-11-30,10,0,0,8,5,0.3945,5,5,No expected shortfall before delivery,0.049315
+P022,Air Purifier,CHI-01,0,product_unit,2025-11-30,5,5,0,12,5,0.263,5,5,No expected shortfall before delivery,0.021918
+P022,Air Purifier,COL-01,0,product_unit,2025-11-30,8,8,0,11,1,0.211,1,1,No expected shortfall before delivery,0.019178
+P022,Air Purifier,LA-01,0,product_unit,2025-11-30,15,5,0,13,5,1.2466,5,5,No expected shortfall before delivery,0.09589
+P022,Air Purifier,LON-01,0,product_unit,2025-11-30,10,0,0,8,5,0.2192,5,5,No expected shortfall before delivery,0.027397
+P022,Air Purifier,MUC-01,0,product_unit,2025-11-30,5,10,0,10,0,0.1918,5,5,No expected shortfall before delivery,0.019178
+P022,Air Purifier,NYC-01,0,product_unit,2025-11-30,4,0,0,13,1,0.4986,1,1,No expected shortfall before delivery,0.038356
+P022,Air Purifier,PAR-01,0,product_unit,2025-11-30,20,10,0,11,0,1.0548,5,5,No expected shortfall before delivery,0.09589
+P023,Portable Heater,AUS-01,0,product_unit,2025-11-30,20,10,0,11,10,0.8137,10,10,No expected shortfall before delivery,0.073973
+P023,Portable Heater,CHI-01,0,product_unit,2025-11-30,5,5,0,14,5,0.9205,5,5,No expected shortfall before delivery,0.065753
+P023,Portable Heater,COL-01,0,product_unit,2025-11-30,0,9,0,14,5,0.9205,1,1,Check faster delivery,0.065753
+P023,Portable Heater,LA-01,0,product_unit,2025-11-30,3,0,0,13,0,0.8548,1,1,No expected shortfall before delivery,0.065753
+P023,Portable Heater,LON-01,0,product_unit,2025-11-30,4,0,0,10,1,1.0959,1,1,No expected shortfall before delivery,0.109589
+P023,Portable Heater,MAN-01,0,product_unit,2025-11-30,5,5,0,11,0,0.5123,5,5,No expected shortfall before delivery,0.046575
+P023,Portable Heater,MUC-01,0,product_unit,2025-11-30,10,0,0,14,5,0.7288,5,5,No expected shortfall before delivery,0.052055
+P023,Portable Heater,NYC-01,0,product_unit,2025-11-30,4,0,0,13,1,0.7836,1,1,No expected shortfall before delivery,0.060274
+P023,Portable Heater,PAR-01,0,product_unit,2025-11-30,7,0,0,14,0,0.4219,1,1,No expected shortfall before delivery,0.030137
+P023,Portable Heater,SYD-01,0,product_unit,2025-11-30,10,0,0,14,0,0.537,5,5,No expected shortfall before delivery,0.038356
+P023,Portable Heater,TOR-01,0,product_unit,2025-11-30,7,0,0,11,2,0.6027,1,1,No expected shortfall before delivery,0.054795
+P023,Portable Heater,VAN-01,0,product_unit,2025-11-30,10,0,0,14,0,0.3452,10,10,No expected shortfall before delivery,0.024658
+P024,Desk Fan,AUS-01,0,product_unit,2025-11-30,10,0,0,14,0,1.5726,10,10,No expected shortfall before delivery,0.112329
+P024,Desk Fan,CHI-01,0,product_unit,2025-11-30,5,10,0,12,5,1.0192,5,5,No expected shortfall before delivery,0.084932
+P024,Desk Fan,LA-01,0,product_unit,2025-11-30,10,10,0,10,10,1.0959,10,10,No expected shortfall before delivery,0.109589
+P024,Desk Fan,PAR-01,0,product_unit,2025-11-30,20,0,0,13,5,1.389,5,5,No expected shortfall before delivery,0.106849
+P024,Desk Fan,SYD-01,0,product_unit,2025-11-30,15,8,0,11,4,0.8137,1,1,No expected shortfall before delivery,0.073973
+P024,Desk Fan,TOR-01,0,product_unit,2025-11-30,20,10,0,11,10,0.4219,10,10,No expected shortfall before delivery,0.038356
+P024,Desk Fan,VAN-01,0,product_unit,2025-11-30,4,0,0,14,0,0.3836,1,1,No expected shortfall before delivery,0.027397
+P025,USB Power Hub,AUS-01,0,product_unit,2025-11-30,10,0,0,13,5,2.0658,5,5,No expected shortfall before delivery,0.158904
+P025,USB Power Hub,CHI-01,0,product_unit,2025-11-30,3,5,0,12,0,1.7096,1,1,No expected shortfall before delivery,0.142466
+P025,USB Power Hub,COL-01,0,product_unit,2025-11-30,19,0,0,8,2,0.3726,1,1,No expected shortfall before delivery,0.046575
+P025,USB Power Hub,NYC-01,0,product_unit,2025-11-30,20,0,0,8,10,1.5342,10,10,No expected shortfall before delivery,0.191781
+P025,USB Power Hub,PAR-01,0,product_unit,2025-11-30,20,5,0,12,0,1.7753,5,5,No expected shortfall before delivery,0.147945
+P025,USB Power Hub,SYD-01,0,product_unit,2025-11-30,0,10,0,14,0,1.189,10,10,Check faster delivery,0.084932
+P025,USB Power Hub,VAN-01,0,product_unit,2025-11-30,10,10,0,9,0,1.2822,10,10,No expected shortfall before delivery,0.142466
+P026,Webcam HD,AUS-01,0,product_unit,2025-11-30,20,0,0,14,10,0.8822,10,10,No expected shortfall before delivery,0.063014
+P026,Webcam HD,CHI-01,0,product_unit,2025-11-30,10,10,0,11,5,0.9945,5,5,No expected shortfall before delivery,0.090411
+P026,Webcam HD,COL-01,0,product_unit,2025-11-30,10,0,0,9,0,0.2219,10,10,No expected shortfall before delivery,0.024658
+P026,Webcam HD,LA-01,0,product_unit,2025-11-30,20,0,0,14,10,2.8,10,10,No expected shortfall before delivery,0.2
+P026,Webcam HD,MAN-01,0,product_unit,2025-11-30,5,0,0,10,0,0.8767,5,5,No expected shortfall before delivery,0.087671
+P026,Webcam HD,MUC-01,0,product_unit,2025-11-30,10,0,0,11,0,0.7534,10,10,No expected shortfall before delivery,0.068493
+P026,Webcam HD,NYC-01,0,product_unit,2025-11-30,20,10,0,10,10,1.4247,10,10,No expected shortfall before delivery,0.142466
+P026,Webcam HD,SYD-01,0,product_unit,2025-11-30,5,5,0,11,5,0.4521,5,5,No expected shortfall before delivery,0.041096
+P026,Webcam HD,VAN-01,0,product_unit,2025-11-30,20,0,0,9,10,0.937,10,10,No expected shortfall before delivery,0.10411
+P027,Security Camera,CHI-01,0,product_unit,2025-11-30,20,0,0,12,10,0.5918,10,10,No expected shortfall before delivery,0.049315
+P027,Security Camera,LA-01,0,product_unit,2025-11-30,5,5,0,11,0,0.8438,5,5,No expected shortfall before delivery,0.076712
+P027,Security Camera,LON-01,0,product_unit,2025-11-30,4,0,0,10,0,0.8493,1,1,No expected shortfall before delivery,0.084932
+P027,Security Camera,MUC-01,0,product_unit,2025-11-30,24,0,0,11,3,0.5425,1,1,No expected shortfall before delivery,0.049315
+P027,Security Camera,NYC-01,0,product_unit,2025-11-30,30,10,0,14,10,2.1096,10,10,No expected shortfall before delivery,0.150685
+P027,Security Camera,VAN-01,0,product_unit,2025-11-30,24,0,0,11,2,0.3014,1,1,No expected shortfall before delivery,0.027397
+P028,Backup Drive 2TB,AUS-01,0,product_unit,2025-11-30,14,0,0,13,4,0.7479,1,1,No expected shortfall before delivery,0.057534
+P028,Backup Drive 2TB,CHI-01,0,product_unit,2025-11-30,20,0,0,13,10,1.2822,10,10,No expected shortfall before delivery,0.09863
+P028,Backup Drive 2TB,COL-01,0,product_unit,2025-11-30,0,10,0,9,2,0.789,1,1,No expected shortfall before delivery,0.087671
+P028,Backup Drive 2TB,LON-01,0,product_unit,2025-11-30,9,3,0,13,5,1.4603,1,1,No expected shortfall before delivery,0.112329
+P028,Backup Drive 2TB,MAN-01,0,product_unit,2025-11-30,0,4,0,8,0,0.7014,1,1,No expected shortfall before delivery,0.087671
+P028,Backup Drive 2TB,MUC-01,0,product_unit,2025-11-30,5,5,0,8,5,0.811,5,5,No expected shortfall before delivery,0.10137
+P028,Backup Drive 2TB,PAR-01,0,product_unit,2025-11-30,0,5,0,9,0,1.011,5,5,No expected shortfall before delivery,0.112329
+P028,Backup Drive 2TB,SYD-01,0,product_unit,2025-11-30,10,0,0,13,0,0.3918,5,5,No expected shortfall before delivery,0.030137
+P028,Backup Drive 2TB,TOR-01,0,product_unit,2025-11-30,2,4,0,13,2,1.2822,1,1,No expected shortfall before delivery,0.09863

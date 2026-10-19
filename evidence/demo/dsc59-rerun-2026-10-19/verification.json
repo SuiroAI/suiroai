@@ -1,0 +1,18 @@
+{
+  "source_commit": "c11f2220faef282fada93e87ca22ae2171bc995f",
+  "session": "f2055556d3564bb5a7344fd5426cd2fa",
+  "approved_once": true,
+  "actual_data_run_completed": true,
+  "app_response_observed": true,
+  "html_opened_in_new_tab": true,
+  "html_tables": 1,
+  "csv_data_rows": 336,
+  "csv_columns": 16,
+  "html_cells_equal_csv_including_order": true,
+  "csv_sha256": "07d02bb0676b8decb1f5d537e57e10169417ac14f7e3f6d5b14eb242016f50a8",
+  "html_sha256": "cd0b8b488c22469e51b78208b702c93b844ba91556613c94f13f333b5614a999",
+  "immutable_artifact_bytes_match": true,
+  "browser_csv_download_verified": false,
+  "browser_csv_note": "CSV control clicked and native Save dialog reached. File persistence was not verified; committed CSV is an exact generated artifact copy, not a claimed browser download.",
+  "later_current_process_cost_changes_rerun": false
+}

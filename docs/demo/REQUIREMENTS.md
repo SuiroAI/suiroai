@@ -5,6 +5,7 @@ Authoritative user clarifications recorded October 19, 2026. These supersede con
 ## User experience
 
 - One generic area accepts multiple uploaded files. Intro: **Upload your data.** Question label: **What are you trying to solve for?**
+- Before review, ask whether the current approach is already in the question/files. If absent, ask **How do you do this now?** in plain language. Accept an explicit **We don't have a current approach** answer; never invent one or demand a file. Include the answer in the approved task and invalidate approval/results if it changes. This business-context question is the explicit exception to autonomous analytical decision-making.
 - Review the proposed task in ordinary readable language, not raw JSON. Show the goal, files, intended result, material assumptions, and approval scope. Do not show a Technical details section or proposal ID anywhere in the product UI; retain identifiers internally.
 - Users never need to provide or understand a data dictionary. Do not request or mention one in the product flow.
 - After explicit approval, genuine ChatGPT Data inspects and analyzes the actual uploaded data and returns the actual downloadable output file. No fixtures substituted silently, mock success, or inventory-only endpoint.
@@ -13,9 +14,9 @@ Authoritative user clarifications recorded October 19, 2026. These supersede con
 
 ## Customer explanation
 
-The app response uses concise layman’s terms, aiming for 150–250 words. Lead with the answer and practical actions. Explain why the selected model or approach helps compared with the previous approach when one was actually supplied and evaluated; otherwise compare against a clearly identified simple baseline. Use real comparisons and explain small, mixed or absent gains honestly. Do not invent an incumbent or claim a method is better without evidence.
+The app response uses concise layman’s terms, aiming for 150–250 words. Lead with the answer and practical actions. Explain why the selected model or approach helps compared with the previous approach when one was actually supplied and evaluated; otherwise, after asking about the current process, compare against a clearly identified simple baseline. Use real comparisons and explain small, mixed or absent gains honestly. Do not invent an incumbent or claim a method is better without evidence.
 
-Include a basic estimate of the cost to run the approach, with workload/frequency, currency and assumptions when supported by actual usage and applicable pricing. Distinguish ongoing use from this analysis run. If the necessary usage, pricing or deployment information is absent, say that the cost cannot be estimated from the available information. Never invent dollar amounts or call it free. All explanation belongs in the same app window, entirely in everyday terms for a retail business owner. Keep detailed diagnostics and audit material internal. HTML contains only the CSV headers, rows and exact cell values: no findings, metric cards, extra summaries, methods, comparisons, costs or limitations. The app builds it deterministically from the CSV; Data does not author a separate HTML report.
+Include a basic estimate of the cost to run the approach, with workload/frequency, currency and assumptions when supported by actual usage and applicable pricing. Distinguish ongoing use from this analysis run. The delivered forecasting/decision model is non-LLM: routine calculations must not require ChatGPT or other language-model calls; AI may build and explain it during analysis. For that selected model, assess the actual code, dependencies, data size and workload: explain whether routine runs can use an ordinary local computer and whether a paid model API is needed. When supported, explain that local runs need no paid model service, while computer/electricity costs still exist. Give a supported estimate or range with assumptions when possible; otherwise give the practical local-computer assessment or the specific unknown preventing it. Do not confuse routine model compute with AI-assisted analysis/build charges. Missing AI usage/pricing may prevent estimating that separate build cost without preventing the local-running assessment. Never invent dollar amounts or call it free. All explanation belongs in the same app window, entirely in everyday terms for a retail business owner. Keep detailed diagnostics and audit material internal. HTML contains only the CSV headers, rows and exact cell values: no findings, metric cards, extra summaries, methods, comparisons, costs or limitations. The app builds it deterministically from the CSV; Data does not author a separate HTML report.
 
 ## Data owns analytical decisions
 
@@ -37,7 +38,7 @@ Do not ask the user follow-up questions about cleaning, business interpretation,
 
 1. The initial UI has the exact generic copy and one multiple-file upload widget.
 2. The review is readable and approves the actual Data scope.
-3. No user-facing requirement asks for metadata, cleaning decisions or follow-up answers.
+3. No user-facing requirement asks for metadata or cleaning decisions. Missing current-process context is requested before approval, with already-supplied and no-current-process options.
 4. Approval reaches genuine Data with exact permitted file bytes and original question.
 5. Data handles missingness and analytical choices autonomously and returns the supported result.
 6. Healthy analysis is not interrupted by an overall elapsed-time deadline; failures/cancellation still work.

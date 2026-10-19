@@ -114,18 +114,36 @@ def run_app(session_factory: Callable | None = None) -> None:
     st.title("SuiroAI local demo")
     st.caption("Review the proposed task before allowing analysis.")
     st.write("Upload your data.")
-    st.caption("Changing the question or a file clears the previous approval and result.")
+    st.caption("Changing the question, current approach or a file clears the previous approval and result.")
     if "demo_session" not in st.session_state:
         st.session_state.demo_session = (session_factory or DemoSession)()
     session = st.session_state.demo_session
 
     question = st.text_area("What are you trying to solve for?", key="business_question")
+    current_source = st.radio(
+        "Have you shared how you do this today?",
+        ("I'll describe it here", "It's in my question or uploaded files", "We don't have a current approach"),
+        index=None, key="current_approach_source",
+    )
+    current_approach = ""
+    if current_source == "I'll describe it here":
+        current_approach = st.text_area(
+            "How do you do this now?", key="current_approach",
+            help="For example, describe your usual steps or how you decide what to order.",
+        )
+    context = current_approach.strip() if current_source == "I'll describe it here" else current_source or ""
+    approved_question = question + ("\n\nHow do you do this now?\n" + context if context else "")
     uploaded_files = st.file_uploader("Upload your data", accept_multiple_files=True, key="upload_files")
     uploads = [UploadedInput(name=file.name, data=file.getvalue()) for file in uploaded_files]
-    session.invalidate(question, uploads)
+    session.invalidate(approved_question, uploads)
 
     if st.button("Review task", key="review_task"):
-        session.review(question, uploads)
+        if not current_source or (current_source == "I'll describe it here" and not current_approach.strip()):
+            st.info("Tell us how you do this now, or select where you've already shared it. If you don't have a current approach, select that option.")
+        elif not question.strip():
+            st.info("Describe what you are trying to solve for.")
+        else:
+            session.review(approved_question, uploads)
 
     view = session.view
     if view.get("proposal_digest") and view.get("status") in {"proposal", "awaiting_approval", "review"}:

@@ -84,7 +84,8 @@ def app(monkeypatch):
     import suiroai.demo.service as service
 
     monkeypatch.setattr(service, "DemoSession", FakeSession)
-    return AppTest.from_string("from suiroai.demo.app import run_app\nrun_app()").run()
+    app = AppTest.from_string("from suiroai.demo.app import run_app\nrun_app()").run()
+    return app.radio(key="current_approach_source").set_value("We don't have a current approach").run()
 
 
 def test_review_and_approval_require_explicit_actions(app):
@@ -135,6 +136,7 @@ def test_revise_revokes_proposal_without_running(app):
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
+    app.text_area(key="business_question").input("What should we replenish?").run()
     app.button(key="review_task").click().run()
     session = app.session_state["demo_session"]
     app.button(key="revise_task").click().run()
@@ -324,3 +326,35 @@ def test_html_media_is_inline_and_removed_when_no_longer_referenced(monkeypatch)
     manager.remove_orphaned_files()
     with pytest.raises(MediaFileStorageError):
         storage.get_file(url.rsplit("/", 1)[-1])
+
+
+def test_current_approach_is_requested_and_changes_revoke_approval(app):
+    """Bind the user's current process to consent without asking cleaning questions.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    app.text_area(key="business_question").input("What should we replenish?").run()
+    app.radio(key="current_approach_source").set_value("I'll describe it here").run()
+    assert app.text_area(key="current_approach").label == "How do you do this now?"
+    app.button(key="review_task").click().run()
+    assert not any(button.key == "approve_and_run" for button in app.button)
+    app.text_area(key="current_approach").input("We order the last week's sales every Monday.").run()
+    app.button(key="review_task").click().run()
+    session = app.session_state["demo_session"]
+    assert "We order the last week's sales every Monday." in session.view["proposal_summary"]["question"]
+    app.text_area(key="current_approach").input("We top up to ten units.").run()
+    assert not any(button.key == "approve_and_run" for button in app.button)
+    assert session.runs == 0
+
+
+def test_current_approach_already_supplied_does_not_require_retyping(app):
+    """Accept an existing process description or an explicit lack of one.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    app.text_area(key="business_question").input("We order ten units weekly. What should we replenish?").run()
+    app.radio(key="current_approach_source").set_value("It's in my question or uploaded files").run()
+    assert not any(area.key == "current_approach" for area in app.text_area)
+    app.button(key="review_task").click().run()
+    assert any(button.key == "approve_and_run" for button in app.button)
+    assert "We order ten units weekly" in app.session_state["demo_session"].view["proposal_summary"]["question"]
