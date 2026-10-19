@@ -15,9 +15,33 @@ from types import SimpleNamespace
 import pytest
 
 from suiroai.contracts import proposal_digest, record_ref
-from suiroai.demo.investigation import present_data_output, run_investigation
+from suiroai.demo.investigation import investigation_prompt, present_data_output, run_investigation
 from suiroai.demo.service import DemoSession, UploadedInput
 from suiroai.integration.native import NativeRun
+
+
+def test_app_response_prompt_requires_customer_actions_and_evidence_based_comparisons():
+    """Keep the customer answer brief and tie model claims to real comparisons."""
+    prompt = investigation_prompt("Recommend restocking", Path("/released"), [])
+    assert "concise layman's language, aiming for 150-250 words" in prompt
+    assert "Lead with the recommendation and practical next actions" in prompt
+    assert "actual measured comparisons on the same development evaluation data" in prompt
+    assert "Do not invent a prior/current approach" in prompt
+    assert "baseline, not the customer's incumbent" in prompt
+    assert "comparisons show no improvement, are mixed, or could not be performed, say so plainly" in prompt
+    assert "detailed methods, model diagnostics and long audit prose in report.html" in prompt
+
+
+def test_app_response_prompt_requires_honest_cost_estimates_and_missing_usage():
+    """Separate recurring estimates from actual analysis charges without invented prices."""
+    prompt = investigation_prompt("Recommend restocking", Path("/released"), [])
+    assert "cost to run the recommended approach" in prompt
+    assert "currency, workload or frequency and assumptions" in prompt
+    assert "Separate that ongoing cost from the cost of this analysis run" in prompt
+    assert "only observed usage and available applicable pricing" in prompt
+    assert "do not fabricate token counts, runtime, rates, dollar amounts, savings or a zero-cost claim" in prompt
+    assert "cost cannot yet be estimated" in prompt
+    assert "Do not present an estimate as an actual charge" in prompt
 
 
 @pytest.fixture

@@ -107,14 +107,19 @@ def main():
             expected_sources = {item["sha256"] for item in record["files"]}
             record["matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, data, "unverified_report_ref")
             record["download_matches_stored_artifact"] = record["matching_receipt"] is not None
-            html = page.get_by_role("button", name="Download HTML report", exact=True)
+            html = page.get_by_role("link", name="Open HTML report", exact=True)
             if html.count():
-                with page.expect_download() as event:
+                with page.expect_popup() as event:
                     html.click()
-                html_file = event.value
-                html_path = args.output / Path(html_file.suggested_filename).name
-                html_file.save_as(html_path)
-                html_data = html_path.read_bytes()
+                report_page = event.value
+                report_page.wait_for_load_state()
+                response = context.request.get(report_page.url)
+                assert response.ok
+                assert "attachment" not in response.headers.get("content-disposition", "")
+                html_data = response.body()
+                (args.output / "report.html").write_bytes(html_data)
+                report_page.screenshot(path=str(args.output / "03-html-report.png"), full_page=True)
+                record["html_opened_in_new_tab"] = True
                 record["html_sha256"] = sha256(html_data).hexdigest()
                 record["html_matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, html_data, "html_report_ref")
                 record["html_matches_stored_artifact"] = record["html_matching_receipt"] is not None

@@ -13,6 +13,21 @@ from pathlib import Path
 import streamlit as st
 
 
+def _html_report_url(data: bytes) -> str:
+    """Serve approved report bytes for viewing in a separate browser tab.
+
+    Streamlit owns the local media URL and removes it when the session stops
+    referencing the result. Register HTML as viewable media, not an attachment.
+    The service has already checked consent, artifact identity and passive HTML.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    from streamlit import runtime
+
+    return runtime.get_instance().media_file_mgr.add(
+        data, "text/html", "demo.html_report", is_for_static_download=False,
+    )
+
+
 def _show_proposal(view: dict) -> None:
     """Show the exact service proposal that the approval digest identifies.
 
@@ -79,10 +94,8 @@ def _show_outcome(session: object, view: dict) -> None:
     if view.get("html_report_available"):
         html_result = session.download_html()
         if html_result is not None:
-            name, data = html_result
-            st.download_button("Download HTML report", data=data, file_name=name,
-                               mime=view.get("html_download_mime") or "text/html",
-                               key="download_html_report")
+            _, data = html_result
+            st.link_button("Open HTML report", url=_html_report_url(data))
     investigation = view.get("investigation_text")
     if investigation:
         st.subheader("What we found")

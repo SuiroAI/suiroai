@@ -251,7 +251,7 @@ def test_html_report_is_not_offered_as_restocking_data(app):
 
 
 @pytest.mark.parametrize("html_available", [True, False])
-def test_csv_and_demo_html_are_separate_downloads_with_plain_response(app, monkeypatch, html_available):
+def test_csv_download_and_html_open_with_plain_response(app, monkeypatch, html_available):
     """Keep the restocking CSV primary while optionally offering the actual demo HTML.
 
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
@@ -268,10 +268,13 @@ def test_csv_and_demo_html_are_separate_downloads_with_plain_response(app, monke
     session.download = lambda: ("restocking.csv", csv_data)
     session.download_html = lambda: ("demo-report.html", html_data) if html_available else None
     calls = []
+    html_calls = []
+    from suiroai.demo import app as demo_app
+    monkeypatch.setattr(demo_app, "_html_report_url", lambda data: html_calls.append(data) or "/media/report.html")
     original_download = st.download_button
 
     def capture_download(*args, **kwargs):
-        """Observe the two exact output payloads without replacing their real widgets.
+        """Observe the exact CSV payload without replacing its real widget.
 
         Linear: https://linear.app/gr3enarr0w/issue/DSC-59
         """
@@ -282,13 +285,42 @@ def test_csv_and_demo_html_are_separate_downloads_with_plain_response(app, monke
     app.run()
     assert not app.exception
     buttons = app.get("download_button")
-    expected = ["Download restocking list (CSV)"] + (["Download HTML report"] if html_available else [])
+    expected = ["Download restocking list (CSV)"]
     assert [button.label for button in buttons] == expected
     assert calls[0]["data"] == csv_data and calls[0]["mime"] == "text/csv"
     if html_available:
-        assert calls[1]["data"] == html_data and calls[1]["mime"] == "text/html"
-        assert calls[1]["file_name"] == "demo-report.html"
+        assert html_calls == [html_data]
+        assert app.get("link_button")[0].label == "Open HTML report"
+        assert app.get("link_button")[0].proto.url == "/media/report.html"
+    else:
+        assert len(app.get("link_button")) == 0
     assert response in [item.value for item in app.markdown]
     assert len(app.json) == 0
     app.run()
     assert session.runs == 0
+
+
+def test_html_media_is_inline_and_removed_when_no_longer_referenced(monkeypatch):
+    """Serve exact HTML without attachment headers and expire stale session media.
+
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-59
+    """
+    from types import SimpleNamespace
+    from streamlit import runtime
+    from streamlit.runtime.media_file_manager import MediaFileManager
+    from streamlit.runtime.memory_media_file_storage import MemoryMediaFileStorage
+    from streamlit.runtime.media_file_storage import MediaFileKind, MediaFileStorageError
+    from suiroai.demo.app import _html_report_url
+
+    storage = MemoryMediaFileStorage("/media")
+    manager = MediaFileManager(storage)
+    monkeypatch.setattr(runtime, "get_instance", lambda: SimpleNamespace(media_file_mgr=manager))
+    data = b"<!doctype html><html><body>Actual report</body></html>"
+    url = _html_report_url(data)
+    file = storage.get_file(url.rsplit("/", 1)[-1])
+    assert file.content == data and file.mimetype == "text/html"
+    assert file.kind == MediaFileKind.MEDIA
+    manager.clear_session_refs()
+    manager.remove_orphaned_files()
+    with pytest.raises(MediaFileStorageError):
+        storage.get_file(url.rsplit("/", 1)[-1])
