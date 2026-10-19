@@ -1,4 +1,9 @@
-"""As-of inference from saved fitted JSON and original/augmented numeric rows."""
+"""As-of inference from saved fitted JSON and original/augmented numeric rows.
+
+Load the persisted selected candidate and verify its feature order, training
+cutoff, and forecast population before producing frozen-origin predictions.
+Use the saved model without refitting or reading actual future outcomes.
+"""
 from datetime import date
 import json
 

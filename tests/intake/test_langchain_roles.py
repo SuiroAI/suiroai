@@ -1,4 +1,8 @@
-"""Real LangChain composition with mock model replies; no provider/runtime evidence."""
+"""Real LangChain composition with mock model replies; no provider/runtime evidence.
+
+Check structured role schemas, prompt composition, and invocation behavior
+using a fake structured model rather than a live provider.
+"""
 from copy import deepcopy
 import json
 import unittest

@@ -1,4 +1,8 @@
-"""Bounded initialize/skills-list diagnostic; never starts a model turn."""
+"""Bounded initialize/skills-list diagnostic; never starts a model turn.
+
+Inspect host initialization and the available skill catalog under a bounded
+timeout, retaining diagnostic results for integration troubleshooting.
+"""
 
 import argparse
 import datetime

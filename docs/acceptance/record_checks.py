@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Record fixed DSC-56 mock engineering checks; never grant final acceptance."""
+"""Record fixed DSC-56 mock engineering checks; never grant final acceptance.
+
+Run the fixed mock checks and retain their outcomes, source fingerprints,
+and reviewer identity in a JSON ledger for later review.
+"""
 import argparse
 from datetime import datetime, timezone
 import hashlib

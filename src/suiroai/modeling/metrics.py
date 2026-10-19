@@ -1,4 +1,8 @@
-"""Common comparable metrics. No MAPE and no cross-SKU pooled WAPE."""
+"""Common comparable metrics. No MAPE and no cross-SKU pooled WAPE.
+
+Compute comparable forecast errors and direction-aware candidate comparisons
+while enforcing population, aggregation, and same-product unit constraints.
+"""
 from collections import defaultdict
 from statistics import fmean
 

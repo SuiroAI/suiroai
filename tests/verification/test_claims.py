@@ -1,4 +1,8 @@
-"""Independent review examples; all report/evidence data below are mocks."""
+"""Independent review examples; all report/evidence data below are mocks.
+
+Exercise trusted claim and whole-narrative review against resolved bytes,
+rejecting false statements, missing evidence, and invalid reviewer responses.
+"""
 from copy import deepcopy
 
 import pytest

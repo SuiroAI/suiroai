@@ -1,4 +1,8 @@
-"""MOCK prepared artifacts; genuine daily completeness remains unverified."""
+"""MOCK prepared artifacts; genuine daily completeness remains unverified.
+
+Check prepared-payload parsing, forecast examples, daily coverage, and
+reserved-target construction without inferring missing-date completeness.
+"""
 from datetime import date
 import json
 import unittest

@@ -1,4 +1,8 @@
-"""Preexecution checks use mock records only; no customer run is established."""
+"""Preexecution checks use mock records only; no customer run is established.
+
+Check current submission and proposal bindings, accessible source bytes,
+and independent semantic review before missing-input guidance can proceed.
+"""
 from copy import deepcopy
 import hashlib
 import json

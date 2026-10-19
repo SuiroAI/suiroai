@@ -1,4 +1,8 @@
-"""Adversarial MOCK permissions/checkpoint evidence; no analytical acceptance."""
+"""Adversarial MOCK permissions/checkpoint evidence; no analytical acceptance.
+
+Attempt forged authority, stale bindings, and stage-permission bypasses
+to verify that untrusted or inconsistent evidence cannot advance the workflow.
+"""
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 import unittest

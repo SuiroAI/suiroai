@@ -84,7 +84,7 @@ def _check_snapshot():
         root / "schema/retail-contract.schema.json":
             "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
         root / "validation.py":
-            "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+            "7d407fdc73454c9942707609df4abea64aa30f036d436ed95cc87d6b305cddf3",
     }
     if VERSION != "0.1.0-draft.3" or any(
             hashlib.sha256(path.read_bytes()).hexdigest() != sha

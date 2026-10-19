@@ -1,4 +1,8 @@
-"""Engineering probe request checks; mock responses never establish isolation."""
+"""Engineering probe request checks; mock responses never establish isolation.
+
+Exercise bounded plugin discovery, permission-profile projections, control
+requests, and diagnostic handling using deterministic local test doubles.
+"""
 import importlib.util
 import io
 import json

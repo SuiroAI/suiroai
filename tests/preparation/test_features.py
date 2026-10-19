@@ -1,4 +1,8 @@
-"""MOCK initial feature safety checks, not model or customer acceptance."""
+"""MOCK initial feature safety checks, not model or customer acceptance.
+
+Check initial calendar and identifier features, fold-fitted vocabularies,
+daily grain, and target availability with explicit synthetic inputs.
+"""
 from copy import deepcopy
 import unittest
 

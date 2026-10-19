@@ -1,4 +1,9 @@
-"""DSC-24 draft interface validation. Does not execute an analytical task."""
+"""DSC-24 draft interface validation. Does not execute an analytical task.
+
+Validate individual records and linked handoffs against the retail schema
+and semantic rules for approvals, evidence, chronology, and terminal outcomes.
+Provide canonical reference digests and a command to check example bundles.
+"""
 from __future__ import annotations
 
 import argparse

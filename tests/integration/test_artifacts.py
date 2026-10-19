@@ -1,4 +1,8 @@
-"""MOCK artifacts only: local storage checks never establish native acceptance."""
+"""MOCK artifacts only: local storage checks never establish native acceptance.
+
+Exercise immutable writes, measured reads, safe paths, and release staging
+to reject corrupted content, conflicting references, and unauthorized files.
+"""
 import copy
 import hashlib
 import json

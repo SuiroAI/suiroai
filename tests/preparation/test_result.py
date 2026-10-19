@@ -1,4 +1,8 @@
-"""MOCK result/adapter roundtrip; no native Data run or real acceptance."""
+"""MOCK result/adapter roundtrip; no native Data run or real acceptance.
+
+Exercise measured result serialization and artifact retrieval through the
+real adapter with a mock host and exact trusted parent review.
+"""
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 import json

@@ -1,4 +1,8 @@
-"""Mock component calculations only; no live LLM or analytical acceptance."""
+"""Mock component calculations only; no live LLM or analytical acceptance.
+
+Exercise bounded feature proposals and materialization, rejecting malformed
+definitions, forbidden information, and inconsistent initial feature sets.
+"""
 from copy import deepcopy
 from datetime import date
 import hashlib

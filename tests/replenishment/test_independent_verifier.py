@@ -1,4 +1,8 @@
-"""MOCK producer-to-DSC-30 integration; no real execution/approval is claimed."""
+"""MOCK producer-to-DSC-30 integration; no real execution/approval is claimed.
+
+Pass produced mock candidates to the independent verifier and compare
+source-based recalculation for supported quantities and withheld cases.
+"""
 import csv
 import io
 import json

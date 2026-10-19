@@ -1,4 +1,8 @@
-"""DSC-24 draft.3 MOCK consumer examples; no real model/execution acceptance."""
+"""DSC-24 draft.3 MOCK consumer examples; no real model/execution acceptance.
+
+Check evidence-bound success and failure narratives, quantity and name
+fidelity, focused humanization, and authorization of report creation.
+"""
 from copy import deepcopy
 import json
 from pathlib import Path

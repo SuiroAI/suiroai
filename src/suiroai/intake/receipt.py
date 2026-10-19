@@ -1,4 +1,8 @@
-"""Explicit file receipt and bounded read-only inspection. No preparation."""
+"""Explicit file receipt and bounded read-only inspection. No preparation.
+
+Measure supplied file bytes, preserve source identity, and inspect tabular
+structure within explicit bounds to support the task-understanding step.
+"""
 from __future__ import annotations
 
 import csv

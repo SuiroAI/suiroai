@@ -1,4 +1,8 @@
-"""Generate five component-contract examples; no real analytics or dataset project."""
+"""Generate five component-contract examples; no real analytics or dataset project.
+
+Build versioned mock records and reference graphs for approved execution,
+missing inputs, successful analysis, and the two terminal failure outcomes.
+"""
 from __future__ import annotations
 
 import copy

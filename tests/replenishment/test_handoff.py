@@ -1,4 +1,8 @@
-"""DSC-24 draft.3 MOCK graph with real byte/hash mechanics, not model acceptance."""
+"""DSC-24 draft.3 MOCK graph with real byte/hash mechanics, not model acceptance.
+
+Exercise immutable reference resolution, permissions, source binding, and
+optional product-name mappings before candidate arithmetic is accepted.
+"""
 from copy import deepcopy
 import csv
 import hashlib

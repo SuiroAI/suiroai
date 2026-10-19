@@ -1,4 +1,8 @@
-"""Serialize measured preparation outputs using the DSC-24 snapshot unchanged."""
+"""Serialize measured preparation outputs using the DSC-24 snapshot unchanged.
+
+Bind measured preparation payloads and source references into a validated
+result record, preserving the exact stage request and parent review.
+"""
 from copy import deepcopy
 
 from suiroai.contracts import VERSION, record_ref, validate_record

@@ -1,4 +1,8 @@
-"""Complete MOCK recovery and verified failure responses; no real acceptance."""
+"""Complete MOCK recovery and verified failure responses; no real acceptance.
+
+Exercise bounded defect recovery and verified terminal-failure explanations
+while checking that exhausted or unavailable verification remains terminal.
+"""
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 import json

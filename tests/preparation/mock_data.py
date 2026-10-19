@@ -1,4 +1,8 @@
-"""Generated MOCK CSVs and draft.3 authority examples; never customer data."""
+"""Generated MOCK CSVs and draft.3 authority examples; never customer data.
+
+Build small sales and operational fixtures, measured artifacts, and exact
+request permits for deterministic preparation component tests.
+"""
 from copy import deepcopy
 import json
 from pathlib import Path

@@ -1,4 +1,8 @@
-"""Local policy and fake Python CLI checks; no native/model acceptance."""
+"""Local policy and fake Python CLI checks; no native/model acceptance.
+
+Verify supported plugin metadata, restricted roots, effective host settings,
+and bounded inventory handling using local fixtures and fake CLI behavior.
+"""
 from copy import deepcopy
 from hashlib import sha256
 import io

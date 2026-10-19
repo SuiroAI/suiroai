@@ -1,4 +1,8 @@
-"""Synthetic numerical counterexamples, not real DSC-28 acceptance."""
+"""Synthetic numerical counterexamples, not real DSC-28 acceptance.
+
+Check metric aggregation and candidate comparisons against known numerical
+answers, including persisted training-only preprocessing and model loading.
+"""
 from datetime import date
 import unittest
 

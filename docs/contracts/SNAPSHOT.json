@@ -5,7 +5,7 @@
   "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
   "files": {
     "src/suiroai/contracts/schema/retail-contract.schema.json": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
-    "src/suiroai/contracts/validation.py": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+    "src/suiroai/contracts/validation.py": "7d407fdc73454c9942707609df4abea64aa30f036d436ed95cc87d6b305cddf3",
     "examples/contracts/v0.1.0/approved_execution.json": "65fce44c921d176d6696a7f8ae05f7d4b552cac9ac862b7451da368cac715bd8",
     "examples/contracts/v0.1.0/execution_failed.json": "f76851314ba3a440ddf9447ff32ed19af36f1a2613f6fba9bbd631dabbb98a5d",
     "examples/contracts/v0.1.0/missing_inputs.json": "d860a3255e8381402165b2181ca25821e41b16fe1241fdf0092a731542ed780e",
@@ -54,5 +54,10 @@
       "independent_regression_tests_passed": 77,
       "snapshot_file_hashes_verified": 7
     }
-  ]
+  ],
+  "documentation_revision": {
+    "reason": "Multiline Python module summaries; validator executable AST unchanged.",
+    "previous_validator_sha256": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+    "previous_snapshot_commit": "7716f50"
+  }
 }

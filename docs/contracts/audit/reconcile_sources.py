@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Read-only source/fixture audit; never prepares data or evaluates a model."""
+"""Read-only source/fixture audit; never prepares data or evaluates a model.
+
+Compare supplied sales and synthetic operational files with their manifests,
+then report hashes, observed source profiles, and reconciliation checks.
+"""
 from __future__ import annotations
 
 import argparse

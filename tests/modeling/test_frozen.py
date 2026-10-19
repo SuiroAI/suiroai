@@ -1,4 +1,8 @@
-"""Explicit mock consumer evidence; no real December data is accessed."""
+"""Explicit mock consumer evidence; no real December data is accessed.
+
+Exercise immutable freeze bundles, reserved-target scoring, acceptance gates,
+and bounded defect rechecks against explicitly mock evidence.
+"""
 from datetime import date
 import json
 import tempfile

@@ -1,4 +1,8 @@
-"""Private DSC-28 calculation types; shared wire contracts stay with DSC-24."""
+"""Private DSC-28 calculation types; shared wire contracts stay with DSC-24.
+
+Define validated forecast windows, examples, predictions, and shared helpers
+for finite values, canonical payloads, and required parent decisions.
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass

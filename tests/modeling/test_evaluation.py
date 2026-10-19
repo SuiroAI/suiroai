@@ -1,4 +1,8 @@
-"""Explicit synthetic contract fixtures, not real retail evaluation acceptance."""
+"""Explicit synthetic contract fixtures, not real retail evaluation acceptance.
+
+Exercise chronological folds, bounded initial evaluation, and candidate
+comparison while rejecting leakage, incompatible populations, and bad inputs.
+"""
 from dataclasses import replace
 from datetime import date, timedelta
 import unittest

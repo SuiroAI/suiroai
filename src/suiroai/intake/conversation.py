@@ -1,4 +1,8 @@
-"""Stateless conversation artifacts. DSC-10 owns state and execution transitions."""
+"""Stateless conversation artifacts. DSC-10 owns state and execution transitions.
+
+Build version-bound proposals, presentations, and customer response records
+so the approved handoff preserves the request and measured supplied inputs.
+"""
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass

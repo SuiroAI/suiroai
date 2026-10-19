@@ -1,4 +1,8 @@
-"""Mock transport regressions only; these never establish native acceptance."""
+"""Mock transport regressions only; these never establish native acceptance.
+
+Exercise native request construction, response parsing, interruption,
+deadlines, and protocol failures with a fake transport.
+"""
 from __future__ import annotations
 
 from hashlib import sha256

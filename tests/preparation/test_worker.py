@@ -1,4 +1,8 @@
-"""MOCK kernel verification only: no real preparation or execution acceptance."""
+"""MOCK kernel verification only: no real preparation or execution acceptance.
+
+Exercise cutoff partitioning, deduplication, target treatment, sparse dates,
+and operational alignment under exact mocked execution permits.
+"""
 from copy import deepcopy
 import unittest
 

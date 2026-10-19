@@ -1,4 +1,8 @@
-"""Independent hand-calculated MOCK examples; no customer-run acceptance evidence."""
+"""Independent hand-calculated MOCK examples; no customer-run acceptance evidence.
+
+Compare independent source reconciliation with hand-calculated orders,
+including receipt timing, coverage gaps, minimums, and order multiples.
+"""
 from __future__ import annotations
 
 import copy

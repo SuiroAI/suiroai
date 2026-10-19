@@ -1,4 +1,8 @@
-"""MOCK final-release guards only; no native modeling or holdout evaluation."""
+"""MOCK final-release guards only; no native modeling or holdout evaluation.
+
+Exercise release of the adopted immutable model bundle and exact detached
+manifest while rejecting substitutions, ambiguous content, and early access.
+"""
 from copy import deepcopy
 import json
 import unittest

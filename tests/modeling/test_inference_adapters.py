@@ -1,4 +1,8 @@
-"""Synthetic integration calculations; no real data/execution acceptance."""
+"""Synthetic integration calculations; no real data/execution acceptance.
+
+Check saved-model inference and its original or augmented feature adapters
+against synthetic inputs while preserving cutoff and population constraints.
+"""
 from datetime import date
 from pathlib import Path
 import json

@@ -1,4 +1,8 @@
-"""DSC-28 component calculations; no runtime, checkpoint or delivery authority."""
+"""DSC-28 component calculations; no runtime, checkpoint or delivery authority.
+
+Expose the modeling component helpers for development evaluation, additional
+features, immutable candidate selection, and frozen final validation.
+"""
 from .core import CUTOFF, Example, ModelingError, Prediction, Window
 from .evaluation import CandidateSpec, RollingFold, compare_candidates, evaluate_initial
 from .features import DevelopmentArtifact, generate_feature_proposal, materialize_features

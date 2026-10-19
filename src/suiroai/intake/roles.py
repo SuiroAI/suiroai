@@ -1,4 +1,8 @@
-"""Two focused LangChain calls, with no tools, agents or execution authority."""
+"""Two focused LangChain calls, with no tools, agents or execution authority.
+
+Build structured understanding and presentation callables with narrowly
+scoped prompts for proposing the task and explaining it to the customer.
+"""
 from copy import deepcopy
 
 from suiroai.contracts import schema_validator
