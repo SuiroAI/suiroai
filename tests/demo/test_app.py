@@ -290,7 +290,7 @@ def test_csv_download_and_html_open_with_plain_response(app, monkeypatch, html_a
     assert calls[0]["data"] == csv_data and calls[0]["mime"] == "text/csv"
     if html_available:
         assert html_calls == [html_data]
-        assert app.get("link_button")[0].label == "Open HTML report"
+        assert app.get("link_button")[0].label == "View restocking list"
         assert app.get("link_button")[0].proto.url == "/media/report.html"
     else:
         assert len(app.get("link_button")) == 0

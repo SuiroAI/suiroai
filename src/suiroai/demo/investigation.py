@@ -212,19 +212,27 @@ def _collect_outputs(store, output):
         if sha256(html).hexdigest() != result["html_sha256"]:
             raise ValueError("Data HTML companion differs from result.json hash")
         _check_report_html(html.decode("utf-8"))
-        html_original_ref, html_ref, html_lineage_ref, html_presented = _publish_presentation(store, "html-report", html)
-        _check_report_html(html_presented.decode("utf-8"))
+        native_html_ref = store.put_bytes("demo-native-html-" + uuid.uuid4().hex, 1, "derived", html)
+        html_output.update(native_original_html_report_ref=native_html_ref,
+            native_original_html_report_sha256=sha256(html).hexdigest(),
+            native_original_html_report_path=str(output / "report.html"))
+    if is_csv:
+        from suiroai.demo.csv_preview import render_csv_preview
+
+        preview = render_csv_preview(report)
+        _check_report_html(preview.decode("utf-8"))
+        html_ref = store.put_bytes("demo-csv-preview-" + uuid.uuid4().hex, 1, "derived", preview)
+        html_lineage_ref = store.put_bytes("demo-csv-preview-lineage-" + uuid.uuid4().hex, 1, "derived",
+            (json.dumps({"format": "dsc59-csv-preview-v1", "source_csv_ref": report_ref,
+                "renderer": "csv-table-v1", "html_ref": html_ref}, sort_keys=True) + "\n").encode())
         html_path = output / ("presented-html-" + uuid.uuid4().hex + ".html")
         with html_path.open("xb") as stream:
-            stream.write(html_presented)
+            stream.write(preview)
         html_path.chmod(0o400)
-        html_output = {"html_report_ref": html_ref, "html_report_path": str(html_path),
-            "html_report_name": "report.html", "html_report_mime": "text/html",
-            "native_original_html_report_ref": html_original_ref,
-            "native_original_html_report_sha256": sha256(html).hexdigest(),
-            "native_original_html_report_path": str(output / "report.html"),
-            "presented_html_report_sha256": sha256(html_presented).hexdigest(),
-            "html_presentation_lineage_ref": html_lineage_ref}
+        html_output.update(html_report_ref=html_ref, html_report_path=str(html_path),
+            html_report_name="report.html", html_report_mime="text/html",
+            presented_html_report_sha256=sha256(preview).hexdigest(),
+            html_presentation_lineage_ref=html_lineage_ref)
     result_ref = store.put_bytes("demo-data-result-" + uuid.uuid4().hex, 1, "derived", data)
     return {"disposition": "analysis", "customer_questions": [],
         "unverified_result_ref": result_ref, "unverified_report_ref": report_ref,
@@ -360,7 +368,7 @@ def investigation_prompt(question, released, manifest):
         "Prefer a useful evidence-based answer with candid limitations over stopping for nonessential unknowns. "
         "If some quantities cannot responsibly be supported, report that evidenced limit and the useful "
         "findings you can support; do not ask the user to resolve it. "
-        "Write response.md for a nontechnical customer in concise layman's language, aiming for 150-250 words. "
+        "Write response.md for someone running a retail business, entirely in concise layman's language, aiming for 150-250 words. "
         "Lead with the recommendation and practical next actions, followed by the few findings that explain them. "
         "Say 'products at stores' instead of 'product/store combinations'. Avoid raw field names, acronyms, "
         "decimal diagnostic lists and audit terminology such as 'reconcile', 'historical status timestamps' "
@@ -370,7 +378,7 @@ def investigation_prompt(question, released, manifest):
         "comparisons on the same development evaluation data. Express any improvement in terms the customer "
         "can understand: give one rounded, meaningful comparison when supported, such as the approximate "
         "percentage reduction in errors, and say when differences are too small to matter. Keep exact diagnostic "
-        "values and multiple metric comparisons in report.html. Do not invent a prior/current approach "
+        "values and multiple metric comparisons in internal audit files. Do not invent a prior/current approach "
         "or claim superiority over it when it was not supplied and evaluated. Identify a simple comparison "
         "method as a baseline, not the customer's incumbent. If comparisons show no improvement, are mixed, "
         "or could not be performed, say so plainly and explain the supported reason for the choice. "
@@ -381,8 +389,8 @@ def investigation_prompt(question, released, manifest):
         "When usage, pricing or deployment details are unavailable, say the relevant cost cannot yet be "
         "estimated and briefly name the missing basis. Do not present an estimate as an actual charge. "
         "Mention only assumptions or limitations that change the customer's decision or next action, in everyday "
-        "words, and briefly explain what to do about them. Keep other caveats in report.html. "
-        "Keep technical terminology, detailed methods, model diagnostics and long audit prose in report.html. "
+        "words, and briefly explain what to do about them. All customer-facing explanation belongs in response.md. "
+        "Keep technical terminology, detailed methods, model diagnostics and long audit prose in internal audit files. "
         "Produce the restocking list as a separate CSV file, restocking.csv, matching the supplied CSV input format. "
         "Include Product_ID, Product_Name when reliable, Store_ID, OrderQty, and Quantity_Unit; additional "
         "useful columns are welcome. OrderQty must be a nonnegative integer in product units. "
@@ -391,16 +399,13 @@ def investigation_prompt(question, released, manifest):
         "Do not invent zeros for unknown quantities. Use code to write and check the CSV, then compute its actual SHA-256. "
         "Present the response and restocking file as the analytical deliverable with substantive scientific limitations. "
         "Do not add generic draft, trust-status or verification-status notices. "
-        "Also write report.html as a self-contained HTML demo view of the findings and restocking list. "
-        "Keep the plain-language explanation in the app response, the operational list in CSV, and the demo view in HTML. "
-        "Use code to render the HTML table from the same CSV recommendations and check that their values agree. "
-        "Escape supplied text, use standard HTML text/tables and embedded CSS; no scripts, event handlers, "
-        "SVG, images, frames, forms, remote assets, CSS URLs/imports or dependencies. "
-        "Compute the actual SHA-256 of both final files. "
-        "Always write result.json with exactly five keys: "
+        "Do not write a narrative HTML report. The app renders the CSV as a table-only HTML demo preview "
+        "for recording; it must contain the same headers, rows and values, with no explanation, findings, "
+        "model comparisons, metrics cards, costs, methods or limitations. Those belong in the same-window "
+        "app response, written entirely for a retail business owner in everyday words. "
+        "Always write result.json with exactly three keys: "
         "{\"disposition\":\"analysis\",\"output_file\":\"restocking.csv\","
-        "\"output_sha256\":\"actual CSV SHA-256\",\"html_file\":\"report.html\","
-        "\"html_sha256\":\"actual HTML SHA-256\"}. "
+        "\"output_sha256\":\"actual CSV SHA-256\"}. "
         "Write all outputs only in your output workspace. "
         "Check calculation consistency and align conclusions with the actual source-derived evidence."
     )

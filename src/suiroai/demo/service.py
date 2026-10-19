@@ -218,7 +218,7 @@ class DemoSession:
             self._store.put_record(receipt.submission)
             self._store.put_record(proposal)
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
-                "review_date": "2025-11-30", "output": "A dedicated restocking CSV file and an HTML demo report, with the explanation, assumptions, sensitivities and limitations shown in the app.",
+                "review_date": "2025-11-30", "output": "A restocking CSV to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
                 "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
                 "assumptions": [item["statement"] for item in assumptions],
                 "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."}

@@ -34,7 +34,11 @@ def test_app_response_prompt_requires_customer_actions_and_evidence_based_compar
     assert "one rounded, meaningful comparison" in prompt
     assert "differences are too small to matter" in prompt
     assert "limitations that change the customer's decision or next action" in prompt
-    assert "detailed methods, model diagnostics and long audit prose in report.html" in prompt
+    assert "detailed methods, model diagnostics and long audit prose in internal audit files" in prompt
+    assert "for someone running a retail business" in prompt
+    assert "same-window app response" in prompt
+    assert "exactly three keys" in prompt
+    assert "no explanation, findings" in prompt
 
 
 def test_app_response_prompt_requires_honest_cost_estimates_and_missing_usage():
@@ -364,6 +368,8 @@ def test_csv_deliverable_is_separate_from_plain_app_response_and_preserves_all_b
     assert result['unverified_report_name'] == 'restocking.csv'
     assert result['unverified_report_mime'] == 'text/csv'
     assert result['restocking_ref'] == result['unverified_report_ref']
+    from suiroai.demo.csv_preview import render_csv_preview
+    assert approved[0].read_bytes(result["html_report_ref"]) == render_csv_preview(csv)
     assert approved[0].read_bytes(result['unverified_report_ref']) == csv
     assert approved[0].read_bytes(result['native_original_report_ref']) == csv
     assert result['native_original_report_sha256'] == result['presented_report_sha256'] == sha256(csv).hexdigest()
@@ -397,7 +403,7 @@ def test_csv_and_demo_html_have_separate_exact_originals_and_presented_outputs(a
     class Host:
         def execute(self, **kwargs):
             output = kwargs["cwd"]
-            assert "Also write report.html" in kwargs["prompt"]
+            assert "Do not write a narrative HTML report" in kwargs["prompt"]
             (output / "restocking.csv").write_bytes(csv)
             (output / "report.html").write_bytes(html)
             (output / "response.md").write_text("Order 10 product units.")
@@ -412,12 +418,15 @@ def test_csv_and_demo_html_have_separate_exact_originals_and_presented_outputs(a
     assert result["unverified_report_mime"] == "text/csv"
     assert store.read_bytes(result["native_original_html_report_ref"]) == html
     assert result["native_original_html_report_sha256"] == sha256(html).hexdigest()
-    presented_html = present_data_output(html.decode()).encode()
+    from suiroai.demo.csv_preview import render_csv_preview
+    presented_html = render_csv_preview(csv)
     assert store.read_bytes(result["html_report_ref"]) == presented_html
     assert result["html_report_name"] == "report.html"
     assert result["html_report_mime"] == "text/html"
     assert Path(result["html_report_path"]).read_bytes() == presented_html
     assert b"<td>10</td>" in presented_html
+    assert b"Data-generated analysis" not in presented_html
+    assert json.loads(store.read_bytes(result["html_presentation_lineage_ref"]))["source_csv_ref"] == result["restocking_ref"]
     assert result["html_presentation_lineage_ref"] != result["presentation_lineage_ref"]
 
 

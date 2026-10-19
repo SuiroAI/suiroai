@@ -107,7 +107,7 @@ def main():
             expected_sources = {item["sha256"] for item in record["files"]}
             record["matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, data, "unverified_report_ref")
             record["download_matches_stored_artifact"] = record["matching_receipt"] is not None
-            html = page.get_by_role("link", name="Open HTML report", exact=True)
+            html = page.get_by_role("link", name="View restocking list", exact=True)
             if html.count():
                 with page.expect_popup() as event:
                     html.click()

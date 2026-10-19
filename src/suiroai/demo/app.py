@@ -93,7 +93,7 @@ def _show_outcome(session: object, view: dict) -> None:
         html_result = session.download_html()
         if html_result is not None:
             _, data = html_result
-            st.link_button("Open HTML report", url=_html_report_url(data))
+            st.link_button("View restocking list", url=_html_report_url(data))
     investigation = view.get("investigation_text")
     if investigation:
         st.subheader("What we found")

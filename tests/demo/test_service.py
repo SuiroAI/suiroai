@@ -359,7 +359,8 @@ def test_approval_authorizes_autonomous_treatment_and_report_without_followup(tm
     summary = view["proposal_summary"]
     assert "restocking csv" in summary["output"].lower()
     assert "shown in the app" in summary["output"].lower()
-    assert "sensitivities" in summary["output"].lower()
+    assert "same list in a separate browser tab" in summary["output"].lower()
+    assert "plain-language explanation" in summary["output"].lower()
     assert "No follow-up answers are required" in summary["understanding"]
     assert "ask only" not in str(summary).lower()
     assert "follow-up questions if" not in str(summary).lower()

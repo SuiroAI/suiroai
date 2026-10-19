@@ -1,0 +1,13 @@
+{
+  "source_csv": "../dsc59-plain-response-2026-10-19/restocking.csv",
+  "csv_sha256": "e958cdf671f22d9232a84f7fb0382115160fed4ca5ac3f228f8b10fbcc638593",
+  "html_sha256": "f8570eabf81d2e76f3a360643861b0dccb6ab4f87aa3c6648eb9c75a9427a07f",
+  "rows": 336,
+  "columns": 15,
+  "all_headers_cells_and_row_order_exact": true,
+  "table_count": 1,
+  "narrative_added": false,
+  "new_model_run": false,
+  "browser_render_verified": false,
+  "browser_limit": "Direct file URL opening rejected by browser URL policy. No workaround attempted; preview validated by parser and integration tests."
+}
