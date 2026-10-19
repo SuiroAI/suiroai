@@ -2,6 +2,13 @@
 
 Uses the pinned DSC-24 draft.3 invented packets, the actual DSC-26 StageAdapter,
 and a host writing mock packets. Genuine integration acceptance remains open.
+
+Requirement context for these component checks:
+Enforce the confirmed-task boundary and internal evidence checkpoints without
+adding routine customer gates; missing facts, runtime failures, and measured
+validation failures retain distinct bounded review and terminal paths.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-10
 """
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone

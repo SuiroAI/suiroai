@@ -2,6 +2,11 @@
 
 Measure supplied file bytes, preserve source identity, and inspect tabular
 structure within explicit bounds to support the task-understanding step.
+
+Ground step2 understanding in files actually supplied and distinguish absent
+or inaccessible inputs before sign-off, without performing preparation joins.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-25
 """
 from __future__ import annotations
 

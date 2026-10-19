@@ -2,6 +2,12 @@
 
 Exercise release of the adopted immutable model bundle and exact detached
 manifest while rejecting substitutions, ambiguous content, and early access.
+
+Requirement context for these component checks:
+Check stage-permitted release of the reviewed frozen dependencies while
+keeping development contexts separate from final-holdout inputs.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-10
 """
 from copy import deepcopy
 import json

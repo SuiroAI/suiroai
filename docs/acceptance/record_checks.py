@@ -3,6 +3,11 @@
 
 Run the fixed mock checks and retain their outcomes, source fingerprints,
 and reviewer identity in a JSON ledger for later review.
+
+Support the fixed requirement-to-evidence audit with expected/actual outcomes,
+versions, and a named reviewer; mock checks cannot close the real demo gate.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-56
 """
 import argparse
 from datetime import datetime, timezone

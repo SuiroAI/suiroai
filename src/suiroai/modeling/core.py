@@ -2,6 +2,11 @@
 
 Define validated forecast windows, examples, predictions, and shared helpers
 for finite values, canonical payloads, and required parent decisions.
+
+Represent forecast origins, protection horizons, predictions, and bindings
+consistently so comparable evaluation can obey the temporal cutoff.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

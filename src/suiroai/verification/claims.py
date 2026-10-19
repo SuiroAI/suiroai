@@ -13,6 +13,11 @@ from (artifact_id, version, sha256, provenance) to resolved bytes. Every referen
 in the report is resolved first. Both return exactly status/expected/actual;
 status is a literal pass, fail or unavailable string, and both texts are nonempty.
 The parent is responsible for reviewer independence and source authenticity.
+
+Check the final list, EDA/feature statements, and limitations against resolved
+evidence, including illustrative synthetic provenance and truthful failures.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from __future__ import annotations
 

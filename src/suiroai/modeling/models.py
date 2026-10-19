@@ -2,6 +2,11 @@
 
 Ridge uses training-only median imputation and standardization. This bounded
 small-feature implementation avoids adding dependencies to shared manifests.
+
+Provide bounded reference candidates whose fitted preprocessing can be
+retained with the selected model, keeping learned transforms training-only.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

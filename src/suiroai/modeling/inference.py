@@ -3,6 +3,11 @@
 Load the persisted selected candidate and verify its feature order, training
 cutoff, and forecast population before producing frozen-origin predictions.
 Use the saved model without refitting or reading actual future outcomes.
+
+Retain the November 30 forecast from information available at its origin;
+December outcomes may score the saved forecast but cannot change its inputs.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from datetime import date
 import json

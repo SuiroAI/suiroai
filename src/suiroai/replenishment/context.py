@@ -2,6 +2,11 @@
 
 Callbacks are supplied by the trusted parent/application, not model output.
 The reference graph validator checks consistency, not checker authenticity.
+
+Bind the candidate and report to the approved inputs and measured evidence
+so quantities and claims remain traceable before humanization.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 from __future__ import annotations
 

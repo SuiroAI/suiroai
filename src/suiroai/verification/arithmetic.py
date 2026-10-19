@@ -3,6 +3,12 @@
 Raw operation rows retain CSV columns and must carry an explicit ``source_namespace``.
 Forecast/name rows use contract ``key`` mappings. Returned decimal numbers are strings
 so evidence survives JSON serialization without a binary floating point conversion.
+
+Recompute candidate quantities against frozen forecasts, usable stock, timely
+receipts, units, dates, and purchasing constraints; expose unsupported keys
+rather than hiding exceptions or counting the receipt summary twice.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from __future__ import annotations
 

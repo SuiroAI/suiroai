@@ -2,6 +2,12 @@
 
 Verify supported plugin metadata, restricted roots, effective host settings,
 and bounded inventory handling using local fixtures and fake CLI behavior.
+
+Requirement context for these component checks:
+Check deployment compatibility and isolation for the demonstrated native
+worker before dispatch; experimental host settings remain deployment-specific.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 from copy import deepcopy
 from hashlib import sha256

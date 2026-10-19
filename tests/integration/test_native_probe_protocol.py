@@ -2,6 +2,12 @@
 
 These tests never start app-server or a model, and never establish Data loading
 or DSC-26 acceptance. The only native command generates local protocol schemas.
+
+Requirement context for these component checks:
+Check probe messages against the installed native protocol schemas so
+interface assumptions fail visibly before real analytical invocation.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 import copy

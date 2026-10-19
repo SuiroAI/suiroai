@@ -2,6 +2,11 @@
 
 Inspect host initialization and the available skill catalog under a bounded
 timeout, retaining diagnostic results for integration troubleshooting.
+
+Investigate whether the observed host supports the required integration,
+retaining unresolved capability evidence without claiming analytical execution.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 import argparse

@@ -2,6 +2,13 @@
 
 Exercise cutoff partitioning, deduplication, target treatment, sparse dates,
 and operational alignment under exact mocked execution permits.
+
+Requirement context for these component checks:
+Reconcile exact duplicate transactions and operational keys after approval,
+retain sparse-date and target-treatment consequences, and keep future outcomes
+out of development inputs rather than treating missing dates as proven zeros.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from copy import deepcopy
 import unittest

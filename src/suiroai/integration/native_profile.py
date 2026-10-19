@@ -1,6 +1,11 @@
 """Private policy for the exercised Codex0.163 macOS tabular Data worker.
 
 No task, analytical, orchestration, or alternate execution runtime logic.
+
+Check deployment compatibility and isolation for the demonstrated native
+worker before dispatch; experimental host settings remain deployment-specific.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 from hashlib import sha256
 import json

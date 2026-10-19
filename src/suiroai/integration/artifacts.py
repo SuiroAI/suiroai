@@ -3,6 +3,11 @@
 Only explicitly released references are staged. Content and registry entries are
 rechecked on every read. Read-only files prevent accidental overwrites, not a
 malicious process running as the same OS user; host isolation is separate.
+
+Preserve task/source versions through measured file release and result
+retrieval so parent checks can inspect the exact bytes a stage consumed or wrote.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 from __future__ import annotations
 

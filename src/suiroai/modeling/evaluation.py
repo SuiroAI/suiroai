@@ -2,6 +2,12 @@
 
 These private calculation objects are not replacement DSC-24 wire contracts.
 A caller supplies prepared, availability-checked examples, never the raw sales file.
+
+Support step6 baseline evaluation and step8 comparison on matching windows,
+populations, and metrics within a finite development budget; parent review
+retains the better, worse, or equal branch decision.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

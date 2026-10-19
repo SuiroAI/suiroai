@@ -2,6 +2,12 @@
 
 Exercise immutable writes, measured reads, safe paths, and release staging
 to reject corrupted content, conflicting references, and unauthorized files.
+
+Requirement context for these component checks:
+Preserve task/source versions through measured file release and result
+retrieval so parent checks can inspect the exact bytes a stage consumed or wrote.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 import copy
 import hashlib

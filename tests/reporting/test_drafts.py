@@ -2,6 +2,13 @@
 
 Check evidence-bound success and failure narratives, quantity and name
 fidelity, focused humanization, and authorization of report creation.
+
+Requirement context for these component checks:
+Present approved quantities with concise EDA/feature findings and material
+limitations in one report. Preserve synthetic provenance and distinct capability,
+validation-failure, and execution-failure explanations without inventing orders.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 from copy import deepcopy
 import json

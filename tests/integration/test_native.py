@@ -2,6 +2,12 @@
 
 Exercise native request construction, response parsing, interruption,
 deadlines, and protocol failures with a fake transport.
+
+Requirement context for these component checks:
+Support invocation and evidence retrieval through the demonstrated native
+Codex/Data interface, with inspectable timeout and invalid-code outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 from __future__ import annotations
 

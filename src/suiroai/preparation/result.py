@@ -2,6 +2,11 @@
 
 Bind measured preparation payloads and source references into a validated
 result record, preserving the exact stage request and parent review.
+
+Retain preparation findings, treatment decisions, source lineage, and checked
+feature artifacts as internal evidence for parent review and final reporting.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from copy import deepcopy
 

@@ -7,6 +7,12 @@ DSC-31 restocking demonstration is established by a passing test.
 
 Component examples are loaded by explicit path under unique module names;
 their TestCases are never imported into this module or collected as this suite.
+
+Requirement context for these component checks:
+Check approval, stage ordering, bounded recovery, and terminal explanations
+for the single retail task without treating mock seams as a recorded demo.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-56
 """
 
 from copy import deepcopy

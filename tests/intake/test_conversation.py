@@ -2,6 +2,12 @@
 
 These tests do not establish live LangChain, genuine customer consent, parent
 transition enforcement or native analytical execution acceptance.
+
+Requirement context for these component checks:
+Support step2 task presentation and version-bound step3 sign-off; corrections
+and new material inputs require a revised proposal rather than silent rerouting.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-25
 """
 from copy import deepcopy
 import hashlib

@@ -2,6 +2,12 @@
 
 The approved_execution packet is an invented shared-contract fixture. Hosts in
 these tests return failures only; no mocked analytical success is supplied.
+
+Requirement context for these component checks:
+Carry the already confirmed task through a bounded Codex/Data stage and retain
+measured outputs, errors, and version bindings for trusted parent checkpoints.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 from copy import deepcopy

@@ -2,6 +2,13 @@
 
 Some tests use nonmock-shaped provenance labels to verify that an explicitly
 mock LLM call remains mock. Such labels do not establish real execution evidence.
+
+Requirement context for these component checks:
+Support step7 additional features after the initial evaluation by retaining
+definitions, source fields, rationale, and prediction-time availability; keep
+the original feature set available for measured step8 comparison.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from copy import deepcopy
 from datetime import date

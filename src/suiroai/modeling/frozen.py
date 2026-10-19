@@ -2,6 +2,12 @@
 
 These private byte artifacts use DSC-26's existing ArtifactStore. The parent
 owns checkpoint authentication, access isolation, transitions and retry budgets.
+
+Support step9 scoring against the frozen model and predeclared acceptance
+rule; defect rechecks preserve that choice and cannot become holdout tuning
+or a retry with the second-best model.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

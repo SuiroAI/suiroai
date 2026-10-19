@@ -2,6 +2,13 @@
 
 Check prepared-payload parsing, forecast examples, daily coverage, and
 reserved-target construction without inferring missing-date completeness.
+
+Requirement context for these component checks:
+Connect safe preparation to evaluation without deriving daily completeness
+from sparse observations, and exclude development target horizons that cross
+into the reserved December holdout.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from datetime import date
 import json

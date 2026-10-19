@@ -3,6 +3,13 @@
 The shared examples describe invented runs. Bytes are actually registered in the
 immutable store; passing these tests never establishes a completed customer run.
 No external customer transport is used.
+
+Requirement context for these component checks:
+Gate delivery on independent quantity/claim checks and current parent
+authority, then verify the exact delivered artifact without adding a final
+customer sign-off or concealing a failed run as successful restocking.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from __future__ import annotations
 

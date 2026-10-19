@@ -2,6 +2,11 @@
 
 Decisions are supplied by DSC-10. Draft records do not authenticate their own
 parent fields; StageAdapter's trusted review still must adopt those claims.
+
+Retain measured baseline, comparison, feature, and final-validation evidence
+with immutable references so the parent can review each required model gate.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

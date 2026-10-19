@@ -3,6 +3,11 @@
 
 Compare supplied sales and synthetic operational files with their manifests,
 then report hashes, observed source profiles, and reconciliation checks.
+
+Support source/dictionary reconciliation for the single retail fixture,
+preserving observed, synthetic, and unresolved source facts separately.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-24
 """
 from __future__ import annotations
 

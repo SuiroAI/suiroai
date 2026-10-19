@@ -4,6 +4,12 @@ These engineering checks exercise real component functions with invented bytes.
 They cannot establish DSC-31 demonstration or real-run acceptance. Expected
 quantities below are hand calculations, not values returned by the producer.
 Only fixture builders are imported from component tests; no TestCase is imported.
+
+Requirement context for these component checks:
+Check the selected-case preparation, forecast, quantity, and report seams
+against fixed expected outcomes, including stale evidence and affected rechecks.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-56
 """
 from copy import deepcopy
 import csv

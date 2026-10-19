@@ -2,6 +2,12 @@
 
 Compute comparable forecast errors and direction-aware candidate comparisons
 while enforcing population, aggregation, and same-product unit constraints.
+
+Support comparable baseline/candidate evidence using per-series error and
+bias, with WAPE restricted to meaningful positive-denominator pooled units.
+Forecast accuracy alone does not establish stockout, profit, or cost benefits.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from collections import defaultdict
 from statistics import fmean

@@ -2,6 +2,12 @@
 
 All source facts, parent decisions and approvals here are explicit mock fixtures.
 Passing these checks is component evidence, never real retail/native acceptance.
+
+Requirement context for these component checks:
+Retain measured baseline, comparison, feature, and final-validation evidence
+with immutable references so the parent can review each required model gate.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from copy import deepcopy
 from dataclasses import replace

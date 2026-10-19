@@ -3,6 +3,12 @@
 An optional focused humanizer selects the ordering of complete, evidence-bound
 sentences. Its output cannot add, omit or rewrite a claim. A LangChain structured
 output callable can implement this interface; no host/API is assumed here.
+
+Present approved quantities with concise EDA/feature findings and material
+limitations in one report. Preserve synthetic provenance and distinct capability,
+validation-failure, and execution-failure explanations without inventing orders.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 from __future__ import annotations
 

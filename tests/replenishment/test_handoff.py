@@ -2,6 +2,12 @@
 
 Exercise immutable reference resolution, permissions, source binding, and
 optional product-name mappings before candidate arithmetic is accepted.
+
+Requirement context for these component checks:
+Bind the candidate and report to the approved inputs and measured evidence
+so quantities and claims remain traceable before humanization.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 from copy import deepcopy
 import csv

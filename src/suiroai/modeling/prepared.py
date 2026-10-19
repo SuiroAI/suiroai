@@ -2,6 +2,12 @@
 
 Completeness and target availability are evidence, not inferred from date
 coverage. Current sparse DSC-27 output cannot support complete demand labels.
+
+Connect safe preparation to evaluation without deriving daily completeness
+from sparse observations, and exclude development target horizons that cross
+into the reserved December holdout.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

@@ -2,6 +2,12 @@
 
 Build versioned mock records and reference graphs for approved execution,
 missing inputs, successful analysis, and the two terminal failure outcomes.
+
+Requirement context for these component checks:
+Share versioned input, task, approval, output, and evidence interfaces so
+components preserve the same confirmed retail task and distinguish outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-24
 """
 from __future__ import annotations
 

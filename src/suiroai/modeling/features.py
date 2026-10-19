@@ -5,6 +5,12 @@ that summary bytes were computed from the permitted preparation partition in the
 supported host. Digests bind those bytes; date metadata cannot prove their origin.
 The private summary format deliberately excludes arbitrary prose, paths and raw
 rows. Shared feature definitions are validated unchanged against DSC-24's schema.
+
+Support step7 additional features after the initial evaluation by retaining
+definitions, source fields, rationale, and prediction-time availability; keep
+the original feature set available for measured step8 comparison.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from __future__ import annotations
 

@@ -2,6 +2,11 @@
 
 Expose the modeling component helpers for development evaluation, additional
 features, immutable candidate selection, and frozen final validation.
+
+Keep initial evaluation, additional LLM features, bounded comparison, and
+frozen unseen validation distinct within the same approved analytical task.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from .core import CUTOFF, Example, ModelingError, Prediction, Window
 from .evaluation import CandidateSpec, RollingFold, compare_candidates, evaluate_initial

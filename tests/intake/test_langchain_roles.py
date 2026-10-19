@@ -2,6 +2,12 @@
 
 Check structured role schemas, prompt composition, and invocation behavior
 using a fake structured model rather than a live provider.
+
+Requirement context for these component checks:
+Support plain-language task understanding and presentation, including specific
+material gaps, without asking customers to choose statistical methods.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-25
 """
 from copy import deepcopy
 import json

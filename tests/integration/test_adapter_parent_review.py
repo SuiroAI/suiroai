@@ -2,6 +2,12 @@
 
 All approvals, measurements and decisions below are the contract owner's
 invented component fixtures. A completed mock host is never real Data evidence.
+
+Requirement context for these component checks:
+Carry the already confirmed task through a bounded Codex/Data stage and retain
+measured outputs, errors, and version bindings for trusted parent checkpoints.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 from copy import deepcopy

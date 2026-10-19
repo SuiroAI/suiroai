@@ -2,6 +2,12 @@
 
 Pass produced mock candidates to the independent verifier and compare
 source-based recalculation for supported quantities and withheld cases.
+
+Requirement context for these component checks:
+Check the producer-to-verifier handoff so candidate arithmetic is independently
+reviewable before parent quantity approval and report humanization.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 import csv
 import io

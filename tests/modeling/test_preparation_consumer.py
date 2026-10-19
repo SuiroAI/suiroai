@@ -2,6 +2,13 @@
 
 This exercises genuine component code, not native Data execution, customer data,
 complete sales coverage or approval of the blocked derived-source release path.
+
+Requirement context for these component checks:
+Connect safe preparation to evaluation without deriving daily completeness
+from sparse observations, and exclude development target horizons that cross
+into the reserved December holdout.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from copy import deepcopy
 from datetime import date

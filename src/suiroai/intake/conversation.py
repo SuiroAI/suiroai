@@ -2,6 +2,11 @@
 
 Build version-bound proposals, presentations, and customer response records
 so the approved handoff preserves the request and measured supplied inputs.
+
+Support step2 task presentation and version-bound step3 sign-off; corrections
+and new material inputs require a revised proposal rather than silent rerouting.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-25
 """
 from __future__ import annotations
 

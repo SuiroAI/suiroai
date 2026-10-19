@@ -2,6 +2,13 @@
 
 Attempt forged authority, stale bindings, and stage-permission bypasses
 to verify that untrusted or inconsistent evidence cannot advance the workflow.
+
+Requirement context for these component checks:
+Enforce the confirmed-task boundary and internal evidence checkpoints without
+adding routine customer gates; missing facts, runtime failures, and measured
+validation failures retain distinct bounded review and terminal paths.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-10
 """
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone

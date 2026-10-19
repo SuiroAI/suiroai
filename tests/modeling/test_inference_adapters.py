@@ -2,6 +2,12 @@
 
 Check saved-model inference and its original or augmented feature adapters
 against synthetic inputs while preserving cutoff and population constraints.
+
+Requirement context for these component checks:
+Retain the November 30 forecast from information available at its origin;
+December outcomes may score the saved forecast but cannot change its inputs.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from datetime import date
 from pathlib import Path

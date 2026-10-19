@@ -3,6 +3,11 @@
 Uses experimental named-profile selection in installed Codex, not a new runtime.
 Deterministic controls run first; at most one 90-second synthetic Data turn follows.
 Scope is a tabular worker with native view_image, browser, apps and connectors off.
+
+Investigate the permissions and data-isolation boundary of the demonstrated
+native host with bounded controls and retained evidence of observed limits.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 import argparse
 from hashlib import sha256

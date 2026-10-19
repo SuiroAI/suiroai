@@ -2,6 +2,12 @@
 
 These tests validate in-memory mock interface graphs. They do not execute an
 analytical pipeline, authenticate evidence or establish integration acceptance.
+
+Requirement context for these component checks:
+Support the locked retail contract by checking task/input identity, provenance,
+development/holdout separation, and distinct missing-input or failure outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-24
 """
 from __future__ import annotations
 

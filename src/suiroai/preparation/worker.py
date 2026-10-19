@@ -4,6 +4,12 @@ The controller runs partition_sales in the preparation stage before releasing
 development bytes to a model. prepare_development never receives December rows.
 Neither function starts a host or grants execution authority. Both require the
 trusted caller's exact-request permit, including in explicitly mocked tests.
+
+Reconcile exact duplicate transactions and operational keys after approval,
+retain sparse-date and target-treatment consequences, and keep future outcomes
+out of development inputs rather than treating missing dates as proven zeros.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from __future__ import annotations
 

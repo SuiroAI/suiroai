@@ -3,6 +3,12 @@
 Readers and review callbacks are trusted application code, never worker JSON.
 There is intentionally no default interpretation of arbitrary forecast/prose
 payloads and no autonomous workflow, customer consent, or external transport.
+
+Gate delivery on independent quantity/claim checks and current parent
+authority, then verify the exact delivered artifact without adding a final
+customer sign-off or concealing a failed run as successful restocking.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from __future__ import annotations
 

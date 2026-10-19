@@ -12,6 +12,12 @@ an offered narrower task must be explicit, never silently replace the goal.
 It must also reject statistical-method questions, invented quantities, false
 access/capability claims and hidden synthetic provenance. Evidence-map keys are
 (artifact_id, version, sha256, provenance). There is no keyword-based truth pass.
+
+Check specific supported capability and minimum missing facts for the current
+request, preserving the distinction between a blocked task and completed
+restocking without fabricating quantities or silently replacing the objective.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from __future__ import annotations
 

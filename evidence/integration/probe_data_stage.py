@@ -6,6 +6,11 @@ or automatic DSC-26 acceptance. It never installs plugins or grants permissions.
 Native plugin mention syntax is documented at:
 https://learn.chatgpt.com/docs/reference/commands
 The mention is a host plugin identity, not an external Data execution API.
+
+Collect bounded real invocation and artifact-retrieval evidence for the
+supported Codex/Data boundary using an isolated synthetic engineering task.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 import argparse

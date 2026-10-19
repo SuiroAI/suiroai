@@ -2,6 +2,11 @@
 
 Customer stages use the exercised named permission profile. Engineering mode
 without released_root retains legacy synthetic-only probe compatibility.
+
+Support invocation and evidence retrieval through the demonstrated native
+Codex/Data interface, with inspectable timeout and invalid-code outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 from __future__ import annotations
 

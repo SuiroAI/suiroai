@@ -2,6 +2,13 @@
 
 Exercise immutable freeze bundles, reserved-target scoring, acceptance gates,
 and bounded defect rechecks against explicitly mock evidence.
+
+Requirement context for these component checks:
+Support step9 scoring against the frozen model and predeclared acceptance
+rule; defect rechecks preserve that choice and cannot become holdout tuning
+or a retry with the second-best model.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from datetime import date
 import json

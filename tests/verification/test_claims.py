@@ -2,6 +2,12 @@
 
 Exercise trusted claim and whole-narrative review against resolved bytes,
 rejecting false statements, missing evidence, and invalid reviewer responses.
+
+Requirement context for these component checks:
+Check the final list, EDA/feature statements, and limitations against resolved
+evidence, including illustrative synthetic provenance and truthful failures.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from copy import deepcopy
 

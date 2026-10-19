@@ -2,6 +2,11 @@
 
 Dispatch retains the existing approval chain and uses the reviewed native
 release/output boundary. Engineering evidence never authorizes a customer task.
+
+Carry the already confirmed task through a bounded Codex/Data stage and retain
+measured outputs, errors, and version bindings for trusted parent checkpoints.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 
 from __future__ import annotations
@@ -84,7 +89,7 @@ def _check_snapshot():
         root / "schema/retail-contract.schema.json":
             "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
         root / "validation.py":
-            "7d407fdc73454c9942707609df4abea64aa30f036d436ed95cc87d6b305cddf3",
+            "1acec6fab46d547fab4ae7b3577d7216f8fc186c4848c3f250afeeab25b03e53",
     }
     if VERSION != "0.1.0-draft.3" or any(
             hashlib.sha256(path.read_bytes()).hexdigest() != sha

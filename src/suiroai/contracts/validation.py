@@ -3,6 +3,11 @@
 Validate individual records and linked handoffs against the retail schema
 and semantic rules for approvals, evidence, chronology, and terminal outcomes.
 Provide canonical reference digests and a command to check example bundles.
+
+Support the locked retail contract by checking task/input identity, provenance,
+development/holdout separation, and distinct missing-input or failure outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-24
 """
 from __future__ import annotations
 

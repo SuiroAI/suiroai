@@ -2,6 +2,12 @@
 
 Callbacks belong to the trusted intake/verifier process, never worker JSON.
 The shared DSC-24 records and DSC-26 adapter remain the only transport contracts.
+
+Enforce the confirmed-task boundary and internal evidence checkpoints without
+adding routine customer gates; missing facts, runtime failures, and measured
+validation failures retain distinct bounded review and terminal paths.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-10
 """
 from __future__ import annotations
 

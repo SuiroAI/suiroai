@@ -3,6 +3,12 @@
 Only immutable saved forecast bytes and as-of operational files are consumed.
 Adapters normalize file formats; they must not train, refit or allocate an
 aggregate forecast uniformly across days. DSC-30 independently recalculates.
+
+Calculate net purchases over the frozen forecast protection period from
+usable stock, timely receipts, and safety rules; clamp at zero and apply
+positive-order minimums/multiples without double-counting on-order summaries.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-29
 """
 from __future__ import annotations
 

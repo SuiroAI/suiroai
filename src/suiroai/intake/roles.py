@@ -2,6 +2,11 @@
 
 Build structured understanding and presentation callables with narrowly
 scoped prompts for proposing the task and explaining it to the customer.
+
+Support plain-language task understanding and presentation, including specific
+material gaps, without asking customers to choose statistical methods.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-25
 """
 from copy import deepcopy
 

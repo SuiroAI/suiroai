@@ -2,6 +2,13 @@
 
 Check metric aggregation and candidate comparisons against known numerical
 answers, including persisted training-only preprocessing and model loading.
+
+Requirement context for these component checks:
+Support comparable baseline/candidate evidence using per-series error and
+bias, with WAPE restricted to meaningful positive-denominator pooled units.
+Forecast accuracy alone does not establish stockout, profit, or cost benefits.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from datetime import date
 import unittest

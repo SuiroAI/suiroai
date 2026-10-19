@@ -2,6 +2,11 @@
 
 Calendar values are known in advance. Identifiers are encoded by a frozen
 training-fold vocabulary, never by a full-development/holdout fit.
+
+Support initial features before model evaluation using prediction-time
+information and training-fold preprocessing, without leaking future outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from dataclasses import dataclass
 from datetime import date, timedelta

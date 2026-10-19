@@ -1,6 +1,12 @@
 """Export inspectable synthetic calculations; never a customer acceptance run.
 
 Run from project root: PYTHONPATH=src python3 tests/modeling/export_component_evidence.py
+
+Requirement context for these component checks:
+Retain inspectable synthetic baseline, comparison, and frozen-validation
+calculations while distinguishing component evidence from real task execution.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 import json
 from pathlib import Path

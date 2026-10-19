@@ -2,6 +2,13 @@
 
 Check current submission and proposal bindings, accessible source bytes,
 and independent semantic review before missing-input guidance can proceed.
+
+Requirement context for these component checks:
+Check specific supported capability and minimum missing facts for the current
+request, preserving the distinction between a blocked task and completed
+restocking without fabricating quantities or silently replacing the objective.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-30
 """
 from copy import deepcopy
 import hashlib

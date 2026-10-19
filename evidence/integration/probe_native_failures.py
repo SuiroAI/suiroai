@@ -2,6 +2,11 @@
 
 Starts at most three real Codex/Data turns, each bounded to 60 seconds, plus
 one zero-time predispatch check that never invokes a model or depletes quota.
+
+Collect inspectable timeout, invalid-code, and cancellation evidence for the
+native boundary while keeping engineering probes distinct from customer runs.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 import argparse
 from dataclasses import asdict

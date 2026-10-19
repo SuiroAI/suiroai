@@ -2,6 +2,12 @@
 
 Check initial calendar and identifier features, fold-fitted vocabularies,
 daily grain, and target availability with explicit synthetic inputs.
+
+Requirement context for these component checks:
+Support initial features before model evaluation using prediction-time
+information and training-fold preprocessing, without leaking future outcomes.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from copy import deepcopy
 import unittest

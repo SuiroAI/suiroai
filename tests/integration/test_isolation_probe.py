@@ -2,6 +2,12 @@
 
 Exercise bounded plugin discovery, permission-profile projections, control
 requests, and diagnostic handling using deterministic local test doubles.
+
+Requirement context for these component checks:
+Check bounded discovery and isolation-control requests with mock replies;
+these checks support inspectable failures without proving native isolation.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-26
 """
 import importlib.util
 import io

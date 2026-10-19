@@ -2,6 +2,13 @@
 
 Exercise bounded feature proposals and materialization, rejecting malformed
 definitions, forbidden information, and inconsistent initial feature sets.
+
+Requirement context for these component checks:
+Support step7 additional features after the initial evaluation by retaining
+definitions, source fields, rationale, and prediction-time availability; keep
+the original feature set available for measured step8 comparison.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-28
 """
 from copy import deepcopy
 from datetime import date

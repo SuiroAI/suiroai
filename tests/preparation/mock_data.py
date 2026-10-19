@@ -2,6 +2,12 @@
 
 Build small sales and operational fixtures, measured artifacts, and exact
 request permits for deterministic preparation component tests.
+
+Requirement context for these component checks:
+Supply controlled transaction-grain and operational inputs for preparation
+checks without replacing the actual selected-case source evidence.
+
+Linear: https://linear.app/gr3enarr0w/issue/DSC-27
 """
 from copy import deepcopy
 import json
