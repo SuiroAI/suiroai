@@ -1,0 +1,9 @@
+{
+  "label": "Interpretation sensitivity only, not a revised model selection or scored comparison",
+  "alternate_target": "Include positive returned-only status as original fulfilled units, retaining selected mean182 and all operational rules",
+  "order_units": 875,
+  "changed_order_rows": 3,
+  "positive_order_rows": 111,
+  "timing_flags": 65,
+  "consequence": "Target interpretation uncertainty does not justify crediting returns into usable stock; compare small order changes against frozen main recommendation."
+}

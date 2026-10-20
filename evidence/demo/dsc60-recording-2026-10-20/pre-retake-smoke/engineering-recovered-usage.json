@@ -1,0 +1,175 @@
+{
+  "format": "dsc60-engineering-recovered-usage-v1",
+  "recovered_at": "2026-10-20T20:15:27.742770+00:00",
+  "purpose": "Historical detector+analysis numeric recovery for a new writer smoke; not three fresh app calls or a customer bill.",
+  "privacy": "Only whitelisted usage integers retained; no raw message/tool/reasoning/instruction/account payloads copied.",
+  "prior_receipts_modified": false,
+  "stages": [
+    {
+      "stage": "detector",
+      "thread_id": "01a15add-3a59-7b21-bd9b-38fef693ffdc",
+      "turn_id": "01a15add-3d38-7d41-a951-42dc5db8050f",
+      "recovery_kind": "historical_numeric_recovery_not_fresh_instrumentation",
+      "rollout_path": "/Users/ceverson/.codex/sessions/2026/10/20/rollout-2026-10-20T15-50-10-01a15add-3a59-7b21-bd9b-38fef693ffdc.jsonl",
+      "rollout_sha256": "32d4f53057e563cb78f3b04a40c0d8f68bc84e357d5acd5221ecc35745d5826e",
+      "rollout_bytes": 455194,
+      "binding_checks": {
+        "session_thread_exact": true,
+        "single_turn_context_exact": true,
+        "usage_active_turn_exact": true,
+        "cli_version": "0.163.0",
+        "model": "gpt-6.1-sol"
+      },
+      "model_usage": {
+        "format": "dsc60-native-usage-v1",
+        "available": true,
+        "counts": {
+          "input_units": 148906,
+          "cached_input_units": 126720,
+          "cache_write_input_units": 0,
+          "output_units": 1661,
+          "reasoning_output_units": 320,
+          "total_units": 150567
+        },
+        "source": "historical_rollout_event_msg_cumulative_total_recovery",
+        "model_context_capacity_units": 475000,
+        "max_observed_request_input_units": 30515,
+        "snapshot_count": 7,
+        "thread_id": "01a15add-3a59-7b21-bd9b-38fef693ffdc",
+        "turn_id": "01a15add-3d38-7d41-a951-42dc5db8050f",
+        "rejected_update_count": 0,
+        "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+      },
+      "api_equivalent_estimate": {
+        "format": "dsc60-api-equivalent-estimate-v1",
+        "pricing": {
+          "model": "gpt-6.1-sol",
+          "as_of": "2026-10-20",
+          "currency": "USD",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "per_million_units": {
+            "input": "2.00",
+            "cached_input": "0.10",
+            "cache_write_input": "2.50",
+            "output": "10.00"
+          },
+          "fast_multiplier": "2",
+          "long_context_input_threshold": 272000,
+          "long_context_input_and_cache_multiplier": "2",
+          "long_context_output_multiplier": "1.5"
+        },
+        "model": "gpt-6.1-sol",
+        "actual_charge": false,
+        "estimated_api_equivalent_usd": "0.073654",
+        "assumptions": [
+          "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+          "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+        ],
+        "limits": [
+          "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+          "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+        ],
+        "status": "estimated",
+        "service_tier_scenario": "standard",
+        "context_pricing_scenario": "short",
+        "component_usd": {
+          "uncached_input": "0.044372",
+          "cached_input": "0.012672",
+          "cache_write_input": "0.00",
+          "output_including_reasoning": "0.01661"
+        },
+        "usage_counts": {
+          "input_units": 148906,
+          "cached_input_units": 126720,
+          "cache_write_input_units": 0,
+          "output_units": 1661,
+          "reasoning_output_units": 320,
+          "total_units": 150567
+        }
+      }
+    },
+    {
+      "stage": "analysis",
+      "thread_id": "01a15ade-813a-7f41-a3cd-a427f2376b39",
+      "turn_id": "01a15ade-84a5-77f2-b708-55a23c90e449",
+      "recovery_kind": "historical_numeric_recovery_not_fresh_instrumentation",
+      "rollout_path": "/Users/ceverson/.codex/sessions/2026/10/20/rollout-2026-10-20T15-51-34-01a15ade-813a-7f41-a3cd-a427f2376b39.jsonl",
+      "rollout_sha256": "06f2ceeef3af076e0ac40f0ffc34051c15542205c2dcc22ddbb1a31388cbf599",
+      "rollout_bytes": 961864,
+      "binding_checks": {
+        "session_thread_exact": true,
+        "single_turn_context_exact": true,
+        "usage_active_turn_exact": true,
+        "cli_version": "0.163.0",
+        "model": "gpt-6.1-sol"
+      },
+      "model_usage": {
+        "format": "dsc60-native-usage-v1",
+        "available": true,
+        "counts": {
+          "input_units": 793841,
+          "cached_input_units": 728576,
+          "cache_write_input_units": 0,
+          "output_units": 22147,
+          "reasoning_output_units": 4402,
+          "total_units": 815988
+        },
+        "source": "historical_rollout_event_msg_cumulative_total_recovery",
+        "model_context_capacity_units": 475000,
+        "max_observed_request_input_units": 71970,
+        "snapshot_count": 16,
+        "thread_id": "01a15ade-813a-7f41-a3cd-a427f2376b39",
+        "turn_id": "01a15ade-84a5-77f2-b708-55a23c90e449",
+        "rejected_update_count": 0,
+        "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+      },
+      "api_equivalent_estimate": {
+        "format": "dsc60-api-equivalent-estimate-v1",
+        "pricing": {
+          "model": "gpt-6.1-sol",
+          "as_of": "2026-10-20",
+          "currency": "USD",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "per_million_units": {
+            "input": "2.00",
+            "cached_input": "0.10",
+            "cache_write_input": "2.50",
+            "output": "10.00"
+          },
+          "fast_multiplier": "2",
+          "long_context_input_threshold": 272000,
+          "long_context_input_and_cache_multiplier": "2",
+          "long_context_output_multiplier": "1.5"
+        },
+        "model": "gpt-6.1-sol",
+        "actual_charge": false,
+        "estimated_api_equivalent_usd": "0.424858",
+        "assumptions": [
+          "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+          "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+        ],
+        "limits": [
+          "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+          "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+        ],
+        "status": "estimated",
+        "service_tier_scenario": "standard",
+        "context_pricing_scenario": "short",
+        "component_usd": {
+          "uncached_input": "0.13053",
+          "cached_input": "0.0728576",
+          "cache_write_input": "0.00",
+          "output_including_reasoning": "0.22147"
+        },
+        "usage_counts": {
+          "input_units": 793841,
+          "cached_input_units": 728576,
+          "cache_write_input_units": 0,
+          "output_units": 22147,
+          "reasoning_output_units": 4402,
+          "total_units": 815988
+        }
+      }
+    }
+  ]
+}

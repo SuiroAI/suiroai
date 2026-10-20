@@ -1,0 +1,66 @@
+{
+  "purpose": "Prespecified secondary checks, not a new candidate selection; initial primary and baseline unchanged.",
+  "annual_seasonality": {
+    "2022": {
+      "10": 1.1195185338317315,
+      "11": 1.432121370651321,
+      "12": 1.538375536860935
+    },
+    "2023": {
+      "10": 0.8977147216560581,
+      "11": 1.5088441777464014,
+      "12": 1.411684107048647
+    },
+    "2024": {
+      "10": 1.0452151421566027,
+      "11": 1.5244213987605917,
+      "12": 1.4199994288441844
+    }
+  },
+  "event_sparsity": {
+    "at_least_one_sale_day_per_28_days": {
+      "pooled_ridge": {
+        "MAE": 1.20295777397127,
+        "n": 1199
+      },
+      "recent_91d": {
+        "MAE": 1.1982421248476294,
+        "n": 1199
+      },
+      "sba_croston": {
+        "MAE": 1.1705743041252643,
+        "n": 1199
+      }
+    },
+    "fewer_than_one_sale_day_per_28_days": {
+      "pooled_ridge": {
+        "MAE": 0.7602204785195756,
+        "n": 1489
+      },
+      "recent_91d": {
+        "MAE": 0.6824921217130754,
+        "n": 1489
+      },
+      "sba_croston": {
+        "MAE": 0.6874777098373239,
+        "n": 1489
+      }
+    }
+  },
+  "order_arithmetic": {
+    "unrounded_positive_need_units": 273.3123983962582,
+    "ordered_units": 877,
+    "rounding_and_minimum_increment_units": 603.6876016037418,
+    "supplied_total_safety_stock_units": 1544,
+    "usable_stock_total": 2869,
+    "incoming_total": 927
+  },
+  "checks_passed": [
+    "Identical candidate evaluation targets/populations/origins",
+    "All comparison outcome dates <= November 30",
+    "Primary scores recomputed from prediction rows",
+    "Full-precision independent order arithmetic agrees across all 336 rows",
+    "Nonnegative integral unit quantities and pack multiples",
+    "CSV readback and SHA-256 match exact three-key result manifest"
+  ]
+}

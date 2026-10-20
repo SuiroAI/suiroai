@@ -1,0 +1,18 @@
+{
+  "version":1,
+  "status":"Prospectively declared before any candidate scores; all comparisons development-only",
+  "target":"Sum strictly positive quantities with normalized status completed or shipped; include return-flagged fulfilled rows because these represent gross fulfilled demand; exclude returned-only status, cancelled, processing and nonpositive quantities. Deduplicate identical rows; conflicting transaction identifiers fail validation.",
+  "returns_sensitivity":"Recompute final order quantities excluding return-flagged fulfilled rows; never add returns to usable inventory.",
+  "missing_dates":"Global ledger contains transactions on every date 2022-01-01 to 2025-11-30. Build a calendar of recorded sales per supplied pair, setting absence to zero recorded transactions conditional on ledger capture, not zero latent demand. No fabricated store-open history. Report sparse frequency and store-date gaps. Routine rejects global missing calendar days within its training range.",
+  "population":"Same 336 supplied policy/stock pairs for every candidate and origin, all observed in pre-origin training; present-day assortment defines a fixed retrospective population and does not establish historical assortment availability.",
+  "origins":["2025-09-28","2025-10-05","2025-10-12","2025-10-19","2025-10-26","2025-11-02","2025-11-09","2025-11-16"],
+  "training":"Each origin uses only dates through origin. Recent means use last 56 or 182 calendar days. Poisson uses at most 156 complete Sunday-ending weeks through origin. No candidate uses future transactions or historical operational snapshots.",
+  "evaluation_dates":"2025-09-29 through 2025-11-30 depending on origin and horizon; no December",
+  "horizons":{"primary":7,"secondary":"Per pair supplier lead days plus review days, 8 to 14 days. Current rules define retrospective horizon lengths only, not historical inventory simulations."},
+  "baseline":"56-calendar-day pair mean times horizon; analytical baseline, not customer incumbent",
+  "candidates":[{"name":"mean56","rationale":"Transparent recent eight-week analytical baseline"},{"name":"mean182","rationale":"Longer 26-week mean stabilizes sparse demand; no seasonal extrapolation"},{"name":"poisson","rationale":"Penalized Poisson regression with sparse pair intercepts, calendar-month effects and linear year trend, at most 156 weeks. alpha=0.01, max_iter=300, tol=0.00001; no search."}],
+  "primary_metric":{"name":"MAE of cumulative next-seven-day fulfilled units","unit":"product units per product at a store per origin","weighting":"Equal weight to each of 336 pairs and eight origins; no prices or cost weights"},
+  "selection_rule":"Choose lowest pooled primary MAE. Numerical tie within 1e-6 chooses simpler model in order mean56, mean182, poisson. No claimed business-significance threshold. Secondary coverage MAE and signed bias qualify selection, do not replace primary. No later candidate additions planned.",
+  "secondary_diagnostics":["Coverage-horizon MAE and bias","Primary MAE by origin and store","Sparse-frequency and seasonal stability","Per-origin primary relative gain sensitivity","Empirical error quantiles, descriptive not calibrated future intervals","Final return-treatment and +/-25% demand quantity sensitivity"],
+  "limitations":"Recorded fulfillment is stock constrained and uses final supplied statuses whose old change times are unknown. These are frozen-label development comparisons, not proven live as-of performance. Overlapping coverage horizons are not independent samples. No success gate closure or independent test claim."
+}

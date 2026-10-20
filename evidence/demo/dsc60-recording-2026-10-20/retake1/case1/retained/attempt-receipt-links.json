@@ -1,0 +1,931 @@
+{
+  "format": "dsc59-demo-attempt-v2",
+  "status": "analysis_completed",
+  "message": "Analysis complete. Your restocking list is ready to download.",
+  "analytical_success": false,
+  "verified_report_available": false,
+  "submission_ref": {
+    "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:submission",
+    "provenance": "supplied",
+    "sha256": "7849583f3ea34333f655e4c42f769347d3b4c4f121faed5e0fbb64f8ef1fbc32",
+    "version": 4
+  },
+  "proposal_ref": {
+    "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:proposal",
+    "provenance": "derived",
+    "sha256": "dc435945ebb1825817d612056f993a0e6ea9cd995c9042b91827d35cfd511d5f",
+    "version": 4
+  },
+  "approval_ref": {
+    "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:approval",
+    "provenance": "derived",
+    "sha256": "9405ca444ba28370e440bc6f7ce87155a9992d485db47dc9a9966a3243c69e1a",
+    "version": 4
+  },
+  "error": null,
+  "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/attempt-9133e1e14c844a469fbf2c5d94459cef.json",
+  "source_sha256": "2a7c74491e39df15b1f4753249a4dd7b85bc940bb8fd4317f405f1ff4934d038",
+  "projection_only": true,
+  "omission_reason": "Full native/tool item payloads remain local and are hash-indexed; they can contain raw retail previews.",
+  "stage_result": {
+    "format": "dsc59-data-investigation-v1",
+    "scope": "development_investigation",
+    "submission_ref": {
+      "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:submission",
+      "provenance": "supplied",
+      "sha256": "7849583f3ea34333f655e4c42f769347d3b4c4f121faed5e0fbb64f8ef1fbc32",
+      "version": 4
+    },
+    "proposal_ref": {
+      "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:proposal",
+      "provenance": "derived",
+      "sha256": "dc435945ebb1825817d612056f993a0e6ea9cd995c9042b91827d35cfd511d5f",
+      "version": 4
+    },
+    "approval_ref": {
+      "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:approval",
+      "provenance": "derived",
+      "sha256": "9405ca444ba28370e440bc6f7ce87155a9992d485db47dc9a9966a3243c69e1a",
+      "version": 4
+    },
+    "released_files": [
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:policy:0",
+          "provenance": "supplied",
+          "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "version": 4
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "ordering_policy.csv",
+        "relative_path": "input-1.csv",
+        "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "released_bytes": 19279,
+        "source_role": "ordering_policy"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:receipts:1",
+          "provenance": "supplied",
+          "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "version": 4
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "inbound_deliveries.csv",
+        "relative_path": "input-2.csv",
+        "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "released_bytes": 10740,
+        "source_role": "inbound_ledger"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:inventory:2",
+          "provenance": "supplied",
+          "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "version": 4
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "inventory_position.csv",
+        "relative_path": "input-3.csv",
+        "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "released_bytes": 18799,
+        "source_role": "usable_stock"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:sales:3",
+          "provenance": "supplied",
+          "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+          "version": 4
+        },
+        "controller_lineage_ref": {
+          "artifact_id": "demo-investigation-lineage-7114cd2552bb4308b3faf4031aa66d42",
+          "provenance": "derived",
+          "sha256": "1e1d57b5211c1ef9d19adb433781eefc4b9f7d64a3e5375818fb46451e8c0983",
+          "version": 1
+        },
+        "development_partition": true,
+        "original_name": "Sales_transactions_2022_2025.csv",
+        "relative_path": "input-4.csv",
+        "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+        "released_bytes": 5006997,
+        "source_role": "transactions"
+      }
+    ],
+    "call_trace": {
+      "dispatch_status": "returned",
+      "format": "dsc60-native-call-trace-v1",
+      "model_usage": {
+        "available": true,
+        "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+        "counts": {
+          "cache_write_input_units": 0,
+          "cached_input_units": 1160192,
+          "input_units": 1228896,
+          "output_units": 22776,
+          "reasoning_output_units": 3082,
+          "total_units": 1251672
+        },
+        "format": "dsc60-native-usage-v1",
+        "max_observed_request_input_units": 74240,
+        "model_context_capacity_units": 475000,
+        "rejected_update_count": 0,
+        "snapshot_count": 23,
+        "source": "native_thread_usage_cumulative_total",
+        "thread_id": "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+        "turn_id": "01a15afa-5207-74a1-acf3-6760aa927f79"
+      },
+      "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native",
+      "native_evidence_files": [
+        {
+          "bytes": 2308,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native/native-bootstrap.jsonl",
+          "sha256": "88059d15e4aed42188f262f1f2d395e4c6a6519c65eec1b7a99587a1496a2bb8"
+        },
+        {
+          "bytes": 1941665,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native/native-rpc.jsonl",
+          "sha256": "f5cc48bb1da36a386ac29d039e32eaf1ff0ac277e9cf7648b42c0231a52f88be"
+        },
+        {
+          "bytes": 410076,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native/native-run.json",
+          "sha256": "f7a46565db17b01761da3a0b928db55ce53782b46e022996d0892bbf6a8abbb1"
+        }
+      ],
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+        "turn_id": "01a15afa-5207-74a1-acf3-6760aa927f79"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/output",
+        "data_attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "effective_profile_verified": true,
+        "instruction_sources": [
+          "/Users/ceverson/.codex/AGENTS.md"
+        ],
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-7b3dbc8ff71c4c25bdc388e1a346fecb",
+        "reasoning_effort": "medium",
+        "runtime_workspace_roots": [
+          "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/output"
+        ],
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "prompt_bytes": 25010,
+      "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native-trace/outbound-prompt.txt",
+      "prompt_sha256": "ed699f2a8349ab13c22b1fba706e9a822889de1d5ab3a4997fdc2bd435ce4316",
+      "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/native-trace/call-trace.json",
+      "released_files": [
+        {
+          "approved_source_ref": {
+            "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:policy:0",
+            "provenance": "supplied",
+            "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "version": 4
+          },
+          "controller_lineage_ref": null,
+          "development_partition": false,
+          "original_name": "ordering_policy.csv",
+          "relative_path": "input-1.csv",
+          "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "released_bytes": 19279,
+          "source_role": "ordering_policy"
+        },
+        {
+          "approved_source_ref": {
+            "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:receipts:1",
+            "provenance": "supplied",
+            "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "version": 4
+          },
+          "controller_lineage_ref": null,
+          "development_partition": false,
+          "original_name": "inbound_deliveries.csv",
+          "relative_path": "input-2.csv",
+          "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "released_bytes": 10740,
+          "source_role": "inbound_ledger"
+        },
+        {
+          "approved_source_ref": {
+            "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:inventory:2",
+            "provenance": "supplied",
+            "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "version": 4
+          },
+          "controller_lineage_ref": null,
+          "development_partition": false,
+          "original_name": "inventory_position.csv",
+          "relative_path": "input-3.csv",
+          "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "released_bytes": 18799,
+          "source_role": "usable_stock"
+        },
+        {
+          "approved_source_ref": {
+            "artifact_id": "retail-67b0b2e1d5c7407fb856c30c6fda9c1a:sales:3",
+            "provenance": "supplied",
+            "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+            "version": 4
+          },
+          "controller_lineage_ref": {
+            "artifact_id": "demo-investigation-lineage-7114cd2552bb4308b3faf4031aa66d42",
+            "provenance": "derived",
+            "sha256": "1e1d57b5211c1ef9d19adb433781eefc4b9f7d64a3e5375818fb46451e8c0983",
+            "version": 1
+          },
+          "development_partition": true,
+          "original_name": "Sales_transactions_2022_2025.csv",
+          "relative_path": "input-4.csv",
+          "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+          "released_bytes": 5006997,
+          "source_role": "transactions"
+        }
+      ],
+      "requested_configuration": {
+        "attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "cli_version": "0.163.0",
+        "data_plugin": "data-analytics@openai-curated-remote",
+        "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "stage": "investigation",
+      "transport_exception": null,
+      "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+    },
+    "comparison_plan": {
+      "declared_sha256": null,
+      "exact_contract_match": false,
+      "expected_sha256": null,
+      "format": "dsc60-comparison-plan-inspection-v1",
+      "meaning": "Declared adoption only; does not verify timing, code, calculations, performance or recording readiness.",
+      "plan_ref": null,
+      "semantic_compliance_verified": false,
+      "status": "not_requested"
+    },
+    "native_outcome": "completed",
+    "error_code": null,
+    "message": null,
+    "output_error": null,
+    "thread_id": "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+    "turn_id": "01a15afa-5207-74a1-acf3-6760aa927f79",
+    "immutable_native_evidence_refs": [
+      {
+        "artifact_id": "demo-investigation-native-1ab0309ab5f84ac1a2262ad1023e0acd",
+        "provenance": "derived",
+        "sha256": "88059d15e4aed42188f262f1f2d395e4c6a6519c65eec1b7a99587a1496a2bb8",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-investigation-native-59c8390f6b9a472a9d117bae562f4548",
+        "provenance": "derived",
+        "sha256": "f5cc48bb1da36a386ac29d039e32eaf1ff0ac277e9cf7648b42c0231a52f88be",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-investigation-native-b67c96513e8c49b59aa9b4bc68ddeb75",
+        "provenance": "derived",
+        "sha256": "f7a46565db17b01761da3a0b928db55ce53782b46e022996d0892bbf6a8abbb1",
+        "version": 1
+      }
+    ],
+    "unverified_investigation_ref": {
+      "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-presented",
+      "provenance": "derived",
+      "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+      "version": 1
+    },
+    "native_original_investigation_ref": {
+      "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-native",
+      "provenance": "derived",
+      "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+      "version": 1
+    },
+    "investigation_presentation_lineage_ref": {
+      "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-presentation-lineage",
+      "provenance": "derived",
+      "sha256": "aba524c07f8e432a855f4b21bb1004117a8c26e35a386d33aa08aaae279079de",
+      "version": 1
+    },
+    "unverified_report_ref": {
+      "artifact_id": "demo-data-report-ca82dab5c6cf4df7a83f12e02d206a82-presented",
+      "provenance": "derived",
+      "sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+      "version": 1
+    },
+    "unverified_result_ref": {
+      "artifact_id": "demo-data-result-7db3f04f2113490b85c19c734d195f78",
+      "provenance": "derived",
+      "sha256": "84b5a3ff8b3b67896335eabdd15df6d4573c8c9c8086104d9ccdfe28fea5aba3",
+      "version": 1
+    },
+    "native_original_report_ref": {
+      "artifact_id": "demo-data-report-ca82dab5c6cf4df7a83f12e02d206a82-native",
+      "provenance": "derived",
+      "sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+      "version": 1
+    },
+    "native_original_report_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+    "presented_report_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+    "presentation_lineage_ref": {
+      "artifact_id": "demo-data-report-ca82dab5c6cf4df7a83f12e02d206a82-presentation-lineage",
+      "provenance": "derived",
+      "sha256": "822a07fca53ba2bece6dd8597a77f3f57180539cf1589231aa123dc554b4a539",
+      "version": 1
+    },
+    "html_report_ref": {
+      "artifact_id": "demo-csv-preview-7a15afce2d064a1aa576c90660941306",
+      "provenance": "derived",
+      "sha256": "7df4f92b756976b628a74903298cb47d09177ada1170c46f051c7481d372fd3e",
+      "version": 1
+    },
+    "html_presentation_lineage_ref": {
+      "artifact_id": "demo-csv-preview-lineage-d6e072168a2f44e59ae17201054fdfe9",
+      "provenance": "derived",
+      "sha256": "1da79944f1460f4c9deb5eb3f67dc06928779368ad326494335f7ce3df2fd387",
+      "version": 1
+    },
+    "verified_report_available": false,
+    "final_policy_frozen": false,
+    "prior_model_usage": [
+      {
+        "model_usage": {
+          "available": true,
+          "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+          "counts": {
+            "cache_write_input_units": 0,
+            "cached_input_units": 97664,
+            "input_units": 115495,
+            "output_units": 1390,
+            "reasoning_output_units": 130,
+            "total_units": 116885
+          },
+          "format": "dsc60-native-usage-v1",
+          "max_observed_request_input_units": 26424,
+          "model_context_capacity_units": 475000,
+          "rejected_update_count": 0,
+          "snapshot_count": 6,
+          "source": "native_thread_usage_cumulative_total",
+          "thread_id": "01a15af9-1978-7b80-908b-c96dc7244924",
+          "turn_id": "01a15af9-1d1f-70f2-a9df-0e48663f1883"
+        },
+        "stage": "current_process"
+      },
+      {
+        "model_usage": {
+          "available": true,
+          "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+          "counts": {
+            "cache_write_input_units": 0,
+            "cached_input_units": 1160192,
+            "input_units": 1228896,
+            "output_units": 22776,
+            "reasoning_output_units": 3082,
+            "total_units": 1251672
+          },
+          "format": "dsc60-native-usage-v1",
+          "max_observed_request_input_units": 74240,
+          "model_context_capacity_units": 475000,
+          "rejected_update_count": 0,
+          "snapshot_count": 23,
+          "source": "native_thread_usage_cumulative_total",
+          "thread_id": "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+          "turn_id": "01a15afa-5207-74a1-acf3-6760aa927f79"
+        },
+        "stage": "analysis"
+      }
+    ]
+  },
+  "business_response": {
+    "ai_cost_estimate": {
+      "actual_charge": false,
+      "customer_sentence": "Estimated AI processing cost for this analysis: about US$0.62, using OpenAI\u2019s [published standard rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol).",
+      "estimated_api_equivalent_usd": "0.621751",
+      "estimated_standard_rate_range_usd": {
+        "lower": "0.621751",
+        "upper": "0.621751"
+      },
+      "format": "dsc60-demo-ai-cost-v1",
+      "scope": "The observed intake, analysis and explanation calls for this task; not an invoice or a scheduled-run quote.",
+      "stages": [
+        {
+          "estimate": {
+            "actual_charge": false,
+            "assumptions": [
+              "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+              "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+            ],
+            "component_usd": {
+              "cache_write_input": "0.00",
+              "cached_input": "0.0097664",
+              "output_including_reasoning": "0.0139",
+              "uncached_input": "0.035662"
+            },
+            "context_pricing_scenario": "short",
+            "estimated_api_equivalent_usd": "0.059328",
+            "format": "dsc60-api-equivalent-estimate-v1",
+            "limits": [
+              "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+              "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+            ],
+            "model": "gpt-6.1-sol",
+            "pricing": {
+              "as_of": "2026-10-20",
+              "currency": "USD",
+              "fast_multiplier": "2",
+              "long_context_input_and_cache_multiplier": "2",
+              "long_context_input_threshold": 272000,
+              "long_context_output_multiplier": "1.5",
+              "model": "gpt-6.1-sol",
+              "per_million_units": {
+                "cache_write_input": "2.50",
+                "cached_input": "0.10",
+                "input": "2.00",
+                "output": "10.00"
+              },
+              "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+            },
+            "service_tier_scenario": "standard",
+            "status": "estimated",
+            "usage_counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 97664,
+              "input_units": 115495,
+              "output_units": 1390,
+              "reasoning_output_units": 130,
+              "total_units": 116885
+            }
+          },
+          "model_usage": {
+            "available": true,
+            "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+            "counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 97664,
+              "input_units": 115495,
+              "output_units": 1390,
+              "reasoning_output_units": 130,
+              "total_units": 116885
+            },
+            "format": "dsc60-native-usage-v1",
+            "max_observed_request_input_units": 26424,
+            "model_context_capacity_units": 475000,
+            "rejected_update_count": 0,
+            "snapshot_count": 6,
+            "source": "native_thread_usage_cumulative_total",
+            "thread_id": "01a15af9-1978-7b80-908b-c96dc7244924",
+            "turn_id": "01a15af9-1d1f-70f2-a9df-0e48663f1883"
+          },
+          "stage": "current_process"
+        },
+        {
+          "estimate": {
+            "actual_charge": false,
+            "assumptions": [
+              "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+              "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+            ],
+            "component_usd": {
+              "cache_write_input": "0.00",
+              "cached_input": "0.1160192",
+              "output_including_reasoning": "0.22776",
+              "uncached_input": "0.137408"
+            },
+            "context_pricing_scenario": "short",
+            "estimated_api_equivalent_usd": "0.481187",
+            "format": "dsc60-api-equivalent-estimate-v1",
+            "limits": [
+              "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+              "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+            ],
+            "model": "gpt-6.1-sol",
+            "pricing": {
+              "as_of": "2026-10-20",
+              "currency": "USD",
+              "fast_multiplier": "2",
+              "long_context_input_and_cache_multiplier": "2",
+              "long_context_input_threshold": 272000,
+              "long_context_output_multiplier": "1.5",
+              "model": "gpt-6.1-sol",
+              "per_million_units": {
+                "cache_write_input": "2.50",
+                "cached_input": "0.10",
+                "input": "2.00",
+                "output": "10.00"
+              },
+              "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+            },
+            "service_tier_scenario": "standard",
+            "status": "estimated",
+            "usage_counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 1160192,
+              "input_units": 1228896,
+              "output_units": 22776,
+              "reasoning_output_units": 3082,
+              "total_units": 1251672
+            }
+          },
+          "model_usage": {
+            "available": true,
+            "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+            "counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 1160192,
+              "input_units": 1228896,
+              "output_units": 22776,
+              "reasoning_output_units": 3082,
+              "total_units": 1251672
+            },
+            "format": "dsc60-native-usage-v1",
+            "max_observed_request_input_units": 74240,
+            "model_context_capacity_units": 475000,
+            "rejected_update_count": 0,
+            "snapshot_count": 23,
+            "source": "native_thread_usage_cumulative_total",
+            "thread_id": "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+            "turn_id": "01a15afa-5207-74a1-acf3-6760aa927f79"
+          },
+          "stage": "analysis"
+        },
+        {
+          "estimate": {
+            "actual_charge": false,
+            "assumptions": [
+              "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+              "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+            ],
+            "component_usd": {
+              "cache_write_input": "0.00",
+              "cached_input": "0.004736",
+              "output_including_reasoning": "0.01188",
+              "uncached_input": "0.06462"
+            },
+            "context_pricing_scenario": "short",
+            "estimated_api_equivalent_usd": "0.081236",
+            "format": "dsc60-api-equivalent-estimate-v1",
+            "limits": [
+              "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+              "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+            ],
+            "model": "gpt-6.1-sol",
+            "pricing": {
+              "as_of": "2026-10-20",
+              "currency": "USD",
+              "fast_multiplier": "2",
+              "long_context_input_and_cache_multiplier": "2",
+              "long_context_input_threshold": 272000,
+              "long_context_output_multiplier": "1.5",
+              "model": "gpt-6.1-sol",
+              "per_million_units": {
+                "cache_write_input": "2.50",
+                "cached_input": "0.10",
+                "input": "2.00",
+                "output": "10.00"
+              },
+              "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+            },
+            "service_tier_scenario": "standard",
+            "status": "estimated",
+            "usage_counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 47360,
+              "input_units": 79670,
+              "output_units": 1188,
+              "reasoning_output_units": 104,
+              "total_units": 80858
+            }
+          },
+          "model_usage": {
+            "available": true,
+            "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+            "counts": {
+              "cache_write_input_units": 0,
+              "cached_input_units": 47360,
+              "input_units": 79670,
+              "output_units": 1188,
+              "reasoning_output_units": 104,
+              "total_units": 80858
+            },
+            "format": "dsc60-native-usage-v1",
+            "max_observed_request_input_units": 22101,
+            "model_context_capacity_units": 475000,
+            "rejected_update_count": 0,
+            "snapshot_count": 4,
+            "source": "native_thread_usage_cumulative_total",
+            "thread_id": "01a15b01-7d40-7700-ab71-46eec4259417",
+            "turn_id": "01a15b01-7f22-7341-8154-d41f86faac77"
+          },
+          "stage": "business_response"
+        }
+      ],
+      "status": "estimated"
+    },
+    "analytical_verification": false,
+    "call_trace": {
+      "dispatch_status": "returned",
+      "format": "dsc60-native-call-trace-v1",
+      "model_usage": {
+        "available": true,
+        "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+        "counts": {
+          "cache_write_input_units": 0,
+          "cached_input_units": 47360,
+          "input_units": 79670,
+          "output_units": 1188,
+          "reasoning_output_units": 104,
+          "total_units": 80858
+        },
+        "format": "dsc60-native-usage-v1",
+        "max_observed_request_input_units": 22101,
+        "model_context_capacity_units": 475000,
+        "rejected_update_count": 0,
+        "snapshot_count": 4,
+        "source": "native_thread_usage_cumulative_total",
+        "thread_id": "01a15b01-7d40-7700-ab71-46eec4259417",
+        "turn_id": "01a15b01-7f22-7341-8154-d41f86faac77"
+      },
+      "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native",
+      "native_evidence_files": [
+        {
+          "bytes": 2312,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native/native-bootstrap.jsonl",
+          "sha256": "74ee97b26d3f932630748ced4e22498ca188a00ad403f04487117de5a1381fa2"
+        },
+        {
+          "bytes": 154895,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native/native-rpc.jsonl",
+          "sha256": "517b9787f0ae91f1d50bdd0432b8900cef04c78e245581cc669e3b13e37a5e60"
+        },
+        {
+          "bytes": 95109,
+          "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native/native-run.json",
+          "sha256": "85b1a0325fdd92a25533d5e8cb748cb8540b8ef994a0e4f30572e03924dd8b0a"
+        }
+      ],
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15b01-7d40-7700-ab71-46eec4259417",
+        "turn_id": "01a15b01-7f22-7341-8154-d41f86faac77"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/output",
+        "data_attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "effective_profile_verified": true,
+        "instruction_sources": [
+          "/Users/ceverson/.codex/AGENTS.md"
+        ],
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-36d9a4be9e1a4d0ab0557c4b45db3316",
+        "reasoning_effort": "medium",
+        "runtime_workspace_roots": [
+          "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/output"
+        ],
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "prompt_bytes": 6840,
+      "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native-trace/outbound-prompt.txt",
+      "prompt_sha256": "32c35d8daa05742000acd4dffadbc163b8ba13fbe930b5d97e71f82887a25836",
+      "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875/native-trace/call-trace.json",
+      "released_files": [
+        {
+          "bytes": 1645,
+          "relative_path": "original_response.md",
+          "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+          "source_ref": {
+            "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-native",
+            "provenance": "derived",
+            "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 533,
+          "relative_path": "csv_facts.json",
+          "sha256": "0734dfa35f5330d83be4af9eaa12f03e43e3c2938a3a8781a1544f2fddccedef",
+          "source_ref": {
+            "artifact_id": "demo-business-source-b2a5762a98154124b607b6e7746b42a6",
+            "provenance": "derived",
+            "sha256": "0734dfa35f5330d83be4af9eaa12f03e43e3c2938a3a8781a1544f2fddccedef",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 3932,
+          "relative_path": "evaluation_plan.json",
+          "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb",
+          "source_ref": {
+            "artifact_id": "demo-business-source-3b087dc11a5b483387a69f1346472f8a",
+            "provenance": "derived",
+            "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 4940,
+          "relative_path": "task_refinement.json",
+          "sha256": "54a19e930b08a4f4eb9a4875f3f8d0416a3fa5593784f27dcaeb94e67e8f7066",
+          "source_ref": {
+            "artifact_id": "demo-business-source-25cae02e17a844a196f0c3cd51c42708",
+            "provenance": "derived",
+            "sha256": "54a19e930b08a4f4eb9a4875f3f8d0416a3fa5593784f27dcaeb94e67e8f7066",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 3778,
+          "relative_path": "routine_measurements.json",
+          "sha256": "b9e4e7ba60b212189f6f95b2636f6ace78d801edd78924e2bed167654f148dac",
+          "source_ref": {
+            "artifact_id": "demo-business-source-85a82feb2c37427dafda50468ab7797a",
+            "provenance": "derived",
+            "sha256": "b9e4e7ba60b212189f6f95b2636f6ace78d801edd78924e2bed167654f148dac",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 3224,
+          "relative_path": "routine_usage.md",
+          "sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a",
+          "source_ref": {
+            "artifact_id": "demo-business-source-60c0770d2e534e15b1e6c2d29f1b1a98",
+            "provenance": "derived",
+            "sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a",
+            "version": 1
+          }
+        },
+        {
+          "bytes": 3182,
+          "relative_path": "source_manifest.json",
+          "sha256": "a5ddab15444f93e0128b8b203cc8e7e885f3f4cc1684f4eaf3adc7aac5690634",
+          "source_ref": {
+            "artifact_id": "demo-business-source-manifest-ce341dfcb8054771ad5c44bc1310d153",
+            "provenance": "derived",
+            "sha256": "a5ddab15444f93e0128b8b203cc8e7e885f3f4cc1684f4eaf3adc7aac5690634",
+            "version": 1
+          }
+        }
+      ],
+      "requested_configuration": {
+        "attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "cli_version": "0.163.0",
+        "data_plugin": "data-analytics@openai-curated-remote",
+        "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "stage": "business_response",
+      "transport_exception": null,
+      "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+    },
+    "call_trace_ref": {
+      "artifact_id": "demo-business-call-trace-5515e7236d014e5fa12ff2ec83bc4841",
+      "provenance": "derived",
+      "sha256": "8e94959441a1e62c54a2a9e12367ee9943ba36a330c7d94a6a91a72c4629a5ea",
+      "version": 1
+    },
+    "error": null,
+    "format": "dsc60-business-writing-stage-v1",
+    "immutable_native_evidence_refs": [
+      {
+        "artifact_id": "demo-business-native-9ecb4017f32c4ba9ad603db41fe24885",
+        "provenance": "derived",
+        "sha256": "74ee97b26d3f932630748ced4e22498ca188a00ad403f04487117de5a1381fa2",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-native-39577e9713e44e1ab71e3b4777acf0e0",
+        "provenance": "derived",
+        "sha256": "517b9787f0ae91f1d50bdd0432b8900cef04c78e245581cc669e3b13e37a5e60",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-native-ce724bb090114e28adf2968b866f14b2",
+        "provenance": "derived",
+        "sha256": "85b1a0325fdd92a25533d5e8cb748cb8540b8ef994a0e4f30572e03924dd8b0a",
+        "version": 1
+      }
+    ],
+    "native_outcome": "completed",
+    "prompt_ref": {
+      "artifact_id": "demo-business-prompt-2b33153e2f2e49e38248cf4270b70741",
+      "provenance": "derived",
+      "sha256": "32c35d8daa05742000acd4dffadbc163b8ba13fbe930b5d97e71f82887a25836",
+      "version": 1
+    },
+    "receipt_ref": {
+      "artifact_id": "demo-business-writing-receipt-9d312f06bbc4447e84ef18f6889a3941",
+      "provenance": "derived",
+      "sha256": "4c49917dbe8b2fdf2fe853711a693ef0ed1893632c4abd2cad1f670a6d0ad79d",
+      "version": 1
+    },
+    "response_ref": {
+      "artifact_id": "demo-business-published-35274c9cdd7f48adb9c6e0274f5a28ee",
+      "provenance": "derived",
+      "sha256": "7e605a6d010771a05aeff3d06bc9bd2bd35fe72858ec48a722e64b96813445c1",
+      "version": 1
+    },
+    "source_csv_ref": {
+      "artifact_id": "demo-data-report-ca82dab5c6cf4df7a83f12e02d206a82-presented",
+      "provenance": "derived",
+      "sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+      "version": 1
+    },
+    "source_manifest_ref": {
+      "artifact_id": "demo-business-source-manifest-ce341dfcb8054771ad5c44bc1310d153",
+      "provenance": "derived",
+      "sha256": "a5ddab15444f93e0128b8b203cc8e7e885f3f4cc1684f4eaf3adc7aac5690634",
+      "version": 1
+    },
+    "source_refs": [
+      {
+        "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-native",
+        "provenance": "derived",
+        "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-source-b2a5762a98154124b607b6e7746b42a6",
+        "provenance": "derived",
+        "sha256": "0734dfa35f5330d83be4af9eaa12f03e43e3c2938a3a8781a1544f2fddccedef",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-source-3b087dc11a5b483387a69f1346472f8a",
+        "provenance": "derived",
+        "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-source-25cae02e17a844a196f0c3cd51c42708",
+        "provenance": "derived",
+        "sha256": "54a19e930b08a4f4eb9a4875f3f8d0416a3fa5593784f27dcaeb94e67e8f7066",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-source-85a82feb2c37427dafda50468ab7797a",
+        "provenance": "derived",
+        "sha256": "b9e4e7ba60b212189f6f95b2636f6ace78d801edd78924e2bed167654f148dac",
+        "version": 1
+      },
+      {
+        "artifact_id": "demo-business-source-60c0770d2e534e15b1e6c2d29f1b1a98",
+        "provenance": "derived",
+        "sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a",
+        "version": 1
+      }
+    ],
+    "source_response_ref": {
+      "artifact_id": "demo-data-investigation-note-9c48f5976b7f4c1c8a1aa14653faea2d-native",
+      "provenance": "derived",
+      "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16",
+      "version": 1
+    },
+    "stage_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/business-response-8362d34948744ce4ae0f1b24567ea875",
+    "status": "rewritten",
+    "thread_id": "01a15b01-7d40-7700-ab71-46eec4259417",
+    "turn_id": "01a15b01-7f22-7341-8154-d41f86faac77",
+    "writer_prose_ref": {
+      "artifact_id": "demo-business-response-35e88ccb8cb5442392246a336387979e",
+      "provenance": "derived",
+      "sha256": "a6d4111ce599f3716a7a4ff826c8060918a2507c0679ea4e7ab633754470b068",
+      "version": 1
+    },
+    "writer_result_ref": {
+      "artifact_id": "demo-business-result-19b6f5f70cad4e0abcc576b78c5bc61a",
+      "provenance": "derived",
+      "sha256": "9e815caf4681ea720105129e6e630833af63fb16c15ce53ee18d21e1275d8e13",
+      "version": 1
+    }
+  }
+}

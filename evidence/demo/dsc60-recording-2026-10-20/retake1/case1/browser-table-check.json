@@ -1,0 +1,16 @@
+{
+  "format": "dsc60-retake-browser-table-check-v1",
+  "case": 1,
+  "status": "passed",
+  "rows": 336,
+  "columns": 18,
+  "body_cells": 6048,
+  "every_header_cell_and_row_order_equal_csv": true,
+  "rendered_table_sha256": "ad4194b966a1388b5959c9ebba3188970816d2416cb123f2f284955222ebc051",
+  "csv_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+  "final_full_response_and_cost_screenshot_visually_reviewed": "07-response-end-cost.png",
+  "full_response_includes_current_cost": "US$0.62",
+  "root_ui_action_log_explicit_html_scroll_return": true,
+  "csv_download_clicked": false,
+  "original_video_verified": false
+}

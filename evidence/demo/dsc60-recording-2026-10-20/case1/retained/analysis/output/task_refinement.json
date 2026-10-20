@@ -1,0 +1,73 @@
+{
+  "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "customer_context": {
+    "current_process": {
+      "evidence": [
+        {
+          "quote": "I usually look at the last few months of sales to decide what to buy.",
+          "source": "question"
+        }
+      ],
+      "source": "detector_interpretation",
+      "status": "found",
+      "text": "The user wants to determine what to restock in their stores next week. They explicitly describe their current procedure as looking at the last few months of sales to decide what to buy. They do not specify a precise lookback period or a rule for choosing purchase quantities."
+    },
+    "format": "dsc60-task-context-v1",
+    "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy."
+  },
+  "refined_analytical_task": {
+    "attribution": "analyst interpretation, not customer instruction",
+    "decision": "Product-unit quantities to order for each product at each store, as of 2025-11-30, for the coming weekly order cycle. Forecast December 1-7 recorded gross fulfilled units; also forecast lead time plus seven-day review period (8-14 days). Apply supplied operational policy without optimization.",
+    "actions": [
+      "order nonnegative integer units in supplied pack multiples",
+      "order zero when usable stock plus qualifying incoming units cover forecast and supplied safety stock",
+      "flag expected shortages before new orders arrive"
+    ],
+    "outcomes": "Support availability while avoiding unnecessary purchases; relative priority and costs are unresolved. Recorded-unit forecast error is a proxy, not availability, unmet demand, profit, or savings."
+  },
+  "supplied_facts": [
+    "Current procedure uses last few months of sales, without an exact window or quantity rule.",
+    "Released transactions end November 30, 2025. December outcomes reserved. October-November already development evidence."
+  ],
+  "source_observations": [
+    "input-4.csv has 17,406 rows, 42 exact duplicates, normalized completed/shipped/returned/processing/cancelled statuses, 8 nonpositive quantities, 28 products and 336 observed pairs.",
+    "No global missing calendar dates, but local sales extremely sparse; no assortment-opening/closing or historical stock-exposure table.",
+    "input-1/2/3.csv explicitly mark all operational values synthetic. Lead times 1-7 days; reviews seven days; same-date policy and stock snapshot. Incoming totals match stock on-order quantities for all 336 pairs."
+  ],
+  "supported_interpretations": [
+    "Gross fulfilled sales, including later-returned positive units, better approximate units initially needed than net returns. Return flag does not establish a reusable item or return date.",
+    "History may exhibit shared seasonality; pooled learning can reduce noise of very sparse individual histories.",
+    "Supplied inventory permits an illustrative order calculation, not claims about real present stock."
+  ],
+  "analytical_assumptions": [
+    "No transaction for an observed product at a store on a globally observed date means no recorded fulfilled units, conditional on export completeness; it does not establish no demand or that the item was stocked.",
+    "After first transaction, retain products in observed-sales population; no known retirement dates. No pre-first-observation zero demand is asserted.",
+    "Past final statuses used to define an ex-post target; status-change dates unavailable, so comparisons are not historically executable simulations. No present stock or future incoming information enters forecast comparisons."
+  ],
+  "synthetic_controller_assumptions": [
+    "All usable stock, outstanding deliveries, ordering multiples, minimum quantities, lead times and safety stock in input-1/2/3.csv. Treat as scenario inputs only, not business-validated facts."
+  ],
+  "unresolved_unknowns": [
+    "Exact incumbent purchase rule and lookback",
+    "stockouts and lost sales",
+    "historical assortment/availability and status knowledge times",
+    "business priorities, holding/shortage costs and externally meaningful improvement threshold",
+    "actual usable stock and delivery reliability"
+  ],
+  "candidate_discovery": [
+    {
+      "name": "recent_91d",
+      "rationale": "Fair transparent analytical baseline consistent with an unspecified few-month window; not a proven replica of customer process."
+    },
+    {
+      "name": "sba_croston",
+      "rationale": "Source profile shows roughly 52 rows per pair over almost four years; intermittent-demand method separately smooths positive-event size and interval. Fixed alpha 0.1, SBA correction; lightweight per-series state."
+    },
+    {
+      "name": "pooled_ridge",
+      "rationale": "Repeated November increases in input-4.csv monthly totals suggest shared seasonal signal. A small regularized linear regression pools weekly examples across pairs using recent rates and known prior-year season. Much smaller than tree ensembles; no search."
+    }
+  ],
+  "operational_suitability_plan": "Measure fresh-process peak resident memory including imports, CSV loading, preparation and retained arrays/models; measure fitting and prediction wall time and whole local calculation time. CPU-only Python/numpy/pandas/scikit-learn, fixed candidate set. Assess against 8 GB with OS room; do not infer host capacity. Routine no paid API; electricity/hardware still exist. AI build cost cannot be priced without usage and pricing.",
+  "performance_gate": "Development selection only. No untouched outcome test or externally predeclared meaningful threshold; performance-success gate remains open and cannot be closed here."
+}

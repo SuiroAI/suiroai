@@ -1,0 +1,103 @@
+{
+  "dispatch_status": "returned",
+  "format": "dsc60-native-call-trace-v1",
+  "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native",
+  "native_evidence_files": [
+    {
+      "bytes": 2313,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native/native-bootstrap.jsonl",
+      "sha256": "4a061f91198601db8f100471855c5ba68687154469bb62b8c4ab4caf538cf5a7"
+    },
+    {
+      "bytes": 229587,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native/native-rpc.jsonl",
+      "sha256": "d251c66390e0b7e1a79a79946d0850285183d78f7bae0cb1bdb15723ecb96d56"
+    },
+    {
+      "bytes": 151770,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native/native-run.json",
+      "sha256": "9c00bc26ab853c9732098e2843e844dffbbcf265e050f8c6d317801b639fd16d"
+    }
+  ],
+  "native_execution": {
+    "error_code": null,
+    "message": null,
+    "outcome": "completed",
+    "thread_id": "01a15add-3a59-7b21-bd9b-38fef693ffdc",
+    "turn_id": "01a15add-3d38-7d41-a951-42dc5db8050f"
+  },
+  "observed_configuration": {
+    "cli_version": "0.163.0",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/output",
+    "data_attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "effective_profile_verified": true,
+    "instruction_sources": [
+      "/Users/ceverson/.codex/AGENTS.md"
+    ],
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "permission_profile": "dsc26-stage-8a6b81b312da4bd09bcbac79343a2e27",
+    "reasoning_effort": "medium",
+    "runtime_workspace_roots": [
+      "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/output"
+    ],
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "prompt_bytes": 3718,
+  "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native-trace/outbound-prompt.txt",
+  "prompt_sha256": "d360501dd3169b2eabed2e4a0910f04225aad95532acaaabd950e6723c413e53",
+  "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native-trace/call-trace.json",
+  "released_files": [
+    {
+      "development_partition": false,
+      "original_name": "ordering_policy.csv",
+      "relative_path": "input-1.csv",
+      "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_bytes": 19279,
+      "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "development_partition": true,
+      "original_name": "inbound_deliveries.csv",
+      "relative_path": "input-2.csv",
+      "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_bytes": 10740,
+      "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "development_partition": false,
+      "original_name": "inventory_position.csv",
+      "relative_path": "input-3.csv",
+      "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_bytes": 18799,
+      "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "development_partition": true,
+      "original_name": "Sales_transactions_2022_2025.csv",
+      "relative_path": "input-4.csv",
+      "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "released_bytes": 5006997,
+      "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707"
+    }
+  ],
+  "requested_configuration": {
+    "attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "cli_version": "0.163.0",
+    "data_plugin": "data-analytics@openai-curated-remote",
+    "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "medium",
+  "stage": "current_process",
+  "transport_exception": null,
+  "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+}

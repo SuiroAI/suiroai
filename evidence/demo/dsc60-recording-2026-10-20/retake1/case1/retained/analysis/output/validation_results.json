@@ -1,0 +1,84 @@
+{
+  "rows": 336,
+  "products": 28,
+  "stores": 12,
+  "order_rows": 111,
+  "zero_rows": 225,
+  "order_units": 875,
+  "shortage_rows": 66,
+  "no_recent_recorded_units_rows": 24,
+  "orders_without_recent_units": 8,
+  "by_store_units": {
+    "AUS-01": 53,
+    "CHI-01": 38,
+    "COL-01": 74,
+    "LA-01": 57,
+    "LON-01": 129,
+    "MAN-01": 127,
+    "MUC-01": 51,
+    "NYC-01": 68,
+    "PAR-01": 44,
+    "SYD-01": 99,
+    "TOR-01": 78,
+    "VAN-01": 57
+  },
+  "independent_full_order_agreement": true,
+  "independent_shortage_agreement": true,
+  "rerun_byte_agreement": true,
+  "comparison_dependency_versions": {
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2"
+  },
+  "max_source_product_name_nulls": 135,
+  "target_sensitivities": [
+    {
+      "target": "include_processing",
+      "method": "mean84",
+      "coverage_MAE": 1.3575857426303855,
+      "next7_MAE": 0.9537450396825397
+    },
+    {
+      "target": "include_processing",
+      "method": "mean28",
+      "coverage_MAE": 1.4888791454081631,
+      "next7_MAE": 1.0119977678571428
+    },
+    {
+      "target": "include_processing",
+      "method": "croston_sba",
+      "coverage_MAE": 1.3268290877133697,
+      "next7_MAE": 0.9413341102218867
+    },
+    {
+      "target": "include_processing",
+      "method": "poisson_pool",
+      "coverage_MAE": 1.3691861711730353,
+      "next7_MAE": 0.981434643617837
+    },
+    {
+      "target": "exclude_returns",
+      "method": "mean84",
+      "coverage_MAE": 1.1909456490929706,
+      "next7_MAE": 0.8227926587301587
+    },
+    {
+      "target": "exclude_returns",
+      "method": "mean28",
+      "coverage_MAE": 1.2873219600340136,
+      "next7_MAE": 0.8676525297619048
+    },
+    {
+      "target": "exclude_returns",
+      "method": "croston_sba",
+      "coverage_MAE": 1.1715000960503996,
+      "next7_MAE": 0.816632040831878
+    },
+    {
+      "target": "exclude_returns",
+      "method": "poisson_pool",
+      "coverage_MAE": 1.2050761395920853,
+      "next7_MAE": 0.8443166111476875
+    }
+  ],
+  "source_boundaries": "Only released four CSVs and output files accessed; no reserved outcomes. Initial code-only corrections for missing optional names and pandas Index conversion preceded scores; later timing instrumentation reran unchanged v1 scoring, identical scores."
+}

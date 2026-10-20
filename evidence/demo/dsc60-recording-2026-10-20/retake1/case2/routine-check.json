@@ -1,0 +1,30 @@
+{
+  "format": "dsc60-retake-routine-source-and-receipt-review-v1",
+  "case": 2,
+  "status": "parameterized_selected_routine_actual_invocation_and_usage_checked",
+  "selected": "pooled90",
+  "six_configurable_cli_arguments": true,
+  "actual_planning_date": "2025-11-30",
+  "source_overwrite_guard": true,
+  "no_network_or_model_calls_in_routine_source": true,
+  "actual_routine_sha256": "51a9bd2565a148d8edc55490768831e57a46abfdbe1d40c41461690b7416acf6",
+  "actual_output_sha256": "d00aa93d19d9dfca6cfa05fde42c2382078991ffbd3fbc5cd29862102e00a756",
+  "input_output_hashes_match_receipt": true,
+  "expected_vs_actual_csv_bytes_equal": true,
+  "order_policy_arithmetic_matches_exposed_forecasts_all_rows": true,
+  "counts": {
+    "rows": 336,
+    "columns": 17,
+    "units": 881,
+    "positive_orders": 113,
+    "zeros": 223,
+    "prearrival_flags": 52
+  },
+  "local_calculation_wall_seconds": 0.7750675829593092,
+  "maximum_resident_set_bytes": 164741120,
+  "timing_instrumentation_retry": "An initial /usr/bin/time -l attempt produced the correct CSV but resource reporting failed on sandbox-denied sysctl. Repeated same command with wait4; no forecast or source changes.",
+  "usage_document_sha256": "e32db2833eeb32d1b34e1c711918d55b380d193c7648e3d22cf33ba62f7b676f",
+  "scheduling": "Optionalexternal scheduler/updatedinputs andplanningdate described; noschedule/upload/integration installed.",
+  "actual_future_date_test": false,
+  "limits": "Measurements are actualDataauthoredchildwait4receipt, not reviewerprogram execution or8GBhardwaretest. Algorithm/source inspected; ownCSV/policyarithmetic checked."
+}

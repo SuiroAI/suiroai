@@ -1,0 +1,292 @@
+{
+  "selected_method": "croston_sba",
+  "primary_reduction_vs_baseline_fraction": 0.01785022220597754,
+  "preparation_seconds": 0.081687584053725,
+  "comparison_total_seconds": 1.8257305839797482,
+  "process_peak_rss_bytes": 289341440,
+  "timings": [
+    {
+      "origin": "2025-09-28",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.0003042500466108322,
+      "fit_seconds": 0.0001508339773863554,
+      "inference_seconds": 7.834052667021751e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-09-28",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.0002810839796438813,
+      "fit_seconds": 0.00013895798474550247,
+      "inference_seconds": 7.3750270530581474e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-09-28",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.002270249999128282,
+      "fit_seconds": 0.001877040951512754,
+      "inference_seconds": 1.8666032701730728e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-09-28",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.5693109999410808,
+      "fit_seconds": 0.5667589160148054,
+      "inference_seconds": 0.0021024999441578984,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 24
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.0003585829399526119,
+      "fit_seconds": 0.0001871250569820404,
+      "inference_seconds": 8.333008736371994e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.0002985420869663358,
+      "fit_seconds": 0.00014925003051757812,
+      "inference_seconds": 6.250105798244476e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.002250917023047805,
+      "fit_seconds": 0.0018088329816237092,
+      "inference_seconds": 1.6708974726498127e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.023175916983745992,
+      "fit_seconds": 0.02068974997382611,
+      "inference_seconds": 0.0020737089216709137,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 26
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.00033400009851902723,
+      "fit_seconds": 0.00018116692081093788,
+      "inference_seconds": 7.6669966802001e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.00026454206090420485,
+      "fit_seconds": 0.00013299996498972178,
+      "inference_seconds": 5.958951078355312e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.0022881249897181988,
+      "fit_seconds": 0.0018220830243080854,
+      "inference_seconds": 1.4708028174936771e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.02094829094130546,
+      "fit_seconds": 0.018428290961310267,
+      "inference_seconds": 0.0020332910353317857,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 20
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.0005877499934285879,
+      "fit_seconds": 0.0004069999558851123,
+      "inference_seconds": 6.582937203347683e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.00031383300665766,
+      "fit_seconds": 0.00015341700054705143,
+      "inference_seconds": 7.707974873483181e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.0022282080026343465,
+      "fit_seconds": 0.0017957910895347595,
+      "inference_seconds": 1.9083963707089424e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.021225875010713935,
+      "fit_seconds": 0.01896054099779576,
+      "inference_seconds": 0.0018592079868540168,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 21
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.00028312508948147297,
+      "fit_seconds": 0.0001593329943716526,
+      "inference_seconds": 6.207963451743126e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.0004040419589728117,
+      "fit_seconds": 0.0001640829723328352,
+      "inference_seconds": 7.6249707490205765e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.002300000051036477,
+      "fit_seconds": 0.0018552920082584023,
+      "inference_seconds": 2.5791930966079235e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.01946633297484368,
+      "fit_seconds": 0.016874291002750397,
+      "inference_seconds": 0.0019919589394703507,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 13
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.00034033297561109066,
+      "fit_seconds": 0.00019041600171476603,
+      "inference_seconds": 7.2499969974160194e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.000394958071410656,
+      "fit_seconds": 0.00016054091975092888,
+      "inference_seconds": 7.1659451350569725e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.0021607500966638327,
+      "fit_seconds": 0.001759874983690679,
+      "inference_seconds": 1.8666032701730728e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.021150041953660548,
+      "fit_seconds": 0.01882429199758917,
+      "inference_seconds": 0.001931415987201035,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 21
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.00032962497789412737,
+      "fit_seconds": 0.0001848749816417694,
+      "inference_seconds": 7.041962817311287e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.000337958917953074,
+      "fit_seconds": 0.00019170891027897596,
+      "inference_seconds": 6.832997314631939e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.0023147499887272716,
+      "fit_seconds": 0.00188829202670604,
+      "inference_seconds": 2.2541964426636696e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.021128667052835226,
+      "fit_seconds": 0.018566290964372456,
+      "inference_seconds": 0.002143791993148625,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 19
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "mean84",
+      "fit_and_inference_total_seconds": 0.0004426250234246254,
+      "fit_seconds": 0.00031129096169024706,
+      "inference_seconds": 7.2909751906991005e-06,
+      "retained_array_bytes": 225792
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "mean28",
+      "fit_and_inference_total_seconds": 0.0002541670110076666,
+      "fit_seconds": 0.00012545904610306025,
+      "inference_seconds": 5.833921022713184e-06,
+      "retained_array_bytes": 75264
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "croston_sba",
+      "fit_and_inference_total_seconds": 0.002191124949604273,
+      "fit_seconds": 0.0017442500684410334,
+      "inference_seconds": 1.4749937690794468e-05,
+      "retained_array_bytes": 279552
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "poisson_pool",
+      "fit_and_inference_total_seconds": 0.02132645808160305,
+      "fit_seconds": 0.018946790951304138,
+      "inference_seconds": 0.0019303750013932586,
+      "retained_array_bytes": 2097068,
+      "fit_iterations": 21
+    }
+  ],
+  "paired_coverage_MAE_differences_by_origin": {
+    "2025-09-28": -0.0007225404182473749,
+    "2025-10-05": -0.021426489279940286,
+    "2025-10-12": -0.03540931637277289,
+    "2025-10-19": -0.008307659954776447,
+    "2025-10-26": -0.03564880327398012,
+    "2025-11-02": -0.02366317362164727,
+    "2025-11-09": -0.017247289052541248,
+    "2025-11-16": -0.039650915706829215
+  },
+  "descriptive_error_quantiles": {
+    "('coverage', 0.1)": -2.5757736677887406,
+    "('coverage', 0.5)": 0.43901660728452785,
+    "('coverage', 0.9)": 1.1247411509248684,
+    "('next7', 0.1)": -1.6086303051891957,
+    "('next7', 0.5)": 0.3532578331553994,
+    "('next7', 0.9)": 0.7333014577257326
+  },
+  "interpretation": "Development evidence only; eight overlapping origins, no threshold or untouched evaluation; no savings/service claims."
+}

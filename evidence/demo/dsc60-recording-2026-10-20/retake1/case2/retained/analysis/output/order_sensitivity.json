@@ -1,0 +1,30 @@
+[
+  {
+    "method": "recent_month",
+    "total_order_units": 757,
+    "positive_orders": 93,
+    "different_orders_vs_selected": 43,
+    "total_absolute_order_difference": 204
+  },
+  {
+    "method": "recent90",
+    "total_order_units": 843,
+    "positive_orders": 106,
+    "different_orders_vs_selected": 15,
+    "total_absolute_order_difference": 50
+  },
+  {
+    "method": "pooled90",
+    "total_order_units": 881,
+    "positive_orders": 113,
+    "different_orders_vs_selected": 0,
+    "total_absolute_order_difference": 0
+  },
+  {
+    "method": "ridge",
+    "total_order_units": 874,
+    "positive_orders": 110,
+    "different_orders_vs_selected": 8,
+    "total_absolute_order_difference": 9
+  }
+]

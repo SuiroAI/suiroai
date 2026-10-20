@@ -1,0 +1,142 @@
+{
+  "format": "dsc60-recording-case-metric-audit-v1",
+  "case": 1,
+  "status": "analysis_writer_visual_flow_reviewed_original_video_identity_pending",
+  "run_id": "investigation-867d6cff721b4c768c9d1043922f56b7",
+  "prediction_rows": 57456,
+  "identical_model_cell_actuals_and_scope": true,
+  "metrics_recomputed_from_retained_predictions": {
+    "primary": {
+      "recent_91d": {
+        "MAE": 0.9125457875457876,
+        "RMSE": 1.7014625522913565,
+        "WAPE": 1.3294976026683345,
+        "bias_units": -0.17124542124542122,
+        "actual_units": 1845.0,
+        "prediction_units": 1384.6923076923076,
+        "n": 2688
+      },
+      "sba_croston": {
+        "MAE": 0.9029661088519224,
+        "RMSE": 1.6770992696808626,
+        "WAPE": 1.3155408675306057,
+        "bias_units": -0.184629866741613,
+        "actual_units": 1845.0,
+        "prediction_units": 1348.7149181985444,
+        "n": 2688
+      },
+      "pooled_ridge": {
+        "MAE": 0.9577063480309527,
+        "RMSE": 1.6684757371876868,
+        "WAPE": 1.3952925005459083,
+        "bias_units": -0.0787312205688208,
+        "actual_units": 1845.0,
+        "prediction_units": 1633.3704791110097,
+        "n": 2688
+      }
+    },
+    "coverage": {
+      "recent_91d": {
+        "MAE": 1.2823783359497645,
+        "RMSE": 2.186248811010145,
+        "WAPE": 1.1699588231783733,
+        "bias_units": -0.2869944681169171,
+        "actual_units": 2578.0,
+        "prediction_units": 1902.989010989011,
+        "n": 2352
+      },
+      "sba_croston": {
+        "MAE": 1.252358575968969,
+        "RMSE": 2.142351662186913,
+        "WAPE": 1.142570741147795,
+        "bias_units": -0.3021579643269115,
+        "actual_units": 2578.0,
+        "prediction_units": 1867.3244679031043,
+        "n": 2352
+      },
+      "pooled_ridge": {
+        "MAE": 1.3169106022323034,
+        "RMSE": 2.1270999877759333,
+        "WAPE": 1.2014638232933972,
+        "bias_units": -0.12799492110850397,
+        "actual_units": 2578.0,
+        "prediction_units": 2276.9559455527988,
+        "n": 2352
+      }
+    }
+  },
+  "selected": "sba_croston",
+  "relative_MAE_reduction": 0.010497751263121802,
+  "origins_better_than_baseline": 6,
+  "order_counts": {
+    "total_units": 877,
+    "positive_orders": 112,
+    "zero_orders": 224,
+    "expected_prearrival_gaps": 52,
+    "baseline_total_units": 861,
+    "changed_orders_vs_baseline": 16
+  },
+  "csv_sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4",
+  "csv_rows": 336,
+  "csv_columns": 17,
+  "original_plan_unchanged": true,
+  "native_chronology": {
+    "plan_command_completed_monotonic": 680781.940942041,
+    "analysis_command_completed_monotonic": 680886.594064833,
+    "successful_analysis_commands_observed": 1
+  },
+  "scope": "Independent arithmetic from saved development predictions and delivered CSV; source code read only, no producer execution, no reserved scoring or model refit. Purchase arithmetic checked against exposed4decimal forecast and policy; source stock/missing-capture truth not independently certified.",
+  "routine_saved_table_matches_delivered_orders_and_rounded_forecasts": true,
+  "routine_measurement": {
+    "peak_RSS_at_import_MiB": 100.0,
+    "load_prepare_seconds": 0.0855434580007568,
+    "peak_RSS_after_prepare_MiB": 154.25,
+    "panel_shape": [
+      1430,
+      336
+    ],
+    "panel_bytes": 3843840,
+    "input_sales_rows": 17406,
+    "fit_seconds": 0.013290208065882325,
+    "peak_RSS_after_fit_MiB": 154.28125,
+    "retained_model_state_bytes": 8400,
+    "inference_seconds": 0.0012865830212831497,
+    "peak_RSS_after_inference_MiB": 154.5,
+    "ordering_and_save_seconds": 0.09780766698531806,
+    "local_calculation_seconds": 0.44426333403680474,
+    "process_peak_RSS_MiB": 154.875,
+    "dependencies": {
+      "python": "3.13.9",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3"
+    },
+    "routine_paid_API_calls": 0,
+    "limits": "Fresh-process wall time and high-water resident memory, one host/run. Includes imports, data loading/preparation, fitting, retained arrays/model state, prediction and output. High-water memory is cumulative, not independent phase allocations. No 8GB-host test or extrapolation to much larger data. Only supplied scale. Hardware and electricity not priced."
+  },
+  "routine_measurement_sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41",
+  "attempt_receipt": "attempt-a44a34049fc7460bb315e447d18df5a5.json",
+  "attempt_receipt_sha256": "275fbd95c041dfa1a85d2da2b85dc7855d4efb8ed52b0c01cd3839d965badbea",
+  "backend_status": "analysis_completed",
+  "native_analysis_outcome": "completed",
+  "writer_id": "business-response-ead1e3503f30456ab2151009a8f77a4a",
+  "writer_status": "rewritten",
+  "writer_response_sha256": "847e5ac7674d715ea4551e259b1208dd6a193abff00326c7c565a934a51b86d4",
+  "writer_released_files_rehashed": 5,
+  "writer_native_evidence_files_rehashed": 3,
+  "html_sha256": "2a978746157916ba64b3d7186f31a9d06b1362c7d4495d7ed60b4958bbeb4d4c",
+  "served_html_equals_delivered_csv": true,
+  "served_html_cells_checked": 5712,
+  "source_csv_unchanged_by_writer": true,
+  "writer_claim_review": "Pass:877units,~1%developmentgain,6monthdiagnosticbetter,unknownincumbent/syntheticstock/underforecast/roughintervals retained;~160MB matches routine154.875MiB. No4.06%reservedgain reused.",
+  "gates": {
+    "analytical_success": false,
+    "verified_report_available": false,
+    "final_policy_frozen": false
+  },
+  "retained_manifest_files_rehashed": 46,
+  "browser_table_check": "browser-table-check.json",
+  "full_response_costs_screenshots_independently_viewed": true,
+  "html_open_scroll_return_observed_in_root_ui_log": true,
+  "csv_download_clicked": false,
+  "original_video_verified": false
+}

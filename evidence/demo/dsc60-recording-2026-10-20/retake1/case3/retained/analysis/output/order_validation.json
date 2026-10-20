@@ -1,0 +1,30 @@
+{
+  "rows": 336,
+  "order_units": 868,
+  "positive_order_rows": 109,
+  "zero_order_rows": 227,
+  "timing_flag_rows": 65,
+  "timing_flags_without_order": 12,
+  "sensitivities": {
+    "demand_minus_25_percent": {
+      "total_order_units": 863,
+      "rows_with_changed_order": 5,
+      "positive_orders": 108,
+      "timing_flags": 65
+    },
+    "demand_plus_25_percent": {
+      "total_order_units": 875,
+      "rows_with_changed_order": 7,
+      "positive_orders": 110,
+      "timing_flags": 65
+    },
+    "exclude_return_flagged_fulfilled_rows": {
+      "total_order_units": 868,
+      "changed_orders": 0,
+      "units_in_target_window_removed": 37.0
+    }
+  },
+  "independent_arithmetic_mismatches": [],
+  "independent_timing_mismatches": [],
+  "flags_receipt_assumption": "Receipts arrive end of due day. Pre-new-order shortage is maximum cumulative forecast gap before new receipt, not guaranteed lost sales; existing receipts can alleviate gaps later. Demand +/-25% are scenarios, not confidence bounds."
+}

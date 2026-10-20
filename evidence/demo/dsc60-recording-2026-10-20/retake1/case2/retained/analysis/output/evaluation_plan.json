@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "status": "Prospective initial plan, written before candidate comparison scores; October-November already inspected development evidence",
+  "target": "Positive quantities with normalized Completed or Shipped statuses, after exact-row deduplication. Return flags on fulfilled rows retained as gross outbound; Returned status, nonpositive quantities, Processing and Cancelled excluded. No return credits without usable-restock timing.",
+  "missing_dates": "Daily absent events become zero recorded units only within the supplied continuous transaction window, after each series first observed transaction; not proof of zero underlying demand or store availability. All deployment series have established pre-development histories. No pre-first-observation zeros in training.",
+  "population": "All 336 supplied product/store keys, identical for every candidate, without filtering on evaluation outcomes",
+  "origins": ["2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16", "2025-11-23"],
+  "information_boundary": "Only transactions dated on/before each origin; present-day final statuses have unknown change times, limiting historical realism. Operating policies used only for horizon lengths, not historical inventory scoring.",
+  "training": "History through origin; ridge weekly labels end on/before origin, trailing two years, with features requiring 364 days of prior series history",
+  "evaluation": "Oct 6-Nov 30 2025 for seven-day targets; coverage targets only when their full 8-14-day horizon ends by November 30, thus first seven origins",
+  "horizons": "Primary next seven days; secondary row-specific supplier lead plus seven review days. Daily constant rate extrapolation for each method. No December scoring.",
+  "baseline": "Previous complete calendar month's recorded daily mean, scaled to horizon; analytical baseline, not proven incumbent formula",
+  "candidates": {"recent_month": "baseline", "recent90": "trailing 90-calendar-day average", "pooled90": "50% local 90-day rate and 50% independence product/store pooled rate", "ridge": "Pooled ridge alpha=10, standardized ten features: intercept, recent 7/28/91/364-day weekly rates, same week prior year, annual sine/cosine, annual seasonal interactions with long rate; nonnegative clipped predictions. Fixed configuration, no search."},
+  "primary": "Mean absolute error in units per product at a store per seven-day forecast; equal weights over 336 keys and eight origins",
+  "selection": "Lowest pooled primary MAE; if within 1e-9 choose baseline then recent90 then pooled90 then ridge. No invented meaningful-gain threshold. Freeze selected method for routine.",
+  "secondary": ["coverage-horizon MAE and bias", "weekly-origin MAE and ranking sensitivity", "sparse-series and store errors", "recorded-target sensitivity excluding all return flags and including positive Processing", "annual seasonal stability by month/year", "timing-shortage flags and order sensitivity to alternative candidate rates"],
+  "limits": "No historical stock, lost sales, purchase prices, cost function or independent success threshold; no business-cost scoring. No independent success gate can be closed. No revisions or additional searches planned."
+}

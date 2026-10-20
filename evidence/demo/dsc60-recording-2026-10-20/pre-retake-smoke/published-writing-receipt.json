@@ -1,0 +1,511 @@
+{
+  "format": "dsc60-business-writing-stage-v1",
+  "status": "rewritten",
+  "text": "Your weekly order list is ready for December 1\u20137, 2025. It suggests ordering **877 units across 112 product-and-store combinations**, with no purchase needed for the other 224. The list gives you suggested quantities for each store so you can review the orders without working out every quantity by hand.\n\nStart with the items flagged as likely to run out before the next delivery. There are **52 product-and-store combinations** flagged for review. Check these first before placing orders, and consider whether an earlier delivery is needed.\n\nThe weekly routine checks sales, stock in each store, deliveries on the way and your supplied buying rules. It works out quantities to cover the delivery wait plus the following week, allows for your stock buffer, subtracts stock and deliveries due in that period, and applies pack sizes and minimum order quantities. Review those pack-size purchases before ordering, as they can add substantially to the total.\n\nThe weekly calculation took **0.444 seconds** in the measured run. This repeatable calculation can be scheduled to prepare a fresh order list each week for you to review before placing orders.\n\nEstimated AI processing cost for this analysis: about US$0.56, using OpenAI\u2019s [published standard rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol).\n",
+  "response_ref": {
+    "artifact_id": "demo-business-published-0228f64f576a4a18b81773f60c438cba",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a"
+  },
+  "analytical_verification": false,
+  "error": null,
+  "source_manifest_ref": {
+    "artifact_id": "demo-business-source-manifest-a2f1fe3bf5cd40cdbf424291b0c935bb",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "2d434991b22334ea984f49aea1b1d9b73aaf7e0ebee5c7575349e694fbad423b"
+  },
+  "source_response_ref": {
+    "artifact_id": "demo-data-investigation-note-992a422587dd4cacb005a2f280bc9708-native",
+    "provenance": "derived",
+    "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3",
+    "version": 1
+  },
+  "source_csv_ref": {
+    "artifact_id": "demo-data-report-781fe5d40cc641dca584491c6212a340-presented",
+    "provenance": "derived",
+    "sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4",
+    "version": 1
+  },
+  "writer_result_ref": {
+    "artifact_id": "demo-business-result-a88669c0a1ea472c8be4e0f26cbdee8b",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "5c72e0c74511ef89e6660a7aa3cb762e9de8a337af54368e08b8917cb04cae4a"
+  },
+  "prompt_ref": {
+    "artifact_id": "demo-business-prompt-65fd9f91db1c4f96add8f8e9981731d3",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "fea98295359e01317d23ba271c7dadf2138bd36c0aab1a591a217eb148d36802"
+  },
+  "call_trace_ref": {
+    "artifact_id": "demo-business-call-trace-c9969539141d461e95892432f452af76",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "6317c969681f177db6ed0fd93602997c19a22c39102e243aa5978a634b79778c"
+  },
+  "ai_cost_estimate": {
+    "format": "dsc60-demo-ai-cost-v1",
+    "status": "estimated",
+    "actual_charge": false,
+    "stages": [
+      {
+        "stage": "current_process",
+        "model_usage": {
+          "format": "dsc60-native-usage-v1",
+          "available": true,
+          "counts": {
+            "input_units": 148906,
+            "cached_input_units": 126720,
+            "cache_write_input_units": 0,
+            "output_units": 1661,
+            "reasoning_output_units": 320,
+            "total_units": 150567
+          },
+          "source": "historical_rollout_event_msg_cumulative_total_recovery",
+          "model_context_capacity_units": 475000,
+          "max_observed_request_input_units": 30515,
+          "snapshot_count": 7,
+          "thread_id": "01a15add-3a59-7b21-bd9b-38fef693ffdc",
+          "turn_id": "01a15add-3d38-7d41-a951-42dc5db8050f",
+          "rejected_update_count": 0,
+          "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+        },
+        "estimate": {
+          "format": "dsc60-api-equivalent-estimate-v1",
+          "pricing": {
+            "model": "gpt-6.1-sol",
+            "as_of": "2026-10-20",
+            "currency": "USD",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "per_million_units": {
+              "input": "2.00",
+              "cached_input": "0.10",
+              "cache_write_input": "2.50",
+              "output": "10.00"
+            },
+            "fast_multiplier": "2",
+            "long_context_input_threshold": 272000,
+            "long_context_input_and_cache_multiplier": "2",
+            "long_context_output_multiplier": "1.5"
+          },
+          "model": "gpt-6.1-sol",
+          "actual_charge": false,
+          "estimated_api_equivalent_usd": "0.073654",
+          "assumptions": [
+            "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+            "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+          ],
+          "limits": [
+            "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+            "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+          ],
+          "status": "estimated",
+          "service_tier_scenario": "standard",
+          "context_pricing_scenario": "short",
+          "component_usd": {
+            "uncached_input": "0.044372",
+            "cached_input": "0.012672",
+            "cache_write_input": "0.00",
+            "output_including_reasoning": "0.01661"
+          },
+          "usage_counts": {
+            "input_units": 148906,
+            "cached_input_units": 126720,
+            "cache_write_input_units": 0,
+            "output_units": 1661,
+            "reasoning_output_units": 320,
+            "total_units": 150567
+          }
+        }
+      },
+      {
+        "stage": "analysis",
+        "model_usage": {
+          "format": "dsc60-native-usage-v1",
+          "available": true,
+          "counts": {
+            "input_units": 793841,
+            "cached_input_units": 728576,
+            "cache_write_input_units": 0,
+            "output_units": 22147,
+            "reasoning_output_units": 4402,
+            "total_units": 815988
+          },
+          "source": "historical_rollout_event_msg_cumulative_total_recovery",
+          "model_context_capacity_units": 475000,
+          "max_observed_request_input_units": 71970,
+          "snapshot_count": 16,
+          "thread_id": "01a15ade-813a-7f41-a3cd-a427f2376b39",
+          "turn_id": "01a15ade-84a5-77f2-b708-55a23c90e449",
+          "rejected_update_count": 0,
+          "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+        },
+        "estimate": {
+          "format": "dsc60-api-equivalent-estimate-v1",
+          "pricing": {
+            "model": "gpt-6.1-sol",
+            "as_of": "2026-10-20",
+            "currency": "USD",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "per_million_units": {
+              "input": "2.00",
+              "cached_input": "0.10",
+              "cache_write_input": "2.50",
+              "output": "10.00"
+            },
+            "fast_multiplier": "2",
+            "long_context_input_threshold": 272000,
+            "long_context_input_and_cache_multiplier": "2",
+            "long_context_output_multiplier": "1.5"
+          },
+          "model": "gpt-6.1-sol",
+          "actual_charge": false,
+          "estimated_api_equivalent_usd": "0.424858",
+          "assumptions": [
+            "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+            "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+          ],
+          "limits": [
+            "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+            "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+          ],
+          "status": "estimated",
+          "service_tier_scenario": "standard",
+          "context_pricing_scenario": "short",
+          "component_usd": {
+            "uncached_input": "0.13053",
+            "cached_input": "0.0728576",
+            "cache_write_input": "0.00",
+            "output_including_reasoning": "0.22147"
+          },
+          "usage_counts": {
+            "input_units": 793841,
+            "cached_input_units": 728576,
+            "cache_write_input_units": 0,
+            "output_units": 22147,
+            "reasoning_output_units": 4402,
+            "total_units": 815988
+          }
+        }
+      },
+      {
+        "stage": "business_response",
+        "model_usage": {
+          "format": "dsc60-native-usage-v1",
+          "available": true,
+          "counts": {
+            "input_units": 100405,
+            "cached_input_units": 80256,
+            "cache_write_input_units": 0,
+            "output_units": 1190,
+            "reasoning_output_units": 61,
+            "total_units": 101595
+          },
+          "source": "native_thread_usage_cumulative_total",
+          "model_context_capacity_units": 475000,
+          "max_observed_request_input_units": 29063,
+          "snapshot_count": 4,
+          "thread_id": "01a15af5-43d6-7832-8f0a-886b9633e097",
+          "turn_id": "01a15af5-46f6-7901-973e-230fc15973c6",
+          "rejected_update_count": 0,
+          "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+        },
+        "estimate": {
+          "format": "dsc60-api-equivalent-estimate-v1",
+          "pricing": {
+            "model": "gpt-6.1-sol",
+            "as_of": "2026-10-20",
+            "currency": "USD",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "per_million_units": {
+              "input": "2.00",
+              "cached_input": "0.10",
+              "cache_write_input": "2.50",
+              "output": "10.00"
+            },
+            "fast_multiplier": "2",
+            "long_context_input_threshold": 272000,
+            "long_context_input_and_cache_multiplier": "2",
+            "long_context_output_multiplier": "1.5"
+          },
+          "model": "gpt-6.1-sol",
+          "actual_charge": false,
+          "estimated_api_equivalent_usd": "0.060224",
+          "assumptions": [
+            "Standard API rates assumed; Codex service tier/billing treatment is not established.",
+            "Short-context API rates assumed; actual per-request long-context mix is unknown. Cumulative input is not request length."
+          ],
+          "limits": [
+            "API-equivalent estimate, not a Codex subscription bill, actual charge or routine-model cost.",
+            "Thread totals do not establish per-request pricing tier, request-length mix, taxes, credits or contractual rates."
+          ],
+          "status": "estimated",
+          "service_tier_scenario": "standard",
+          "context_pricing_scenario": "short",
+          "component_usd": {
+            "uncached_input": "0.040298",
+            "cached_input": "0.0080256",
+            "cache_write_input": "0.00",
+            "output_including_reasoning": "0.0119"
+          },
+          "usage_counts": {
+            "input_units": 100405,
+            "cached_input_units": 80256,
+            "cache_write_input_units": 0,
+            "output_units": 1190,
+            "reasoning_output_units": 61,
+            "total_units": 101595
+          }
+        }
+      }
+    ],
+    "estimated_api_equivalent_usd": "0.558736",
+    "customer_sentence": "Estimated AI processing cost for this analysis: about US$0.56, using OpenAI\u2019s [published standard rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol).",
+    "scope": "The observed intake, analysis and explanation calls for this task; not an invoice or a scheduled-run quote."
+  },
+  "writer_prose_ref": {
+    "artifact_id": "demo-business-response-3b57341064cc4651be6b5c1f4702341f",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f"
+  },
+  "stage_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6",
+  "source_refs": [
+    {
+      "artifact_id": "demo-data-investigation-note-992a422587dd4cacb005a2f280bc9708-native",
+      "provenance": "derived",
+      "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-source-082a8487a8564a6890476e051a1143ef",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "75ae3e25dde222d92451932b4d0da9852008b94e2ce954b9ae00a53a3b59ea12"
+    },
+    {
+      "artifact_id": "demo-business-source-1c59b7724f3f4a0f88bcb38347fc4462",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c"
+    },
+    {
+      "artifact_id": "demo-business-source-4621b62736bd43c8ad6e6641ccda2b66",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4"
+    },
+    {
+      "artifact_id": "demo-business-source-aba647cb26ee44a8b0c5e19682b93769",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41"
+    },
+    {
+      "artifact_id": "demo-business-source-dd2d8cb878b64c5db3788dde9082b03e",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba"
+    }
+  ],
+  "native_outcome": "completed",
+  "thread_id": "01a15af5-43d6-7832-8f0a-886b9633e097",
+  "turn_id": "01a15af5-46f6-7901-973e-230fc15973c6",
+  "call_trace": {
+    "format": "dsc60-native-call-trace-v1",
+    "stage": "business_response",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_configuration": {
+      "cli_version": "0.163.0",
+      "data_plugin": "data-analytics@openai-curated-remote",
+      "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    },
+    "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+    "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native-trace/outbound-prompt.txt",
+    "prompt_sha256": "fea98295359e01317d23ba271c7dadf2138bd36c0aab1a591a217eb148d36802",
+    "prompt_bytes": 6644,
+    "released_files": [
+      {
+        "relative_path": "original_response.md",
+        "source_ref": {
+          "artifact_id": "demo-data-investigation-note-992a422587dd4cacb005a2f280bc9708-native",
+          "provenance": "derived",
+          "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3",
+          "version": 1
+        },
+        "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3",
+        "bytes": 1604
+      },
+      {
+        "relative_path": "csv_facts.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-082a8487a8564a6890476e051a1143ef",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "75ae3e25dde222d92451932b4d0da9852008b94e2ce954b9ae00a53a3b59ea12"
+        },
+        "sha256": "75ae3e25dde222d92451932b4d0da9852008b94e2ce954b9ae00a53a3b59ea12",
+        "bytes": 533
+      },
+      {
+        "relative_path": "evaluation_plan.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-1c59b7724f3f4a0f88bcb38347fc4462",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c"
+        },
+        "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c",
+        "bytes": 5960
+      },
+      {
+        "relative_path": "task_refinement.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-4621b62736bd43c8ad6e6641ccda2b66",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4"
+        },
+        "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4",
+        "bytes": 5783
+      },
+      {
+        "relative_path": "routine_compute_measurements.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-aba647cb26ee44a8b0c5e19682b93769",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41"
+        },
+        "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41",
+        "bytes": 1057
+      },
+      {
+        "relative_path": "development_results.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-dd2d8cb878b64c5db3788dde9082b03e",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba"
+        },
+        "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba",
+        "bytes": 19080
+      },
+      {
+        "relative_path": "source_manifest.json",
+        "source_ref": {
+          "artifact_id": "demo-business-source-manifest-a2f1fe3bf5cd40cdbf424291b0c935bb",
+          "version": 1,
+          "provenance": "derived",
+          "sha256": "2d434991b22334ea984f49aea1b1d9b73aaf7e0ebee5c7575349e694fbad423b"
+        },
+        "sha256": "2d434991b22334ea984f49aea1b1d9b73aaf7e0ebee5c7575349e694fbad423b",
+        "bytes": 3199
+      }
+    ],
+    "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native-trace/call-trace.json",
+    "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native",
+    "dispatch_status": "returned",
+    "native_execution": {
+      "thread_id": "01a15af5-43d6-7832-8f0a-886b9633e097",
+      "turn_id": "01a15af5-46f6-7901-973e-230fc15973c6",
+      "outcome": "completed",
+      "error_code": null,
+      "message": null
+    },
+    "native_evidence_files": [
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-bootstrap.jsonl",
+        "sha256": "0dd5f71d04d83a36b0ce1a3ff86c09f0dc928db8ba2e9c1ce57b7093dca9e59e",
+        "bytes": 2308
+      },
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-rpc.jsonl",
+        "sha256": "8ac12ccd8438dae6b34e9dd915a7bc328ce6149773ca4df1cee623acb38ca5d7",
+        "bytes": 235751
+      },
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-run.json",
+        "sha256": "815aef8160120261e9b3cd137707461e7096a1165d435d0a5ee4dc984385a98a",
+        "bytes": 148891
+      }
+    ],
+    "transport_exception": null,
+    "model_usage": {
+      "format": "dsc60-native-usage-v1",
+      "available": true,
+      "counts": {
+        "input_units": 100405,
+        "cached_input_units": 80256,
+        "cache_write_input_units": 0,
+        "output_units": 1190,
+        "reasoning_output_units": 61,
+        "total_units": 101595
+      },
+      "source": "native_thread_usage_cumulative_total",
+      "model_context_capacity_units": 475000,
+      "max_observed_request_input_units": 29063,
+      "snapshot_count": 4,
+      "thread_id": "01a15af5-43d6-7832-8f0a-886b9633e097",
+      "turn_id": "01a15af5-46f6-7901-973e-230fc15973c6",
+      "rejected_update_count": 0,
+      "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+    },
+    "observed_configuration": {
+      "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "effective_profile_verified": true,
+      "model": "gpt-6.1-sol",
+      "model_provider": "openai",
+      "reasoning_effort": "medium",
+      "instruction_sources": [
+        "/Users/ceverson/.codex/AGENTS.md"
+      ],
+      "cwd": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/output",
+      "runtime_workspace_roots": [
+        "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/output"
+      ],
+      "data_attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      },
+      "cli_version": "0.163.0",
+      "permission_profile": "dsc26-stage-8663568863404ffba0ac1882081ceadc"
+    }
+  },
+  "immutable_native_evidence_refs": [
+    {
+      "artifact_id": "demo-business-native-2aa53a8117f34bb0bb8c0121148b9830",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "0dd5f71d04d83a36b0ce1a3ff86c09f0dc928db8ba2e9c1ce57b7093dca9e59e"
+    },
+    {
+      "artifact_id": "demo-business-native-1351cc0594464cf6a47db76be09bad0b",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "8ac12ccd8438dae6b34e9dd915a7bc328ce6149773ca4df1cee623acb38ca5d7"
+    },
+    {
+      "artifact_id": "demo-business-native-40dcef762aaa424a8669013ce6a50e45",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "815aef8160120261e9b3cd137707461e7096a1165d435d0a5ee4dc984385a98a"
+    }
+  ],
+  "receipt_ref": {
+    "artifact_id": "demo-business-writing-receipt-46b2ed4dec51481b8c061143dad1f8a9",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "119e1ef33b1683ba716318cb0245a541c33199dee6646d9d426be3d0d38f452b"
+  }
+}

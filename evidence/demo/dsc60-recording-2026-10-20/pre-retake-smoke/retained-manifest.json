@@ -1,0 +1,125 @@
+{
+  "format": "dsc60-pre-retake-smoke-archive-v1",
+  "archived_at": "2026-10-20T20:19:24.704194+00:00",
+  "scope": "Actual genuine business writer smoke and recovered numeric usage; not a replacement recorded customer case. Later prompt wording revisions are not represented as executed by this smoke.",
+  "writer_thread_id": "01a15af5-43d6-7832-8f0a-886b9633e097",
+  "writer_turn_id": "01a15af5-46f6-7901-973e-230fc15973c6",
+  "published_response_sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a",
+  "native_writer_prose_sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f",
+  "response_ref": {
+    "artifact_id": "demo-business-published-0228f64f576a4a18b81773f60c438cba",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a"
+  },
+  "writer_prose_ref": {
+    "artifact_id": "demo-business-response-3b57341064cc4651be6b5c1f4702341f",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f"
+  },
+  "receipt_ref": {
+    "artifact_id": "demo-business-writing-receipt-46b2ed4dec51481b8c061143dad1f8a9",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "119e1ef33b1683ba716318cb0245a541c33199dee6646d9d426be3d0d38f452b"
+  },
+  "files": [
+    {
+      "path": "engineering-recovered-usage.json",
+      "bytes": 7507,
+      "sha256": "7c0e3e41c1bb594b39f2bb0323a6fcc16fcd92bd2a4c4717f6ec29a81bae8e40"
+    },
+    {
+      "path": "published-response.md",
+      "bytes": 1320,
+      "sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a"
+    },
+    {
+      "path": "published-writing-receipt.json",
+      "bytes": 22950,
+      "sha256": "ce712da3aec7d9ff3d30f95f2693554a65e34e8a7432c068339fa17c4a50a53b"
+    },
+    {
+      "path": "source-hash-index.json",
+      "bytes": 4929,
+      "sha256": "b607f3658cd3f8e32153a9eebe416907e78c2cdeda35b68fd73a9b5302b65444"
+    },
+    {
+      "path": "writer/artifact-index.json",
+      "bytes": 2248,
+      "sha256": "2c87eb6536ac2274937c3ce32bf675fee5246c55e5fba9615ba06c9856fc3f6f"
+    },
+    {
+      "path": "writer/native-usage.json",
+      "bytes": 1372,
+      "sha256": "cd092670edbf381c8cc37569fa80772ed888f4e4a01cc352e7d64f5d520ad2d7"
+    },
+    {
+      "path": "writer/outcome.json",
+      "bytes": 212,
+      "sha256": "6f73c34bd0c10ff0b533cdcea4ffadbd8a3568b013029cde1e6a07937f0612ef"
+    },
+    {
+      "path": "writer/output/business_response.md",
+      "bytes": 1152,
+      "sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f"
+    },
+    {
+      "path": "writer/output/rewrite_result.json",
+      "bytes": 272,
+      "sha256": "5c72e0c74511ef89e6660a7aa3cb762e9de8a337af54368e08b8917cb04cae4a"
+    },
+    {
+      "path": "writer/source-context/csv_facts.json",
+      "bytes": 533,
+      "sha256": "75ae3e25dde222d92451932b4d0da9852008b94e2ce954b9ae00a53a3b59ea12"
+    },
+    {
+      "path": "writer/source-context/development_results.json",
+      "bytes": 19080,
+      "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba"
+    },
+    {
+      "path": "writer/source-context/evaluation_plan.json",
+      "bytes": 5960,
+      "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c"
+    },
+    {
+      "path": "writer/source-context/original_response.md",
+      "bytes": 1604,
+      "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3"
+    },
+    {
+      "path": "writer/source-context/routine_compute_measurements.json",
+      "bytes": 1057,
+      "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41"
+    },
+    {
+      "path": "writer/source-context/source_manifest.json",
+      "bytes": 3199,
+      "sha256": "2d434991b22334ea984f49aea1b1d9b73aaf7e0ebee5c7575349e694fbad423b"
+    },
+    {
+      "path": "writer/source-context/task_refinement.json",
+      "bytes": 5783,
+      "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4"
+    },
+    {
+      "path": "writer/trace/call-trace.json",
+      "bytes": 7125,
+      "sha256": "6317c969681f177db6ed0fd93602997c19a22c39102e243aa5978a634b79778c"
+    },
+    {
+      "path": "writer/trace/outbound-prompt.txt",
+      "bytes": 6644,
+      "sha256": "fea98295359e01317d23ba271c7dadf2138bd36c0aab1a591a217eb148d36802"
+    },
+    {
+      "path": "writer/writing-receipt.json",
+      "bytes": 21361,
+      "sha256": "119e1ef33b1683ba716318cb0245a541c33199dee6646d9d426be3d0d38f452b"
+    }
+  ],
+  "limits": "No raw retail uploads, released sales CSVs, raw rollouts or full native RPC/toolstreams are copied. Omitted original sources are hash-indexed. Recovered detector/analysis usage is separately labelled and does not rewrite their prior receipts. No new analytical/performance/recording acceptance claim."
+}

@@ -1,0 +1,238 @@
+{
+  "selected": "pooled90",
+  "selection_rule": "Lowest pooled primary MAE; if within 1e-9 choose baseline then recent90 then pooled90 then ridge. No invented meaningful-gain threshold. Freeze selected method for routine.",
+  "scores": [
+    {
+      "method": "pooled90",
+      "horizon": "coverage",
+      "MAE": 1.1878376875552508,
+      "bias": -0.2758601960497205,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "pooled90",
+      "horizon": "week",
+      "MAE": 0.8511191367022765,
+      "bias": -0.1639178240740741,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "recent90",
+      "horizon": "coverage",
+      "MAE": 1.209471844293273,
+      "bias": -0.2738236961451247,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "recent90",
+      "horizon": "week",
+      "MAE": 0.8562210648148149,
+      "bias": -0.1639178240740741,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "recent_month",
+      "horizon": "coverage",
+      "MAE": 1.2441582546997292,
+      "bias": -0.25245958598493157,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "recent_month",
+      "horizon": "week",
+      "MAE": 0.8632144457245264,
+      "bias": -0.15439068100358425,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "ridge",
+      "horizon": "coverage",
+      "MAE": 1.2310759923639536,
+      "bias": -0.19883633459545957,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "ridge",
+      "horizon": "week",
+      "MAE": 0.8856083350463437,
+      "bias": -0.11781248995464196,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    }
+  ],
+  "workload": [
+    {
+      "origin": "2025-10-05",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.0005489580798894167
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "recent90",
+      "fit_and_inference_seconds": 9.191699791699648e-05
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.03517879196442664
+    },
+    {
+      "origin": "2025-10-05",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.010609124903567135
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.0002465000143274665
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "recent90",
+      "fit_and_inference_seconds": 8.208397775888443e-05
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.034780540969222784
+    },
+    {
+      "origin": "2025-10-12",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.010047666961327195
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.0002697919262573123
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "recent90",
+      "fit_and_inference_seconds": 0.00010195793583989143
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.03395787498448044
+    },
+    {
+      "origin": "2025-10-19",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.010595542029477656
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.00023395800963044167
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "recent90",
+      "fit_and_inference_seconds": 8.67500202730298e-05
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.03401599999051541
+    },
+    {
+      "origin": "2025-10-26",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.011247666901908815
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.00021554098930209875
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "recent90",
+      "fit_and_inference_seconds": 7.449998520314693e-05
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.034852541983127594
+    },
+    {
+      "origin": "2025-11-02",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.010671666939742863
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.00020174996461719275
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "recent90",
+      "fit_and_inference_seconds": 9.104190394282341e-05
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.03436462499666959
+    },
+    {
+      "origin": "2025-11-09",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.01123783306684345
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.0002405830891802907
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "recent90",
+      "fit_and_inference_seconds": 7.624994032084942e-05
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.033515999908559024
+    },
+    {
+      "origin": "2025-11-16",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.011707167024724185
+    },
+    {
+      "origin": "2025-11-23",
+      "method": "recent_month",
+      "fit_and_inference_seconds": 0.00021645799279212952
+    },
+    {
+      "origin": "2025-11-23",
+      "method": "recent90",
+      "fit_and_inference_seconds": 7.30000901967287e-05
+    },
+    {
+      "origin": "2025-11-23",
+      "method": "pooled90",
+      "fit_and_inference_seconds": 0.03402962500695139
+    },
+    {
+      "origin": "2025-11-23",
+      "method": "ridge",
+      "fit_and_inference_seconds": 0.01172470801975578
+    }
+  ],
+  "preparation_seconds": 0.13119358394760638,
+  "total_comparison_seconds": 2.4017560000065714,
+  "process_peak_rss_bytes": 293765120,
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "plan_sha256": "52ea9bc69cc761cd3edc565742d2bb5febaa71a7c73d2cf023a54a00f6963618",
+  "status": "Development only; no independent success gate, no externally declared meaningful threshold, no untouched evaluation."
+}

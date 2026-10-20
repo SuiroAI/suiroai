@@ -1,0 +1,2197 @@
+{
+  "source_files": {
+    "input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    }
+  },
+  "source_provenance": {
+    "operations": "supplied source files with synthetic provenance classifications; authorized roleplay treats operations as scenario facts; no independent real-stock verification",
+    "sales": "released development partition, byte hash differs from original approved raw source as declared by controller; do not seek original"
+  },
+  "raw_rows": 17406,
+  "exact_duplicates_removed": 42,
+  "conflicting_transaction_ids": 0,
+  "order_ids_repeated": 3224,
+  "status_counts": {
+    "completed": 11130,
+    "shipped": 2479,
+    "returned": 1540,
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "status_return_counts": {
+    "No": {
+      "cancelled": 825,
+      "completed": 10951,
+      "processing": 1337,
+      "returned": 0,
+      "shipped": 2440
+    },
+    "Yes": {
+      "cancelled": 26,
+      "completed": 179,
+      "processing": 27,
+      "returned": 1540,
+      "shipped": 39
+    }
+  },
+  "nonpositive_quantities": [
+    {
+      "Order_Status": "Completed",
+      "Return_Flag": "No",
+      "Quantity": 0
+    },
+    {
+      "Order_Status": "Shipped",
+      "Return_Flag": "No",
+      "Quantity": -2
+    },
+    {
+      "Order_Status": "Processing",
+      "Return_Flag": "No",
+      "Quantity": -1
+    },
+    {
+      "Order_Status": "Completed",
+      "Return_Flag": "No",
+      "Quantity": 0
+    },
+    {
+      "Order_Status": "Completed",
+      "Return_Flag": "No",
+      "Quantity": 0
+    },
+    {
+      "Order_Status": "Completed",
+      "Return_Flag": "No",
+      "Quantity": -3
+    },
+    {
+      "Order_Status": "Completed",
+      "Return_Flag": "No",
+      "Quantity": 0
+    },
+    {
+      "Order_Status": "Shipped",
+      "Return_Flag": "No",
+      "Quantity": 0
+    }
+  ],
+  "target_rows": 13602,
+  "target_units": 29043.0,
+  "date_range": [
+    "2022-01-01",
+    "2025-11-30"
+  ],
+  "global_missing_calendar_days": 0,
+  "store_days_with_any_transaction": {
+    "AUS-01": 957,
+    "CHI-01": 923,
+    "COL-01": 638,
+    "LA-01": 1080,
+    "LON-01": 968,
+    "MAN-01": 771,
+    "MUC-01": 763,
+    "NYC-01": 1064,
+    "PAR-01": 930,
+    "SYD-01": 757,
+    "TOR-01": 917,
+    "VAN-01": 777
+  },
+  "pairs": 336,
+  "product_names_nonnull_distinct": {
+    "P001": 1,
+    "P002": 1,
+    "P003": 1,
+    "P004": 1,
+    "P005": 1,
+    "P006": 1,
+    "P007": 1,
+    "P008": 1,
+    "P009": 1,
+    "P010": 1,
+    "P011": 1,
+    "P012": 1,
+    "P013": 1,
+    "P014": 1,
+    "P015": 1,
+    "P016": 1,
+    "P017": 1,
+    "P018": 1,
+    "P019": 1,
+    "P020": 1,
+    "P021": 1,
+    "P022": 1,
+    "P023": 1,
+    "P024": 1,
+    "P025": 1,
+    "P026": 1,
+    "P027": 1,
+    "P028": 1
+  },
+  "positive_pair_day_fraction": 0.02787004662004662,
+  "pair_days_shape": [
+    1430,
+    336
+  ],
+  "daily_array_bytes": 3843840,
+  "weekly_zero_fraction": 0.8231271777003484,
+  "pair_first_last_transactions": [
+    {
+      "Product_ID": "P001",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-27",
+      "max": "2025-10-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-17",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "COL-01",
+      "min": "2022-01-31",
+      "max": "2025-10-07"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "LA-01",
+      "min": "2022-02-04",
+      "max": "2025-11-13"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "LON-01",
+      "min": "2022-01-04",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-25",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-20",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-14",
+      "max": "2025-11-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "PAR-01",
+      "min": "2022-03-11",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-30",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-12",
+      "max": "2025-10-30"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-09",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "AUS-01",
+      "min": "2022-04-13",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-15",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "COL-01",
+      "min": "2022-04-17",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "LA-01",
+      "min": "2022-01-04",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "LON-01",
+      "min": "2022-01-20",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "MAN-01",
+      "min": "2022-02-10",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "MUC-01",
+      "min": "2022-06-20",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-27",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-26",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-11",
+      "max": "2025-09-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-04",
+      "max": "2025-10-20"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-17",
+      "max": "2025-11-19"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-07",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-03",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "COL-01",
+      "min": "2022-01-14",
+      "max": "2025-09-12"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "LA-01",
+      "min": "2022-02-27",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "LON-01",
+      "min": "2022-01-28",
+      "max": "2025-11-02"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-31",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "MUC-01",
+      "min": "2022-04-15",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-01",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-02",
+      "max": "2025-09-19"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-22",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-24",
+      "max": "2025-09-25"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-24",
+      "max": "2025-11-12"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-28",
+      "max": "2025-11-13"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-03",
+      "max": "2025-11-12"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "COL-01",
+      "min": "2022-02-16",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "LA-01",
+      "min": "2022-01-09",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "LON-01",
+      "min": "2022-01-28",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "MAN-01",
+      "min": "2022-07-20",
+      "max": "2025-11-05"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-19",
+      "max": "2025-10-30"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-16",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-08",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-23",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-21",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-25",
+      "max": "2025-10-10"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "AUS-01",
+      "min": "2022-03-14",
+      "max": "2025-10-19"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "CHI-01",
+      "min": "2022-03-26",
+      "max": "2025-09-09"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "COL-01",
+      "min": "2022-01-21",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "LA-01",
+      "min": "2022-02-01",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "LON-01",
+      "min": "2022-01-01",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "MAN-01",
+      "min": "2022-03-06",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-25",
+      "max": "2025-10-10"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-07",
+      "max": "2025-11-05"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-11",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-06",
+      "max": "2025-10-10"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-07",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-18",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-03",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-29",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "COL-01",
+      "min": "2022-01-04",
+      "max": "2025-10-14"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "LA-01",
+      "min": "2022-01-10",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "LON-01",
+      "min": "2022-01-24",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-31",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-31",
+      "max": "2025-10-09"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-06",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-24",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-11",
+      "max": "2025-11-08"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-31",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-04",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-03",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-15",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "COL-01",
+      "min": "2022-01-17",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "LA-01",
+      "min": "2022-01-01",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "LON-01",
+      "min": "2022-01-08",
+      "max": "2025-11-13"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "MAN-01",
+      "min": "2022-02-14",
+      "max": "2025-07-24"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-19",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "NYC-01",
+      "min": "2022-03-14",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-27",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "SYD-01",
+      "min": "2022-05-17",
+      "max": "2025-11-08"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-25",
+      "max": "2025-10-27"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-21",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-21",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-07",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "COL-01",
+      "min": "2022-01-23",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "LA-01",
+      "min": "2022-01-04",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "LON-01",
+      "min": "2022-02-17",
+      "max": "2025-10-21"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "MAN-01",
+      "min": "2022-06-23",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "MUC-01",
+      "min": "2022-03-03",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-10",
+      "max": "2025-11-16"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-05",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-11",
+      "max": "2025-11-13"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-11",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "VAN-01",
+      "min": "2022-05-03",
+      "max": "2025-08-14"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "AUS-01",
+      "min": "2022-03-30",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "CHI-01",
+      "min": "2022-03-20",
+      "max": "2025-11-16"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "COL-01",
+      "min": "2022-02-03",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "LA-01",
+      "min": "2022-03-08",
+      "max": "2025-10-07"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "LON-01",
+      "min": "2022-03-16",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "MAN-01",
+      "min": "2022-03-01",
+      "max": "2025-11-06"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-08",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-27",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-02",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "SYD-01",
+      "min": "2022-03-02",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-04",
+      "max": "2025-10-24"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-19",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-05",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "CHI-01",
+      "min": "2022-03-17",
+      "max": "2025-09-04"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "COL-01",
+      "min": "2022-05-15",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "LA-01",
+      "min": "2022-04-13",
+      "max": "2025-11-19"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "LON-01",
+      "min": "2022-04-01",
+      "max": "2025-11-08"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-11",
+      "max": "2025-11-06"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "MUC-01",
+      "min": "2022-03-17",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-07",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "PAR-01",
+      "min": "2022-04-03",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "SYD-01",
+      "min": "2022-03-15",
+      "max": "2025-11-09"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-06",
+      "max": "2025-09-25"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "VAN-01",
+      "min": "2022-03-21",
+      "max": "2025-09-21"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-03",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "CHI-01",
+      "min": "2022-03-08",
+      "max": "2025-10-12"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "COL-01",
+      "min": "2022-01-21",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "LA-01",
+      "min": "2022-02-17",
+      "max": "2025-10-09"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "LON-01",
+      "min": "2022-02-03",
+      "max": "2025-10-23"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-04",
+      "max": "2025-05-11"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-13",
+      "max": "2025-06-06"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "NYC-01",
+      "min": "2022-03-21",
+      "max": "2025-11-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "PAR-01",
+      "min": "2022-03-14",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-20",
+      "max": "2025-11-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-07",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "VAN-01",
+      "min": "2022-04-15",
+      "max": "2025-10-18"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-14",
+      "max": "2025-10-17"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-04",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "COL-01",
+      "min": "2022-04-08",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "LA-01",
+      "min": "2022-02-09",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "LON-01",
+      "min": "2022-01-25",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "MAN-01",
+      "min": "2022-03-22",
+      "max": "2025-09-04"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-01",
+      "max": "2025-10-28"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-01",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-18",
+      "max": "2025-10-20"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-01",
+      "max": "2025-11-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-30",
+      "max": "2025-10-05"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-13",
+      "max": "2025-11-09"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-10",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-21",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "COL-01",
+      "min": "2022-01-13",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "LA-01",
+      "min": "2022-01-09",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "LON-01",
+      "min": "2022-03-07",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "MAN-01",
+      "min": "2022-03-03",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "MUC-01",
+      "min": "2022-04-27",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-17",
+      "max": "2025-10-31"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "PAR-01",
+      "min": "2022-03-17",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-18",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-14",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-13",
+      "max": "2025-10-27"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "AUS-01",
+      "min": "2022-04-21",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-26",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "COL-01",
+      "min": "2022-01-17",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "LA-01",
+      "min": "2022-04-04",
+      "max": "2025-09-20"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "LON-01",
+      "min": "2022-03-08",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-24",
+      "max": "2025-09-20"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "MUC-01",
+      "min": "2022-04-19",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "NYC-01",
+      "min": "2022-03-01",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "PAR-01",
+      "min": "2022-03-15",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "SYD-01",
+      "min": "2022-03-04",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-31",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-03",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "AUS-01",
+      "min": "2022-07-15",
+      "max": "2025-09-21"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "CHI-01",
+      "min": "2022-03-02",
+      "max": "2025-11-16"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "COL-01",
+      "min": "2022-05-27",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "LA-01",
+      "min": "2022-01-11",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "LON-01",
+      "min": "2022-03-04",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-06",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "MUC-01",
+      "min": "2022-02-11",
+      "max": "2025-07-09"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-02",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-02",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-06",
+      "max": "2025-10-17"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "TOR-01",
+      "min": "2022-03-04",
+      "max": "2025-11-13"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-09",
+      "max": "2025-08-16"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-25",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-14",
+      "max": "2025-11-19"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "COL-01",
+      "min": "2022-01-04",
+      "max": "2025-09-19"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "LA-01",
+      "min": "2022-01-02",
+      "max": "2025-10-31"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "LON-01",
+      "min": "2022-02-07",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "MAN-01",
+      "min": "2022-07-03",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-01",
+      "max": "2025-10-12"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-17",
+      "max": "2025-11-05"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-10",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "SYD-01",
+      "min": "2022-03-02",
+      "max": "2025-11-11"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-17",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-01",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-12",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-13",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "COL-01",
+      "min": "2022-01-17",
+      "max": "2025-09-29"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "LA-01",
+      "min": "2022-02-01",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "LON-01",
+      "min": "2022-01-01",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-19",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "MUC-01",
+      "min": "2022-03-10",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-05",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-24",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-09",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "TOR-01",
+      "min": "2022-03-06",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-01",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-09",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-22",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "COL-01",
+      "min": "2022-02-05",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "LA-01",
+      "min": "2022-01-23",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "LON-01",
+      "min": "2022-01-05",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-03",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-20",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-02",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-09",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "SYD-01",
+      "min": "2022-04-06",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "TOR-01",
+      "min": "2022-04-05",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-08",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-20",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-01",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "COL-01",
+      "min": "2022-06-03",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "LA-01",
+      "min": "2022-01-16",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "LON-01",
+      "min": "2022-01-03",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-18",
+      "max": "2025-09-23"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "MUC-01",
+      "min": "2022-02-01",
+      "max": "2025-11-08"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-17",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-12",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-19",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-14",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-04",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-25",
+      "max": "2025-11-10"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-20",
+      "max": "2025-10-17"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "COL-01",
+      "min": "2022-02-08",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "LA-01",
+      "min": "2022-02-08",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "LON-01",
+      "min": "2022-03-29",
+      "max": "2025-09-15"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "MAN-01",
+      "min": "2022-05-16",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-13",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-06",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-03",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-10",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-24",
+      "max": "2025-09-27"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-14",
+      "max": "2025-11-08"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-14",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-13",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "COL-01",
+      "min": "2022-03-10",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "LA-01",
+      "min": "2022-03-19",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "LON-01",
+      "min": "2022-01-20",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "MAN-01",
+      "min": "2022-03-21",
+      "max": "2025-10-29"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "MUC-01",
+      "min": "2022-02-04",
+      "max": "2025-10-31"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-28",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-22",
+      "max": "2025-11-06"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "SYD-01",
+      "min": "2022-05-10",
+      "max": "2025-10-27"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "TOR-01",
+      "min": "2022-04-11",
+      "max": "2025-08-28"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-17",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-07",
+      "max": "2025-10-27"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-17",
+      "max": "2025-08-22"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "COL-01",
+      "min": "2022-02-12",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "LA-01",
+      "min": "2022-01-23",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "LON-01",
+      "min": "2022-03-01",
+      "max": "2025-05-27"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "MAN-01",
+      "min": "2022-04-12",
+      "max": "2025-07-29"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "MUC-01",
+      "min": "2022-02-07",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "NYC-01",
+      "min": "2022-04-11",
+      "max": "2025-09-11"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-04",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-16",
+      "max": "2025-09-21"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "TOR-01",
+      "min": "2022-05-06",
+      "max": "2025-10-09"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "VAN-01",
+      "min": "2022-03-02",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "AUS-01",
+      "min": "2022-01-25",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-14",
+      "max": "2025-11-12"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "COL-01",
+      "min": "2022-03-18",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "LA-01",
+      "min": "2022-02-10",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "LON-01",
+      "min": "2022-02-11",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "MAN-01",
+      "min": "2022-02-05",
+      "max": "2025-10-25"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-18",
+      "max": "2025-11-09"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-19",
+      "max": "2025-11-04"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-06",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-11",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-18",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-04",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-02",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-09",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "COL-01",
+      "min": "2022-03-04",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "LA-01",
+      "min": "2022-02-21",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "LON-01",
+      "min": "2022-01-05",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-20",
+      "max": "2025-11-12"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "MUC-01",
+      "min": "2022-03-28",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-02",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-10",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "SYD-01",
+      "min": "2022-02-13",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-10",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-21",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-21",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "CHI-01",
+      "min": "2022-01-12",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "COL-01",
+      "min": "2022-02-14",
+      "max": "2025-08-16"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "LA-01",
+      "min": "2022-02-05",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "LON-01",
+      "min": "2022-01-29",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "MAN-01",
+      "min": "2022-01-30",
+      "max": "2025-11-03"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-10",
+      "max": "2025-11-22"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "NYC-01",
+      "min": "2022-02-13",
+      "max": "2025-11-26"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "PAR-01",
+      "min": "2022-01-05",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "SYD-01",
+      "min": "2022-01-24",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "TOR-01",
+      "min": "2022-02-08",
+      "max": "2025-11-15"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "VAN-01",
+      "min": "2022-02-08",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "AUS-01",
+      "min": "2022-02-12",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "CHI-01",
+      "min": "2022-02-03",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "COL-01",
+      "min": "2022-01-04",
+      "max": "2025-08-26"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "LA-01",
+      "min": "2022-01-25",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "LON-01",
+      "min": "2022-02-23",
+      "max": "2025-11-17"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "MAN-01",
+      "min": "2022-02-13",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "MUC-01",
+      "min": "2022-01-31",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "NYC-01",
+      "min": "2022-01-12",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "PAR-01",
+      "min": "2022-02-02",
+      "max": "2025-11-12"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "SYD-01",
+      "min": "2022-03-10",
+      "max": "2025-08-08"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "TOR-01",
+      "min": "2022-01-06",
+      "max": "2025-11-24"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "VAN-01",
+      "min": "2022-01-26",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "AUS-01",
+      "min": "2023-03-21",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "CHI-01",
+      "min": "2023-01-20",
+      "max": "2025-10-27"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "COL-01",
+      "min": "2023-02-02",
+      "max": "2025-11-05"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "LA-01",
+      "min": "2023-02-24",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "LON-01",
+      "min": "2023-01-04",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "MAN-01",
+      "min": "2023-01-28",
+      "max": "2025-11-30"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "MUC-01",
+      "min": "2023-02-07",
+      "max": "2025-11-14"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "NYC-01",
+      "min": "2023-02-01",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "PAR-01",
+      "min": "2023-01-08",
+      "max": "2025-11-07"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "SYD-01",
+      "min": "2023-02-15",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "TOR-01",
+      "min": "2023-02-19",
+      "max": "2025-11-06"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "VAN-01",
+      "min": "2023-02-02",
+      "max": "2025-11-29"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "AUS-01",
+      "min": "2023-02-24",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "CHI-01",
+      "min": "2023-01-13",
+      "max": "2025-11-28"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "COL-01",
+      "min": "2023-03-21",
+      "max": "2025-11-25"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "LA-01",
+      "min": "2023-01-07",
+      "max": "2025-11-20"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "LON-01",
+      "min": "2023-01-14",
+      "max": "2025-10-23"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "MAN-01",
+      "min": "2023-01-04",
+      "max": "2025-11-18"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "MUC-01",
+      "min": "2023-02-21",
+      "max": "2025-10-09"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "NYC-01",
+      "min": "2023-01-10",
+      "max": "2025-11-21"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "PAR-01",
+      "min": "2023-01-02",
+      "max": "2025-11-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "SYD-01",
+      "min": "2023-02-10",
+      "max": "2025-11-27"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "TOR-01",
+      "min": "2023-03-12",
+      "max": "2025-11-23"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "VAN-01",
+      "min": "2023-01-24",
+      "max": "2025-11-13"
+    }
+  ],
+  "operational_checks": {
+    "stock_policy_unique_rows": 336,
+    "inbound_lines": 126,
+    "inbound_units": 927,
+    "stock_on_order_units": 927,
+    "matched_all_pairs": true,
+    "ledger_complete_all": true,
+    "stock_snapshot": "2025-11-30",
+    "stock_units": 2869,
+    "coverage_days": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "treatment_effects": {
+    "order_ids": "Not deduplicated: order may contain distinct legitimate transaction lines",
+    "inventory_level_in_sales": "Not used: transaction-level values cannot establish current stock or stockout history",
+    "return_credit": "No return stock credit; usable stock already supplied",
+    "zero_recorded_sales": "Calendar zeros are absent recorded transaction events, conditional on continuous capture; no claim store open or unmet demand zero",
+    "status_availability": "Final statuses lack change timestamps. Targets are frozen supplied labels; no historical status or inventory features used"
+  },
+  "seasonal_monthly_units_by_year": "{(2022, 1): 352, (2022, 2): 459, (2022, 3): 479, (2022, 4): 518, (2022, 5): 648, (2022, 6): 589, (2022, 7): 494, (2022, 8): 514, (2022, 9): 571, (2022, 10): 667, (2022, 11): 793, (2022, 12): 909, (2023, 1): 510, (2023, 2): 467, (2023, 3): 645, (2023, 4): 560, (2023, 5): 645, (2023, 6): 561, (2023, 7): 597, (2023, 8): 596, (2023, 9): 593, (2023, 10): 589, (2023, 11): 906, (2023, 12): 948, (2024, 1): 441, (2024, 2): 481, (2024, 3): 550, (2024, 4): 569, (2024, 5): 626, (2024, 6): 497, (2024, 7): 546, (2024, 8): 448, (2024, 9): 579, (2024, 10): 628, (2024, 11): 909, (2024, 12): 833, (2025, 1): 513, (2025, 2): 647, (2025, 3): 697, (2025, 4): 621, (2025, 5): 612, (2025, 6): 554, (2025, 7): 668, (2025, 8): 596, (2025, 9): 601, (2025, 10): 795, (2025, 11): 1022}"
+}

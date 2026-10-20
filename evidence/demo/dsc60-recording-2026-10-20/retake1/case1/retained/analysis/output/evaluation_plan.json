@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "status": "Prospective plan written before candidate scoring. October–November 2025 already inspected in project; all comparisons are development evidence, never untouched evaluation.",
+  "target": "Gross positive product units on completed, shipped and returned orders, case-normalized, all sales channels, assigned Store_ID; exact duplicate rows removed; nonpositive quantities excluded. Returned quantities not subtracted; usable stock already supplied separately. Cancelled and processing excluded from primary target.",
+  "status_time_limit": "Current extract statuses lack change timestamps; origin cutoffs govern order dates, but true historical status availability cannot be reconstructed. Comparison is conditional development replay, not a fully as-of operational backtest.",
+  "missing_dates": "All 1430 calendar dates appear globally. Within that observed ledger span, no eligible pair-day row is zero recorded units only, conditional on extract completeness. Do not infer uncensored zero demand, opening dates or historic in-stock exposure. No fill outside observed global date range.",
+  "population": "All 336 supplied policy keys, identical across candidates; all appear in sales before first origin. Fixed current catalog introduces survivorship limitation. No outcome-selected subset.",
+  "origins": ["2025-09-28","2025-10-05","2025-10-12","2025-10-19","2025-10-26","2025-11-02","2025-11-09","2025-11-16"],
+  "training": "Only order dates at/before origin. mean84 last 84 days; mean28 last 28 days; Croston SBA last 104 complete Monday–Sunday weeks, alpha=0.1 fixed; Poisson same 104 weeks, regularization alpha=0.1 fixed, one-hot product/store/month plus continuous week trend. No tuning.",
+  "evaluation_dates": "2025-09-29 through 2025-11-30; no December outcomes",
+  "horizons": "Primary each key's supplied lead days + review days (8–14); secondary next 7 days. Same eight origins at both horizons. Historical use of current lead rules is a fixed diagnostic horizon, not evidence those rules existed historically.",
+  "baseline": "mean84: last 84 calendar days recorded units per day, extrapolated; analytical baseline, not proven customer incumbent",
+  "candidates": ["mean84","mean28","croston_sba","poisson_pool"],
+  "primary_metric": "Mean absolute error in total product units per product at store per coverage period; equal weight across 336 keys and eight origins. Matches order-up-to demand coverage, avoids invented monetary costs and percentage-error issues at zero.",
+  "selection": "Minimum unrounded pooled primary MAE. Numerical ties within 1e-9 go to mean84, then mean28, croston_sba, poisson_pool. No invented meaningful improvement threshold; report marginal or mixed differences honestly.",
+  "secondary": ["7-day MAE", "signed bias", "pooled absolute error / recorded units", "MAE by origin/store/sparse demand group", "training sparsity", "gross target sensitivity adding processing or excluding returned/return-flagged orders", "ordering impact and empirical error spread, not guaranteed intervals"],
+  "uncertainty": "Origins overlap at coverage horizons, small eight-origin sample; descriptive paired origin differences and empirical residual quantiles, not independent significance or calibrated future confidence. Report sensitivity without reselecting primary winner.",
+  "workload": "Measure preparation, fit and inference wall time; process peak RSS includes retained data/models/dependencies. Evaluate ordinary CPU-only 8 GB suitability with OS headroom; current host capacity not assumed. Routine has no model/API charges; AI-assisted build usage/pricing not available.",
+  "success_gate": "Cannot close performance-success recording readiness: no externally predeclared meaningful improvement threshold and no genuinely untouched scored outcomes; December reserved and inaccessible. Freeze selection and artifacts for future independent evaluation."
+}

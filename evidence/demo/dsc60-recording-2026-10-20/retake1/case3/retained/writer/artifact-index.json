@@ -1,0 +1,39 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/output/business_response.md",
+    "bytes": 1427,
+    "sha256": "75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/output/rewrite_result.json",
+    "bytes": 272,
+    "sha256": "f9c419363977d5c994dd439b0b4fe1b8303502f3599eacc2293a06b3dbe4958f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-bootstrap.jsonl",
+    "bytes": 2312,
+    "sha256": "8327ae3496c6555eb316d4ad050806f425287efb7094976e6fc08cc0c972e509"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-rpc.jsonl",
+    "bytes": 160859,
+    "sha256": "24bdbd7db024b2d3938f62083db08846681bc56345b69c217e51b646a5eb615b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-run.json",
+    "bytes": 90348,
+    "sha256": "8b9d3a9fcca1907094cc8e19c7613dd683fcb857a5651357e43f70af567fedb5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native-trace/call-trace.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/retake1/case3/retained/writer/trace/call-trace.json",
+    "bytes": 7129,
+    "sha256": "9ca6f31610f5e39792ee2a73a34e0fd819b00ed5f3972c083ee365e61d2c437e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native-trace/outbound-prompt.txt",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/retake1/case3/retained/writer/trace/outbound-prompt.txt",
+    "bytes": 6840,
+    "sha256": "65860283723a51d637464518d067aa4ba7bc612f775a3c953c0331b3bd9d7ad7"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "csv_hash_correct": true,
+  "routine_hash_matches_measured_run": true,
+  "result_exact_three_keys": true,
+  "response_word_count": 235,
+  "notebook_execution": "Sequential plain Python execution, saved stream outputs; nbformat validation passed; saved plain text outputs inspected; no kernel or chart rendering required",
+  "required_files_present": true
+}

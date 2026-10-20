@@ -1,0 +1,12 @@
+{
+  "format": "dsc60-recording-browser-table-check-v1",
+  "case": 1,
+  "status": "passed",
+  "rows": 336,
+  "columns": 17,
+  "body_cells": 5712,
+  "headers_cells_row_order_all_equal": true,
+  "browser_table_sha256": "aa90a9ce79de893f4111c75cee9c094ded972a16d8b90e7ab9b0f21c740f080a",
+  "csv_sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4",
+  "scope": "Live browser DOM captured by root; reviewer compared every cell/header/order without controlling UI. This does not certify original video."
+}

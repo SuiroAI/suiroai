@@ -1,0 +1,40 @@
+{"at":"2026-10-20T19:50:44.211Z","case":"case1","action":"question_and_four_uploads_completed","question":"What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.","session":"c1cebd9ea09847e898f4dde05ed4c788","csv_download_clicked":false}
+{"at":"2026-10-20T19:51:09.002Z","case":"case1","action":"context_found_and_review_shown","followup_asked":false}
+{"at":"2026-10-20T19:51:32.893Z","case":"case1","action":"approve_and_run_clicked","approval_clicks":1}
+{"at":"2026-10-20T20:00:57.287Z","case":"case1","action":"completed_response_available","html_url":"http://localhost:8503/media/9b54db20aa61eb83a8dede7f461ca492.html"}
+{"at":"2026-10-20T20:01:09.335Z","case":"case1","action":"response_start_shown"}
+{"at":"2026-10-20T20:01:31.499Z","case":"case1","action":"full_response_scrolled_to_end_including_costs"}
+{"at":"2026-10-20T20:01:53.796Z","case":"case1","action":"html_view_clicked_explicitly","csv_download_clicked":false}
+{"at":"2026-10-20T20:02:23.107Z","case":"case1","action":"html_tab_shown","tab":"1763932447"}
+{"at":"2026-10-20T20:02:40.414Z","case":"case1","action":"html_table_scrolled_down"}
+{"at":"2026-10-20T20:02:48.478Z","case":"case1","action":"html_table_scrolled_right"}
+{"at":"2026-10-20T20:03:20.550Z","case":"case1","action":"html_table_bottom_shown"}
+{"at":"2026-10-20T20:03:24.970Z","case":"case1","action":"returned_to_app","csv_download_clicked":false}
+{"at":"2026-10-20T20:03:56.865Z","case":"case1","action":"return_to_app_native_selected_tab_verified","active_tab":"SuiroAI local demo","csv_download_clicked":false}
+{"at":"2026-10-20T20:04:12.264Z","case":"case2","action":"fresh_demo_opened"}
+{"at":"2026-10-20T20:20:00.310Z","case":"retake1/case1","action":"fresh_corrected_demo_started","source_commit":"317e169","url":"http://localhost:8506/","recording_user_reported_ready":true}
+{"at":"2026-10-20T20:20:29.989Z","case":"retake1/case1","action":"four_files_uploaded"}
+{"at":"2026-10-20T20:20:35.473Z","case":"retake1/case1","action":"review_task_clicked"}
+{"at":"2026-10-20T20:21:25.477Z","case":"retake1/case1","action":"context_found_and_review_shown","followup_asked":false}
+{"at":"2026-10-20T20:21:54.542Z","case":"retake1/case1","action":"approve_and_run_clicked","approval_clicks":1}
+{"at":"2026-10-20T20:30:27.146Z","case":"retake1/case1","action":"full-response-start","units":875,"routine_seconds":0.62,"ai_estimate_usd":0.62}
+{"at":"2026-10-20T20:30:49.521Z","case":"retake1/case1","action":"full-response-end-cost"}
+{"at":"2026-10-20T20:30:55.411Z","case":"retake1/case1","action":"explicit-open-html"}
+{"at":"2026-10-20T20:31:30.629Z","case":"retake1/case1","action":"html-scroll-rows-columns"}
+{"at":"2026-10-20T20:32:04.014Z","case":"retake1/case1","action":"return-to-app-no-csv-download"}
+{"at":"2026-10-20T20:32:35.004Z","case":"retake1/case2","action":"review-short-question-four-files","tab":"1763932455"}
+{"at":"2026-10-20T20:33:34.683Z","case":"retake1/case2","action":"manual-current-approach","answer":"I normally use last month's sales to work out what we need for the week."}
+{"at":"2026-10-20T20:34:04.293Z","case":"retake1/case2","action":"approve-and-run"}
+{"at":"2026-10-20T20:41:17.011Z","case":"retake1/case2","action":"full-response-start","units":881,"routine_seconds":0.78,"ai_estimate_usd":0.5}
+{"at":"2026-10-20T20:41:38.977Z","case":"retake1/case2","action":"full-response-end-cost"}
+{"at":"2026-10-20T20:41:39.307Z","case":"retake1/case2","action":"explicit-open-html"}
+{"at":"2026-10-20T20:42:19.728Z","case":"retake1/case2","action":"html-scroll-rows-columns"}
+{"at":"2026-10-20T20:42:36.535Z","case":"retake1/case2","action":"return-to-app-no-csv-download"}
+{"at":"2026-10-20T20:43:08.853Z","case":"retake1/case3","action":"review-short-question-four-files","tab":"1763932457"}
+{"at":"2026-10-20T20:44:17.589Z","case":"retake1/case3","action":"explicit-continue-without-current-approach"}
+{"at":"2026-10-20T20:44:41.101Z","case":"retake1/case3","action":"approve-and-run"}
+{"at":"2026-10-20T20:53:02.483Z","case":"retake1/case3","action":"full-response-start","units":868,"routine_seconds":0.66,"ai_estimate_usd":0.57}
+{"at":"2026-10-20T20:53:23.583Z","case":"retake1/case3","action":"full-response-end-cost"}
+{"at":"2026-10-20T20:53:23.885Z","case":"retake1/case3","action":"explicit-open-html"}
+{"at":"2026-10-20T20:54:09.212Z","case":"retake1/case3","action":"html-scroll-rows-columns"}
+{"at":"2026-10-20T20:54:26.754Z","case":"retake1/case3","action":"return-to-app-no-csv-download"}

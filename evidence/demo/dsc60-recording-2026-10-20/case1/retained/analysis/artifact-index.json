@@ -1,0 +1,166 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/analysis.py",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/analysis.py",
+    "bytes": 14369,
+    "sha256": "bae2b6a355f1d6f2ffef20e1364c12257c3c9f3595b4e1dfb0c6eb550c3374df"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/audit_checks.py",
+    "bytes": 4116,
+    "sha256": "07942b5b7569b683aef28fa0a0379bdfaef34abe982457ca56ac73134ad9dab3"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/audit_companion.ipynb",
+    "bytes": 9486,
+    "sha256": "15089af3f2784462d517e1443e1b532d6d95b438178d5bb373313356e81935c0"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/compute_measurements.json",
+    "bytes": 26174,
+    "sha256": "a16d499eb726bc3983b23b7dcda06ef8cc9bd7069fc4c3054e164556c7f3cf8b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/development_predictions.csv",
+    "bytes": 5683734,
+    "sha256": "75d80a40ee4c7c576742024be602cb51ac2343a1432a6324005648af02eec597"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/development_results.json",
+    "bytes": 19080,
+    "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/evaluation_plan.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/evaluation_plan.json",
+    "bytes": 5960,
+    "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/final_fit_details.json",
+    "bytes": 2900,
+    "sha256": "305ba77e4d3fec969393a76280215611f7e58df79b26359ccab33e316c0b1efc"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/fit_details.json",
+    "bytes": 22283,
+    "sha256": "b431282028c81aa5b00f8be48a2dbf6c4e4528d772d96765e318969ab4d9dbeb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/inspect_sources.py",
+    "bytes": 3047,
+    "sha256": "3fa243a768755c97733669a46fd436b8a4f1d64ab5aea15c2cc2173ae69b9230"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/make_audit_notebook.py",
+    "bytes": 6611,
+    "sha256": "2854d5a47cb176f651c2684c0d033809ae0005ce90aa901e9a31088b8579489d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/order_summary.json",
+    "bytes": 6299,
+    "sha256": "7283375453aeea3f64eb021abd0eb68ab4bb71906b669942b2f9ff6f36253a13"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/presented-html-356949cadee749a5a178c0720d0bc560.html",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/presented-html-356949cadee749a5a178c0720d0bc560.html",
+    "bytes": 79149,
+    "sha256": "2a978746157916ba64b3d7186f31a9d06b1362c7d4495d7ed60b4958bbeb4d4c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/presented-output-ebb4a0a523524b48930cb5291f3dbd39.csv",
+    "bytes": 28913,
+    "sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/response.md",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/response.md",
+    "bytes": 1604,
+    "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/restocking.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/restocking.csv",
+    "bytes": 28913,
+    "sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/result.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/result.json",
+    "bytes": 153,
+    "sha256": "05fa30e7e99fec82d5735f8bf443db1b7b0274aaf37bfd761489c4867c2144b2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/routine_compute_measurements.json",
+    "bytes": 1057,
+    "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/routine_point_calculations.csv",
+    "bytes": 17629,
+    "sha256": "7b98e8d2d86d4f36a52b5b7c4590a48eb5a768d9f21e4a33a254d657a20da990"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/run_restock.py",
+    "bytes": 5557,
+    "sha256": "67989048c80d1e579a4e954af26a2d9cacbbcdcdbb0fde9bb3b1768a065c4bc0"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/source_profile.json",
+    "bytes": 4651,
+    "sha256": "405c97f11516808d0b5f57c8d972a2c70becae55ecf75e3d8d39221a73ca062d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/source_treatment.md",
+    "bytes": 14512,
+    "sha256": "ed7d62925c22683726fa7c78d82dfd9f2f63c11e865606b2fb37989847abbe64"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/target_sensitivity.json",
+    "bytes": 1627,
+    "sha256": "dbaaf2373b9d80edf7b1b58a910ccaacf28e615696d13bf8c9524c878cc1a21c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/task_refinement.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/output/task_refinement.json",
+    "bytes": 5783,
+    "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/validation_and_diagnostics.json",
+    "bytes": 1815,
+    "sha256": "2c8eb56b7665dce2a4f5ff8528fd4efd682805cec08af9ed146ae7590f71fff5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output/write_plans.py",
+    "bytes": 11237,
+    "sha256": "e85db40fd5698cf7064ad6486a844b2494a927ab5ae0cf3f745f77423eaf4c10"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/native/native-bootstrap.jsonl",
+    "bytes": 2302,
+    "sha256": "5ee97becfd3eaa7ad2dcd646ac33e0ab5bdb9386813dea1d3e6710e25e705ee6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/native/native-rpc.jsonl",
+    "bytes": 1456292,
+    "sha256": "4713bec94e43c9e795f7345ff62058bd5545a5c20063a2a2aec18f8dfc402962"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/native/native-run.json",
+    "bytes": 349044,
+    "sha256": "5cb3f294b2799df426451a962509ea817d0e08f6cad797f050487dec9c6ac4f6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/native-trace/call-trace.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/trace/call-trace.json",
+    "bytes": 6000,
+    "sha256": "71eb34a5d62a5868c4820d9dd12e75af5899d253092ace50812ace8b0b7fd1cb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/native-trace/outbound-prompt.txt",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/case1/retained/analysis/trace/outbound-prompt.txt",
+    "bytes": 19176,
+    "sha256": "b86b78a53a2b2db248dcc3cb5e1eff0c2a14a89dd686e802e031293384fbfcdf"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/engineering_recovered_usage.json",
+    "bytes": 7507,
+    "sha256": "7c0e3e41c1bb594b39f2bb0323a6fcc16fcd92bd2a4c4717f6ec29a81bae8e40"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/smoke-business-response.md",
+    "bytes": 1320,
+    "sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/smoke-writing-receipt.json",
+    "bytes": 22950,
+    "sha256": "ce712da3aec7d9ff3d30f95f2693554a65e34e8a7432c068339fa17c4a50a53b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-bootstrap.jsonl",
+    "bytes": 2308,
+    "sha256": "0dd5f71d04d83a36b0ce1a3ff86c09f0dc928db8ba2e9c1ce57b7093dca9e59e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-rpc.jsonl",
+    "bytes": 235751,
+    "sha256": "8ac12ccd8438dae6b34e9dd915a7bc328ce6149773ca4df1cee623acb38ca5d7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native/native-run.json",
+    "bytes": 148891,
+    "sha256": "815aef8160120261e9b3cd137707461e7096a1165d435d0a5ee4dc984385a98a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native-trace/call-trace.json",
+    "bytes": 7125,
+    "sha256": "6317c969681f177db6ed0fd93602997c19a22c39102e243aa5978a634b79778c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/native-trace/outbound-prompt.txt",
+    "bytes": 6644,
+    "sha256": "fea98295359e01317d23ba271c7dadf2138bd36c0aab1a591a217eb148d36802"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/output/business_response.md",
+    "bytes": 1152,
+    "sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/output/rewrite_result.json",
+    "bytes": 272,
+    "sha256": "5c72e0c74511ef89e6660a7aa3cb762e9de8a337af54368e08b8917cb04cae4a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/csv_facts.json",
+    "bytes": 533,
+    "sha256": "75ae3e25dde222d92451932b4d0da9852008b94e2ce954b9ae00a53a3b59ea12"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/development_results.json",
+    "bytes": 19080,
+    "sha256": "1e121ee1f2026b5e0a57c4fe629aa882ba3d875924a7b9b45293ac25b210aeba"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/evaluation_plan.json",
+    "bytes": 5960,
+    "sha256": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/original_response.md",
+    "bytes": 1604,
+    "sha256": "81da2414d8da152a3bf6de6fc67de82239c4c945a2d607ddc13db1eb3e8e11f3"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/routine_compute_measurements.json",
+    "bytes": 1057,
+    "sha256": "0c4cbaaeada65c2d593c6ef226c529103261d2b6142e635b3b11447507c1fc41"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/source_manifest.json",
+    "bytes": 3199,
+    "sha256": "2d434991b22334ea984f49aea1b1d9b73aaf7e0ebee5c7575349e694fbad423b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/released/task_refinement.json",
+    "bytes": 5783,
+    "sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-recording-smoke-2026-10-20/writer/business-response-8d8b981ac202449cb6f2e652db9b7ec6/writing-receipt.json",
+    "bytes": 21361,
+    "sha256": "119e1ef33b1683ba716318cb0245a541c33199dee6646d9d426be3d0d38f452b"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "peak_RSS_at_import_MiB": 100.0,
+  "load_prepare_seconds": 0.0855434580007568,
+  "peak_RSS_after_prepare_MiB": 154.25,
+  "panel_shape": [
+    1430,
+    336
+  ],
+  "panel_bytes": 3843840,
+  "input_sales_rows": 17406,
+  "fit_seconds": 0.013290208065882325,
+  "peak_RSS_after_fit_MiB": 154.28125,
+  "retained_model_state_bytes": 8400,
+  "inference_seconds": 0.0012865830212831497,
+  "peak_RSS_after_inference_MiB": 154.5,
+  "ordering_and_save_seconds": 0.09780766698531806,
+  "local_calculation_seconds": 0.44426333403680474,
+  "process_peak_RSS_MiB": 154.875,
+  "dependencies": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "routine_paid_API_calls": 0,
+  "limits": "Fresh-process wall time and high-water resident memory, one host/run. Includes imports, data loading/preparation, fitting, retained arrays/model state, prediction and output. High-water memory is cumulative, not independent phase allocations. No 8GB-host test or extrapolation to much larger data. Only supplied scale. Hardware and electricity not priced."
+}

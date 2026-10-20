@@ -1,0 +1,56 @@
+{
+  "original_question": "What should I restock in my stores next week?",
+  "customer_context": {
+    "current_process": {
+      "source": "user_answer",
+      "status": "supplied",
+      "text": "I normally use last month's sales to work out what we need for the week."
+    },
+    "demo_scenario": {
+      "authority": "explicit_user_demo_roleplay_instruction",
+      "customer_provenance_only_csv_columns": false,
+      "customer_provenance_warnings": false,
+      "independently_verified_real_stock_claimed": false,
+      "mode": "provided_operations_are_assumed_scenario_facts",
+      "operating_inputs": [
+        "supplied_stock",
+        "supplied_deliveries",
+        "supplied_ordering_rules"
+      ],
+      "source_provenance_unchanged": true
+    },
+    "format": "dsc60-task-context-v1",
+    "original_question": "What should I restock in my stores next week?"
+  },
+  "attribution": "Data analyst refinement; original customer wording above unchanged",
+  "decision": "Generate November 30 orders in product units for December 1-7, covering supplier lead time plus seven-day review, using supplied stock, dated incoming orders, safety stock, minimums and multiples.",
+  "routine": "Load and validate current files; clean recorded sales; estimate demand; subtract usable stock and timely incoming units; apply supplied rules; export all 336 rows and timing exceptions. Replaces repeated aggregation and quantity arithmetic; exact incumbent conversion, return handling and rounding are unknown.",
+  "facts": [
+    "Current process uses last month's sales",
+    "Supplied operational files are scenario facts",
+    "All operating keys match the 28 products and 12 stores in sales",
+    "Stock is an as-of snapshot, not historical exposure"
+  ],
+  "interpretations": [
+    "Forecast recorded fulfilled outbound units rather than unobserved unconstrained demand",
+    "Use a recent-month-rate baseline as an analytical interpretation, not an exact replica of the customer's process"
+  ],
+  "unknowns": [
+    "Lost sales, inventory availability history, reusable returns, historical order-status changes",
+    "Precise incumbent formula, business error costs and availability-versus-excess priority",
+    "Independent meaningful improvement threshold and untouched evaluation outcomes"
+  ],
+  "candidate_rationale": {
+    "recent_month": "Fair calendar-month baseline linked to supplied process description",
+    "recent90": "Sparse series support a longer averaging window",
+    "pooled90": "336 sparse series permit product/store pooling with shrinkage",
+    "ridge": "Low-dimensional pooled regularized autoregression can learn recent demand and annual seasonality without heavy models"
+  },
+  "evidence": [
+    "released/input-4.csv: 17,406 rows, all 1,430 calendar dates represented; 42 exact duplicate rows",
+    "released/input-1.csv: coverage horizons 8-14 days, seven-day reviews",
+    "released/input-2.csv and input-3.csv: complete ledger flag and incoming quantities available"
+  ],
+  "scope": "CPU-only non-LLM forecasting; no policy optimization, neural models, reserved December outcomes or external research. October-November results are development evidence only.",
+  "measurement": "Recorded-unit absolute error supports forecast selection, not savings or availability claims. Measure complete routine wall time and process peak RSS including preparation and retained model arrays. No paid model calls in routine. AI build cost requires unavailable usage/pricing."
+}

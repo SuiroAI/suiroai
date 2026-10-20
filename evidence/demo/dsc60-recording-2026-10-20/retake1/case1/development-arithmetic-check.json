@@ -1,0 +1,72 @@
+{
+  "format": "dsc60-retake-case-development-arithmetic-v1",
+  "status": "intermediate_output_arithmetic_checked",
+  "case": 1,
+  "retake": "retake1",
+  "prediction_rows": 21504,
+  "common_actuals_population_horizons": true,
+  "metrics": [
+    {
+      "method": "croston_sba",
+      "kind": "coverage",
+      "n": 2688,
+      "MAE": 1.252267935440135,
+      "bias": -0.286137572346454
+    },
+    {
+      "method": "croston_sba",
+      "kind": "next7",
+      "n": 2688,
+      "MAE": 0.881704163697471,
+      "bias": -0.15804392388128888
+    },
+    {
+      "method": "mean28",
+      "kind": "coverage",
+      "n": 2688,
+      "MAE": 1.3891634778911564,
+      "bias": -0.16834077380952384
+    },
+    {
+      "method": "mean28",
+      "kind": "next7",
+      "n": 2688,
+      "MAE": 0.9366629464285714,
+      "bias": -0.09161086309523815
+    },
+    {
+      "method": "mean84",
+      "kind": "coverage",
+      "n": 2688,
+      "MAE": 1.2750274589002268,
+      "bias": -0.27624096513605445
+    },
+    {
+      "method": "mean84",
+      "kind": "next7",
+      "n": 2688,
+      "MAE": 0.8883308531746033,
+      "bias": -0.15407986111111113
+    },
+    {
+      "method": "poisson_pool",
+      "kind": "coverage",
+      "n": 2688,
+      "MAE": 1.290251242983075,
+      "bias": -0.24638396360796444
+    },
+    {
+      "method": "poisson_pool",
+      "kind": "next7",
+      "n": 2688,
+      "MAE": 0.9173546952675715,
+      "bias": -0.13301905841181397
+    }
+  ],
+  "selected": "croston_sba",
+  "primary_gain": 0.01785022220597754,
+  "plan_unchanged_from_prospective_observation": true,
+  "scope": "Own arithmetic from saved development predictions; no producer execution, model refit or reserved evaluation; finalroutine/writer/UI pending.",
+  "exact_prespecified_key_origin_kind_horizon_method_grid_verified": true,
+  "unique_prediction_keys": 21504
+}

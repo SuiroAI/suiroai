@@ -1,0 +1,46 @@
+{
+  "all_336_orders_independently_checked": true,
+  "rate_max_absolute_difference": 5.551115123125783e-17,
+  "all_quantities_nonnegative_integer": true,
+  "source_overwrite_protection": true,
+  "selected_weekly_wins_vs_baseline": "4/8",
+  "alternative_target_scores_fixed_original_forecasts": {
+    "pooled90": {
+      "no_returns": 0.8471470201358123,
+      "processing": 0.8921884836024468
+    },
+    "recent90": {
+      "no_returns": 0.8522362764550264,
+      "processing": 0.8983010912698413
+    },
+    "recent_month": {
+      "no_returns": 0.8569668458781362,
+      "processing": 0.9061139912954429
+    },
+    "ridge": {
+      "no_returns": 0.8821024381912084,
+      "processing": 0.9235060414051509
+    }
+  },
+  "seasonal_november_to_jan_oct_daily_ratio": {
+    "2022": 1.5185625276047527,
+    "2023": 1.594843338250582,
+    "2024": 1.722536237001,
+    "2025": 1.6417615990767154
+  },
+  "selected_forecast_total_next_week": 184.333,
+  "selected_orders": 881,
+  "positive_orders": 113,
+  "zero_orders": 223,
+  "timing_flags": 52,
+  "prearrival_shortage_units_sum": 12.065999999999999,
+  "maximum_prearrival_shortage_units": 1.015,
+  "selected_method": "pooled90",
+  "independent_success_gate": "Not ready: development outcomes previously inspected, untouched evaluation and externally declared meaningful improvement threshold absent; December remains reserved",
+  "baseline_month_end_clarification": "At month-end, current month is fully observed and is most recent complete month. Correction affects only deployment baseline sensitivity, none of the eight development origins are month-end; no scores/selection changed.",
+  "uncertainty": "No calibrated availability probability. Flat daily demand approximation for timing; sparse low counts, unmeasured stockout censorship, final statuses, and pack-size rounding limit precision. Flags are model-based review cues, not observed shortages.",
+  "order_policy": "Order-up-to target = forecast daily rate times lead+review + supplied safety stock; deduct usable on-hand and only dated receipts within coverage. Positive gaps rounded to MOQ and pack multiple. Overdue and beyond-coverage inbound excluded. Assumes end-of-planning-day snapshot; deliveries usable at beginning of due day. Forecast shortfalls carried through timing projection; orders do not remove prearrival shortage.",
+  "cost": "No paid model calls; no numeric ongoing money or AI-build estimate asserted without observed applicable rates/usage.",
+  "volume_bias_fraction": -0.26010101010101017,
+  "volume_bias_implication": "Selected absolute-error criterion still underpredicts total recorded units by about 26% across development weeks. MAE rewards conservative forecasts for sparse demand; supplied safety stock remains in orders, with no invented cost tradeoff or assurance of service levels."
+}

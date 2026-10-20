@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "working_directory_requirement": "Run from directory containing script; input paths may be any supplied current files",
+  "planning_date": "2025-11-30",
+  "selected_method": "pooled90",
+  "dependencies": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "environment": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "local_calculation_wall_seconds": 0.7750675829593092,
+  "maximum_resident_set_bytes": 164741120,
+  "measurement_method": "os.wait4 child process maximum RSS; wall clock includes interpreter startup, reads, validation, sales preparation, aggregation, inference, ordering, write and process shutdown",
+  "instrumentation_retry": "An initial /usr/bin/time -l attempt produced the correct CSV but resource reporting failed on sandbox-denied sysctl. Repeated same command with wait4; no forecast or source changes.",
+  "output_agreement": {
+    "exact_bytes": true,
+    "comparison": "Expected output constructed in comparison.py using frozen selected method"
+  },
+  "hashes": {
+    "restock_routine.py": "51a9bd2565a148d8edc55490768831e57a46abfdbe1d40c41461690b7416acf6",
+    "restocking.csv": "d00aa93d19d9dfca6cfa05fde42c2382078991ffbd3fbc5cd29862102e00a756",
+    "../released/input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "../released/input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "../released/input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "../released/input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "routine_paid_model_calls": 0,
+  "routine_network_calls": 0,
+  "cost": "No paid model service required; local computer, electricity or hosting costs remain. No dollar estimate without actual rates. AI-assisted analysis/build costs separate; usage and applicable pricing unavailable.",
+  "memory_limits": "Single-process measured peak resident memory, not hardware RAM measurement or whole-system memory; includes fitting/aggregation and inference. Data and workload as supplied; future growth may increase usage.",
+  "fit_inference": "Selected pooling method has no iterative learned-model fit. Trailing-90-day local/product/store sufficient statistics form the fitted rates, followed by 336 shrinkage predictions. Entire preparation, rate construction and inference bounded by observed process peak and total time; internal phase timings recorded in computational_profile.json."
+}

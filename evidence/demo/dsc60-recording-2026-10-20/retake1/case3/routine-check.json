@@ -1,0 +1,31 @@
+{
+  "format": "dsc60-retake-routine-source-and-receipt-review-v1",
+  "case": 3,
+  "status": "parameterized_selected_routine_actual_invocation_and_usage_checked",
+  "selected": "mean182",
+  "six_configurable_cli_arguments": true,
+  "actual_planning_date": "2025-11-30",
+  "source_overwrite_and_existing_output_guards": true,
+  "no_network_or_model_calls_in_selected_routine_source": true,
+  "actual_routine_sha256": "0131a2315d1958f4ed489bf9f859ca393b3d85f67846ffa4f24df4a6d623b3e3",
+  "actual_output_sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6",
+  "input_output_hashes_match_receipt": true,
+  "order_policy_arithmetic_matches_exposed_forecasts_all_rows": true,
+  "timing_flags_and_quantity_arithmetic_checked_from_exposed_forecasts": true,
+  "max_shortage_difference_from_rounded_forecasts": 7.142857142861114e-05,
+  "counts": {
+    "rows": 336,
+    "columns": 18,
+    "units": 868,
+    "positive_orders": 109,
+    "zeros": 227,
+    "prearrival_flags": 65,
+    "flags_without_orders": 12
+  },
+  "local_calculation_wall_seconds": 0.6643591660540551,
+  "process_peak_rss_bytes": 172883968,
+  "usage_document_sha256": "411ac757c3a5919e4f1f95a26db9cf8cca7b36e2cfdcdd5542f2cdecbc252b83",
+  "scheduling": "OptionalOSscheduler requiresupdatedfiles/date/freshfilename; no scheduler/uploadintegrationinstalled.",
+  "actual_future_date_test": false,
+  "limits": "DataauthoredactualNov30childreceipt rehashed; source andownCSV/policy/timing math reviewed. No producerexecution,8GBhardwarebenchmark orreservedscoring by reviewer."
+}

@@ -1,0 +1,16 @@
+{
+  "preparation_seconds": 0.08828174998052418,
+  "selected_statistic_aggregation_fit_seconds": 0.0013668329920619726,
+  "selected_336_rate_inference_seconds": 0.002807083074003458,
+  "process_peak_rss_bytes": 171606016,
+  "measurement_scope": "Separate verification process holding extra tables and independent arrays; these are separate phase microbenchmarks, not additive decomposition of measured CLI time.",
+  "data_shape": [
+    1430,
+    336
+  ],
+  "panel_bytes": 3843840,
+  "retained_model": "336 local rates, 28 product totals, 12 store totals, scalar grand total; no persisted learned estimator",
+  "complexity": "Selected fit O(transactions + days*keys) including panel preparation; prediction O(keys). Memory O(rows + days*keys); model state O(keys).",
+  "compatibility": "Actual CLI peak under 0.2 GiB and subsecond wall time for 17,406 sales rows and 336 operating keys. Fits CPU-only 8 GB RAM computer with substantial OS headroom for this workload; current host RAM not assumed. No parallel workers, GPU, neural networks, sklearn or network dependency. Larger future extracts need fresh measurement.",
+  "candidate_workload": "All candidates have per-origin fit+inference times and whole comparison peak RSS in development_results.json; ridge retains about two years * 336 examples * 10 float64 features, a few MB plus arrays; no unbounded search."
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "status": "prospective original plan before scoring; all scores development only",
+  "source_profile": "source_profile.json",
+  "planning_date": "2025-11-30",
+  "target": "Sum positive Quantity for normalized completed, shipped or returned rows after exact deduplication, grouped by order date and product/store. Positive return-flagged fulfilled rows count gross; do not subtract as usable returns. Exclude cancelled, processing, and eight nonpositive rows. No use of revenue, historical Inventory_Level, or contemporaneous future status as predictors.",
+  "target_sensitivities": [
+    "noncancelled positive order units (include processing)",
+    "positive completed/shipped units with Return_Flag No (exclude returned units)"
+  ],
+  "missing_dates": "No global dates absent. On global dates, aggregate no local rows as zero RECORDED units only, after first observation; this is an observation target not a claim of stock exposure or zero underlying demand. No imputation of truly absent global dates. No pre-first-observation targets.",
+  "population": "336 historically seen product/store pairs with at least 364 calendar days since first observed transaction at origin; no future-sales eligibility filters. Operational snapshot not used to construct historical features. All observed pairs match current synthetic roster, but historical assortment not known.",
+  "forecast_origins": [
+    "2025-10-05",
+    "2025-10-12",
+    "2025-10-19",
+    "2025-10-26",
+    "2025-11-02",
+    "2025-11-09",
+    "2025-11-16",
+    "2025-11-23"
+  ],
+  "training": "At every origin use only order dates at or before origin. Ridge examples: Sundays from 2023-01-01, with 364 days of individual prior exposure and all outcome dates <= origin; latest two years of examples. Other methods use history to origin.",
+  "evaluation_dates": "October 6-November 30, 2025 for 7-day target. Coverage comparison omits November 23 origin, so all 8-14 day targets end by November 30.",
+  "horizons": {
+    "primary": 7,
+    "secondary": "8-14 day totals; synthetic lead time + 7 per pair. Separately compare each horizon over identical seven origins, plus pair-specific coverage. These scenarios do not establish historical ordering rules."
+  },
+  "baseline": "recent_91d: units over trailing 91 observed calendar days / 91, scaled by horizon. Not the exact incumbent.",
+  "candidates": {
+    "recent_91d": {
+      "parameters": {
+        "window": 91
+      }
+    },
+    "sba_croston": {
+      "parameters": {
+        "alpha": 0.1
+      },
+      "formula": "Initialize first positive size and elapsed days since first observation; smooth event size and interarrival gap only at nonzero events, daily rate=(1-alpha/2)*size/gap."
+    },
+    "pooled_ridge": {
+      "parameters": {
+        "alpha": 10,
+        "fit_intercept": true,
+        "standardize": true
+      },
+      "features": "Per-series daily rates over 7,28,91,364 days; past-year 28-day same-season rate at origin-364, times horizon; pooled historical month-of-year multiplier times annual rate and horizon. Six features. Fit separate direct cumulative models for horizons 7..14; clip negatives to zero. No hyperparameter tuning."
+    }
+  },
+  "primary_metric": {
+    "name": "MAE",
+    "units": "absolute product units per product/store next-week total",
+    "weighting": "Equal weight each eligible pair and each of eight origins. No revenue weights. Directly interpretable unit mismatch, symmetric because no shortage/overstock cost priority supplied; may favor low forecasts for sparse sales."
+  },
+  "selection_rule": "Choose lowest primary MAE. Exact numerical ties within 1e-10 favor recent_91d, then sba_croston, then pooled_ridge. No invented meaningful business-improvement threshold; report small/mixed gains candidly. Secondary diagnostics never override primary winner.",
+  "secondary_diagnostics": [
+    "WAPE=sum absolute error / sum actual recorded units",
+    "signed bias in units",
+    "RMSE",
+    "origin/month results and fraction origins won vs baseline",
+    "pair macro error and wins; sparse/less-sparse segments defined by pre-origin training event rates",
+    "coverage horizon errors and pair-specific coverage",
+    "seasonality by prior calendar years",
+    "status target sensitivities with fixed methods, no selection changes",
+    "baseline 28/182-day window sensitivities (diagnostic only, not new selection candidates)"
+  ],
+  "uncertainty": "Development residual 10th/90th percentiles by horizon pooled across pairs, applied as signed additive residual offsets to point predictions and clipped nonnegative. Empirical illustrative ranges, not calibrated service-level bounds or independent coverage claims. Block-bootstrap origins for selected-minus-baseline MAE, fixed seed, 2000 draws; dependence/small origin count limits interpretation.",
+  "ordering_rule": "Scenario only: ceil to supplied order multiple of max(0, predicted lead+review units + supplied safety stock - usable on hand - incoming due within coverage); if positive also meet minimum rounded to multiple. No double-count of on-order aggregate. Forecast horizon begins December 1. Flag cumulative daily expected demand exceeding stock+due deliveries before new-order arrival. No invented optimal buffer.",
+  "reserved_data": "Do not read December outcomes or originals; future due dates in approved operational inputs allowed.",
+  "iteration": "No iterative search planned. Retain original plan and scores. Any later model additions require append-only prospective new version and exploratory labels; no reserved outcomes.",
+  "measurement": "Fresh process peak RSS via resource.getrusage (macOS bytes; Linux KB), includes full CSV preparation and all retained arrays and models; phase wall time fitting/inference separately and total run time. Environment and dependency versions recorded. RSS high-water cannot isolate independent phase incremental memory; record phase high-water with that limit."
+}

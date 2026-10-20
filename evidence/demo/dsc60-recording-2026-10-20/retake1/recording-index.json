@@ -1,0 +1,1005 @@
+{
+  "format": "dsc60-three-recorded-retakes-v1",
+  "take": "retake1",
+  "prepared_at": "2026-10-20T20:21:27.435501+00:00",
+  "status": "all_three_workflows_reviewed_video_identity_pending",
+  "source_commit": "317e169ecf2f9c597d2c3f450b45b8867082be18",
+  "source_identity_scope": "Root reports fresh server launched from this commit; reviewer separately checked repositoryHEAD.",
+  "app_url": "http://localhost:8506",
+  "prior_take": "../recording-index.json",
+  "prior_take_status": "superseded_user_reported_entire_old_video_deleted",
+  "recording": {
+    "operator": "user",
+    "user_state": "Root reports user ready for fresh retakes; actual file/hash/duration not supplied.",
+    "original_reference": null,
+    "sha256": null,
+    "duration_seconds": null,
+    "independent_video_verification": false
+  },
+  "expected_source_files": [
+    {
+      "name": "Sales_transactions_2022_2025.csv",
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "bytes": 5190513
+    },
+    {
+      "name": "inbound_deliveries.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    {
+      "name": "inventory_position.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    {
+      "name": "ordering_policy.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    }
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "scenario": "current process supplied in question",
+      "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+      "expected_flow": {
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_writer_routine_cost_and_visual_flow_reviewed_video_identity_pending",
+        "session": "e62526feb0764f79b8a61f3f11f23b28",
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": null,
+        "approval_clicks": 1,
+        "analysis_run_id": "investigation-eb984590f7c4424b89240c73a7de3899",
+        "writer_run_id": "business-response-8362d34948744ce4ae0f1b24567ea875",
+        "attempt_receipt": "attempt-9133e1e14c844a469fbf2c5d94459cef.json",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "final_response_sha256": "7e605a6d010771a05aeff3d06bc9bd2bd35fe72858ec48a722e64b96813445c1",
+        "native_writer_prose_sha256": "a6d4111ce599f3716a7a4ff826c8060918a2507c0679ea4e7ab633754470b068",
+        "csv_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+        "html_sha256": "7df4f92b756976b628a74903298cb47d09177ada1170c46f051c7481d372fd3e",
+        "csv_rows": 336,
+        "csv_columns": 18,
+        "full_response_scrolled": true,
+        "cost_sentence_visible": true,
+        "html_clicked_manually": true,
+        "html_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case1/01-start.png",
+            "sha256": "a42675b60ed9f55587802154d42e5a08a804fe9eec518049eb4e47ea68940a2f",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/02-question-files.png",
+            "sha256": "97cb190aeb885904b5c7cdf8f447bebd47a4bd7f4e3c2c8d8c14b5373c08e8e3",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/03-review-goal.png",
+            "sha256": "b8656209c593646add22c7efe96fe95779e859912bcc6497c158eee40a986fe2",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/04-review-approval.png",
+            "sha256": "40fad0f43109b25cefad66ad6d147093120aa92923c357033f4cea2cbdb85c07",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/05-working.png",
+            "sha256": "27078bd23e39a089ef2c100ff4af0619aa8cfcdb148a36d2106e4c5ddc4ea7b8",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/06-response-start.png",
+            "sha256": "3a37eaa6e39e723078f9d0ab9082e9912adca13899e8e93fe4ff121688269431",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/07-response-end-cost.png",
+            "sha256": "77391867fccd3b93162cad2ecc49e92206aab595b8c09bbd81174f69654c9bc6",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/08-html-top.png",
+            "sha256": "20f93a90dd9a3d2cec0d971c75923a72087013e836459b3d369d3ce01e23ab7e",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/09-html-more-columns.png",
+            "sha256": "edf980188707e4b4dc023d952c2aea1ea20c6884af4143ee70ae8e5de4dd558f",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/10-html-right.png",
+            "sha256": "25e38aed8491c89c77c6b9728b53d8ee50f72425bd99ab7b97c463ff52cf448c",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/11-html-bottom.png",
+            "sha256": "6213fdd32a5ed7ca222a25e0e09fd5be810058d85ad38a71f5ec1a844b535c33",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          },
+          {
+            "path": "case1/12-return-app.png",
+            "sha256": "39223f0dc7123533db3f1f499af3b1a80e24431cdf2a33e161d19f5fe755d7cd",
+            "review": "Screenshot03goal and07fullresponsecost independently viewed; othercaptures bound to rootUI action log."
+          }
+        ],
+        "detector_run_id": "current-process-d9a44f3cb55c41489b58bfaadeeb2f71",
+        "detector_prompt_sha256": "197f818f416e38ea21e665fc34dc6f4c35be0619ad102d60367401ae845d73ad",
+        "released_input_bindings": [
+          {
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+            "released_bytes_rehashed": true
+          }
+        ],
+        "approval_action_at": "2026-10-20T20:21:54.542Z",
+        "analysis_prompt_sha256": "ed699f2a8349ab13c22b1fba706e9a822889de1d5ab3a4997fdc2bd435ce4316",
+        "detector_native_outcome": "completed",
+        "response_visibility_evidence": "case1/07-response-end-cost.png",
+        "return_action_at": "2026-10-20T20:32:04.014Z"
+      },
+      "comparison": {
+        "status": "development_saved_prediction_arithmetic_checked_native_still_running",
+        "selected_model": "croston_sba",
+        "target": "Gross positive product units on completed, shipped and returned orders, case-normalized, all sales channels, assigned Store_ID; exact duplicate rows removed; nonpositive quantities excluded. Returned quantities not subtracted; usable stock already supplied separately. Cancelled and processing excluded from primary target.",
+        "baseline": "mean84: last 84 calendar days recorded units per day, extrapolated; analytical baseline, not proven customer incumbent",
+        "metric": "Mean absolute error in total product units per product at store per coverage period; equal weight across 336 keys and eight origins. Matches order-up-to demand coverage, avoids invented monetary costs and percentage-error issues at zero.",
+        "horizons": "Primary each key's supplied lead days + review days (8\u201314); secondary next 7 days. Same eight origins at both horizons. Historical use of current lead rules is a fixed diagnostic horizon, not evidence those rules existed historically.",
+        "dates_and_origins": {
+          "dates": "2025-09-29 through 2025-11-30; no December outcomes",
+          "origins": [
+            "2025-09-28",
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16"
+          ]
+        },
+        "gain": 0.01785022220597754,
+        "scope": "development; coverageprimary/7daysecondary; notsamepriorprotocol",
+        "prior_run_gain_reused": false,
+        "prospective_plan": {
+          "observed_at": "2026-10-20T20:24:02.495477+00:00",
+          "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb",
+          "task_refinement_sha256": "51869609456eca4c3b73ed606d215c3ba605494244e2740cea8b2ad8503db232",
+          "selection_rule": "Minimum unrounded pooled primary MAE. Numerical ties within 1e-9 go to mean84, then mean28, croston_sba, poisson_pool. No invented meaningful improvement threshold; report marginal or mixed differences honestly.",
+          "candidate_set": [
+            "mean84",
+            "mean28",
+            "croston_sba",
+            "poisson_pool"
+          ]
+        },
+        "measured_scores": [
+          {
+            "method": "croston_sba",
+            "kind": "coverage",
+            "n": 2688,
+            "MAE": 1.252267935440135,
+            "bias": -0.286137572346454
+          },
+          {
+            "method": "croston_sba",
+            "kind": "next7",
+            "n": 2688,
+            "MAE": 0.881704163697471,
+            "bias": -0.15804392388128888
+          },
+          {
+            "method": "mean28",
+            "kind": "coverage",
+            "n": 2688,
+            "MAE": 1.3891634778911564,
+            "bias": -0.16834077380952384
+          },
+          {
+            "method": "mean28",
+            "kind": "next7",
+            "n": 2688,
+            "MAE": 0.9366629464285714,
+            "bias": -0.09161086309523815
+          },
+          {
+            "method": "mean84",
+            "kind": "coverage",
+            "n": 2688,
+            "MAE": 1.2750274589002268,
+            "bias": -0.27624096513605445
+          },
+          {
+            "method": "mean84",
+            "kind": "next7",
+            "n": 2688,
+            "MAE": 0.8883308531746033,
+            "bias": -0.15407986111111113
+          },
+          {
+            "method": "poisson_pool",
+            "kind": "coverage",
+            "n": 2688,
+            "MAE": 1.290251242983075,
+            "bias": -0.24638396360796444
+          },
+          {
+            "method": "poisson_pool",
+            "kind": "next7",
+            "n": 2688,
+            "MAE": 0.9173546952675715,
+            "bias": -0.13301905841181397
+          }
+        ]
+      },
+      "automation_routine": {
+        "parameterized_cli_verified": true,
+        "actual_selected_method_match": true,
+        "measured_command_and_output_agreement": true,
+        "usage_document": "routine_usage.md",
+        "schedule_installed": false,
+        "capability_review": "Actual sixargumentselectedCLI and measuredNov30outputagreementchecked; usage supports futureupdatedfiles and optionalweekly TaskScheduler/launchd/cron setup, explicitlynotinstalled; no future-date/reserved execution performed.",
+        "routine_check": "case1/routine-check.json",
+        "usage_sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a"
+      },
+      "usage_and_cost": {
+        "status": "independently_checked_all_three_fresh",
+        "all_three_fresh": true,
+        "stage_receipts": [
+          {
+            "stage": "current_process",
+            "identity": [
+              "01a15af9-1978-7b80-908b-c96dc7244924",
+              "01a15af9-1d1f-70f2-a9df-0e48663f1883"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.059328",
+            "max_request_input_units": 26424,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "analysis",
+            "identity": [
+              "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+              "01a15afa-5207-74a1-acf3-6760aa927f79"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.481187",
+            "max_request_input_units": 74240,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "business_response",
+            "identity": [
+              "01a15b01-7d40-7700-ab71-46eec4259417",
+              "01a15b01-7f22-7341-8154-d41f86faac77"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.081236",
+            "max_request_input_units": 22101,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          }
+        ],
+        "published_ai_cost_usd": "0.621751",
+        "published_vs_writer_prose_lineage_verified": true,
+        "historical_smoke_usage_reused": false
+      },
+      "independent_audits": [
+        "case1/development-arithmetic-check.json",
+        "case1/routine-check.json",
+        "case1/final-publication-check.json",
+        "case1/browser-table-check.json"
+      ],
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "status": "pending_original_file"
+      }
+    },
+    {
+      "case": 2,
+      "scenario": "missing process, user answers follow-up",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "I normally use last month's sales to work out what we need for the week.",
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_writer_routine_cost_and_visual_flow_reviewed_video_identity_pending",
+        "session": "6de93acb015e4ca99abd258b46a9aed1",
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "I normally use last month's sales to work out what we need for the week.",
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "analysis_run_id": "investigation-cd1dda06dc564908ac44220900f10511",
+        "writer_run_id": "business-response-b7cfb8cbad3b4d2b952097264ada4737",
+        "attempt_receipt": "attempt-88741f85ee9a40eba9655a2d68d3da3a.json",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "final_response_sha256": "72c87ac7e69e0c5541c18c512a2a03f75cb918fb848f87c68ea63fbef6a3e2da",
+        "native_writer_prose_sha256": "3e7f83c36fe22f5224b064549657f20d154dd75b3c1f682c9d80fb2811ed5472",
+        "csv_sha256": "d00aa93d19d9dfca6cfa05fde42c2382078991ffbd3fbc5cd29862102e00a756",
+        "html_sha256": "e9d31fc453877551fac93336a8b4d44832a34c80663c36a3bf27436a36e5667f",
+        "csv_rows": 336,
+        "csv_columns": 17,
+        "full_response_scrolled": true,
+        "cost_sentence_visible": true,
+        "html_clicked_manually": true,
+        "html_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case2/01-question-files.png",
+            "sha256": "beb44b675b6878d546e51936dd848d3ba74ba8c1ad241d3864a831b53add0e95",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/02-follow-up.png",
+            "sha256": "e7cf5fdda30324c2bfadfb58b299dc53f4cf82dafc4a7ed3093c668e84a77a91",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/03-review-goal.png",
+            "sha256": "adea70c967b4ebf4f9c8e46f3b1b058020754a68908164def103836e6707f079",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/04-review-context.png",
+            "sha256": "1a39d649007cfa536fdf5113a9834959e99aa0241e31ca76f0dacb8cf0b167b6",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/05-review-approval.png",
+            "sha256": "bd97ad41bf2134c9c99f4332c76269fef66c397158076df9314dc8e9bea5adbe",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/06-response-start.png",
+            "sha256": "afc3cbe65872e9acc244e15cb4bcb9988464e487cc4963ee1d2e8e43a22f6a50",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/07-response-end-cost.png",
+            "sha256": "7599be44413cb266ea149750a592f9e4c2c03a9f3b1514b0746e47eb1e585ced",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/08-html-top.png",
+            "sha256": "2fe29d9e1597ac1ac91b7a8e7d5451d8a140b02a04dc7a82cce5564c757ade7d",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/09-html-more-rows.png",
+            "sha256": "81568a2209ca9c9909b937889535f81aea90d1b9daf5b6cbf7162da32080305a",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/10-html-right.png",
+            "sha256": "4c6364f484458271e0edfdf4b77ba646f5fec94ab0739a39d26ab4fe4478c2d5",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/11-html-bottom.png",
+            "sha256": "6370423556c5919eb6e75b73432632ac2d52fb788b2561dc0ac01fa8fc53db0e",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          },
+          {
+            "path": "case2/12-return-app.png",
+            "sha256": "5da817574b212194f8ebe48052f3422286fa0ae8665665408687f2362460e377",
+            "review": "Screenshot07independentlyviewed:exactmanualanswer+entirefinalresponse/currentcost; othersboundrootUIlog."
+          }
+        ],
+        "detector_run_id": "current-process-ebf06c53a78c4d9282b721aadcb12b0a",
+        "detector_prompt_sha256": "63c6ac35b96bceaec92c4e3436f0b9b256dcd6c7d55f61622349ef520aa599f4",
+        "released_input_bindings": [
+          {
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+            "released_bytes_rehashed": true
+          }
+        ],
+        "approval_action_at": "2026-10-20T20:34:04.293Z",
+        "analysis_prompt_sha256": "728af24d983a5fd29a10f682950d43854866397bb16379787c70d1c305109590",
+        "response_visibility_evidence": "case2/07-response-end-cost.png",
+        "return_action_at": "2026-10-20T20:42:36.535Z"
+      },
+      "comparison": {
+        "status": "development_prediction_arithmetic_checked",
+        "selected_model": "pooled90",
+        "target": "Positive quantities with normalized Completed or Shipped statuses, after exact-row deduplication. Return flags on fulfilled rows retained as gross outbound; Returned status, nonpositive quantities, Processing and Cancelled excluded. No return credits without usable-restock timing.",
+        "baseline": "Previous complete calendar month's recorded daily mean, scaled to horizon; analytical baseline, not proven incumbent formula",
+        "metric": "Mean absolute error in units per product at a store per seven-day forecast; equal weights over 336 keys and eight origins",
+        "horizons": "Primary next seven days; secondary row-specific supplier lead plus seven review days. Daily constant rate extrapolation for each method. No December scoring.",
+        "dates_and_origins": {
+          "evaluation": "Oct 6-Nov 30 2025 for seven-day targets; coverage targets only when their full 8-14-day horizon ends by November 30, thus first seven origins",
+          "origins": [
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16",
+            "2025-11-23"
+          ]
+        },
+        "gain": 0.014011940001882106,
+        "scope": "development; next7primary/coverage secondary; protocol differscase1",
+        "prior_run_gain_reused": false,
+        "prospective_plan": {
+          "sha256": "52ea9bc69cc761cd3edc565742d2bb5febaa71a7c73d2cf023a54a00f6963618",
+          "task_refinement_sha256": "de452a061bd81ec3dcdd35df0a2f5e8ed9f0c29c6173e2b9b76b0c110c575149",
+          "observed_at": "2026-10-20T20:36:32.709347+00:00",
+          "selection_rule": "Lowest pooled primary MAE; if within 1e-9 choose baseline then recent90 then pooled90 then ridge. No invented meaningful-gain threshold. Freeze selected method for routine.",
+          "candidates": {
+            "recent_month": "baseline",
+            "recent90": "trailing 90-calendar-day average",
+            "pooled90": "50% local 90-day rate and 50% independence product/store pooled rate",
+            "ridge": "Pooled ridge alpha=10, standardized ten features: intercept, recent 7/28/91/364-day weekly rates, same week prior year, annual sine/cosine, annual seasonal interactions with long rate; nonnegative clipped predictions. Fixed configuration, no search."
+          }
+        },
+        "measured_scores": [
+          {
+            "method": "pooled90",
+            "horizon": "coverage",
+            "MAE": 1.1878376875552508,
+            "bias": -0.2758601960497205,
+            "observations": 2352,
+            "recorded_units": 2366.0
+          },
+          {
+            "method": "pooled90",
+            "horizon": "week",
+            "MAE": 0.8511191367022765,
+            "bias": -0.1639178240740741,
+            "observations": 2688,
+            "recorded_units": 1694.0
+          },
+          {
+            "method": "recent90",
+            "horizon": "coverage",
+            "MAE": 1.209471844293273,
+            "bias": -0.2738236961451247,
+            "observations": 2352,
+            "recorded_units": 2366.0
+          },
+          {
+            "method": "recent90",
+            "horizon": "week",
+            "MAE": 0.8562210648148149,
+            "bias": -0.1639178240740741,
+            "observations": 2688,
+            "recorded_units": 1694.0
+          },
+          {
+            "method": "recent_month",
+            "horizon": "coverage",
+            "MAE": 1.2441582546997292,
+            "bias": -0.25245958598493157,
+            "observations": 2352,
+            "recorded_units": 2366.0
+          },
+          {
+            "method": "recent_month",
+            "horizon": "week",
+            "MAE": 0.8632144457245264,
+            "bias": -0.15439068100358422,
+            "observations": 2688,
+            "recorded_units": 1694.0
+          },
+          {
+            "method": "ridge",
+            "horizon": "coverage",
+            "MAE": 1.2310759923639536,
+            "bias": -0.19883633459545957,
+            "observations": 2352,
+            "recorded_units": 2366.0
+          },
+          {
+            "method": "ridge",
+            "horizon": "week",
+            "MAE": 0.8856083350463437,
+            "bias": -0.11781248995464196,
+            "observations": 2688,
+            "recorded_units": 1694.0
+          }
+        ]
+      },
+      "automation_routine": {
+        "parameterized_cli_verified": true,
+        "actual_selected_method_match": true,
+        "measured_command_and_output_agreement": true,
+        "usage_document": "routine_usage.md",
+        "schedule_installed": false,
+        "capability_review": "ActualselectedparameterizedCLI/Nov30measurement/outputbytes/usagechecked; nofuturedateexecutionorschedulerinstallation."
+      },
+      "usage_and_cost": {
+        "status": "independently_checked_all_three_fresh",
+        "all_three_fresh": true,
+        "stage_receipts": [
+          {
+            "stage": "current_process",
+            "identity": [
+              "01a15b04-1264-7360-962f-48ababb12af7",
+              "01a15b04-14a9-7681-8457-0dc60b3c09fe"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.102614",
+            "max_request_input_units": 44798,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "analysis",
+            "identity": [
+              "01a15b05-6f4c-7c10-9f37-0b187678154a",
+              "01a15b05-7135-71d3-a4dc-2acec02cd61a"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.333642",
+            "max_request_input_units": 55872,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "business_response",
+            "identity": [
+              "01a15b0b-05bc-7af2-9154-4482f00f23ac",
+              "01a15b0b-07ca-71e1-a979-15f78dc17d58"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.067066",
+            "max_request_input_units": 24047,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          }
+        ],
+        "published_ai_cost_usd": "0.503322",
+        "published_vs_writer_prose_lineage_verified": true,
+        "historical_smoke_usage_reused": false
+      },
+      "independent_audits": [
+        "case2/development-arithmetic-check.json",
+        "case2/routine-check.json",
+        "case2/final-publication-check.json"
+      ],
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "status": "pending_original_file"
+      }
+    },
+    {
+      "case": 3,
+      "scenario": "no current approach; user explicitly continues",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "",
+        "continue_without_clicked": true,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_writer_routine_cost_and_visual_flow_reviewed_video_identity_pending",
+        "session": "6bd43dbe3a87432eb4fa31670fcfcaf9",
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "",
+        "continue_without_clicked": true,
+        "approval_clicks": 1,
+        "analysis_run_id": "investigation-48b2f105b1d1421b9a20b6e4cec602b2",
+        "writer_run_id": "business-response-cc8d45e401a34533be13617d88233613",
+        "attempt_receipt": "attempt-9a8db2dfb3d74960af0f3b0d9252105c.json",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "final_response_sha256": "17eaee4ea7cc0fd655deee17efd4c2cb82fc1b8176e42c6d53184d54bb970642",
+        "native_writer_prose_sha256": "75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8",
+        "csv_sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6",
+        "html_sha256": "5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21",
+        "csv_rows": 336,
+        "csv_columns": 18,
+        "full_response_scrolled": true,
+        "cost_sentence_visible": true,
+        "html_clicked_manually": true,
+        "html_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case3/01-question-files.png",
+            "sha256": "c10296bdf72e7162868727ac97c2aeadde739047b34f7d5f1aaa5c9e98740354",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/02-follow-up.png",
+            "sha256": "e7cf5fdda30324c2bfadfb58b299dc53f4cf82dafc4a7ed3093c668e84a77a91",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/03-review-no-current-approach.png",
+            "sha256": "235af3ea5447cb552faaf3ac7412bbf77184a1b8919bd4a1905f2214c579d503",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/04-review-approval.png",
+            "sha256": "47e0d70daa8647daf73c95e948e8879d04add1020d4debe7d3e9cfd6f62cec00",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/05-response-start.png",
+            "sha256": "d26d126d3c6ffe16e7c4d899ff8b579649c309a69f8155913e39a1cd8a761945",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/06-response-end-cost.png",
+            "sha256": "2026552bc86df3b4b31a3179da3cf7b07a95200c625f3cda658026830ca5f296",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/07-html-top.png",
+            "sha256": "375ed8ef46120264cb965154ad9be071ab8ac506d8bef7bfe4b528d42b8d71b3",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/08-html-more-rows.png",
+            "sha256": "ceb41d1eb78edd8569eb8db968d5b560d562d57925d4383919267d081ab08612",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/09-html-right.png",
+            "sha256": "1bc692e8e9fd15fbf4162cd94652b882fff44b70108f7fd1e1404a747d216ee2",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/10-html-bottom.png",
+            "sha256": "a727370141ff1e52f90fe1197f17b35f0a006f6e2310ec7c63319c08a84dfd70",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          },
+          {
+            "path": "case3/11-return-app.png",
+            "sha256": "f1a1016ecf920124679329cfec3a39ddbda5ad2926d44e26bdbcc4cb548c37ef",
+            "review": "Screenshot06 full response/cost independently viewed; other captures bound to root action log."
+          }
+        ],
+        "detector_run_id": "current-process-2bb8a6ecdfee4510be11dcbdd633689c",
+        "continue_without_action_at": "2026-10-20T20:44:17.589Z",
+        "released_input_bindings": [
+          {
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes_rehashed": true
+          },
+          {
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+            "released_bytes_rehashed": true
+          }
+        ],
+        "approval_action_at": "2026-10-20T20:44:41.101Z",
+        "analysis_prompt_sha256": "b0eb1eadb386e8aab755097fc4501a713ae693f2fbb082467d0993e74a7eab85",
+        "approved_current_process": {
+          "source": "explicit_continue_without",
+          "status": "none",
+          "text": null
+        },
+        "response_visibility_evidence": "case3/06-response-end-cost.png",
+        "return_action_at": "2026-10-20T20:54:26.754Z"
+      },
+      "comparison": {
+        "status": "own_saved_prediction_arithmetic_checked",
+        "selected_model": "mean182",
+        "target": "Sum strictly positive quantities with normalized status completed or shipped; include return-flagged fulfilled rows because these represent gross fulfilled demand; exclude returned-only status, cancelled, processing and nonpositive quantities. Deduplicate identical rows; conflicting transaction identifiers fail validation.",
+        "baseline": "56-calendar-day pair mean times horizon; analytical baseline, not customer incumbent",
+        "metric": {
+          "name": "MAE of cumulative next-seven-day fulfilled units",
+          "unit": "product units per product at a store per origin",
+          "weighting": "Equal weight to each of 336 pairs and eight origins; no prices or cost weights"
+        },
+        "horizons": {
+          "primary": 7,
+          "secondary": "Per pair supplier lead days plus review days, 8 to 14 days. Current rules define retrospective horizon lengths only, not historical inventory simulations."
+        },
+        "dates_and_origins": {
+          "evaluation": "2025-09-29 through 2025-11-30 depending on origin and horizon; no December",
+          "origins": [
+            "2025-09-28",
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16"
+          ]
+        },
+        "gain": 0.03517682629140151,
+        "scope": "development; no suppliedincumbent;7dayprimary/coverage secondary",
+        "prior_run_gain_reused": false,
+        "prospective_plan": {
+          "observed_at": "2026-10-20T20:47:06.145166+00:00",
+          "sha256": "3340f29c9bac6b57be83642943c855b84996716f284d014303183fce69e29890",
+          "task_refinement_sha256": "4b0d2ba6c27a063efe9d5aa5842d3cd327dfa1947aa351ddb1e15443420671a2",
+          "selection_rule": "Choose lowest pooled primary MAE. Numerical tie within 1e-6 chooses simpler model in order mean56, mean182, poisson. No claimed business-significance threshold. Secondary coverage MAE and signed bias qualify selection, do not replace primary. No later candidate additions planned.",
+          "candidates": [
+            {
+              "name": "mean56",
+              "rationale": "Transparent recent eight-week analytical baseline"
+            },
+            {
+              "name": "mean182",
+              "rationale": "Longer 26-week mean stabilizes sparse demand; no seasonal extrapolation"
+            },
+            {
+              "name": "poisson",
+              "rationale": "Penalized Poisson regression with sparse pair intercepts, calendar-month effects and linear year trend, at most 156 weeks. alpha=0.01, max_iter=300, tol=0.00001; no search."
+            }
+          ]
+        },
+        "measured_scores": [
+          {
+            "model": "mean182",
+            "horizon_type": "next_week",
+            "n": 2688,
+            "MAE": 0.8059037316849818,
+            "bias": -0.16719608516483517,
+            "actual_units": 1611.0
+          },
+          {
+            "model": "mean182",
+            "horizon_type": "policy_coverage",
+            "n": 2688,
+            "MAE": 1.1579363716640503,
+            "bias": -0.298929307299843,
+            "actual_units": 2651.0
+          },
+          {
+            "model": "mean56",
+            "horizon_type": "next_week",
+            "n": 2688,
+            "MAE": 0.8352864583333334,
+            "bias": -0.12788318452380956,
+            "actual_units": 1611.0
+          },
+          {
+            "model": "mean56",
+            "horizon_type": "policy_coverage",
+            "n": 2688,
+            "MAE": 1.2196401998299318,
+            "bias": -0.2273596938775511,
+            "actual_units": 2651.0
+          },
+          {
+            "model": "poisson",
+            "horizon_type": "next_week",
+            "n": 2688,
+            "MAE": 0.8734700730819431,
+            "bias": -0.0918704013011582,
+            "actual_units": 1611.0
+          },
+          {
+            "model": "poisson",
+            "horizon_type": "policy_coverage",
+            "n": 2688,
+            "MAE": 1.242227932914916,
+            "bias": -0.1748964499961668,
+            "actual_units": 2651.0
+          }
+        ]
+      },
+      "automation_routine": {
+        "parameterized_cli_verified": true,
+        "actual_selected_method_match": true,
+        "measured_command_and_output_agreement": true,
+        "usage_document": "routine_usage.md",
+        "schedule_installed": false,
+        "capability_review": "SixargumentselectedCLI/freshNov30receipt/sourcehashes/ownorderandtimingmathchecked; optionalexternal scheduling supported, noinstalledschedule/futureexecution."
+      },
+      "usage_and_cost": {
+        "status": "independently_checked_all_three_fresh",
+        "all_three_fresh": true,
+        "stage_receipts": [
+          {
+            "stage": "current_process",
+            "identity": [
+              "01a15b0d-be2d-7831-9ef3-d756519e661e",
+              "01a15b0d-bfef-74b0-9017-d360e96c2d4e"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.076449",
+            "max_request_input_units": 33100,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "analysis",
+            "identity": [
+              "01a15b0f-2734-7400-974c-0e957691ad6c",
+              "01a15b0f-2961-7b03-85f1-bff7f7bd45ae"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.449819",
+            "max_request_input_units": 69562,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          },
+          {
+            "stage": "business_response",
+            "identity": [
+              "01a15b16-18b7-7fc0-9bfa-ee6d5e110bb5",
+              "01a15b16-1ad8-75e3-96a5-ae1a7407b5c0"
+            ],
+            "source": "fresh_instrumented_native",
+            "numeric_cost_6dp_usd": "0.040950",
+            "max_request_input_units": 21253,
+            "observed_model": "gpt-6.1-sol",
+            "observed_reasoning_effort": "medium",
+            "trace_and_native_evidence_verified": true
+          }
+        ],
+        "published_ai_cost_usd": "0.567218",
+        "published_vs_writer_prose_lineage_verified": true,
+        "historical_smoke_usage_reused": false
+      },
+      "independent_audits": [
+        "case3/development-arithmetic-check.json",
+        "case3/routine-check.json",
+        "case3/final-publication-check.json"
+      ],
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "status": "pending_original_file"
+      }
+    }
+  ],
+  "all_three_complete": true,
+  "original_video_verified": false,
+  "parent_acceptance_granted": false,
+  "completion_scope": "Three fresh app workflows, full response/cost visibility and explicit HTML open/scroll/return; original video identity and recording continuity unverified."
+}

@@ -1,0 +1,28 @@
+{
+  "format": "dsc60-native-usage-projection-v1",
+  "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-run.json",
+  "source_sha256": "8b9d3a9fcca1907094cc8e19c7613dd683fcb857a5651357e43f70af567fedb5",
+  "thread_id": "01a15b16-18b7-7fc0-9bfa-ee6d5e110bb5",
+  "turn_id": "01a15b16-1ad8-75e3-96a5-ae1a7407b5c0",
+  "model_usage": {
+    "format": "dsc60-native-usage-v1",
+    "available": true,
+    "counts": {
+      "input_units": 72122,
+      "cached_input_units": 59776,
+      "cache_write_input_units": 0,
+      "output_units": 1028,
+      "reasoning_output_units": 94,
+      "total_units": 73150
+    },
+    "source": "native_thread_usage_cumulative_total",
+    "model_context_capacity_units": 475000,
+    "max_observed_request_input_units": 21253,
+    "snapshot_count": 4,
+    "thread_id": "01a15b16-18b7-7fc0-9bfa-ee6d5e110bb5",
+    "turn_id": "01a15b16-1ad8-75e3-96a5-ae1a7407b5c0",
+    "rejected_update_count": 0,
+    "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+  },
+  "raw_native_items_copied": false
+}

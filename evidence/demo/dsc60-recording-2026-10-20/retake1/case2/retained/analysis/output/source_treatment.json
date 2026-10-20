@@ -1,0 +1,138 @@
+{
+  "source_authority": "Released files only. Operating inputs assumed scenario facts; bytes retained unchanged. Operational Provenance fields say synthetic; no independent real-stock verification.",
+  "hashes": {
+    "input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+    "input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+  },
+  "source_lineage": "Transactions released-byte hash differs from original approved-source hash because supplied controller partition ends November 30; no originals or December outcomes accessed.",
+  "rows_raw": 17406,
+  "rows_after_exact_dedup": 17364,
+  "exact_duplicates": 42,
+  "conflicting_transaction_ids": 0,
+  "status_return_counts": [
+    {
+      "status": "cancelled",
+      "returned": false,
+      "count": 825,
+      "sum": 1753
+    },
+    {
+      "status": "cancelled",
+      "returned": true,
+      "count": 26,
+      "sum": 53
+    },
+    {
+      "status": "completed",
+      "returned": false,
+      "count": 10951,
+      "sum": 23389
+    },
+    {
+      "status": "completed",
+      "returned": true,
+      "count": 179,
+      "sum": 366
+    },
+    {
+      "status": "processing",
+      "returned": false,
+      "count": 1337,
+      "sum": 2884
+    },
+    {
+      "status": "processing",
+      "returned": true,
+      "count": 27,
+      "sum": 60
+    },
+    {
+      "status": "returned",
+      "returned": true,
+      "count": 1540,
+      "sum": 3155
+    },
+    {
+      "status": "shipped",
+      "returned": false,
+      "count": 2440,
+      "sum": 5215
+    },
+    {
+      "status": "shipped",
+      "returned": true,
+      "count": 39,
+      "sum": 68
+    }
+  ],
+  "nonpositive_rows": 8,
+  "nonpositive_quantity_sum": -6,
+  "recorded_target_units": 29043,
+  "recorded_target_rows": 13602,
+  "date_min": "2022-01-01 00:00:00",
+  "date_max": "2025-11-30 00:00:00",
+  "calendar_dates": 1430,
+  "dates_with_any_raw_transaction": 1430,
+  "missing_date_policy": "Absence in an otherwise continuous ledger interpreted only as no recorded event; no inventory exposure or actual zero-demand claim. Series training masks pre-first-observation periods.",
+  "zero_recorded_day_fraction": 0.9721299533799533,
+  "positive_days_per_series_quantiles": [
+    11.0,
+    29.0,
+    38.0,
+    51.0,
+    91.0
+  ],
+  "active_population": 336,
+  "products": 28,
+  "stores": 12,
+  "latest_first_transaction": "2023-03-21 00:00:00",
+  "null_counts": {
+    "Transaction_ID": 0,
+    "Order_ID": 0,
+    "Customer_ID": 0,
+    "Customer_Name": 101,
+    "Customer_Age": 206,
+    "Customer_Gender": 158,
+    "Customer_Segment": 0,
+    "Order_Date": 0,
+    "Order_Time": 0,
+    "Sales_Channel": 0,
+    "Store_ID": 0,
+    "Store_Name": 0,
+    "Country": 0,
+    "Region": 0,
+    "City": 0,
+    "Product_ID": 0,
+    "Product_Name": 135,
+    "Product_Category": 0,
+    "Product_Subcategory": 0,
+    "Quantity": 0,
+    "Unit_Price": 0,
+    "Discount_Percentage": 0,
+    "Sales_Amount": 0,
+    "Cost_Amount": 0,
+    "Profit": 0,
+    "Payment_Method": 143,
+    "Order_Status": 0,
+    "Shipping_Method": 0,
+    "Delivery_Days": 159,
+    "Return_Flag": 0,
+    "Return_Reason": 15591,
+    "Sales_Representative": 0,
+    "Promotion_Code": 9390,
+    "Customer_Rating": 3308,
+    "Inventory_Level": 189,
+    "Order_Year": 0
+  },
+  "name_conflicts": 0,
+  "ledger_mismatch_count": 0,
+  "operating_key_consistency": "read_operations enforces identical stock/policy keys, ledger subset, positive units, complete ledger and on-order agreement",
+  "units": "product_unit; quantities integer; separate product units across products are workload totals, not monetary or case totals",
+  "target_limitation": "Gross fulfilled positive recorded outbound; later returns not subtracted, since reuse/receipt dates absent. Final statuses may be retrospectively changed. Recorded demand may be censored by stockouts; no correction is identifiable.",
+  "incumbent_gap": "Previous month supplied concept only. Exact scaling, statuses, stock adjustments and rounding unknown. Baseline is analyst-defined daily-rate interpretation, not verified incumbent.",
+  "context": "Self-contained supplied facts; gather-business-context retrieval skipped under its self-contained exception. No outside sources necessary.",
+  "future_policy_horizons_used_for_development": "Current lead times define secondary diagnostic lengths only; not asserted historical supplier rules.",
+  "unused_transaction_inventory": "Inventory_Level is transaction-attached, incomplete and has no usable-stock snapshot semantics; excluded in favor of supplied dated usable_stock. Transaction prices/costs do not establish procurement prices or business shortage costs."
+}

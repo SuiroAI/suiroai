@@ -1,0 +1,282 @@
+{
+  "format": "dsc60-recording-retained-v1",
+  "case": "retake1/case1",
+  "source_commit": "317e169",
+  "session_id": "e62526feb0764f79b8a61f3f11f23b28",
+  "analysis_attempt": "investigation-eb984590f7c4424b89240c73a7de3899",
+  "writer_attempt": "business-response-8362d34948744ce4ae0f1b24567ea875",
+  "archived_at": "2026-10-20T20:31:34.814283+00:00",
+  "files": [
+    {
+      "path": "analysis/artifact-index.json",
+      "bytes": 10259,
+      "sha256": "6d378dc22cb8f13b8b1668f12431af949c580a49e8affb2a0eeba91621da43a7"
+    },
+    {
+      "path": "analysis/native-usage.json",
+      "bytes": 1266,
+      "sha256": "92e01261b24ff36b087d8c2bdfb59affda94ec5448829a414dac7ccb45e20f06"
+    },
+    {
+      "path": "analysis/outcome.json",
+      "bytes": 212,
+      "sha256": "5a3f38c83ae63c16bbd8ff570508c3fc56a5ad79a56cc155f74de8ce09ab1a0e"
+    },
+    {
+      "path": "analysis/output/audit_checks.py",
+      "bytes": 5815,
+      "sha256": "7bdda1389582adec3c64483f8ae4da12e9d009851446e15e9a6d29395060628c"
+    },
+    {
+      "path": "analysis/output/compare_candidates.py",
+      "bytes": 3858,
+      "sha256": "fa30be8ef254d01240a322772bc57fd8803e6b32ea2482175fed0ba15aed2252"
+    },
+    {
+      "path": "analysis/output/comparison_by_origin.csv",
+      "bytes": 1553,
+      "sha256": "a1b88172c0ab65724831cd59fe0bb08a2957c478ac0622af55084af669513781"
+    },
+    {
+      "path": "analysis/output/comparison_by_sparsity.csv",
+      "bytes": 880,
+      "sha256": "22783b4905b9332cf4ff68526877bc4d1052f383af184479d98c585da414484d"
+    },
+    {
+      "path": "analysis/output/comparison_by_store.csv",
+      "bytes": 4145,
+      "sha256": "e74e1c1a8ab0425c97dc168035baea4b90bca2641c53ceb71239823c210edb9f"
+    },
+    {
+      "path": "analysis/output/comparison_predictions.csv",
+      "bytes": 2126555,
+      "sha256": "a117eea267fe07ff215c1aeceb385fcc055253fe62a07732de12cc2659d50117"
+    },
+    {
+      "path": "analysis/output/comparison_results.json",
+      "bytes": 9825,
+      "sha256": "5620d5ae541e0882d74dded773e1a139bd7faf3f16bd152f5b6e47241ca7a013"
+    },
+    {
+      "path": "analysis/output/comparison_scores.csv",
+      "bytes": 857,
+      "sha256": "bda4d46d7575e73a9c2f776b9fda809f46690325feaa49d6aa1aed3d9d7d0295"
+    },
+    {
+      "path": "analysis/output/evaluation_plan.json",
+      "bytes": 3932,
+      "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb"
+    },
+    {
+      "path": "analysis/output/internal_analysis.md",
+      "bytes": 11887,
+      "sha256": "fe5eda24e6b0cb48a029476a5963df38f0d636c9a2b19a31c83284f22d10de68"
+    },
+    {
+      "path": "analysis/output/measure_routine.py",
+      "bytes": 2412,
+      "sha256": "ef8246540489112f1fd5d30fed72c89fcb170e4dbf8cf3d7be25c42f98d7dbf8"
+    },
+    {
+      "path": "analysis/output/prepare_notebook.py",
+      "bytes": 4529,
+      "sha256": "e7ee4c5422e93684e7e21125648846c0505e2240e8d4253dfd60e53e84f19f82"
+    },
+    {
+      "path": "analysis/output/presented-html-8ae72d0beee04ad38a13464ecd0d2737.html",
+      "bytes": 91077,
+      "sha256": "7df4f92b756976b628a74903298cb47d09177ada1170c46f051c7481d372fd3e"
+    },
+    {
+      "path": "analysis/output/profile_inputs.py",
+      "bytes": 2591,
+      "sha256": "60d4fa1feb7f8193b3f0b3a6a40562610aa1441733b31b99aa8dde1ec138dfe6"
+    },
+    {
+      "path": "analysis/output/response.md",
+      "bytes": 1645,
+      "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16"
+    },
+    {
+      "path": "analysis/output/restock_routine.py",
+      "bytes": 12138,
+      "sha256": "1fc1343e9e703c1b667e938afcfbaa4e35e4e1587940d8aa6e5e2de431c1d772"
+    },
+    {
+      "path": "analysis/output/restocking.csv",
+      "bytes": 38145,
+      "sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e"
+    },
+    {
+      "path": "analysis/output/result.json",
+      "bytes": 153,
+      "sha256": "84b5a3ff8b3b67896335eabdd15df6d4573c8c9c8086104d9ccdfe28fea5aba3"
+    },
+    {
+      "path": "analysis/output/routine_measurements.json",
+      "bytes": 3778,
+      "sha256": "b9e4e7ba60b212189f6f95b2636f6ace78d801edd78924e2bed167654f148dac"
+    },
+    {
+      "path": "analysis/output/routine_usage.md",
+      "bytes": 3224,
+      "sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a"
+    },
+    {
+      "path": "analysis/output/source_treatment.json",
+      "bytes": 3155,
+      "sha256": "f91c9ce35c449a50cfafd6ffae97cf14dde5800a9620367dc0ebc8b1f012b201"
+    },
+    {
+      "path": "analysis/output/target_sensitivity.csv",
+      "bytes": 557,
+      "sha256": "bd271d86aa5b618474d3192da222d52f9c3de46db30d1a4474b619e7732a4697"
+    },
+    {
+      "path": "analysis/output/task_refinement.json",
+      "bytes": 4940,
+      "sha256": "54a19e930b08a4f4eb9a4875f3f8d0416a3fa5593784f27dcaeb94e67e8f7066"
+    },
+    {
+      "path": "analysis/output/validation_results.json",
+      "bytes": 2279,
+      "sha256": "147fed7698bceecdb2a87fef53cfb1260581cfe7f86dd7394ee0a89280d44b0a"
+    },
+    {
+      "path": "analysis/trace/call-trace.json",
+      "bytes": 6819,
+      "sha256": "98a771bbb11cecc8282e28ffc6e841675b35d98a07ce45f852c9814aabdea91f"
+    },
+    {
+      "path": "analysis/trace/outbound-prompt.txt",
+      "bytes": 25010,
+      "sha256": "ed699f2a8349ab13c22b1fba706e9a822889de1d5ab3a4997fdc2bd435ce4316"
+    },
+    {
+      "path": "attempt-receipt-links.json",
+      "bytes": 41164,
+      "sha256": "c3de526b2e89c3e0af2546490a1826c0e40e82da77492e7bdeab954f830e2437"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/artifact-index.json",
+      "bytes": 2563,
+      "sha256": "1e4da1d6aecdcf04ce72c715404a402197866cb1f224befc8aeff1ae3344d46d"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/inspection-links.json",
+      "bytes": 8836,
+      "sha256": "8e64c08770b0575c5dbafe0acea998439136d5bb297f4fe0fe3bb426f6fd8130"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/outcome.json",
+      "bytes": 212,
+      "sha256": "14b519aa44371833e16e5db3597a0b6f0bdacc4e56af5119d126cc2ce6048ace"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/output/result.json",
+      "bytes": 592,
+      "sha256": "5808278b3d4c3209e6ab1be4245b96002875b2523a7d1a966a2124d477bddb56"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/trace/call-trace.json",
+      "bytes": 5651,
+      "sha256": "e1a96c7e0bd4d5ee1b4262b0994c27fda3b49dc11923d8765f7a42bd341d8912"
+    },
+    {
+      "path": "context/current-process-d9a44f3cb55c41489b58bfaadeeb2f71/trace/outbound-prompt.txt",
+      "bytes": 3718,
+      "sha256": "197f818f416e38ea21e665fc34dc6f4c35be0619ad102d60367401ae845d73ad"
+    },
+    {
+      "path": "extra-retained-index.json",
+      "bytes": 11643,
+      "sha256": "c342447bc289dfd67c39b98fbbeb5ebb7c553850d22419052e95a0306eab72c9"
+    },
+    {
+      "path": "session-hash-index.json",
+      "bytes": 38536,
+      "sha256": "fe1b86ba914fa7a87e21142bdc86087b7ff6ca00b73a192c727897521ee1ab6e"
+    },
+    {
+      "path": "writer/artifact-index.json",
+      "bytes": 2280,
+      "sha256": "982ae1ab9887a023e61e290e1fe05efec1e0c726fe62959caaf98d04fe070711"
+    },
+    {
+      "path": "writer/native-usage.json",
+      "bytes": 1261,
+      "sha256": "8999cc9868b5990a46c07e9ad443de244083ed3f07d4a6fd830c23da69e03ad3"
+    },
+    {
+      "path": "writer/outcome.json",
+      "bytes": 212,
+      "sha256": "54bf83d5f001e60435d504d3dcc6049be87c0ad9d163b6bf14767c4bc6762593"
+    },
+    {
+      "path": "writer/output/business_response.md",
+      "bytes": 1220,
+      "sha256": "a6d4111ce599f3716a7a4ff826c8060918a2507c0679ea4e7ab633754470b068"
+    },
+    {
+      "path": "writer/output/rewrite_result.json",
+      "bytes": 272,
+      "sha256": "9e815caf4681ea720105129e6e630833af63fb16c15ce53ee18d21e1275d8e13"
+    },
+    {
+      "path": "writer/published-response.md",
+      "bytes": 1388,
+      "sha256": "7e605a6d010771a05aeff3d06bc9bd2bd35fe72858ec48a722e64b96813445c1"
+    },
+    {
+      "path": "writer/source-context/csv_facts.json",
+      "bytes": 533,
+      "sha256": "0734dfa35f5330d83be4af9eaa12f03e43e3c2938a3a8781a1544f2fddccedef"
+    },
+    {
+      "path": "writer/source-context/evaluation_plan.json",
+      "bytes": 3932,
+      "sha256": "3be3d875f32cefbb6e0ac57f08db3d456a260c7bfa9b726d3789b5aecc45f7eb"
+    },
+    {
+      "path": "writer/source-context/original_response.md",
+      "bytes": 1645,
+      "sha256": "25f9cbb3eacd97121e290b45cc34df575b8e4272de2c47da1f30caa970bd6e16"
+    },
+    {
+      "path": "writer/source-context/routine_measurements.json",
+      "bytes": 3778,
+      "sha256": "b9e4e7ba60b212189f6f95b2636f6ace78d801edd78924e2bed167654f148dac"
+    },
+    {
+      "path": "writer/source-context/routine_usage.md",
+      "bytes": 3224,
+      "sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a"
+    },
+    {
+      "path": "writer/source-context/source_manifest.json",
+      "bytes": 3182,
+      "sha256": "a5ddab15444f93e0128b8b203cc8e7e885f3f4cc1684f4eaf3adc7aac5690634"
+    },
+    {
+      "path": "writer/source-context/task_refinement.json",
+      "bytes": 4940,
+      "sha256": "54a19e930b08a4f4eb9a4875f3f8d0416a3fa5593784f27dcaeb94e67e8f7066"
+    },
+    {
+      "path": "writer/trace/call-trace.json",
+      "bytes": 7130,
+      "sha256": "8e94959441a1e62c54a2a9e12367ee9943ba36a330c7d94a6a91a72c4629a5ea"
+    },
+    {
+      "path": "writer/trace/outbound-prompt.txt",
+      "bytes": 6840,
+      "sha256": "32c35d8daa05742000acd4dffadbc163b8ba13fbe930b5d97e71f82887a25836"
+    },
+    {
+      "path": "writer/writing-receipt.json",
+      "bytes": 21438,
+      "sha256": "4c49917dbe8b2fdf2fe853711a693ef0ed1893632c4abd2cad1f670a6d0ad79d"
+    }
+  ],
+  "limits": "Exact bounded evidence only; raw retail uploads, released raw CSVs, store objects and full native tool streams are not copied. Their original paths/hashes remain indexed. No earlier evaluation gain is reused as a result of this case; no independent verification or recording continuity claim."
+}

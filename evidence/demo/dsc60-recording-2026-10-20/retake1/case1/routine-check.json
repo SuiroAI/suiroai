@@ -1,0 +1,31 @@
+{
+  "format": "dsc60-retake-routine-source-and-receipt-review-v1",
+  "case": 1,
+  "status": "parameterized_selected_routine_actual_invocation_and_usage_checked",
+  "selected": "croston_sba",
+  "six_required_cli_arguments": true,
+  "no_hardcoded_workspace_or_only_usable_planning_date": true,
+  "source_overwrite_guard": true,
+  "no_network_or_model_calls_in_routine_source": true,
+  "actual_planning_date": "2025-11-30",
+  "actual_output_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+  "actual_routine_sha256": "1fc1343e9e703c1b667e938afcfbaa4e35e4e1587940d8aa6e5e2de431c1d772",
+  "input_output_hashes_match_receipt": true,
+  "order_policy_arithmetic_matches_displayed_forecasts": true,
+  "counts": {
+    "rows": 336,
+    "columns": 18,
+    "units": 875,
+    "positive_orders": 111,
+    "zeros": 225,
+    "shortage_flags": 66
+  },
+  "local_calculation_wall_seconds": 0.6168296670075506,
+  "child_high_water_rss_bytes": 175652864,
+  "cost_or_benchmark_limit": "OS process high-water RSS includes Python, imports, data preparation and retained arrays/models, but does not isolate fit and inference peaks or attribute swap. Routine spawns no child processes. Single warm-filesystem local run, not an 8 GB hardware benchmark. An initial attempted psutil process-tree observer was denied by the sandbox and was replaced by OS self/child resource counters.",
+  "internal_validation_flags_are_not_reviewer_model_verification": true,
+  "schedule_installed": false,
+  "scope": "Source and actual Data-authored command/receipt inspection plus own CSV/policy arithmetic; no producer execution, future-date run or reserved scoring.",
+  "usage_document_sha256": "bae4835efdad1c21429929832e4f764d9c83bfd1839bc0df992177493237e12a",
+  "scheduling_capability": "Optional external scheduler can invoke parameterizedCLI afterfilesupdated; no scheduler/integration installed or future-date execution tested."
+}

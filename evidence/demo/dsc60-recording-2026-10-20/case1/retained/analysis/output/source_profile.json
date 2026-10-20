@@ -1,0 +1,230 @@
+{
+  "sources": {
+    "1": {
+      "path": "../released/input-1.csv",
+      "rows": 336,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "exact_duplicates": 0
+    },
+    "2": {
+      "path": "../released/input-2.csv",
+      "rows": 126,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "exact_duplicates": 0
+    },
+    "3": {
+      "path": "../released/input-3.csv",
+      "rows": 336,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "exact_duplicates": 0
+    },
+    "4": {
+      "path": "../released/input-4.csv",
+      "rows": 17406,
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "exact_duplicates": 42
+    }
+  },
+  "sales": {
+    "unique_transactions": 17364,
+    "duplicate_id_after_exact_dedup": 0,
+    "dates": [
+      "2022-01-01",
+      "2025-11-30"
+    ],
+    "missing_global_dates": 0,
+    "status_counts": {
+      "completed": 11130,
+      "shipped": 2479,
+      "returned": 1540,
+      "processing": 1364,
+      "cancelled": 851
+    },
+    "nonpositive_quantities": 8,
+    "return_counts": {
+      "No": 15553,
+      "Yes": 1811
+    },
+    "status_return_units": [
+      {
+        "status": "cancelled",
+        "Return_Flag": "No",
+        "size": 825,
+        "sum": 1753
+      },
+      {
+        "status": "cancelled",
+        "Return_Flag": "Yes",
+        "size": 26,
+        "sum": 53
+      },
+      {
+        "status": "completed",
+        "Return_Flag": "No",
+        "size": 10951,
+        "sum": 23389
+      },
+      {
+        "status": "completed",
+        "Return_Flag": "Yes",
+        "size": 179,
+        "sum": 366
+      },
+      {
+        "status": "processing",
+        "Return_Flag": "No",
+        "size": 1337,
+        "sum": 2884
+      },
+      {
+        "status": "processing",
+        "Return_Flag": "Yes",
+        "size": 27,
+        "sum": 60
+      },
+      {
+        "status": "returned",
+        "Return_Flag": "Yes",
+        "size": 1540,
+        "sum": 3155
+      },
+      {
+        "status": "shipped",
+        "Return_Flag": "No",
+        "size": 2440,
+        "sum": 5215
+      },
+      {
+        "status": "shipped",
+        "Return_Flag": "Yes",
+        "size": 39,
+        "sum": 68
+      }
+    ],
+    "unmatched_sales_pairs": 0,
+    "product_names_unique_nonnull": {
+      "1": 28
+    },
+    "pair_first_date_range": [
+      "2022-01-01",
+      "2023-03-21"
+    ],
+    "pair_last_date_range": [
+      "2025-05-11",
+      "2025-11-30"
+    ]
+  },
+  "operations": {
+    "policy_duplicate_pairs": 0,
+    "stock_duplicate_pairs": 0,
+    "ledger_duplicate_lines": 0,
+    "policy_stock_pair_match": true,
+    "ledger_unmatched_pairs": 0,
+    "ledger_stock_mismatch_count": 0,
+    "all_ledger_complete": true,
+    "units": {
+      "1": [
+        "product_unit"
+      ],
+      "2": [
+        "product_unit"
+      ],
+      "3": [
+        "product_unit"
+      ]
+    },
+    "provenance": {
+      "1": [
+        "synthetic"
+      ],
+      "2": [
+        "synthetic"
+      ],
+      "3": [
+        "synthetic"
+      ]
+    },
+    "date_bounds": {
+      "Order_Date": [
+        "2025-11-24",
+        "2025-11-30"
+      ],
+      "Expected_Arrival_Date": [
+        "2025-12-01",
+        "2025-12-07"
+      ]
+    },
+    "all_stock_nonnegative": true,
+    "policy_ranges": {
+      "Supplier_Lead_Time_Days": [
+        1,
+        7
+      ],
+      "Review_Period_Days": [
+        7,
+        7
+      ],
+      "Order_Multiple_Qty": [
+        1,
+        10
+      ],
+      "Minimum_Order_Qty": [
+        1,
+        10
+      ],
+      "Safety_Stock_Qty": [
+        0,
+        10
+      ]
+    }
+  },
+  "monthly_units": {
+    "2022-01": 393,
+    "2022-02": 490,
+    "2022-03": 514,
+    "2022-04": 549,
+    "2022-05": 695,
+    "2022-06": 651,
+    "2022-07": 546,
+    "2022-08": 569,
+    "2022-09": 613,
+    "2022-10": 727,
+    "2022-11": 900,
+    "2022-12": 999,
+    "2023-01": 553,
+    "2023-02": 527,
+    "2023-03": 738,
+    "2023-04": 644,
+    "2023-05": 701,
+    "2023-06": 611,
+    "2023-07": 665,
+    "2023-08": 651,
+    "2023-09": 688,
+    "2023-10": 648,
+    "2023-11": 1054,
+    "2023-12": 1019,
+    "2024-01": 490,
+    "2024-02": 527,
+    "2024-03": 624,
+    "2024-04": 645,
+    "2024-05": 682,
+    "2024-06": 570,
+    "2024-07": 615,
+    "2024-08": 491,
+    "2024-09": 624,
+    "2024-10": 700,
+    "2024-11": 988,
+    "2024-12": 951,
+    "2025-01": 557,
+    "2025-02": 701,
+    "2025-03": 763,
+    "2025-04": 707,
+    "2025-05": 681,
+    "2025-06": 668,
+    "2025-07": 747,
+    "2025-08": 661,
+    "2025-09": 666,
+    "2025-10": 876,
+    "2025-11": 1119
+  }
+}

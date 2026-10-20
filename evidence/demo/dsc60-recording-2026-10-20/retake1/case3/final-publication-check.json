@@ -1,0 +1,70 @@
+{
+  "format": "dsc60-retake-final-publication-check-v1",
+  "case": 3,
+  "status": "analysis_writer_cost_static_and_live_table_passed",
+  "attempt_receipt": "attempt-9a8db2dfb3d74960af0f3b0d9252105c.json",
+  "attempt_sha256": "25f320f345c1689a103b827238eadcd65b9a7a5a98cb76943683503e4852f4c2",
+  "analysis_native_outcome": "completed",
+  "writer_run_id": "business-response-cc8d45e401a34533be13617d88233613",
+  "writer_outcome": "rewritten",
+  "three_fresh_distinct_stage_receipts": [
+    {
+      "stage": "current_process",
+      "identity": [
+        "01a15b0d-be2d-7831-9ef3-d756519e661e",
+        "01a15b0d-bfef-74b0-9017-d360e96c2d4e"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.076449",
+      "max_request_input_units": 33100,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "analysis",
+      "identity": [
+        "01a15b0f-2734-7400-974c-0e957691ad6c",
+        "01a15b0f-2961-7b03-85f1-bff7f7bd45ae"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.449819",
+      "max_request_input_units": 69562,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "business_response",
+      "identity": [
+        "01a15b16-18b7-7fc0-9bfa-ee6d5e110bb5",
+        "01a15b16-1ad8-75e3-96a5-ae1a7407b5c0"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.040950",
+      "max_request_input_units": 21253,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    }
+  ],
+  "stage_identities_disjoint_cases1_2": true,
+  "estimated_api_equivalent_usd": "0.567218",
+  "displayed_cost_usd": "0.57",
+  "actual_bill": false,
+  "writer_prose_sha256": "75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8",
+  "published_response_sha256": "17eaee4ea7cc0fd655deee17efd4c2cb82fc1b8176e42c6d53184d54bb970642",
+  "native_prose_plus_controller_cost_exact": true,
+  "csv_sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6",
+  "html_sha256": "5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21",
+  "static_and_live_tables_all_headers_values_order_equal_csv": true,
+  "body_cells": 6048,
+  "all_three_retained_manifest_entries_independently_rehashed": 164,
+  "customer_text_review": "Automation-first 868 units/65 priority flags/0.66-second local routine. Explicit 2025 dates; schedule not installed and files not automatically collected. No invented incumbent, old gain, provenance replacement warning or unknown cost claim.",
+  "gates": {
+    "analytical_success": false,
+    "verified_report_available": false,
+    "final_policy_frozen": false
+  },
+  "scope": "Own cost/hash/cell comparisons and source/receipt inspection; no producer execution or reserved scoring."
+}

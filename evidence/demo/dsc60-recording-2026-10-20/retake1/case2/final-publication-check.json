@@ -1,0 +1,69 @@
+{
+  "format": "dsc60-retake-final-publication-check-v1",
+  "case": 2,
+  "status": "analysis_writer_cost_static_and_live_table_passed",
+  "attempt_receipt": "attempt-88741f85ee9a40eba9655a2d68d3da3a.json",
+  "attempt_sha256": "206130857ab24ed99295ee8fe0d438bad14b7557d984bda0ec55c263db8b5c36",
+  "analysis_native_outcome": "completed",
+  "writer_run_id": "business-response-b7cfb8cbad3b4d2b952097264ada4737",
+  "writer_outcome": "rewritten",
+  "three_fresh_distinct_stage_receipts": [
+    {
+      "stage": "current_process",
+      "identity": [
+        "01a15b04-1264-7360-962f-48ababb12af7",
+        "01a15b04-14a9-7681-8457-0dc60b3c09fe"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.102614",
+      "max_request_input_units": 44798,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "analysis",
+      "identity": [
+        "01a15b05-6f4c-7c10-9f37-0b187678154a",
+        "01a15b05-7135-71d3-a4dc-2acec02cd61a"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.333642",
+      "max_request_input_units": 55872,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "business_response",
+      "identity": [
+        "01a15b0b-05bc-7af2-9154-4482f00f23ac",
+        "01a15b0b-07ca-71e1-a979-15f78dc17d58"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.067066",
+      "max_request_input_units": 24047,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    }
+  ],
+  "stage_identities_disjoint_case1": true,
+  "estimated_api_equivalent_usd": "0.503322",
+  "displayed_cost_usd": "0.50",
+  "actual_bill": false,
+  "writer_prose_sha256": "3e7f83c36fe22f5224b064549657f20d154dd75b3c1f682c9d80fb2811ed5472",
+  "published_response_sha256": "72c87ac7e69e0c5541c18c512a2a03f75cb918fb848f87c68ea63fbef6a3e2da",
+  "native_prose_plus_controller_cost_exact": true,
+  "csv_sha256": "d00aa93d19d9dfca6cfa05fde42c2382078991ffbd3fbc5cd29862102e00a756",
+  "html_sha256": "e9d31fc453877551fac93336a8b4d44832a34c80663c36a3bf27436a36e5667f",
+  "static_and_live_tables_all_headers_values_order_equal_csv": true,
+  "body_cells": 5712,
+  "customer_text_review": "Automation-first881units/52flags/.78secondroutine; supportedrepeatablescheduling explicitnotinstalled; no priorgain/syntheticreplace/unknowncostclaim. Year2025 is provided by approvedscenarioandCSVdates rather than repeated in opening.",
+  "gates": {
+    "analytical_success": false,
+    "verified_report_available": false,
+    "final_policy_frozen": false
+  },
+  "scope": "Owncost/hash/cellcomparisons andsource/receiptinspection; no producerexecution orreservedscoring."
+}

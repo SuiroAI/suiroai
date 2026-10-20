@@ -1,0 +1,9 @@
+{
+  "check": "Root archive integrity check after all three fresh workflows completed",
+  "source_commit": "317e169ecf2f9c597d2c3f450b45b8867082be18",
+  "json_files_parseable_at_check": 165,
+  "fresh_retained_manifest_entries_rehashed": 164,
+  "all_listed_byte_lengths_and_sha256_match": true,
+  "producer_code_executed_for_this_check": false,
+  "scope": "Saved archive integrity only; independent methodological, arithmetic, publication and browser-table checks are retained separately for each case. This does not certify an original video or broader milestone acceptance."
+}

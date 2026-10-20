@@ -1,0 +1,192 @@
+{
+  "format": "dsc59-current-process-inspection-v1",
+  "question_sha256": "9ee6bb2bc5e1353d7ab727f8ab2ba48e98c99cd5bafc32fc1cf3250b6e55481e",
+  "released_files": [
+    {
+      "relative_path": "input-1.csv",
+      "original_name": "ordering_policy.csv",
+      "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_bytes": 19279,
+      "development_partition": false
+    },
+    {
+      "relative_path": "input-2.csv",
+      "original_name": "inbound_deliveries.csv",
+      "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_bytes": 10740,
+      "development_partition": true
+    },
+    {
+      "relative_path": "input-3.csv",
+      "original_name": "inventory_position.csv",
+      "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_bytes": 18799,
+      "development_partition": false
+    },
+    {
+      "relative_path": "input-4.csv",
+      "original_name": "Sales_transactions_2022_2025.csv",
+      "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "released_bytes": 5006997,
+      "development_partition": true
+    }
+  ],
+  "native_outcome": "completed",
+  "error_code": null,
+  "message": null,
+  "thread_id": "01a15b04-1264-7360-962f-48ababb12af7",
+  "turn_id": "01a15b04-14a9-7681-8457-0dc60b3c09fe",
+  "call_trace": {
+    "format": "dsc60-native-call-trace-v1",
+    "stage": "current_process",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_configuration": {
+      "cli_version": "0.163.0",
+      "data_plugin": "data-analytics@openai-curated-remote",
+      "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    },
+    "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+    "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native-trace/outbound-prompt.txt",
+    "prompt_sha256": "63c6ac35b96bceaec92c4e3436f0b9b256dcd6c7d55f61622349ef520aa599f4",
+    "prompt_bytes": 3648,
+    "released_files": [
+      {
+        "relative_path": "input-1.csv",
+        "original_name": "ordering_policy.csv",
+        "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "released_bytes": 19279,
+        "development_partition": false
+      },
+      {
+        "relative_path": "input-2.csv",
+        "original_name": "inbound_deliveries.csv",
+        "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "released_bytes": 10740,
+        "development_partition": true
+      },
+      {
+        "relative_path": "input-3.csv",
+        "original_name": "inventory_position.csv",
+        "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "released_bytes": 18799,
+        "development_partition": false
+      },
+      {
+        "relative_path": "input-4.csv",
+        "original_name": "Sales_transactions_2022_2025.csv",
+        "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+        "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+        "released_bytes": 5006997,
+        "development_partition": true
+      }
+    ],
+    "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native-trace/call-trace.json",
+    "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native",
+    "dispatch_status": "returned",
+    "native_execution": {
+      "thread_id": "01a15b04-1264-7360-962f-48ababb12af7",
+      "turn_id": "01a15b04-14a9-7681-8457-0dc60b3c09fe",
+      "outcome": "completed",
+      "error_code": null,
+      "message": null
+    },
+    "native_evidence_files": [
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native/native-bootstrap.jsonl",
+        "sha256": "a89b90767547762e8a3c6273846ccd9dd62cb321a722d743e9bf983603584098",
+        "bytes": 2311
+      },
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native/native-rpc.jsonl",
+        "sha256": "92dd9b15b9a8fa1fb4d753dae12bc74102a133973535c0e905c15228642afe26",
+        "bytes": 1163109
+      },
+      {
+        "path": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native/native-run.json",
+        "sha256": "43341405ed70d68ec7bd199d785c6475fb076ab6630de8a7eae23b76c07206c9",
+        "bytes": 1071403
+      }
+    ],
+    "transport_exception": null,
+    "model_usage": {
+      "format": "dsc60-native-usage-v1",
+      "available": true,
+      "counts": {
+        "input_units": 195081,
+        "cached_input_units": 158720,
+        "cache_write_input_units": 0,
+        "output_units": 1402,
+        "reasoning_output_units": 85,
+        "total_units": 196483
+      },
+      "source": "native_thread_usage_cumulative_total",
+      "model_context_capacity_units": 475000,
+      "max_observed_request_input_units": 44798,
+      "snapshot_count": 6,
+      "thread_id": "01a15b04-1264-7360-962f-48ababb12af7",
+      "turn_id": "01a15b04-14a9-7681-8457-0dc60b3c09fe",
+      "rejected_update_count": 0,
+      "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+    },
+    "observed_configuration": {
+      "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "effective_profile_verified": true,
+      "model": "gpt-6.1-sol",
+      "model_provider": "openai",
+      "reasoning_effort": "medium",
+      "instruction_sources": [
+        "/Users/ceverson/.codex/AGENTS.md"
+      ],
+      "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/output",
+      "runtime_workspace_roots": [
+        "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/output"
+      ],
+      "data_attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      },
+      "cli_version": "0.163.0",
+      "permission_profile": "dsc26-stage-8049d70fbf004c01867fc55a805b2301"
+    }
+  },
+  "model_usage": {
+    "format": "dsc60-native-usage-v1",
+    "available": true,
+    "counts": {
+      "input_units": 195081,
+      "cached_input_units": 158720,
+      "cache_write_input_units": 0,
+      "output_units": 1402,
+      "reasoning_output_units": 85,
+      "total_units": 196483
+    },
+    "source": "native_thread_usage_cumulative_total",
+    "model_context_capacity_units": 475000,
+    "max_observed_request_input_units": 44798,
+    "snapshot_count": 6,
+    "thread_id": "01a15b04-1264-7360-962f-48ababb12af7",
+    "turn_id": "01a15b04-14a9-7681-8457-0dc60b3c09fe",
+    "rejected_update_count": 0,
+    "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+  },
+  "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6de93acb015e4ca99abd258b46a9aed1/context/current-process-ebf06c53a78c4d9282b721aadcb12b0a/native/inspection.json",
+  "source_sha256": "3de6d0483bf08af4668e55a869aab529a641842ab1ceeadd185420b3dd595b32",
+  "omitted_fields": [
+    "native_items",
+    "native_evidence"
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/output/result.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/retake1/case3/retained/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/output/result.json",
+    "bytes": 492,
+    "sha256": "1eee90e44ee0afc1f16953c1b9b7a3bac2ee8162c435eefc4ca74123dea38c08"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/inspection.json",
+    "bytes": 599667,
+    "sha256": "20cc1956d02a3bc19dafc9309f231923b60af866dc4f67c31c81b63bb89b08ad"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-bootstrap.jsonl",
+    "bytes": 2313,
+    "sha256": "a61ec9d2c3b7f6b68c9c38ebe7f3be0a79da996dd004f416264a9972812e80ca"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-rpc.jsonl",
+    "bytes": 663561,
+    "sha256": "de661c3e5eeda0dc3068524e7ca97e9e3cd2919448c84a959c24c731c5d65eaf"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-run.json",
+    "bytes": 598273,
+    "sha256": "9558d71c5d828d108271c1d56df986013be286223e2f9baa17a9152d5742d94b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native-trace/call-trace.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/retake1/case3/retained/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/trace/call-trace.json",
+    "bytes": 5652,
+    "sha256": "05c5279d40b53332a01ffacdf70285e24b0859ad0f4e1a19d04b95b8da67e95c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native-trace/outbound-prompt.txt",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-recording-2026-10-20/retake1/case3/retained/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/trace/outbound-prompt.txt",
+    "bytes": 3648,
+    "sha256": "e909c4deacbf2ce6e5d970bb874d7819e7b5dcb3d7c8039418a0cab77d39929b"
+  }
+]

@@ -1,0 +1,573 @@
+{
+  "format": "dsc60-three-recorded-examples-v1",
+  "prepared_at": "2026-10-20T19:06:45.954489+00:00",
+  "status": "superseded_user_requested_all_three_redo",
+  "purpose": "Fresh actual Streamlit demonstrations of all three DSC-59 context flows, with separate current analysis and business-writing evidence.",
+  "issues": [
+    "https://linear.app/gr3enarr0w/issue/DSC-60",
+    "https://linear.app/gr3enarr0w/issue/DSC-59"
+  ],
+  "requested_source_revision": "9ba0ef7",
+  "observed_launch_commit": "9ba0ef7f2f248ccdb945f037f2322cbe5c7d00dd",
+  "app_url": "http://localhost:8503",
+  "scenario_source": "evidence/demo/dsc59-recording-2026-10-19/recording-index.json",
+  "authorization_note": "Root reports user explicitly requested all three fresh recorded demos using the existing authorized four demo files. Each genuine app analysis retains its own approval action.",
+  "recording": {
+    "operator": "user",
+    "running_confirmation": {
+      "source": "user statement relayed by root",
+      "time_note": "approximately19:07 as reported by root; exact timestamp/video continuity not independently established"
+    },
+    "original_reference": null,
+    "sha256": null,
+    "bytes": null,
+    "duration_seconds": null,
+    "video_identity_status": "user_reports_deleted_prior_video_unverified_original_identity",
+    "continuity_and_framing_review": null,
+    "note": "Superseded: user reports deleting the entire prior recording and requests redo all three examples. Earlier recorder-running confirmation and upload delay remain historical facts; no original video file/hash/duration was supplied or verified."
+  },
+  "expected_source_files": [
+    {
+      "name": "Sales_transactions_2022_2025.csv",
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "bytes": 5190513
+    },
+    {
+      "name": "inbound_deliveries.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    {
+      "name": "inventory_position.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    {
+      "name": "ordering_policy.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    }
+  ],
+  "actual_uploaded_file_bindings": [
+    {
+      "development_partition": false,
+      "original_name": "ordering_policy.csv",
+      "relative_path": "input-1.csv",
+      "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_bytes": 19279,
+      "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_identity_independently_rehashed": true,
+      "source_identity_scope": "Source hash is controller receipt attribution; released bytes independently rehashed."
+    },
+    {
+      "development_partition": true,
+      "original_name": "inbound_deliveries.csv",
+      "relative_path": "input-2.csv",
+      "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_bytes": 10740,
+      "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_identity_independently_rehashed": true,
+      "source_identity_scope": "Source hash is controller receipt attribution; released bytes independently rehashed."
+    },
+    {
+      "development_partition": false,
+      "original_name": "inventory_position.csv",
+      "relative_path": "input-3.csv",
+      "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_bytes": 18799,
+      "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_identity_independently_rehashed": true,
+      "source_identity_scope": "Source hash is controller receipt attribution; released bytes independently rehashed."
+    },
+    {
+      "development_partition": true,
+      "original_name": "Sales_transactions_2022_2025.csv",
+      "relative_path": "input-4.csv",
+      "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "released_bytes": 5006997,
+      "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "released_identity_independently_rehashed": true,
+      "source_identity_scope": "Source hash is controller receipt attribution; released bytes independently rehashed."
+    }
+  ],
+  "capture_requirements": [
+    "Execute each distinct scenario freshly; retain detector, approved task, analysis and writer evidence separately.",
+    "Show each complete final business response at a readable pace, including running-cost text.",
+    "Manually click View HTML, show and scroll its full table in the new tab, then return to the app.",
+    "Do not click CSV download; record actual observation rather than presume compliance.",
+    "Bind each case to its own receipts, hashes, output files, screenshots/DOM and eventual original-video segment.",
+    "Record failures/retries/superseded takes explicitly; do not silently replace a run or reuse old results.",
+    "Attribute any comparison only to this run's actual target, baseline, method, horizon, metric, eligibility and dates."
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "scenario": "current process supplied in question",
+      "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+      "expected_flow": {
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "historical_case1_run_reviewed_visual_take_superseded",
+        "session": "c1cebd9ea09847e898f4dde05ed4c788",
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": null,
+        "approval_clicks": 1,
+        "analysis_run_id": "investigation-867d6cff721b4c768c9d1043922f56b7",
+        "analysis_attempts": [
+          {
+            "path": "artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/attempt-a44a34049fc7460bb315e447d18df5a5.json",
+            "sha256": "275fbd95c041dfa1a85d2da2b85dc7855d4efb8ed52b0c01cd3839d965badbea",
+            "status": "analysis_completed",
+            "analytical_success": false,
+            "verified_report_available": false
+          }
+        ],
+        "detector_calls": [
+          {
+            "id": "current-process-06d5cc8a29bb4724b14b8c72c949cb56",
+            "trace_path": "artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/context/current-process-06d5cc8a29bb4724b14b8c72c949cb56/native-trace/call-trace.json",
+            "outcome": "completed",
+            "prompt_sha256": "d360501dd3169b2eabed2e4a0910f04225aad95532acaaabd950e6723c413e53",
+            "context_status": "found",
+            "thread_id": "01a15add-3a59-7b21-bd9b-38fef693ffdc",
+            "turn_id": "01a15add-3d38-7d41-a951-42dc5db8050f"
+          }
+        ],
+        "writer_calls": [
+          {
+            "id": "business-response-ead1e3503f30456ab2151009a8f77a4a",
+            "trace_path": "artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/business-response-ead1e3503f30456ab2151009a8f77a4a/native-trace/call-trace.json",
+            "outcome": "completed",
+            "status": "rewritten",
+            "response_sha256": "847e5ac7674d715ea4551e259b1208dd6a193abff00326c7c565a934a51b86d4",
+            "analytical_verification": false
+          }
+        ],
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "source_commit": "9ba0ef7f2f248ccdb945f037f2322cbe5c7d00dd",
+        "native_settings": {
+          "cli_version": "0.163.0",
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output",
+          "data_attachment": {
+            "name": "Data",
+            "path": "plugin://data-analytics@openai-curated-remote",
+            "type": "mention"
+          },
+          "effective_profile_verified": true,
+          "instruction_sources": [
+            "/Users/ceverson/.codex/AGENTS.md"
+          ],
+          "model": "gpt-6.1-sol",
+          "model_provider": "openai",
+          "permission_profile": "dsc26-stage-60c037641a304fc7a5742fd35049190c",
+          "reasoning_effort": "medium",
+          "runtime_workspace_roots": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/c1cebd9ea09847e898f4dde05ed4c788/runs/investigation-867d6cff721b4c768c9d1043922f56b7/output"
+          ],
+          "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+        },
+        "approved_task_sha256": null,
+        "outbound_analysis_prompt_sha256": "b86b78a53a2b2db248dcc3cb5e1eff0c2a14a89dd686e802e031293384fbfcdf",
+        "outbound_writer_prompt_sha256": "6f71ae1f80e6e74167cf261caf6bca921d45ee088a0375ba8dde106fc78b0422",
+        "final_response_sha256": "847e5ac7674d715ea4551e259b1208dd6a193abff00326c7c565a934a51b86d4",
+        "csv_rows": 336,
+        "csv_columns": 17,
+        "csv_sha256": "655c343b1e22e133bd31a2fa723ee62c62992baddbb41434eb3b245ab0722dd4",
+        "html_sha256": "2a978746157916ba64b3d7186f31a9d06b1362c7d4495d7ed60b4958bbeb4d4c",
+        "browser_table_equals_csv": true,
+        "full_response_explicitly_scrolled": true,
+        "running_cost_paragraph_visible": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "screenshots": [
+          {
+            "path": "case1/01-upload-question.png",
+            "sha256": "9739e85f7f569c66023f701864c2cc68434e75a4ee42a2e3d5453a4e99c7b813",
+            "review": "Reviewer viewed: exact case1 question and four uploaded file chips present; review button visible."
+          },
+          {
+            "path": "case1/02-task-review.png",
+            "sha256": "9f1886e53ee0ac0adaff021b5fbb0e1f17c3fe40daebd085dd61b8b23a637a2a",
+            "review": "Root-captured review screen; approval/context also bound by ui-actions.jsonl. Visual screenshot independently pending."
+          },
+          {
+            "path": "case1/03-analysis-running.png",
+            "sha256": "8c5d7b2403f3c808f35e41bacb1f97a6a57627f52c104a09c4a9d96f8827b37c",
+            "review": "Response screenshots04/05 independently visually reviewed;03records running state."
+          },
+          {
+            "path": "case1/04-response-start.png",
+            "sha256": "f7123e222a52986ce7153db2e8c95c739efde2659a25fcd4861331bf3115576a",
+            "review": "Response screenshots04/05 independently visually reviewed;03records running state."
+          },
+          {
+            "path": "case1/05-response-end-costs.png",
+            "sha256": "be30c3a34ad7ed9d16bdb31946573ba518eeff45d348c7938362b3c27183efb5",
+            "review": "Response screenshots04/05 independently visually reviewed;03records running state."
+          },
+          {
+            "path": "case1/06-html-top.png",
+            "sha256": "f990ee29abce0e31c5b2c03ac5aa1eb36705084b40e4b114e0a366679d0896be",
+            "review": "Screenshot06 independently viewed; HTML scroll actions separately in UI-action log; every DOMcell independently compared."
+          },
+          {
+            "path": "case1/07-html-scrolled.png",
+            "sha256": "3c3af7e8840b33a8fa7eabd5c7ddcaefd9023803e0018e8a299b6eaf33fb3763",
+            "review": "Screenshot06 independently viewed; HTML scroll actions separately in UI-action log; every DOMcell independently compared."
+          },
+          {
+            "path": "case1/08-html-right-columns.png",
+            "sha256": "ab41df4a8330aa8a3680ec96c59b9122e5b9c7fd64e714536f0fbe6b85272620",
+            "review": "Screenshot06 independently viewed; HTML scroll actions separately in UI-action log; every DOMcell independently compared."
+          },
+          {
+            "path": "case1/09-html-more-rows.png",
+            "sha256": "8e43c3c9cdb7f9addd023b67580455f393af39149edfd3cf7fe96d2dbe2ff519",
+            "review": "Screenshot06 independently viewed; HTML scroll actions separately in UI-action log; every DOMcell independently compared."
+          },
+          {
+            "path": "case1/11-returned-to-app.png",
+            "sha256": "a7c240b7bac1e01b5c758ad2e8a21ad04ad6dc1c4f91d9efb6fd764606dda456",
+            "review": "Return state captured by root and bound to selected-tab verification in action log."
+          }
+        ],
+        "response_dom_evidence": null,
+        "table_dom_evidence": "case1/browser-table-cells.json",
+        "independent_review": "case1/independent-audit.json",
+        "approval_action_at": "2026-10-20T19:51:32.893Z",
+        "approval_action_evidence": "ui-actions.jsonl",
+        "response_visibility_evidence": {
+          "screenshots": [
+            "case1/04-response-start.png",
+            "case1/05-response-end-costs.png"
+          ],
+          "review": "Independently viewed both screenshots; final writer text including smallgain/6monthbetter caveat and entire costs/optionalimprovements ending readable. UI-actions logs explicit scroll through ending."
+        },
+        "return_evidence": {
+          "ui_action_at": "2026-10-20T20:03:56.865Z",
+          "action": "return_to_app_native_selected_tab_verified",
+          "active_tab": "SuiroAI local demo",
+          "scope": "Root CUA action log, not independent video continuity review."
+        }
+      },
+      "comparison": {
+        "status": "development_metrics_independently_recomputed_from_retained_predictions",
+        "selected_method": "sba_croston",
+        "baseline_definition": "recent_91d: units over trailing 91 observed calendar days / 91, scaled by horizon. Not the exact incumbent.",
+        "target_definition": "Sum positive Quantity for normalized completed, shipped or returned rows after exact deduplication, grouped by order date and product/store. Positive return-flagged fulfilled rows count gross; do not subtract as usable returns. Exclude cancelled, processing, and eight nonpositive rows. No use of revenue, historical Inventory_Level, or contemporaneous future status as predictors.",
+        "status_and_return_rules": "Sum positive Quantity for normalized completed, shipped or returned rows after exact deduplication, grouped by order date and product/store. Positive return-flagged fulfilled rows count gross; do not subtract as usable returns. Exclude cancelled, processing, and eight nonpositive rows. No use of revenue, historical Inventory_Level, or contemporaneous future status as predictors.",
+        "recording_exposure_rule": "No global dates absent. On global dates, aggregate no local rows as zero RECORDED units only, after first observation; this is an observation target not a claim of stock exposure or zero underlying demand. No imputation of truly absent global dates. No pre-first-observation targets.",
+        "forecast_horizon": 7,
+        "operational_horizon": "8-14 day totals; synthetic lead time + 7 per pair. Separately compare each horizon over identical seven origins, plus pair-specific coverage. These scenarios do not establish historical ordering rules.",
+        "metric": {
+          "name": "MAE",
+          "units": "absolute product units per product/store next-week total",
+          "weighting": "Equal weight each eligible pair and each of eight origins. No revenue weights. Directly interpretable unit mismatch, symmetric because no shortage/overstock cost priority supplied; may favor low forecasts for sparse sales."
+        },
+        "aggregation_and_eligibility": "336 historically seen product/store pairs with at least 364 calendar days since first observed transaction at origin; no future-sales eligibility filters. Operational snapshot not used to construct historical features. All observed pairs match current synthetic roster, but historical assortment not known.",
+        "evaluation_dates_and_origins": {
+          "dates": "October 6-November 30, 2025 for 7-day target. Coverage comparison omits November 23 origin, so all 8-14 day targets end by November 30.",
+          "origins": [
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16",
+            "2025-11-23"
+          ]
+        },
+        "selection_and_plan_chronology": {
+          "plan_sha256_observed_before_score_files": "4bdac70baebf6fd94946b7a32224696061322f30d9c0d323943d8d4595fa3b1c",
+          "task_refinement_sha256": "92fe73a08f29d7f5d5d4be44123884708a3a1188d9256e629e887c765d846de4",
+          "observed_at": "2026-10-20T19:54:17.569529+00:00",
+          "declared_selection": "Choose lowest primary MAE. Exact numerical ties within 1e-10 favor recent_91d, then sba_croston, then pooled_ridge. No invented meaningful business-improvement threshold; report small/mixed gains candidly. Secondary diagnostics never override primary winner.",
+          "scope": "Reviewer observed plans present and no score/code comparison outputs yet; native event chronology to verify after completion.",
+          "native_command_events": {
+            "plan_command_completed_monotonic": 680781.940942041,
+            "analysis_command_completed_monotonic": 680886.594064833,
+            "successful_analysis_commands_observed": 1
+          }
+        },
+        "development_or_reserved": "development",
+        "measured_scores": {
+          "primary": {
+            "recent_91d": {
+              "MAE": 0.9125457875457876,
+              "RMSE": 1.7014625522913565,
+              "WAPE": 1.3294976026683345,
+              "bias_units": -0.17124542124542122,
+              "actual_units": 1845.0,
+              "prediction_units": 1384.6923076923076,
+              "n": 2688
+            },
+            "sba_croston": {
+              "MAE": 0.9029661088519224,
+              "RMSE": 1.6770992696808626,
+              "WAPE": 1.3155408675306057,
+              "bias_units": -0.184629866741613,
+              "actual_units": 1845.0,
+              "prediction_units": 1348.7149181985444,
+              "n": 2688
+            },
+            "pooled_ridge": {
+              "MAE": 0.9577063480309527,
+              "RMSE": 1.6684757371876868,
+              "WAPE": 1.3952925005459083,
+              "bias_units": -0.0787312205688208,
+              "actual_units": 1845.0,
+              "prediction_units": 1633.3704791110097,
+              "n": 2688
+            }
+          },
+          "coverage": {
+            "recent_91d": {
+              "MAE": 1.2823783359497645,
+              "RMSE": 2.186248811010145,
+              "WAPE": 1.1699588231783733,
+              "bias_units": -0.2869944681169171,
+              "actual_units": 2578.0,
+              "prediction_units": 1902.989010989011,
+              "n": 2352
+            },
+            "sba_croston": {
+              "MAE": 1.252358575968969,
+              "RMSE": 2.142351662186913,
+              "WAPE": 1.142570741147795,
+              "bias_units": -0.3021579643269115,
+              "actual_units": 2578.0,
+              "prediction_units": 1867.3244679031043,
+              "n": 2352
+            },
+            "pooled_ridge": {
+              "MAE": 1.3169106022323034,
+              "RMSE": 2.1270999877759333,
+              "WAPE": 1.2014638232933972,
+              "bias_units": -0.12799492110850397,
+              "actual_units": 2578.0,
+              "prediction_units": 2276.9559455527988,
+              "n": 2352
+            }
+          }
+        },
+        "supported_relative_gain": 0.010497751263121802,
+        "prior_result_reused": false,
+        "note": "Determine from this actual run. Historical 4.06% reserved comparison is not evidence for a newly discovered model."
+      },
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "ui_flow_visible": null,
+        "full_response_readable": null,
+        "html_scroll_and_return_visible": null,
+        "review_status": "superseded_user_reports_deleted_entire_prior_video"
+      },
+      "superseded_for_new_recording": true
+    },
+    {
+      "case": 2,
+      "scenario": "missing process, user answers follow-up",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "I normally use last month's sales to work out what we need for the week.",
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "not_executed_before_redo_request",
+        "session": null,
+        "context_status": null,
+        "followup_asked": null,
+        "answer": null,
+        "continue_without_clicked": null,
+        "approval_clicks": null,
+        "analysis_run_id": null,
+        "analysis_attempts": [],
+        "detector_calls": [],
+        "writer_calls": [],
+        "analysis_outcome": null,
+        "writer_outcome": null,
+        "source_commit": null,
+        "native_settings": null,
+        "approved_task_sha256": null,
+        "outbound_analysis_prompt_sha256": null,
+        "outbound_writer_prompt_sha256": null,
+        "final_response_sha256": null,
+        "csv_rows": null,
+        "csv_columns": null,
+        "csv_sha256": null,
+        "html_sha256": null,
+        "browser_table_equals_csv": null,
+        "full_response_explicitly_scrolled": null,
+        "running_cost_paragraph_visible": null,
+        "html_opened_manually": null,
+        "html_table_scrolled": null,
+        "returned_to_app": null,
+        "csv_download_clicked": null,
+        "screenshots": [],
+        "response_dom_evidence": null,
+        "table_dom_evidence": null,
+        "independent_review": null
+      },
+      "comparison": {
+        "status": "not_yet_observed",
+        "selected_method": null,
+        "baseline_definition": null,
+        "target_definition": null,
+        "status_and_return_rules": null,
+        "recording_exposure_rule": null,
+        "forecast_horizon": null,
+        "operational_horizon": null,
+        "metric": null,
+        "aggregation_and_eligibility": null,
+        "evaluation_dates_and_origins": null,
+        "selection_and_plan_chronology": null,
+        "development_or_reserved": null,
+        "measured_scores": null,
+        "supported_relative_gain": null,
+        "prior_result_reused": false,
+        "note": "Determine from this actual run. Historical 4.06% reserved comparison is not evidence for a newly discovered model."
+      },
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "ui_flow_visible": null,
+        "full_response_readable": null,
+        "html_scroll_and_return_visible": null,
+        "review_status": "not_executed"
+      },
+      "superseded_for_new_recording": true
+    },
+    {
+      "case": 3,
+      "scenario": "no current approach; user explicitly continues",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "",
+        "continue_without_clicked": true,
+        "approval_clicks": 1,
+        "fresh_analysis_required": true,
+        "fresh_writer_output_required": true,
+        "full_response_explicitly_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "not_executed_before_redo_request",
+        "session": null,
+        "context_status": null,
+        "followup_asked": null,
+        "answer": null,
+        "continue_without_clicked": null,
+        "approval_clicks": null,
+        "analysis_run_id": null,
+        "analysis_attempts": [],
+        "detector_calls": [],
+        "writer_calls": [],
+        "analysis_outcome": null,
+        "writer_outcome": null,
+        "source_commit": null,
+        "native_settings": null,
+        "approved_task_sha256": null,
+        "outbound_analysis_prompt_sha256": null,
+        "outbound_writer_prompt_sha256": null,
+        "final_response_sha256": null,
+        "csv_rows": null,
+        "csv_columns": null,
+        "csv_sha256": null,
+        "html_sha256": null,
+        "browser_table_equals_csv": null,
+        "full_response_explicitly_scrolled": null,
+        "running_cost_paragraph_visible": null,
+        "html_opened_manually": null,
+        "html_table_scrolled": null,
+        "returned_to_app": null,
+        "csv_download_clicked": null,
+        "screenshots": [],
+        "response_dom_evidence": null,
+        "table_dom_evidence": null,
+        "independent_review": null
+      },
+      "comparison": {
+        "status": "not_yet_observed",
+        "selected_method": null,
+        "baseline_definition": null,
+        "target_definition": null,
+        "status_and_return_rules": null,
+        "recording_exposure_rule": null,
+        "forecast_horizon": null,
+        "operational_horizon": null,
+        "metric": null,
+        "aggregation_and_eligibility": null,
+        "evaluation_dates_and_origins": null,
+        "selection_and_plan_chronology": null,
+        "development_or_reserved": null,
+        "measured_scores": null,
+        "supported_relative_gain": null,
+        "prior_result_reused": false,
+        "note": "Determine from this actual run. Historical 4.06% reserved comparison is not evidence for a newly discovered model."
+      },
+      "video": {
+        "original_reference": null,
+        "take_start": null,
+        "take_end": null,
+        "ui_flow_visible": null,
+        "full_response_readable": null,
+        "html_scroll_and_return_visible": null,
+        "review_status": "not_executed"
+      },
+      "superseded_for_new_recording": true
+    }
+  ],
+  "overall_readiness": {
+    "all_three_actual_analyses_complete": false,
+    "all_three_writer_outputs_complete": false,
+    "all_three_visual_walkthroughs_complete": false,
+    "all_three_independent_checks_complete": false,
+    "original_video_verified": false,
+    "recording_ready_claim": false,
+    "parent_acceptance_granted": false
+  },
+  "launch_commit_evidence": "Root reports app launched from this commit; reviewer independently checked repository HEAD. Runtime source binding still belongs to actual run receipt.",
+  "supersession": {
+    "recorded_at": "2026-10-20T20:06:18.252266+00:00",
+    "source": "Explicit user instruction relayed by root",
+    "reason": "User rejects customer-facing replace-synthetic-input warning in this demo scenario; requests pretending supplied scenario files real for the demo and redoing all three examples.",
+    "video_disposition": "User reports deleting the whole prior video; no original file was ever independently identified or verified.",
+    "artifact_disposition": "Retain all previous run artifacts, mathematical checks, screenshots and action history; do not delete or rewrite generated evidence.",
+    "replacement": "Fresh retakes require separate evidence paths, new actual analysis/writer/UI and actual video identity; no new recording completion claimed."
+  }
+}

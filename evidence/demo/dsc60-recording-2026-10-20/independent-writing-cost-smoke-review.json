@@ -1,0 +1,63 @@
+{
+  "format": "dsc60-independent-writing-usage-smoke-review-v1",
+  "status": "passed_with_scope_limit",
+  "distinct_stages": 3,
+  "historical_recovered_stages": 2,
+  "fresh_instrumented_writer_stages": 1,
+  "numeric_source_checks": [
+    {
+      "stage": "detector",
+      "kind": "historical_numeric_recovery",
+      "source_sha256": "32d4f53057e563cb78f3b04a40c0d8f68bc84e357d5acd5221ecc35745d5826e",
+      "counter_snapshot_count": 7,
+      "counts_equal": true
+    },
+    {
+      "stage": "analysis",
+      "kind": "historical_numeric_recovery",
+      "source_sha256": "06f2ceeef3af076e0ac40f0ffc34051c15542205c2dcc22ddbb1a31388cbf599",
+      "counter_snapshot_count": 16,
+      "counts_equal": true
+    },
+    {
+      "stage": "business_response",
+      "kind": "fresh_instrumented_native_and_numeric_rollout_agree",
+      "source_sha256": "471fc3297fd6ff66af9ee9e56fe92acd4b96e9054e57bfb407413881762f25df",
+      "counter_snapshot_count": 4,
+      "counts_equal": true
+    }
+  ],
+  "cost_arithmetic": [
+    {
+      "stage": "current_process",
+      "calculated_api_equivalent_usd_unrounded": "0.073654",
+      "calculated_api_equivalent_usd_6dp": "0.073654",
+      "max_request_input": 30515,
+      "source": "historical_rollout_event_msg_cumulative_total_recovery"
+    },
+    {
+      "stage": "analysis",
+      "calculated_api_equivalent_usd_unrounded": "0.4248576",
+      "calculated_api_equivalent_usd_6dp": "0.424858",
+      "max_request_input": 71970,
+      "source": "historical_rollout_event_msg_cumulative_total_recovery"
+    },
+    {
+      "stage": "business_response",
+      "calculated_api_equivalent_usd_unrounded": "0.0602236",
+      "calculated_api_equivalent_usd_6dp": "0.060224",
+      "max_request_input": 29063,
+      "source": "native_thread_usage_cumulative_total"
+    }
+  ],
+  "unrounded_component_total_usd": "0.5587352",
+  "sum_of6dp_stage_estimates_usd": "0.558736",
+  "customer_rounded_usd": "0.56",
+  "cost_is_actual_bill": false,
+  "native_writer_sha256": "05a665923895d8ec5375ea14df1159f730f6c164828df24d2fb0713f8c7c984f",
+  "published_response_sha256": "d4d22866c9c5c9db279f7a306b653194eb47debafb51463fc9a52d21d31daa4a",
+  "controller_append_exact_and_original_preserved": true,
+  "csv_unchanged": true,
+  "source_guard_now_handles_known_long_requests": true,
+  "scope_limit": "Smoke demonstrates fresh writing and cost plumbing using two historical recovered stages; it is not three fresh app calls, a new analytical result, recording completion, or verification of future parameterized CLI/scheduler capability."
+}

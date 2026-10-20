@@ -1,0 +1,51 @@
+{
+  "format": "dsc60-independent-pre-retake-source-review-v1",
+  "reviewed_at": "2026-10-20T20:17:28.267954+00:00",
+  "scope": "Read-only source/test review; no model calls, source edits, producer execution, test rerun or new recording claim.",
+  "source_review": "No material demo-framing/automation/consent/usage-lineage blocker found. Standard-short pricing scenario qualification needs checking against actual usage.",
+  "files": [
+    {
+      "path": "src/suiroai/demo/task.py",
+      "sha256": "33b2c8d0294179dafbb199b7f50781b37da080e17ab8913bbaace4ee9e44aab1"
+    },
+    {
+      "path": "src/suiroai/demo/service.py",
+      "sha256": "31c70c03c5ebf5b655cebf493ec69ed4bebc1ac20be1369411a91cfe155706ed"
+    },
+    {
+      "path": "src/suiroai/demo/investigation.py",
+      "sha256": "2b5fd539ead0109b5736604f4fdeaf92292f219b2d82ed89e31bc4a07b4ea250"
+    },
+    {
+      "path": "src/suiroai/demo/business_response.py",
+      "sha256": "5cf6f60f6718820732f2d746f37dbc720abf313c8c78f0167a8e32345b9118c3"
+    },
+    {
+      "path": "src/suiroai/demo/backend.py",
+      "sha256": "443dd6c022d7a1fe7797f3d7dea1a511a6c7fe5a4d027ffcbe0cfef5039b6904"
+    },
+    {
+      "path": "src/suiroai/demo/current_process.py",
+      "sha256": "cf6c645d71f9a647ca2057c97391b9e5456efbe51b7d833f085751bd86ad4de0"
+    },
+    {
+      "path": "src/suiroai/demo/call_trace.py",
+      "sha256": "674ce51f1aacae0e67e93208a9527cb86d5329034a7d91fa9692e1cb8dbb58ff"
+    },
+    {
+      "path": "src/suiroai/integration/native.py",
+      "sha256": "34d38207c508baec3a69611550df31839f7916d8841514bb4004d20cfe84c677"
+    },
+    {
+      "path": "src/suiroai/integration/usage.py",
+      "sha256": "215c597bbb63b9ee0139044be81ad525bd192acd26621280ddf6c181700a32c6"
+    },
+    {
+      "path": "src/suiroai/demo/cost_summary.py",
+      "sha256": "15855dc129b9a151880963390bd3cfdbf1247fc28f3256a978bcbba8a380f3a4"
+    }
+  ],
+  "pricing_scope": "Reviewed supplied dated rate arithmetic and attribution; official price verification belongs to root evidence, not independently reverified here.",
+  "live_usage_and_writer_smoke": "pending_root_execution",
+  "new_forecast_performance_claim": false
+}

@@ -1,0 +1,17 @@
+method,kind,sparse_group,absolute_error
+croston_sba,coverage,0-2_nonzero_days,1.021967142531747
+croston_sba,coverage,3+_nonzero_days,1.4956079469217598
+croston_sba,next7,0-2_nonzero_days,0.7238590753248325
+croston_sba,next7,3+_nonzero_days,1.0484861583742986
+mean28,coverage,0-2_nonzero_days,1.0039826212889211
+mean28,coverage,3+_nonzero_days,1.796152584981965
+mean28,next7,0-2_nonzero_days,0.6574945691527878
+mean28,next7,3+_nonzero_days,1.2316373374139251
+mean84,coverage,0-2_nonzero_days,0.9438640046894934
+mean84,coverage,3+_nonzero_days,1.6249407949867014
+mean84,next7,0-2_nonzero_days,0.637762490948588
+mean84,next7,3+_nonzero_days,1.153085947462382
+poisson_pool,coverage,0-2_nonzero_days,1.0953257161595078
+poisson_pool,coverage,3+_nonzero_days,1.4962131041486038
+poisson_pool,next7,0-2_nonzero_days,0.7940811357395946
+poisson_pool,next7,3+_nonzero_days,1.0476077830320214

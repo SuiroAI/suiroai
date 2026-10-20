@@ -1,0 +1,17 @@
+method,horizon,sparse_last90,abs_error
+pooled90,coverage,False,1.6902132678432258
+pooled90,coverage,True,0.5869570915245356
+pooled90,week,False,1.2148152982887503
+pooled90,week,True,0.41611000225570965
+recent90,coverage,False,1.7684274438372798
+recent90,coverage,True,0.5409171075837742
+recent90,week,False,1.2634638737097754
+recent90,week,True,0.3691267247639797
+recent_month,coverage,False,1.9033735404967556
+recent_month,coverage,True,0.4556850697268155
+recent_month,week,False,1.336262412597685
+recent_month,week,True,0.2974119755429053
+ridge,coverage,False,1.6585647350768502
+ridge,coverage,True,0.7197659275504892
+ridge,week,False,1.1900667411473878
+ridge,week,True,0.5214522022588206

@@ -1,0 +1,78 @@
+{
+  "format": "dsc60-retake-case-development-arithmetic-v1",
+  "case": 2,
+  "status": "passed_from_saved_prediction_rows",
+  "prediction_rows": 20160,
+  "exact_prespecified_grid": true,
+  "common_model_targets_and_scope": true,
+  "metrics": [
+    {
+      "method": "pooled90",
+      "horizon": "coverage",
+      "MAE": 1.1878376875552508,
+      "bias": -0.2758601960497205,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "pooled90",
+      "horizon": "week",
+      "MAE": 0.8511191367022765,
+      "bias": -0.1639178240740741,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "recent90",
+      "horizon": "coverage",
+      "MAE": 1.209471844293273,
+      "bias": -0.2738236961451247,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "recent90",
+      "horizon": "week",
+      "MAE": 0.8562210648148149,
+      "bias": -0.1639178240740741,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "recent_month",
+      "horizon": "coverage",
+      "MAE": 1.2441582546997292,
+      "bias": -0.25245958598493157,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "recent_month",
+      "horizon": "week",
+      "MAE": 0.8632144457245264,
+      "bias": -0.15439068100358422,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    },
+    {
+      "method": "ridge",
+      "horizon": "coverage",
+      "MAE": 1.2310759923639536,
+      "bias": -0.19883633459545957,
+      "observations": 2352,
+      "recorded_units": 2366.0
+    },
+    {
+      "method": "ridge",
+      "horizon": "week",
+      "MAE": 0.8856083350463437,
+      "bias": -0.11781248995464196,
+      "observations": 2688,
+      "recorded_units": 1694.0
+    }
+  ],
+  "selected": "pooled90",
+  "primary_gain": 0.014011940001882106,
+  "plan_unchanged_from_prospective_observation": true,
+  "scope": "Independent arithmetic from retained development predictions; no producer execution, model refit or reserved outcome scoring."
+}

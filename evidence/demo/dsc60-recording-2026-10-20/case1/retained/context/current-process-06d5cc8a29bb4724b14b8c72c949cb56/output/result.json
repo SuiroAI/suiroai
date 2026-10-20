@@ -1,0 +1,10 @@
+{
+  "status": "found",
+  "summary": "The user wants to determine what to restock in their stores next week. They explicitly describe their current procedure as looking at the last few months of sales to decide what to buy. They do not specify a precise lookback period or a rule for choosing purchase quantities.",
+  "evidence": [
+    {
+      "source": "question",
+      "quote": "I usually look at the last few months of sales to decide what to buy."
+    }
+  ]
+}

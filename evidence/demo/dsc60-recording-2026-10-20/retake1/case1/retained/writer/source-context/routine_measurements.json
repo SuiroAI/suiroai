@@ -1,0 +1,70 @@
+{
+  "command_argv": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-4.csv",
+    "--stock-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-3.csv",
+    "--deliveries-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-2.csv",
+    "--policy-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "planning_date": "2025-11-30",
+  "returncode": 0,
+  "local_calculation_wall_seconds": 0.6168296670075506,
+  "child_high_water_rss_bytes": 175652864,
+  "memory_measurement_limits": "OS process high-water RSS includes Python, imports, data preparation and retained arrays/models, but does not isolate fit and inference peaks or attribute swap. Routine spawns no child processes. Single warm-filesystem local run, not an 8 GB hardware benchmark. An initial attempted psutil process-tree observer was denied by the sandbox and was replaced by OS self/child resource counters.",
+  "routine_details": {
+    "rows": 336,
+    "units_to_order": 875,
+    "run_seconds_excluding_imports": 0.32534862495958805,
+    "process_high_water_rss_bytes": 175603712,
+    "selected_method": "croston_sba",
+    "preparation_seconds": 0.08591237501241267,
+    "forecast_total_seconds": 0.0023353330325335264,
+    "model": {
+      "fit_seconds": 0.0018392089987173676,
+      "inference_seconds": 1.6666948795318604e-05,
+      "retained_array_bytes": 279552
+    },
+    "ordering_and_write_seconds": 0.2363330409862101,
+    "matrix_shape": [
+      1430,
+      336
+    ],
+    "matrix_bytes": 3843840
+  },
+  "dependency_versions": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "input_sha256": {
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e62526feb0764f79b8a61f3f11f23b28/runs/investigation-eb984590f7c4424b89240c73a7de3899/released/input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "routine_sha256": "1fc1343e9e703c1b667e938afcfbaa4e35e4e1587940d8aa6e5e2de431c1d772",
+  "output_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+  "cpu_only": true,
+  "paid_model_api_calls": 0,
+  "thread_settings": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "cost_scope": "Measured weekly local calculation only, separate from AI-assisted analysis/build. No usage/pricing supplied for AI analysis cost; no electricity/hosting rate supplied.",
+  "output_agreement": {
+    "independent_full_order_arithmetic": true,
+    "independent_shortage_arithmetic": true,
+    "rerun_byte_identical": true,
+    "validated_rows": 336
+  }
+}

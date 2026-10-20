@@ -1,0 +1,38 @@
+{
+  "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "analyst_context_summary": {"current_process_evidence": {"quote":"I usually look at the last few months of sales to decide what to buy.","source":"question"},"current_process_status":"found","exact_lookback_and_quantity_rule":"not supplied","scenario_mode":"provided_operations_are_assumed_scenario_facts"},
+  "original_customer_context": {
+    "current_process": {
+      "evidence": [{"quote":"I usually look at the last few months of sales to decide what to buy.","source":"question"}],
+      "source":"detector_interpretation",
+      "status":"found",
+      "text":"The user wants to decide what to restock in their stores next week. They explicitly describe their existing practice as looking at the last few months of sales to decide what to buy. The question does not specify an exact lookback period or a calculation for order quantities. The complete released CSV contents provide no additional explicit description of how they currently make restocking decisions."
+    },
+    "demo_scenario": {
+      "authority":"explicit_user_demo_roleplay_instruction",
+      "customer_provenance_only_csv_columns":false,
+      "customer_provenance_warnings":false,
+      "independently_verified_real_stock_claimed":false,
+      "mode":"provided_operations_are_assumed_scenario_facts",
+      "operating_inputs":["supplied_stock","supplied_deliveries","supplied_ordering_rules"],
+      "source_provenance_unchanged":true
+    },
+    "format":"dsc60-task-context-v1",
+    "original_question":"What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy."
+  },
+  "refined_task_attribution": "Analyst refinement from supplied task and inspected released CSVs; not a customer statement",
+  "refined_task": "For the November 30, 2025 planning date, estimate recorded gross fulfilled units for December 1–7 and each supplied lead-time-plus-seven-day coverage period. Subtract usable stock and eligible known incoming deliveries, add supplied safety stock, round positive deficits to supplied minimums and multiples, retain zero orders, and flag shortages before receipt and other timing/data exceptions. Deliver a configurable non-LLM local weekly CLI and measured invocation.",
+  "manual_work_replaced": "Reading recent sales, aggregating quantities for each product at each store, estimating coverage, subtracting stock and deliveries, applying purchasing multiples and minimums, and preparing a review list. These are routine design steps, not an assertion of the customer's exact hand calculation or measured time saved.",
+  "supplied_facts": ["336 policy and stock rows spanning 28 products and 12 stores", "Lead time 1–7 days and review period seven days", "Complete open-order ledger matches stock on-order quantities", "Sales partition ends November 30, 2025"],
+  "interpretations": ["All channels assigned to a store consume that store's stock", "Returned positive-quantity orders represent prior gross outflow; returns are not credited to stock without return dates or saleability", "A missing product-at-store transaction day within a globally populated ledger represents no recorded sale, not proof of no demand or stock availability"],
+  "unresolved": ["Exact incumbent calculation and lookback", "Historical status change times", "Lost sales and historical stock availability", "Whether complete extract includes every sale", "Cost/service priorities and meaningful success threshold"],
+  "candidate_discovery": [
+    {"name":"mean84","rationale":"Fair recent-12-week average baseline inspired by the stated few-month lookback, not an exact incumbent replica."},
+    {"name":"mean28","rationale":"Shorter recent average can adapt to rising November recorded units; input-4.csv monthly counts justify a responsiveness comparison."},
+    {"name":"croston_sba","rationale":"96.9% of product-at-store days have no eligible transaction; interval/size smoothing is a lightweight conventional intermittent-demand candidate."},
+    {"name":"poisson_pool","rationale":"Sparse individual series but repeated November/December peaks in 2022–2024 support a regularized pooled count regression with product, store, month and trend effects; 104 weeks of 336 series is bounded CPU work."}
+  ],
+  "operational_scope": "Predictive comparison only; no operational redesign or policy optimization. Fixed candidate settings, no hyperparameter search. Routine uses selected method with no network or paid API calls.",
+  "outcome_proxy_limits": "Recorded-unit error supports forecast choice but cannot establish stock availability gains, purchasing savings or optimal service/excess tradeoff.",
+  "evidence": ["profile_inputs.py", "source_treatment.json", "released/input-1.csv", "released/input-2.csv", "released/input-3.csv", "released/input-4.csv"]
+}

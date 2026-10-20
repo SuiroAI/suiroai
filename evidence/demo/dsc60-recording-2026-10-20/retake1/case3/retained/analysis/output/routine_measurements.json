@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "planning_date": "2025-11-30",
+  "selected_model": "mean182",
+  "local_calculation_wall_seconds_including_python_startup_imports_read_fit_infer_write": 0.6643591660540551,
+  "cpu_user_seconds": 0.8855529999999999,
+  "cpu_system_seconds": 3.357427,
+  "process_peak_rss_bytes": 172883968,
+  "phases": {
+    "preparation_seconds": 0.09171737497672439,
+    "preparation_peak_rss_bytes": 170131456,
+    "daily_array_bytes": 3843840,
+    "sales_frame_deep_bytes": 26281467,
+    "fitting_seconds": 0.0003706669667735696,
+    "fitting_cumulative_peak_rss_bytes": 170475520,
+    "retained_model_bytes": 2688,
+    "inference_seconds": 9.887502528727055e-05,
+    "inference_cumulative_peak_rss_bytes": 170508288,
+    "prediction_array_bytes": 37632,
+    "order_calculation_seconds": 0.17339620809070766,
+    "calculation_cumulative_peak_rss_bytes": 172687360
+  },
+  "measurement_limits": "One local subprocess run; RSS is OS process high-water, phase peaks cumulative, not isolated allocations. Host is not assumed to have 8 GB. Background load and filesystem cache affect timing; OS memory and separate analysis/build excluded. No paid model/API calls.",
+  "dependencies": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "machine": "arm64",
+  "source_hashes": {
+    "input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "routine_sha256": "0131a2315d1958f4ed489bf9f859ca393b3d85f67846ffa4f24df4a6d623b3e3",
+  "output_sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6",
+  "output_agreement": {
+    "matches_selected_calculation": true,
+    "independently_recomputed_order_quantities_all_rows": true,
+    "independently_recomputed_timing_flags_all_rows": true,
+    "pack_minimum_unit_checks": true
+  },
+  "ordinary_8gb_assessment": "Observed full process peak well below 1 GB for 17,406 input rows, 336 pairs and 1,430 days. Selected mean retains only 336 rates and needs pandas/numpy; no GPU or model server. Fits 8 GB with substantial OS headroom at this workload, not a benchmark on an 8 GB host. Data preparation included.",
+  "ongoing_cost": "No paid model service required. Existing computer, power or hosting still have costs; no measured electricity or local applicable rates supplied.",
+  "ai_analysis_build_cost": "Not estimable from available evidence: actual AI usage and applicable billed pricing not provided. Local calculation timing is separate."
+}

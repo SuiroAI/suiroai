@@ -1,0 +1,68 @@
+{
+  "format": "dsc60-retake-final-publication-check-v1",
+  "case": 1,
+  "status": "analysis_writer_cost_and_static_outputs_passed_ui_video_pending",
+  "attempt_receipt": "attempt-9133e1e14c844a469fbf2c5d94459cef.json",
+  "attempt_sha256": "2a7c74491e39df15b1f4753249a4dd7b85bc940bb8fd4317f405f1ff4934d038",
+  "analysis_native_outcome": "completed",
+  "writer_run_id": "business-response-8362d34948744ce4ae0f1b24567ea875",
+  "writer_outcome": "rewritten",
+  "three_fresh_distinct_stage_receipts": [
+    {
+      "stage": "current_process",
+      "identity": [
+        "01a15af9-1978-7b80-908b-c96dc7244924",
+        "01a15af9-1d1f-70f2-a9df-0e48663f1883"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.059328",
+      "max_request_input_units": 26424,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "analysis",
+      "identity": [
+        "01a15afa-4d92-7aa1-a22e-5407a728fb07",
+        "01a15afa-5207-74a1-acf3-6760aa927f79"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.481187",
+      "max_request_input_units": 74240,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    },
+    {
+      "stage": "business_response",
+      "identity": [
+        "01a15b01-7d40-7700-ab71-46eec4259417",
+        "01a15b01-7f22-7341-8154-d41f86faac77"
+      ],
+      "source": "fresh_instrumented_native",
+      "numeric_cost_6dp_usd": "0.081236",
+      "max_request_input_units": 22101,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "trace_and_native_evidence_verified": true
+    }
+  ],
+  "estimated_api_equivalent_usd": "0.621751",
+  "displayed_cost_usd": "0.62",
+  "actual_bill": false,
+  "writer_prose_sha256": "a6d4111ce599f3716a7a4ff826c8060918a2507c0679ea4e7ab633754470b068",
+  "published_response_sha256": "7e605a6d010771a05aeff3d06bc9bd2bd35fe72858ec48a722e64b96813445c1",
+  "native_prose_plus_controller_cost_exact": true,
+  "csv_sha256": "4d2c5e9e9211f897c6ac261cc7593bcbeb032edac39d6e07107c30ac76e96e4e",
+  "html_sha256": "7df4f92b756976b628a74903298cb47d09177ada1170c46f051c7481d372fd3e",
+  "static_html_all_headers_values_order_equal_csv": true,
+  "static_html_body_cells": 6048,
+  "customer_text_review": "Automation-first875unitlist,0.62secondcalculation,reviewflags/nozero-guarantee,optionalweekly scheduling afterupdatedfiles; no installedschedule, oldgain, provenance-replacement warning, accuracylecture, unknownAIcost or unsupportedoutcomeclaim.",
+  "gates": {
+    "analytical_success": false,
+    "verified_report_available": false,
+    "final_policy_frozen": false
+  },
+  "scope": "Own cost/publication/hash/table checks; source/receipt inspection, no producer execution or new reserved scoring."
+}

@@ -1,0 +1,682 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/inspection.json",
+    "bytes": 599667,
+    "sha256": "20cc1956d02a3bc19dafc9309f231923b60af866dc4f67c31c81b63bb89b08ad"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-bootstrap.jsonl",
+    "bytes": 2313,
+    "sha256": "a61ec9d2c3b7f6b68c9c38ebe7f3be0a79da996dd004f416264a9972812e80ca"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-rpc.jsonl",
+    "bytes": 663561,
+    "sha256": "de661c3e5eeda0dc3068524e7ca97e9e3cd2919448c84a959c24c731c5d65eaf"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native/native-run.json",
+    "bytes": 598273,
+    "sha256": "9558d71c5d828d108271c1d56df986013be286223e2f9baa17a9152d5742d94b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native-trace/call-trace.json",
+    "bytes": 5652,
+    "sha256": "05c5279d40b53332a01ffacdf70285e24b0859ad0f4e1a19d04b95b8da67e95c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/native-trace/outbound-prompt.txt",
+    "bytes": 3648,
+    "sha256": "e909c4deacbf2ce6e5d970bb874d7819e7b5dcb3d7c8039418a0cab77d39929b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/output/result.json",
+    "bytes": 492,
+    "sha256": "1eee90e44ee0afc1f16953c1b9b7a3bac2ee8162c435eefc4ca74123dea38c08"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/released/input-1.csv",
+    "bytes": 19279,
+    "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/released/input-2.csv",
+    "bytes": 10740,
+    "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/released/input-3.csv",
+    "bytes": 18799,
+    "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/released/input-4.csv",
+    "bytes": 5006997,
+    "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/context/current-process-2bb8a6ecdfee4510be11dcbdd633689c/released/manifest.json",
+    "bytes": 1373,
+    "sha256": "fc995400b3588c195a1fbee848b8700d0b250b3d5c4b2c911825821a7fbb7552"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/attempt-9a8db2dfb3d74960af0f3b0d9252105c.json",
+    "bytes": 420481,
+    "sha256": "25f320f345c1689a103b827238eadcd65b9a7a5a98cb76943683503e4852f4c2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-bootstrap.jsonl",
+    "bytes": 2312,
+    "sha256": "8327ae3496c6555eb316d4ad050806f425287efb7094976e6fc08cc0c972e509"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-rpc.jsonl",
+    "bytes": 160859,
+    "sha256": "24bdbd7db024b2d3938f62083db08846681bc56345b69c217e51b646a5eb615b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native/native-run.json",
+    "bytes": 90348,
+    "sha256": "8b9d3a9fcca1907094cc8e19c7613dd683fcb857a5651357e43f70af567fedb5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native-trace/call-trace.json",
+    "bytes": 7129,
+    "sha256": "9ca6f31610f5e39792ee2a73a34e0fd819b00ed5f3972c083ee365e61d2c437e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/native-trace/outbound-prompt.txt",
+    "bytes": 6840,
+    "sha256": "65860283723a51d637464518d067aa4ba7bc612f775a3c953c0331b3bd9d7ad7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/output/business_response.md",
+    "bytes": 1427,
+    "sha256": "75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/output/rewrite_result.json",
+    "bytes": 272,
+    "sha256": "f9c419363977d5c994dd439b0b4fe1b8303502f3599eacc2293a06b3dbe4958f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/csv_facts.json",
+    "bytes": 533,
+    "sha256": "28cef460f0c2724c44da1b8798825ec83088c26bae484f7e4a8f4aefd9eec365"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/evaluation_plan.json",
+    "bytes": 3602,
+    "sha256": "3340f29c9bac6b57be83642943c855b84996716f284d014303183fce69e29890"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/original_response.md",
+    "bytes": 1619,
+    "sha256": "6e02df74a8977cfb384974c72bae9a63a36329e36ffeb967d9fc66d20fc162f2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/routine_measurements.json",
+    "bytes": 3077,
+    "sha256": "2d5ed2b19b158fbb8c46699e88c92f65ef7e96de7e5efc89e28a57f96585c704"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/routine_usage.md",
+    "bytes": 3203,
+    "sha256": "411ac757c3a5919e4f1f95a26db9cf8cca7b36e2cfdcdd5542f2cdecbc252b83"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/source_manifest.json",
+    "bytes": 3182,
+    "sha256": "f6449f44449426f0bba0806766993f3b6783ff3b57437197b4eb56dfaf35c786"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/released/task_refinement.json",
+    "bytes": 2999,
+    "sha256": "4b0d2ba6c27a063efe9d5aa5842d3cd327dfa1947aa351ddb1e15443420671a2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/business-response-cc8d45e401a34533be13617d88233613/writing-receipt.json",
+    "bytes": 21432,
+    "sha256": "8be245e316ac581163581dcb883f068fe7392e3040b5a706e05897148e46c269"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/demo-report-221fab0dc44e41ecbba182fc99b737b2.html",
+    "bytes": 88346,
+    "sha256": "5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/native/native-bootstrap.jsonl",
+    "bytes": 2307,
+    "sha256": "7ccb271ed53e7e4f9b19c58461b1d177ad0ab9f50b76c4af379befd6f775e8ec"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/native/native-rpc.jsonl",
+    "bytes": 1742958,
+    "sha256": "d264935ea25520cef74fae21bb502ed6a796266993df7d892a23c735ed6d42b2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/native/native-run.json",
+    "bytes": 368988,
+    "sha256": "bcc72da1dcb0fbe553e1edd15c0f2427507bf8f5d5e72d38f027c83fde5baf8b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/native-trace/call-trace.json",
+    "bytes": 6816,
+    "sha256": "45b067dfe8b524dfd5844ab12b23794800b43342f485d47a619a806d4c5aa6a1"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/native-trace/outbound-prompt.txt",
+    "bytes": 24298,
+    "sha256": "b0eb1eadb386e8aab755097fc4501a713ae693f2fbb082467d0993e74a7eab85"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/__pycache__/restock_routine.cpython-313.pyc",
+    "bytes": 24788,
+    "sha256": "577c84f1073ccab50425d65bf9e55981f0e8c9d5665db688419c846cd9158b4e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/additional_sensitivities.json",
+    "bytes": 518,
+    "sha256": "40910903765eb4894154cee446b1cbb718fe8dc3f4333fc9d52effe26ad13b1b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/analysis.py",
+    "bytes": 7335,
+    "sha256": "de7b6cc14a852c79778ebdd175a762cb5f6a4f7e4a2fcaeedbc9664d7e7ee38a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/comparison_predictions.csv",
+    "bytes": 1638700,
+    "sha256": "d78cd42d43bd55f882fc772fecd626e47b8bf4b58af8323fefc612656084b244"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/comparison_results.json",
+    "bytes": 8681,
+    "sha256": "3eb0782c502d56f63a4f2dcef61ba114f2357cff2165361987091bb4ab9d330c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/comparison_scores.csv",
+    "bytes": 561,
+    "sha256": "d34b35bcc92a9a27cd879db50d7d67950f643d877913030491252f6fd3a86f3d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/evaluation_plan.json",
+    "bytes": 3602,
+    "sha256": "3340f29c9bac6b57be83642943c855b84996716f284d014303183fce69e29890"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/evidence_review.ipynb",
+    "bytes": 9585,
+    "sha256": "f20727e46b715fa1152610e1bfd6217c5a7d7f185fa97a7e74f655d4be60ebb7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/final_checks.json",
+    "bytes": 360,
+    "sha256": "74930bc47abda4d8f8342492c3517508fda861601200b000e9dbcaf1ed644fb4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/finalize_evidence.py",
+    "bytes": 6680,
+    "sha256": "59d7f7b353ba7db9a3f9e58e54bd58b8f01b7a36f9ec7e256dc6f710b7abff6d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/internal_notes.md",
+    "bytes": 11273,
+    "sha256": "b60efb593823b7cc12bdfac7959a365dcc6e87e5867f52960c812268dd278b41"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/measure_and_validate.py",
+    "bytes": 7498,
+    "sha256": "060c1d53779eb0a7efdfe72059751b9fd76a44b8812cf29d87854ab619420f44"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/order_validation.json",
+    "bytes": 1013,
+    "sha256": "361aa029f09dd45ae0f35cc4ad84b82dc00e9a7ea19d57cbed64941d581a4916"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/presented-html-b405d4d6ae844342a1eec6b224c13566.html",
+    "bytes": 88346,
+    "sha256": "5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/presented-output-a204781c2f2d4a0590c3e4beff4d31a5.csv",
+    "bytes": 35414,
+    "sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/response.md",
+    "bytes": 1619,
+    "sha256": "6e02df74a8977cfb384974c72bae9a63a36329e36ffeb967d9fc66d20fc162f2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/restock_routine.py",
+    "bytes": 12071,
+    "sha256": "0131a2315d1958f4ed489bf9f859ca393b3d85f67846ffa4f24df4a6d623b3e3"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/restocking.csv",
+    "bytes": 35414,
+    "sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/result.json",
+    "bytes": 153,
+    "sha256": "742a2a434fdbae8490636e845b3668d2e09e528f633e9b957ebbfd3c5e5d8c26"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/routine_measurements.json",
+    "bytes": 3077,
+    "sha256": "2d5ed2b19b158fbb8c46699e88c92f65ef7e96de7e5efc89e28a57f96585c704"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/routine_usage.md",
+    "bytes": 3203,
+    "sha256": "411ac757c3a5919e4f1f95a26db9cf8cca7b36e2cfdcdd5542f2cdecbc252b83"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/scores_by_origin.csv",
+    "bytes": 1330,
+    "sha256": "155f71c0f19f4b8a8b8c976b7975b6d23329fcc835694bf0d941b6a0c7b5206f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/scores_by_store.csv",
+    "bytes": 3380,
+    "sha256": "677217301a6da8ccd8378263f6d8cc0ea3fceb437c1c57eb4dfc39f5f898b372"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/source_treatment.json",
+    "bytes": 46168,
+    "sha256": "5962f76086178b2aa993b1b55d746420f609891652c6cd961313dd56b5cd2875"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/store_summary.csv",
+    "bytes": 225,
+    "sha256": "96756619d0a097523953f3d2465ed80e916e4bd21f9f2a4a759c4a399df5a027"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/output/task_refinement.json",
+    "bytes": 2999,
+    "sha256": "4b0d2ba6c27a063efe9d5aa5842d3cd327dfa1947aa351ddb1e15443420671a2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/released/input-1.csv",
+    "bytes": 19279,
+    "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/released/input-2.csv",
+    "bytes": 10740,
+    "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/released/input-3.csv",
+    "bytes": 18799,
+    "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-48b2f105b1d1421b9a20b6e4cec602b2/released/input-4.csv",
+    "bytes": 5006997,
+    "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/investigation-a5dad9ca51c940d39fc32c49b2e3aab1.md",
+    "bytes": 1595,
+    "sha256": "17eaee4ea7cc0fd655deee17efd4c2cb82fc1b8176e42c6d53184d54bb970642"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/runs/restocking-ae3f9ea417d24aa2b90ba580b3e491a1.csv",
+    "bytes": 35414,
+    "sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/17eaee4ea7cc0fd655deee17efd4c2cb82fc1b8176e42c6d53184d54bb970642",
+    "bytes": 1595,
+    "sha256": "17eaee4ea7cc0fd655deee17efd4c2cb82fc1b8176e42c6d53184d54bb970642"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "bytes": 10740,
+    "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/24bdbd7db024b2d3938f62083db08846681bc56345b69c217e51b646a5eb615b",
+    "bytes": 160859,
+    "sha256": "24bdbd7db024b2d3938f62083db08846681bc56345b69c217e51b646a5eb615b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/25f320f345c1689a103b827238eadcd65b9a7a5a98cb76943683503e4852f4c2",
+    "bytes": 420481,
+    "sha256": "25f320f345c1689a103b827238eadcd65b9a7a5a98cb76943683503e4852f4c2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/28cef460f0c2724c44da1b8798825ec83088c26bae484f7e4a8f4aefd9eec365",
+    "bytes": 533,
+    "sha256": "28cef460f0c2724c44da1b8798825ec83088c26bae484f7e4a8f4aefd9eec365"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/2d5ed2b19b158fbb8c46699e88c92f65ef7e96de7e5efc89e28a57f96585c704",
+    "bytes": 3077,
+    "sha256": "2d5ed2b19b158fbb8c46699e88c92f65ef7e96de7e5efc89e28a57f96585c704"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/2fab43c56f6337f46be3465201c4e69dfade61dcd3f2611052638da17406fe70",
+    "bytes": 112179,
+    "sha256": "2fab43c56f6337f46be3465201c4e69dfade61dcd3f2611052638da17406fe70"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "bytes": 19279,
+    "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/3340f29c9bac6b57be83642943c855b84996716f284d014303183fce69e29890",
+    "bytes": 3602,
+    "sha256": "3340f29c9bac6b57be83642943c855b84996716f284d014303183fce69e29890"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "bytes": 18799,
+    "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/411ac757c3a5919e4f1f95a26db9cf8cca7b36e2cfdcdd5542f2cdecbc252b83",
+    "bytes": 3203,
+    "sha256": "411ac757c3a5919e4f1f95a26db9cf8cca7b36e2cfdcdd5542f2cdecbc252b83"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/4b0d2ba6c27a063efe9d5aa5842d3cd327dfa1947aa351ddb1e15443420671a2",
+    "bytes": 2999,
+    "sha256": "4b0d2ba6c27a063efe9d5aa5842d3cd327dfa1947aa351ddb1e15443420671a2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/4d23d982cebc61b201bf0a30aceebba0fa4ed3516bb868b464b1fb64033e4fc1",
+    "bytes": 8003,
+    "sha256": "4d23d982cebc61b201bf0a30aceebba0fa4ed3516bb868b464b1fb64033e4fc1"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+    "bytes": 5190513,
+    "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6",
+    "bytes": 35414,
+    "sha256": "5687a45f837650372cf68f7acdb7d2a32dbc86d6b25cd9d48cb69c96227cccc6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21",
+    "bytes": 88346,
+    "sha256": "5e912018a5356198c32c4c5ce554ab356e542e05d405d5f6f139ea2ad1b9ae21"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/5f1448fdb12bec085ea1b55ef987e842dca7ff3e59dc6c9556962d4baaf43e2f",
+    "bytes": 2234,
+    "sha256": "5f1448fdb12bec085ea1b55ef987e842dca7ff3e59dc6c9556962d4baaf43e2f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/65860283723a51d637464518d067aa4ba7bc612f775a3c953c0331b3bd9d7ad7",
+    "bytes": 6840,
+    "sha256": "65860283723a51d637464518d067aa4ba7bc612f775a3c953c0331b3bd9d7ad7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/6e02df74a8977cfb384974c72bae9a63a36329e36ffeb967d9fc66d20fc162f2",
+    "bytes": 1619,
+    "sha256": "6e02df74a8977cfb384974c72bae9a63a36329e36ffeb967d9fc66d20fc162f2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/742a2a434fdbae8490636e845b3668d2e09e528f633e9b957ebbfd3c5e5d8c26",
+    "bytes": 153,
+    "sha256": "742a2a434fdbae8490636e845b3668d2e09e528f633e9b957ebbfd3c5e5d8c26"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8",
+    "bytes": 1427,
+    "sha256": "75275a1bf082fc4e71458c22ef70f8689cd28186e2268988606363b24ed8fda8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/7ccb271ed53e7e4f9b19c58461b1d177ad0ab9f50b76c4af379befd6f775e8ec",
+    "bytes": 2307,
+    "sha256": "7ccb271ed53e7e4f9b19c58461b1d177ad0ab9f50b76c4af379befd6f775e8ec"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/8327ae3496c6555eb316d4ad050806f425287efb7094976e6fc08cc0c972e509",
+    "bytes": 2312,
+    "sha256": "8327ae3496c6555eb316d4ad050806f425287efb7094976e6fc08cc0c972e509"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/8b9d3a9fcca1907094cc8e19c7613dd683fcb857a5651357e43f70af567fedb5",
+    "bytes": 90348,
+    "sha256": "8b9d3a9fcca1907094cc8e19c7613dd683fcb857a5651357e43f70af567fedb5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/8be245e316ac581163581dcb883f068fe7392e3040b5a706e05897148e46c269",
+    "bytes": 21432,
+    "sha256": "8be245e316ac581163581dcb883f068fe7392e3040b5a706e05897148e46c269"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/9a52d3a4075caf4ed18e358295f8496c1eff177d46e48f2840ff584d24a989b7",
+    "bytes": 706,
+    "sha256": "9a52d3a4075caf4ed18e358295f8496c1eff177d46e48f2840ff584d24a989b7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/9ca6f31610f5e39792ee2a73a34e0fd819b00ed5f3972c083ee365e61d2c437e",
+    "bytes": 7129,
+    "sha256": "9ca6f31610f5e39792ee2a73a34e0fd819b00ed5f3972c083ee365e61d2c437e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/bcc72da1dcb0fbe553e1edd15c0f2427507bf8f5d5e72d38f027c83fde5baf8b",
+    "bytes": 368988,
+    "sha256": "bcc72da1dcb0fbe553e1edd15c0f2427507bf8f5d5e72d38f027c83fde5baf8b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/bece16c76524dc82cfcb3c879be537891727106ba0d11ca3239bc6c1e05cdc90",
+    "bytes": 743,
+    "sha256": "bece16c76524dc82cfcb3c879be537891727106ba0d11ca3239bc6c1e05cdc90"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/c490c1d0b8cdc5d500770330bb0036232e8d6d48566e7b08851fe722f6ce52fe",
+    "bytes": 477,
+    "sha256": "c490c1d0b8cdc5d500770330bb0036232e8d6d48566e7b08851fe722f6ce52fe"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/d264935ea25520cef74fae21bb502ed6a796266993df7d892a23c735ed6d42b2",
+    "bytes": 1742958,
+    "sha256": "d264935ea25520cef74fae21bb502ed6a796266993df7d892a23c735ed6d42b2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/f6449f44449426f0bba0806766993f3b6783ff3b57437197b4eb56dfaf35c786",
+    "bytes": 3182,
+    "sha256": "f6449f44449426f0bba0806766993f3b6783ff3b57437197b4eb56dfaf35c786"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/f9c419363977d5c994dd439b0b4fe1b8303502f3599eacc2293a06b3dbe4958f",
+    "bytes": 272,
+    "sha256": "f9c419363977d5c994dd439b0b4fe1b8303502f3599eacc2293a06b3dbe4958f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/objects/fc35a85a1ab8651bd5279a7f5b2f00560078d5bf0899b361a227b356c38ca9b8",
+    "bytes": 836,
+    "sha256": "fc35a85a1ab8651bd5279a7f5b2f00560078d5bf0899b361a227b356c38ca9b8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/03d8995a030025218d1de3b00f4448a7ffa035ed83c2472662c97a09b00ed293.json",
+    "bytes": 313,
+    "sha256": "c1960d5827a141e10ab758344940dd06688403090cd2b5a5309ca38e7a4470c1"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/0f5e3550d0b266d41a51bbe1382fb7ce51c9e9489b88f4dfb776145b67334599.json",
+    "bytes": 302,
+    "sha256": "44b8c97d63ded2ba8b69a0e62f8fcea5d3e4ba1526a07ab0b40e6dd6bb67a95d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/0f877824acdd222a598747d882b73814099c0fc86e8c23aeb3b19ce9e27f2f89.json",
+    "bytes": 302,
+    "sha256": "a270ce9b1abad993316b92f4307b3927235ea87165fcdbf4524c5e0af96a30fb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/20923d021af7bfc9fd0ede4b194119a79efe09fa9ded238ad71ef7157588b77c.json",
+    "bytes": 308,
+    "sha256": "95a91f573026f6635ce820b4b3522a6723d82419ea6b9cd1ff23daec300177dd"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/2097132441fbb3c3ac034c0324684c0485d5b16a93bff40d00feaa70af37bb70.json",
+    "bytes": 307,
+    "sha256": "b348efc9d9a891f883d3869547b25c599c495f0ba458f36c38e6998847493f04"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/27787ee19f073eb4665d25a6795fe9c417b73c844ebd85f1b73d7e8c715e0220.json",
+    "bytes": 331,
+    "sha256": "3a2eee5b975e59fd35568e47cea591416177b9a514d41bdc27dca23fa8d4ffb2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/2b1af4e64c961e4f09b56294dec19f06cc17b8f2c5598db73b2c12266b58f26d.json",
+    "bytes": 303,
+    "sha256": "0bcb826b15d14678d45c4f0a81c3eaec1c14a174c0d4ad873884c8787e330b0f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/3305acdfe6d852d116a4e27e97ddcdfa2da981041b83697085a2cbe52340f5fc.json",
+    "bytes": 306,
+    "sha256": "d3e06bf2cecfc30ba6ef923eb30654bb14beec0cdcc86dd3139e3bf8e3557817"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/343e0fa4f52ea3a0959dcedfca067bfcf67da604eaf6370a0f1e1a392af93cfb.json",
+    "bytes": 305,
+    "sha256": "22301c4f0c2b216b0a833a71a824a4f902df0c7485f4e2782cf68aa756b1c2a4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/35e3a1d3ca9ffb7d3c97edd2c101521e4f8a5f730649b745334c480d9ff9b351.json",
+    "bytes": 303,
+    "sha256": "aa41231f89418837e08cd6a469b4d43e401ba9bf0cc56cc3ceea49c09b018dea"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/3844307944aa7605698d45fedb91165a25987b79c5fb3f200213818767eed8e0.json",
+    "bytes": 306,
+    "sha256": "ed6d2d7572312b8960acd98d2a0639698a6ef121daa7c8e2c4f34031122cd705"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/583371f2e15c1bccd925dcc0e70be86131560ce37eb92e50925f5cd6b3841cb9.json",
+    "bytes": 298,
+    "sha256": "e794f750e83faadcca8f839f1f539b8f4b2ed04ba16474acdf0310239b02320e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/61c36e6af77c878e6e0d4d19d62b44ddc01c3289bbc06b5b76f4ab2247cc70b6.json",
+    "bytes": 302,
+    "sha256": "6825bfce3ed46422f789606476164761ab5ef7e7db365b63c5f228d375595a05"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/6e815d8806b102f6f6c4ee80680deab21b808cf3c2648158d4ca6b6cb01083de.json",
+    "bytes": 305,
+    "sha256": "ea66bf521466c86268ef70f4d54987f15ee13ae8b95c8834dcf7b1dd1d528cdd"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/8483ccaf68ed506d7194d5f0c9474c54dcb2e92382580eb86868effa89f8df80.json",
+    "bytes": 304,
+    "sha256": "f5cf2fd3f6bfd357dcfeb7f7ada5db3bca1b20a8028142bc9398d0ef2384f80a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/853a670684fbaf5dfb6ee6f8678e0fa42773c5fe5d4e4cdb54a656df8dc32572.json",
+    "bytes": 312,
+    "sha256": "3c673197d717547dd1249505f9183aa2878b85ccb103807e3fed3c240bd376ec"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/8628bcd6a60f3ae1a12208660fb541e924e3b70be9ffb6c2c0682391dd8b6aeb.json",
+    "bytes": 310,
+    "sha256": "f452fab11e54ea2ecdab0ac41253bb1ae29b928403a90c912dba42c054dab7d0"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/86867b9ff7e26f0ffadf3efa25c962f9d4a0f426bafc7c091a1384ace7b4cc73.json",
+    "bytes": 307,
+    "sha256": "6a7f63db99af5e4b66fa1c10e7d2c93f8414d6248fb9e63486bf6e6735cdd143"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/87061e04140e01d189f2c49b3b1268c4cd4c39d06bc16df7308fff1f128e5fe3.json",
+    "bytes": 306,
+    "sha256": "42d8f89da7542e4a9cbde276cec5b7563af604c6d56552bf7537cfeb766d2436"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/8d37edd76d78adfc02a373b493e2393ea2df8d4190c23cac20192b7af42df216.json",
+    "bytes": 318,
+    "sha256": "ed52e87689f64891ef30f1f307691a946540511e3d4881b6ec0a63fe12ca4752"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/8eb4a8031d972c8eec4b50baf60c1427b2fe5a7689e40cee21dd578e1029b092.json",
+    "bytes": 311,
+    "sha256": "58329b2e53d1f1c96b838d60ecf863302d3c9fe0be52963b909a81dc8b81bc61"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/92a676103e932acde7ecc0e7e8703b7c46eddc86df4871c87297d0193cdff2b0.json",
+    "bytes": 303,
+    "sha256": "9934f7878c1bc687348359c4dd7e91cda0388b57d2baba8f4415b2d4d2310cf7"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/96378ddfcb5ee3990dd17adb9988d7d3720f4474f38ab9d914299207d92e5dcb.json",
+    "bytes": 307,
+    "sha256": "5fdb81b8c7de03f67710b8067bd550ce1d43adb29f44ce4ad0c7cd6a6c77f1a3"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/96e3a504f23ea6401dbb312d885f6a346f39edf44215c4eb166da2c05b584059.json",
+    "bytes": 319,
+    "sha256": "7ba38ebd701a1322b4db231aa17f43747cab160c78e7e29485551c36b5211533"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/9d63606fb216c583b246188f40adae19800fcac429f009169014f19e6249b29d.json",
+    "bytes": 301,
+    "sha256": "f0499fbf19e8c29edcf7f3835a13bef8fef1d369a4b686b9e718e9960aaecf2f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/9de7433f0f87293a09393082b57ebf7ec2c7ed24aceb50bd307d9da14eaa9291.json",
+    "bytes": 303,
+    "sha256": "a50c5342f7ceef031b99bcf3de8f77c5dbcb6e5c520eba8bd1711c050d2c8b60"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/9f6ffdf3ef3c25be8d3dcc64a5445c445362c63095ffa3730db3cb9f769664ca.json",
+    "bytes": 303,
+    "sha256": "e504c78b5c37c9b7b08013ef278779ec5cb9c5cd25ae57b8b6182c80261ab4df"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/a0c32e8a556563c761dbc11b7dfb835856fbd7cf89be6de0b0bb0a61da76b5db.json",
+    "bytes": 303,
+    "sha256": "7b41fc5334b54988a9babfec4cf2d5e955f023b2d1951f8e8fd449075864065e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/a3ab76ca441ae9846e241b5701d50ea36c7038aa7a4aec327f0ada6af1195555.json",
+    "bytes": 300,
+    "sha256": "eb49c0b8ae1e7e0fbc571fdb3438eedf9d4fbba4484681c4ee0e29e6728a2089"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/aacba4d9af9b7adf40551dfbfe19be8933b1d745c37eab7bbe1ff3d77cfcb240.json",
+    "bytes": 310,
+    "sha256": "ba5bd3bd67cf0a43d6c88e3dc92ea13ad677db595718654f025a9227b47a9215"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/b244eaae9b40387ee0d6fe6e7bb0868d3779efd7d90c1e65b862a07bade7cdc9.json",
+    "bytes": 310,
+    "sha256": "12afd2f0c1b028c31e9a314029c4379f131a837d309fac298f037bd7426e4716"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/b3a1c5c3f28cfc629e4b350fa573890651a4d781c2ba09c943050cd24619404c.json",
+    "bytes": 311,
+    "sha256": "98680509bb00f8f425a761a8c3d26967cd4bc40ad5b0a5e9d4e1f09ebcb6bd45"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/b7b39648817cc315ff579a90b9541f4ec3a7d7c4c830cc967de62970cf341d5f.json",
+    "bytes": 303,
+    "sha256": "c0af0cf273034905468d0a5cdf3f3fa3861fe8d4fefc1aa6d310937fceab2b3b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/bba69357640469d2484c8a5e5dcd2ddb1f13222d07f745d0184d6dfa13c8e415.json",
+    "bytes": 300,
+    "sha256": "9e734d585fe1c15d916ed6c7e6853f09b05791f4bec8f7742880e87b40592711"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/bf19380ab9419573fd0dc38440b3e65affc1b53bbbdcf4cbc4c93fa757b8df00.json",
+    "bytes": 321,
+    "sha256": "7b5a34ac0243afa6df1a0b4e69dc432850d4a5774eaaf69802ebc6d8ce36eabb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/6bd43dbe3a87432eb4fa31670fcfcaf9/store/refs/fd9265f3c52c2661daf0044799037160df63d1629da8fb1cfc1cd8797960bd61.json",
+    "bytes": 297,
+    "sha256": "53b7919e87c7894e254dc572847052dabac864052bcce379e09aa8ee76dbe5da"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "format": "dsc60-retake-case-development-arithmetic-v1",
+  "case": 3,
+  "status": "passed_from_saved_prediction_rows",
+  "prediction_rows": 16128,
+  "exact_prespecified_grid": true,
+  "common_model_actuals_and_scope": true,
+  "metrics": [
+    {
+      "model": "mean182",
+      "horizon_type": "next_week",
+      "n": 2688,
+      "MAE": 0.8059037316849818,
+      "bias": -0.16719608516483517,
+      "actual_units": 1611.0
+    },
+    {
+      "model": "mean182",
+      "horizon_type": "policy_coverage",
+      "n": 2688,
+      "MAE": 1.1579363716640503,
+      "bias": -0.298929307299843,
+      "actual_units": 2651.0
+    },
+    {
+      "model": "mean56",
+      "horizon_type": "next_week",
+      "n": 2688,
+      "MAE": 0.8352864583333334,
+      "bias": -0.12788318452380956,
+      "actual_units": 1611.0
+    },
+    {
+      "model": "mean56",
+      "horizon_type": "policy_coverage",
+      "n": 2688,
+      "MAE": 1.2196401998299318,
+      "bias": -0.2273596938775511,
+      "actual_units": 2651.0
+    },
+    {
+      "model": "poisson",
+      "horizon_type": "next_week",
+      "n": 2688,
+      "MAE": 0.8734700730819431,
+      "bias": -0.0918704013011582,
+      "actual_units": 1611.0
+    },
+    {
+      "model": "poisson",
+      "horizon_type": "policy_coverage",
+      "n": 2688,
+      "MAE": 1.242227932914916,
+      "bias": -0.1748964499961668,
+      "actual_units": 2651.0
+    }
+  ],
+  "selected": "mean182",
+  "primary_gain": 0.03517682629140151,
+  "plan_unchanged_from_prospective_observation": true,
+  "scope": "Ownarithmeticfromretaineddevelopmentforecasts; no producerexecution/refit/reserved scoring; no suppliedincumbentclaimed."
+}

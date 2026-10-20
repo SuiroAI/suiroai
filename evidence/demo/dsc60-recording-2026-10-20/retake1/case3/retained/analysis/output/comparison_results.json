@@ -1,0 +1,305 @@
+{
+  "selected_model": "mean182",
+  "selection_rule": "Lowest next-week MAE; simpler tie within 1e-6",
+  "primary_scores": {
+    "mean182": 0.8059037316849818,
+    "mean56": 0.8352864583333334,
+    "poisson": 0.8734700730819431
+  },
+  "relative_error_reduction_vs_mean56": 0.03517682629140151,
+  "by_origin": [
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-09-28",
+      "mean182": 0.7388965201465202,
+      "mean56": 0.7336309523809523,
+      "poisson": 0.7641955851843824
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-10-05",
+      "mean182": 0.7790750915750916,
+      "mean56": 0.8035714285714286,
+      "poisson": 0.8192590662069615
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-10-12",
+      "mean182": 0.7691163003663003,
+      "mean56": 0.8084077380952381,
+      "poisson": 0.804281425812105
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-10-19",
+      "mean182": 0.7362637362637363,
+      "mean56": 0.7622767857142857,
+      "poisson": 0.7887172092439203
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-10-26",
+      "mean182": 0.7923534798534798,
+      "mean56": 0.8162202380952381,
+      "poisson": 0.8489199038009732
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-11-02",
+      "mean182": 0.918040293040293,
+      "mean56": 0.9505208333333334,
+      "poisson": 1.0388415532988662
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-11-09",
+      "mean182": 0.8207417582417582,
+      "mean56": 0.8675595238095238,
+      "poisson": 0.9346985490040919
+    },
+    {
+      "horizon_type": "next_week",
+      "origin": "2025-11-16",
+      "mean182": 0.8927426739926739,
+      "mean56": 0.9401041666666666,
+      "poisson": 0.9888472921042454
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-09-28",
+      "mean182": 1.073767006802721,
+      "mean56": 1.1007121598639455,
+      "poisson": 1.1244305797556398
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-10-05",
+      "mean182": 1.133192700156986,
+      "mean56": 1.1948341836734695,
+      "poisson": 1.1818146362380628
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-10-12",
+      "mean182": 1.0898090005232863,
+      "mean56": 1.175063775510204,
+      "poisson": 1.1346022932145432
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-10-19",
+      "mean182": 1.0509386446886448,
+      "mean56": 1.10421981292517,
+      "poisson": 1.1261289492756306
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-10-26",
+      "mean182": 1.1844747514390372,
+      "mean56": 1.2379357993197277,
+      "poisson": 1.2739193666082815
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-11-02",
+      "mean182": 1.2307528780743067,
+      "mean56": 1.3149447278911564,
+      "poisson": 1.382216947388619
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-11-09",
+      "mean182": 1.1983908948194664,
+      "mean56": 1.2604166666666667,
+      "poisson": 1.3108565528815568
+    },
+    {
+      "horizon_type": "policy_coverage",
+      "origin": "2025-11-16",
+      "mean182": 1.302165096807954,
+      "mean56": 1.3689944727891157,
+      "poisson": 1.4038541379569929
+    }
+  ],
+  "residual_error_quantiles": "{('next_week', 0.1): -1.5769230769230769, ('next_week', 0.5): 0.2692307692307693, ('next_week', 0.9): 0.7692307692307694, ('policy_coverage', 0.1): -2.5384615384615383, ('policy_coverage', 0.5): 0.30769230769230765, ('policy_coverage', 0.9): 1.0714285714285716}",
+  "timings": [
+    {
+      "origin": "2025-09-28",
+      "model": "mean56",
+      "fit_seconds": 0.0001877089962363243,
+      "inference_seconds": 1.4542019926011562e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-09-28",
+      "model": "mean182",
+      "fit_seconds": 0.0001855409936979413,
+      "inference_seconds": 1.1999974958598614e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-09-28",
+      "model": "poisson",
+      "fit_seconds": 0.6830539160873741,
+      "inference_seconds": 0.0012800829717889428,
+      "iterations": 18
+    },
+    {
+      "origin": "2025-10-05",
+      "model": "mean56",
+      "fit_seconds": 0.0002690830733627081,
+      "inference_seconds": 1.2791948392987251e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-05",
+      "model": "mean182",
+      "fit_seconds": 0.00018858397379517555,
+      "inference_seconds": 1.0999967344105244e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-05",
+      "model": "poisson",
+      "fit_seconds": 0.04456575005315244,
+      "inference_seconds": 0.0008469580207020044,
+      "iterations": 15
+    },
+    {
+      "origin": "2025-10-12",
+      "model": "mean56",
+      "fit_seconds": 0.00019583397079259157,
+      "inference_seconds": 1.3708020560443401e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-12",
+      "model": "mean182",
+      "fit_seconds": 0.0001872499706223607,
+      "inference_seconds": 1.083302777260542e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-12",
+      "model": "poisson",
+      "fit_seconds": 0.030359916971065104,
+      "inference_seconds": 0.0017461670795455575,
+      "iterations": 9
+    },
+    {
+      "origin": "2025-10-19",
+      "model": "mean56",
+      "fit_seconds": 0.0004217919195070863,
+      "inference_seconds": 3.2415962778031826e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-19",
+      "model": "mean182",
+      "fit_seconds": 0.0004075829638168216,
+      "inference_seconds": 3.116601146757603e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-19",
+      "model": "poisson",
+      "fit_seconds": 0.058173750061541796,
+      "inference_seconds": 0.0020115419756621122,
+      "iterations": 19
+    },
+    {
+      "origin": "2025-10-26",
+      "model": "mean56",
+      "fit_seconds": 0.0001972500467672944,
+      "inference_seconds": 1.5707919374108315e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-26",
+      "model": "mean182",
+      "fit_seconds": 0.0005789588904008269,
+      "inference_seconds": 0.0001763750333338976,
+      "iterations": null
+    },
+    {
+      "origin": "2025-10-26",
+      "model": "poisson",
+      "fit_seconds": 0.025857207947410643,
+      "inference_seconds": 0.000820209039375186,
+      "iterations": 11
+    },
+    {
+      "origin": "2025-11-02",
+      "model": "mean56",
+      "fit_seconds": 0.0002014999045059085,
+      "inference_seconds": 1.4042016118764877e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-02",
+      "model": "mean182",
+      "fit_seconds": 0.00022400007583200932,
+      "inference_seconds": 1.300009898841381e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-02",
+      "model": "poisson",
+      "fit_seconds": 0.03282633307389915,
+      "inference_seconds": 0.0007150419987738132,
+      "iterations": 26
+    },
+    {
+      "origin": "2025-11-09",
+      "model": "mean56",
+      "fit_seconds": 0.00016195792704820633,
+      "inference_seconds": 1.1709053069353104e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-09",
+      "model": "mean182",
+      "fit_seconds": 0.00015854102093726397,
+      "inference_seconds": 9.999959729611874e-06,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-09",
+      "model": "poisson",
+      "fit_seconds": 0.028970250044949353,
+      "inference_seconds": 0.0008435000199824572,
+      "iterations": 19
+    },
+    {
+      "origin": "2025-11-16",
+      "model": "mean56",
+      "fit_seconds": 0.00017662509344518185,
+      "inference_seconds": 1.1625001206994057e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-16",
+      "model": "mean182",
+      "fit_seconds": 0.0001676669344305992,
+      "inference_seconds": 1.0041985660791397e-05,
+      "iterations": null
+    },
+    {
+      "origin": "2025-11-16",
+      "model": "poisson",
+      "fit_seconds": 0.03372166701592505,
+      "inference_seconds": 0.0007662500720471144,
+      "iterations": 26
+    }
+  ],
+  "analysis_compute_seconds": 1.1753594579640776,
+  "process_peak_rss_bytes": 334561280,
+  "limitations": "Development data already inspected; no independent holdout. Quantiles describe pooled historical signed errors, not calibrated intervals for individual future products. No business cost, availability or savings measured.",
+  "performance_success_gate": {
+    "ready": false,
+    "missing": [
+      "external meaningful improvement threshold",
+      "genuinely untouched independent outcomes with frozen artifacts"
+    ]
+  }
+}
