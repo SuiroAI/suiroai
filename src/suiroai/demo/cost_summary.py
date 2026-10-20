@@ -1,11 +1,11 @@
 """Summarize observed AI usage after all three demo stages have completed.
 
-The controller adds one plain cost estimate after the writer returns, so its own
-usage is included without an endless extra writing call. Keep original prose
-and numeric receipts separate; estimates use published rates, never invoice data.
+Retain a complete internal estimate after the writer returns, including its own
+usage without another writing call. Customer prose contains no cost paragraph;
+these numeric receipts use published rates and never represent invoice data.
 Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 """
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 
 from suiroai.integration.usage import estimate_api_cost
 
@@ -47,14 +47,7 @@ def summarize_model_cost(entries):
         names.add(stage); identities.add(identity)
     if names != set(STAGES):
         return result
-    display = ('less than US$0.01' if total < Decimal('0.01') else
-               'about US$' + str(total.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)))
-    if upper > total:
-        display = ('about US$' + str(total.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
-                   + '–US$' + str(upper.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)))
     result.update(status='estimated', estimated_api_equivalent_usd=str(total),
         estimated_standard_rate_range_usd={'lower': str(total), 'upper': str(upper)},
-        customer_sentence='Estimated AI processing cost for this analysis: ' + display
-        + ', using OpenAI’s [published standard rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol).',
         scope='The observed intake, analysis and explanation calls for this task; not an invoice or a scheduled-run quote.')
     return result

@@ -67,6 +67,9 @@ def test_separate_writer_receives_only_bounded_evidence_and_keeps_originals(inpu
     facts = json.loads((call['released_root'] / 'csv_facts.json').read_text())
     assert (facts['row_count'], facts['positive_order_rows'], facts['total_order_units']) == (2, 1, 12)
     assert 'no mandatory 150' in call['prompt']
+    assert 'Do not include prices, cost estimates' in call['prompt']
+    assert 'what the selected method does' in call['prompt']
+    assert 'controller appends' not in call['prompt']
     assert result['thread_id'] == 'writer-thread'
     assert store.read_bytes(result['response_ref']).decode() == result['text']
     assert result['source_manifest_ref'] and result['writer_result_ref'] and result['receipt_ref']
@@ -137,7 +140,7 @@ def test_progress_revocation_prevents_writer_dispatch(inputs, tmp_path):
     assert not list((tmp_path / "runs").glob("business-response-*/native-trace/outbound-prompt.txt"))
 
 
-def test_final_cost_includes_writer_and_preserves_its_original_bytes(inputs, tmp_path):
+def test_internal_cost_includes_writer_without_changing_customer_bytes(inputs, tmp_path):
     from tests.demo.test_cost_summary import stage
     store, _, analysis = inputs
     analysis['prior_model_usage'] = [stage('current_process'), stage('analysis')]
@@ -149,8 +152,12 @@ def test_final_cost_includes_writer_and_preserves_its_original_bytes(inputs, tmp
             return result
 
     result = run_business_response(store, analysis, tmp_path / 'runs', lambda: True, host=MeteredWriter())
-    assert 'US$7.86' in result['text']
+    assert result['text'] == 'Buy 12 units from the list. Check your real stock before purchasing.'
+    assert 'US$' not in result['text']
     assert store.read_bytes(result['response_ref']).decode() == result['text']
     assert store.read_bytes(result['writer_prose_ref']) == b'Buy 12 units from the list. Check your real stock before purchasing.'
-    assert result['writer_prose_ref'] != result['response_ref']
+    assert result['writer_prose_ref'] == result['response_ref']
+    receipt = json.loads(store.read_bytes(result['receipt_ref']))
+    assert receipt['ai_cost_estimate']['estimated_api_equivalent_usd'] == '7.860000'
+    assert receipt['ai_cost_estimate']['customer_sentence'] is None
     assert result['ai_cost_estimate']['status'] == 'estimated'

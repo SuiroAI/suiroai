@@ -19,7 +19,7 @@ def test_all_three_calls_including_writer_have_one_supported_price():
     result = summarize_model_cost([stage(n) for n in ('current_process', 'analysis', 'business_response')])
     # Each call: .8M*2 + .2M*.1 + .1M*10 = $2.62, including reasoning.
     assert result['estimated_api_equivalent_usd'] == '7.860000'
-    assert 'US$7.86' in result['customer_sentence']
+    assert result['customer_sentence'] is None
     assert result['actual_charge'] is False
 
 
@@ -42,4 +42,4 @@ def test_observed_long_request_produces_a_range_not_short_only_price():
     entries[1]['model_usage']['max_observed_request_input_units'] = 300000
     result = summarize_model_cost(entries)
     assert result['estimated_standard_rate_range_usd'] == {'lower': '7.860000', 'upper': '9.980000'}
-    assert 'US$7.86–US$9.98' in result['customer_sentence']
+    assert result['customer_sentence'] is None

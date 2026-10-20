@@ -45,30 +45,17 @@ def test_app_response_prompt_requires_customer_actions_and_evidence_based_compar
     assert "no explanation, findings" in prompt
 
 
-def test_app_response_prompt_requires_honest_cost_estimates_and_missing_usage():
-    """Separate recurring estimates from actual analysis charges without invented prices."""
+def test_customer_prompt_keeps_cost_internal_and_requires_supported_practical_benefits():
+    """Keep the useful weekly routine visible without pricing or invented accuracy."""
     prompt = investigation_prompt("Recommend restocking", Path("/released"), [])
-    assert "cost to run the recommended approach" in prompt
-    assert "currency, workload or frequency and assumptions" in prompt
-    assert "Separate that ongoing cost from the cost of this analysis run and any AI-assisted model building" in prompt
-    assert "only observed usage and available applicable pricing" in prompt
-    assert "do not fabricate token counts, runtime, rates, dollar amounts, savings or a zero-cost claim" in prompt
-    assert "cost cannot yet be estimated" in prompt
-    assert "Do not present an estimate as an actual charge" in prompt
-
-
-def test_non_llm_operating_cost_prompt_requires_actual_local_workload_assessment():
-    """Explain routine computer needs separately from the AI used to build the analysis."""
-    prompt = investigation_prompt("Recommend restocking", Path("/released"), [])
-    assert "actual selected model, its dependencies, data size and observed computational workload" in prompt
-    assert "For a non-LLM model" in prompt
-    assert "routine calculations can run on an ordinary local computer" in prompt
-    assert "requires any paid model/API calls" in prompt
-    assert "Support this assessment with the code and workload actually used" in prompt
-    assert "computer, electricity or hosting costs still exist" in prompt
-    assert "Do not call local operation literally free" in prompt
-    assert "instead of a blanket cost-unavailable answer" in prompt
-    assert "unknown dependency or workload prevents that assessment" in prompt
+    assert "Keep numeric usage and cost assessments internal" in prompt
+    assert "Do not include prices, cost estimates, electricity" in prompt
+    assert "ordinary local-computer suitability" in prompt
+    assert "local weekly calculation time" in prompt
+    assert "what the method does and why it helps prepare this list" in prompt
+    assert "ordinary ChatGPT customer observation did not measure accuracy" in prompt
+    assert "Include a brief, basic estimate" not in prompt
+    assert "computer, electricity or hosting costs still exist" not in prompt
 
 
 @pytest.fixture

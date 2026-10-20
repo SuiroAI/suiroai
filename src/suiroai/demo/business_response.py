@@ -49,20 +49,22 @@ def business_prompt(released: Path, manifest: list[dict], manifest_sha256: str) 
         'the scenario facts. Do not tell the owner to replace synthetic/illustrative data with real inputs, '
         'or discuss provenance labels. Do not assert independent verification or real-world purchasing approval. '
         'Internal evidence retains the actual source provenance.\n'
-        'The main story is a repeatable weekly task, not a model-performance report. Keep technical model '
+        'The main story is a repeatable weekly task, not a model-performance report. Explain simply what the selected method does '
+        'and why it is useful, using the actual evidence. Keep technical model '
         'descriptions, scoring periods, development/holdout language, baseline taxonomies and metric dumps out '
         'of the customer explanation. A brief plain comparison is optional if it helps a decision, but never '
         'claim better forecasts, the best method, savings or improvement over the exact customer process '
         'unless the supplied evidence supports that claim. Mixed or tiny gains need no promotional claim. '
-        'Do not copy a paragraph of analytical caveats into the summary.\n'
+        'Do not copy a paragraph of analytical caveats into the summary. A reduction in forecast error is not '
+        'a percent-accurate score. The ordinary ChatGPT customer observation did not measure accuracy; do not '
+        'claim accuracy superiority from it.\n'
         'Give the actual measured time for the weekly calculation in a short sentence, clearly referring '
         'to that calculation rather than the entire AI-assisted analysis. Do not list memory or hardware '
         'details unless necessary to understand a real limitation. Explain that the repeated task can be '
         'scheduled only if the supplied routine/usage evidence supports it; do not say a schedule is already '
         'installed or invent an integration. Keep scheduling language simple, without a manual-versus-cron lecture. '
-        'The controller appends a measured AI-cost estimate after this writing call completes, including this '
-        'call. Do not invent a price, say AI cost cannot be estimated, label it a one-time build charge, or add '
-        'an electricity/hosting/billing disclaimer.\n'
+        'Do not include prices, cost estimates, billing, electricity or hosting commentary. Usage and cost '
+        'receipts are internal only. Explain ordinary-computer suitability using the actual routine evidence.\n'
         'Keep useful purchase actions concrete: for example, review flagged items before placing orders. '
         'If existing records could be improved, give at most one short optional practical suggestion. Do not '
         'ask for newer data or make additional data a condition of completing this MVP. Do not enumerate '
@@ -246,13 +248,8 @@ def run_business_response(store, analysis, work_root, consent_validator, *, host
                         'model_usage': native.evidence.get('model_usage')})
         cost = summarize_model_cost(entries)
         fallback['ai_cost_estimate'] = cost
-        if cost['customer_sentence']:
-            consent()
-            fallback['writer_prose_ref'] = fallback['response_ref']
-            text = fallback['text'].rstrip() + '\n\n' + cost['customer_sentence'] + '\n'
-            fallback['response_ref'] = store.put_bytes('demo-business-published-' + uuid.uuid4().hex,
-                1, 'derived', text.encode('utf-8'))
-            fallback['text'] = text
+        # The published response is exactly the writer's prose; prices stay internal.
+        fallback['writer_prose_ref'] = fallback['response_ref']
     fallback.update(stage_path=str(stage) if stage else None, source_refs=source_refs,
         native_outcome=native.outcome if native else None, thread_id=native.thread_id if native else None,
         turn_id=native.turn_id if native else None, call_trace=trace, immutable_native_evidence_refs=immutable_native)
