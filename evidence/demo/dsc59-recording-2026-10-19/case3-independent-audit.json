@@ -1,0 +1,79 @@
+{
+  "reviewer": "Codex / plain-language-and-CSV-preview reviewer",
+  "reviewed_at": "2026-10-20T03:30:05.504823+00:00",
+  "source_commit": "b243957ed381528908f7594cd8e5d1b7b98203ba",
+  "run_root": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad",
+  "auditor_sha256": "b9c9455cb976808325bac1a768bd36e497b838ae1fdf9424af4b9845dfc33344",
+  "decision": "pass_for_exploratory_outputs_and_chosen_scenario_arithmetic",
+  "arithmetic": {
+    "rows_checked": 336,
+    "order_units": 887,
+    "stock_only_warning_rows": 66,
+    "duplicates_removed": 42,
+    "incoming_units_reconciled": 927,
+    "demand25pct_lower_units": 878,
+    "demand25pct_higher_units": 900,
+    "method": "Independent exact-rational reconstruction of 52 observed-week local means, product/store pooled means with 8-week prior weight, prior-year weekly seasonal factor, stock/eligible-receipt/buffer/minimum/multiple arithmetic.",
+    "limits": "Chosen-scenario arithmetic only. Stock warnings compare current stock to lead demand and do not model receipt timing. No demand-completeness/model-superiority/frozen-holdout/authenticated verifier gate acceptance."
+  },
+  "identity": {
+    "receipt": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/attempt-9c979328dc7a4c7081bbddb062366b3b.json",
+    "native_outcome": "completed",
+    "rows": 336,
+    "columns": 18,
+    "exact_cells_and_order": true,
+    "no_narrative": true,
+    "csv_sha256": "5634481266dfb3ae811f5d21d79cee1cf12aeef7f5392b960cd880385a5e4bdf",
+    "html_sha256": "bbcac3fb9997c0cc8b2235ddcc32443aa915156a0110fc530ed5e3c07c1adaac",
+    "immutable_bytes_match": true,
+    "response_words": 242,
+    "live_browser_dom_equals_csv": true,
+    "browser_dom_sha256": "538b20c598f2cc329c78fadfc8b080cbe465c8ea78caff7f08ac5836e57a41ac",
+    "receipt_sha256": "7e72fc416c0ecf09dd99220ab33338337679b16323222d0e518f0f4f8d4f1d42"
+  },
+  "measured_files": {
+    "released/input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    },
+    "released/input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "released/input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "released/input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "output/restocking.csv": {
+      "sha256": "5634481266dfb3ae811f5d21d79cee1cf12aeef7f5392b960cd880385a5e4bdf",
+      "bytes": 52306
+    },
+    "output/result.json": {
+      "sha256": "31b5d50fe05f17933d517a9f1ae714be533e3d4b17b15d354aed6d432d238098",
+      "bytes": 154
+    },
+    "output/response.md": {
+      "sha256": "24758f815e7ea3433bfd498e71b7ca115e10ea6bc7c68ec207dbcc4d485d9fa7",
+      "bytes": 1583
+    },
+    "output/model_comparisons.csv": {
+      "sha256": "37b7181ba5a214fa5604023799c8f2848bb704d6889a222d398d4ac4657ec60c",
+      "bytes": 25832
+    },
+    "output/audit.json": {
+      "sha256": "bfcd61db0f8dae27df989455f87f72c005ea26eaa27567c472c9ace151c65130",
+      "bytes": 8009
+    }
+  },
+  "checked_mae_improvement": 0.08584366494947859,
+  "manual_response_review": {
+    "current_process": "Explicit continuation without current approach. Response calls four-week average a comparison baseline and explicitly says it is not the current process.",
+    "comparison": "Best in earlier selection, about 9% lower later error versus four-week baseline, explicitly admits other averages did better later and results are mixed.",
+    "local_cost": "Actual local Python/pandas/numpy computation and measured 0.286 s support ordinary computer/no paid routine AI calls. Computer/electricity/hosting costs acknowledged; separate AI build price unknown.",
+    "scope": "Stock-only warning asks stock checks; does not claim exact shortage accounting for inbound timing. No full frozen December holdout, authenticated verifier/parent gate or milestone acceptance granted."
+  }
+}

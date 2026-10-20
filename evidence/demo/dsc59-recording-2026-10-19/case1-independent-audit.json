@@ -1,0 +1,64 @@
+{
+  "reviewer": "Codex / plain-language-and-CSV-preview reviewer",
+  "reviewed_at": "2026-10-20T03:12:49.828372+00:00",
+  "source_commit": "b243957ed381528908f7594cd8e5d1b7b98203ba",
+  "run_root": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93",
+  "auditor_sha256": "142f6466a05b65c1c07f2325c20d95dbaabcba04c6906d85dd0b26e755dfd0a1",
+  "decision": "pass_for_exploratory_outputs_and_chosen_scenario_arithmetic",
+  "arithmetic": {
+    "rows_checked": 336,
+    "quantity_units": 861,
+    "prearrival_flags": 54,
+    "duplicates_removed": 42,
+    "method": "Independent stdlib Fraction reconstruction:91-day totals,stock/due-receipts/buffer/minimum/multiple; no producer execution",
+    "limits": "Chosen-scenario arithmetic only, not model merit/completeness/acceptance"
+  },
+  "identity": {
+    "receipt": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/attempt-37815bfcf0354e84981b23c58fc75360.json",
+    "native_outcome": "completed",
+    "rows": 336,
+    "columns": 15,
+    "exact_cells_and_order": true,
+    "no_narrative": true,
+    "csv_sha256": "1cd9e270ce260f8f83dd9d0484ff8258ec201289c225085a90c758ba293462e3",
+    "html_sha256": "1af36c2d1cfa5da30539a9ea8709da0ec902e3ab3a3e0b8554395c3b6da353db",
+    "immutable_bytes_match": true,
+    "response_words": 238
+  },
+  "measured_files": {
+    "released/input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    },
+    "released/input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "released/input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "released/input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "output/restocking.csv": {
+      "sha256": "1cd9e270ce260f8f83dd9d0484ff8258ec201289c225085a90c758ba293462e3",
+      "bytes": 48530
+    },
+    "output/result.json": {
+      "sha256": "3ad7e8263baf64a8c3dacd33507697a2c714222c71dba16a4e92b1d86594bc57",
+      "bytes": 154
+    },
+    "output/response.md": {
+      "sha256": "ad0d88113bb9a4359afaccc6c48b8e8be403f306fe0c21b71cb20cfeeef0c6d8",
+      "bytes": 1613
+    }
+  },
+  "manual_response_review": {
+    "current_process": "Explicit question describes looking at recent months; exact quantity rule absent. Response says comparison cannot establish improvement over the real process.",
+    "comparison": "Seasonal challenger has approximately 1.69% higher later average error; response rounds to about 2% higher and retains simple method.",
+    "local_cost": "Generated calculation uses local Python/pandas/numpy with small source CSVs; ordinary computer/no paid routine model calls is supported. Electricity/computer costs acknowledged, separate AI build price unknown.",
+    "scope": "Exploratory app evidence only. No full frozen December holdout, authenticated verifier/parent gate or milestone acceptance granted."
+  }
+}

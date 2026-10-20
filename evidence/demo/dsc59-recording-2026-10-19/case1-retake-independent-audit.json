@@ -1,0 +1,77 @@
+{
+  "reviewer": "Codex / plain-language-and-CSV-preview reviewer",
+  "reviewed_at": "2026-10-20T03:37:27.622654+00:00",
+  "source_commit": "b243957ed381528908f7594cd8e5d1b7b98203ba",
+  "run_root": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847",
+  "auditor_sha256": "52cd887920594fd7b6e14ace70bdeab5255e2282e7f9db474a60f61a3dc0241a",
+  "decision": "pass_for_exploratory_outputs_and_chosen_scenario_arithmetic",
+  "arithmetic": {
+    "rows_checked": 336,
+    "order_units": 885,
+    "early_stock_risk_rows": 58,
+    "incoming_units_reconciled": 927,
+    "duplicates_removed": 42,
+    "method": "Independent exact-rational reconstruction of positive noncancelled order units, 364-day annual means and product/store shares, 91-day network level, prior-year monthly factors, due receipts and ordering constraints.",
+    "limits": "Chosen demand-proxy scenario arithmetic only; includes pending requests. Timing convention counts lead days from end of Nov30 snapshot. No demand-completeness/model-superiority/frozen-December-holdout/authenticated acceptance."
+  },
+  "identity": {
+    "receipt": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/attempt-d67168b053814fc5805b46a401d1347f.json",
+    "native_outcome": "completed",
+    "rows": 336,
+    "columns": 15,
+    "exact_cells_and_order": true,
+    "no_narrative": true,
+    "csv_sha256": "adec8e2fdb9e97e0c1bd11802acfe0a1faa51cc5cdb187268787dc1992b41287",
+    "html_sha256": "05eddde098d9536ed0c648a460c12a4a1f14e3526904520c1a07b1938d101ae0",
+    "immutable_bytes_match": true,
+    "response_words": 243,
+    "live_browser_dom_equals_csv": true,
+    "browser_dom_sha256": "c3e354d72a0bb7672a5a8d2731215af6768d9c211dae4c4f5473fe7ba39f9e85",
+    "receipt_sha256": "49fbac56a3cf87566f852b8d3e44b59049e1ca1199e912820ab3f6ac34059796"
+  },
+  "measured_files": {
+    "released/input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    },
+    "released/input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "released/input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "released/input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "output/restocking.csv": {
+      "sha256": "adec8e2fdb9e97e0c1bd11802acfe0a1faa51cc5cdb187268787dc1992b41287",
+      "bytes": 42067
+    },
+    "output/result.json": {
+      "sha256": "8e1c7fd04aa667e5f4877aac737e4750bd44bed3dbcd90e606fe172744252acd",
+      "bytes": 154
+    },
+    "output/response.md": {
+      "sha256": "f46a9be02368225f76bfd53ce98d0121359e01646a9f05aeb0f6f342dfb21ac1",
+      "bytes": 1672
+    },
+    "output/evaluation_summary.csv": {
+      "sha256": "1e2d1c5f40b7a57c7dc46e9a5c888050028b7871537af4cbf058d844a408ba8c",
+      "bytes": 4120
+    },
+    "output/audit.json": {
+      "sha256": "02151c24f7a839dc4fecebc9f2a805253d449efdb9e5620f2fb4d4764d7eaf70",
+      "bytes": 21081
+    }
+  },
+  "checked_larger_mae_vs_13weeks": 0.05988985100698363,
+  "manual_response_review": {
+    "current_process": "Original question describes recent months of sales broadly. Response says exact rule absent and cannot establish improvement over actual current process.",
+    "comparison": "Selected on July-September. Later October-November errors approximately 6% larger than 13-week average are acknowledged; smaller total-demand bias is supported. No superiority claim.",
+    "local_cost": "Actual local Python/pandas/numpy computation and measured 14.192 s full analysis support ordinary computer/no paid routine model service. Computer/electricity costs acknowledged; separate AI build price unknown.",
+    "scope": "Held-aside October-November development periods are not the reserved December final acceptance holdout. No full frozen pipeline, authenticated verifier/parent gate or milestone acceptance granted."
+  }
+}

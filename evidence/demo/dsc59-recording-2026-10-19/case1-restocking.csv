@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,Order_Date,Usable_Stock_Units,Incoming_Units,Expected_Units_Through_Protection_Window,Safety_Stock_Units,Supplier_Lead_Days,Expected_New_Order_Arrival,Protection_Through_Date,Check_Earlier_Delivery,Basis
+P024,Desk Fan,COL-01,20,product_unit,2025-12-01,0,0,0.22,10,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,2025-12-01,0,0,0.92,10,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,LON-01,20,product_unit,2025-12-01,0,0,2.15,10,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,LON-01,20,product_unit,2025-12-01,0,0,1.14,10,1,2025-12-02,2025-12-08,True,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,MAN-01,20,product_unit,2025-12-01,0,0,1.43,10,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,MAN-01,20,product_unit,2025-12-01,0,0,1.38,10,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,PAR-01,20,product_unit,2025-12-01,0,0,0.09,10,1,2025-12-02,2025-12-08,True,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,SYD-01,20,product_unit,2025-12-01,0,0,0.73,10,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,TOR-01,20,product_unit,2025-12-01,0,0,0.86,10,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,AUS-01,15,product_unit,2025-12-01,0,0,1.14,10,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,NYC-01,15,product_unit,2025-12-01,0,0,0.79,10,1,2025-12-02,2025-12-08,True,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,AUS-01,10,product_unit,2025-12-01,0,0,0.4,0,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,CHI-01,10,product_unit,2025-12-01,0,0,0.4,0,5,2025-12-06,2025-12-12,True,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,COL-01,10,product_unit,2025-12-01,0,0,0.1,5,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,LA-01,10,product_unit,2025-12-01,0,10,0.14,10,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,LON-01,10,product_unit,2025-12-01,0,0,0.2,5,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,MAN-01,10,product_unit,2025-12-01,0,0,0.24,5,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,MAN-01,10,product_unit,2025-12-01,0,10,0.79,10,5,2025-12-06,2025-12-12,True,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,2025-12-01,0,0,0.4,0,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,MUC-01,10,product_unit,2025-12-01,0,10,1.08,10,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,NYC-01,10,product_unit,2025-12-01,0,0,0.46,5,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,NYC-01,10,product_unit,2025-12-01,0,0,2.43,0,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,PAR-01,10,product_unit,2025-12-01,0,0,0.88,0,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,SYD-01,10,product_unit,2025-12-01,0,0,0.26,5,1,2025-12-02,2025-12-08,True,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,TOR-01,10,product_unit,2025-12-01,0,0,2.57,5,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,TOR-01,10,product_unit,2025-12-01,0,0,0.57,5,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,LA-01,9,product_unit,2025-12-01,0,0,2.92,6,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,COL-01,6,product_unit,2025-12-01,0,0,0.22,5,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,LON-01,6,product_unit,2025-12-01,0,0,0.77,5,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,AUS-01,5,product_unit,2025-12-01,0,0,1.29,0,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,2025-12-01,0,0,0.6,0,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,CHI-01,5,product_unit,2025-12-01,0,0,0.14,4,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,CHI-01,5,product_unit,2025-12-01,0,0,1.09,0,2,2025-12-03,2025-12-09,True,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,MAN-01,5,product_unit,2025-12-01,0,0,1.21,0,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,MUC-01,5,product_unit,2025-12-01,0,0,0.43,0,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,SYD-01,5,product_unit,2025-12-01,0,0,0.7,4,1,2025-12-02,2025-12-08,True,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,SYD-01,5,product_unit,2025-12-01,0,5,0.66,5,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,LA-01,4,product_unit,2025-12-01,0,3,6.29,0,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,SYD-01,4,product_unit,2025-12-01,0,0,0.46,3,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,VAN-01,4,product_unit,2025-12-01,0,0,0.29,3,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,COL-01,3,product_unit,2025-12-01,0,0,0.44,2,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,AUS-01,2,product_unit,2025-12-01,0,2,1.45,2,5,2025-12-06,2025-12-12,True,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,LON-01,2,product_unit,2025-12-01,0,0,0.77,1,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,LON-01,2,product_unit,2025-12-01,0,3,2.14,2,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,AUS-01,1,product_unit,2025-12-01,0,5,0.79,5,5,2025-12-06,2025-12-12,True,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,CHI-01,1,product_unit,2025-12-01,0,2,0.46,2,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,CHI-01,1,product_unit,2025-12-01,0,0,0.73,0,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,VAN-01,1,product_unit,2025-12-01,0,0,0.48,0,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,COL-01,0,product_unit,2025-12-01,0,9,1.54,5,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,PAR-01,0,product_unit,2025-12-01,0,5,0.24,0,4,2025-12-05,2025-12-11,True,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,SYD-01,0,product_unit,2025-12-01,0,10,0.22,0,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,SYD-01,0,product_unit,2025-12-01,0,3,0.14,0,6,2025-12-07,2025-12-13,True,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,SYD-01,0,product_unit,2025-12-01,0,10,1.08,0,7,2025-12-08,2025-12-14,True,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,VAN-01,0,product_unit,2025-12-01,0,10,0.33,0,3,2025-12-04,2025-12-10,True,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,AUS-01,10,product_unit,2025-12-01,10,0,0.33,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,CHI-01,10,product_unit,2025-12-01,10,0,0.62,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,COL-01,10,product_unit,2025-12-01,10,0,0.1,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,COL-01,10,product_unit,2025-12-01,10,0,0.33,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,LA-01,10,product_unit,2025-12-01,10,0,1.54,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,LA-01,10,product_unit,2025-12-01,10,0,2.3,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,LON-01,10,product_unit,2025-12-01,0,10,0.77,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,LON-01,10,product_unit,2025-12-01,10,0,1.23,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,LON-01,10,product_unit,2025-12-01,10,0,0.6,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,LON-01,10,product_unit,2025-12-01,10,0,0.66,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,MAN-01,10,product_unit,2025-12-01,10,0,0.1,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,MAN-01,10,product_unit,2025-12-01,10,0,0.44,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,MAN-01,10,product_unit,2025-12-01,10,0,0.4,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,MAN-01,10,product_unit,2025-12-01,10,0,0.53,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,MAN-01,10,product_unit,2025-12-01,10,0,1.76,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,2025-12-01,10,0,1.68,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,MUC-01,10,product_unit,2025-12-01,0,10,0.44,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,NYC-01,10,product_unit,2025-12-01,10,0,0.92,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,NYC-01,10,product_unit,2025-12-01,10,0,0.77,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,PAR-01,10,product_unit,2025-12-01,10,0,0.66,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,SYD-01,10,product_unit,2025-12-01,10,0,0.77,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,SYD-01,10,product_unit,2025-12-01,10,0,0.15,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,SYD-01,10,product_unit,2025-12-01,10,0,1.0,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,SYD-01,10,product_unit,2025-12-01,10,0,0.31,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,TOR-01,10,product_unit,2025-12-01,10,0,0.2,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,TOR-01,10,product_unit,2025-12-01,10,0,0.26,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,TOR-01,10,product_unit,2025-12-01,10,0,0.35,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,2025-12-01,10,0,0.99,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,VAN-01,10,product_unit,2025-12-01,10,0,0.44,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,AUS-01,5,product_unit,2025-12-01,5,0,0.57,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,AUS-01,5,product_unit,2025-12-01,5,0,0.62,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,COL-01,5,product_unit,2025-12-01,5,0,0.62,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,COL-01,5,product_unit,2025-12-01,5,0,0.26,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,COL-01,5,product_unit,2025-12-01,5,0,2.0,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,LA-01,5,product_unit,2025-12-01,5,0,2.24,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,LA-01,5,product_unit,2025-12-01,5,0,4.48,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,LA-01,5,product_unit,2025-12-01,5,0,1.21,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,LON-01,5,product_unit,2025-12-01,5,0,0.7,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,LON-01,5,product_unit,2025-12-01,5,0,1.0,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,MAN-01,5,product_unit,2025-12-01,5,0,0.44,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,MAN-01,5,product_unit,2025-12-01,5,0,1.54,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,NYC-01,5,product_unit,2025-12-01,5,0,4.29,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,NYC-01,5,product_unit,2025-12-01,5,0,1.76,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,SYD-01,5,product_unit,2025-12-01,5,0,0.13,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,SYD-01,5,product_unit,2025-12-01,5,0,0.73,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,TOR-01,5,product_unit,2025-12-01,5,0,1.58,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,2025-12-01,5,0,1.08,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,VAN-01,5,product_unit,2025-12-01,5,0,0.09,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,PAR-01,4,product_unit,2025-12-01,2,0,1.09,4,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,TOR-01,4,product_unit,2025-12-01,3,0,1.81,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,VAN-01,4,product_unit,2025-12-01,3,0,1.1,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,LA-01,3,product_unit,2025-12-01,4,0,2.11,4,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,NYC-01,3,product_unit,2025-12-01,3,0,5.08,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,NYC-01,3,product_unit,2025-12-01,5,0,3.0,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,NYC-01,2,product_unit,2025-12-01,5,3,6.92,3,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,VAN-01,2,product_unit,2025-12-01,0,0,0.0,2,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,CHI-01,1,product_unit,2025-12-01,4,0,0.59,4,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,LA-01,1,product_unit,2025-12-01,3,0,0.22,3,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,MAN-01,1,product_unit,2025-12-01,0,0,0.0,1,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,MUC-01,1,product_unit,2025-12-01,0,5,0.66,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,VAN-01,1,product_unit,2025-12-01,2,2,0.11,4,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,2025-12-01,20,0,0.86,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,2025-12-01,10,10,2.29,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,2025-12-01,10,10,1.33,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,AUS-01,0,product_unit,2025-12-01,20,0,0.26,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,AUS-01,0,product_unit,2025-12-01,9,3,0.73,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,AUS-01,0,product_unit,2025-12-01,20,10,1.43,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,AUS-01,0,product_unit,2025-12-01,2,2,1.0,2,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,AUS-01,0,product_unit,2025-12-01,10,0,2.42,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,AUS-01,0,product_unit,2025-12-01,5,5,1.85,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,AUS-01,0,product_unit,2025-12-01,10,10,0.43,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,AUS-01,0,product_unit,2025-12-01,20,0,0.46,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,AUS-01,0,product_unit,2025-12-01,20,0,1.48,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,AUS-01,0,product_unit,2025-12-01,5,5,1.58,3,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,AUS-01,0,product_unit,2025-12-01,10,0,1.19,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,AUS-01,0,product_unit,2025-12-01,10,0,0.44,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,AUS-01,0,product_unit,2025-12-01,20,10,1.09,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,AUS-01,0,product_unit,2025-12-01,10,0,2.15,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,AUS-01,0,product_unit,2025-12-01,10,0,3.14,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,AUS-01,0,product_unit,2025-12-01,20,0,1.23,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,AUS-01,0,product_unit,2025-12-01,14,0,0.86,4,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,2025-12-01,21,0,0.71,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,2025-12-01,10,10,0.79,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,CHI-01,0,product_unit,2025-12-01,5,5,0.99,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,CHI-01,0,product_unit,2025-12-01,20,10,0.43,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,CHI-01,0,product_unit,2025-12-01,20,0,0.36,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,CHI-01,0,product_unit,2025-12-01,4,0,0.29,2,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,CHI-01,0,product_unit,2025-12-01,8,0,0.97,1,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,CHI-01,0,product_unit,2025-12-01,8,4,0.92,4,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,CHI-01,0,product_unit,2025-12-01,10,0,0.2,5,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,CHI-01,0,product_unit,2025-12-01,5,5,1.54,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,CHI-01,0,product_unit,2025-12-01,20,0,1.23,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,CHI-01,0,product_unit,2025-12-01,10,0,1.21,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,CHI-01,0,product_unit,2025-12-01,5,5,1.69,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,CHI-01,0,product_unit,2025-12-01,5,5,0.0,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,CHI-01,0,product_unit,2025-12-01,5,5,1.85,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,CHI-01,0,product_unit,2025-12-01,5,10,1.58,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,CHI-01,0,product_unit,2025-12-01,3,5,2.37,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,CHI-01,0,product_unit,2025-12-01,10,10,1.45,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,CHI-01,0,product_unit,2025-12-01,20,0,0.13,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,CHI-01,0,product_unit,2025-12-01,20,0,1.43,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,2025-12-01,10,10,0.11,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,2025-12-01,10,10,0.36,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,COL-01,0,product_unit,2025-12-01,18,0,0.0,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,COL-01,0,product_unit,2025-12-01,20,10,0.13,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,COL-01,0,product_unit,2025-12-01,21,0,0.89,2,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,COL-01,0,product_unit,2025-12-01,10,10,4.15,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,COL-01,0,product_unit,2025-12-01,18,3,0.2,3,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,COL-01,0,product_unit,2025-12-01,10,0,0.35,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,COL-01,0,product_unit,2025-12-01,5,10,0.09,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,COL-01,0,product_unit,2025-12-01,10,10,0.13,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,COL-01,0,product_unit,2025-12-01,19,10,0.3,5,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,COL-01,0,product_unit,2025-12-01,20,0,1.57,3,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,COL-01,0,product_unit,2025-12-01,10,10,0.24,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,COL-01,0,product_unit,2025-12-01,10,10,0.31,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,COL-01,0,product_unit,2025-12-01,8,8,0.48,1,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,COL-01,0,product_unit,2025-12-01,19,0,0.0,2,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,COL-01,0,product_unit,2025-12-01,10,0,0.0,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,COL-01,0,product_unit,2025-12-01,0,10,0.59,2,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,2025-12-01,10,10,1.29,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,LA-01,0,product_unit,2025-12-01,10,0,2.0,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,2025-12-01,20,0,1.65,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,LA-01,0,product_unit,2025-12-01,10,10,0.73,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,LA-01,0,product_unit,2025-12-01,3,0,1.49,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,LA-01,0,product_unit,2025-12-01,10,0,2.37,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,LA-01,0,product_unit,2025-12-01,15,0,0.4,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,LA-01,0,product_unit,2025-12-01,10,0,0.77,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,LA-01,0,product_unit,2025-12-01,3,0,0.43,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,LA-01,0,product_unit,2025-12-01,20,0,0.3,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,LA-01,0,product_unit,2025-12-01,10,0,0.71,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,LA-01,0,product_unit,2025-12-01,25,0,1.69,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,LA-01,0,product_unit,2025-12-01,20,0,0.43,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,LA-01,0,product_unit,2025-12-01,15,5,1.0,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,LA-01,0,product_unit,2025-12-01,3,0,0.43,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,LA-01,0,product_unit,2025-12-01,10,10,0.88,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,LA-01,0,product_unit,2025-12-01,20,0,3.08,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,LA-01,0,product_unit,2025-12-01,5,5,0.73,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,LON-01,0,product_unit,2025-12-01,10,10,0.7,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,2025-12-01,5,5,0.55,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,LON-01,0,product_unit,2025-12-01,20,0,1.05,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,LON-01,0,product_unit,2025-12-01,10,10,3.08,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,LON-01,0,product_unit,2025-12-01,10,10,0.48,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,LON-01,0,product_unit,2025-12-01,10,10,0.0,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,LON-01,0,product_unit,2025-12-01,10,10,0.89,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,LON-01,0,product_unit,2025-12-01,2,3,0.49,2,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,LON-01,0,product_unit,2025-12-01,19,0,2.31,2,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,LON-01,0,product_unit,2025-12-01,20,5,2.31,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,LON-01,0,product_unit,2025-12-01,20,0,0.15,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,LON-01,0,product_unit,2025-12-01,10,0,0.0,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,LON-01,0,product_unit,2025-12-01,4,0,0.88,1,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,LON-01,0,product_unit,2025-12-01,4,0,0.33,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,LON-01,0,product_unit,2025-12-01,9,3,0.71,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,2025-12-01,5,5,0.26,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,2025-12-01,9,9,0.85,2,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,2025-12-01,4,0,1.86,1,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,MAN-01,0,product_unit,2025-12-01,20,10,0.73,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,MAN-01,0,product_unit,2025-12-01,15,0,0.0,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,MAN-01,0,product_unit,2025-12-01,0,10,0.0,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,MAN-01,0,product_unit,2025-12-01,20,0,0.53,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,MAN-01,0,product_unit,2025-12-01,7,0,0.0,4,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,MAN-01,0,product_unit,2025-12-01,8,4,0.26,4,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,MAN-01,0,product_unit,2025-12-01,5,5,1.38,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,MAN-01,0,product_unit,2025-12-01,4,4,0.62,4,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,MAN-01,0,product_unit,2025-12-01,10,10,0.09,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,MAN-01,0,product_unit,2025-12-01,5,5,0.12,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,MAN-01,0,product_unit,2025-12-01,5,0,1.32,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,MAN-01,0,product_unit,2025-12-01,0,4,1.58,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,2025-12-01,20,0,1.32,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,MUC-01,0,product_unit,2025-12-01,3,0,0.53,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,MUC-01,0,product_unit,2025-12-01,5,0,1.58,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,MUC-01,0,product_unit,2025-12-01,20,0,0.18,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,MUC-01,0,product_unit,2025-12-01,20,0,0.92,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,MUC-01,0,product_unit,2025-12-01,15,0,1.38,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,MUC-01,0,product_unit,2025-12-01,3,5,2.15,3,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,MUC-01,0,product_unit,2025-12-01,5,3,0.0,5,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,MUC-01,0,product_unit,2025-12-01,10,0,0.66,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,MUC-01,0,product_unit,2025-12-01,5,0,0.22,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,MUC-01,0,product_unit,2025-12-01,5,0,0.0,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,MUC-01,0,product_unit,2025-12-01,6,0,1.57,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,MUC-01,0,product_unit,2025-12-01,10,10,1.19,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,MUC-01,0,product_unit,2025-12-01,10,0,0.62,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,MUC-01,0,product_unit,2025-12-01,19,0,0.53,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,MUC-01,0,product_unit,2025-12-01,5,0,0.0,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,MUC-01,0,product_unit,2025-12-01,20,0,0.26,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,MUC-01,0,product_unit,2025-12-01,5,10,0.44,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,MUC-01,0,product_unit,2025-12-01,10,0,0.31,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,MUC-01,0,product_unit,2025-12-01,10,0,1.09,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,MUC-01,0,product_unit,2025-12-01,24,0,0.0,3,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,MUC-01,0,product_unit,2025-12-01,5,5,0.88,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,2025-12-01,18,5,2.77,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,2025-12-01,20,5,0.88,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,NYC-01,0,product_unit,2025-12-01,9,0,2.05,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,NYC-01,0,product_unit,2025-12-01,10,10,1.87,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,NYC-01,0,product_unit,2025-12-01,5,5,2.15,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,NYC-01,0,product_unit,2025-12-01,15,0,1.43,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,NYC-01,0,product_unit,2025-12-01,10,10,0.49,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,NYC-01,0,product_unit,2025-12-01,10,10,0.92,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,NYC-01,0,product_unit,2025-12-01,15,8,1.0,4,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,NYC-01,0,product_unit,2025-12-01,10,0,0.15,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,NYC-01,0,product_unit,2025-12-01,15,0,2.11,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,NYC-01,0,product_unit,2025-12-01,6,12,2.29,2,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,NYC-01,0,product_unit,2025-12-01,5,0,3.0,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,NYC-01,0,product_unit,2025-12-01,4,0,0.14,1,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,NYC-01,0,product_unit,2025-12-01,4,0,0.14,1,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,NYC-01,0,product_unit,2025-12-01,20,0,2.73,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,NYC-01,0,product_unit,2025-12-01,20,10,1.43,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,NYC-01,0,product_unit,2025-12-01,30,10,4.92,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,2025-12-01,10,0,0.73,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,2025-12-01,10,10,1.85,10,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,2025-12-01,10,0,0.71,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,PAR-01,0,product_unit,2025-12-01,5,5,0.44,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,PAR-01,0,product_unit,2025-12-01,5,5,1.58,5,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,PAR-01,0,product_unit,2025-12-01,10,10,1.09,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,PAR-01,0,product_unit,2025-12-01,0,9,1.23,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,PAR-01,0,product_unit,2025-12-01,10,0,2.0,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,PAR-01,0,product_unit,2025-12-01,15,0,0.18,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,PAR-01,0,product_unit,2025-12-01,4,0,0.77,1,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,PAR-01,0,product_unit,2025-12-01,25,0,1.05,5,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,PAR-01,0,product_unit,2025-12-01,20,0,0.66,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,PAR-01,0,product_unit,2025-12-01,10,10,0.57,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,PAR-01,0,product_unit,2025-12-01,10,10,0.44,10,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P018,Premium Pens,PAR-01,0,product_unit,2025-12-01,20,0,0.53,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,PAR-01,0,product_unit,2025-12-01,10,10,0.44,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,PAR-01,0,product_unit,2025-12-01,10,10,0.26,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,PAR-01,0,product_unit,2025-12-01,10,5,0.73,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,PAR-01,0,product_unit,2025-12-01,20,10,1.21,0,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,PAR-01,0,product_unit,2025-12-01,7,0,0.31,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,PAR-01,0,product_unit,2025-12-01,20,0,3.0,5,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,PAR-01,0,product_unit,2025-12-01,20,5,2.64,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,PAR-01,0,product_unit,2025-12-01,0,5,0.4,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,2025-12-01,5,0,1.23,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,2025-12-01,10,5,0.99,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,SYD-01,0,product_unit,2025-12-01,5,5,0.55,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,SYD-01,0,product_unit,2025-12-01,0,4,0.62,1,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,SYD-01,0,product_unit,2025-12-01,10,0,0.4,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,SYD-01,0,product_unit,2025-12-01,5,5,0.4,5,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,SYD-01,0,product_unit,2025-12-01,2,0,0.2,1,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,SYD-01,0,product_unit,2025-12-01,10,0,1.76,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,SYD-01,0,product_unit,2025-12-01,9,0,2.02,2,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P022,Air Purifier,SYD-01,0,product_unit,2025-12-01,5,0,0.0,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,SYD-01,0,product_unit,2025-12-01,10,0,1.38,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,SYD-01,0,product_unit,2025-12-01,15,8,1.69,4,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,SYD-01,0,product_unit,2025-12-01,5,5,0.0,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,SYD-01,0,product_unit,2025-12-01,10,0,0.57,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,2025-12-01,3,3,0.4,2,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,2025-12-01,20,0,0.2,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,2025-12-01,10,0,0.36,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,TOR-01,0,product_unit,2025-12-01,10,0,3.54,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,TOR-01,0,product_unit,2025-12-01,16,8,1.29,1,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,TOR-01,0,product_unit,2025-12-01,10,0,1.98,5,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P007,NoiseCancel Headset,TOR-01,0,product_unit,2025-12-01,20,0,0.33,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P008,SmartDock USB-C,TOR-01,0,product_unit,2025-12-01,5,5,0.44,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,TOR-01,0,product_unit,2025-12-01,4,2,0.24,2,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P010,Standing Desk,TOR-01,0,product_unit,2025-12-01,20,10,0.53,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,TOR-01,0,product_unit,2025-12-01,4,0,0.26,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,TOR-01,0,product_unit,2025-12-01,15,0,0.2,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P013,Desk Lamp,TOR-01,0,product_unit,2025-12-01,10,0,1.09,5,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,TOR-01,0,product_unit,2025-12-01,5,0,0.46,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,TOR-01,0,product_unit,2025-12-01,5,0,0.92,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,TOR-01,0,product_unit,2025-12-01,20,0,1.21,10,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,TOR-01,0,product_unit,2025-12-01,20,0,0.0,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,TOR-01,0,product_unit,2025-12-01,7,0,0.85,2,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,TOR-01,0,product_unit,2025-12-01,20,10,0.24,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P028,Backup Drive 2TB,TOR-01,0,product_unit,2025-12-01,2,4,2.86,2,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P004,Vision 27 Monitor,VAN-01,0,product_unit,2025-12-01,20,10,1.05,0,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P005,Office Keyboard,VAN-01,0,product_unit,2025-12-01,10,0,0.44,0,1,2025-12-02,2025-12-08,False,illustrative_supplied_synthetic_stock_and_policy
+P006,Precision Mouse,VAN-01,0,product_unit,2025-12-01,10,10,0.66,0,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P009,Office Chair Pro,VAN-01,0,product_unit,2025-12-01,20,10,0.85,10,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy
+P011,Meeting Table,VAN-01,0,product_unit,2025-12-01,0,5,0.0,5,3,2025-12-04,2025-12-10,False,illustrative_supplied_synthetic_stock_and_policy
+P012,Ergo Footrest,VAN-01,0,product_unit,2025-12-01,8,8,0.3,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P014,Filing Cabinet,VAN-01,0,product_unit,2025-12-01,15,0,0.29,0,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P015,Printer Plus,VAN-01,0,product_unit,2025-12-01,10,0,0.0,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P016,Laser Toner,VAN-01,0,product_unit,2025-12-01,10,10,1.14,10,6,2025-12-07,2025-12-13,False,illustrative_supplied_synthetic_stock_and_policy
+P017,Copy Paper Box,VAN-01,0,product_unit,2025-12-01,20,0,2.62,5,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P019,Notebook Pack,VAN-01,0,product_unit,2025-12-01,5,10,0.13,10,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P020,Presentation Kit,VAN-01,0,product_unit,2025-12-01,9,9,0.66,2,5,2025-12-06,2025-12-12,False,illustrative_supplied_synthetic_stock_and_policy
+P021,Coffee Machine,VAN-01,0,product_unit,2025-12-01,20,0,0.69,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P023,Portable Heater,VAN-01,0,product_unit,2025-12-01,10,0,0.31,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P024,Desk Fan,VAN-01,0,product_unit,2025-12-01,4,0,0.31,0,7,2025-12-08,2025-12-14,False,illustrative_supplied_synthetic_stock_and_policy
+P025,USB Power Hub,VAN-01,0,product_unit,2025-12-01,10,10,1.38,0,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P026,Webcam HD,VAN-01,0,product_unit,2025-12-01,20,0,0.49,10,2,2025-12-03,2025-12-09,False,illustrative_supplied_synthetic_stock_and_policy
+P027,Security Camera,VAN-01,0,product_unit,2025-12-01,24,0,0.73,2,4,2025-12-05,2025-12-11,False,illustrative_supplied_synthetic_stock_and_policy

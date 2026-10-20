@@ -1,0 +1,127 @@
+{
+  "format": "dsc59-receipt-summary-v1",
+  "original_receipt": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/attempt-d67168b053814fc5805b46a401d1347f.json",
+  "original_receipt_sha256": "49fbac56a3cf87566f852b8d3e44b59049e1ca1199e912820ab3f6ac34059796",
+  "note": "Exact original receipt retained at referenced artifact path; command transcripts omitted here to avoid persisting source samples. This summary grants no analytical approval.",
+  "stage_result": {
+    "format": "dsc59-data-investigation-v1",
+    "submission_ref": {
+      "artifact_id": "retail-73fb1009175a47539a23619d49111686:submission",
+      "provenance": "supplied",
+      "sha256": "25cf76c3b45bea4fe761496feeeae6e3afc8cf08f6a437aa0ba29ee2e3c741e7",
+      "version": 13
+    },
+    "proposal_ref": {
+      "artifact_id": "retail-73fb1009175a47539a23619d49111686:proposal",
+      "provenance": "derived",
+      "sha256": "36a3825fb14919557ec570832d2af39ec219f030e7b6ce0b91cd069dfe8bbde9",
+      "version": 13
+    },
+    "approval_ref": {
+      "artifact_id": "retail-73fb1009175a47539a23619d49111686:approval",
+      "provenance": "derived",
+      "sha256": "786a5e9ce9e543a00b3ad8c51c68ad15fa76f391f8214f58665012ba515111d1",
+      "version": 13
+    },
+    "released_files": [
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-73fb1009175a47539a23619d49111686:policy:0",
+          "provenance": "supplied",
+          "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "version": 13
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "ordering_policy.csv",
+        "relative_path": "input-1.csv",
+        "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "released_bytes": 19279,
+        "source_role": "ordering_policy"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-73fb1009175a47539a23619d49111686:receipts:1",
+          "provenance": "supplied",
+          "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "version": 13
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "inbound_deliveries.csv",
+        "relative_path": "input-2.csv",
+        "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "released_bytes": 10740,
+        "source_role": "inbound_ledger"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-73fb1009175a47539a23619d49111686:inventory:2",
+          "provenance": "supplied",
+          "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "version": 13
+        },
+        "controller_lineage_ref": null,
+        "development_partition": false,
+        "original_name": "inventory_position.csv",
+        "relative_path": "input-3.csv",
+        "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "released_bytes": 18799,
+        "source_role": "usable_stock"
+      },
+      {
+        "approved_source_ref": {
+          "artifact_id": "retail-73fb1009175a47539a23619d49111686:sales:3",
+          "provenance": "supplied",
+          "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+          "version": 13
+        },
+        "controller_lineage_ref": {
+          "artifact_id": "demo-investigation-lineage-80f99a4a253a4aafbc230deeb6f8ff9d",
+          "provenance": "derived",
+          "sha256": "63844a340c9d95809bda5c07d23e8382de0999e52ff37d4fa4b0ceba48efc0a8",
+          "version": 1
+        },
+        "development_partition": true,
+        "original_name": "Sales_transactions_2022_2025.csv",
+        "relative_path": "input-4.csv",
+        "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+        "released_bytes": 5006997,
+        "source_role": "transactions"
+      }
+    ],
+    "native_outcome": "completed",
+    "error_code": null,
+    "output_error": null,
+    "thread_id": "01a1575b-73d5-7d92-9fcd-c2731c132181",
+    "turn_id": "01a1575b-7471-7af1-8765-ea1e4c43e05d",
+    "unverified_report_ref": {
+      "artifact_id": "demo-data-report-8690969140864a849ab31e9f21d51505-presented",
+      "provenance": "derived",
+      "sha256": "adec8e2fdb9e97e0c1bd11802acfe0a1faa51cc5cdb187268787dc1992b41287",
+      "version": 1
+    },
+    "restocking_ref": {
+      "artifact_id": "demo-data-report-8690969140864a849ab31e9f21d51505-presented",
+      "provenance": "derived",
+      "sha256": "adec8e2fdb9e97e0c1bd11802acfe0a1faa51cc5cdb187268787dc1992b41287",
+      "version": 1
+    },
+    "html_report_ref": {
+      "artifact_id": "demo-csv-preview-fff5858a3cd74a97b91899c5ad5e32ad",
+      "provenance": "derived",
+      "sha256": "05eddde098d9536ed0c648a460c12a4a1f14e3526904520c1a07b1938d101ae0",
+      "version": 1
+    },
+    "presented_report_sha256": "adec8e2fdb9e97e0c1bd11802acfe0a1faa51cc5cdb187268787dc1992b41287",
+    "presented_html_report_sha256": "05eddde098d9536ed0c648a460c12a4a1f14e3526904520c1a07b1938d101ae0",
+    "html_presentation_lineage_ref": {
+      "artifact_id": "demo-csv-preview-lineage-a70f4a69b2df42a8a18cd2f499594fa6",
+      "provenance": "derived",
+      "sha256": "1c764af902e2b3388885f21fa0c02e462e5ec92b1e91fe0eb4a6d72fa08bb7a3",
+      "version": 1
+    },
+    "final_policy_frozen": false,
+    "verified_report_available": false
+  }
+}

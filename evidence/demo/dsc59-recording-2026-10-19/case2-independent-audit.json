@@ -1,0 +1,77 @@
+{
+  "reviewer": "Codex / plain-language-and-CSV-preview reviewer",
+  "reviewed_at": "2026-10-20T03:30:05.328546+00:00",
+  "source_commit": "b243957ed381528908f7594cd8e5d1b7b98203ba",
+  "run_root": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e",
+  "auditor_sha256": "86a1e97ee6755e8d6d16b397d27bb48216c756d21c7086052834d1320f6aade3",
+  "decision": "pass_for_exploratory_outputs_and_chosen_scenario_arithmetic",
+  "arithmetic": {
+    "rows_checked": 336,
+    "order_units": 888,
+    "prearrival_risk_rows": 58,
+    "duplicates_removed": 42,
+    "incoming_units_reconciled": 927,
+    "method": "Independent exact-rational reconstruction of 365-day product/store shares with 20 pseudo-units per pair, prior full-year monthly factors, 56-day network level, daily stock/receipt timing and order constraints.",
+    "limits": "Chosen-scenario arithmetic only; no complete-demand, model-superiority, frozen-holdout or authenticated verifier gate acceptance."
+  },
+  "identity": {
+    "receipt": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/attempt-419c774156b44ce2b4924abbdb2dcc0b.json",
+    "receipt_sha256": "f142ae1757d8241b2c8852e684d4f3a7fb1a7bc1c225815dc9436a0df7d4f63e",
+    "native_outcome": "completed",
+    "rows": 336,
+    "columns": 16,
+    "exact_cells_and_order": true,
+    "live_browser_dom_equals_csv": true,
+    "browser_dom_sha256": "c6c478e4036a3d4e9e6160717ef755f32818ef9a0561fbf56ae52fc1a3c27ae1",
+    "no_narrative": true,
+    "csv_sha256": "5fa17d3b1869fd483dd61950f0d7ba8b0d9610d98984d11d0848013adf043278",
+    "html_sha256": "145786f00050929a18e7e21830eebb17561e20c940b9e7ec826e69f1369a69dc",
+    "immutable_bytes_match": true,
+    "response_words": 232
+  },
+  "measured_files": {
+    "released/input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    },
+    "released/input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "released/input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "released/input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "output/restocking.csv": {
+      "sha256": "5fa17d3b1869fd483dd61950f0d7ba8b0d9610d98984d11d0848013adf043278",
+      "bytes": 36109
+    },
+    "output/result.json": {
+      "sha256": "89a03715a9518275547bc533e4c28c3c43c00ebfa5e0258be14b309cfd372a02",
+      "bytes": 154
+    },
+    "output/response.md": {
+      "sha256": "9de67a32962743c31f1bb7ac3bcdbee1ac1f5a09718e3a8905dd15d5daa18f4e",
+      "bytes": 1559
+    },
+    "output/model_comparison.csv": {
+      "sha256": "2b38ddee13cd53e7b5d0316db5914181f59c8b979828f534528b518f73b0cc71",
+      "bytes": 2297
+    },
+    "output/analysis_results.json": {
+      "sha256": "1722a6a9e1a9f8c5371924e1689c75f8a42da03a2f11b642f587b85e7c84467d",
+      "bytes": 3250
+    }
+  },
+  "checked_rmse_improvement": 0.09074293819048007,
+  "manual_response_review": {
+    "current_process": "Exact supplied answer describes using last month sales for the week. Day-count scaling is a reasonable interpretation; response explicitly says exact buying rules unavailable.",
+    "comparison": "About 9% gain is explicitly qualified as errors giving more weight to large misses, consistent with RMSE; no claim that all metrics or all alternatives improve. Simple year-long average acknowledged almost as accurate.",
+    "local_cost": "Actual generated calculation uses local Python/pandas/numpy with about 5 MB sources and a short measured runtime. Ordinary computer/no paid routine model calls is supported. Electricity/computer costs acknowledged, separate AI build price unknown.",
+    "scope": "No full frozen December holdout, authenticated verifier/parent gate or milestone acceptance granted."
+  }
+}
