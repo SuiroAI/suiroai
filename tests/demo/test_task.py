@@ -227,7 +227,16 @@ def test_data_refinement_preserves_context_and_distinguishes_search_scope(contro
         "decision_outcomes", "evidence_provenance", "candidate_discovery", "operational_suitability", "selection_delivery"}
     assert all(isinstance(value, str) and value for value in planning["responsibilities"].values())
     assert brief["candidate_search"]["mode"] == ("controlled_regression" if controlled else "autonomous_discovery")
-    assert set(brief["candidate_search"]) == {"mode", "policy"}  # no hardcoded ordinary candidate list
+    assert set(brief["candidate_search"]) == ({"mode", "policy"} if controlled else {"mode", "policy", "model_scope"})
+    if not controlled:
+        assert brief["candidate_search"]["model_scope"] == {
+            "family": "lightweight_conventional_predictive_forecasting",
+            "complexity_guidance": "roughly_below_random_forest",
+            "compute_target": {"cpu_only": True, "system_ram_gb": 8,
+                "compatibility_requires_workload_evidence": True},
+            "excluded": ["neural_deep_learning", "heavy_ensembles", "expensive_unbounded_search"],
+            "operational_redesign": False, "nonpredictive_policy_optimization": False,
+        }  # scoped discovery, without a fixed candidate list or winner
     if controlled:
         assert brief["comparison_contract"] == snapshot["comparison_contract"]
         assert brief["comparison_contract"]["definition"] == contract_definition()

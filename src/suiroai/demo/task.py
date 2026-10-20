@@ -90,7 +90,7 @@ def approved_task_context(proposal):
 def structured_task(context):
     """Assign task refinement, candidate discovery and comparison to the Data turn.
 
-    Ordinary analysis can challenge the incumbent with justified alternatives;
+    Ordinary MVP analysis compares supported lightweight CPU forecasting models;
     explicit engineering replay contracts retain their fixed comparison scope.
     Neither mode invents business priorities or equates a plan with performance.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-60
@@ -114,16 +114,16 @@ def structured_task(context):
                 "evidence_provenance": "Separate supplied business facts and constraints, supported interpretations and unresolved priorities. Relate measurable proxies to the desired outcomes; explain what available data cannot establish. Do not invent costs, incumbent rules, business thresholds or a priority between availability and excess stock.",
                 "candidate_discovery": ("Inspect and justify only the contract-authorized alternatives for this controlled comparison, citing released files and code observations. Document other potentially useful approaches as out of scope without scoring them, adding them to selection or promoting them as the controlled result."
                     if contract is not None else
-                    "Investigate data-supported alternatives that could serve the decision better, including simple predictive and nonpredictive operational approaches where appropriate. Cite released source files and code observations for candidate rationale rather than repeating the incumbent by default or assuming a complex forecast is necessary."),
-                "operational_suitability": "Assess candidate suitability for the observed data and operational use, uncertainty, scalability, maintenance and routine local-computer workload/dependencies. Compare capability and practical burden with measured evidence; keep routine running separate from AI-assisted analysis/build cost.",
-                "selection_delivery": "Turn the refined task into the pre-score evaluation plan and evidence-based selection. Explain the selected action in ordinary terms and report unsupported, mixed or absent improvements honestly. A simple baseline or operational approach can be the best supported answer.",
+                    "Investigate supported lightweight conventional predictive forecasting models for this MVP, comparing them with a fair simple baseline. Models beyond averages or a few formulas are allowed; use roughly below-random-forest complexity and practical CPU-only operation on an ordinary 8 GB RAM computer as guidance. Cite released source files and code observations for candidate rationale rather than reproducing the incumbent by default. Exclude neural/deep-learning models, heavy ensembles and expensive unbounded search. Operational redesign and nonpredictive policy optimization remain outside candidate scope."),
+                "operational_suitability": "Assess candidate suitability for the actual data, operational use, uncertainty, scalability, maintenance, dependencies and routine local-computer workload. Measure or justify CPU runtime and peak memory for both fitting and inference, accounting for data preparation and retained arrays/models, and state assumptions and measurement limits. For ordinary MVP discovery, assess whether that workload fits an ordinary CPU-only 8 GB RAM computer with room for the operating system; a model name alone does not establish compatibility, and the current host is not assumed to have 8 GB RAM. Routine calculations must require no paid model/API calls. Keep routine running cost separate from AI-assisted analysis/build cost.",
+                "selection_delivery": "Turn the refined task into the pre-score evaluation plan and evidence-based selection. Explain the selected action in ordinary terms and report unsupported, mixed or absent improvements honestly. The fair baseline remains a valid selection when alternatives do not improve supported results.",
             },
         },
         "candidate_search": {
             "mode": "controlled_regression" if contract is not None else "autonomous_discovery",
             "policy": ("This is a bounded engineering regression/replay, not open candidate discovery. Keep the contract's authorized candidate scope and controlling comparison fixed; do not broaden the candidate set after scores. If authorized candidates are underspecified, record that limitation rather than silently inventing a different controlled comparison."
                 if contract is not None else
-                "Discover and justify a suitable candidate set from the question, decision and actual data; no fixed retail-model list is prescribed. Record the initial candidates and rationale before scoring. Evidence-driven development iteration is allowed: before each new comparison, append a prospective versioned plan with rationale, what previous development evidence was used and which choices changed. Retain all prior plans and scores, label follow-on results exploratory, keep the fair baseline/primary comparison stable, and do not use reserved evaluation outcomes or stop only when a gain appears."),
+                "Discover and justify lightweight conventional CPU-only predictive forecasting candidates from the question, decision and actual data; no exact model list or winning model is prescribed, and the search is not limited to averages or tiny formulas. Treat roughly below-random-forest complexity and practical operation on an ordinary 8 GB RAM computer as guidance, subject to actual fitting/inference workload evidence. Exclude neural/deep learning, heavy ensembles, expensive unbounded search, operational redesign and nonpredictive policy optimization. Record the initial candidates and rationale before scoring. Evidence-driven development iteration is allowed: before each new comparison, append a prospective versioned plan with rationale, what previous development evidence was used and which choices changed. Retain all prior plans and scores, label follow-on results exploratory, keep the fair baseline/primary comparison stable, and do not use reserved evaluation outcomes or stop only when a gain appears."),
         },
         "controller_scope": {
             "planning_date": "2025-11-30", "latest_transaction_date": "2025-11-30",
@@ -141,6 +141,16 @@ def structured_task(context):
         "deliverables": ["restocking.csv", "response.md", "result.json", "task_refinement.json", "internal evaluation plan, source treatment, comparison code and measured results"],
     }
 
+    if contract is None:
+        brief["candidate_search"]["model_scope"] = {
+            "family": "lightweight_conventional_predictive_forecasting",
+            "complexity_guidance": "roughly_below_random_forest",
+            "compute_target": {"cpu_only": True, "system_ram_gb": 8,
+                "compatibility_requires_workload_evidence": True},
+            "excluded": ["neural_deep_learning", "heavy_ensembles", "expensive_unbounded_search"],
+            "operational_redesign": False,
+            "nonpredictive_policy_optimization": False,
+        }
     if contract is not None:
         brief["comparison_contract"] = contract
         brief["evaluation_requirements"].insert(0,
