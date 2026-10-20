@@ -1,0 +1,11 @@
+# Independent Streamlit startup configuration review
+
+Disposition: **Ready within reviewed scope to launch the app and prepare a task for explicit user approval.** This does not establish performance-success readiness, untouched December validation or successful new analytical execution.
+
+Reviewed `config.py`, app startup/rerun integration, existing service consent invalidation and `test_config.py`. The optional operator-owned `SUIROAI_DEMO_COMPARISON_CONTRACT` selects a bounded validated absolute JSON file. Unset preserves ordinary autonomous behavior; explicitly blank, relative, missing, malformed, null, oversized or symlink configuration raises an error rather than silently dropping the comparison constraint. Uploads do not choose controller configuration.
+
+The app reloads configuration before actions on each rerun. Valid changes flow through the session's digest-bound setter and revoke earlier approval/results. Removing the variable selects explicit unset configuration and likewise invokes the setter. Invalid configuration calls `revise()` on any existing session, clearing consent/downloads, then stops before customer action controls. Restoring a valid file cannot revive the old approval. Unchanged valid configuration preserves the result. No customer configuration selector, new analytical question or automatic file action is added.
+
+Validation: `.venv/bin/python -m pytest tests/demo/test_config.py tests/demo/test_app.py tests/demo/test_context_flow.py tests/demo/test_task.py -q` — **59 passed**. Tests exercise actual Streamlit reruns and real DemoSession with a stubbed backend, including changed definition, stale approval rejection, invalid configuration after a result and failure before session construction. These tests do not call the analytical model. Static review additionally covers removing configured settings; no separate removal test was run.
+
+No material defect found. Browser launch/upload/review inspection is owned by the root agent and is not independently claimed here. Keep the task awaiting the user's explicit approval, with no recording or file-control clicks. Continue to distinguish app ready-to-run from a performance-approved recording. Source identities at review are retained in `startup-config-reviewed-hashes.json`.

@@ -2,12 +2,16 @@
 
 Keep execution and output downloads behind the session service so browser
 reruns cannot authorize work or reuse a result after an input edit.
+Optional trusted startup comparison settings reload before actions; changes
+revoke consent and invalid settings stop execution without a silent fallback.
+Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from __future__ import annotations
 
 from collections.abc import Callable
 import mimetypes
+import logging
 from pathlib import Path
 
 import streamlit as st
@@ -110,16 +114,33 @@ def run_app(session_factory: Callable | None = None) -> None:
     The injected factory supports UI checks without executing the real backend.
     Linear: https://linear.app/gr3enarr0w/issue/DSC-59
     """
-    from suiroai.demo.service import DemoSession, UploadedInput, current_process_request
+    from suiroai.demo.service import UploadedInput, current_process_request
+    from suiroai.demo.config import DemoConfigurationError, configured_session, load_comparison_contract
 
     st.set_page_config(page_title="SuiroAI local demo", page_icon="📊")
     st.title("SuiroAI local demo")
     st.caption("Review the proposed task before allowing analysis.")
     st.write("Upload your data.")
     st.caption("Changing the question, current approach or a file clears the previous approval and result.")
+    try:
+        definition = load_comparison_contract()
+    except DemoConfigurationError as exc:
+        previous = st.session_state.get("demo_session")
+        if previous is not None:
+            previous.revise()
+        logging.getLogger(__name__).error("Demo startup configuration is invalid: %s", exc)
+        st.error("The demo startup configuration needs attention. Analysis is unavailable until it is corrected.")
+        st.stop()
     if "demo_session" not in st.session_state:
-        st.session_state.demo_session = (session_factory or DemoSession)()
+        st.session_state.demo_session = configured_session(session_factory, definition=definition)
     session = st.session_state.demo_session
+    configure = getattr(session, "set_comparison_contract", None)
+    if callable(configure):
+        configure(definition)
+    elif definition is not None:
+        session.revise()
+        st.error("The demo session cannot apply its startup configuration. Analysis is unavailable.")
+        st.stop()
 
     question = st.text_area("What are you trying to solve for?", key="business_question")
     uploaded_files = st.file_uploader("Upload your data", accept_multiple_files=True, key="upload_files")

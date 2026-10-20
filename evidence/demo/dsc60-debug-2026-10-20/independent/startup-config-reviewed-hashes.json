@@ -1,0 +1,5 @@
+{
+  "src/suiroai/demo/config.py": "b05398c7617518999480062c5065c7bf2b6cf550ab0727ee094bf324530f2be5",
+  "src/suiroai/demo/app.py": "55423d9390fda791a895a108122b6b76379899f80ad0cf5dd7b712fbd4a4a66b",
+  "tests/demo/test_config.py": "330c47df9fafa86defb2c116fc6ccaa224efd99e01cd331bbaf1b4383e8dd38c"
+}

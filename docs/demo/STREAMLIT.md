@@ -19,6 +19,18 @@ Open `http://localhost:8501`. The server runs locally; there is no cloud service
 
 The current intake recognizes the selected retail CSV structure and preserves your original question and measured file identities. Approval authorizes Data to investigate the released development data. It must infer meaning from the contents and cross-file consistency, investigate null values and gaps in recorded dates, select evidence-supported methods and assumptions, and quantify their effects without follow-up questions. Existing Codex authentication stays outside the repository and is never included in UI output or receipts.
 
+## Optional fixed engineering comparison
+
+For a [DSC-60](https://linear.app/gr3enarr0w/issue/DSC-60) engineering run, the operator can set `SUIROAI_DEMO_COMPARISON_CONTRACT` to an absolute path to a trusted JSON **definition** file. The file contains the seven required nonempty text fields `target`, `baseline`, `primary_metric`, `population`, `dates`, `forecast_horizon`, and `selection_rule`; `secondary_diagnostics` is optional. Pass the definition directly, rather than a digest wrapper. See [task construction](dsc60-task-construction.md) for the approval and evaluation limits.
+
+```sh
+SUIROAI_DEMO_COMPARISON_CONTRACT=/absolute/path/to/comparison-contract.json PYTHONPATH=src .venv/bin/streamlit run streamlit_app.py --server.address 127.0.0.1 --server.port 8504 --server.headless true --browser.gatherUsageStats false
+```
+
+Use an available fresh port to preserve existing sessions. The app reads at most 64 KiB and validates the file before creating a session. Relative paths, symlinks, missing or malformed files and incomplete definitions stop page actions; they never silently launch an uncontrolled comparison. Operator logs contain the configuration failure, while the page shows a brief configuration message. The file is reloaded on every rerun; changes or explicit removal of the environment setting revoke prior approval and results. An unchanged definition preserves the current result. Keep the file stable throughout a run.
+
+With the environment variable unset, ordinary autonomous analysis is unchanged. This setting adds no customer configuration questions, automatic uploads, downloads, preview opening or analysis execution. Customers still review the readable proposal and explicitly approve each analysis.
+
 ## Try the actual supplied example
 
 Add these four operational CSV files together in the single **Upload your data** area, from the explicitly selected `data/retail_mvp/sales_2022_2025/` directory. The backend identifies their meaning from actual column headers; filenames and selection order do not assign roles:
