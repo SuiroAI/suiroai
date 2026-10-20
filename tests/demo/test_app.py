@@ -229,6 +229,7 @@ def test_real_generated_output_is_downloadable_with_neutral_label(app, verificat
     assert downloads[0].key == "download_restocking_list"
     assert calls[0]["data"] == data
     assert calls[0]["file_name"] == "restocking.csv"
+    assert calls[0]["on_click"] == "ignore"
     assert calls[0]["mime"] == "text/csv"
     product_copy = " ".join(item.value for collection in (app.caption, app.markdown, app.info, app.warning)
                             for item in collection).lower()

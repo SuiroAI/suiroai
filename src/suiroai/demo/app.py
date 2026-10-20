@@ -90,7 +90,7 @@ def _show_outcome(session: object, view: dict) -> None:
             if extension not in {".html", ".htm"} and mime != "text/html":
                 label = "Download restocking list (CSV)" if extension == ".csv" else "Download restocking list"
                 st.download_button(label, data=data, file_name=name,
-                                   mime=mime, key="download_restocking_list")
+                                   mime=mime, key="download_restocking_list", on_click="ignore")
     if view.get("html_report_available"):
         html_result = session.download_html()
         if html_result is not None:

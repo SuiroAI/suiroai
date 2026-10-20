@@ -60,3 +60,5 @@ A network-restricted terminal may cause Codex plugin inventory to return its rem
 
 
 Current-process context is part of the approved task, whether detected from supplied material, entered in response to the missing-context question, or explicitly omitted with **Continue without a current approach**. There is no preliminary selector asking where you shared it. Edits revoke approval and prior outputs. Data still resolves cleaning and analytical choices autonomously, and comparisons must not invent an incumbent method when none was supplied. The same-window response assesses the selected non-LLM model's local-computer suitability and routine costs separately from AI-assisted analysis/build costs.
+
+CSV downloads start only when the user clicks the download button. The recording/browser checker leaves the explanation in the main window, without opening or downloading files by default. Add `--open-preview` only to explicitly check the HTML in a separate tab, and `--download-csv` only to explicitly check file saving. Main-window or preview-only success does not claim CSV transport was verified or the full milestone accepted.

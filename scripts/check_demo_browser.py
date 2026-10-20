@@ -2,7 +2,8 @@
 
 Upload explicitly named source files, inspect the proposal, click approval once,
 and record the visible terminal outcome plus source hashes and screenshots.
-A blocked attempt exits with code 2. Successful browser-to-file checks remain
+File actions are opt-in with --download-csv and --open-preview; the recording
+path leaves the main explanation visible without opening or downloading files. A blocked attempt exits with code 2. Checks remain
 separate from full milestone acceptance. No prewritten result is injected.
 
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
@@ -52,6 +53,10 @@ def main():
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--artifact-root", type=Path, default=Path("artifacts/demo"))
+    parser.add_argument("--download-csv", action="store_true",
+                        help="Explicitly click and verify the CSV download; omitted for recording.")
+    parser.add_argument("--open-preview", action="store_true",
+                        help="Explicitly open and verify the HTML in a new tab; omitted for recording.")
     args = parser.parse_args()
     from playwright.sync_api import sync_playwright, expect
 
@@ -60,7 +65,9 @@ def main():
     record = {"format": "dsc59-real-browser-attempt-v1", "started_at": datetime.now(timezone.utc).isoformat(),
         "question": QUESTION, "files": [], "success": False,
         "download_matches_stored_artifact": False, "html_matches_stored_artifact": False,
-        "full_milestone_accepted": False}
+        "full_milestone_accepted": False, "csv_download_requested": args.download_csv,
+        "csv_download_clicked": False, "html_open_requested": args.open_preview,
+        "html_opened_in_new_tab": False, "output_controls_available": False}
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(accept_downloads=True, viewport={"width": 1200, "height": 1100})
@@ -103,19 +110,11 @@ def main():
         record["javascript_errors"] = errors
         page.screenshot(path=str(args.output / "02-outcome.png"), full_page=True)
         download = page.get_by_role("button", name="Download restocking list (CSV)", exact=True)
-        if download.count():
-            with page.expect_download() as event:
-                download.click()
-            file = event.value
-            destination = args.output / Path(file.suggested_filename).name
-            file.save_as(destination)
-            data = destination.read_bytes()
-            record["download_sha256"] = sha256(data).hexdigest()
+        record["output_controls_available"] = bool(download.count())
+        if record["output_controls_available"]:
             expected_sources = {item["sha256"] for item in record["files"]}
-            record["matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, data, "unverified_report_ref")
-            record["download_matches_stored_artifact"] = record["matching_receipt"] is not None
             html = page.get_by_role("link", name="View restocking list", exact=True)
-            if html.count():
+            if args.open_preview and html.count():
                 with page.expect_popup() as event:
                     html.click()
                 report_page = event.value
@@ -130,7 +129,20 @@ def main():
                 record["html_sha256"] = sha256(html_data).hexdigest()
                 record["html_matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, html_data, "html_report_ref")
                 record["html_matches_stored_artifact"] = record["html_matching_receipt"] is not None
-            record["outcome"] = "outputs_downloaded"
+            if args.download_csv:
+                with page.expect_download() as event:
+                    record["csv_download_clicked"] = True
+                    download.click()
+                file = event.value
+                destination = args.output / Path(file.suggested_filename).name
+                file.save_as(destination)
+                data = destination.read_bytes()
+                record["download_sha256"] = sha256(data).hexdigest()
+                record["matching_receipt"] = matching_artifact(args.artifact_root, expected_sources, data, "unverified_report_ref")
+                record["download_matches_stored_artifact"] = record["matching_receipt"] is not None
+                record["outcome"] = "preview_and_csv_checked" if args.open_preview else "csv_checked"
+            else:
+                record["outcome"] = "preview_checked_csv_not_requested" if args.open_preview else "analysis_ready_no_files_opened"
         else:
             record["outcome"] = "no_report_returned"
         context.close()
@@ -139,8 +151,10 @@ def main():
         sha256((args.data_root / FILES[file["role"]]).read_bytes()).hexdigest() == file["sha256"]
         for file in record["files"])
     record["finished_at"] = datetime.now(timezone.utc).isoformat()
-    record["success"] = (record["download_matches_stored_artifact"]
-        and record["html_matches_stored_artifact"] and record["source_files_unchanged"])
+    record["success"] = (record["output_controls_available"] and record["source_files_unchanged"]
+        and not record["javascript_errors"]
+        and (not args.open_preview or record["html_matches_stored_artifact"])
+        and (not args.download_csv or record["download_matches_stored_artifact"]))
     (args.output / "attempt.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps({key: record[key] for key in ("outcome", "success", "download_matches_stored_artifact", "proposal_shown", "approved_once")}))
     return 0 if record["success"] else 2
