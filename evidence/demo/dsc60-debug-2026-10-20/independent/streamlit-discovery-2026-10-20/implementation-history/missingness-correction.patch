@@ -1,0 +1,9 @@
+@@ -79,5 +79,5 @@
+     hist=y[train_idx[-26:]]; local=np.nanmean(hist,axis=0); count=np.isfinite(hist).sum(axis=0)
+-    product_total=np.array([np.nansum(hist[:,pi==j]) for j in range(len(products))]); store_total=np.array([np.nansum(hist[:,si==j]) for j in range(len(stores))])
+-    # Each fully represented week contributes all pairs; early all-known panel verified.
+-    pooled=product_total[pi]*store_total[si]/max(np.nansum(hist),1)/len(hist)
++    product_mean=np.array([np.nanmean(hist[:,pi==j]) for j in range(len(products))]); store_mean=np.array([np.nanmean(hist[:,si==j]) for j in range(len(stores))])
++    # Means use observed pair-weeks only; unknown store-weeks never contribute zeros.
++    pooled=product_mean[pi]*store_mean[si]/max(np.nanmean(hist),1e-12)
+     model=(count*local+13*pooled)/(count+13)

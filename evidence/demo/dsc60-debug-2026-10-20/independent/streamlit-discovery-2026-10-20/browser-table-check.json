@@ -1,0 +1,11 @@
+{
+  "scope": "Emitted CSV/browser DOM identity check only; no forecasting/data recomputation. DOM collected by UI owner.",
+  "all_headers_cells_and_order_equal": true,
+  "data_rows": 336,
+  "columns": 17,
+  "body_cells": 5712,
+  "csv_sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+  "dom_sha256": "a529cf150592dda6fb4592bcfbece61a8888a5da212c22e34f789565d8988d44",
+  "browser_download_attempted_this_run": false,
+  "browser_policy": "Prior organization block left intact; no download success claimed."
+}

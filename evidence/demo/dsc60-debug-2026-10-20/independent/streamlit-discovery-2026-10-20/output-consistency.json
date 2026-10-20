@@ -1,0 +1,114 @@
+{
+  "scope": "delivered_output_consistency_only",
+  "output_path": "artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/output",
+  "checks": {
+    "required_result_keys": true,
+    "result_points_to_csv": true,
+    "csv_checksum_matches_result_and_measured": true,
+    "required_csv_headers": true,
+    "unique_product_store_keys": true,
+    "nonnegative_integer_quantities": true,
+    "product_units": true,
+    "measured_counts_units_match": true,
+    "review_flag_count_matches": true,
+    "pack_minimum_and_displayed_gap_arithmetic": true,
+    "summary_matches_weighted_origin_scores": true,
+    "relative_improvement_arithmetic": true,
+    "primary_mae_values_match": true,
+    "routine_orders_same_row_order_and_shared_values": true,
+    "presented_html_exact_headers_row_order_values": true,
+    "live_browser_dom_exact_headers_rows_values_order": true
+  },
+  "all_checks_pass": true,
+  "rows": 336,
+  "positive_rows": 112,
+  "zero_rows": 224,
+  "total_units": 880,
+  "csv_sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+  "headers": [
+    "Product_ID",
+    "Product_Name",
+    "Store_ID",
+    "OrderQty",
+    "Quantity_Unit",
+    "Forecast_Next_Week_Units",
+    "Forecast_Coverage_Units",
+    "Coverage_Days",
+    "Coverage_End",
+    "Usable_Stock_Units",
+    "Incoming_Within_Coverage_Units",
+    "Safety_Stock_Units",
+    "Order_Multiple_Units",
+    "Minimum_Order_Units",
+    "Expected_New_Order_Arrival",
+    "Review_Before_Arrival",
+    "Input_Basis"
+  ],
+  "row_order": "live browser DOM equals final CSV exactly: 17 headers and 336 rows of 17 cells, in delivered order",
+  "selected_model": "shrink26",
+  "weekly_mae_baseline": 0.9636402753872634,
+  "weekly_mae_selected": 0.9429402262412767,
+  "weekly_relative_mae_reduction": 0.021481095876433542,
+  "weekly_mae_difference_selected_minus_baseline": -0.020700049145986665,
+  "selected_beats_baseline_origin_count": 7,
+  "weekly_origin_count": 7,
+  "monthly_primary_aggregate_arithmetic": {
+    "2025-10": {
+      "weighted_mae": {
+        "recent13": 0.9123704309874522,
+        "shrink26": 0.8935240052113654
+      },
+      "relative_gain": 0.0206565503834768
+    },
+    "2025-11": {
+      "weighted_mae": {
+        "recent13": 1.0305759055759058,
+        "shrink26": 1.0074558481414386
+      },
+      "relative_gain": 0.022434114080657874
+    }
+  },
+  "secondary_coverage_mae": {
+    "poisson_calendar": 1.4259387101679988,
+    "recent13": 1.3689005214356726,
+    "ses": 1.390319955422638,
+    "shrink26": 1.3165190588851428
+  },
+  "secondary_coverage_relative_gain": 0.03826535363986372,
+  "metric_units": "MAE is recorded product units per evaluated entity-window; WAPE is absolute error sum divided by actual units; bias is signed units per evaluated entity-window.",
+  "origin_counts": [
+    "2025-10-05",
+    "2025-10-12",
+    "2025-10-19",
+    "2025-10-26",
+    "2025-11-02",
+    "2025-11-09",
+    "2025-11-16"
+  ],
+  "pack_mismatches": [],
+  "score_mismatches": [],
+  "response_available": true,
+  "response_sha256": "60b194e8d7f280e91e4ed4c8a16dbe6da737312c7cafc88580a87aeb9b5ade61",
+  "routine_schema_note": "Routine CSV intentionally contains five columns, delivered CSV seventeen; all five shared column values and row order compared exactly.",
+  "source_output_hashes": {
+    "restocking.csv": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "result.json": "6dee75a2cd8f466307cac6ed0a30cba55785def7e2501f0736afe4e2cbdbae3b",
+    "measured_results.json": "9732bbb11726b6d8b8d54395250694efb016108cbc7e48513918979e4c1bb63b",
+    "comparison_summary.csv": "6fb62dc7a0c531a927864612a48da7e346ca2a3d78ede7856c27138b7a3be6d4",
+    "scores_by_origin.csv": "9869bc2a4a6ab890cc927622b55b7d95e3e7373f19fbc5eda9e1ca291616d216"
+  },
+  "limits": [
+    "Checks producer aggregate arithmetic, not truth/completeness of source data or method validity.",
+    "Ordering reconstruction uses rounded delivered forecast columns; no source policy/inbound files opened.",
+    "Workload figures are producer-reported measurements, not independently timed.",
+    "No producer executed, raw sales inspected, models built/selected, or withheld outcomes evaluated."
+  ],
+  "live_browser_dom": {
+    "path": "evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/browser-table-cells.json",
+    "sha256": "a529cf150592dda6fb4592bcfbece61a8888a5da212c22e34f789565d8988d44",
+    "header_columns": 17,
+    "data_rows": 336,
+    "data_cells": 5712,
+    "exact_equality": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "prospective": true,
+  "purpose": "Quantify how unknown store-days could change illustrative quantities, without claiming coverage or imputing historical demand.",
+  "previous_evidence": "source_audit.json identifies incomplete store-day recording; all forecast results are already development evidence.",
+  "scenario": "Multiply each frozen selected next-week forecast by 182 divided by that store's observed days in the last 26 weeks, as an illustrative same-rate-on-unknown-days scenario. It is not an estimate of lost sales, and observed transaction days may be selected busy days. Apply identical stock, receipts and supplied ordering policy.",
+  "unchanged": "No new candidate, no candidate rescoring, no metric or baseline change, no reselection, no reserved outcomes.",
+  "interpretation": "Exploratory source-assumption sensitivity only, not a confidence interval or recommended replacement quantity."
+}

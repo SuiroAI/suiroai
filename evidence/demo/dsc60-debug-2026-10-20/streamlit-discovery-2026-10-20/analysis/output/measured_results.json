@@ -1,0 +1,20 @@
+{
+  "selected": "shrink26",
+  "primary_mae": {
+    "poisson_calendar": 1.0361210557486769,
+    "recent13": 0.9636402753872634,
+    "ses": 0.9806963480732849,
+    "shrink26": 0.9429402262412767
+  },
+  "relative_MAE_reduction_vs_analytical_baseline": 0.021481095876433542,
+  "positive_orders": 112,
+  "zero_orders": 224,
+  "total_units": 880,
+  "forecast_next_week_units_total": 199.26153846153846,
+  "prearrival_shortfall_flags": 52,
+  "baseline_order_units": 873,
+  "baseline_quantity_differences": 15,
+  "csv_sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+  "primary_is_development_only": true,
+  "independent_success_gate_ready": false
+}

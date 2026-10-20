@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,Forecast_Next_Week_Units,Forecast_Coverage_Units,Coverage_Days,Coverage_End,Usable_Stock_Units,Incoming_Within_Coverage_Units,Safety_Stock_Units,Order_Multiple_Units,Minimum_Order_Units,Expected_New_Order_Arrival,Review_Before_Arrival,Input_Basis
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,0.431,0.801,13,2025-12-13,20,0,0,10,10,2025-12-06,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,0.774,1.438,13,2025-12-13,21,0,0,1,1,2025-12-06,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,0.287,0.411,10,2025-12-10,10,10,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,1.12,1.44,9,2025-12-09,10,10,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,0.442,0.883,14,2025-12-14,0,0,10,10,10,2025-12-07,Yes,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,0.219,0.376,12,2025-12-12,5,5,0,5,5,2025-12-05,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,0.391,0.503,9,2025-12-09,0,0,0,10,10,2025-12-02,Yes,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,1.263,2.165,12,2025-12-12,18,5,0,1,1,2025-12-05,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,0.724,1.137,11,2025-12-11,10,0,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,0.543,1.086,14,2025-12-14,5,0,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,0.329,0.423,9,2025-12-09,3,3,2,1,1,2025-12-02,No,synthetic_stock_and_policy
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,0.584,1.168,14,2025-12-14,5,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,1.022,1.168,8,2025-12-08,10,10,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,0.705,1.108,11,2025-12-11,0,0,0,5,5,2025-12-04,Yes,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,COL-01,10,product_unit,0.223,0.287,9,2025-12-09,0,0,5,5,5,2025-12-02,Yes,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,LA-01,0,product_unit,0.809,1.618,14,2025-12-14,10,0,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,LON-01,0,product_unit,0.498,0.569,8,2025-12-08,10,10,0,10,10,2025-12-01,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,0.44,0.691,11,2025-12-11,9,9,2,1,1,2025-12-04,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,0.581,0.747,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,0.566,0.646,8,2025-12-08,20,5,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,0.501,1.001,14,2025-12-14,10,10,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,SYD-01,5,product_unit,0.292,0.5,12,2025-12-12,5,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,0.209,0.269,9,2025-12-09,20,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,0.57,0.732,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,0.855,1.343,11,2025-12-11,10,10,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,0.738,1.265,12,2025-12-12,10,10,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,0.566,0.89,11,2025-12-11,10,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,0.971,1.388,10,2025-12-10,20,0,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,0.569,0.812,10,2025-12-10,5,5,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,0.753,1.398,13,2025-12-13,4,0,1,1,1,2025-12-06,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,0.705,1.209,12,2025-12-12,20,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,NYC-01,1,product_unit,1.684,3.367,14,2025-12-14,3,0,0,1,1,2025-12-07,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,0.534,0.991,13,2025-12-13,10,0,0,10,10,2025-12-06,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,0.675,0.965,10,2025-12-10,10,5,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,0.468,0.736,11,2025-12-11,10,0,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P003,EdgeTab 11 Tablet,VAN-01,4,product_unit,1.15,1.643,10,2025-12-10,3,0,5,1,1,2025-12-03,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,AUS-01,0,product_unit,0.608,0.695,8,2025-12-08,20,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,CHI-01,1,product_unit,0.67,0.861,9,2025-12-09,4,0,4,1,1,2025-12-02,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,COL-01,0,product_unit,0.337,0.675,14,2025-12-14,18,0,0,1,1,2025-12-07,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,LA-01,0,product_unit,1.066,1.675,11,2025-12-11,10,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,LON-01,10,product_unit,0.414,0.591,10,2025-12-10,0,10,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,MAN-01,10,product_unit,0.507,0.796,11,2025-12-11,0,0,5,5,5,2025-12-04,Yes,synthetic_stock_and_policy
+P004,Vision 27 Monitor,MUC-01,0,product_unit,0.467,0.8,12,2025-12-12,3,0,0,1,1,2025-12-05,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,NYC-01,15,product_unit,0.696,0.795,8,2025-12-08,0,0,10,5,5,2025-12-01,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,PAR-01,0,product_unit,0.542,0.62,8,2025-12-08,5,5,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,SYD-01,0,product_unit,0.463,0.661,10,2025-12-10,5,5,0,1,1,2025-12-03,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,TOR-01,0,product_unit,0.788,1.577,14,2025-12-14,10,0,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P004,Vision 27 Monitor,VAN-01,0,product_unit,0.48,0.823,12,2025-12-12,20,10,0,10,10,2025-12-05,No,synthetic_stock_and_policy
+P005,Office Keyboard,AUS-01,0,product_unit,0.709,1.114,11,2025-12-11,9,3,5,1,1,2025-12-04,No,synthetic_stock_and_policy
+P005,Office Keyboard,CHI-01,10,product_unit,0.34,0.583,12,2025-12-12,0,0,0,10,10,2025-12-05,Yes,synthetic_stock_and_policy
+P005,Office Keyboard,COL-01,0,product_unit,0.223,0.383,12,2025-12-12,20,10,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P005,Office Keyboard,LA-01,0,product_unit,1.232,1.408,8,2025-12-08,3,0,0,1,1,2025-12-01,No,synthetic_stock_and_policy
+P005,Office Keyboard,LON-01,0,product_unit,1.118,1.278,8,2025-12-08,20,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P005,Office Keyboard,MAN-01,0,product_unit,0.583,0.916,11,2025-12-11,20,10,0,10,10,2025-12-04,No,synthetic_stock_and_policy
+P005,Office Keyboard,MUC-01,0,product_unit,1.027,1.761,12,2025-12-12,5,0,0,5,5,2025-12-05,No,synthetic_stock_and_policy
+P005,Office Keyboard,NYC-01,0,product_unit,1.097,1.724,11,2025-12-11,9,0,0,1,1,2025-12-04,No,synthetic_stock_and_policy
+P005,Office Keyboard,PAR-01,0,product_unit,1.034,1.329,9,2025-12-09,5,5,5,5,5,2025-12-02,No,synthetic_stock_and_policy
+P005,Office Keyboard,SYD-01,20,product_unit,0.56,0.879,11,2025-12-11,0,0,10,10,10,2025-12-04,Yes,synthetic_stock_and_policy
+P005,Office Keyboard,TOR-01,0,product_unit,0.661,0.85,9,2025-12-09,16,8,1,1,1,2025-12-02,No,synthetic_stock_and_policy
+P005,Office Keyboard,VAN-01,0,product_unit,0.576,0.658,8,2025-12-08,10,0,0,10,10,2025-12-01,No,synthetic_stock_and_policy
+P006,Precision Mouse,AUS-01,0,product_unit,0.881,1.636,13,2025-12-13,20,10,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P006,Precision Mouse,CHI-01,0,product_unit,0.757,1.081,10,2025-12-10,5,5,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P006,Precision Mouse,COL-01,0,product_unit,0.657,0.845,9,2025-12-09,21,0,2,1,1,2025-12-02,No,synthetic_stock_and_policy
+P006,Precision Mouse,LA-01,5,product_unit,1.105,1.894,12,2025-12-12,5,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P006,Precision Mouse,LON-01,20,product_unit,0.949,1.899,14,2025-12-14,0,0,10,10,10,2025-12-07,Yes,synthetic_stock_and_policy
+P006,Precision Mouse,MAN-01,10,product_unit,0.533,0.685,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P006,Precision Mouse,MUC-01,0,product_unit,0.491,0.561,8,2025-12-08,20,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P006,Precision Mouse,NYC-01,5,product_unit,1.819,3.377,13,2025-12-13,5,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P006,Precision Mouse,PAR-01,0,product_unit,0.809,1.041,9,2025-12-09,10,10,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P006,Precision Mouse,SYD-01,5,product_unit,0.875,1.75,14,2025-12-14,0,0,3,1,1,2025-12-07,Yes,synthetic_stock_and_policy
+P006,Precision Mouse,TOR-01,0,product_unit,0.82,1.405,12,2025-12-12,10,0,5,1,1,2025-12-05,No,synthetic_stock_and_policy
+P006,Precision Mouse,VAN-01,0,product_unit,0.704,1.006,10,2025-12-10,10,10,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,AUS-01,10,product_unit,0.818,1.052,9,2025-12-09,0,0,0,10,10,2025-12-02,Yes,synthetic_stock_and_policy
+P007,NoiseCancel Headset,CHI-01,0,product_unit,0.429,0.796,13,2025-12-13,20,10,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,COL-01,0,product_unit,1.085,2.17,14,2025-12-14,10,10,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,LA-01,10,product_unit,1.235,1.764,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,LON-01,0,product_unit,0.974,1.947,14,2025-12-14,10,10,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,MAN-01,0,product_unit,0.333,0.667,14,2025-12-14,15,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,MUC-01,0,product_unit,0.528,1.056,14,2025-12-14,20,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,NYC-01,0,product_unit,1.073,1.533,10,2025-12-10,10,10,0,10,10,2025-12-03,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,PAR-01,0,product_unit,0.814,0.931,8,2025-12-08,0,9,0,1,1,2025-12-01,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,SYD-01,0,product_unit,0.39,0.446,8,2025-12-08,0,4,1,1,1,2025-12-01,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,TOR-01,0,product_unit,0.571,0.815,10,2025-12-10,20,0,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P007,NoiseCancel Headset,VAN-01,1,product_unit,0.359,0.564,11,2025-12-11,0,0,0,1,1,2025-12-04,Yes,synthetic_stock_and_policy
+P008,SmartDock USB-C,AUS-01,5,product_unit,0.616,1.144,13,2025-12-13,5,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,CHI-01,1,product_unit,0.426,0.852,14,2025-12-14,0,2,2,1,1,2025-12-07,Yes,synthetic_stock_and_policy
+P008,SmartDock USB-C,COL-01,0,product_unit,0.174,0.224,9,2025-12-09,18,3,3,1,1,2025-12-02,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,LA-01,0,product_unit,1.147,1.311,8,2025-12-08,10,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,LON-01,0,product_unit,0.604,0.949,11,2025-12-11,10,10,0,10,10,2025-12-04,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,MAN-01,10,product_unit,0.364,0.519,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,MUC-01,1,product_unit,0.583,0.833,10,2025-12-10,0,5,5,1,1,2025-12-03,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,NYC-01,0,product_unit,0.853,1.706,14,2025-12-14,5,5,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,PAR-01,0,product_unit,0.811,1.622,14,2025-12-14,10,0,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,SYD-01,0,product_unit,0.294,0.42,10,2025-12-10,0,10,0,10,10,2025-12-03,Yes,synthetic_stock_and_policy
+P008,SmartDock USB-C,TOR-01,0,product_unit,0.443,0.632,10,2025-12-10,5,5,5,1,1,2025-12-03,No,synthetic_stock_and_policy
+P008,SmartDock USB-C,VAN-01,3,product_unit,0.213,0.244,8,2025-12-08,0,0,2,1,1,2025-12-01,No,synthetic_stock_and_policy
+P009,Office Chair Pro,AUS-01,5,product_unit,0.804,1.034,9,2025-12-09,0,0,0,5,5,2025-12-02,Yes,synthetic_stock_and_policy
+P009,Office Chair Pro,CHI-01,1,product_unit,0.343,0.54,11,2025-12-11,0,0,0,1,1,2025-12-04,Yes,synthetic_stock_and_policy
+P009,Office Chair Pro,COL-01,0,product_unit,0.203,0.232,8,2025-12-08,10,0,0,10,10,2025-12-01,No,synthetic_stock_and_policy
+P009,Office Chair Pro,LA-01,0,product_unit,0.584,1.001,12,2025-12-12,15,0,0,5,5,2025-12-05,No,synthetic_stock_and_policy
+P009,Office Chair Pro,LON-01,0,product_unit,0.184,0.21,8,2025-12-08,10,10,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P009,Office Chair Pro,MAN-01,0,product_unit,0.546,0.702,9,2025-12-09,0,10,0,1,1,2025-12-02,Yes,synthetic_stock_and_policy
+P009,Office Chair Pro,MUC-01,0,product_unit,0.531,1.061,14,2025-12-14,15,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P009,Office Chair Pro,NYC-01,0,product_unit,0.749,1.069,10,2025-12-10,15,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P009,Office Chair Pro,PAR-01,0,product_unit,0.472,0.54,8,2025-12-08,15,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P009,Office Chair Pro,SYD-01,10,product_unit,0.243,0.486,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P009,Office Chair Pro,TOR-01,0,product_unit,0.311,0.488,11,2025-12-11,4,2,2,1,1,2025-12-04,No,synthetic_stock_and_policy
+P009,Office Chair Pro,VAN-01,0,product_unit,0.368,0.578,11,2025-12-11,20,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P010,Standing Desk,AUS-01,2,product_unit,0.773,1.325,12,2025-12-12,0,5,5,1,1,2025-12-05,Yes,synthetic_stock_and_policy
+P010,Standing Desk,CHI-01,0,product_unit,0.5,0.786,11,2025-12-11,20,0,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P010,Standing Desk,COL-01,10,product_unit,0.186,0.239,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P010,Standing Desk,LA-01,0,product_unit,0.392,0.561,10,2025-12-10,10,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P010,Standing Desk,LON-01,10,product_unit,0.337,0.433,9,2025-12-09,0,0,5,5,5,2025-12-02,Yes,synthetic_stock_and_policy
+P010,Standing Desk,MAN-01,0,product_unit,0.288,0.494,12,2025-12-12,20,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P010,Standing Desk,MUC-01,0,product_unit,0.639,1.278,14,2025-12-14,3,5,3,1,1,2025-12-07,No,synthetic_stock_and_policy
+P010,Standing Desk,NYC-01,0,product_unit,0.402,0.516,9,2025-12-09,10,10,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P010,Standing Desk,PAR-01,0,product_unit,0.244,0.488,14,2025-12-14,4,0,1,1,1,2025-12-07,No,synthetic_stock_and_policy
+P010,Standing Desk,SYD-01,0,product_unit,0.172,0.294,12,2025-12-12,10,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P010,Standing Desk,TOR-01,0,product_unit,0.314,0.539,12,2025-12-12,20,10,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P010,Standing Desk,VAN-01,5,product_unit,0.195,0.223,8,2025-12-08,5,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P011,Meeting Table,AUS-01,0,product_unit,0.367,0.681,13,2025-12-13,2,2,2,1,1,2025-12-06,No,synthetic_stock_and_policy
+P011,Meeting Table,CHI-01,0,product_unit,0.113,0.211,13,2025-12-13,4,0,2,1,1,2025-12-06,No,synthetic_stock_and_policy
+P011,Meeting Table,COL-01,0,product_unit,0.071,0.081,8,2025-12-08,5,10,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P011,Meeting Table,LA-01,0,product_unit,0.229,0.426,13,2025-12-13,3,0,0,1,1,2025-12-06,No,synthetic_stock_and_policy
+P011,Meeting Table,LON-01,10,product_unit,0.302,0.604,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P011,Meeting Table,MAN-01,0,product_unit,0.056,0.064,8,2025-12-08,7,0,4,1,1,2025-12-01,No,synthetic_stock_and_policy
+P011,Meeting Table,MUC-01,0,product_unit,0.08,0.103,9,2025-12-09,5,3,5,1,1,2025-12-02,No,synthetic_stock_and_policy
+P011,Meeting Table,NYC-01,10,product_unit,0.234,0.468,14,2025-12-14,0,0,5,5,5,2025-12-07,Yes,synthetic_stock_and_policy
+P011,Meeting Table,PAR-01,0,product_unit,0.447,0.511,8,2025-12-08,25,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P011,Meeting Table,SYD-01,0,product_unit,0.155,0.2,9,2025-12-09,5,5,5,5,5,2025-12-02,No,synthetic_stock_and_policy
+P011,Meeting Table,TOR-01,0,product_unit,0.213,0.243,8,2025-12-08,4,0,0,1,1,2025-12-01,No,synthetic_stock_and_policy
+P011,Meeting Table,VAN-01,5,product_unit,0.127,0.181,10,2025-12-10,0,5,5,5,5,2025-12-03,Yes,synthetic_stock_and_policy
+P012,Ergo Footrest,AUS-01,10,product_unit,0.695,0.993,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P012,Ergo Footrest,CHI-01,0,product_unit,0.53,0.833,11,2025-12-11,8,0,1,1,1,2025-12-04,No,synthetic_stock_and_policy
+P012,Ergo Footrest,COL-01,10,product_unit,0.458,0.654,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P012,Ergo Footrest,LA-01,10,product_unit,0.535,0.994,13,2025-12-13,0,10,10,10,10,2025-12-06,Yes,synthetic_stock_and_policy
+P012,Ergo Footrest,LON-01,0,product_unit,0.735,0.944,9,2025-12-09,10,10,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P012,Ergo Footrest,MAN-01,0,product_unit,0.602,0.688,8,2025-12-08,8,4,4,1,1,2025-12-01,No,synthetic_stock_and_policy
+P012,Ergo Footrest,MUC-01,0,product_unit,0.688,1.179,12,2025-12-12,10,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P012,Ergo Footrest,NYC-01,5,product_unit,0.882,1.26,10,2025-12-10,5,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P012,Ergo Footrest,PAR-01,0,product_unit,0.275,0.432,11,2025-12-11,0,5,0,5,5,2025-12-04,Yes,synthetic_stock_and_policy
+P012,Ergo Footrest,SYD-01,5,product_unit,0.506,0.579,8,2025-12-08,0,0,4,1,1,2025-12-01,No,synthetic_stock_and_policy
+P012,Ergo Footrest,TOR-01,0,product_unit,0.265,0.341,9,2025-12-09,15,0,0,5,5,2025-12-02,No,synthetic_stock_and_policy
+P012,Ergo Footrest,VAN-01,0,product_unit,0.445,0.573,9,2025-12-09,8,8,0,1,1,2025-12-02,No,synthetic_stock_and_policy
+P013,Desk Lamp,AUS-01,0,product_unit,1.094,1.719,11,2025-12-11,10,0,0,5,5,2025-12-04,No,synthetic_stock_and_policy
+P013,Desk Lamp,CHI-01,0,product_unit,0.361,0.619,12,2025-12-12,8,4,4,1,1,2025-12-05,No,synthetic_stock_and_policy
+P013,Desk Lamp,COL-01,5,product_unit,0.824,0.941,8,2025-12-08,5,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P013,Desk Lamp,LA-01,8,product_unit,0.885,1.769,14,2025-12-14,0,0,6,1,1,2025-12-07,Yes,synthetic_stock_and_policy
+P013,Desk Lamp,LON-01,5,product_unit,0.72,0.823,8,2025-12-08,5,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P013,Desk Lamp,MAN-01,5,product_unit,0.427,0.671,11,2025-12-11,0,0,0,5,5,2025-12-04,Yes,synthetic_stock_and_policy
+P013,Desk Lamp,MUC-01,10,product_unit,0.414,0.474,8,2025-12-08,0,10,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P013,Desk Lamp,NYC-01,0,product_unit,0.617,1.058,12,2025-12-12,10,10,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P013,Desk Lamp,PAR-01,0,product_unit,0.49,0.84,12,2025-12-12,20,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P013,Desk Lamp,SYD-01,10,product_unit,0.304,0.347,8,2025-12-08,0,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P013,Desk Lamp,TOR-01,0,product_unit,0.659,1.036,11,2025-12-11,10,0,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P013,Desk Lamp,VAN-01,4,product_unit,0.197,0.366,13,2025-12-13,0,0,3,1,1,2025-12-06,Yes,synthetic_stock_and_policy
+P014,Filing Cabinet,AUS-01,0,product_unit,0.56,1.12,14,2025-12-14,5,5,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P014,Filing Cabinet,CHI-01,0,product_unit,0.224,0.288,9,2025-12-09,10,0,5,5,5,2025-12-02,No,synthetic_stock_and_policy
+P014,Filing Cabinet,COL-01,3,product_unit,0.466,0.665,10,2025-12-10,0,0,2,1,1,2025-12-03,Yes,synthetic_stock_and_policy
+P014,Filing Cabinet,LA-01,0,product_unit,0.752,0.967,9,2025-12-09,20,0,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P014,Filing Cabinet,LON-01,10,product_unit,0.656,1.03,11,2025-12-11,10,0,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P014,Filing Cabinet,MAN-01,5,product_unit,0.37,0.528,10,2025-12-10,5,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P014,Filing Cabinet,MUC-01,0,product_unit,0.41,0.586,10,2025-12-10,5,0,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P014,Filing Cabinet,NYC-01,0,product_unit,0.738,1.371,13,2025-12-13,15,8,4,1,1,2025-12-06,No,synthetic_stock_and_policy
+P014,Filing Cabinet,PAR-01,0,product_unit,0.302,0.561,13,2025-12-13,10,10,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P014,Filing Cabinet,SYD-01,10,product_unit,0.224,0.448,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P014,Filing Cabinet,TOR-01,3,product_unit,0.627,0.985,11,2025-12-11,3,0,5,1,1,2025-12-04,No,synthetic_stock_and_policy
+P014,Filing Cabinet,VAN-01,0,product_unit,0.349,0.649,13,2025-12-13,15,0,0,5,5,2025-12-06,No,synthetic_stock_and_policy
+P015,Printer Plus,AUS-01,0,product_unit,0.344,0.639,13,2025-12-13,10,10,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P015,Printer Plus,CHI-01,5,product_unit,0.263,0.488,13,2025-12-13,0,0,4,1,1,2025-12-06,Yes,synthetic_stock_and_policy
+P015,Printer Plus,COL-01,6,product_unit,0.163,0.233,10,2025-12-10,0,0,5,1,1,2025-12-03,Yes,synthetic_stock_and_policy
+P015,Printer Plus,LA-01,0,product_unit,0.34,0.632,13,2025-12-13,10,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P015,Printer Plus,LON-01,0,product_unit,0.3,0.386,9,2025-12-09,2,3,2,1,1,2025-12-02,No,synthetic_stock_and_policy
+P015,Printer Plus,MAN-01,10,product_unit,0.286,0.367,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P015,Printer Plus,MUC-01,0,product_unit,0.098,0.14,10,2025-12-10,5,0,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P015,Printer Plus,NYC-01,0,product_unit,0.347,0.694,14,2025-12-14,10,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P015,Printer Plus,PAR-01,0,product_unit,0.417,0.476,8,2025-12-08,10,10,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P015,Printer Plus,SYD-01,0,product_unit,0.146,0.188,9,2025-12-09,2,0,1,1,1,2025-12-02,No,synthetic_stock_and_policy
+P015,Printer Plus,TOR-01,0,product_unit,0.31,0.619,14,2025-12-14,5,0,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P015,Printer Plus,VAN-01,10,product_unit,0.195,0.362,13,2025-12-13,10,0,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P016,Laser Toner,AUS-01,2,product_unit,0.759,1.301,12,2025-12-12,0,2,2,1,1,2025-12-05,Yes,synthetic_stock_and_policy
+P016,Laser Toner,CHI-01,0,product_unit,0.871,1.742,14,2025-12-14,5,5,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P016,Laser Toner,COL-01,0,product_unit,0.211,0.361,12,2025-12-12,10,10,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P016,Laser Toner,LA-01,0,product_unit,0.851,1.703,14,2025-12-14,25,0,10,5,5,2025-12-07,No,synthetic_stock_and_policy
+P016,Laser Toner,LON-01,0,product_unit,1.139,2.277,14,2025-12-14,19,0,2,1,1,2025-12-07,No,synthetic_stock_and_policy
+P016,Laser Toner,MAN-01,0,product_unit,0.889,1.777,14,2025-12-14,5,5,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P016,Laser Toner,MUC-01,0,product_unit,0.864,1.604,13,2025-12-13,6,0,0,1,1,2025-12-06,No,synthetic_stock_and_policy
+P016,Laser Toner,NYC-01,0,product_unit,1.333,1.524,8,2025-12-08,15,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P016,Laser Toner,PAR-01,10,product_unit,0.744,1.063,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P016,Laser Toner,SYD-01,0,product_unit,0.811,1.159,10,2025-12-10,10,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P016,Laser Toner,TOR-01,0,product_unit,0.755,1.51,14,2025-12-14,5,0,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P016,Laser Toner,VAN-01,0,product_unit,0.641,1.191,13,2025-12-13,10,10,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P017,Copy Paper Box,AUS-01,0,product_unit,0.605,1.209,14,2025-12-14,20,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P017,Copy Paper Box,CHI-01,0,product_unit,1.139,1.302,8,2025-12-08,20,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P017,Copy Paper Box,COL-01,0,product_unit,0.366,0.47,9,2025-12-09,19,10,5,1,1,2025-12-02,No,synthetic_stock_and_policy
+P017,Copy Paper Box,LA-01,3,product_unit,1.86,2.126,8,2025-12-08,4,0,4,1,1,2025-12-01,No,synthetic_stock_and_policy
+P017,Copy Paper Box,LON-01,10,product_unit,0.873,1.247,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P017,Copy Paper Box,MAN-01,10,product_unit,0.501,0.859,12,2025-12-12,0,10,10,10,10,2025-12-05,Yes,synthetic_stock_and_policy
+P017,Copy Paper Box,MUC-01,0,product_unit,0.768,0.987,9,2025-12-09,10,10,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P017,Copy Paper Box,NYC-01,0,product_unit,2.089,4.177,14,2025-12-14,5,3,3,1,1,2025-12-07,No,synthetic_stock_and_policy
+P017,Copy Paper Box,PAR-01,10,product_unit,0.781,1.116,10,2025-12-10,0,0,0,10,10,2025-12-03,Yes,synthetic_stock_and_policy
+P017,Copy Paper Box,SYD-01,10,product_unit,0.551,1.024,13,2025-12-13,10,0,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P017,Copy Paper Box,TOR-01,10,product_unit,1.072,1.991,13,2025-12-13,0,0,5,5,5,2025-12-06,Yes,synthetic_stock_and_policy
+P017,Copy Paper Box,VAN-01,0,product_unit,0.671,1.342,14,2025-12-14,20,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P018,Premium Pens,AUS-01,0,product_unit,1.385,1.781,9,2025-12-09,20,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P018,Premium Pens,CHI-01,0,product_unit,0.706,1.11,11,2025-12-11,10,0,0,10,10,2025-12-04,No,synthetic_stock_and_policy
+P018,Premium Pens,COL-01,0,product_unit,0.69,1.084,11,2025-12-11,20,0,3,1,1,2025-12-04,No,synthetic_stock_and_policy
+P018,Premium Pens,LA-01,10,product_unit,1.064,1.672,11,2025-12-11,10,0,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P018,Premium Pens,LON-01,0,product_unit,0.921,1.315,10,2025-12-10,20,5,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P018,Premium Pens,MAN-01,20,product_unit,0.668,0.955,10,2025-12-10,0,0,10,10,10,2025-12-03,Yes,synthetic_stock_and_policy
+P018,Premium Pens,MUC-01,0,product_unit,0.392,0.785,14,2025-12-14,10,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P018,Premium Pens,NYC-01,0,product_unit,1.212,2.25,13,2025-12-13,6,12,2,1,1,2025-12-06,No,synthetic_stock_and_policy
+P018,Premium Pens,PAR-01,0,product_unit,0.502,0.861,12,2025-12-12,20,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P018,Premium Pens,SYD-01,5,product_unit,0.46,0.723,11,2025-12-11,5,0,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P018,Premium Pens,TOR-01,5,product_unit,0.847,0.968,8,2025-12-08,5,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P018,Premium Pens,VAN-01,0,product_unit,0.581,0.83,10,2025-12-10,0,10,0,10,10,2025-12-03,Yes,synthetic_stock_and_policy
+P019,Notebook Pack,AUS-01,5,product_unit,1.384,1.582,8,2025-12-08,5,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P019,Notebook Pack,CHI-01,5,product_unit,0.647,0.832,9,2025-12-09,0,0,0,5,5,2025-12-02,Yes,synthetic_stock_and_policy
+P019,Notebook Pack,COL-01,0,product_unit,0.318,0.5,11,2025-12-11,10,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P019,Notebook Pack,LA-01,1,product_unit,1.94,3.602,13,2025-12-13,0,3,0,1,1,2025-12-06,Yes,synthetic_stock_and_policy
+P019,Notebook Pack,LON-01,20,product_unit,0.788,0.9,8,2025-12-08,0,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P019,Notebook Pack,MAN-01,10,product_unit,0.579,0.993,12,2025-12-12,10,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P019,Notebook Pack,MUC-01,0,product_unit,0.511,0.584,8,2025-12-08,19,0,5,1,1,2025-12-01,No,synthetic_stock_and_policy
+P019,Notebook Pack,NYC-01,0,product_unit,1.268,2.355,13,2025-12-13,5,0,0,1,1,2025-12-06,No,synthetic_stock_and_policy
+P019,Notebook Pack,PAR-01,0,product_unit,0.469,0.67,10,2025-12-10,10,10,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P019,Notebook Pack,SYD-01,0,product_unit,0.948,1.084,8,2025-12-08,9,0,2,1,1,2025-12-01,No,synthetic_stock_and_policy
+P019,Notebook Pack,TOR-01,0,product_unit,0.992,1.418,10,2025-12-10,20,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P019,Notebook Pack,VAN-01,0,product_unit,0.288,0.494,12,2025-12-12,5,10,10,5,5,2025-12-05,No,synthetic_stock_and_policy
+P020,Presentation Kit,AUS-01,0,product_unit,0.551,0.945,12,2025-12-12,5,5,3,1,1,2025-12-05,No,synthetic_stock_and_policy
+P020,Presentation Kit,CHI-01,10,product_unit,0.302,0.345,8,2025-12-08,10,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P020,Presentation Kit,COL-01,0,product_unit,0.268,0.536,14,2025-12-14,10,10,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P020,Presentation Kit,LA-01,1,product_unit,0.353,0.504,10,2025-12-10,3,0,3,1,1,2025-12-03,No,synthetic_stock_and_policy
+P020,Presentation Kit,LON-01,0,product_unit,0.371,0.741,14,2025-12-14,20,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P020,Presentation Kit,MAN-01,0,product_unit,0.426,0.487,8,2025-12-08,4,4,4,1,1,2025-12-01,No,synthetic_stock_and_policy
+P020,Presentation Kit,MUC-01,5,product_unit,0.389,0.722,13,2025-12-13,5,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P020,Presentation Kit,NYC-01,10,product_unit,0.696,1.391,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P020,Presentation Kit,PAR-01,0,product_unit,0.456,0.782,12,2025-12-12,10,10,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P020,Presentation Kit,SYD-01,10,product_unit,0.177,0.355,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P020,Presentation Kit,TOR-01,10,product_unit,0.244,0.314,9,2025-12-09,10,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P020,Presentation Kit,VAN-01,0,product_unit,0.483,0.828,12,2025-12-12,9,9,2,1,1,2025-12-05,No,synthetic_stock_and_policy
+P021,Coffee Machine,AUS-01,0,product_unit,0.493,0.634,9,2025-12-09,10,0,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P021,Coffee Machine,CHI-01,0,product_unit,0.604,1.209,14,2025-12-14,5,5,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P021,Coffee Machine,COL-01,5,product_unit,0.444,0.761,12,2025-12-12,5,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P021,Coffee Machine,LA-01,0,product_unit,0.421,0.783,13,2025-12-13,20,0,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P021,Coffee Machine,LON-01,2,product_unit,0.493,0.704,10,2025-12-10,0,0,1,1,1,2025-12-03,Yes,synthetic_stock_and_policy
+P021,Coffee Machine,MAN-01,0,product_unit,0.211,0.241,8,2025-12-08,10,10,0,10,10,2025-12-01,No,synthetic_stock_and_policy
+P021,Coffee Machine,MUC-01,0,product_unit,0.256,0.293,8,2025-12-08,20,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P021,Coffee Machine,NYC-01,10,product_unit,0.431,0.861,14,2025-12-14,10,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P021,Coffee Machine,PAR-01,0,product_unit,0.272,0.427,11,2025-12-11,10,5,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P021,Coffee Machine,SYD-01,0,product_unit,0.2,0.371,13,2025-12-13,0,3,0,1,1,2025-12-06,Yes,synthetic_stock_and_policy
+P021,Coffee Machine,TOR-01,0,product_unit,0.419,0.539,9,2025-12-09,20,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P021,Coffee Machine,VAN-01,0,product_unit,0.274,0.352,9,2025-12-09,20,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P022,Air Purifier,AUS-01,0,product_unit,0.398,0.455,8,2025-12-08,10,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P022,Air Purifier,CHI-01,0,product_unit,0.117,0.201,12,2025-12-12,5,5,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P022,Air Purifier,COL-01,0,product_unit,0.176,0.277,11,2025-12-11,8,8,1,1,1,2025-12-04,No,synthetic_stock_and_policy
+P022,Air Purifier,LA-01,0,product_unit,0.364,0.676,13,2025-12-13,15,5,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P022,Air Purifier,LON-01,0,product_unit,0.076,0.086,8,2025-12-08,10,0,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P022,Air Purifier,MAN-01,2,product_unit,0.112,0.177,11,2025-12-11,0,0,1,1,1,2025-12-04,Yes,synthetic_stock_and_policy
+P022,Air Purifier,MUC-01,0,product_unit,0.16,0.229,10,2025-12-10,5,10,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P022,Air Purifier,NYC-01,0,product_unit,0.19,0.352,13,2025-12-13,4,0,1,1,1,2025-12-06,No,synthetic_stock_and_policy
+P022,Air Purifier,PAR-01,0,product_unit,0.528,0.83,11,2025-12-11,20,10,0,5,5,2025-12-04,No,synthetic_stock_and_policy
+P022,Air Purifier,SYD-01,5,product_unit,0.106,0.212,14,2025-12-14,5,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P022,Air Purifier,TOR-01,10,product_unit,0.191,0.327,12,2025-12-12,10,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P022,Air Purifier,VAN-01,1,product_unit,0.13,0.186,10,2025-12-10,2,2,4,1,1,2025-12-03,No,synthetic_stock_and_policy
+P023,Portable Heater,AUS-01,0,product_unit,0.69,1.084,11,2025-12-11,20,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P023,Portable Heater,CHI-01,0,product_unit,0.61,1.22,14,2025-12-14,5,5,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P023,Portable Heater,COL-01,0,product_unit,0.646,1.292,14,2025-12-14,0,9,5,1,1,2025-12-07,Yes,synthetic_stock_and_policy
+P023,Portable Heater,LA-01,0,product_unit,0.626,1.162,13,2025-12-13,3,0,0,1,1,2025-12-06,No,synthetic_stock_and_policy
+P023,Portable Heater,LON-01,0,product_unit,0.734,1.048,10,2025-12-10,4,0,1,1,1,2025-12-03,No,synthetic_stock_and_policy
+P023,Portable Heater,MAN-01,0,product_unit,0.318,0.5,11,2025-12-11,5,5,0,5,5,2025-12-04,No,synthetic_stock_and_policy
+P023,Portable Heater,MUC-01,0,product_unit,0.18,0.361,14,2025-12-14,10,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P023,Portable Heater,NYC-01,0,product_unit,0.509,0.946,13,2025-12-13,4,0,1,1,1,2025-12-06,No,synthetic_stock_and_policy
+P023,Portable Heater,PAR-01,0,product_unit,0.252,0.503,14,2025-12-14,7,0,0,1,1,2025-12-07,No,synthetic_stock_and_policy
+P023,Portable Heater,SYD-01,0,product_unit,0.462,0.923,14,2025-12-14,10,0,0,5,5,2025-12-07,No,synthetic_stock_and_policy
+P023,Portable Heater,TOR-01,0,product_unit,0.448,0.704,11,2025-12-11,7,0,2,1,1,2025-12-04,No,synthetic_stock_and_policy
+P023,Portable Heater,VAN-01,0,product_unit,0.247,0.495,14,2025-12-14,10,0,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P024,Desk Fan,AUS-01,0,product_unit,0.974,1.947,14,2025-12-14,10,0,0,10,10,2025-12-07,No,synthetic_stock_and_policy
+P024,Desk Fan,CHI-01,0,product_unit,0.752,1.288,12,2025-12-12,5,10,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P024,Desk Fan,COL-01,20,product_unit,0.238,0.341,10,2025-12-10,0,0,10,10,10,2025-12-03,Yes,synthetic_stock_and_policy
+P024,Desk Fan,LA-01,0,product_unit,0.638,0.911,10,2025-12-10,10,10,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P024,Desk Fan,LON-01,7,product_unit,0.676,1.352,14,2025-12-14,0,0,5,1,1,2025-12-07,Yes,synthetic_stock_and_policy
+P024,Desk Fan,MAN-01,20,product_unit,0.696,0.894,9,2025-12-09,0,0,10,10,10,2025-12-02,Yes,synthetic_stock_and_policy
+P024,Desk Fan,MUC-01,5,product_unit,0.291,0.541,13,2025-12-13,0,0,0,5,5,2025-12-06,Yes,synthetic_stock_and_policy
+P024,Desk Fan,NYC-01,10,product_unit,0.961,1.784,13,2025-12-13,0,0,0,10,10,2025-12-06,Yes,synthetic_stock_and_policy
+P024,Desk Fan,PAR-01,0,product_unit,0.829,1.54,13,2025-12-13,20,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P024,Desk Fan,SYD-01,0,product_unit,0.598,0.94,11,2025-12-11,15,8,4,1,1,2025-12-04,No,synthetic_stock_and_policy
+P024,Desk Fan,TOR-01,0,product_unit,0.255,0.4,11,2025-12-11,20,10,10,10,10,2025-12-04,No,synthetic_stock_and_policy
+P024,Desk Fan,VAN-01,0,product_unit,0.33,0.66,14,2025-12-14,4,0,0,1,1,2025-12-07,No,synthetic_stock_and_policy
+P025,USB Power Hub,AUS-01,0,product_unit,1.51,2.805,13,2025-12-13,10,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P025,USB Power Hub,CHI-01,0,product_unit,0.965,1.655,12,2025-12-12,3,5,0,1,1,2025-12-05,No,synthetic_stock_and_policy
+P025,USB Power Hub,COL-01,0,product_unit,0.524,0.599,8,2025-12-08,19,0,2,1,1,2025-12-01,No,synthetic_stock_and_policy
+P025,USB Power Hub,LA-01,5,product_unit,1.562,2.678,12,2025-12-12,5,0,5,5,5,2025-12-05,No,synthetic_stock_and_policy
+P025,USB Power Hub,LON-01,5,product_unit,0.854,1.587,13,2025-12-13,5,0,5,5,5,2025-12-06,No,synthetic_stock_and_policy
+P025,USB Power Hub,MAN-01,10,product_unit,0.875,1.25,10,2025-12-10,10,0,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P025,USB Power Hub,MUC-01,10,product_unit,0.44,0.879,14,2025-12-14,0,10,10,10,10,2025-12-07,Yes,synthetic_stock_and_policy
+P025,USB Power Hub,NYC-01,0,product_unit,1.407,1.608,8,2025-12-08,20,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P025,USB Power Hub,PAR-01,0,product_unit,0.916,1.569,12,2025-12-12,20,5,0,5,5,2025-12-05,No,synthetic_stock_and_policy
+P025,USB Power Hub,SYD-01,0,product_unit,0.898,1.797,14,2025-12-14,0,10,0,10,10,2025-12-07,Yes,synthetic_stock_and_policy
+P025,USB Power Hub,TOR-01,10,product_unit,0.642,0.734,8,2025-12-08,10,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P025,USB Power Hub,VAN-01,0,product_unit,0.932,1.199,9,2025-12-09,10,10,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P026,Webcam HD,AUS-01,0,product_unit,0.648,1.295,14,2025-12-14,20,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P026,Webcam HD,CHI-01,0,product_unit,0.596,0.937,11,2025-12-11,10,10,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P026,Webcam HD,COL-01,0,product_unit,0.281,0.362,9,2025-12-09,10,0,0,10,10,2025-12-02,No,synthetic_stock_and_policy
+P026,Webcam HD,LA-01,0,product_unit,1.267,2.534,14,2025-12-14,20,0,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P026,Webcam HD,LON-01,1,product_unit,0.857,1.592,13,2025-12-13,0,3,2,1,1,2025-12-06,Yes,synthetic_stock_and_policy
+P026,Webcam HD,MAN-01,0,product_unit,0.744,1.062,10,2025-12-10,5,0,0,5,5,2025-12-03,No,synthetic_stock_and_policy
+P026,Webcam HD,MUC-01,0,product_unit,0.569,0.894,11,2025-12-11,10,0,0,10,10,2025-12-04,No,synthetic_stock_and_policy
+P026,Webcam HD,NYC-01,0,product_unit,0.95,1.358,10,2025-12-10,20,10,10,10,10,2025-12-03,No,synthetic_stock_and_policy
+P026,Webcam HD,PAR-01,3,product_unit,0.597,0.938,11,2025-12-11,2,0,4,1,1,2025-12-04,No,synthetic_stock_and_policy
+P026,Webcam HD,SYD-01,0,product_unit,0.302,0.474,11,2025-12-11,5,5,5,5,5,2025-12-04,No,synthetic_stock_and_policy
+P026,Webcam HD,TOR-01,10,product_unit,0.559,1.039,13,2025-12-13,0,0,5,5,5,2025-12-06,Yes,synthetic_stock_and_policy
+P026,Webcam HD,VAN-01,0,product_unit,0.785,1.01,9,2025-12-09,20,0,10,10,10,2025-12-02,No,synthetic_stock_and_policy
+P027,Security Camera,AUS-01,15,product_unit,0.562,1.043,13,2025-12-13,0,0,10,5,5,2025-12-06,Yes,synthetic_stock_and_policy
+P027,Security Camera,CHI-01,0,product_unit,0.373,0.639,12,2025-12-12,20,0,10,10,10,2025-12-05,No,synthetic_stock_and_policy
+P027,Security Camera,COL-01,5,product_unit,0.685,1.371,14,2025-12-14,5,0,5,5,5,2025-12-07,No,synthetic_stock_and_policy
+P027,Security Camera,LA-01,0,product_unit,0.759,1.193,11,2025-12-11,5,5,0,5,5,2025-12-04,No,synthetic_stock_and_policy
+P027,Security Camera,LON-01,0,product_unit,0.55,0.786,10,2025-12-10,4,0,0,1,1,2025-12-03,No,synthetic_stock_and_policy
+P027,Security Camera,MAN-01,5,product_unit,0.572,0.817,10,2025-12-10,5,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P027,Security Camera,MUC-01,0,product_unit,0.453,0.713,11,2025-12-11,24,0,3,1,1,2025-12-04,No,synthetic_stock_and_policy
+P027,Security Camera,NYC-01,0,product_unit,1.26,2.519,14,2025-12-14,30,10,10,10,10,2025-12-07,No,synthetic_stock_and_policy
+P027,Security Camera,PAR-01,20,product_unit,0.194,0.222,8,2025-12-08,0,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy
+P027,Security Camera,SYD-01,5,product_unit,0.451,0.644,10,2025-12-10,0,5,5,5,5,2025-12-03,Yes,synthetic_stock_and_policy
+P027,Security Camera,TOR-01,20,product_unit,0.313,0.58,13,2025-12-13,0,0,10,10,10,2025-12-06,Yes,synthetic_stock_and_policy
+P027,Security Camera,VAN-01,0,product_unit,0.288,0.453,11,2025-12-11,24,0,2,1,1,2025-12-04,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,AUS-01,0,product_unit,0.619,1.15,13,2025-12-13,14,0,4,1,1,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,CHI-01,0,product_unit,0.645,1.199,13,2025-12-13,20,0,10,10,10,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,COL-01,0,product_unit,0.459,0.591,9,2025-12-09,0,10,2,1,1,2025-12-02,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,LA-01,5,product_unit,1.084,1.549,10,2025-12-10,5,0,5,5,5,2025-12-03,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,LON-01,0,product_unit,0.599,1.112,13,2025-12-13,9,3,5,1,1,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,MAN-01,0,product_unit,0.742,0.848,8,2025-12-08,0,4,0,1,1,2025-12-01,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,MUC-01,0,product_unit,0.593,0.677,8,2025-12-08,5,5,5,5,5,2025-12-01,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,NYC-01,3,product_unit,1.101,2.044,13,2025-12-13,5,0,5,1,1,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,PAR-01,0,product_unit,0.621,0.798,9,2025-12-09,0,5,0,5,5,2025-12-02,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,SYD-01,0,product_unit,0.353,0.655,13,2025-12-13,10,0,0,5,5,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,TOR-01,0,product_unit,0.968,1.797,13,2025-12-13,2,4,2,1,1,2025-12-06,No,synthetic_stock_and_policy
+P028,Backup Drive 2TB,VAN-01,10,product_unit,0.297,0.339,8,2025-12-08,10,0,10,10,10,2025-12-01,No,synthetic_stock_and_policy

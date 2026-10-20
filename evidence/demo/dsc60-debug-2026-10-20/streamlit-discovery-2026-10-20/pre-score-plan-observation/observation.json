@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-20T18:07:45.302909+00:00",
+  "meaning": "Early retained planning bytes during the live call; command chronology is independently inspected. Not a final model/forecast freeze or holdout acceptance.",
+  "artifacts": [
+    {
+      "source": "artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/output/task_refinement.json",
+      "retained": "evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/pre-score-plan-observation/task_refinement.json",
+      "bytes": 5794,
+      "sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4"
+    },
+    {
+      "source": "artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/output/evaluation_plan.json",
+      "retained": "evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/pre-score-plan-observation/evaluation_plan.json",
+      "bytes": 4978,
+      "sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb"
+    }
+  ]
+}

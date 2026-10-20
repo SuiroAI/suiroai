@@ -1,0 +1,29 @@
+{
+  "scope": "Exact generated code and subsequent source patch extracted from retained native fileChange events; no producer execution or raw RPC/customer-row copy. Original code was not present in producer initial_implementation directory.",
+  "source_log": "artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/native/native-rpc.jsonl",
+  "source_log_sha256_at_extraction": "3219e9f4d3845f10c46732034b086c0af047ffde5e0f10874977d1df09e2f11f",
+  "note": "Native call completed. Exact source event lines/item IDs/times and code/patch hashes retained; raw RPC/customer rows not copied.",
+  "events": [
+    {
+      "file": "initial-analysis-from-native.py",
+      "sha256": "dd152dac56eb1a32f19528cd866b12a75e75f2e98c9e6cca148f4e7c4109bab1",
+      "source_log_line": 308,
+      "monotonic": 674465.520505416,
+      "native_item_id": "exec-7ba0c7da-e5c7-486e-b06e-9b45048ed61c",
+      "method": "item/completed",
+      "change_kind": "add",
+      "source_path": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/output/analysis.py"
+    },
+    {
+      "file": "missingness-correction.patch",
+      "sha256": "ff788a8ebbf08215ecce11a2df2294ce7433ceeb0d809ce71cd1684eaf1bcafa",
+      "source_log_line": 435,
+      "monotonic": 674519.927090166,
+      "native_item_id": "exec-8dddafc9-01bb-48be-ae8d-59d77dc4ee54",
+      "method": "item/completed",
+      "change_kind": "update",
+      "source_path": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/output/analysis.py"
+    }
+  ],
+  "source_log_sha256_after_native_completion": "35dc70b25b3404042da385e26f3d92be8effc14ab0a5655dfa68ec8f70a04525"
+}

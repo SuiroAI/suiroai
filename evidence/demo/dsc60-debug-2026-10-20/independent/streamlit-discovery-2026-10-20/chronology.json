@@ -1,0 +1,60 @@
+{
+  "scope": "Retained tool-event chronology; no generated script execution by reviewer. v2 explicitly consolidated after scores, with prospective correction note retained before corrected rerun.",
+  "events": [
+    {
+      "event": "successful_command_completion",
+      "script": "prepare.py",
+      "monotonic": 674371.350382875,
+      "exit_code": 0,
+      "native_item_id": "exec-ac2bbe4a-ab88-4e5d-a95b-f15760a0b9e4"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "analysis.py",
+      "monotonic": 674478.422851333,
+      "exit_code": 0,
+      "native_item_id": "exec-9040993c-d8ac-4577-be4c-f3741fb5dbca"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "preserve_initial.py",
+      "monotonic": 674520.035984375,
+      "exit_code": 0,
+      "native_item_id": "exec-9cf285ca-6c2a-4ec2-8e52-e8086935cb24"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "analysis.py",
+      "monotonic": 674531.837773958,
+      "exit_code": 0,
+      "native_item_id": "exec-1a2f76cd-5cf3-4d05-b0c8-ff6063494965"
+    },
+    {
+      "event": "plan_filechange_completion",
+      "file": "sensitivity_plan.json",
+      "monotonic": 674605.534338125,
+      "native_item_id": "exec-40d7b1e9-c4b1-4d85-8a37-b9ce1819abc4"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "validate.py",
+      "monotonic": 674606.388143375,
+      "exit_code": 0,
+      "native_item_id": "exec-44b25a92-4346-4290-a56a-61a42e593fed"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "validate.py",
+      "monotonic": 674632.490815041,
+      "exit_code": 0,
+      "native_item_id": "exec-8f204779-2ea6-42a5-96f0-14252cbfcf33"
+    },
+    {
+      "event": "successful_command_completion",
+      "script": "finalize_audit.py",
+      "monotonic": 674772.526904,
+      "exit_code": 0,
+      "native_item_id": "exec-ffc7dcb7-508c-4d4a-8028-b4aa13dd0f92"
+    }
+  ]
+}

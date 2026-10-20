@@ -1,0 +1,17 @@
+{
+  "rows_checked": 336,
+  "order_units": 880,
+  "sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+  "common_comparison_targets_and_membership": true,
+  "primary_metrics_recomputed": true,
+  "independent_routine_implementation_matches": true,
+  "all_quantities_independently_recomputed_at_full_precision": true,
+  "reserved_sales_not_used": true,
+  "missing_day_scenario": {
+    "units": 896,
+    "rows_changed": 15,
+    "multiplier_min": 1.2380952380952381,
+    "multiplier_max": 2.044943820224719,
+    "limits": "Exploratory same-rate scenario, not actual missing demand. Full-precision frozen model forecasts used. No forecast reselection."
+  }
+}

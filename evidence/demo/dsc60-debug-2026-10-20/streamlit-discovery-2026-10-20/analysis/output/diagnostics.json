@@ -1,0 +1,108 @@
+{
+  "zero_recorded_contribution_fraction_on_observed_store_days": 0.9430296416250088,
+  "observed_product_store_days": 284060,
+  "store_week_observed_days_distribution": {
+    "1.0": 63,
+    "2.0": 199,
+    "3.0": 423,
+    "4.0": 607,
+    "5.0": 600,
+    "6.0": 413,
+    "7.0": 129
+  },
+  "entirely_unobserved_store_weeks": 14,
+  "seasonality_prior_years": {
+    "2022": {
+      "november_to_september_daily_rate": 1.5138888888888888,
+      "december_to_september_daily_rate": 1.586021505376344
+    },
+    "2023": {
+      "november_to_september_daily_rate": 1.5138339920948616,
+      "december_to_september_daily_rate": 1.4305750350631137
+    },
+    "2024": {
+      "november_to_september_daily_rate": 1.6597325408618129,
+      "december_to_september_daily_rate": 1.4739011647414082
+    }
+  },
+  "complete_week_rows": [
+    {
+      "model": "poisson_calendar",
+      "n": 252,
+      "mae": 1.218310840627623,
+      "bias": -0.17117231321732684
+    },
+    {
+      "model": "recent13",
+      "n": 252,
+      "mae": 1.1553724053724053,
+      "bias": -0.38125763125763124
+    },
+    {
+      "model": "ses",
+      "n": 252,
+      "mae": 1.1741854247597299,
+      "bias": -0.3302661334139478
+    },
+    {
+      "model": "shrink26",
+      "n": 252,
+      "mae": 1.1500009238027908,
+      "bias": -0.39255189255189255
+    }
+  ],
+  "bootstrap_origin_cluster_95pct_MAE_difference_selected_minus_baseline": [
+    -0.02771241155890514,
+    -0.013006141339273474
+  ],
+  "bootstrap_limits": "Only seven overlapping development origins; interval reflects this data and selection is already made on it. Not independent evidence of superiority.",
+  "monthly_target_units": {
+    "2022-01": 441,
+    "2022-02": 531,
+    "2022-03": 599,
+    "2022-04": 631,
+    "2022-05": 739,
+    "2022-06": 716,
+    "2022-07": 602,
+    "2022-08": 607,
+    "2022-09": 648,
+    "2022-10": 783,
+    "2022-11": 981,
+    "2022-12": 1062,
+    "2023-01": 594,
+    "2023-02": 554,
+    "2023-03": 822,
+    "2023-04": 716,
+    "2023-05": 780,
+    "2023-06": 656,
+    "2023-07": 721,
+    "2023-08": 692,
+    "2023-09": 759,
+    "2023-10": 706,
+    "2023-11": 1149,
+    "2023-12": 1122,
+    "2024-01": 536,
+    "2024-02": 584,
+    "2024-03": 665,
+    "2024-04": 705,
+    "2024-05": 727,
+    "2024-06": 628,
+    "2024-07": 669,
+    "2024-08": 558,
+    "2024-09": 673,
+    "2024-10": 746,
+    "2024-11": 1117,
+    "2024-12": 1025,
+    "2025-01": 626,
+    "2025-02": 762,
+    "2025-03": 802,
+    "2025-04": 776,
+    "2025-05": 771,
+    "2025-06": 742,
+    "2025-07": 792,
+    "2025-08": 737,
+    "2025-09": 729,
+    "2025-10": 961,
+    "2025-11": 1201
+  }
+}

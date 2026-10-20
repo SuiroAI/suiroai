@@ -1,0 +1,69 @@
+{
+  "version": 2,
+  "written_before_candidate_scores": false,
+  "status": "Consolidated correction record, written after corrected development scoring; prospective repair is separately recorded in implementation_correction.json before corrected run.",
+  "previous_development_evidence": "Source-only inspection in inspect_sources.py and inspect_coverage.py, including monthly totals; October-November was already inspected in this project by controller notice.",
+  "target": "Gross positive noncancelled recorded order units, all store-attributed channels; includes processing, shipped, completed, returned. Returned goods needed supply initially; return condition/timing unavailable, so no automatic reuse credit. Invalid nonpositive quantities excluded, not interpreted as usable returns.",
+  "missing_date_rule": "No store-day demand zeros are imputed. A store-day with any source transaction establishes an observed recording day. Product contributions on those days can be zero recorded units. Absent store-days remain unknown, not demand zeros. Weekly/horizon targets sum observed contributions only; an entirely unobserved store-week remains missing. Thus forecasts describe recorded units under similar recording coverage, not uncensored demand or store-open exposure.",
+  "population_rule": "336 supplied current policy/stock pairs. Verify all were observed before first development origin; no historical active-assortment table. This is conditional on the supplied current assortment, not a claim of unbiased historical assortment selection.",
+  "dates": {
+    "origins": [
+      "2025-10-05",
+      "2025-10-12",
+      "2025-10-19",
+      "2025-10-26",
+      "2025-11-02",
+      "2025-11-09",
+      "2025-11-16"
+    ],
+    "training": "Only dates <= each origin. recent13=13 complete weeks, shrink26=26, SES/Poisson=104. Whole aligned Monday-Sunday weeks only; first partial week excluded.",
+    "evaluation": "2025-10-06 through 2025-11-30, depending on horizon",
+    "reserved": "December 2025 never read or scored"
+  },
+  "horizons": {
+    "primary_days": 7,
+    "secondary_days": "Per pair lead plus review, 8-14 days; supplied current policy used as a diagnostic scenario, not known historical policy. Same origins for all methods.",
+    "forecast_shape": "Constant weekly rates within each week; Poisson calendar features evaluated separately for future calendar weeks; partial-week proportional daily allocation."
+  },
+  "baseline": "recent13",
+  "candidates": [
+    "recent13",
+    "ses",
+    "shrink26",
+    "poisson_calendar"
+  ],
+  "candidate_specs": "See task_refinement.json; no adaptive tuning or subsequent candidate search planned.",
+  "primary_metric": {
+    "name": "MAE",
+    "units": "absolute recorded product units per product at store per next-week origin",
+    "weighting": "Equal weight per eligible pair and origin; no price, cost, missing-stock or service weights.",
+    "justification": "Order quantities are in units. Absolute errors remain interpretable and less dominated by rare bulk lines than squared error; symmetric proxy does not establish a preferred under/overstock tradeoff."
+  },
+  "selection_rule": "Lowest pooled next-7-day MAE. Numerical ties within 1e-9 units favor baseline, otherwise candidate order as listed. No claimed business-meaningful threshold. Longer horizon remains a disclosed diagnostic, not a changed primary criterion.",
+  "secondary_diagnostics": [
+    "Coverage-horizon MAE, bias and WAPE",
+    "Per-origin results and October/November stability",
+    "Zero contribution frequency on observed store-days, sparse series strata and complete-store-week subset",
+    "Across-origin paired bootstrap 95% interval for MAE difference, seed 603, 2000 resamples; development uncertainty only",
+    "Exclude processing and exclude returns target sensitivity using same candidates, origins and primary metric, exploratory; do not reselect",
+    "Prior-year seasonal stability; no December 2025",
+    "Deploy baseline and selected forecast order sensitivity with same stock and policy",
+    "Runtime, CPU, peak RSS and array sizes, including prep and fitting/inference"
+  ],
+  "coverage_exclusions": "Entire unobserved store-weeks excluded, not filled. Horizon subtotals with zero observed store-days unknown and excluded identically across models. Also report complete 7-day store coverage subset.",
+  "quantity_rule": "target=coverage forecast + supplied safety; net need=max(0,target-usable stock-known receipts due by coverage end); if positive, ceil(max(minimum,net need)/pack)*pack. Order to cover lead+review. Flag projected stock shortfall before new order arrival; no expedited-order redesign.",
+  "workload": "One bounded 4-method comparison, seven rolling origins, plus prespecified target sensitivities and final fits. CPU only. Measure end-to-end and fit/inference local time, process peak RSS; actual host not assumed 8GB. No paid routine model calls.",
+  "revision_policy": "Retain this plan and scores. Any new candidate comparison requires a prospective versioned plan and is exploratory. No search-until-gain. No reserved outcomes.",
+  "previous_plan": "evaluation_plan.json",
+  "implementation_correction": {
+    "status": "Prospective implementation correction before corrected scores",
+    "reason": "During code review, pooled product/store totals used a fixed calendar-week denominator. Correct pooled means to use observed pair-weeks only, so entirely unobserved store-weeks never implicitly count as zero. Candidate set, baseline, training windows, horizons, metric and selection rule unchanged. Original scores retained in initial_implementation; final corrected outputs supersede them. This is a missingness implementation repair, not adaptive candidate discovery.",
+    "changes": "pooled = observed product mean * observed store mean / observed global mean; shrink prior remains 13 weeks.",
+    "previous_evidence_used": "Source coverage check identified 14 entirely unobserved store-weeks across history; code review, not a search for gain.",
+    "results_label": "All scores remain exploratory development evidence; no untouched outcomes."
+  },
+  "changed_choices": [
+    "Observed-only denominators in pooled mean; all candidate specifications, comparison boundaries and selection rule unchanged."
+  ],
+  "follow_on_results": "exploratory development only"
+}

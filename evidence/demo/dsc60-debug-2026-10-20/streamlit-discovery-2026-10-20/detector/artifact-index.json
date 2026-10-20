@@ -1,0 +1,40 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/output/result.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/detector/output/result.json",
+    "bytes": 450,
+    "sha256": "e0d97500d5d3e3cfb39f33506172491567b26153d97a3afc14fa3b6337dc61a5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native/inspection.json",
+    "bytes": 1213794,
+    "sha256": "4c9051f5de05e86595b988b968500154a30ba8e3b76d47d053a540b75e9f505a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native/native-bootstrap.jsonl",
+    "bytes": 2313,
+    "sha256": "16d49408ac584139e658f2de133b803b27ddc79b211277c81dbbe01c865cf86c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native/native-rpc.jsonl",
+    "bytes": 1323515,
+    "sha256": "84d86202f1b9319a7c1dfd4ae39f1487b004f7af53474a85a255d87f5736cd4b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native/native-run.json",
+    "bytes": 1213859,
+    "sha256": "2426157a65cee29ac1789b3faf70168e58039b8358ae325e3aab415920aa476c"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native-trace/call-trace.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/detector/trace/call-trace.json",
+    "bytes": 4841,
+    "sha256": "bf23f3d8bd8018e6a2ed292dfa57021973ef727c349ae4c7eb4615129a0d3de5"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/context/current-process-c590537ef974451bb69dd57d63ad4f89/native-trace/outbound-prompt.txt",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/detector/trace/outbound-prompt.txt",
+    "bytes": 3718,
+    "sha256": "4a6c343ddfd0cdc8778c0c496e3756868dea4db02b1d231df9f5d6b904a91340"
+  }
+]

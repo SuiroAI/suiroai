@@ -1,0 +1,10 @@
+{
+  "status": "found",
+  "summary": "The user wants to decide what to restock in stores next week. Their current procedure is to look at the last few months of sales to decide what to buy. The question explicitly describes this practice, but does not specify a calculation or precise ordering rule.",
+  "evidence": [
+    {
+      "source": "question",
+      "quote": "I usually look at the last few months of sales to decide what to buy."
+    }
+  ]
+}

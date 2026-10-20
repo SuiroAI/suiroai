@@ -1,0 +1,103 @@
+{
+  "format": "dsc60-streamlit-discovery-v1",
+  "source_commit": "3f774f4371dfb87118a2a6b33cdb79b64b1121fb",
+  "started_at": "2026-10-20T18:03:26.301345+00:00",
+  "url": "http://127.0.0.1:8505/",
+  "session_id": "8d99bf86d50541e19a6afa142746809c",
+  "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "mode": "ordinary_autonomous_discovery",
+  "fixed_comparison_contract": null,
+  "review_clicks": 1,
+  "approval_clicks": 1,
+  "status": "analysis_completed",
+  "recording": false,
+  "source_hashes": {
+    "src/suiroai/demo/task.py": "f4744c8219cf1274e8c4f0618622b3066edb51e5f54a0c83f0af8b424c94068b",
+    "src/suiroai/demo/investigation.py": "d85af9a24180a6d19d38519f03e811e791c53779463111df59233cb5c22ad739",
+    "src/suiroai/demo/current_process.py": "584c772fdfd452e22a890f72bc80d5871a234f2e6ae14c087155906d085a64b7",
+    "src/suiroai/demo/service.py": "518e6dcad74c16c42a9ac21af934a676d0822ec4aab4eab9a647b30b07412682",
+    "src/suiroai/demo/app.py": "55423d9390fda791a895a108122b6b76379899f80ad0cf5dd7b712fbd4a4a66b",
+    "src/suiroai/demo/config.py": "b05398c7617518999480062c5065c7bf2b6cf550ab0727ee094bf324530f2be5"
+  },
+  "completed_at": "2026-10-20T18:16:46.278423+00:00",
+  "investigation_attempts": 1,
+  "html_open_clicks": 1,
+  "html_scrolled": true,
+  "returned_to_completed_app": true,
+  "csv_download_clicks": 0,
+  "csv_download_outcome": "Not attempted in this run; prior organization block preserved without bypass",
+  "table_rows": 336,
+  "table_columns": 17,
+  "independent_table_cell_mismatches": 0,
+  "selected_method": "shrink26",
+  "measured_results": {
+    "selected": "shrink26",
+    "primary_mae": {
+      "poisson_calendar": 1.0361210557486769,
+      "recent13": 0.9636402753872634,
+      "ses": 0.9806963480732849,
+      "shrink26": 0.9429402262412767
+    },
+    "relative_MAE_reduction_vs_analytical_baseline": 0.021481095876433542,
+    "positive_orders": 112,
+    "zero_orders": 224,
+    "total_units": 880,
+    "forecast_next_week_units_total": 199.26153846153846,
+    "prearrival_shortfall_flags": 52,
+    "baseline_order_units": 873,
+    "baseline_quantity_differences": 15,
+    "csv_sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "primary_is_development_only": true,
+    "independent_success_gate_ready": false
+  },
+  "routine_workload": {
+    "preparation_seconds": 0.0442112919408828,
+    "fit_seconds": 0.0009865829488262534,
+    "inference_and_order_calculation_seconds": 0.1243796250782907,
+    "end_to_end_including_imports_seconds": 0.42733724997378886,
+    "cpu_seconds_after_imports": 0.17062100000000002,
+    "process_peak_rss_bytes_including_imports_and_preparation": 138428416,
+    "fit_and_inference_peak_memory_conservative_upper_bound_bytes": 138428416,
+    "retained_model_bytes": 2688,
+    "training_array_bytes": 69888,
+    "dependencies": {
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+      "pandas": "2.3.3",
+      "numpy": "2.3.5"
+    },
+    "workload": "26 weeks, 336 series; read 17,406 sales CSV rows, deduplicate to 17,364. Current receipts, stock and policy. No network or model-service calls. Single CPU thread configuration.",
+    "limits": "OS process high-water RSS gives a conservative bound on both fit and inference, including preparation and retained arrays. Run on 128 GiB host, not a machine capped at 8 GB; time will vary. Measured capacity leaves substantial room below 8 GB for OS and other applications. Does not establish arbitrary future scalability.",
+    "cost": "No paid model/API required for routine weekly run. Existing computer plus electricity or hosting still costs money; no applicable local rates or AI-build usage/pricing available."
+  },
+  "performance_success": false,
+  "final_policy_frozen": false,
+  "untouched_holdout_acceptance": false,
+  "calls": [
+    {
+      "stage": "current_process",
+      "archived_trace": "detector/trace/call-trace.json",
+      "prompt_sha256": "4a6c343ddfd0cdc8778c0c496e3756868dea4db02b1d231df9f5d6b904a91340",
+      "outcome": {
+        "outcome": "completed",
+        "error_code": null,
+        "message": null,
+        "thread_id": "01a15a7b-3e26-7523-9e50-eb7015563102",
+        "turn_id": "01a15a7b-4088-72c3-98b3-0d213018a9d0",
+        "terminal_status": "completed"
+      }
+    },
+    {
+      "stage": "investigation",
+      "archived_trace": "analysis/trace/call-trace.json",
+      "prompt_sha256": "7381c56e0931d6f09721a829e12c4522cb64b7eeda6648df557178e17eae2ede",
+      "outcome": {
+        "outcome": "completed",
+        "error_code": null,
+        "message": null,
+        "thread_id": "01a15a7c-0747-7bc2-9a76-583898e89b9f",
+        "turn_id": "01a15a7c-07df-7de3-a3dd-5ac88c8e3ab9",
+        "terminal_status": "completed"
+      }
+    }
+  ]
+}

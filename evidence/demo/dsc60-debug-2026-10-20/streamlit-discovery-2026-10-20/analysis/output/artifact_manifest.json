@@ -1,0 +1,29 @@
+{
+  "purpose": "Reproducibility hashes for development artifacts, not an independent performance-success gate.",
+  "artifacts": {
+    "prepare.py": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9",
+    "analysis.py": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188",
+    "restock_model.py": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e",
+    "validate.py": "6fbef95bf35a0e8a80286882902fc7e46ec6c4d43363669043fba71fbbb05a2f",
+    "evaluation_plan.json": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb",
+    "evaluation_plan_v2.json": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0",
+    "implementation_correction.json": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6",
+    "task_refinement.json": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4",
+    "source_audit.json": "23a28710c643e8090d05c84c15396ac8e266a35e9f891a420f02d7b96c9daf91",
+    "selected_model.npz": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+    "restocking.csv": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "response.md": "60b194e8d7f280e91e4ed4c8a16dbe6da737312c7cafc88580a87aeb9b5ade61",
+    "result.json": "6dee75a2cd8f466307cac6ed0a30cba55785def7e2501f0736afe4e2cbdbae3b",
+    "comparison_summary.csv": "6fb62dc7a0c531a927864612a48da7e346ca2a3d78ede7856c27138b7a3be6d4",
+    "comparison_predictions.csv": "bc00f347f560eda861121905b2995861d481bdd8ffe70ff02eeb9cd75618a4a5",
+    "scores_by_origin.csv": "9869bc2a4a6ab890cc927622b55b7d95e3e7373f19fbc5eda9e1ca291616d216",
+    "diagnostics.json": "e1bdbe7c3c4113bdbfeae486792a6aeaf7a4f40b13204b99a7387b43dbb78779",
+    "workload.json": "b790d8866c6a1020c2d285073e5c184efae80a5a7139b5f2e23bb47b21292cdb",
+    "routine_workload.json": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+    "sensitivity_plan.json": "f3e0b82dbacc16cb47a225d300069b9d59dda35a7b44f878de9054a9141b2dea",
+    "missing_day_sensitivity.csv": "ee71ccede45d06d4bc03eaf074ef264d28b393d9faf736e15e496fcadd794242",
+    "validation.json": "ab9755cf5a8bbf9c78e2b8024f3ab3bf06e9cf396b5ddaa4b265993d84376b60",
+    "internal_audit.md": "92ca31091f6bd80bca17233eb1ac4496ced16cafc27f20ef26e31e7e8e8cd7c0",
+    "analysis.ipynb": "9c329df1635b0bb25fca8e07a869ff6092ea8f517a7c6e28628e26df220f4129"
+  }
+}
