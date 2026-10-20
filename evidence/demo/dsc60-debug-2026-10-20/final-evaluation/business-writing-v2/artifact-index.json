@@ -1,0 +1,39 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/output/business_response.md",
+    "bytes": 2746,
+    "sha256": "faf8e11f6c9affb3899f6077a517cfaae8d3a4c2f6c3a797811436656066103b"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/output/rewrite_result.json",
+    "bytes": 272,
+    "sha256": "68b8918acbcc1bd681ecc4ef364be6e429ec9fb4a02cb1fb7960c9e5df418a5a"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/native/native-bootstrap.jsonl",
+    "bytes": 2322,
+    "sha256": "439e2225ad485a741b4fa795650099cd3c63a29d1023a6e0f7a021c074025fcc"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/native/native-rpc.jsonl",
+    "bytes": 246895,
+    "sha256": "49d2b64247945423f2d44800b089f3a32175b8075106ed79ab7bdcd3062cd7d1"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/native/native-run.json",
+    "bytes": 164963,
+    "sha256": "0b126987e5b951acd7b674aea8a3193035c30c73f76493507dcc1de04690c4e9"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/native-trace/call-trace.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/business-writing-v2/trace/call-trace.json",
+    "bytes": 5999,
+    "sha256": "9cfc3b223cd32d00288a02668d337d6e17e7754d3cf9efff882eb0faeae0ac1e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing-v2/runs/business-response-b99ea044d5dc41e19b1c1af73ccd6b2f/native-trace/outbound-prompt.txt",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/business-writing-v2/trace/outbound-prompt.txt",
+    "bytes": 6596,
+    "sha256": "0ac872f1a962d59d914caeabe4c58df14e4e88233d0a53e3342f3cb08b651e24"
+  }
+]

@@ -20,7 +20,7 @@ from suiroai.integration.native import NativeHost
 from .call_trace import begin_call_trace, finish_call_trace
 
 _CONTEXT = ('measured_results.json', 'comparison_summary.csv', 'evaluation_plan.json',
-            'evaluation_plan_v2.json', 'routine_workload.json')
+            'evaluation_plan_v2.json', 'routine_workload.json', 'task_refinement.json')
 
 
 def _json(value):
@@ -37,6 +37,10 @@ def business_prompt(released: Path, manifest: list[dict], manifest_sha256: str) 
         'Do not seek original sales, reserved outcomes, CSV row data, model files or other workspaces. '
         'Do not fit, select, rerun calculations, change methods or create/modify a restocking list, HTML or model. '
         'Use only supplied measured facts. A manifest hash establishes input identity, not analytical verification.\n'
+        'This explanation is for a busy shop owner, not an audit reviewer. Concentrate on the practical benefit, '
+        'why the chosen approach helps when supported, the measured comparison, and running the delivered routine. '
+        'Historical planning files explain the model; completed measured results take precedence over their old '
+        'evaluation-status statements. Translate supported model descriptions into familiar terms, without model names.\n'
         'Lead with the practical outcome: what the list recommends and what the customer should do first. '
         'Explain how much better the method performed, against which simple baseline and over which period, '
         'only when supplied comparisons support it. Distinguish small development gains from proven business improvements. '
@@ -46,15 +50,22 @@ def business_prompt(released: Path, manifest: list[dict], manifest_sha256: str) 
         'estimating quantities, accounting for stock/incoming deliveries and pack rules when those steps are evidenced. '
         'Give useful plain next steps. Do not invent hours saved, money saved, stock availability or guaranteed sales. '
         'Do not claim automated uploads, scheduled execution, deployment or integrations that are not implemented. '
-        'When supported, explain that adding new monthly data could help monitor/revisit the method; better data or retraining '
-        'may improve results but cannot promise gains.\n'
+        'Complete the MVP explanation with the existing dataset. Do not ask for newer data or make additional data '
+        'a condition of using the result. When supported, suggest practical improvements to existing record keeping '
+        'as optional future work; better records or retraining may help but cannot promise gains.\n'
         'Translate technical caveats into actions. Keep one clear practical sentence warning about synthetic stock/policy '
         'inputs when present. Preserve limitations that materially change purchase decisions, including checking shortages '
-        'before trusting zero orders. Avoid a wall of caveats, repeated disclaimers, metric dumps, raw field names or audit jargon. '
+        'before trusting zero orders. Combine these into one short practical check paragraph. Do not enumerate order '
+        'statuses, duplicate rules, missing-day scoring, bootstrap details or engineering provenance in the customer response. '
+        'Do not claim entirely untouched/independent data. Those audit qualifications stay in retained engineering evidence. '
+        'A brief plain sentence can explain that missing sales/stockout records limit estimates. '
+        'Avoid a wall of caveats, repeated disclaimers, metric dumps, raw field names or audit jargon. '
         'Separate ordinary computer/electricity costs and routine model-service needs from AI-assisted build cost. '
-        'Use supplied routine workload measurements with their limits; never invent timings, prices or charges.\n'
+        'Use supplied routine workload measurements as measured timings that may vary, never as a guarantee. '
+        'Give approximate memory use if useful; do not list test-machine RAM or claim a constrained 8 GB test. '
+        'Never invent timings, prices or charges.\n'
         'Write warm, direct plain English for someone running a retail business. Use enough detail to be useful; '
-        'there is no mandatory 150–250-word cap. Around 350–500 words is fine when useful, shorter when sufficient. '
+        'there is no mandatory 150–250-word cap. Prefer a few connected, useful paragraphs over a long technical report. '
         'Keep essential measured facts accurate; do not add generic trust/verification notices or claim the rewrite is verified. '
         'Do not ask questions or request approval.\n'
         'Write business_response.md in your output workspace and compute its actual SHA-256. '

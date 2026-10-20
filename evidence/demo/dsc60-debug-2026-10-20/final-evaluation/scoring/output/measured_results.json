@@ -1,0 +1,970 @@
+{
+  "format": "dsc60-single-reserved-evaluation-v1",
+  "decimal_precision": 80,
+  "primary_rule": "candidate_absolute_error_sum < baseline_absolute_error_sum; report relative MAE difference, bias, each week, coverage and descriptive uncertainty. No invented5percent threshold or business-value/cost claim.",
+  "models": {
+    "selected": "shrink26",
+    "baseline": "recent13"
+  },
+  "as_of_date": "2025-11-30",
+  "primary": {
+    "possible_cells": 1344,
+    "eligible_cells": 1344,
+    "excluded_cells": 0,
+    "eligible_fraction": "1",
+    "excluded_fraction": "0",
+    "actual_recorded_units_total": "1153",
+    "absolute_error_sums": {
+      "shrink26": "1388.138408311310248208",
+      "recent13": "1446.884615384615386040"
+    },
+    "signed_error_sums_prediction_minus_actual": {
+      "shrink26": "-355.953846153846150076",
+      "recent13": "-258.384615384615376972"
+    },
+    "mae": {
+      "shrink26": "1.0328410776125820299166666666666666666666666666666666666666666666666666666666667",
+      "recent13": "1.0765510531135531146130952380952380952380952380952380952380952380952380952380952"
+    },
+    "bias_mean_prediction_minus_actual": {
+      "shrink26": "-0.26484661172161171880654761904761904761904761904761904761904761904761904761904762",
+      "recent13": "-0.19225045787545786977083333333333333333333333333333333333333333333333333333333333"
+    },
+    "absolute_error_sum_difference_selected_minus_baseline": "-58.746207073305137832",
+    "mae_difference_selected_minus_baseline": "-0.043709975500971084696428571428571428571428571428571428571428571428571428571428571",
+    "signed_relative_difference_selected_over_baseline_minus_one": "-0.040601860334031568678808769324742037165712091874094339120710920465284714611469404",
+    "gain_baseline_minus_selected_over_baseline": "0.040601860334031568678808769324742037165712091874094339120710920465284714611469404",
+    "strictly_lower_selected_error": true,
+    "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+    "observed_days_cell_histogram": {
+      "0": 0,
+      "1": 28,
+      "2": 0,
+      "3": 56,
+      "4": 168,
+      "5": 224,
+      "6": 392,
+      "7": 476
+    }
+  },
+  "per_week": [
+    {
+      "target_start": "2025-12-01",
+      "target_end": "2025-12-07",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "336",
+      "absolute_error_sums": {
+        "shrink26": "392.145309620391350841",
+        "recent13": "409.487179487179487763"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-136.738461538461537519",
+        "recent13": "-112.346153846153844243"
+      },
+      "mae": {
+        "shrink26": "1.1670991357749742584553571428571428571428571428571428571428571428571428571428571",
+        "recent13": "1.2187118437118437135803571428571428571428571428571428571428571428571428571428571"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-0.40695970695970695690178571428571428571428571428571428571428571428571428571428571",
+        "recent13": "-0.33436355311355310786607142857142857142857142857142857142857142857142857142857143"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-17.341869866788136922",
+      "mae_difference_selected_minus_baseline": "-0.051612707936869455125",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.042350214452394323042845095160104094584469265462837264842907509446600648964931359",
+      "gain_baseline_minus_selected_over_baseline": "0.042350214452394323042845095160104094584469265462837264842907509446600648964931359",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 28,
+        "5": 56,
+        "6": 112,
+        "7": 140
+      },
+      "complete_7_observed_day_subset": {
+        "possible_cells": 336,
+        "eligible_cells": 140,
+        "excluded_cells": 196,
+        "eligible_fraction": "0.41666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "excluded_fraction": "0.58333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "actual_recorded_units_total": "170",
+        "absolute_error_sums": {
+          "shrink26": "182.529714468219343290",
+          "recent13": "190.153846153846153765"
+        },
+        "signed_error_sums_prediction_minus_actual": {
+          "shrink26": "-87.724615384615384050",
+          "recent13": "-73.692307692307691401"
+        },
+        "mae": {
+          "shrink26": "1.3037836747729953092142857142857142857142857142857142857142857142857142857142857",
+          "recent13": "1.3582417582417582411785714285714285714285714285714285714285714285714285714285714"
+        },
+        "bias_mean_prediction_minus_actual": {
+          "shrink26": "-0.62660439560439560035714285714285714285714285714285714285714285714285714285714286",
+          "recent13": "-0.52637362637362636715"
+        },
+        "absolute_error_sum_difference_selected_minus_baseline": "-7.624131685626810475",
+        "mae_difference_selected_minus_baseline": "-0.054458083468762931964285714285714285714285714285714285714285714285714285714285714",
+        "signed_relative_difference_selected_over_baseline_minus_one": "-0.040094543654186301058778213412284202110441349170695725415257129197040449155783281",
+        "gain_baseline_minus_selected_over_baseline": "0.040094543654186301058778213412284202110441349170695725415257129197040449155783281",
+        "strictly_lower_selected_error": true,
+        "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+        "observed_days_cell_histogram": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 140
+        }
+      }
+    },
+    {
+      "target_start": "2025-12-08",
+      "target_end": "2025-12-14",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "268",
+      "absolute_error_sums": {
+        "shrink26": "332.374221021478563845",
+        "recent13": "345.538461538461538727"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-68.738461538461537519",
+        "recent13": "-44.346153846153844243"
+      },
+      "mae": {
+        "shrink26": "0.98920899113535286858630952380952380952380952380952380952380952380952380952380952",
+        "recent13": "1.0283882783882783890684523809523809523809523809523809523809523809523809523809524"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-0.20457875457875457594940476190476190476190476190476190476190476190476190476190476",
+        "recent13": "-0.13198260073260072691369047619047619047619047619047619047619047619047619047619048"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-13.164240516982974882",
+      "mae_difference_selected_minus_baseline": "-0.039179287252925520482142857142857142857142857142857142857142857142857142857142857",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.038097757506851886316679572316085071309247283156097599935838741279676576718927093",
+      "gain_baseline_minus_selected_over_baseline": "0.038097757506851886316679572316085071309247283156097599935838741279676576718927093",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 56,
+        "4": 28,
+        "5": 56,
+        "6": 84,
+        "7": 112
+      },
+      "complete_7_observed_day_subset": {
+        "possible_cells": 336,
+        "eligible_cells": 112,
+        "excluded_cells": 224,
+        "eligible_fraction": "0.33333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "excluded_fraction": "0.66666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "actual_recorded_units_total": "119",
+        "absolute_error_sums": {
+          "shrink26": "131.486764157278220925",
+          "recent13": "141.153846153846153973"
+        },
+        "signed_error_sums_prediction_minus_actual": {
+          "shrink26": "-34.961538461538461945",
+          "recent13": "-21.615384615384614859"
+        },
+        "mae": {
+          "shrink26": "1.1739889656899841154017857142857142857142857142857142857142857142857142857142857",
+          "recent13": "1.2603021978021978033303571428571428571428571428571428571428571428571428571428571"
+        },
+        "bias_mean_prediction_minus_actual": {
+          "shrink26": "-0.31215659340659341022321428571428571428571428571428571428571428571428571428571429",
+          "recent13": "-0.1929945054945054898125"
+        },
+        "absolute_error_sum_difference_selected_minus_baseline": "-9.667081996567933048",
+        "mae_difference_selected_minus_baseline": "-0.086313232112213687928571428571428571428571428571428571428571428571428571428571429",
+        "signed_relative_difference_selected_over_baseline_minus_one": "-0.068486139485222413902488477378129830776455858748481694304972364536105551003324562",
+        "gain_baseline_minus_selected_over_baseline": "0.068486139485222413902488477378129830776455858748481694304972364536105551003324562",
+        "strictly_lower_selected_error": true,
+        "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+        "observed_days_cell_histogram": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 112
+        }
+      }
+    },
+    {
+      "target_start": "2025-12-15",
+      "target_end": "2025-12-21",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "295",
+      "absolute_error_sums": {
+        "shrink26": "348.109343071922885221",
+        "recent13": "359.012820512820513683"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-95.738461538461537519",
+        "recent13": "-71.346153846153844243"
+      },
+      "mae": {
+        "shrink26": "1.0360397115235800155386904761904761904761904761904761904761904761904761904761905",
+        "recent13": "1.0684905372405372431041666666666666666666666666666666666666666666666666666666667"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-0.28493589743589743309226190476190476190476190476190476190476190476190476190476190",
+        "recent13": "-0.21233974358974358405654761904761904761904761904761904761904761904761904761904762"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-10.903477440897628462",
+      "mae_difference_selected_minus_baseline": "-0.032450825716957227565476190476190476190476190476190476190476190476190476190476190",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.030370718865479235010278907939997498265132191095404360308234724002705676699775638",
+      "gain_baseline_minus_selected_over_baseline": "0.030370718865479235010278907939997498265132191095404360308234724002705676699775638",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 28,
+        "2": 0,
+        "3": 0,
+        "4": 56,
+        "5": 56,
+        "6": 56,
+        "7": 140
+      },
+      "complete_7_observed_day_subset": {
+        "possible_cells": 336,
+        "eligible_cells": 140,
+        "excluded_cells": 196,
+        "eligible_fraction": "0.41666666666666666666666666666666666666666666666666666666666666666666666666666667",
+        "excluded_fraction": "0.58333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "actual_recorded_units_total": "173",
+        "absolute_error_sums": {
+          "shrink26": "178.514201533827852585",
+          "recent13": "184.858974358974359533"
+        },
+        "signed_error_sums_prediction_minus_actual": {
+          "shrink26": "-79.552307692307692145",
+          "recent13": "-62.269230769230768381"
+        },
+        "mae": {
+          "shrink26": "1.2751014395273418041785714285714285714285714285714285714285714285714285714285714",
+          "recent13": "1.3204212454212454252357142857142857142857142857142857142857142857142857142857143"
+        },
+        "bias_mean_prediction_minus_actual": {
+          "shrink26": "-0.56823076923076922960714285714285714285714285714285714285714285714285714285714286",
+          "recent13": "-0.44478021978021977415"
+        },
+        "absolute_error_sum_difference_selected_minus_baseline": "-6.344772825146506948",
+        "mae_difference_selected_minus_baseline": "-0.045319805893903621057142857142857142857142857142857142857142857142857142857142857",
+        "signed_relative_difference_selected_over_baseline_minus_one": "-0.034322233189640581208713711838171947736424767346105523915183243474637485326292069",
+        "gain_baseline_minus_selected_over_baseline": "0.034322233189640581208713711838171947736424767346105523915183243474637485326292069",
+        "strictly_lower_selected_error": true,
+        "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+        "observed_days_cell_histogram": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 140
+        }
+      }
+    },
+    {
+      "target_start": "2025-12-22",
+      "target_end": "2025-12-28",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "254",
+      "absolute_error_sums": {
+        "shrink26": "315.509534597517448301",
+        "recent13": "332.846153846153845867"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-54.738461538461537519",
+        "recent13": "-30.346153846153844243"
+      },
+      "mae": {
+        "shrink26": "0.93901647201642097708630952380952380952380952380952380952380952380952380952380952",
+        "recent13": "0.99061355311355311269940476190476190476190476190476190476190476190476190476190476"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-0.16291208791208790928273809523809523809523809523809523809523809523809523809523810",
+        "recent13": "-0.090315934065934060247023809523809523809523809523809523809523809523809523809523810"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-17.336619248636397566",
+      "mae_difference_selected_minus_baseline": "-0.051597081097132135613095238095238095238095238095238095238095238095238095238095238",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.052085983413975772718333402392122869532393172526051809680215886376160665194713437",
+      "gain_baseline_minus_selected_over_baseline": "0.052085983413975772718333402392122869532393172526051809680215886376160665194713437",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 56,
+        "5": 56,
+        "6": 140,
+        "7": 84
+      },
+      "complete_7_observed_day_subset": {
+        "possible_cells": 336,
+        "eligible_cells": 84,
+        "excluded_cells": 252,
+        "eligible_fraction": "0.25",
+        "excluded_fraction": "0.75",
+        "actual_recorded_units_total": "95",
+        "absolute_error_sums": {
+          "shrink26": "102.679402621303690300",
+          "recent13": "107.999999999999999591"
+        },
+        "signed_error_sums_prediction_minus_actual": {
+          "shrink26": "-29.884615384615385160",
+          "recent13": "-17.538461538461537549"
+        },
+        "mae": {
+          "shrink26": "1.2223738407298058369047619047619047619047619047619047619047619047619047619047619",
+          "recent13": "1.2857142857142857094166666666666666666666666666666666666666666666666666666666667"
+        },
+        "bias_mean_prediction_minus_actual": {
+          "shrink26": "-0.35576923076923077571428571428571428571428571428571428571428571428571428571428571",
+          "recent13": "-0.20879120879120878034523809523809523809523809523809523809523809523809523809523810"
+        },
+        "absolute_error_sum_difference_selected_minus_baseline": "-5.320597378696309291",
+        "mae_difference_selected_minus_baseline": "-0.063340444984479872511904761904761904761904761904761904761904761904761904761904762",
+        "signed_relative_difference_selected_over_baseline_minus_one": "-0.049264790543484345473604623447084234247261953609791220436390176170413047763736871",
+        "gain_baseline_minus_selected_over_baseline": "0.049264790543484345473604623447084234247261953609791220436390176170413047763736871",
+        "strictly_lower_selected_error": true,
+        "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+        "observed_days_cell_histogram": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 84
+        }
+      }
+    }
+  ],
+  "complete_7_observed_day_subset": {
+    "possible_cells": 1344,
+    "eligible_cells": 476,
+    "excluded_cells": 868,
+    "eligible_fraction": "0.35416666666666666666666666666666666666666666666666666666666666666666666666666667",
+    "excluded_fraction": "0.64583333333333333333333333333333333333333333333333333333333333333333333333333333",
+    "actual_recorded_units_total": "557",
+    "absolute_error_sums": {
+      "shrink26": "595.210082780629107100",
+      "recent13": "624.166666666666666862"
+    },
+    "signed_error_sums_prediction_minus_actual": {
+      "shrink26": "-232.123076923076923300",
+      "recent13": "-175.115384615384612190"
+    },
+    "mae": {
+      "shrink26": "1.2504413503794729140756302521008403361344537815126050420168067226890756302521008",
+      "recent13": "1.3112745098039215690378151260504201680672268907563025210084033613445378151260504"
+    },
+    "bias_mean_prediction_minus_actual": {
+      "shrink26": "-0.48765352294764059516806722689075630252100840336134453781512605042016806722689076",
+      "recent13": "-0.36788946347769876510504201680672268907563025210084033613445378151260504201680672"
+    },
+    "absolute_error_sum_difference_selected_minus_baseline": "-28.956583886037559762",
+    "mae_difference_selected_minus_baseline": "-0.060833159424448654962184873949579831932773109243697478991596638655462184873949580",
+    "signed_relative_difference_selected_over_baseline_minus_one": "-0.046392390738644955545428068906357306301938131706742119362918160117409408840229617",
+    "gain_baseline_minus_selected_over_baseline": "0.046392390738644955545428068906357306301938131706742119362918160117409408840229617",
+    "strictly_lower_selected_error": true,
+    "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+    "observed_days_cell_histogram": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 476
+    }
+  },
+  "bootstrap": {
+    "descriptive_only": true,
+    "seed": 603,
+    "resamples": 2000,
+    "clusters_per_resample": 4,
+    "rng": "Python random.Random MT19937; four randrange(4) draws per resample",
+    "statistic": "(sum sampled selected absolute errors - sum sampled baseline absolute errors) / sum sampled eligible counts",
+    "percentile_method": "linear interpolation at (N-1)*q",
+    "percentile_2_5": -0.05160489451700082,
+    "percentile_97_5": -0.03581505648494142,
+    "limits": "Four weeks and dependence across keys/weeks limit inference; no superiority guarantee; cannot alter Decimal decision."
+  },
+  "secondary_only": {
+    "last_three_days": {
+      "scope": "secondary only; aggregate daily frozen forecasts on the stated window",
+      "target_start": "2025-12-29",
+      "target_end": "2025-12-31",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "92",
+      "absolute_error_sums": {
+        "shrink26": "154.4658550307724845771",
+        "recent13": "160.401098901098902464"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-6.6021978021978012749",
+        "recent13": "3.851648351648353234"
+      },
+      "mae": {
+        "shrink26": "0.45971980663920382314613095238095238095238095238095238095238095238095238095238095",
+        "recent13": "0.47738422291993720971428571428571428571428571428571428571428571428571428571428571"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-0.019649398220826789508630952380952380952380952380952380952380952380952380952380952",
+        "recent13": "0.011463239141810575101190476190476190476190476190476190476190476190476190476190476"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-5.9352438703264178869",
+      "mae_difference_selected_minus_baseline": "-0.017664416280733386568154761904761904761904761904761904761904761904761904761904762",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.037002513766978660850977955661346407320118825466714890354917893003309660572786604",
+      "gain_baseline_minus_selected_over_baseline": "0.037002513766978660850977955661346407320118825466714890354917893003309660572786604",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 84,
+        "2": 112,
+        "3": 140
+      }
+    },
+    "month": {
+      "scope": "secondary only; aggregate daily frozen forecasts on the stated window",
+      "target_start": "2025-12-01",
+      "target_end": "2025-12-31",
+      "possible_cells": 336,
+      "eligible_cells": 336,
+      "excluded_cells": 0,
+      "eligible_fraction": "1",
+      "excluded_fraction": "0",
+      "actual_recorded_units_total": "1245",
+      "absolute_error_sums": {
+        "shrink26": "933.9930368366637747293",
+        "recent13": "1032.124542124542130602"
+      },
+      "signed_error_sums_prediction_minus_actual": {
+        "shrink26": "-362.5560439560439465073",
+        "recent13": "-254.532967032967016582"
+      },
+      "mae": {
+        "shrink26": "2.7797411810614993295514880952380952380952380952380952380952380952380952380952381",
+        "recent13": "3.0717992325135182458392857142857142857142857142857142857142857142857142857142857"
+      },
+      "bias_mean_prediction_minus_actual": {
+        "shrink26": "-1.0790358451072736503193452380952380952380952380952380952380952380952380952380952",
+        "recent13": "-0.75753859236002088268452380952380952380952380952380952380952380952380952380952381"
+      },
+      "absolute_error_sum_difference_selected_minus_baseline": "-98.1315052878783558727",
+      "mae_difference_selected_minus_baseline": "-0.29205805145201891628779761904761904761904761904761904761904761904761904761904762",
+      "signed_relative_difference_selected_over_baseline_minus_one": "-0.095077193965258157348037493247510481683300440770678300277384565471098543667920480",
+      "gain_baseline_minus_selected_over_baseline": "0.095077193965258157348037493247510481683300440770678300277384565471098543667920480",
+      "strictly_lower_selected_error": true,
+      "zero_baseline_handling": "Relative difference and gain undefined (null) when baseline error is zero; absolute difference and strict comparison retained.",
+      "observed_days_cell_histogram": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0,
+        "15": 0,
+        "16": 28,
+        "17": 0,
+        "18": 0,
+        "19": 0,
+        "20": 0,
+        "21": 28,
+        "22": 28,
+        "23": 28,
+        "24": 28,
+        "25": 28,
+        "26": 0,
+        "27": 84,
+        "28": 28,
+        "29": 0,
+        "30": 56,
+        "31": 0
+      }
+    }
+  },
+  "audit": {
+    "source_columns": [
+      "Transaction_ID",
+      "Order_ID",
+      "Customer_ID",
+      "Customer_Name",
+      "Customer_Age",
+      "Customer_Gender",
+      "Customer_Segment",
+      "Order_Date",
+      "Order_Time",
+      "Sales_Channel",
+      "Store_ID",
+      "Store_Name",
+      "Country",
+      "Region",
+      "City",
+      "Product_ID",
+      "Product_Name",
+      "Product_Category",
+      "Product_Subcategory",
+      "Quantity",
+      "Unit_Price",
+      "Discount_Percentage",
+      "Sales_Amount",
+      "Cost_Amount",
+      "Profit",
+      "Payment_Method",
+      "Order_Status",
+      "Shipping_Method",
+      "Delivery_Days",
+      "Return_Flag",
+      "Return_Reason",
+      "Sales_Representative",
+      "Promotion_Code",
+      "Customer_Rating",
+      "Inventory_Level",
+      "Order_Year"
+    ],
+    "original_row_count": 639,
+    "deduplicated_rows": 636,
+    "exact_original_duplicates_removed": 3,
+    "conflicting_transaction_ids": 0,
+    "normalized_status_row_counts": {
+      "completed": 406,
+      "shipped": 75,
+      "returned": 57,
+      "cancelled": 42,
+      "processing": 56
+    },
+    "target_units_by_normalized_status": {
+      "completed": "884",
+      "shipped": "142",
+      "returned": "100",
+      "cancelled": "0",
+      "processing": "119"
+    },
+    "nonpositive_quantity_rows": 0,
+    "all_population_and_outside_recorded_units_month": "1245",
+    "out_of_population_rows": 0,
+    "out_of_population_target_units_month": "0",
+    "out_of_population_keys": [],
+    "out_of_population_disclosure_file": "out_of_population.csv",
+    "population_size_unchanged": 336,
+    "weekly_forecast_rows": 2688,
+    "daily_forecast_rows": 20832,
+    "max_daily_sum_vs_frozen_weekly_discrepancy": "3.8E-16",
+    "store_observed_dates_all_deduplicated_rows": {
+      "AUS-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30"
+      ],
+      "CHI-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "COL-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-13",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-29",
+        "2025-12-30"
+      ],
+      "LA-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "LON-01": [
+        "2025-12-01",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "MAN-01": [
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-29"
+      ],
+      "MUC-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-09",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "NYC-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-28",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "PAR-01": [
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "SYD-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-16",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-29",
+        "2025-12-30"
+      ],
+      "TOR-01": [
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-29"
+      ],
+      "VAN-01": [
+        "2025-12-01",
+        "2025-12-03",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-30"
+      ]
+    },
+    "primary_exclusions": []
+  },
+  "material_limits": [
+    "First post-freeze reserved-row scoring, not globally pristine untouched validation: earlier project AI sessions saw pooled full-history quantity summaries.",
+    "Recorded positive noncancelled units are not complete demand; missing products on observed store-days contribute zero recorded units, and absent days remain unknown. Partial windows are not rescaled.",
+    "Final statuses are used; status knowledge/update timestamps are unavailable. Positive processing/returned rows count regardless of Return_Flag; no return reuse credit.",
+    "All forecasts were issued 2025-11-30. Freeze validates bytes/shapes/arithmetic, not independent model semantics or source provenance; no unreleased model or history was sought.",
+    "Only four primary week clusters; cross-key and temporal dependence limit descriptive bootstrap inference.",
+    "Comparison is against frozen recent13, not the unknown exact customer process. No purchasing savings, service improvement or business-value proof follows.",
+    "Typed DSC28 complete-demand/parent-acceptance contract remains separate. No complete_daily_sales=true, authenticated approval, parent acceptance or final acceptance is asserted.",
+    "Existing illustrative restocking list is unchanged; no new purchasing approval or automatic deployment."
+  ],
+  "existing_delivery_facts_unchanged": {
+    "existing_recommendation": {
+      "no_new_quantities_authorized": true,
+      "order_units": 880,
+      "positive_rows": 112,
+      "prearrival_flags": 52,
+      "synthetic_stock_and_policy": true,
+      "zero_rows": 224
+    },
+    "routine_measurement": {
+      "constrained_8gb_test": false,
+      "measured_host_ram_gb": 128,
+      "paid_routine_model_service_required": false,
+      "peak_rss_bytes": 138428416,
+      "seconds_including_imports": 0.42733724997378886
+    }
+  },
+  "sign_definitions": {
+    "mae_difference": "selected minus baseline; negative favors selected",
+    "signed_relative_difference": "(selected-baseline)/baseline; negative favors selected",
+    "gain": "(baseline-selected)/baseline; positive favors selected; negative indicates loss",
+    "bias": "mean(prediction minus actual); positive is overprediction"
+  },
+  "decimal_serialization": "Decimal quantities are JSON strings; sums exact, nonterminating quotients rounded only at 80-digit context; fractions recoverable from sums/counts.",
+  "mvp_comparison_yes": true
+}

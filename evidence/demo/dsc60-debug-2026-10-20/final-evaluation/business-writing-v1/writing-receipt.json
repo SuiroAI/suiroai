@@ -1,0 +1,224 @@
+{
+  "analytical_verification": false,
+  "call_trace": {
+    "dispatch_status": "returned",
+    "format": "dsc60-native-call-trace-v1",
+    "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native",
+    "native_evidence_files": [
+      {
+        "bytes": 2324,
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native/native-bootstrap.jsonl",
+        "sha256": "984079bf1fd393859555246f5ac20567fd59289afcadc02ffefd4235c1c8ce7c"
+      },
+      {
+        "bytes": 225792,
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native/native-rpc.jsonl",
+        "sha256": "8487faf1c7bd72ce27844be2a67857be37c9e54c769460bc303297d3377a7207"
+      },
+      {
+        "bytes": 148943,
+        "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native/native-run.json",
+        "sha256": "b0322dd68fed277eed8261c3052439e0bd05968831720a8b5a619d39c82d87a4"
+      }
+    ],
+    "native_execution": {
+      "error_code": null,
+      "message": null,
+      "outcome": "completed",
+      "thread_id": "01a15aa8-1b31-7823-9b94-32cbdbca7198",
+      "turn_id": "01a15aa8-1bca-7131-9664-fe3d50672553"
+    },
+    "observed_configuration": {
+      "cli_version": "0.163.0",
+      "cwd": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/output",
+      "data_attachment": {
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote",
+        "type": "mention"
+      },
+      "effective_profile_verified": true,
+      "instruction_sources": [
+        "/Users/ceverson/.codex/AGENTS.md"
+      ],
+      "model": "gpt-6.1-sol",
+      "model_provider": "openai",
+      "permission_profile": "dsc26-stage-4bcb3694c61c4660bf1426242e022ef2",
+      "reasoning_effort": "medium",
+      "runtime_workspace_roots": [
+        "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/output"
+      ],
+      "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+    },
+    "prompt_bytes": 5232,
+    "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native-trace/outbound-prompt.txt",
+    "prompt_sha256": "832074ee73979f9cc9fc7f0f9b338e587ed8d2f68e1d364b42e11e05ad8a99f6",
+    "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e/native-trace/call-trace.json",
+    "released_files": [
+      {
+        "bytes": 5313,
+        "relative_path": "original_response.md",
+        "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+        "source_ref": {
+          "artifact_id": "final-writing-input-response.md",
+          "provenance": "derived",
+          "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+          "version": 1
+        }
+      },
+      {
+        "bytes": 508,
+        "relative_path": "csv_facts.json",
+        "sha256": "69b9e037e73ff674d09d588e07da642376ee0ece7e26b4607a2ede9c8408f7b8",
+        "source_ref": {
+          "artifact_id": "demo-business-source-b3d057b3d8264510a7447739c4965d85",
+          "provenance": "derived",
+          "sha256": "69b9e037e73ff674d09d588e07da642376ee0ece7e26b4607a2ede9c8408f7b8",
+          "version": 1
+        }
+      },
+      {
+        "bytes": 36784,
+        "relative_path": "measured_results.json",
+        "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+        "source_ref": {
+          "artifact_id": "demo-business-source-60b914d2c2dc42f29e4dd13e9b448098",
+          "provenance": "derived",
+          "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+          "version": 1
+        }
+      },
+      {
+        "bytes": 1377,
+        "relative_path": "routine_workload.json",
+        "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+        "source_ref": {
+          "artifact_id": "demo-business-source-a72f9771762e425589f8eed72c39f6a8",
+          "provenance": "derived",
+          "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+          "version": 1
+        }
+      },
+      {
+        "bytes": 2255,
+        "relative_path": "source_manifest.json",
+        "sha256": "cca2838131327e21ea713db63fd061f66991f7c5c43eb699eab6966b0cfe8281",
+        "source_ref": {
+          "artifact_id": "demo-business-source-manifest-24a8dcd9d30c43b19111dac3fa008af7",
+          "provenance": "derived",
+          "sha256": "cca2838131327e21ea713db63fd061f66991f7c5c43eb699eab6966b0cfe8281",
+          "version": 1
+        }
+      }
+    ],
+    "requested_configuration": {
+      "attachment": {
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote",
+        "type": "mention"
+      },
+      "cli_version": "0.163.0",
+      "data_plugin": "data-analytics@openai-curated-remote",
+      "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+    },
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "stage": "business_response",
+    "transport_exception": null,
+    "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+  },
+  "call_trace_ref": {
+    "artifact_id": "demo-business-call-trace-1bd4eb6851064552bab702217746b652",
+    "provenance": "derived",
+    "sha256": "000c342aba072af571f00e18cc0c385c986e9736f67d06f069269dfaadeb9cfa",
+    "version": 1
+  },
+  "error": null,
+  "format": "dsc60-business-writing-stage-v1",
+  "immutable_native_evidence_refs": [
+    {
+      "artifact_id": "demo-business-native-230568ac827549bbb5a2b80bf608986e",
+      "provenance": "derived",
+      "sha256": "984079bf1fd393859555246f5ac20567fd59289afcadc02ffefd4235c1c8ce7c",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-native-54a48b6ab6464795badd3e80ec76afd2",
+      "provenance": "derived",
+      "sha256": "8487faf1c7bd72ce27844be2a67857be37c9e54c769460bc303297d3377a7207",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-native-e033376a86a547678e76a6a1dc0abd00",
+      "provenance": "derived",
+      "sha256": "b0322dd68fed277eed8261c3052439e0bd05968831720a8b5a619d39c82d87a4",
+      "version": 1
+    }
+  ],
+  "native_outcome": "completed",
+  "prompt_ref": {
+    "artifact_id": "demo-business-prompt-3b3e7f32b6c14d339f81a1ccd053ad06",
+    "provenance": "derived",
+    "sha256": "832074ee73979f9cc9fc7f0f9b338e587ed8d2f68e1d364b42e11e05ad8a99f6",
+    "version": 1
+  },
+  "response_ref": {
+    "artifact_id": "demo-business-response-8e10eb64c668445f86f86ea6dcce4928",
+    "provenance": "derived",
+    "sha256": "336e03124b7fa1b2ec4d24ba57522da01c953cb9757d3d62a73a4bbb6d7592a8",
+    "version": 1
+  },
+  "source_csv_ref": {
+    "artifact_id": "final-writing-input-restocking.csv",
+    "provenance": "derived",
+    "sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "version": 1
+  },
+  "source_manifest_ref": {
+    "artifact_id": "demo-business-source-manifest-24a8dcd9d30c43b19111dac3fa008af7",
+    "provenance": "derived",
+    "sha256": "cca2838131327e21ea713db63fd061f66991f7c5c43eb699eab6966b0cfe8281",
+    "version": 1
+  },
+  "source_refs": [
+    {
+      "artifact_id": "final-writing-input-response.md",
+      "provenance": "derived",
+      "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-source-b3d057b3d8264510a7447739c4965d85",
+      "provenance": "derived",
+      "sha256": "69b9e037e73ff674d09d588e07da642376ee0ece7e26b4607a2ede9c8408f7b8",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-source-60b914d2c2dc42f29e4dd13e9b448098",
+      "provenance": "derived",
+      "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+      "version": 1
+    },
+    {
+      "artifact_id": "demo-business-source-a72f9771762e425589f8eed72c39f6a8",
+      "provenance": "derived",
+      "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+      "version": 1
+    }
+  ],
+  "source_response_ref": {
+    "artifact_id": "final-writing-input-response.md",
+    "provenance": "derived",
+    "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+    "version": 1
+  },
+  "stage_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/business-writing/runs/business-response-a7a0997d2a704d1ab82e9c91fac5272e",
+  "status": "rewritten",
+  "thread_id": "01a15aa8-1b31-7823-9b94-32cbdbca7198",
+  "turn_id": "01a15aa8-1bca-7131-9664-fe3d50672553",
+  "writer_result_ref": {
+    "artifact_id": "demo-business-result-d6b46fe7f35e48c69133498a75c87fb7",
+    "provenance": "derived",
+    "sha256": "edf61f4932c72e3969208387c51a525d592a78f4d72f2b286a8fc3194ad24434",
+    "version": 1
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "analysis_thread_id": "01a15aa4-cac7-7c51-b405-cf6f5bb5acb7",
+  "analysis_turn_id": "01a15aa4-cd1c-7ff2-861e-ae69a906e546",
+  "files": [
+    {
+      "bytes": 5313,
+      "relative_path": "original_response.md",
+      "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+      "source_ref": {
+        "artifact_id": "final-writing-input-response.md",
+        "provenance": "derived",
+        "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+        "version": 1
+      }
+    },
+    {
+      "bytes": 508,
+      "relative_path": "csv_facts.json",
+      "sha256": "69b9e037e73ff674d09d588e07da642376ee0ece7e26b4607a2ede9c8408f7b8",
+      "source_ref": {
+        "artifact_id": "demo-business-source-b3d057b3d8264510a7447739c4965d85",
+        "provenance": "derived",
+        "sha256": "69b9e037e73ff674d09d588e07da642376ee0ece7e26b4607a2ede9c8408f7b8",
+        "version": 1
+      }
+    },
+    {
+      "bytes": 36784,
+      "relative_path": "measured_results.json",
+      "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+      "source_ref": {
+        "artifact_id": "demo-business-source-60b914d2c2dc42f29e4dd13e9b448098",
+        "provenance": "derived",
+        "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+        "version": 1
+      }
+    },
+    {
+      "bytes": 1377,
+      "relative_path": "routine_workload.json",
+      "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+      "source_ref": {
+        "artifact_id": "demo-business-source-a72f9771762e425589f8eed72c39f6a8",
+        "provenance": "derived",
+        "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+        "version": 1
+      }
+    }
+  ],
+  "format": "dsc60-business-source-manifest-v1",
+  "source_csv_ref": {
+    "artifact_id": "final-writing-input-restocking.csv",
+    "provenance": "derived",
+    "sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "version": 1
+  },
+  "source_response_ref": {
+    "artifact_id": "final-writing-input-response.md",
+    "provenance": "derived",
+    "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3",
+    "version": 1
+  }
+}

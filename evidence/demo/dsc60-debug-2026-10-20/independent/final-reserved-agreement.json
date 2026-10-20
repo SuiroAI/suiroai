@@ -1,0 +1,14 @@
+{
+  "format": "dsc60-independent-output-agreement-v1",
+  "status": "passed",
+  "aggregate_checks": 1438,
+  "per_key_week_rows": 1344,
+  "cell_fields_checked": 16128,
+  "bootstrap_draws_checked": 2000,
+  "max_bootstrap_float_roundoff": 2.0122792321330962e-16,
+  "producer_metrics_sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a",
+  "producer_code_sha256": "c3190e1a5cb3d7b73b286502a3ce0d9d0a213a2f3c57897544a293278e842655",
+  "producer_receipt_sha256": "b13d87110bd9d94d362c7be79f38c1a20a9cbe0538c0038d8b1fb1e97470a78d",
+  "independent_result_sha256": "3e013deb61993adfebfd59fb8cd7dd57b7a2513eec6590aa3620cd5154c8731b",
+  "scope": "Own target/eligibility/error reconstruction and saved-result comparison; no producer execution; bootstrap descriptive only; no model changes or new primary evaluation."
+}

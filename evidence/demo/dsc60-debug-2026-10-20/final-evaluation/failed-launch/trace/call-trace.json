@@ -1,0 +1,100 @@
+{
+  "dispatch_status": "returned",
+  "format": "dsc60-native-call-trace-v1",
+  "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native",
+  "native_evidence_files": [
+    {
+      "bytes": 592,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native/native-bootstrap.jsonl",
+      "sha256": "f5b1382512bd97491c2e6ae7d891d0d49c9fe2f5a6a8e70f5cfedc4504f9c8e9"
+    },
+    {
+      "bytes": 1053,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native/native-run.json",
+      "sha256": "1b47294eb66d95f0d1ecff5004a96c3fdf4f4879ccb666e3df3be3feed1bedfa"
+    }
+  ],
+  "native_execution": {
+    "error_code": "runtime_error",
+    "message": "[Errno 1] Operation not permitted",
+    "outcome": "execution_failed",
+    "thread_id": null,
+    "turn_id": null
+  },
+  "observed_configuration": {
+    "cli_version": null,
+    "cwd": null,
+    "data_attachment": null,
+    "effective_profile_verified": null,
+    "instruction_sources": null,
+    "model": null,
+    "model_provider": null,
+    "permission_profile": null,
+    "reasoning_effort": null,
+    "runtime_workspace_roots": null,
+    "skill_sha256": null
+  },
+  "prompt_bytes": 6569,
+  "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-trace/outbound-prompt.txt",
+  "prompt_sha256": "07dfeeb4fc0b5914bd9737b7ae6ca3100698e1ff5af824dd2e4d51b8d4c3b22e",
+  "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-trace/call-trace.json",
+  "released_files": [
+    {
+      "relative_path": "protocol.json",
+      "released_byte_sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f",
+      "released_bytes": 29706,
+      "role": "frozen_evaluation_input"
+    },
+    {
+      "relative_path": "fixed_forecasts.csv",
+      "released_byte_sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8",
+      "released_bytes": 231200,
+      "role": "frozen_evaluation_input"
+    },
+    {
+      "relative_path": "daily_forecasts.csv",
+      "released_byte_sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef",
+      "released_bytes": 1542159,
+      "role": "frozen_evaluation_input"
+    },
+    {
+      "relative_path": "freeze_manifest.json",
+      "released_byte_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb",
+      "released_bytes": 3551,
+      "role": "committed_freeze_manifest"
+    },
+    {
+      "relative_path": "evaluation-spec.json",
+      "released_byte_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e",
+      "released_bytes": 2602,
+      "role": "committed_evaluation_spec"
+    },
+    {
+      "relative_path": "december2025.csv",
+      "released_byte_sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e",
+      "released_bytes": 183984,
+      "role": "reserved_outcomes_post_freeze"
+    },
+    {
+      "relative_path": "delivery_context.json",
+      "released_byte_sha256": "38631a50d70f641942e7ee322d2c892d5e154f7654bc00c992147712727b0a60",
+      "released_bytes": 456,
+      "role": "existing_delivery_facts_not_new_analysis"
+    }
+  ],
+  "requested_configuration": {
+    "attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "cli_version": "0.163.0",
+    "data_plugin": "data-analytics@openai-curated-remote",
+    "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "medium",
+  "stage": "one_shot_reserved_evaluation",
+  "transport_exception": null,
+  "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+}

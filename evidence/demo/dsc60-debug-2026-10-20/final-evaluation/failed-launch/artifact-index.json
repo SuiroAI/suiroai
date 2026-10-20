@@ -1,0 +1,24 @@
+[
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native/native-bootstrap.jsonl",
+    "bytes": 592,
+    "sha256": "f5b1382512bd97491c2e6ae7d891d0d49c9fe2f5a6a8e70f5cfedc4504f9c8e9"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native/native-run.json",
+    "bytes": 1053,
+    "sha256": "1b47294eb66d95f0d1ecff5004a96c3fdf4f4879ccb666e3df3be3feed1bedfa"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-trace/call-trace.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/failed-launch/trace/call-trace.json",
+    "bytes": 3903,
+    "sha256": "ad924541c50bd9a4ab2143d9892a3e939f51698ad8edc0aeab3f02cd537fef22"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-trace/outbound-prompt.txt",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/failed-launch/trace/outbound-prompt.txt",
+    "bytes": 6569,
+    "sha256": "07dfeeb4fc0b5914bd9737b7ae6ca3100698e1ff5af824dd2e4d51b8d4c3b22e"
+  }
+]

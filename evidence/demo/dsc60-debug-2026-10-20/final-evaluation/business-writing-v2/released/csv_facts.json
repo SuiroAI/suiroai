@@ -1,0 +1,14 @@
+{
+  "positive_order_rows": 112,
+  "row_count": 336,
+  "sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+  "source_csv_ref": {
+    "artifact_id": "final-writing-input-restocking.csv",
+    "provenance": "derived",
+    "sha256": "c2a20f1446677825b738129f5c350547b32ca7ac21fce722e05c885644ebcb74",
+    "version": 1
+  },
+  "total_order_units": 880,
+  "unit_note": "Use source findings for unit/decision context; counts alone do not verify recommendations.",
+  "zero_order_rows": 224
+}

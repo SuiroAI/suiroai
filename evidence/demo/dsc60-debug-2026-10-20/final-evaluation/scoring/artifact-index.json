@@ -1,0 +1,76 @@
+[
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/bootstrap_resamples.csv",
+    "bytes": 79638,
+    "sha256": "2bcaa2095491d4e50e919a609af96c6423062d73ce47b6613414ffc9bffbd141"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/evaluation.py",
+    "bytes": 28783,
+    "sha256": "c3190e1a5cb3d7b73b286502a3ce0d9d0a213a2f3c57897544a293278e842655"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/execution_evidence.json",
+    "bytes": 4381,
+    "sha256": "b13d87110bd9d94d362c7be79f38c1a20a9cbe0538c0038d8b1fb1e97470a78d"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/measured_results.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/measured_results.json",
+    "bytes": 36784,
+    "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/out_of_population.csv",
+    "bytes": 84,
+    "sha256": "09818a3d23325280928b53c9d92b42b98b80b5a5b19e986f2e8c0a46fd3959f4"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/paired_sums.json",
+    "bytes": 20586,
+    "sha256": "bb29762fa1ada3f88d103e21d83dbd3b3a0ff2adef04e4a8417e666a82a0d1d6"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/per_key_week.csv",
+    "bytes": 254602,
+    "sha256": "9c1f0603fec2117daae89c1c4dbd8efde7da3d59768821bd12fbddf663d9dea8"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/response.md",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/response.md",
+    "bytes": 5313,
+    "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/scores_by_week.csv",
+    "bytes": 4405,
+    "sha256": "8c6598031179572a427b8c0706788503d0c0fdcb91bea6721259c3c02979a0f1"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry/native-bootstrap.jsonl",
+    "bytes": 2261,
+    "sha256": "619e8d285de32278325c89a2c2df5b180cf2ebbcee8a29cf64195b30a5530250"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry/native-rpc.jsonl",
+    "bytes": 766869,
+    "sha256": "495f836d112820add26590e277912bf8c1e12cba44b665c481c6748481102706"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry/native-run.json",
+    "bytes": 294360,
+    "sha256": "98d3824041c7cbf610cb27313f97f006a41faa8181895f5bd3f2d07436479ec1"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry-trace/call-trace.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/trace/call-trace.json",
+    "bytes": 4747,
+    "sha256": "ee1a0426e01b8baf772be7186c612e5436dfdb14c5a5106702ca38ed5a8295a0"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry-trace/outbound-prompt.txt",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/trace/outbound-prompt.txt",
+    "bytes": 6569,
+    "sha256": "07dfeeb4fc0b5914bd9737b7ae6ca3100698e1ff5af824dd2e4d51b8d4c3b22e"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/bootstrap_resamples.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/bootstrap_resamples.csv",
+    "bytes": 79638,
+    "sha256": "2bcaa2095491d4e50e919a609af96c6423062d73ce47b6613414ffc9bffbd141"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/evaluation.py",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/evaluation.py",
+    "bytes": 28783,
+    "sha256": "c3190e1a5cb3d7b73b286502a3ce0d9d0a213a2f3c57897544a293278e842655"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/execution_evidence.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/execution_evidence.json",
+    "bytes": 4381,
+    "sha256": "b13d87110bd9d94d362c7be79f38c1a20a9cbe0538c0038d8b1fb1e97470a78d"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/out_of_population.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/out_of_population.csv",
+    "bytes": 84,
+    "sha256": "09818a3d23325280928b53c9d92b42b98b80b5a5b19e986f2e8c0a46fd3959f4"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/paired_sums.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/paired_sums.json",
+    "bytes": 20586,
+    "sha256": "bb29762fa1ada3f88d103e21d83dbd3b3a0ff2adef04e4a8417e666a82a0d1d6"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/per_key_week.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/per_key_week.csv",
+    "bytes": 254602,
+    "sha256": "9c1f0603fec2117daae89c1c4dbd8efde7da3d59768821bd12fbddf663d9dea8"
+  },
+  {
+    "source": "artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output/scores_by_week.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/final-evaluation/scoring/output/scores_by_week.csv",
+    "bytes": 4405,
+    "sha256": "8c6598031179572a427b8c0706788503d0c0fdcb91bea6721259c3c02979a0f1"
+  }
+]

@@ -1,0 +1,53 @@
+Use the attached @Data plugin for ONE final reserved-period evaluation of an already frozen model. This is not modeling, feature work or candidate search.
+Read only these immutable files under /private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/released:
+[
+  {
+    "relative_path": "protocol.json",
+    "role": "frozen_evaluation_input",
+    "released_bytes": 29706,
+    "released_byte_sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+  },
+  {
+    "relative_path": "fixed_forecasts.csv",
+    "role": "frozen_evaluation_input",
+    "released_bytes": 231200,
+    "released_byte_sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+  },
+  {
+    "relative_path": "daily_forecasts.csv",
+    "role": "frozen_evaluation_input",
+    "released_bytes": 1542159,
+    "released_byte_sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+  },
+  {
+    "relative_path": "freeze_manifest.json",
+    "role": "committed_freeze_manifest",
+    "released_bytes": 3551,
+    "released_byte_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb"
+  },
+  {
+    "relative_path": "evaluation-spec.json",
+    "role": "committed_evaluation_spec",
+    "released_bytes": 2602,
+    "released_byte_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e"
+  },
+  {
+    "relative_path": "december2025.csv",
+    "role": "reserved_outcomes_post_freeze",
+    "released_bytes": 183984,
+    "released_byte_sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e"
+  },
+  {
+    "relative_path": "delivery_context.json",
+    "role": "existing_delivery_facts_not_new_analysis",
+    "released_bytes": 456,
+    "released_byte_sha256": "38631a50d70f641942e7ee322d2c892d5e154f7654bc00c992147712727b0a60"
+  }
+]
+The exact committed evaluation-spec.json and protocol.json govern target/status/returns, duplicate identity, exposure, common eligibility, population, four primary windows and evaluation rule. Read them before writing evaluation code. No model files or development histories are released; never seek them. Never refit, reselect, tune, replace the baseline, alter predictions or regenerate restocking quantities. All forecasts were issued2025-11-30. Preserve every input byte. The last three December days are secondary only.
+Read december2025.csv using the original source columns. Deduplicate exact original rows FIRST; then reject conflicting nonidentical Transaction_ID values. Use ALL deduplicated source rows, including cancelled/nonpositive rows, to establish Store_ID/day presence. Target sums positive Quantity with normalized status !=cancelled, including processing/returned. A missing product on an observed store-day is zero recorded contribution, not true zero demand; entirely unobserved store-weeks are excluded identically for both methods, never filled. Retain partial observed weeks without rescaling. Any out-of-population rows must be disclosed; no silent population changes.
+Parse forecast decimal strings and Quantity as Decimal, precision at least50digits. Calculate paired absolute-error sums without float or premature rounding. Pooled primary MAE is each method's total absolute error divided by the SAME eligible key/window count. Compare total absolute-error sums DIRECTLY, no epsilon or rounded percentages. Selected strictly lower than baseline answers the predeclared MVP comparison yes; equality is not improvement. Report both signed relative difference and positive gain with clear sign definitions, zero-baseline handling, prediction-minus-actual bias, actual totals, all336x4 possible cells, eligible/excluded cells and fractions, eachweek and complete-7-observed-day subset. Write per_key_week.csv including observed-day counts0..7, explicit eligibility/reason, actual recorded units (blank if unknown), both original forecast strings, both signed and absolute errors (blank if excluded). Write scores_by_week.csv and paired_sums.json so independent Decimal arithmetic is possible. No new metric/target can replace the primary rule.
+Use paired week-cluster descriptive bootstrap exactly seed603,2000resamples of four weeks with replacement, recomputing pooled MAE difference from each sampled week's paired error sums/counts, percentile2.5/97.5. Decimal primary sums/rule are authoritative; float bootstrap is descriptive and must not change the strict comparison. Four weeks and dependence limit inference. Report exclusions/coverage even when they weaken the result. No invented minimum5percent gate, purchasing savings or service improvement.
+Write evaluation.py, execute it once against these released files, and retain execution_evidence.json with actual command/time/runtime/input-output checksums. Preserve any failed execution and only correct a demonstrated implementation error without changing frozen choices. If a correction would require a second primary evaluation, stop and report the defect; do not perform an unapproved recheck.
+Write measured_results.json containing exact-decimal primary sums/MAEs/bias/differences, perweek/coverage, bootstrap, strict comparison result and material limits. Write response.md as a useful plain-English business result: explain the reserved comparison and how much better or worse versus the simple13-week baseline, distinguishing that from the unknown exact customer process and from business-value proof. Refer to the EXISTING unchanged illustrative880-unit list across112products at stores,224zero orders,52prearrival flags; do not regenerate it or imply new independent purchasing approval. A losing model must be reported truthfully; no runner-up promotion. Mention synthetic stock/policy once with a practical check. Refer to routine local calculation0.427337seconds and138428416peakbytes (about140MB), measured on128GBhost, not a constrained8GBtest; no paid model service for routine runs, ordinary computer/electricity costs remain, AI build charges unknown. No invented hours/money/savings or automatic deployment.
+Earlier project sessions saw pooled full-history summaries: the internal evidence must qualify this as first post-freeze reserved-row scoring, not globally pristine untouched validation. The typed DSC28 complete-demand/parent-acceptance contract remains separate. Do not invent complete_daily_sales=true, authenticated approval, final acceptance or hidden model knowledge. Keep the explanation useful without a wall of technical caveats. No new user questions, no other agent/model calls, and no changes outside your output workspace.

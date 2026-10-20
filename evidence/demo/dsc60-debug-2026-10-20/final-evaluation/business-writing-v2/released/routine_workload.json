@@ -1,0 +1,19 @@
+{
+  "preparation_seconds": 0.0442112919408828,
+  "fit_seconds": 0.0009865829488262534,
+  "inference_and_order_calculation_seconds": 0.1243796250782907,
+  "end_to_end_including_imports_seconds": 0.42733724997378886,
+  "cpu_seconds_after_imports": 0.17062100000000002,
+  "process_peak_rss_bytes_including_imports_and_preparation": 138428416,
+  "fit_and_inference_peak_memory_conservative_upper_bound_bytes": 138428416,
+  "retained_model_bytes": 2688,
+  "training_array_bytes": 69888,
+  "dependencies": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "workload": "26 weeks, 336 series; read 17,406 sales CSV rows, deduplicate to 17,364. Current receipts, stock and policy. No network or model-service calls. Single CPU thread configuration.",
+  "limits": "OS process high-water RSS gives a conservative bound on both fit and inference, including preparation and retained arrays. Run on 128 GiB host, not a machine capped at 8 GB; time will vary. Measured capacity leaves substantial room below 8 GB for OS and other applications. Does not establish arbitrary future scalability.",
+  "cost": "No paid model/API required for routine weekly run. Existing computer plus electricity or hosting still costs money; no applicable local rates or AI-build usage/pricing available."
+}

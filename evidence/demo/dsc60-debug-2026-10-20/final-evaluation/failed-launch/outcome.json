@@ -1,0 +1,8 @@
+{
+  "outcome": "execution_failed",
+  "error_code": "runtime_error",
+  "message": "[Errno 1] Operation not permitted",
+  "thread_id": null,
+  "turn_id": null,
+  "terminal_status": null
+}

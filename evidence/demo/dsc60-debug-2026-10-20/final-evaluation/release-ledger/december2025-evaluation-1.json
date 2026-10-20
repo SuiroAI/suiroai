@@ -1,0 +1,12 @@
+{
+  "claimed_at": "2026-10-20T18:48:05.367252+00:00",
+  "evaluation_id": "december2025-evaluation-1",
+  "format": "dsc60-one-shot-reserved-release-v1",
+  "freeze_commit": "286cdf7b9c301ca67d7c4224efec071b09189317",
+  "historical_exposure": "Earlier project AI saw pooled full-history summaries; not globally pristine untouched.",
+  "manifest_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb",
+  "root": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation",
+  "source_expected_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+  "spec_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e",
+  "status": "release_claimed"
+}

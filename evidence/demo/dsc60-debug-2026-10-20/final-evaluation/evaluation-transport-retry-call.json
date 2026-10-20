@@ -1,0 +1,94 @@
+{
+  "claimed_at": "2026-10-20T18:48:05.367252+00:00",
+  "controller_computed_outcome_metrics": false,
+  "controller_sha256": "bdca090bd028d72de0881fd3d47395c5310fadc836a4b16856c8403fcddbf53d",
+  "evaluation_id": "december2025-evaluation-1",
+  "format": "dsc60-one-shot-reserved-release-v1",
+  "freeze_commit": "286cdf7b9c301ca67d7c4224efec071b09189317",
+  "historical_exposure": "Earlier project AI saw pooled full-history summaries; not globally pristine untouched.",
+  "ledger_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/release-ledger/december2025-evaluation-1.json",
+  "manifest_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb",
+  "native": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry",
+  "output": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output",
+  "partition_column_order_and_values_preserved": true,
+  "prepared_at": "2026-10-20T18:48:05.437922+00:00",
+  "released": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/released",
+  "reserved_partition_bytes": 183984,
+  "reserved_partition_sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e",
+  "root": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation",
+  "source_expected_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+  "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+  "spec_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e",
+  "status": "prepared",
+  "trace": {
+    "format": "dsc60-native-call-trace-v1",
+    "stage": "one_shot_reserved_evaluation_transport_retry",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_configuration": {
+      "cli_version": "0.163.0",
+      "data_plugin": "data-analytics@openai-curated-remote",
+      "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    },
+    "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+    "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry-trace/outbound-prompt.txt",
+    "prompt_sha256": "07dfeeb4fc0b5914bd9737b7ae6ca3100698e1ff5af824dd2e4d51b8d4c3b22e",
+    "prompt_bytes": 6569,
+    "released_files": [
+      {
+        "relative_path": "protocol.json",
+        "released_byte_sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f",
+        "released_bytes": 29706,
+        "role": "frozen_evaluation_input"
+      },
+      {
+        "relative_path": "fixed_forecasts.csv",
+        "released_byte_sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8",
+        "released_bytes": 231200,
+        "role": "frozen_evaluation_input"
+      },
+      {
+        "relative_path": "daily_forecasts.csv",
+        "released_byte_sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef",
+        "released_bytes": 1542159,
+        "role": "frozen_evaluation_input"
+      },
+      {
+        "relative_path": "freeze_manifest.json",
+        "released_byte_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb",
+        "released_bytes": 3551,
+        "role": "committed_freeze_manifest"
+      },
+      {
+        "relative_path": "evaluation-spec.json",
+        "released_byte_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e",
+        "released_bytes": 2602,
+        "role": "committed_evaluation_spec"
+      },
+      {
+        "relative_path": "december2025.csv",
+        "released_byte_sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e",
+        "released_bytes": 183984,
+        "role": "reserved_outcomes_post_freeze"
+      },
+      {
+        "relative_path": "delivery_context.json",
+        "released_byte_sha256": "38631a50d70f641942e7ee322d2c892d5e154f7654bc00c992147712727b0a60",
+        "released_bytes": 456,
+        "role": "existing_delivery_facts_not_new_analysis"
+      }
+    ],
+    "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry-trace/call-trace.json",
+    "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/native-transport-retry",
+    "dispatch_status": "prepared",
+    "native_execution": null,
+    "native_evidence_files": [],
+    "transport_exception": null
+  },
+  "retry_reason": "Initial OS sandbox prevented native process launch before model thread/turn; identical prompt and released bytes, no previous scoring execution."
+}

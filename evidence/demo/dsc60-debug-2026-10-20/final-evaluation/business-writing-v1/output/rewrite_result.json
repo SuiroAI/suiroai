@@ -1,0 +1,6 @@
+{
+  "format": "dsc60-business-rewrite-v1",
+  "source_manifest_sha256": "cca2838131327e21ea713db63fd061f66991f7c5c43eb699eab6966b0cfe8281",
+  "response_file": "business_response.md",
+  "response_sha256": "336e03124b7fa1b2ec4d24ba57522da01c953cb9757d3d62a73a4bbb6d7592a8"
+}

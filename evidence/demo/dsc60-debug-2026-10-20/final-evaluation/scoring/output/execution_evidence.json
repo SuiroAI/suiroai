@@ -1,0 +1,110 @@
+{
+  "status": "success",
+  "execution_count": 1,
+  "command": "python evaluation.py --released-dir /private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/released --output-dir /private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output",
+  "resolved_python_executable": "/opt/anaconda3/bin/python",
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "started_at_utc": "2026-10-20T18:51:31.861603+00:00",
+  "cwd": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/evaluation/output",
+  "inputs_before": {
+    "protocol.json": {
+      "bytes": 29706,
+      "sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+    },
+    "fixed_forecasts.csv": {
+      "bytes": 231200,
+      "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+    },
+    "daily_forecasts.csv": {
+      "bytes": 1542159,
+      "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+    },
+    "freeze_manifest.json": {
+      "bytes": 3551,
+      "sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb"
+    },
+    "evaluation-spec.json": {
+      "bytes": 2602,
+      "sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e"
+    },
+    "december2025.csv": {
+      "bytes": 183984,
+      "sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e"
+    },
+    "delivery_context.json": {
+      "bytes": 456,
+      "sha256": "38631a50d70f641942e7ee322d2c892d5e154f7654bc00c992147712727b0a60"
+    }
+  },
+  "inputs_after": {
+    "protocol.json": {
+      "bytes": 29706,
+      "sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+    },
+    "fixed_forecasts.csv": {
+      "bytes": 231200,
+      "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+    },
+    "daily_forecasts.csv": {
+      "bytes": 1542159,
+      "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+    },
+    "freeze_manifest.json": {
+      "bytes": 3551,
+      "sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb"
+    },
+    "evaluation-spec.json": {
+      "bytes": 2602,
+      "sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e"
+    },
+    "december2025.csv": {
+      "bytes": 183984,
+      "sha256": "523785126813d13b37f4746066825ce2780f4fe16d3a77a09660bc85943ddd7e"
+    },
+    "delivery_context.json": {
+      "bytes": 456,
+      "sha256": "38631a50d70f641942e7ee322d2c892d5e154f7654bc00c992147712727b0a60"
+    }
+  },
+  "outputs": {
+    "per_key_week.csv": {
+      "bytes": 254602,
+      "sha256": "9c1f0603fec2117daae89c1c4dbd8efde7da3d59768821bd12fbddf663d9dea8"
+    },
+    "scores_by_week.csv": {
+      "bytes": 4405,
+      "sha256": "8c6598031179572a427b8c0706788503d0c0fdcb91bea6721259c3c02979a0f1"
+    },
+    "paired_sums.json": {
+      "bytes": 20586,
+      "sha256": "bb29762fa1ada3f88d103e21d83dbd3b3a0ff2adef04e4a8417e666a82a0d1d6"
+    },
+    "measured_results.json": {
+      "bytes": 36784,
+      "sha256": "90f9d8d866f72f05893ab5caf5cc1f915bc3461881001c1bddc79e151421ea9a"
+    },
+    "response.md": {
+      "bytes": 5313,
+      "sha256": "bac8ad057b311a7aead4be9387693f8598caff3a43a7fca8717ed34204d961f3"
+    },
+    "out_of_population.csv": {
+      "bytes": 84,
+      "sha256": "09818a3d23325280928b53c9d92b42b98b80b5a5b19e986f2e8c0a46fd3959f4"
+    },
+    "bootstrap_resamples.csv": {
+      "bytes": 79638,
+      "sha256": "2bcaa2095491d4e50e919a609af96c6423062d73ce47b6613414ffc9bffbd141"
+    }
+  },
+  "script": {
+    "bytes": 28783,
+    "sha256": "c3190e1a5cb3d7b73b286502a3ce0d9d0a213a2f3c57897544a293278e842655"
+  },
+  "scope": "Exactly seven released input files; no model/history access; one primary scoring.",
+  "pre_scoring_tool_failure": "A source-inspection heredoc was denied temporary-file creation before Python started; no evaluation code existed or outcome scoring occurred. Inspection succeeded using python -c.",
+  "checksum_note": "Evidence file excludes its own checksum to avoid self-reference; output hashes cover every produced artifact other than this evidence file.",
+  "mvp_comparison_yes": true,
+  "input_bytes_preserved": true,
+  "finished_at_utc": "2026-10-20T18:51:32.003937+00:00",
+  "runtime_seconds": 0.14235666603781283
+}
