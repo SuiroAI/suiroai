@@ -1,0 +1,167 @@
+{
+  "status": "passed",
+  "scope": "Author-generated execution checks; not independent validation or final business acceptance",
+  "checks": {
+    "saved_ids_equal_sorted_current_policy_and_stock": true,
+    "source_and_copied_model_hash_before_and_after": true,
+    "all_13_source_and_copy_identities": true,
+    "no_sales_after_cutoff": true,
+    "protocol_written_before_predictions": true,
+    "protocol_unchanged_during_generation": true,
+    "exact_output_schemas_and_population": true,
+    "exact_date_boundaries": true,
+    "finite_nonnegative": true,
+    "full_precision_selected_weekly_values_preserved": true,
+    "weekly_daily_sums_within_1e-9": true,
+    "coverage_daily_sums_within_1e-9": true,
+    "baseline_reconstructed_from_original_definition": true
+  },
+  "selected_model_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+  "protocol_sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f",
+  "population": 336,
+  "forecast_population_coverage": {
+    "shrink26": "336/336",
+    "recent13": "336/336"
+  },
+  "forecast_exclusions": [],
+  "evaluation_eligibility": "Unmeasured until reserved outcomes are released; do not equate forecast coverage to observed evaluation coverage",
+  "counts": {
+    "fixed_forecasts": 2688,
+    "daily_forecasts": 20832,
+    "coverage_forecasts": 672,
+    "raw_development_rows": 17406,
+    "deduplicated_rows": 17364,
+    "exact_duplicate_rows_removed": 42,
+    "conflicting_transaction_ids": 0,
+    "target_included_rows": 16505,
+    "nonpositive_quantity_rows_excluded": 8,
+    "cancelled_rows_excluded": 851,
+    "union_target_excluded_rows": 859
+  },
+  "development_dates": {
+    "min": "2022-01-01",
+    "max": "2025-11-30",
+    "post_cutoff_sales_rows": 0
+  },
+  "baseline_training": {
+    "calendar_weeks": 13,
+    "start": "2025-09-01",
+    "end": "2025-11-30",
+    "known_pair_weeks": 4340,
+    "unknown_pair_weeks_excluded": 28,
+    "observed_weeks_per_pair_min": 12,
+    "observed_weeks_per_pair_max": 13,
+    "alternate_computation_max_abs_difference": 0.0
+  },
+  "max_abs_weekly_daily_difference": 4.440892098500626e-16,
+  "max_abs_coverage_daily_difference": 0.0,
+  "source_dependency_record": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "execution_dependencies": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "dependency_version_matches": {
+    "python": true,
+    "pandas": true,
+    "numpy": true
+  },
+  "outputs": [
+    {
+      "path": "fixed_forecasts.csv",
+      "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+    },
+    {
+      "path": "daily_forecasts.csv",
+      "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+    },
+    {
+      "path": "coverage_forecasts.csv",
+      "sha256": "dc86395253fe5bbcdbebfc0d141c85249df1e9518e3c5c138bd5df803b68994d"
+    },
+    {
+      "path": "frozen_rates.csv",
+      "sha256": "781b3d370467c2cc84066e05a6ab20ebbc352e10b2819ca95692ae5bf49d9907"
+    },
+    {
+      "path": "baseline_coverage.csv",
+      "sha256": "1184a42c8c85825edd389e9d39fc5d6cf7b08c05fa060e3c02a7cdbda1810b9f"
+    },
+    {
+      "path": "baseline_exclusions.csv",
+      "sha256": "b1583e5ce82e79607b61578f1d972867ca9fc79f07acbe1f9ab2c67d05ef1c58"
+    }
+  ],
+  "program_sha256": "59bdefcd1a92f15936dfe633c91ce65f06ec74aa0408bd740387dde563a05b24",
+  "input_artifacts": [
+    {
+      "path": "assets/input-1.csv",
+      "role": "development_source",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "path": "assets/input-2.csv",
+      "role": "development_source",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "path": "assets/input-3.csv",
+      "role": "development_source",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "path": "assets/input-4.csv",
+      "role": "development_source",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    },
+    {
+      "path": "assets/selected_model.npz",
+      "role": "selected_model",
+      "sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e"
+    },
+    {
+      "path": "assets/restock_model.py",
+      "role": "model_code",
+      "sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e"
+    },
+    {
+      "path": "assets/prepare.py",
+      "role": "preprocessing_code",
+      "sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9"
+    },
+    {
+      "path": "assets/analysis.py",
+      "role": "analysis_code",
+      "sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188"
+    },
+    {
+      "path": "assets/task_refinement.json",
+      "role": "feature_definition",
+      "sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4"
+    },
+    {
+      "path": "assets/evaluation_plan.json",
+      "role": "evaluation_plan_v1",
+      "sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb"
+    },
+    {
+      "path": "assets/evaluation_plan_v2.json",
+      "role": "evaluation_plan_v2",
+      "sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0"
+    },
+    {
+      "path": "assets/implementation_correction.json",
+      "role": "implementation_correction",
+      "sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6"
+    },
+    {
+      "path": "assets/routine_workload.json",
+      "role": "dependencies",
+      "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44"
+    }
+  ]
+}

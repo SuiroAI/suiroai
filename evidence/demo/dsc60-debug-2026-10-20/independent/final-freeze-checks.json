@@ -1,0 +1,40 @@
+{
+  "scope": "independent_pre_outcome_forecast_verification",
+  "all_checks_pass": true,
+  "checks": {
+    "protected_model_hash_exact": true,
+    "all_thirteen_protocol_assets_match_dispatch_and_release": true,
+    "fixed_336_unique_sorted_policy_keys": true,
+    "saved_model_ids_exact_population_order": true,
+    "selected_rates_bit_exact_to_saved_float64": true,
+    "no_post_cutoff_source_rows": true,
+    "baseline_all336_fixed_recent13_definition": true,
+    "both_models_exact_four_week_population": true,
+    "both_models_exact_all31_day_population": true,
+    "all_forecasts_fixed_nov30_finite_nonnegative": true,
+    "all_primary_horizons_seven_days": true,
+    "all_selected_and_baseline_weekly_values_direct_match": true,
+    "all_daily_values_direct_rate_divide_seven": true,
+    "daily_sums_match_weekly_and_coverage_within1e9": true,
+    "coverage_exact672_policy_horizons": true
+  },
+  "selected_model_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+  "protocol_sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f",
+  "baseline_observed_weeks_min": 12,
+  "baseline_observed_weeks_max": 13,
+  "baseline_unknown_key_weeks": 28,
+  "max_weekly_daily_difference": 4.440892098500626e-16,
+  "max_coverage_daily_difference": 8.881784197001252e-16,
+  "forecast_hashes": {
+    "fixed_forecasts.csv": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8",
+    "daily_forecasts.csv": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef",
+    "coverage_forecasts.csv": "dc86395253fe5bbcdbebfc0d141c85249df1e9518e3c5c138bd5df803b68994d",
+    "frozen_rates.csv": "781b3d370467c2cc84066e05a6ab20ebbc352e10b2819ca95692ae5bf49d9907"
+  },
+  "limits": [
+    "No December outcome rows opened; no producer code executed; no new fitting/model choice.",
+    "Full-history aggregate exposure in earlier project sessions is documented by dispatch; globally pristine untouched provenance cannot be asserted.",
+    "Target is a partial-recording export proxy, not fully observed/unconstrained demand; strict typed DSC28 contract remains separate.",
+    "This checks forecast byte/value and fixed baseline arithmetic, not final performance or milestone acceptance."
+  ]
+}

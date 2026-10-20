@@ -1,0 +1,112 @@
+{
+  "checks": {
+    "as_of_date": "2025-11-30",
+    "daily_end": "2025-12-31",
+    "daily_rows": 20832,
+    "daily_start": "2025-12-01",
+    "models": [
+      "recent13",
+      "shrink26"
+    ],
+    "origin": "2025-11-30",
+    "population": 336,
+    "sum_tolerance": "1e-10 * max(1, abs(weekly_total))",
+    "weekly_rows": 2688,
+    "weekly_target_starts": [
+      "2025-12-01",
+      "2025-12-08",
+      "2025-12-15",
+      "2025-12-22"
+    ]
+  },
+  "files": [
+    {
+      "bytes": 16550,
+      "path": "assets/analysis.py",
+      "sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188"
+    },
+    {
+      "bytes": 4978,
+      "path": "assets/evaluation_plan.json",
+      "sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb"
+    },
+    {
+      "bytes": 6353,
+      "path": "assets/evaluation_plan_v2.json",
+      "sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0"
+    },
+    {
+      "bytes": 937,
+      "path": "assets/implementation_correction.json",
+      "sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6"
+    },
+    {
+      "bytes": 19279,
+      "path": "assets/input-1.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "bytes": 10740,
+      "path": "assets/input-2.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "bytes": 18799,
+      "path": "assets/input-3.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "bytes": 5006997,
+      "path": "assets/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    },
+    {
+      "bytes": 14829,
+      "path": "assets/prepare.py",
+      "sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9"
+    },
+    {
+      "bytes": 4955,
+      "path": "assets/restock_model.py",
+      "sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e"
+    },
+    {
+      "bytes": 1377,
+      "path": "assets/routine_workload.json",
+      "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44"
+    },
+    {
+      "bytes": 16924,
+      "path": "assets/selected_model.npz",
+      "sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e"
+    },
+    {
+      "bytes": 5794,
+      "path": "assets/task_refinement.json",
+      "sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4"
+    },
+    {
+      "bytes": 1542159,
+      "path": "daily_forecasts.csv",
+      "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+    },
+    {
+      "bytes": 231200,
+      "path": "fixed_forecasts.csv",
+      "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+    },
+    {
+      "bytes": 29706,
+      "path": "protocol.json",
+      "sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+    }
+  ],
+  "format": "dsc60-final-forecast-freeze-v1",
+  "frozen_at": "2026-10-20T18:41:18.396345+00:00",
+  "independent_model_verified": false,
+  "limits": "Exact byte/shape/arithmetic freeze only. Producer chronology, source provenance, untouchedness, model semantics and evaluation acceptance require separate review. No code was executed or outcomes scored.",
+  "outcomes_read_by_utility": false,
+  "parent_acceptance_granted": false,
+  "provenance_pending": true,
+  "selected_model_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e"
+}

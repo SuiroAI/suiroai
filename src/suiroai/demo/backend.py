@@ -2,8 +2,11 @@
 
 Retain native execution evidence, a dedicated restocking CSV, optional demo HTML and the Data
 explanation shown in the app. Exact stored output bytes remain bound to the
-current approval and original runtime receipt.
+current approval and original runtime receipt. A separate native writing pass
+turns completed findings into business-owner prose; failure retains the original
+explanation without changing the CSV, HTML, model or verification status.
 
+Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from dataclasses import dataclass
@@ -13,6 +16,7 @@ import uuid
 
 from suiroai.contracts import record_ref
 from .investigation import run_investigation
+from .business_response import run_business_response
 
 
 @dataclass(frozen=True)
@@ -94,6 +98,18 @@ def run_approved(store, submission, proposal, approval, execution, work_root,
         else:
             status = "blocked"
             message = "Data could not complete the investigation. " + result.get("message", "No investigation output was returned.")
+        if native_outcome == "completed" and not result.get("output_error") and investigation_text:
+            try:
+                writing = run_business_response(store, result, root,
+                    lambda: consent_validator(approval, proposal), progress=progress)
+            except Exception as exc:
+                # Writing is presentation-only: keep useful completed findings.
+                # Revoked consent still fails the final publication check below.
+                writing = {"status": "original_retained", "text": investigation_text,
+                    "error": {"type": type(exc).__name__, "message": str(exc)},
+                    "analytical_verification": False}
+            result = {**result, "business_response": writing}
+            investigation_text = writing.get("text") or investigation_text
         if investigation_text:
             investigation_path = root / ("investigation-" + uuid.uuid4().hex + ".md")
             investigation_path.write_text(investigation_text, encoding="utf-8")

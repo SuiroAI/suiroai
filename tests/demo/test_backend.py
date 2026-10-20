@@ -190,3 +190,50 @@ class ApprovedInvestigationTests(unittest.TestCase):
             self.assertEqual(result.html_download_bytes, store.read_bytes(html_ref))
             self.assertEqual(result.html_download_name, "report.html")
             self.assertEqual(Path(result.html_report_path).read_bytes(), store.read_bytes(html_ref))
+
+
+class BusinessWritingBackendTests(unittest.TestCase):
+    """The app adopts a separate writer narrative while preserving CSV bytes.
+
+    Mock stage results check wiring only, not genuine native writing quality.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-60
+    """
+
+    def test_completed_analysis_calls_writer_and_publishes_new_narrative_only(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory); store = ArtifactStore(root / 'store')
+            ref = store.put_bytes('csv', 1, 'derived', b'Product_ID,Store_ID,OrderQty\nP,S,1\n')
+            record = {'artifact_id': 'test', 'artifact_version': 1, 'provenance': 'derived'}
+            native = {'native_outcome': 'completed', 'unverified_report_ref': ref,
+                      'unverified_investigation_text': 'Original measured explanation'}
+            writing = {'status': 'rewritten', 'text': 'Plain useful next steps', 'receipt_ref': {'test': True}}
+            with patch('suiroai.demo.backend.run_investigation', return_value=native), \
+                    patch('suiroai.demo.backend.run_business_response', return_value=writing) as writer:
+                result = run_approved(store, record, record, record, None, root / 'runs', lambda *_: True)
+            writer.assert_called_once()
+            assert writer.call_args.args[3]() is True
+            assert result.investigation_text == 'Plain useful next steps'
+            assert result.download_bytes == store.read_bytes(ref)
+            receipt = json.loads(Path(result.evidence_path).read_text())
+            assert receipt['stage_result']['business_response']['status'] == 'rewritten'
+            assert receipt['stage_result']['unverified_investigation_text'] == 'Original measured explanation'
+            assert result.report_verified is False
+
+    def test_writer_exception_keeps_useful_analysis_without_customer_warning(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory); store = ArtifactStore(root / 'store')
+            ref = store.put_bytes('csv', 1, 'derived', b'Product_ID,Store_ID,OrderQty\nP,S,1\n')
+            record = {'artifact_id': 'test', 'artifact_version': 1, 'provenance': 'derived'}
+            native = {'native_outcome': 'completed', 'unverified_report_ref': ref,
+                      'unverified_investigation_text': 'Useful original findings'}
+            with patch('suiroai.demo.backend.run_investigation', return_value=native), \
+                    patch('suiroai.demo.backend.run_business_response', side_effect=RuntimeError('TEST writer error')):
+                result = run_approved(store, record, record, record, None, root / 'runs', lambda *_: True)
+            assert result.status == 'analysis_completed'
+            assert result.investigation_text == 'Useful original findings'
+            assert 'writer error' not in result.message
+            assert result.download_bytes == store.read_bytes(ref)
+            receipt = json.loads(Path(result.evidence_path).read_text())
+            assert receipt['stage_result']['business_response']['error']['message'] == 'TEST writer error'

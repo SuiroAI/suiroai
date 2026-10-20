@@ -1,0 +1,17 @@
+{
+  "format": "dsc60-pre-outcome-evaluation-contract-v1",
+  "declared_at": "2026-10-20T18:43:21.627028+00:00",
+  "freeze_manifest_sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb",
+  "evaluation_spec_sha256": "ff2a824aa74d3c10e04ea2203247b3088a36ee0e3a8529eac94bf35754d6d02e",
+  "selected_model_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+  "source_sales_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+  "frozen_local_directory": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen",
+  "scoring_release_id": "december2025-evaluation-1",
+  "primary_model": "shrink26",
+  "baseline_model": "recent13",
+  "comparison_rule": "Strictly lower paired absolute-error sum under pinned common eligibility; exact tie fails. No refit, runner-up promotion or post-release tuning.",
+  "earlier_exposure_record": "../independent/holdout-provenance-review.md",
+  "parent_acceptance_granted": false,
+  "reserved_outcomes_opened_by_this_final_workflow": false,
+  "authorization": "User explicitly instructs complete end to end with existing data and no newer-data request; earlier profile exposure qualified."
+}

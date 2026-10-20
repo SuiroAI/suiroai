@@ -1,0 +1,26 @@
+{
+  "format": "dsc60-reserved-evaluation-spec-v1",
+  "declared_at": "2026-10-20T18:39:42.871671+00:00",
+  "as_of_date": "2025-11-30",
+  "selected_model": "shrink26",
+  "baseline_model": "recent13",
+  "primary_target_starts": [
+    "2025-12-01",
+    "2025-12-08",
+    "2025-12-15",
+    "2025-12-22"
+  ],
+  "primary_horizon_days": 7,
+  "expected_product_store_count": 336,
+  "candidate_selection": "Already fixed to existing NPZ; no refit, candidate promotion, method changes or parameter tuning after outcome release.",
+  "target": "Sum positive noncancelled recorded Quantity; retain positive processing/returned records. Deduplicate exact original source rows, assert Transaction_ID has no conflicting nonidentical rows.",
+  "exposure": "Use ALL deduplicated source transactions, including cancelled/nonpositive rows, for observed Store_ID/date and store-week presence. Original source columns define duplicate identity; no synthetic lineage columns in row equality. Entire unobserved store-week is excluded identically for both models; no true-demand/complete-capture claim.",
+  "population": "All same336 frozen Product_ID/Store_ID keys per four primary target windows. Score equal weight per eligible key/window. Report all exclusions and eligible fraction of1344.",
+  "primary_metric": "seven_day_aggregate_mae_recorded_product_units",
+  "numeric_policy": "Parse frozen forecast decimal text and source quantities as Decimal with at least50digit precision. Compare paired total absolute errors directly (same denominator), without rounding or epsilon. Equal/tie is not improvement. Display rounding does not govern selection.",
+  "mvp_comparison_rule": "candidate_absolute_error_sum < baseline_absolute_error_sum; report relative MAE difference, bias, each week, coverage and descriptive uncertainty. No invented5percent threshold or business-value/cost claim.",
+  "secondary_scope": "December29-31/monthwide/daily/lead-plus-review diagnostics must not replace primary four-week rule.",
+  "historical_exposure": "December was withheld from current modeling worker, but pooled full-history quantity summaries were shown to an earlier project AI session. First frozen December-specific scoring here is not claimed globally pristine untouched.",
+  "parent_acceptance": "No invented complete_daily_sales=true or authenticated typed execution/acceptance records. Broader parent verification/delivery/recording gates remain separate.",
+  "evaluation_limit": "One primary outcome release/evaluation; preserve pre-release artifacts and both pass/fail result. Defect recheck cannot refit/reselect/tune."
+}

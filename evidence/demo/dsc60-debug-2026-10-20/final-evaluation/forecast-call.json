@@ -1,0 +1,131 @@
+{
+  "format": "dsc60-final-forecast-call-v1",
+  "prepared_at": "2026-10-20T18:36:37.159859+00:00",
+  "source_commit": "d5c71ed9f0caa2111a1d23532db8eed541aa7b54",
+  "controller_sha256": "c157b9b249ce4bc20eb2c7a4338b28c76fea86477b6b89150088af2450d37a28",
+  "source_commit_is_base_with_scoped_controller_changes": true,
+  "selected_model_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+  "released": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/released",
+  "output": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output",
+  "native": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native",
+  "trace": {
+    "format": "dsc60-native-call-trace-v1",
+    "stage": "final_forecast_freeze_preparation",
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_configuration": {
+      "cli_version": "0.163.0",
+      "data_plugin": "data-analytics@openai-curated-remote",
+      "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "attachment": {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    },
+    "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+    "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native-trace/outbound-prompt.txt",
+    "prompt_sha256": "c344a67c0b999a67dcf63bc556419247b5e74163b096650f9d28eb479c1b5b6d",
+    "prompt_bytes": 10604,
+    "released_files": [
+      {
+        "relative_path": "input-1.csv",
+        "source_role": "development_source",
+        "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-1.csv",
+        "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "released_bytes": 19279
+      },
+      {
+        "relative_path": "input-2.csv",
+        "source_role": "development_source",
+        "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-2.csv",
+        "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "released_bytes": 10740
+      },
+      {
+        "relative_path": "input-3.csv",
+        "source_role": "development_source",
+        "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-3.csv",
+        "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "released_bytes": 18799
+      },
+      {
+        "relative_path": "input-4.csv",
+        "source_role": "development_source",
+        "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-4.csv",
+        "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+        "released_bytes": 5006997
+      },
+      {
+        "relative_path": "selected_model.npz",
+        "source_role": "selected_model",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/selected_model.npz",
+        "released_byte_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+        "released_bytes": 16924
+      },
+      {
+        "relative_path": "restock_model.py",
+        "source_role": "model_code",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/restock_model.py",
+        "released_byte_sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e",
+        "released_bytes": 4955
+      },
+      {
+        "relative_path": "prepare.py",
+        "source_role": "preprocessing_code",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/prepare.py",
+        "released_byte_sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9",
+        "released_bytes": 14829
+      },
+      {
+        "relative_path": "analysis.py",
+        "source_role": "analysis_code",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/analysis.py",
+        "released_byte_sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188",
+        "released_bytes": 16550
+      },
+      {
+        "relative_path": "task_refinement.json",
+        "source_role": "feature_definition",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/task_refinement.json",
+        "released_byte_sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4",
+        "released_bytes": 5794
+      },
+      {
+        "relative_path": "evaluation_plan.json",
+        "source_role": "evaluation_plan_v1",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/evaluation_plan.json",
+        "released_byte_sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb",
+        "released_bytes": 4978
+      },
+      {
+        "relative_path": "evaluation_plan_v2.json",
+        "source_role": "evaluation_plan_v2",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/evaluation_plan_v2.json",
+        "released_byte_sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0",
+        "released_bytes": 6353
+      },
+      {
+        "relative_path": "implementation_correction.json",
+        "source_role": "implementation_correction",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/implementation_correction.json",
+        "released_byte_sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6",
+        "released_bytes": 937
+      },
+      {
+        "relative_path": "routine_workload.json",
+        "source_role": "dependencies",
+        "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/routine_workload.json",
+        "released_byte_sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+        "released_bytes": 1377
+      }
+    ],
+    "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native-trace/call-trace.json",
+    "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native",
+    "dispatch_status": "prepared",
+    "native_execution": null,
+    "native_evidence_files": [],
+    "transport_exception": null
+  },
+  "limits": "No reserved outcomes released. Earlier full-history summary exposure remains recorded; no pristine-untouched or parent acceptance is asserted."
+}

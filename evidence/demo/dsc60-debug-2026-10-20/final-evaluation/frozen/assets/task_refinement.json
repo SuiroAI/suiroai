@@ -1,0 +1,82 @@
+{
+  "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "customer_context": {
+    "current_process": {
+      "evidence": [
+        {
+          "quote": "I usually look at the last few months of sales to decide what to buy.",
+          "source": "question"
+        }
+      ],
+      "source": "detector_interpretation",
+      "status": "found",
+      "text": "The user wants to decide what to restock in stores next week. Their current procedure is to look at the last few months of sales to decide what to buy. The question explicitly describes this practice, but does not specify a calculation or precise ordering rule."
+    },
+    "format": "dsc60-task-context-v1",
+    "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy."
+  },
+  "attribution": "Refined analytical task authored by the Data analysis; supplied question and customer_context preserved separately and unchanged.",
+  "decision": {
+    "unit": "product at store",
+    "planning_as_of": "2025-11-30",
+    "next_week": "2025-12-01 through 2025-12-07",
+    "action": "Nonnegative integer units to order now, respecting supplied pack and minimum; zero where supported. No purchases placed.",
+    "outcomes": "Support availability while avoiding unnecessary purchasing. Relative priorities, service targets, lost-sales costs and holding costs are unknown; no optimization of these outcomes is claimed."
+  },
+  "facts": [
+    "Customer uses recent months of sales without an exact ordering rule.",
+    "Released sales end November 30, 2025.",
+    "Current stock, incoming deliveries and policy supplied, all labeled synthetic."
+  ],
+  "supported_interpretations": [
+    "Forecast future sales as an input to stock coverage, rather than simply rank past best sellers.",
+    "Gross units are closer to replenishment needs than net revenue or subtracting unspecified returned stock."
+  ],
+  "synthetic_controller_assumptions": [
+    "336 synthetic inventory/policy rows and 126 synthetic incoming lines permit an illustrative order calculation only.",
+    "Planning date and untouched December boundary are controller scope."
+  ],
+  "analyst_assumptions": [
+    "All channels assigned to Store_ID draw on that store; cannot prove fulfillment linkage.",
+    "Recorded-unit subtotal forecasts use a recording process similar to training; missing sales could make them too low.",
+    "New orders placed November 30 arrive after the supplied lead time; existing receipts arrive on their stated dates.",
+    "Translate the forecast through lead plus review coverage using supplied safety stock. No additional service target or economic cost is invented."
+  ],
+  "unresolved": [
+    "True missing-date coverage and stockout-censored demand",
+    "When historical statuses became known",
+    "Whether returned units are usable",
+    "Real business stock/policy accuracy",
+    "Exact incumbent buying rule",
+    "Availability versus excess-stock priorities, budget and economic costs"
+  ],
+  "refined_task": "Compare a fixed, bounded set of lightweight non-LLM recorded-unit forecasts on common time-ordered development origins; select by predeclared next-week absolute-unit error, show longer-coverage and target sensitivities, and apply supplied synthetic stock, receipts, safety and pack constraints to an illustrative list. Quantify actual local workload, uncertainty and limits; do not claim business savings or independent success.",
+  "incumbent_evaluation": "Exact customer process cannot be replayed: lookback length, aggregation, adjustments and quantity rule absent. Preserve this as an unevaluable descriptive incumbent; recent-13-week average is an analytical baseline only.",
+  "candidate_rationale": [
+    {
+      "name": "recent13",
+      "method": "13 complete calendar weeks mean of observed recorded subtotals for each pair",
+      "evidence": "Question references recent months; input-4 spans almost four years. Stable simple baseline; no exact incumbent asserted."
+    },
+    {
+      "name": "ses",
+      "method": "Per-pair simple exponential smoothing, alpha=0.15, initialize first 13 observed weeks; 104-week training",
+      "evidence": "input-4 monthly unit totals vary over time. Recency adaptation can react more quickly than a fixed average; one fixed smoothing weight, no tuning."
+    },
+    {
+      "name": "shrink26",
+      "method": "26-week pair rates shrunk toward product-by-store independent pooled rates with 13-week prior strength",
+      "evidence": "inspect_sources.py shows 336 sparse series with only 14-121 lines over the whole history; pooling reduces noisy local estimates."
+    },
+    {
+      "name": "poisson_calendar",
+      "method": "L2 regularized pooled Poisson regression, product/store main effects, annual Fourier harmonics 1 and 2, linear time; alpha=0.01, max_iter=300, 104-week fit",
+      "evidence": "input-4 shows higher November/December totals repeatedly in 2022-24. Pooling supports sparse series; calendar features allow modest recurring seasonality without per-series seasonal overfit. Nonnegative integer-unit target suits a Poisson mean model, not a claim of Poisson uncertainty."
+    }
+  ],
+  "scope": "No neural models, ensembles, unbounded search, policy redesign or paid API at routine runtime. Dense small factor design and a few hundred weekly series fit practical CPU-only discovery; measure preparation, fits, inference and retained process memory.",
+  "success_gate": {
+    "ready": false,
+    "reason": "October-November already inspected; development only. No externally predeclared meaningful gain threshold and no untouched evaluation with frozen artifacts. December never accessed."
+  }
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/baseline_coverage.csv",
+    "bytes": 5751,
+    "sha256": "1184a42c8c85825edd389e9d39fc5d6cf7b08c05fa060e3c02a7cdbda1810b9f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/baseline_exclusions.csv",
+    "bytes": 1643,
+    "sha256": "b1583e5ce82e79607b61578f1d972867ca9fc79f07acbe1f9ab2c67d05ef1c58"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/coverage_forecasts.csv",
+    "bytes": 58401,
+    "sha256": "dc86395253fe5bbcdbebfc0d141c85249df1e9518e3c5c138bd5df803b68994d"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/daily_forecasts.csv",
+    "bytes": 1542159,
+    "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/execution.log",
+    "bytes": 456,
+    "sha256": "73e0df70c2f8d28b4c24c5ef7fb83909109fa19aba27f96889d00323d77ef825"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/execution_evidence.json",
+    "bytes": 1326,
+    "sha256": "daf4e4e436d357a266e05471141c91765f533b27dc980b6ccf61ae28bea63b44"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/fixed_forecasts.csv",
+    "bytes": 231200,
+    "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/freeze_checks.json",
+    "bytes": 5813,
+    "sha256": "15d072c2740beb8e4d1454ec89b65ee3ce1a69fe4157ef0d55e89a88f6d7354e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/freeze_summary.md",
+    "bytes": 5795,
+    "sha256": "9a06650c15b8fcca70b4b423246325385f2afbac9735584c80716894298022fa"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/frozen_rates.csv",
+    "bytes": 17926,
+    "sha256": "781b3d370467c2cc84066e05a6ab20ebbc352e10b2819ca95692ae5bf49d9907"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/generate_freeze.py",
+    "bytes": 19259,
+    "sha256": "59bdefcd1a92f15936dfe633c91ce65f06ec74aa0408bd740387dde563a05b24"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/internal_provenance.json",
+    "bytes": 646,
+    "sha256": "848f1e0f690ed776c76ebc9dfb5b5c406bb3f3e1cc1a448b06e9f5bb2e134f63"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/output/protocol.json",
+    "bytes": 29706,
+    "sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native/native-bootstrap.jsonl",
+    "bytes": 2259,
+    "sha256": "484c0417d69f0fe75b85924ea4cbfbfb2e05000f9d2baae9fc15d60b6d0a2367"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native/native-rpc.jsonl",
+    "bytes": 718967,
+    "sha256": "7b0bf22b7ba58e7f3b3f73793a1827539ef9d87d3d4906d2bf3602d7e046d609"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native/native-run.json",
+    "bytes": 302095,
+    "sha256": "2d71e24e285ab1754b558dcba6bd0a8c17035393b6ac2b5f4ede965f96dd75df"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native-trace/call-trace.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/forecast-authoring/trace/call-trace.json",
+    "bytes": 7958,
+    "sha256": "6f7f9ce3ad0da82879d448538cb6ee301db555313477989baafce750536ea55f"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/native-trace/outbound-prompt.txt",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/forecast-authoring/trace/outbound-prompt.txt",
+    "bytes": 10604,
+    "sha256": "c344a67c0b999a67dcf63bc556419247b5e74163b096650f9d28eb479c1b5b6d"
+  }
+]

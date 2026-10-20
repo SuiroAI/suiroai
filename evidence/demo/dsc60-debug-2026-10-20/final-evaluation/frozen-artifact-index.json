@@ -1,0 +1,104 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/manifest.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/manifest.json",
+    "bytes": 3551,
+    "sha256": "2e31be4a68da6e1b69afdf32022107498b6fccb885af34613a10abb8975c91fb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/analysis.py",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/analysis.py",
+    "bytes": 16550,
+    "sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/evaluation_plan.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/evaluation_plan.json",
+    "bytes": 4978,
+    "sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/evaluation_plan_v2.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/evaluation_plan_v2.json",
+    "bytes": 6353,
+    "sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/implementation_correction.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/implementation_correction.json",
+    "bytes": 937,
+    "sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/input-1.csv",
+    "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "bytes": 19279,
+    "retention": "private approved source retained locally, not duplicated in Git"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/input-2.csv",
+    "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "bytes": 10740,
+    "retention": "private approved source retained locally, not duplicated in Git"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/input-3.csv",
+    "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "bytes": 18799,
+    "retention": "private approved source retained locally, not duplicated in Git"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/input-4.csv",
+    "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+    "bytes": 5006997,
+    "retention": "private approved source retained locally, not duplicated in Git"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/prepare.py",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/prepare.py",
+    "bytes": 14829,
+    "sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/restock_model.py",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/restock_model.py",
+    "bytes": 4955,
+    "sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/routine_workload.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/routine_workload.json",
+    "bytes": 1377,
+    "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/selected_model.npz",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/selected_model.npz",
+    "bytes": 16924,
+    "sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/assets/task_refinement.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/assets/task_refinement.json",
+    "bytes": 5794,
+    "sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/daily_forecasts.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/daily_forecasts.csv",
+    "bytes": 1542159,
+    "sha256": "ff5e6506cb935ef9fa75d3204da600caf5c49489fd43e7addc1e68d8640ffdef"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/fixed_forecasts.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/fixed_forecasts.csv",
+    "bytes": 231200,
+    "sha256": "0448042eb22945c0e75c9a88fe874866188d51af877263af946731ce141e4ca8"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/frozen/protocol.json",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/final-evaluation/frozen/protocol.json",
+    "bytes": 29706,
+    "sha256": "f2fc1d7bba8022789b77ffda1ca2f61361dcff84336087745a3bbb4941ff327f"
+  }
+]

@@ -1,0 +1,1425 @@
+{
+  "format": "dsc60-final-freeze-protocol-v1",
+  "as_of_date": "2025-11-30",
+  "origin": "2025-11-30",
+  "selected_model": "shrink26",
+  "baseline_model": "recent13",
+  "population": [
+    {
+      "Product_ID": "P001",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P001",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P002",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P003",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P007",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P008",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P009",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P010",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P011",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P012",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P013",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P014",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P015",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P016",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P017",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P020",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P021",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P022",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P023",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P025",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P026",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "VAN-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "AUS-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "CHI-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "COL-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "LA-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "LON-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "MAN-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "MUC-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "NYC-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "PAR-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "SYD-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "TOR-01"
+    },
+    {
+      "Product_ID": "P028",
+      "Store_ID": "VAN-01"
+    }
+  ],
+  "target_definition": "Product units, all store-attributed channels: remove exact duplicate full rows first, then require unique Transaction_ID (conflicts stop evaluation); retain repeated Order_ID as distinct transaction lines. Parse Order_Date as calendar date, normalize Order_Status by strip/lower. Sum Quantity strictly >0 with status != cancelled, including processing and returned regardless of Return_Flag; no return reuse credit. Observed recording day means any deduplicated source transaction at that Store_ID/date before quantity/status filtering. At an observed store-day a missing product contribution is zero recorded units. Absent store-days remain unknown; target is the sum of eligible recorded contributions over observed days only, without rescaling. No complete-demand, stockout, lost-sales or historically-known-status assertion. Use supplied final statuses; knowledge/update timestamps are unavailable.",
+  "baseline_definition": "recent13 exactly as analysis.py: last 13 complete Monday-Sunday calendar weeks ending at origin, 2025-09-01..2025-11-30 inclusive. Build weekly per-key eligible recorded-unit sums. A key/week is known only if week start is strictly after the key first transaction date and the store has any deduplicated transaction in that week. Known weeks with no eligible product contribution have zero; unknown weeks are NaN. Arithmetic nanmean over these 13 calendar positions, not the last 13 observed weeks; no zero filling unknown store-weeks, no denominator 13 when weeks are missing. Freeze resulting weekly rate at origin; every future day = weekly rate / 7, no seasonal adjustment. shrink26 uses only the supplied full-precision weekly_recorded_units and saved IDs, with the same daily allocation; no fit or reselection.",
+  "primary_metric": "Equal-key/window seven-day recorded-unit MAE: sum abs(forecast_units - recorded_units) over common eligible key/week cells divided by their count, pooling the four nonoverlapping December weeks. No unit-volume, price, service or stock weighting; not an equal average of weekly MAEs when eligible counts differ.",
+  "coverage_rule": "Forecast every one of the 336 fixed current policy keys for both methods. Evaluation eligibility is identical: a key/window is eligible if that store has >=1 observed recording day in the window (all fixed keys are historically observed before origin). Exclude an entirely unobserved store-window for both; never infer a demand zero from absence. Retain partial observed windows without rescaling. Report each excluded key/window and reason, observed day counts 0..7, eligible counts and eligible/(336*4) overall and eligible/336 per week; also complete-7-observed-day subset. Date presence does not prove complete demand. Diagnostic coverage totals use origin+1 through origin+(Supplier_Lead_Time_Days+Review_Period_Days), inclusive, 8..14 days; supplied current synthetic policy is not historical policy. Known operational future due dates are not sales outcomes.",
+  "evaluation_rule": "All predictions issued at fixed 2025-11-30; no later information, rolling update or refit. Primary windows inclusive: 2025-12-01..07, 08..14, 15..21, 22..28. MVP question: does this fixed shrink26 have lower pooled absolute weekly recorded-unit forecast error than frozen recent13 on common eligibility? Report both MAEs, paired MAE difference selected minus baseline, relative difference (MAE_selected/MAE_baseline - 1; if baseline=0 report undefined and absolute difference), per-week MAE, bias mean(forecast-actual), eligible counts, all exclusions and recording/population coverage. Strictly lower error answers yes; no invented 5% gate. Exact ties do not establish improvement. If candidate loses report failure and retain baseline option; no runner-up promotion, target/metric change or tuning. Descriptive uncertainty: paired week-cluster bootstrap, seed 603, 2000 resamples of four weeks with replacement, recompute pooled paired error difference from summed errors/counts, 2.5/97.5 percentiles; four weeks and cross-key dependence limit interpretation, no superiority guarantee. Complete-store-week subset and lead-plus-review, last three days and month totals are secondary only. No purchasing savings or service-level claim. This call emits no outcomes or accuracy scores. Broader typed DSC28 acceptance/completeness contract remains separate; no parent-contract or final-approval flags are manufactured.",
+  "artifacts": [
+    {
+      "path": "assets/input-1.csv",
+      "role": "development_source",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "path": "assets/input-2.csv",
+      "role": "development_source",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "path": "assets/input-3.csv",
+      "role": "development_source",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "path": "assets/input-4.csv",
+      "role": "development_source",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    },
+    {
+      "path": "assets/selected_model.npz",
+      "role": "selected_model",
+      "sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e"
+    },
+    {
+      "path": "assets/restock_model.py",
+      "role": "model_code",
+      "sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e"
+    },
+    {
+      "path": "assets/prepare.py",
+      "role": "preprocessing_code",
+      "sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9"
+    },
+    {
+      "path": "assets/analysis.py",
+      "role": "analysis_code",
+      "sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188"
+    },
+    {
+      "path": "assets/task_refinement.json",
+      "role": "feature_definition",
+      "sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4"
+    },
+    {
+      "path": "assets/evaluation_plan.json",
+      "role": "evaluation_plan_v1",
+      "sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb"
+    },
+    {
+      "path": "assets/evaluation_plan_v2.json",
+      "role": "evaluation_plan_v2",
+      "sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0"
+    },
+    {
+      "path": "assets/implementation_correction.json",
+      "role": "implementation_correction",
+      "sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6"
+    },
+    {
+      "path": "assets/routine_workload.json",
+      "role": "dependencies",
+      "sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44"
+    }
+  ]
+}

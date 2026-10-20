@@ -1,0 +1,108 @@
+Use the attached @Data plugin. Complete the already selected retail model's pre-evaluation freeze. This is NOT model discovery or customer rewriting.
+Read-only inputs: /private/tmp/suiroai-dsc59/artifacts/dsc60-final-evaluation-2026-10-20/forecast/released
+[
+  {
+    "relative_path": "input-1.csv",
+    "source_role": "development_source",
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-1.csv",
+    "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "released_bytes": 19279
+  },
+  {
+    "relative_path": "input-2.csv",
+    "source_role": "development_source",
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-2.csv",
+    "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "released_bytes": 10740
+  },
+  {
+    "relative_path": "input-3.csv",
+    "source_role": "development_source",
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-3.csv",
+    "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "released_bytes": 18799
+  },
+  {
+    "relative_path": "input-4.csv",
+    "source_role": "development_source",
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/8d99bf86d50541e19a6afa142746809c/runs/investigation-3146a4fb9c3d4784b1d982e04f91797a/released/input-4.csv",
+    "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+    "released_bytes": 5006997
+  },
+  {
+    "relative_path": "selected_model.npz",
+    "source_role": "selected_model",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/selected_model.npz",
+    "released_byte_sha256": "93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e",
+    "released_bytes": 16924
+  },
+  {
+    "relative_path": "restock_model.py",
+    "source_role": "model_code",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/restock_model.py",
+    "released_byte_sha256": "b6fabfe363c3271485c612e8ba7b38bdac74d79bdefe8c6b5453ded9d4f4403e",
+    "released_bytes": 4955
+  },
+  {
+    "relative_path": "prepare.py",
+    "source_role": "preprocessing_code",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/prepare.py",
+    "released_byte_sha256": "2196d3902cd327dd52967a54ff9438b3109c694dccd51e296572427dfa8092a9",
+    "released_bytes": 14829
+  },
+  {
+    "relative_path": "analysis.py",
+    "source_role": "analysis_code",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/analysis.py",
+    "released_byte_sha256": "2fdf077e2e0aa2f1f7dfd7b00fb870bbba3c0dba054bd8b5b1531ac0c51f7188",
+    "released_bytes": 16550
+  },
+  {
+    "relative_path": "task_refinement.json",
+    "source_role": "feature_definition",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/task_refinement.json",
+    "released_byte_sha256": "70d162c1adaa4816633723f15cc29f90c0ed56e0f76352c5402ca28af91744d4",
+    "released_bytes": 5794
+  },
+  {
+    "relative_path": "evaluation_plan.json",
+    "source_role": "evaluation_plan_v1",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/evaluation_plan.json",
+    "released_byte_sha256": "954c799bd19942d3813fb15932794008daa9155eeb4dade6c93cf0d73741d0cb",
+    "released_bytes": 4978
+  },
+  {
+    "relative_path": "evaluation_plan_v2.json",
+    "source_role": "evaluation_plan_v2",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/evaluation_plan_v2.json",
+    "released_byte_sha256": "ecb257e9f957201741d47cae392654598a5c50f71f5ccea6bb5a6dd27f9a10e0",
+    "released_bytes": 6353
+  },
+  {
+    "relative_path": "implementation_correction.json",
+    "source_role": "implementation_correction",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/implementation_correction.json",
+    "released_byte_sha256": "d33c2964c92c6664d780bfe1fdd28c76562705210309728ada0d5ee33413f8f6",
+    "released_bytes": 937
+  },
+  {
+    "relative_path": "routine_workload.json",
+    "source_role": "dependencies",
+    "source": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-discovery-2026-10-20/analysis/output/routine_workload.json",
+    "released_byte_sha256": "f545cb7286a57d9475034d7d0a1aa0ff2c18c00268468c726adf0553719a1d44",
+    "released_bytes": 1377
+  }
+]
+The customer requires the MVP to be completed using the existing dataset. The selected model is shrink26, with exact selected_model.npz SHA256 93219f444604d55aa000ba36f7ff4ac8eb89ae0da11874e505e0d73ec4ce377e. It was selected by development seven-day recorded-unit MAE. Freeze that exact fitted model, the same recent13 baseline and all analytical definitions before December evaluation. Never refit, overwrite or reselect the selected model; load its full-precision weekly_recorded_units and IDs. Do not execute restock_model.py as-is: it refits and overwrites the model. You may author an inference-only program and calculate the baseline using ONLY the provided development records ending November30. Reproduce recent13 exactly as documented and coded in the original Data analysis, with13 complete calendar weeks and its original missing-store-week treatment. No new candidates, hyperparameters, target, metric or baseline changes. Investigate any mismatch and report it rather than silently changing the choice.
+No December2025 transaction outcomes, raw originals or other files are accessible/authorized for this call. Operational future due dates are known inputs. Earlier project AI sessions saw pooled full-history summaries, so DO NOT certify December as globally pristine untouched. This call produces pre-release forecasts only. Keep that qualification internal; no new-data request. No extra AI agent/model call and no healthy execution deadline.
+Write protocol.json BEFORE producing forecasts, with exact schema:
+{"format":"dsc60-final-freeze-protocol-v1","as_of_date":"2025-11-30","origin":"2025-11-30","selected_model":"shrink26","baseline_model":"recent13","population":[{"Product_ID":"...","Store_ID":"..."}],"target_definition":"...","baseline_definition":"...","primary_metric":"...","coverage_rule":"...","evaluation_rule":"...","artifacts":[{"path":"relative copied artifact path","role":"...","sha256":"..."}]}
+Population must exactly match all336 unique current policy keys and unchanged saved model IDs, sorted consistently. Copy the supplied source/model/config/code/plan/correction/dependency files into output assets/ and bind them by exact hash. Required artifact roles: selected_model, model_code, preprocessing_code, evaluation_plan_v1, evaluation_plan_v2, implementation_correction, dependencies and development_source. Also retain analysis_code and feature_definition. Preserve exact bytes. The source model must have the above original hash before and after your work.
+Use the existing development target: positive noncancelled recorded units including processing/returned orders, exactduplicate/ID handling as established. Preserve the existing observed-recording-day and missing-store-week treatment, eligibility and equal-key/window seven-day MAE. Specify it precisely so a separate evaluator can implement it from reserved rows without guessing. Neither observed transactions nor date presence establish complete demand; do not invent complete_daily_sales=true, lost-sales counts or historical status knowledge. Common eligibility is identical for both methods; report all exclusions and eligible/population coverage. The broader typed DSC28 completeness/acceptance contract remains separate; do not manufacture authentic parent-contract or final-approval flags.
+The predeclared MVP question is whether this fixed candidate has lower pooled absolute weekly recorded-unit forecast error than the same fair baseline in the reserved December test. No invented5% threshold: report relative difference, per-week results, eligible counts, bias, coverage and descriptive uncertainty honestly. Do not promote a runner-up or tune after evaluation. If candidate loses, report failure and retain useful baseline option. This is not a purchasing savings/service-level test.
+Issue ALL predictions at fixed2025-11-30 with no later information or December refit. Primary targets are the FOUR nonoverlapping weeks2025-12-01..07,08..14,15..21,22..28. Daily trajectories cover ALL31 December days for both models; last3days/monthwide totals can be secondary only. Selected model has a constant weekly rate at this cutoff; apply its existing daily allocation, not a new seasonal adjustment. Baseline is also frozen from November-only data. Write full-precision numeric values (not rounded display CSV forecasts):
+fixed_forecasts.csv EXACT columns: model,Product_ID,Store_ID,as_of_date,origin,target_start,target_end,horizon_days,forecast_units
+Every model/key/four-week combination once, horizon_days7; model names shrink26 and recent13 only; all as_of_date/origin2025-11-30.
+daily_forecasts.csv EXACT columns: model,Product_ID,Store_ID,as_of_date,origin,date,forecast_units
+Every model/key/31Decemberdays once. Values finite, nonnegative; daily sums must agree with each weekly total within1e-9. Also calculate each supplied lead-plus-review coverage total from the same daily trajectory in coverage_forecasts.csv as a separate diagnostic; don't change primary population/horizons.
+Write an inference-only generation program and freeze_checks.json verifying IDs, model hash, no post-cutoff sales, exact output schemas/populations, all date boundaries, nonnegative finite predictions, weekly/daily sums and source/dependency identities. No outcomes or accuracy scores belong in this call. Write freeze_summary.md describing what is frozen and what remains unmeasured. Always use only output workspace for writes. Execute your inference-only code and retain actual execution evidence. Do not claim independent validation merely because your own checks pass.

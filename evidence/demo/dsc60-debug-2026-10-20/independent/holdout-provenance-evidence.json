@@ -1,0 +1,40 @@
+{
+  "purpose": "Metadata/source-code provenance audit for DSC-60/DSC-9; no December outcome values evaluated or disclosed.",
+  "session_path": "/Users/ceverson/.codex/sessions/2026/10/16/rollout-2026-10-16T22-36-15-01a147b7-9334-7ed1-9dbc-4dcf8ea72aa8.jsonl",
+  "session_sha256": "f558b8ef7de255900fd9b501aaa3fedd5574204e8f087529cbb424fe4472c467",
+  "source_call": {
+    "line": 304,
+    "timestamp": "2026-10-17T03:30:07.970Z",
+    "call_id": "call_cb6e788c1b254312b7a68c45390b84e4",
+    "tool": "exec",
+    "argument_sha256": "f350714d961b60332eb08c8a0bf0c7e997e40187e5cb33752b87e9ba61c4344d",
+    "unrestricted_source_path": "/Users/ceverson/Downloads/Sales_transactions_2022_2025.csv",
+    "logic": "Reads all CSV rows before computing numeric quantiles including Quantity; no event-date cutoff in loop; prints result JSON to tool output."
+  },
+  "model_visible_return": {
+    "line": 307,
+    "timestamp": "2026-10-17T03:30:08.823Z",
+    "call_id": "call_cb6e788c1b254312b7a68c45390b84e4",
+    "returned_text_sha256": "1263ef1fee993f1f4589129090b7e4218d9a18798019e8ac573b035a101b1fbe",
+    "tool_exit_code": 0,
+    "truncation_marker_present": false,
+    "full_history_quantity_quantile_field_present": true,
+    "quantity_quantile_labels_only": [
+      "0",
+      "0.25",
+      "0.5",
+      "0.75",
+      "0.95",
+      "1"
+    ],
+    "other_outcome_bearing_field_names": [
+      "numeric_quantiles",
+      "order_status_counts",
+      "return_flag_counts",
+      "latest_inventory_candidate"
+    ],
+    "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+    "december_specific_forecast_targets_or_scores_demonstrated": false
+  },
+  "interpretation": "Actual model-visible pooled full-history descriptives are proved, beyond a hash/controller partition. Does not prove December-specific unit vectors/totals/scores were seen or that current model selection used pooled QA information."
+}
