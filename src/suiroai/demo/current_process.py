@@ -6,6 +6,9 @@ Release every supplied CSV with historical sales partitioned through November
 Require exact source quotations and retain native provenance without turning
 transport failures into an invented absence of a current process.
 
+Exact outbound prompts and requested model settings are persisted before native
+dispatch, with returned thread/turn links retained for internal call tracing.
+Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from hashlib import sha256
@@ -16,6 +19,7 @@ import uuid
 from suiroai.integration.artifacts import read_stage_file
 from suiroai.integration.native import NativeHost
 from suiroai.preparation.worker import calendar, csv_bytes, table
+from .call_trace import begin_call_trace, finish_call_trace
 
 
 def detect_current_process(question, uploads, work_root, *, host=None):
@@ -61,11 +65,18 @@ def detect_current_process(question, uploads, work_root, *, host=None):
     manifest_path = released / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     manifest_path.chmod(0o400)
-    native = (host or NativeHost()).execute(cwd=output,
-        prompt=_prompt(question, released, manifest), evidence_dir=evidence_dir,
-        released_root=released, timeout_seconds=None)
+    prompt = _prompt(question, released, manifest)
+    trace = begin_call_trace(evidence_dir, stage="current_process", prompt=prompt, manifest=manifest)
+    try:
+        native = (host or NativeHost()).execute(cwd=output, prompt=prompt,
+            evidence_dir=evidence_dir, released_root=released, timeout_seconds=None)
+    except BaseException as exc:
+        finish_call_trace(trace, error=exc)
+        raise
+    trace = finish_call_trace(trace, native=native)
     internal = {"format": "dsc59-current-process-inspection-v1",
         "question_sha256": sha256(question.encode()).hexdigest(), "released_files": manifest,
+        "call_trace": trace,
         "native_outcome": native.outcome, "error_code": native.error_code,
         "message": native.message, "thread_id": native.thread_id, "turn_id": native.turn_id,
         "native_evidence": native.evidence, "native_items": native.items}

@@ -1,0 +1,253 @@
+{
+  "phase": "development_only",
+  "source_manifest": {
+    "Sales_transactions_2022_2025.csv": {
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "expected_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707"
+    },
+    "ordering_policy.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "expected_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    "inbound_deliveries.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "expected_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    "inventory_position.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "expected_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    "released/input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "purpose": "cutoff-only sales parsed; original sales only hashed"
+    }
+  },
+  "producer_reproduced_all_maes": true,
+  "early_winner": "shared_seasonal",
+  "comparisons": {
+    "early_development": {
+      "relative_gain": 0.01887346404186563,
+      "origin_block_95_percent_interval": [
+        0.0016617820603643755,
+        0.034438334806286934
+      ],
+      "resamples": 10000,
+      "seed": 60
+    },
+    "late_development": {
+      "relative_gain": -0.05988985100698385,
+      "origin_block_95_percent_interval": [
+        -0.08597441216335913,
+        -0.03185395034635596
+      ],
+      "resamples": 10000,
+      "seed": 60
+    },
+    "all_development": {
+      "relative_gain": -0.01649963015755218,
+      "origin_block_95_percent_interval": [
+        -0.04039274890015773,
+        0.006674451455423808
+      ],
+      "resamples": 10000,
+      "seed": 60
+    }
+  },
+  "leave_one_early_origin_out_winners": {
+    "shared_seasonal": 12
+  },
+  "sensitivity": {
+    "main_positive_non_cancelled": [
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "recent_13_weeks",
+        "ae": 5839.461538461539,
+        "se": 15898.763313609466,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -449.76923076923066,
+        "mae": 0.8689674908424909,
+        "rmse": 1.5381441407938827,
+        "wape": 1.4368753785584496,
+        "bias_fraction": -0.1106715626892792
+      },
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "shared_seasonal",
+        "ae": 5935.8104941654055,
+        "se": 14843.085808979378,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -32.30258489227519,
+        "mae": 0.8833051330603282,
+        "rmse": 1.4862007035047864,
+        "wape": 1.4605832908871568,
+        "bias_fraction": -0.007948470691996848
+      }
+    ],
+    "include_cancelled": [
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "recent_13_weeks",
+        "ae": 5931.7692307692305,
+        "se": 15885.343195266272,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -263.1538461538461,
+        "mae": 0.8827037545787545,
+        "rmse": 1.5374948313534045,
+        "wape": 1.4595888855239247,
+        "bias_fraction": -0.0647524227740763
+      },
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "shared_seasonal",
+        "ae": 6033.527704661732,
+        "se": 14849.378621895132,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": 159.99997512339982,
+        "mae": 0.8978463846222815,
+        "rmse": 1.4865157118549193,
+        "wape": 1.4846278800840875,
+        "bias_fraction": 0.03937007261894681
+      }
+    ],
+    "completed_shipped_only": [
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "recent_13_weeks",
+        "ae": 5479.307692307692,
+        "se": 15879.69822485207,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -1143.6153846153845,
+        "mae": 0.8153731684981685,
+        "rmse": 1.5372216271830088,
+        "wape": 1.3482548455481527,
+        "bias_fraction": -0.2814014233797698
+      },
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "shared_seasonal",
+        "ae": 5559.22597414977,
+        "se": 14960.884616726222,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -805.0713976157018,
+        "mae": 0.8272657699627634,
+        "rmse": 1.4920864973533736,
+        "wape": 1.367919777103782,
+        "bias_fraction": -0.19809827697236757
+      }
+    ],
+    "exclude_returns": [
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "recent_13_weeks",
+        "ae": 5632.923076923077,
+        "se": 15872.627218934911,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -852.4615384615383,
+        "mae": 0.8382326007326008,
+        "rmse": 1.5368793375069463,
+        "wape": 1.386053906723198,
+        "bias_fraction": -0.20975923682616593
+      },
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "shared_seasonal",
+        "ae": 5716.647918231965,
+        "se": 14884.416547342407,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": -477.3439848004909,
+        "mae": 0.8506916544988044,
+        "rmse": 1.4882684363355356,
+        "wape": 1.4066554916909364,
+        "bias_fraction": -0.11745668917334913
+      }
+    ],
+    "observed_days_only_zero_if_no_observed_history": [
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "recent_13_weeks",
+        "ae": 90521.58492618494,
+        "se": 1713435.8594985039,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": 90071.81825951826,
+        "mae": 13.47047394734895,
+        "rmse": 15.967954606966243,
+        "wape": 22.27401203892346,
+        "bias_fraction": 22.163341107164925
+      },
+      {
+        "period": "all_development",
+        "horizon": 7,
+        "model": "shared_seasonal",
+        "ae": 53441.3134948596,
+        "se": 484710.9370618254,
+        "actual": 4064.0,
+        "n": 6720,
+        "bias": 53224.52073874446,
+        "mae": 7.952576412925535,
+        "rmse": 8.492914913587578,
+        "wape": 13.149929501687893,
+        "bias_fraction": 13.096584827446964
+      }
+    ]
+  },
+  "source_rows": 17406,
+  "duplicates_removed": 42,
+  "pairs": 336,
+  "zero_entity_day_fraction": 0.96469399865609,
+  "zero_weekly_target_fraction": 0.7672619047619047,
+  "status_rows": {
+    "completed": 11130,
+    "shipped": 2479,
+    "returned": 1540,
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "policy_coverage_days": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "network_missing_calendar_days": 0,
+  "limitations": [
+    "Observed-days-only diagnostic averages observed transaction days and falls back to zero for entities with no observations in window; it is not an alternative validated demand target.",
+    "Sparse recorded-order proxy, not unconstrained demand.",
+    "Zero-fill assumes exhaustive export after first recorded activity.",
+    "Status is final status, without as-known timestamps.",
+    "No historical stockout observations or stock snapshots.",
+    "Synthetic current policy used only for secondary horizon diagnostic.",
+    "October-November already development; no untouched December attestation.",
+    "Weekly origin bootstrap is descriptive; few origins, serial dependence and selection uncertainty remain."
+  ],
+  "decision": {
+    "chosen": "recent_13_weeks",
+    "early_development_winner": "shared_seasonal",
+    "baseline": "recent_13_weeks",
+    "rule": "Retain baseline unless candidate clears 5% relative MAE gain and positive origin-block 95% lower bound in early, late and combined development.",
+    "meaningful_robust_development_gain": false,
+    "business_threshold_available": false,
+    "recording_readiness": false,
+    "reason": "Independent untouched-December provenance and approved gate absent; no holdout evaluated."
+  }
+}

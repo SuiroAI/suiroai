@@ -1,0 +1,283 @@
+{
+  "format": "dsc60-exact-visible-call-replay-v1",
+  "frozen_at": "2026-10-20T16:29:38.268951+00:00",
+  "calls": [
+    {
+      "arm": "detector-exact",
+      "output": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-output-640ee11621724b65873086ca4f41ff1a",
+      "native": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-native-640ee11621724b65873086ca4f41ff1a",
+      "released": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released",
+      "trace": {
+        "format": "dsc60-native-call-trace-v1",
+        "stage": "detector-exact",
+        "requested_model": "gpt-6.1-sol",
+        "requested_reasoning_effort": "medium",
+        "requested_configuration": {
+          "cli_version": "0.163.0",
+          "data_plugin": "data-analytics@openai-curated-remote",
+          "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+          "attachment": {
+            "type": "mention",
+            "name": "Data",
+            "path": "plugin://data-analytics@openai-curated-remote"
+          }
+        },
+        "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+        "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/detector-exact/trace/outbound-prompt.txt",
+        "prompt_sha256": "f68570144d5444e209ef32070bcd2da6f38090c5ca452f8a26f98bb3d42e1325",
+        "prompt_bytes": 3718,
+        "released_files": [
+          {
+            "relative_path": "input-1.csv",
+            "original_name": "ordering_policy.csv",
+            "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-2.csv",
+            "original_name": "inbound_deliveries.csv",
+            "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "development_partition": true
+          },
+          {
+            "relative_path": "input-3.csv",
+            "original_name": "inventory_position.csv",
+            "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "development_partition": false
+          },
+          {
+            "relative_path": "input-4.csv",
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "development_partition": true
+          }
+        ],
+        "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/detector-exact/trace/call-trace.json",
+        "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-native-640ee11621724b65873086ca4f41ff1a",
+        "dispatch_status": "prepared",
+        "native_execution": null,
+        "native_evidence_files": [],
+        "transport_exception": null
+      },
+      "original_prompt_sha256": "f68570144d5444e209ef32070bcd2da6f38090c5ca452f8a26f98bb3d42e1325",
+      "byte_exact_original_prompt": true
+    },
+    {
+      "arm": "investigation-exact",
+      "output": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe",
+      "native": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-native-66bab23fb25e4baba9ef24d025b2a8fe",
+      "released": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/released",
+      "trace": {
+        "format": "dsc60-native-call-trace-v1",
+        "stage": "investigation-exact",
+        "requested_model": "gpt-6.1-sol",
+        "requested_reasoning_effort": "medium",
+        "requested_configuration": {
+          "cli_version": "0.163.0",
+          "data_plugin": "data-analytics@openai-curated-remote",
+          "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+          "attachment": {
+            "type": "mention",
+            "name": "Data",
+            "path": "plugin://data-analytics@openai-curated-remote"
+          }
+        },
+        "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+        "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/investigation-exact/trace/outbound-prompt.txt",
+        "prompt_sha256": "08ef73b34587998eb9b8f64cd15a7b29ed955a1ed1246b7bb80f351412e87b99",
+        "prompt_bytes": 10154,
+        "released_files": [
+          {
+            "relative_path": "input-1.csv",
+            "source_role": "ordering_policy",
+            "original_name": "ordering_policy.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:policy:0",
+              "version": 13,
+              "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-2.csv",
+            "source_role": "inbound_ledger",
+            "original_name": "inbound_deliveries.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:receipts:1",
+              "version": 13,
+              "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-3.csv",
+            "source_role": "usable_stock",
+            "original_name": "inventory_position.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:inventory:2",
+              "version": 13,
+              "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-4.csv",
+            "source_role": "transactions",
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:sales:3",
+              "version": 13,
+              "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "development_partition": true,
+            "controller_lineage_ref": {
+              "artifact_id": "demo-investigation-lineage-80f99a4a253a4aafbc230deeb6f8ff9d",
+              "version": 1,
+              "provenance": "derived",
+              "sha256": "63844a340c9d95809bda5c07d23e8382de0999e52ff37d4fa4b0ceba48efc0a8"
+            }
+          }
+        ],
+        "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/investigation-exact/trace/call-trace.json",
+        "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-native-66bab23fb25e4baba9ef24d025b2a8fe",
+        "dispatch_status": "prepared",
+        "native_execution": null,
+        "native_evidence_files": [],
+        "transport_exception": null
+      },
+      "original_prompt_sha256": "08ef73b34587998eb9b8f64cd15a7b29ed955a1ed1246b7bb80f351412e87b99",
+      "byte_exact_original_prompt": true
+    },
+    {
+      "arm": "investigation-revised",
+      "output": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a",
+      "native": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-native-db3633f214544102a129f969d11ab73a",
+      "released": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/released",
+      "trace": {
+        "format": "dsc60-native-call-trace-v1",
+        "stage": "investigation-revised",
+        "requested_model": "gpt-6.1-sol",
+        "requested_reasoning_effort": "medium",
+        "requested_configuration": {
+          "cli_version": "0.163.0",
+          "data_plugin": "data-analytics@openai-curated-remote",
+          "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+          "attachment": {
+            "type": "mention",
+            "name": "Data",
+            "path": "plugin://data-analytics@openai-curated-remote"
+          }
+        },
+        "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known.",
+        "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/investigation-revised/trace/outbound-prompt.txt",
+        "prompt_sha256": "8a7160cf725e4af4c8c5c62a9239327f3b585ed6d1d49c40987dcc2f9ef7840d",
+        "prompt_bytes": 14238,
+        "released_files": [
+          {
+            "relative_path": "input-1.csv",
+            "source_role": "ordering_policy",
+            "original_name": "ordering_policy.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:policy:0",
+              "version": 13,
+              "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-2.csv",
+            "source_role": "inbound_ledger",
+            "original_name": "inbound_deliveries.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:receipts:1",
+              "version": 13,
+              "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-3.csv",
+            "source_role": "usable_stock",
+            "original_name": "inventory_position.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:inventory:2",
+              "version": 13,
+              "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "development_partition": false,
+            "controller_lineage_ref": null
+          },
+          {
+            "relative_path": "input-4.csv",
+            "source_role": "transactions",
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "approved_source_ref": {
+              "artifact_id": "retail-73fb1009175a47539a23619d49111686:sales:3",
+              "version": 13,
+              "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+              "provenance": "supplied"
+            },
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "development_partition": true,
+            "controller_lineage_ref": {
+              "artifact_id": "demo-investigation-lineage-80f99a4a253a4aafbc230deeb6f8ff9d",
+              "version": 1,
+              "provenance": "derived",
+              "sha256": "63844a340c9d95809bda5c07d23e8382de0999e52ff37d4fa4b0ceba48efc0a8"
+            }
+          }
+        ],
+        "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-exact-replay-2026-10-20/investigation-revised/trace/call-trace.json",
+        "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-native-db3633f214544102a129f969d11ab73a",
+        "dispatch_status": "prepared",
+        "native_execution": null,
+        "native_evidence_files": [],
+        "transport_exception": null
+      },
+      "original_prompt_sha256": "08ef73b34587998eb9b8f64cd15a7b29ed955a1ed1246b7bb80f351412e87b99",
+      "byte_exact_original_prompt": false
+    }
+  ],
+  "code_sha256": {
+    "src/suiroai/demo/task.py": "6ebde80994cb469c009aae10591fef7bf3e8b9a3d3bd77dd3befc641f46b540e",
+    "src/suiroai/demo/investigation.py": "baffc14d88fb0de32d2f02129e5a2cd4d6830ea4b8724bc1c307d89435f12507",
+    "src/suiroai/demo/call_trace.py": "e90a3a51f71793001bca25fc779b95cdb8db0825e0513bf269009b84c4143c11",
+    "scripts/dsc60_trace_replay.py": "f02ef215be7d9342e0e8ef67f1814693ee5a381ad76fc481ad28c8de45a3c57c"
+  },
+  "limits": "Exact outbound text/file bytes; fresh runtime/profile identities. Hidden/system context unknown. One stochastic replay per arm. No performance acceptance or December outcomes."
+}

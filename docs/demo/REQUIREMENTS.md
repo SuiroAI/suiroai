@@ -46,3 +46,11 @@ Do not ask the user follow-up questions about cleaning, business interpretation,
 6. Healthy analysis is not interrupted by an overall elapsed-time deadline; failures/cancellation still work.
 7. The standalone restocking CSV downloads and the table-only CSV preview opens in a separate browser tab, with both matching their stored output artifacts byte-for-byte. Plain-language findings and explanation also appear in the app, using neutral result language without generic verification disclaimers.
 8. The real visible example, outcome, input/output hashes, tested revision and screenshots are retained.
+
+## DSC-60 internal tracing and comparison
+
+Trace the exact native detector and analysis inputs before dispatch, then retain exposed model settings, input identities, thread/turn IDs, outcomes and native-log hashes. Preserve the original question separately from detector interpretations and manual process context. Hidden provider/system context is not asserted to be observable.
+
+Data declares a comparison plan before scores. A controller-supplied engineering comparison contract, when present, is bound to approval and keeps target, baseline, metric, periods, population, horizon and selection fixed. Changing that contract revokes approval/results. Declared plan adoption is inspected internally and does not establish semantic compliance or improvement. Normal analysis remains useful without passing a recording gate, and these internal checks add no customer-facing obstacle or generic warnings.
+
+Before a performance-success recording, independently establish meaningful improvement under the fixed comparison on genuinely untouched outcomes and satisfy the parent frozen-artifact requirements. Inspected development gains, changing the comparison, task-format improvements and completed execution cannot pass that gate. See [task construction and tracing](dsc60-task-construction.md) and [retained DSC-60 evidence](../../evidence/demo/dsc60-debug-2026-10-20/README.md).

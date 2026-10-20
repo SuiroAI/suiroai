@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "written_before_candidate_scores": true,
+  "planning_date": "2025-11-30",
+  "evidence_status": "October-November 2025 is already inspected development evidence; no independent holdout; December outcomes reserved and inaccessible",
+  "target": "Recorded positive gross fulfilled product units by order date; normalized statuses completed, shipped, returned. Returns included because goods left stock and returned goods are not proven resalable. Exclude cancelled and processing, nonpositive quantity; remove identical duplicate transactions; stop on conflicting transaction IDs.",
+  "missing_dates": "Calendar-day aggregation of recorded transactions: absent lines contribute no recorded units, not asserted zero customer demand or open-store exposure. Every chain calendar date appears; individual store operating and assortment coverage unknown. Conditional on released extract completeness, no imputation of lost demand.",
+  "population": "All 336 product/store keys in current policy and inventory; fixed population for every candidate. Historical assortment is unknown; static current-assortment development simulation, not reconstruction of historical buying decisions.",
+  "origins": ["2025-09-28", "2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16"],
+  "training": "Only orders dated on or before each origin; rolling means use last 28 or 84 calendar days inclusive. Seasonal factors use earlier years only. Historical status-change times unavailable, so final recorded status defines a conditional target; no claim of fully recoverable as-of status.",
+  "evaluation_dates": "2025-09-29 through 2025-11-30, depending on origin and horizon; overlapping windows retained and treated as dependent",
+  "horizons": {"primary": "Current supplied lead time plus 7-day review, 8-14 days for each key", "secondary": "Next 7 days, same keys and origins"},
+  "horizon_policy_caveat": "Current synthetic policy used as a fixed scenario at all origins, not claimed historically available. Select and deploy on same coverage horizon, also report next-week results.",
+  "baseline": "84-day per-key calendar average times horizon. Analytical interpretation of recent months, not a proven replica of customer's unspecified buying rule.",
+  "candidates": ["mean84 baseline", "mean28", "pooled84: 50% mean84 plus 50% product-total times store-total divided by chain-total daily rate, all from last84 days", "seasonal84: mean84 multiplied by prior-years chain target-month daily rate divided by prior-years chain trailing84 same-calendar-season daily rate; factor clipped to 0.5-2; target month is midpoint of horizon"],
+  "primary_metric": "Root mean squared error in product units per key/coverage window, equal weight per key-origin. Larger misses receive more weight because they create larger replenishment planning gaps; this is recorded-unit forecast accuracy, not cost, availability or savings.",
+  "selection_rule": "Lowest primary RMSE. Within 1% of best select mean84 baseline if eligible, otherwise mean28 then pooled84 then seasonal84. 1% is a parsimony tie convention, not a business-success threshold.",
+  "secondary": ["7-day RMSE", "MAE", "signed bias", "WAPE", "per-origin and month ranking", "zero-record windows and transactions per key", "gross versus exclusion of returns and inclusion of processing sensitivity", "prior-year seasonal factor stability", "store/product pooling diagnostics", "zero forecast diagnostic"],
+  "uncertainty": "Development empirical forecast residual quantiles are descriptive, not calibrated service levels; show order sensitivity to residual uplift and target interpretation. No invented stockout exposure, costs, price pooling or historical inventory.",
+  "ordering_rule": "Illustrative periodic review: ceil(max(0, coverage forecast + supplied safety stock - usable on hand - incoming due by coverage end)), rounded up to supplied order multiple and minimum when positive. Track pre-arrival risk separately; do not subtract returns from usable snapshot or double-count inbound. No budget or capacity supplied.",
+  "success_gate": "Not ready: externally predeclared meaningful threshold missing and no genuinely untouched evaluation or required frozen independent artifacts. No development result can close this gate."
+}

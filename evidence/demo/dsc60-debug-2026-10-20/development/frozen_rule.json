@@ -1,0 +1,10 @@
+{
+  "chosen": "recent_13_weeks",
+  "early_development_winner": "shared_seasonal",
+  "baseline": "recent_13_weeks",
+  "rule": "Retain baseline unless candidate clears 5% relative MAE gain and positive origin-block 95% lower bound in early, late and combined development.",
+  "meaningful_robust_development_gain": false,
+  "business_threshold_available": false,
+  "recording_readiness": false,
+  "reason": "Independent untouched-December provenance and approved gate absent; no holdout evaluated."
+}

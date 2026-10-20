@@ -1,0 +1,158 @@
+{
+  "sources": [
+    {
+      "released_file": "input-1.csv",
+      "bytes": 19279,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "released_file": "input-2.csv",
+      "bytes": 10740,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "released_file": "input-3.csv",
+      "bytes": 18799,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "released_file": "input-4.csv",
+      "bytes": 5006997,
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    }
+  ],
+  "raw_rows": 17406,
+  "deduplicated_rows": 17364,
+  "exact_duplicates_removed": 42,
+  "remaining_transaction_ID_duplicates": 0,
+  "dates": [
+    "2022-01-01",
+    "2025-11-30"
+  ],
+  "raw_status_counts": {
+    "Completed": 11055,
+    "Shipped": 2472,
+    "Returned": 1544,
+    "Processing": 1360,
+    "Cancelled": 856,
+    "completed": 98,
+    "SHIPPED": 14,
+    "processing": 7
+  },
+  "normalized_status_counts": {
+    "completed": 11130,
+    "shipped": 2479,
+    "returned": 1540,
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "nonpositive_rows": 8,
+  "nonpositive_units": -6,
+  "cancelled_positive_rows": 851,
+  "target_rows": 16505,
+  "target_units": 35143,
+  "positive_returned_units": 3155,
+  "positive_processing_units": 2945,
+  "return_flag_status_cross_tab": {
+    "No": {
+      "cancelled": 825,
+      "completed": 10951,
+      "processing": 1337,
+      "returned": 0,
+      "shipped": 2440
+    },
+    "Yes": {
+      "cancelled": 26,
+      "completed": 179,
+      "processing": 27,
+      "returned": 1540,
+      "shipped": 39
+    }
+  },
+  "quantity_quantiles": {
+    "0.0": -3.0,
+    "0.25": 1.0,
+    "0.5": 2.0,
+    "0.75": 3.0,
+    "0.95": 6.0,
+    "0.99": 10.0,
+    "1.0": 11.0
+  },
+  "strict_status_units": 28609,
+  "missing_product_names": 135,
+  "consistent_nonnull_names_per_product": true,
+  "source_pairs": 336,
+  "products": 28,
+  "stores": 12,
+  "first_appearance_min": "2022-01-01",
+  "first_appearance_max": "2023-03-21",
+  "last_appearance_min": "2025-05-11",
+  "all_pairs_full_364_day_history_at_earliest_origin": true,
+  "network_days_without_any_raw_record": 0,
+  "policy_stock_exact_key_match": true,
+  "ledger_matches_on_order_for_all_keys": true,
+  "complete_open_ledger_flags": true,
+  "synthetic_operational_inputs": true,
+  "inbound_rows": 126,
+  "inbound_units": 927,
+  "inbound_due_range": [
+    "2025-12-01",
+    "2025-12-07"
+  ],
+  "zero_pair_day_fraction_since_latest_first_appearance": 0.9648682748961653,
+  "weekly_zero_target_fraction": 0.7672619047619048,
+  "monthly_target_units": {
+    "2022-01": 441,
+    "2022-02": 531,
+    "2022-03": 599,
+    "2022-04": 631,
+    "2022-05": 739,
+    "2022-06": 716,
+    "2022-07": 602,
+    "2022-08": 607,
+    "2022-09": 648,
+    "2022-10": 783,
+    "2022-11": 981,
+    "2022-12": 1062,
+    "2023-01": 594,
+    "2023-02": 554,
+    "2023-03": 822,
+    "2023-04": 716,
+    "2023-05": 780,
+    "2023-06": 656,
+    "2023-07": 721,
+    "2023-08": 692,
+    "2023-09": 759,
+    "2023-10": 706,
+    "2023-11": 1149,
+    "2023-12": 1122,
+    "2024-01": 536,
+    "2024-02": 584,
+    "2024-03": 665,
+    "2024-04": 705,
+    "2024-05": 727,
+    "2024-06": 628,
+    "2024-07": 669,
+    "2024-08": 558,
+    "2024-09": 673,
+    "2024-10": 746,
+    "2024-11": 1117,
+    "2024-12": 1025,
+    "2025-01": 626,
+    "2025-02": 762,
+    "2025-03": 802,
+    "2025-04": 776,
+    "2025-05": 771,
+    "2025-06": 742,
+    "2025-07": 792,
+    "2025-08": 737,
+    "2025-09": 729,
+    "2025-10": 961,
+    "2025-11": 1201
+  },
+  "primary_observations_per_candidate": {
+    "initial": 4032,
+    "later_development": 2688
+  },
+  "status_and_capture_impact": "Complete-extract zero convention is conditional, not proven by file density. Final statuses undated. Forecasts predict recorded orders, not uncensored demand. Returns do not establish usable stock. No historical stockout exposure or backorder quantities."
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/analysis.ipynb",
+    "bytes": 5913,
+    "sha256": "9a6eac0c93b02453fdf57efc3f7de0c14a8efa714f5e7ac01275cea3b1b6ebdb"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/analysis.py",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/analysis.py",
+    "bytes": 15024,
+    "sha256": "3cc8f90e1445bb8a80ef6276f0abf940cc0216765758af9e3d0f0789b4a0612e"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/audit.json",
+    "bytes": 16330,
+    "sha256": "35ed858ba11fab86a657629068990f73a24578764d53cd314ac7515901506574"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/build_notebook.py",
+    "bytes": 4470,
+    "sha256": "cdab8f1a718479974a8e759670ba00cb7aaa51e844d4717317b65361b42f114a"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/comparison_rows.csv",
+    "bytes": 3164422,
+    "sha256": "55bf3e64b3f8ecaf72b07dd00abbd696068e994296f67d51a246cc90c27ee3db"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/decision_sensitivity.csv",
+    "bytes": 44187,
+    "sha256": "667b6c11278dc6505278100953dded0565a0059b0b2b7826bbf5544e3a6c8051"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/evaluation_plan.md",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/evaluation_plan.md",
+    "bytes": 3288,
+    "sha256": "5334d077a6feb5d39f708918567054373176c3979a1a99995b38ad4a660c9df6"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/horizon_comparison_rows.csv",
+    "bytes": 3122075,
+    "sha256": "6e0287a4d3c26338061ab59f37f20febaeba03200350bbd652db8b75a5c14e60"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/horizon_scores.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/horizon_scores.csv",
+    "bytes": 1004,
+    "sha256": "9a19b0c9070f532fb3dd08ae50aea137ae5ca0a199ed95c1caa3cb4a12b5f377"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/inspect_inputs.py",
+    "bytes": 573,
+    "sha256": "e815be916616acae8bc623293df10b12e87e02ed99271fa35b5a1a7a8525e167"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/internal_notes.md",
+    "bytes": 5781,
+    "sha256": "961592a203ea84944af271e4dc326eec4a5889d64da773a5730f482764d49cef"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/model_scores.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/model_scores.csv",
+    "bytes": 1009,
+    "sha256": "376d4c672318feb11b68196403aafeb0d8dff3ac372f8b46fb78f29391a299c9"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/origin_scores.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/origin_scores.csv",
+    "bytes": 10996,
+    "sha256": "364fb1bd101fc50e460fd7dd42553de2073a61d93b85d3847b615f4804b17a4d"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/response.md",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/response.md",
+    "bytes": 1620,
+    "sha256": "a3e09082752e7565e4cc8790f140dff650d50e6b0e0c6b1b24b89414172138cf"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/restocking.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/restocking.csv",
+    "bytes": 29448,
+    "sha256": "81e49a4954c6ff87674c910bd3d6236df24b9b16193e7984afe02a36dcbb793b"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/output/result.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/historical/output/result.json",
+    "bytes": 154,
+    "sha256": "5fdb88abd1ef4a9696634ed4eb9d1438514d234babf53ef0724f5c62fbf8763e"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/native/native-bootstrap.jsonl",
+    "bytes": 2264,
+    "sha256": "369a6a89ea354bad37bd8689d81a6976bc8bb058294abb2c04f7278721cca3f0"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/native/native-rpc.jsonl",
+    "bytes": 859771,
+    "sha256": "86ad59b61edb5e6253246a3630af57da50d3a227ab520bf41ac37faef48a177e"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/historical/native/native-run.json",
+    "bytes": 244578,
+    "sha256": "3cf0abf0c24dc29be48559b115f00a5eaab3f4dbe63b0d373aa143f6d4ba9054"
+  }
+]

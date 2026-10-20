@@ -1,0 +1,9 @@
+{
+  "rows": 336,
+  "total_units": 888,
+  "positive_orders": 113,
+  "zero_orders": 223,
+  "independent_order_recomputation": "all rows agree",
+  "response_words": 250,
+  "sha256": "ac3e85a74c3d83502a90df8a12987d51460d526959eb2148b7b3dc7870cea4c0"
+}

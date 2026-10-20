@@ -1,0 +1,490 @@
+{
+  "scope": "Exposed outbound bytes, tool events and metadata only; no hidden/system-context equality, deterministic causality or analytical performance acceptance claimed. Analyses reuse retained detector context, not the parallel detector replay result.",
+  "calls": [
+    {
+      "arm": "detector-exact",
+      "dispatch_status": "returned",
+      "prompt_sha256": "f68570144d5444e209ef32070bcd2da6f38090c5ca452f8a26f98bb3d42e1325",
+      "prompt_matches_frozen_intent": true,
+      "original_exposed_prompt_exact": true,
+      "actual_sent_calls": [
+        {
+          "effort": "medium",
+          "text_sha256": "f68570144d5444e209ef32070bcd2da6f38090c5ca452f8a26f98bb3d42e1325",
+          "matches_saved_prompt": true,
+          "nontext_attachments": [
+            {
+              "type": "mention",
+              "name": "Data",
+              "path": "plugin://data-analytics@openai-curated-remote"
+            }
+          ]
+        }
+      ],
+      "released_hash_matches": {
+        "input-1.csv": true,
+        "input-2.csv": true,
+        "input-3.csv": true,
+        "input-4.csv": true
+      },
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15a25-a623-7a61-96f8-8e87696fa617",
+        "turn_id": "01a15a25-a6ad-7783-89d7-1f927aa7263d"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "effective_profile_verified": true,
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-09b47b1502274690b7c517249f638127",
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "plan_completion_monotonic": [],
+      "file_change_events": [],
+      "command_events": [
+        {
+          "monotonic": 668553.839926375,
+          "command_sha256": "3c7f99bcfec4ae5cf026548c9003046257e26f0b28282a461fef6ee09737939b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-output-640ee11621724b65873086ca4f41ff1a"
+        },
+        {
+          "monotonic": 668566.992909333,
+          "command_sha256": "344cd327fbff78b3d7837149b091e4f76f380eb97fb14dd931076208205da2f5",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-output-640ee11621724b65873086ca4f41ff1a"
+        },
+        {
+          "monotonic": 668572.673729916,
+          "command_sha256": "0966569dab24b311eecdec3ed4557b911fd096dde0ae5fed2487e28e00f76cd2",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/replay-output-640ee11621724b65873086ca4f41ff1a"
+        }
+      ],
+      "output_files": [
+        "result.json"
+      ]
+    },
+    {
+      "arm": "investigation-exact",
+      "dispatch_status": "returned",
+      "prompt_sha256": "08ef73b34587998eb9b8f64cd15a7b29ed955a1ed1246b7bb80f351412e87b99",
+      "prompt_matches_frozen_intent": true,
+      "original_exposed_prompt_exact": true,
+      "actual_sent_calls": [
+        {
+          "effort": "medium",
+          "text_sha256": "08ef73b34587998eb9b8f64cd15a7b29ed955a1ed1246b7bb80f351412e87b99",
+          "matches_saved_prompt": true,
+          "nontext_attachments": [
+            {
+              "type": "mention",
+              "name": "Data",
+              "path": "plugin://data-analytics@openai-curated-remote"
+            }
+          ]
+        }
+      ],
+      "released_hash_matches": {
+        "input-1.csv": true,
+        "input-2.csv": true,
+        "input-3.csv": true,
+        "input-4.csv": true
+      },
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15a25-a5de-7703-b902-0c30ed0782f1",
+        "turn_id": "01a15a25-a66d-70a3-80ca-aeb1d10f546a"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "effective_profile_verified": true,
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-337f572e5b21484c9f1d0243bc9a8cc9",
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "plan_completion_monotonic": [],
+      "file_change_events": [
+        {
+          "monotonic": 668570.568574208,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/inspect_data.py"
+          ]
+        },
+        {
+          "monotonic": 668636.207364,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/analysis.py"
+          ]
+        },
+        {
+          "monotonic": 668662.339957333,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/analysis.py"
+          ]
+        },
+        {
+          "monotonic": 668668.268579541,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/analysis.py"
+          ]
+        },
+        {
+          "monotonic": 668736.110282708,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/audit_notes.md",
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/response.md",
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/validate_outputs.py"
+          ]
+        },
+        {
+          "monotonic": 668749.134441291,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/make_notebook.py",
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe/response.md"
+          ]
+        }
+      ],
+      "command_events": [
+        {
+          "monotonic": 668546.585949083,
+          "command_sha256": "154c028e831832dba20b5d7b36f4963a28d80b8c5ceb2a69f03492c5edc72386",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668551.258126708,
+          "command_sha256": "63e598b09a2fc6888623b295c4aa0975970a9659a7789169b954df4243b26b4b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668551.861755541,
+          "command_sha256": "763503aeb6bc3beec922aee36ad585362ccd324024fb8c5d86980a1404b2b5fe",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668552.267640166,
+          "command_sha256": "29ca020ef30b4ebb3ace37b7e7c4b4e04e848453e8b07b2b4abe079548e91407",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668557.236322666,
+          "command_sha256": "daba500391793b9ad50968e03f08066361f27dbd8a6fd3ab36a963f99b30f4f5",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668557.577033791,
+          "command_sha256": "403bb57fdb62bf736b2c2cf729050425c6a68f720cffc4ded007f8b262754916",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668558.18432525,
+          "command_sha256": "7dd0fc7a433c4764572ce63328ca152e1b8117cb99e7b9494dfc28523dc4ff58",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668558.59127975,
+          "command_sha256": "f96f5436df762bcc258519d7311e79f79c4a4acdc4668148f09a319c7e8c6f1b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668570.767360041,
+          "command_sha256": "35988e4c3460c280f864ec3e3753eb3618f78e2f7857dbcf537b367ee3f22763",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668636.409112875,
+          "command_sha256": "764c02a2a00540150810650635818fe7fbe310f520acdce17b8897435f99a11e",
+          "analysis_program_execution": true,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668662.540678208,
+          "command_sha256": "764c02a2a00540150810650635818fe7fbe310f520acdce17b8897435f99a11e",
+          "analysis_program_execution": true,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668668.4699335,
+          "command_sha256": "764c02a2a00540150810650635818fe7fbe310f520acdce17b8897435f99a11e",
+          "analysis_program_execution": true,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668669.612961,
+          "command_sha256": "379ba421eccb996184ce8b7de84991898ca7bffdf18aeb21d403971fe1548f7e",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668736.242908083,
+          "command_sha256": "3b756d3df7e12f5e65c81acd3d9b6ca4f5f11bc6ee32eb7c6eeb2fa6e872d1ee",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668749.335399666,
+          "command_sha256": "5a450388063373beb0a629f00114cb868a936be3f31019f91017faeac99c9711",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        },
+        {
+          "monotonic": 668750.483890333,
+          "command_sha256": "6253e7624313bd21e6afc70a6268098284f01d46d3fc9b24b2faaf7e6622d055",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-66bab23fb25e4baba9ef24d025b2a8fe"
+        }
+      ],
+      "output_files": [
+        "analysis.ipynb",
+        "analysis.py",
+        "audit.json",
+        "audit_notes.md",
+        "inspect_data.py",
+        "make_notebook.py",
+        "model_evaluation.csv",
+        "response.md",
+        "restocking.csv",
+        "result.json",
+        "validate_outputs.py",
+        "validation.json"
+      ]
+    },
+    {
+      "arm": "investigation-revised",
+      "dispatch_status": "returned",
+      "prompt_sha256": "8a7160cf725e4af4c8c5c62a9239327f3b585ed6d1d49c40987dcc2f9ef7840d",
+      "prompt_matches_frozen_intent": true,
+      "original_exposed_prompt_exact": null,
+      "actual_sent_calls": [
+        {
+          "effort": "medium",
+          "text_sha256": "8a7160cf725e4af4c8c5c62a9239327f3b585ed6d1d49c40987dcc2f9ef7840d",
+          "matches_saved_prompt": true,
+          "nontext_attachments": [
+            {
+              "type": "mention",
+              "name": "Data",
+              "path": "plugin://data-analytics@openai-curated-remote"
+            }
+          ]
+        }
+      ],
+      "released_hash_matches": {
+        "input-1.csv": true,
+        "input-2.csv": true,
+        "input-3.csv": true,
+        "input-4.csv": true
+      },
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15a25-a628-78d1-ae20-1cb1ae8289b0",
+        "turn_id": "01a15a25-a6be-78f0-89c6-7caa37121e68"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "effective_profile_verified": true,
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-2b04131801164d5ca828f632513160dc",
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "plan_completion_monotonic": [
+        668667.044713166
+      ],
+      "file_change_events": [
+        {
+          "monotonic": 668580.974075416,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/inspect_sources.py"
+          ]
+        },
+        {
+          "monotonic": 668667.044713166,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/analysis.py",
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/evaluation_plan.json"
+          ]
+        },
+        {
+          "monotonic": 668716.073514291,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/validate_outputs.py"
+          ]
+        },
+        {
+          "monotonic": 668794.441618791,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/internal_audit.md",
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/response.md"
+          ]
+        },
+        {
+          "monotonic": 668829.792205125,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/make_companion.py"
+          ]
+        },
+        {
+          "monotonic": 668835.65107525,
+          "paths": [
+            "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a/make_companion.py"
+          ]
+        }
+      ],
+      "command_events": [
+        {
+          "monotonic": 668547.115587708,
+          "command_sha256": "154c028e831832dba20b5d7b36f4963a28d80b8c5ceb2a69f03492c5edc72386",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668551.055059458,
+          "command_sha256": "763503aeb6bc3beec922aee36ad585362ccd324024fb8c5d86980a1404b2b5fe",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668551.055151958,
+          "command_sha256": "29ca020ef30b4ebb3ace37b7e7c4b4e04e848453e8b07b2b4abe079548e91407",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668551.258336625,
+          "command_sha256": "7dd0fc7a433c4764572ce63328ca152e1b8117cb99e7b9494dfc28523dc4ff58",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668551.457017291,
+          "command_sha256": "63e598b09a2fc6888623b295c4aa0975970a9659a7789169b954df4243b26b4b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668552.269499916,
+          "command_sha256": "c93f2cb95271d9d351f172b3c49347ac5f7ed9161b6866a817e6af2f4dd58378",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668556.189644208,
+          "command_sha256": "63e598b09a2fc6888623b295c4aa0975970a9659a7789169b954df4243b26b4b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668563.166419041,
+          "command_sha256": "cb01cf74d1d3cc18f60f489731f90e5f13e6399f5de672ac90a38f3d4aa1402b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668563.8712335,
+          "command_sha256": "403bb57fdb62bf736b2c2cf729050425c6a68f720cffc4ded007f8b262754916",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668565.877472208,
+          "command_sha256": "f96f5436df762bcc258519d7311e79f79c4a4acdc4668148f09a319c7e8c6f1b",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668581.178362875,
+          "command_sha256": "30f0f3d143e431c64bb151c82ac6d58514a4bb7647b3eed9c31a0a8bb858364c",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668667.244955625,
+          "command_sha256": "764c02a2a00540150810650635818fe7fbe310f520acdce17b8897435f99a11e",
+          "analysis_program_execution": true,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668682.007620416,
+          "command_sha256": "cb6704c4f3f8428464bee2408ae930d2ade0144d2696b4b6bab5bb93b8bbdb95",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668716.275840166,
+          "command_sha256": "3b756d3df7e12f5e65c81acd3d9b6ca4f5f11bc6ee32eb7c6eeb2fa6e872d1ee",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668794.563705041,
+          "command_sha256": "bee69876422ba5615a2416126ade20ff4a170cc30f0213e7e99ecfd90b72ebd7",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668830.029296583,
+          "command_sha256": "470021c03290bac16937c4eb4c93b791bff95c691a886eda596f50f41968e42f",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668830.788399708,
+          "command_sha256": "6930e0fa7b10c0354f86fc98494c1b920cc5d801c6d35da6f44bd84de0171c2f",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668835.865299833,
+          "command_sha256": "470021c03290bac16937c4eb4c93b791bff95c691a886eda596f50f41968e42f",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        },
+        {
+          "monotonic": 668836.755281583,
+          "command_sha256": "3b756d3df7e12f5e65c81acd3d9b6ca4f5f11bc6ee32eb7c6eeb2fa6e872d1ee",
+          "analysis_program_execution": false,
+          "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/replay-output-db3633f214544102a129f969d11ab73a"
+        }
+      ],
+      "output_files": [
+        "Product_ID_diagnostics.csv",
+        "Store_ID_diagnostics.csv",
+        "analysis.py",
+        "analysis_companion.ipynb",
+        "comparison_results.csv",
+        "development_predictions.csv",
+        "evaluation_plan.json",
+        "inspect_sources.py",
+        "internal_audit.md",
+        "make_companion.py",
+        "measured_results.json",
+        "origin_results.csv",
+        "response.md",
+        "restocking.csv",
+        "result.json",
+        "selected_model.json",
+        "source_profile.json",
+        "validate_outputs.py",
+        "validation_results.json"
+      ]
+    }
+  ]
+}

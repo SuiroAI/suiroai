@@ -1,0 +1,133 @@
+[
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/analysis.py",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/analysis.py",
+    "bytes": 18502,
+    "sha256": "40f258c6e9502ae1fe40c9ad4f575d9a211d532036ffbb293613a41ea02549b8"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/audit.ipynb",
+    "bytes": 10713,
+    "sha256": "dd680f0b0c8e2b01630fe346e73e0146a4824ee2b8f0dde815e5e9d3806986ba"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/audit_checks.py",
+    "bytes": 6765,
+    "sha256": "1e1496f953c2a60b7269d207ad9c51c128ea2ff2fb35b799f43a94556e62c7bc"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/comparison_results.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/comparison_results.csv",
+    "bytes": 1062,
+    "sha256": "79e8ac30319f5769be32dde579f7cdec0350abe0b16ebb6686b0b58a0c93633d"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/comparison_rows.csv",
+    "bytes": 9257060,
+    "sha256": "ec2c455afda4f733afe51e9341aadf05a740de28e37685dfd2741b9dd308c8fe"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/coverage_results.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/coverage_results.csv",
+    "bytes": 1062,
+    "sha256": "d6dc2291fffcc6ee36c11b27fd3b2f4dda637d28ec2b9666b9477ec5b96b1ebe"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/evaluation_plan.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/evaluation_plan.json",
+    "bytes": 4872,
+    "sha256": "269009e7855b7de928c074d47c9e72151fa38533201674728a5900dec63564c1"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/internal_notes.md",
+    "bytes": 10605,
+    "sha256": "9ed1a06ba46271a0623a806dd8cb4ede670a1f361d90489332c9d19545698db3"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/missing_date_sensitivity.csv",
+    "bytes": 1274,
+    "sha256": "a1a181a21a66b1729d3307172f7f783c62ee0185b349a306ec318bddbfff585b"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/origin_results.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/origin_results.csv",
+    "bytes": 11379,
+    "sha256": "b75263bae7293c7a8282bcb5edddb9f341a2ecbcc2524e6922b430aedcffaca4"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/product_results.csv",
+    "bytes": 29712,
+    "sha256": "400d299610ac326999eec4b7ba7f1672209f61106c53f338a6189e0d979d837a"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/response.md",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/response.md",
+    "bytes": 1470,
+    "sha256": "ff4050aba1bdf19e5761133510d610e8d912d86534d632d38958777691647bd4"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/restocking.csv",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/restocking.csv",
+    "bytes": 40591,
+    "sha256": "3898b7d7d6febcfc62cba451ccb1406ba7aa20cd0b46f394405156b0c4df9b9d"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/result.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/result.json",
+    "bytes": 154,
+    "sha256": "5fcc6883d86874b16c5957f8cc0ee3f8b35ec3a26ba9218a6cff467bfa44e544"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/run_summary.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/run_summary.json",
+    "bytes": 1120,
+    "sha256": "449e5fd0f99d5cb7219d8ebc6f6a3985c93183cbbcf79bff80685b8548059eec"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/seasonal_stability.csv",
+    "bytes": 1503,
+    "sha256": "7d89a35b31939294e0a732e5677ffa82bc03e11c3e105ca879e531a911b79411"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/selection.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/selection.json",
+    "bytes": 979,
+    "sha256": "5bd6319d8e0592dad808a8aaf939d472bb4853eb8a5468f6e92d776df6765673"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/source_treatment.json",
+    "bytes": 5176,
+    "sha256": "27955a68e1f622823070eb2efdf0ed693cf37bea578e45341f3898ffb29a94f2"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/sparsity.csv",
+    "bytes": 12177,
+    "sha256": "64d2d282fdd91a402cb093d3a294517710b7db08114b9919f5e383064c131b36"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/store_results.csv",
+    "bytes": 13234,
+    "sha256": "fcb34532540f7a8db20eb3a210f844395fe3f650bc77fb28d29d8e92b2450603"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/output/validation.json",
+    "retained": "evidence/demo/dsc60-debug-2026-10-20/controlled-pair/structured/output/validation.json",
+    "bytes": 1474,
+    "sha256": "cf9de31dbdede31195fd54d35f0b00b3f50a40a340e9bb51828c79b9f324d3f5"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/native/native-bootstrap.jsonl",
+    "bytes": 2264,
+    "sha256": "7770738bc1a81003fa04de6922a82c46ee3e862766c2ed695176e1131b5cade2"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/native/native-rpc.jsonl",
+    "bytes": 792217,
+    "sha256": "83bd09041c5dc452aebbf10f5b866f0605a2fa0dee6b4b0d90f774a8cf63ade8"
+  },
+  {
+    "source": "artifacts/dsc60-paired-normal-host-2026-10-20/structured/native/native-run.json",
+    "bytes": 255963,
+    "sha256": "02e574df5dd789dd3282613a4cfffda35d275368ce92419fb8965a99e9c48763"
+  }
+]

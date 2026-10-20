@@ -1,0 +1,22 @@
+[
+  {
+    "arm": "historical",
+    "rows": 40320,
+    "expected_rows": 40320,
+    "max_actual_absolute_difference": 0.0,
+    "max_prediction_absolute_difference": 8.881784197001252e-16,
+    "unique_prediction_keys": 40320,
+    "unexpected": [],
+    "pass": true
+  },
+  {
+    "arm": "structured",
+    "rows": 40320,
+    "expected_rows": 40320,
+    "max_actual_absolute_difference": 0.0,
+    "max_prediction_absolute_difference": 8.881784197001252e-16,
+    "unique_prediction_keys": 40320,
+    "unexpected": [],
+    "pass": true
+  }
+]

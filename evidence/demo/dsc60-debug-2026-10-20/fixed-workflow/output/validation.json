@@ -1,0 +1,12 @@
+{
+  "contract_digest_verified": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+  "all_primary_actuals_independently_recomputed": true,
+  "all_four_local_candidates_independently_recomputed_at_all_origins": true,
+  "primary_MAEs_recomputed_from_predictions": true,
+  "all_336_orders_independently_recomputed": true,
+  "CSV_rows": 336,
+  "CSV_units": 873,
+  "CSV_sha256": "46e2498cba53850c54f4d9268f322ef6f6240548299cf33d0446a17ac34d3e28",
+  "response_words": 234,
+  "December_sales_accessed": false
+}

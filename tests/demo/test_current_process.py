@@ -1,5 +1,12 @@
-"""Keep pre-consent method detection semantic, cited, and holdout isolated."""
+"""Keep pre-consent detection semantic, cited, isolated and internally traceable.
+
+Verify exact outbound prompt identity before host execution and native outcome
+links after it, without claiming scientific correctness or hidden context.
+Linear: https://linear.app/gr3enarr0w/issue/DSC-60
+"""
 import json
+from hashlib import sha256
+from pathlib import Path
 
 import pytest
 
@@ -86,11 +93,25 @@ def test_december_isolated_regardless_of_filename(tmp_path):
         assert "SECRET_DECEMBER_OUTCOME" not in released_text
         assert "2025-12-01" not in released_text
         assert "SECRET_DECEMBER_OUTCOME" not in call["prompt"]
+        trace = json.loads((call["evidence_dir"].with_name(call["evidence_dir"].name + "-trace") / "call-trace.json").read_text())
+        prompt_bytes = Path(trace["prompt_path"]).read_bytes()
+        assert prompt_bytes == call["prompt"].encode("utf-8")
+        assert trace["prompt_sha256"] == sha256(prompt_bytes).hexdigest()
+        assert trace["dispatch_status"] == "prepared"
+        assert trace["stage"] == "current_process"
+        assert trace["requested_model"] == "gpt-6.1-sol"
+        assert trace["requested_reasoning_effort"] == "medium"
+        assert "SECRET_DECEMBER_OUTCOME" not in prompt_bytes.decode()
         assert call["cwd"].parent == call["released_root"].parent
         assert call["evidence_dir"] != call["cwd"]
     detected = detect_current_process("Improve ordering", [UploadedInput(name="notes.csv", data=data)],
         tmp_path, host=Host(result("found", "input-1.csv", quote), inspect))
     assert detected["released_files"][0]["development_partition"] is True
+    trace = detected["call_trace"]
+    assert json.loads(Path(trace["receipt_path"]).read_text()) == trace
+    assert trace["dispatch_status"] == "returned"
+    assert trace["native_execution"]["thread_id"] == "thread-1"
+    assert trace["released_files"] == detected["released_files"]
 
 
 def test_december_quote_cannot_be_adopted(tmp_path):
@@ -111,9 +132,14 @@ def test_native_error_preserved_no_missing_fallback(tmp_path):
 def test_transport_exception_preserved(tmp_path):
     class BrokenHost:
         def execute(self, **kwargs):
+            trace = json.loads((kwargs["evidence_dir"].with_name(kwargs["evidence_dir"].name + "-trace") / "call-trace.json").read_text())
+            assert trace["dispatch_status"] == "prepared"
             raise OSError("host disconnected")
     with pytest.raises(OSError, match="host disconnected"):
         detect_current_process("Improve ordering", [], tmp_path, host=BrokenHost())
+    trace = json.loads(next(tmp_path.glob("current-process-*/native-trace/call-trace.json")).read_text())
+    assert trace["dispatch_status"] == "transport_exception"
+    assert trace["transport_exception"] == {"type": "OSError", "message": "host disconnected"}
 
 
 @pytest.mark.parametrize("bad", [result("found"), result("none"),

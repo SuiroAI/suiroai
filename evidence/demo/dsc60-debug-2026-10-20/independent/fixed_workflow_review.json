@@ -1,0 +1,65 @@
+{
+  "scope": "Workflow/static-source/declared-adoption review only; no producer execution or additional numerical analysis. Helper separately invoked post-run; not instrumented in launched snapshot.",
+  "native_outcome": {
+    "error_code": null,
+    "message": null,
+    "outcome": "completed",
+    "thread_id": "01a15a2b-89a5-7910-b862-a55803a80fb8",
+    "turn_id": "01a15a2b-8c15-7491-8001-db9cec9ca55d"
+  },
+  "observed_configuration": {
+    "cli_version": "0.163.0",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/investigation-460ce04174f54b9980451fb004494d05/output",
+    "data_attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "effective_profile_verified": true,
+    "instruction_sources": [
+      "/Users/ceverson/.codex/AGENTS.md"
+    ],
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "permission_profile": "dsc26-stage-0d42e8fc9bb14238998bfcf36682597d",
+    "reasoning_effort": "medium",
+    "runtime_workspace_roots": [
+      "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/investigation-460ce04174f54b9980451fb004494d05/output"
+    ],
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "actual_sent_text_matches_trace": [
+    true
+  ],
+  "expected_contract_sha256": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+  "plan_exact_contract": true,
+  "selection_exact_contract": true,
+  "selection_binds_plan_sha256": true,
+  "plan_completion_monotonic": [
+    668985.54069975
+  ],
+  "analysis_execution_start_monotonic": [
+    669085.312454708,
+    669091.84830375,
+    669131.441401708
+  ],
+  "plan_before_first_analysis": true,
+  "selected": "local91",
+  "performance_success_ready": false,
+  "separate_postrun_plan_inspection": {
+    "format": "dsc60-comparison-plan-inspection-v1",
+    "status": "recorded",
+    "expected_sha256": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+    "declared_sha256": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+    "exact_contract_match": true,
+    "plan_ref": {
+      "artifact_id": "demo-comparison-plan-050215e165b844709ac0f96fb99d6b04",
+      "version": 1,
+      "provenance": "derived",
+      "sha256": "46d13d37e537b63fbcaa98657e8a5fc984e4470e423c45624c9f3ed59c3194a3"
+    },
+    "semantic_compliance_verified": false,
+    "meaning": "Declared adoption only; does not verify timing, code, calculations, performance or recording readiness."
+  },
+  "remaining_issue": "Generated response ambiguously says analysis took about a second; measured duration is local deterministic calculation, not full AI wall time. Evidence unchanged."
+}

@@ -1,0 +1,1719 @@
+[
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md",
+        "name": "shared-skill-instructions.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md",
+        "name": "analysis-quality.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc \"/opt/anaconda3/bin/python -c 'import pandas as pd; from pathlib import Path; [(print(\\\"\\\\n\\\",p.name,(d:=pd.read_csv(p)).shape),print(d.head(4).to_string(index=False)),print(d.dtypes.to_string()),print(\\\"nulls\\\",d.isna().sum().to_dict())) for p in sorted(Path(\\\"../released\\\").glob(\\\"*.csv\\\"))]'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python -c 'import pandas as pd; from pathlib import Path; [(print(\"\\n\",p.name,(d:=pd.read_csv(p)).shape),print(d.head(4).to_string(index=False)),print(d.dtypes.to_string()),print(\"nulls\",d.isna().sum().to_dict())) for p in sorted(Path(\"../released\").glob(\"*.csv\"))]'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md\ncat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md"
+      },
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc \"/opt/anaconda3/bin/python -c 'import pandas as pd; d=pd.read_csv(\\\"../released/input-1.csv\\\"); print(\\\"exact duplicates\\\",d.duplicated().sum(),\\\"id dup\\\",d.Transaction_ID.duplicated().sum(),\\\"order dup\\\",d.Order_ID.duplicated().sum()); print(d.Order_Status.value_counts()); print(d.Return_Flag.value_counts()); print(d.groupby([\\\"Order_Status\\\",\\\"Return_Flag\\\"]).Quantity.agg([\\\"size\\\",\\\"sum\\\",\\\"min\\\",\\\"max\\\"])); print(\\\"qty\\\",d.Quantity.describe()); print(\\\"date bounds\\\",d.Order_Date.min(),d.Order_Date.max()); print(\\\"dates\\\",d.groupby(\\\"Order_Year\\\").Order_Date.nunique()); print(\\\"entities\\\",d.Product_ID.nunique(),d.Store_ID.nunique(),d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups); print(\\\"daily counts\\\",d.groupby(\\\"Order_Date\\\").size().describe()); print(\\\"monthly\\\",d.assign(month=d.Order_Date.str[:7]).groupby(\\\"month\\\").agg(n=(\\\"Quantity\\\",\\\"size\\\"),units=(\\\"Quantity\\\",\\\"sum\\\")).to_string()); print(\\\"name conflicts\\\",d.groupby(\\\"Product_ID\\\").Product_Name.nunique().to_string()); print(\\\"ops distributions\\\"); [print(f, pd.read_csv(\\\"../released/input-\\\"+str(f)+\\\".csv\\\").describe(include=\\\"all\\\").to_string()) for f in [2,3,4]]'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python -c 'import pandas as pd; d=pd.read_csv(\"../released/input-1.csv\"); print(\"exact duplicates\",d.duplicated().sum(),\"id dup\",d.Transaction_ID.duplicated().sum(),\"order dup\",d.Order_ID.duplicated().sum()); print(d.Order_Status.value_counts()); print(d.Return_Flag.value_counts()); print(d.groupby([\"Order_Status\",\"Return_Flag\"]).Quantity.agg([\"size\",\"sum\",\"min\",\"max\"])); print(\"qty\",d.Quantity.describe()); print(\"date bounds\",d.Order_Date.min(),d.Order_Date.max()); print(\"dates\",d.groupby(\"Order_Year\").Order_Date.nunique()); print(\"entities\",d.Product_ID.nunique(),d.Store_ID.nunique(),d.groupby([\"Product_ID\",\"Store_ID\"]).ngroups); print(\"daily counts\",d.groupby(\"Order_Date\").size().describe()); print(\"monthly\",d.assign(month=d.Order_Date.str[:7]).groupby(\"month\").agg(n=(\"Quantity\",\"size\"),units=(\"Quantity\",\"sum\")).to_string()); print(\"name conflicts\",d.groupby(\"Product_ID\").Product_Name.nunique().to_string()); print(\"ops distributions\"); [print(f, pd.read_csv(\"../released/input-\"+str(f)+\".csv\").describe(include=\"all\").to_string()) for f in [2,3,4]]'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc \"/opt/anaconda3/bin/python -c 'import pandas as pd; d=pd.read_csv(\\\"../released/input-1.csv\\\").drop_duplicates(); d[\\\"s\\\"]=d.Order_Status.str.strip().str.lower(); print(\\\"negatives\\\",d.loc[d.Quantity<=0,[\\\"Quantity\\\",\\\"Order_Status\\\",\\\"Return_Flag\\\"]].value_counts().to_string()); print(\\\"dedup status\\\",d.groupby(\\\"s\\\").Quantity.agg([\\\"size\\\",\\\"sum\\\"]));print(\\\"negative money\\\",(d.Sales_Amount<0).sum(),(d.Cost_Amount<0).sum()); print(\\\"negative sample\\\",d.loc[d.Quantity<=0,[\\\"Quantity\\\",\\\"Sales_Amount\\\",\\\"Cost_Amount\\\",\\\"Order_Status\\\",\\\"Return_Flag\\\"]].head(15).to_string(index=False)); print(\\\"daily store gaps\\\",d.groupby(\\\"Store_ID\\\").Order_Date.nunique().to_string()); print(\\\"pair dates\\\",d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).Order_Date.nunique().describe().to_string()); print(\\\"first pair dates\\\",d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).Order_Date.min().max()); print(\\\"order repeated semantics\\\",d[d.Order_ID.duplicated(False)].groupby(\\\"Order_ID\\\").agg(products=(\\\"Product_ID\\\",\\\"nunique\\\"),stores=(\\\"Store_ID\\\",\\\"nunique\\\"),dates=(\\\"Order_Date\\\",\\\"nunique\\\")).describe().to_string())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python -c 'import pandas as pd; d=pd.read_csv(\"../released/input-1.csv\").drop_duplicates(); d[\"s\"]=d.Order_Status.str.strip().str.lower(); print(\"negatives\",d.loc[d.Quantity<=0,[\"Quantity\",\"Order_Status\",\"Return_Flag\"]].value_counts().to_string()); print(\"dedup status\",d.groupby(\"s\").Quantity.agg([\"size\",\"sum\"]));print(\"negative money\",(d.Sales_Amount<0).sum(),(d.Cost_Amount<0).sum()); print(\"negative sample\",d.loc[d.Quantity<=0,[\"Quantity\",\"Sales_Amount\",\"Cost_Amount\",\"Order_Status\",\"Return_Flag\"]].head(15).to_string(index=False)); print(\"daily store gaps\",d.groupby(\"Store_ID\").Order_Date.nunique().to_string()); print(\"pair dates\",d.groupby([\"Product_ID\",\"Store_ID\"]).Order_Date.nunique().describe().to_string()); print(\"first pair dates\",d.groupby([\"Product_ID\",\"Store_ID\"]).Order_Date.min().max()); print(\"order repeated semantics\",d[d.Order_ID.duplicated(False)].groupby(\"Order_ID\").agg(products=(\"Product_ID\",\"nunique\"),stores=(\"Store_ID\",\"nunique\"),dates=(\"Order_Date\",\"nunique\")).describe().to_string())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc '/opt/anaconda3/bin/python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc '/opt/anaconda3/bin/python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc '/opt/anaconda3/bin/python make_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python make_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc \"/opt/anaconda3/bin/python -c 'from pathlib import Path; import json,pandas as pd,hashlib; p=Path(\\\"restocking.csv\\\"); d=pd.read_csv(p); print(d.head(5).to_string(index=False)); print(\\\"rows, units, zeros\\\",len(d),d.OrderQty.sum(),d.OrderQty.eq(0).sum()); r=json.loads(Path(\\\"result.json\\\").read_text()); assert set(r)=={\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"}; assert r[\\\"output_sha256\\\"]==hashlib.sha256(p.read_bytes()).hexdigest(); print(\\\"sha256\\\",r[\\\"output_sha256\\\"]); print(\\\"response words\\\",len(Path(\\\"response.md\\\").read_text().split())); print(\\\"bootstrap\\\",json.loads(Path(\\\"internal_audit.json\\\").read_text())[\\\"model_comparison\\\"][\\\"pooled_seasonal_monthly_gain_95_interval\\\"]); print(\\\"output files\\\",[x.name for x in Path(\\\".\\\").iterdir()])'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python -c 'from pathlib import Path; import json,pandas as pd,hashlib; p=Path(\"restocking.csv\"); d=pd.read_csv(p); print(d.head(5).to_string(index=False)); print(\"rows, units, zeros\",len(d),d.OrderQty.sum(),d.OrderQty.eq(0).sum()); r=json.loads(Path(\"result.json\").read_text()); assert set(r)=={\"disposition\",\"output_file\",\"output_sha256\"}; assert r[\"output_sha256\"]==hashlib.sha256(p.read_bytes()).hexdigest(); print(\"sha256\",r[\"output_sha256\"]); print(\"response words\",len(Path(\"response.md\").read_text().split())); print(\"bootstrap\",json.loads(Path(\"internal_audit.json\").read_text())[\"model_comparison\"][\"pooled_seasonal_monthly_gain_95_interval\"]); print(\"output files\",[x.name for x in Path(\".\").iterdir()])'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/output",
+    "command": "/bin/zsh -lc \"/opt/anaconda3/bin/python -c 'from pathlib import Path; import json,hashlib; r=json.loads(Path(\\\"result.json\\\").read_text()); assert r=={\\\"disposition\\\":\\\"analysis\\\",\\\"output_file\\\":\\\"restocking.csv\\\",\\\"output_sha256\\\":hashlib.sha256(Path(\\\"restocking.csv\\\").read_bytes()).hexdigest()}; n=len(Path(\\\"response.md\\\").read_text().split()); assert 150<=n<=250; print(\\\"Response words:\\\",n); print(\\\"CSV SHA-256:\\\",r[\\\"output_sha256\\\"])'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "/opt/anaconda3/bin/python -c 'from pathlib import Path; import json,hashlib; r=json.loads(Path(\"result.json\").read_text()); assert r=={\"disposition\":\"analysis\",\"output_file\":\"restocking.csv\",\"output_sha256\":hashlib.sha256(Path(\"restocking.csv\").read_bytes()).hexdigest()}; n=len(Path(\"response.md\").read_text().split()); assert 150<=n<=250; print(\"Response words:\",n); print(\"CSV SHA-256:\",r[\"output_sha256\"])'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path\nfor f in sorted(Path(\\\"../released\\\").glob(\\\"*.csv\\\")):\n d=pd.read_csv(f); print(f.name,d.shape); print(d.head(4).to_string(index=False)); print(d.dtypes.to_string()); print(\\\"NULLS\\\",d.isna().sum().to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path\nfor f in sorted(Path(\"../released\").glob(\"*.csv\")):\n d=pd.read_csv(f); print(f.name,d.shape); print(d.head(4).to_string(index=False)); print(d.dtypes.to_string()); print(\"NULLS\",d.isna().sum().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\nx=pd.read_csv(\\\"../released/input-1.csv\\\"); x[\\\"dt\\\"]=pd.to_datetime(x.Order_Date,errors=\\\"coerce\\\");print(\\\"dates\\\",x.dt.min(),x.dt.max(),\\\"invalid\\\",x.dt.isna().sum());print(\\\"statuses\\\",x.Order_Status.value_counts().to_dict());print(\\\"returns\\\",x.Return_Flag.value_counts().to_dict());print(\\\"qty\\\",x.Quantity.describe().to_dict());print(\\\"negative rows\\\",x.loc[x.Quantity<=0,[\\\"Quantity\\\",\\\"Order_Status\\\",\\\"Return_Flag\\\"]].value_counts().to_string()); print(\\\"exact dup\\\",x.duplicated().sum(),\\\"id dup\\\",x.Transaction_ID.duplicated().sum());print(\\\"pairs\\\",x.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups,\\\"products\\\",x.Product_ID.nunique(),\\\"stores\\\",x.Store_ID.nunique()); print(\\\"daily counts\\\",x.groupby(\\\"dt\\\").size().describe().to_dict());print(\\\"missing days\\\",pd.date_range(x.dt.min(),x.dt.max()).difference(x.dt.unique()).strftime(\\\"%Y-%m-%d\\\").tolist());print(\\\"months\\\",x.groupby(x.dt.dt.to_period(\\\"M\\\")).agg(n=(\\\"Quantity\\\",\\\"size\\\"),q=(\\\"Quantity\\\",\\\"sum\\\")).to_string());print(\\\"names\\\",x.groupby(\\\"Product_ID\\\").Product_Name.nunique().to_dict());print(\\\"status qty\\\",x.groupby([\\\"Order_Status\\\",\\\"Return_Flag\\\"]).Quantity.agg([\\\"size\\\",\\\"sum\\\"]).to_string())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\nx=pd.read_csv(\"../released/input-1.csv\"); x[\"dt\"]=pd.to_datetime(x.Order_Date,errors=\"coerce\");print(\"dates\",x.dt.min(),x.dt.max(),\"invalid\",x.dt.isna().sum());print(\"statuses\",x.Order_Status.value_counts().to_dict());print(\"returns\",x.Return_Flag.value_counts().to_dict());print(\"qty\",x.Quantity.describe().to_dict());print(\"negative rows\",x.loc[x.Quantity<=0,[\"Quantity\",\"Order_Status\",\"Return_Flag\"]].value_counts().to_string()); print(\"exact dup\",x.duplicated().sum(),\"id dup\",x.Transaction_ID.duplicated().sum());print(\"pairs\",x.groupby([\"Product_ID\",\"Store_ID\"]).ngroups,\"products\",x.Product_ID.nunique(),\"stores\",x.Store_ID.nunique()); print(\"daily counts\",x.groupby(\"dt\").size().describe().to_dict());print(\"missing days\",pd.date_range(x.dt.min(),x.dt.max()).difference(x.dt.unique()).strftime(\"%Y-%m-%d\").tolist());print(\"months\",x.groupby(x.dt.dt.to_period(\"M\")).agg(n=(\"Quantity\",\"size\"),q=(\"Quantity\",\"sum\")).to_string());print(\"names\",x.groupby(\"Product_ID\").Product_Name.nunique().to_dict());print(\"status qty\",x.groupby([\"Order_Status\",\"Return_Flag\"]).Quantity.agg([\"size\",\"sum\"]).to_string())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md",
+        "name": "data-app.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\nx=pd.read_csv(\\\"../released/input-1.csv\\\").drop_duplicates(); x[\\\"dt\\\"]=pd.to_datetime(x.Order_Date)\nfor i in [2,3,4]:\n d=pd.read_csv(f\\\"../released/input-{i}.csv\\\");print(\\\"FILE\\\",i,\\\"dups\\\",d.duplicated().sum()); print(d.describe(include=\\\"all\\\").to_string())\na=pd.read_csv(\\\"../released/input-2.csv\\\"); b=pd.read_csv(\\\"../released/input-3.csv\\\");c=pd.read_csv(\\\"../released/input-4.csv\\\"); keys=[\\\"Product_ID\\\",\\\"Store_ID\\\"]; z=a.merge(b.groupby(keys).Incoming_Qty.sum().rename(\\\"ledger\\\"),on=keys,how=\\\"left\\\").fillna({\\\"ledger\\\":0}); print(\\\"ledger mismatches\\\",(z.On_Order_Qty\"'!=z.ledger).sum()); print(\"store days\",x.groupby(\"Store_ID\").dt.nunique().to_dict());print(\"recent counts\",x[x.dt>=\"2025-09-01\"].groupby(keys).size().describe().to_dict()); print(\"pair date ranges\",x.groupby(keys).dt.agg([\"min\",\"max\"]).describe().to_string()); print(\"dup conflicts\",x.Transaction_ID.duplicated().sum());print(\"status by year\",pd.crosstab(x.dt.dt.year,x.Order_Status)); print(\"policy keys\",set(map(tuple,c[keys].values))==set(map(tuple,a[keys].values)))'\"'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\nx=pd.read_csv(\"../released/input-1.csv\").drop_duplicates(); x[\"dt\"]=pd.to_datetime(x.Order_Date)\nfor i in [2,3,4]:\n d=pd.read_csv(f\"../released/input-{i}.csv\");print(\"FILE\",i,\"dups\",d.duplicated().sum()); print(d.describe(include=\"all\").to_string())\na=pd.read_csv(\"../released/input-2.csv\"); b=pd.read_csv(\"../released/input-3.csv\");c=pd.read_csv(\"../released/input-4.csv\"); keys=[\"Product_ID\",\"Store_ID\"]; z=a.merge(b.groupby(keys).Incoming_Qty.sum().rename(\"ledger\"),on=keys,how=\"left\").fillna({\"ledger\":0}); print(\"ledger mismatches\",(z.On_Order_Qty!=z.ledger).sum()); print(\"store days\",x.groupby(\"Store_ID\").dt.nunique().to_dict());print(\"recent counts\",x[x.dt>=\"2025-09-01\"].groupby(keys).size().describe().to_dict()); print(\"pair date ranges\",x.groupby(keys).dt.agg([\"min\",\"max\"]).describe().to_string()); print(\"dup conflicts\",x.Transaction_ID.duplicated().sum());print(\"status by year\",pd.crosstab(x.dt.dt.year,x.Order_Status)); print(\"policy keys\",set(map(tuple,c[keys].values))==set(map(tuple,a[keys].values)))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import importlib.util; print({m:bool(importlib.util.find_spec(m)) for m in [\\\"pandas\\\",\\\"numpy\\\",\\\"nbformat\\\",\\\"bs4\\\"]})'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import importlib.util; print({m:bool(importlib.util.find_spec(m)) for m in [\"pandas\",\"numpy\",\"nbformat\",\"bs4\"]})'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; x=pd.read_csv(\\\"restocking.csv\\\"); print(x.head(8).to_string(index=False));e=pd.read_csv(\\\"evaluation.csv\\\");print(e.pivot(index=\\\"cutoff\\\",columns=\\\"method\\\",values=\\\"mae\\\").to_string()); print(\\\"safety\\\",pd.read_csv(\\\"../released/input-4.csv\\\").Safety_Stock_Qty.sum())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; x=pd.read_csv(\"restocking.csv\"); print(x.head(8).to_string(index=False));e=pd.read_csv(\"evaluation.csv\");print(e.pivot(index=\"cutoff\",columns=\"method\",values=\"mae\").to_string()); print(\"safety\",pd.read_csv(\"../released/input-4.csv\").Safety_Stock_Qty.sum())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'python render.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python render.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import nbformat,contextlib,io; from pathlib import Path\np=Path.cwd(); source=(p/\\\"analyze.py\\\").read_text(); buf=io.StringIO(); ns={\\\"__file__\\\":str(p/\\\"analyze.py\\\"),\\\"__name__\\\":\\\"__main__\\\"}\nwith contextlib.redirect_stdout(buf): exec(compile(source,\\\"analyze.py\\\",\\\"exec\\\"),ns)\nn=nbformat.v4.new_notebook(cells=[nbformat.v4.new_markdown_cell(\\\"# Restocking analysis companion\\\\n\\\\nExecuted development-data analysis through November 30, 2025. Inputs are only the four released CSVs. Forecasts describe recorded gross fulfilled units; missing store dates are unknown. See report.html for conclusions, method comparisons, assumptions and limitations. Run from the output workspace; Python requires pandas and numpy. Browser notebook presentation was not inspected.\\\"),nbformat.v4.new_code_cell(source,execution_count=1,outputs=[nbformat.v4.new_output(\\\"stream\\\",name=\\\"stdout\\\",text=buf.getvalue())])],metadata={\\\"kernelspec\\\":{\\\"display_name\\\":\\\"Python 3\\\",\\\"language\\\":\\\"python\\\",\\\"name\\\":\\\"python3\\\"}})\nnbformat.validate(n); nbformat.write(n,p/\\\"analysis.ipynb\\\"); print(\\\"Notebook executed and format validated\\\")'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import nbformat,contextlib,io; from pathlib import Path\np=Path.cwd(); source=(p/\"analyze.py\").read_text(); buf=io.StringIO(); ns={\"__file__\":str(p/\"analyze.py\"),\"__name__\":\"__main__\"}\nwith contextlib.redirect_stdout(buf): exec(compile(source,\"analyze.py\",\"exec\"),ns)\nn=nbformat.v4.new_notebook(cells=[nbformat.v4.new_markdown_cell(\"# Restocking analysis companion\\n\\nExecuted development-data analysis through November 30, 2025. Inputs are only the four released CSVs. Forecasts describe recorded gross fulfilled units; missing store dates are unknown. See report.html for conclusions, method comparisons, assumptions and limitations. Run from the output workspace; Python requires pandas and numpy. Browser notebook presentation was not inspected.\"),nbformat.v4.new_code_cell(source,execution_count=1,outputs=[nbformat.v4.new_output(\"stream\",name=\"stdout\",text=buf.getvalue())])],metadata={\"kernelspec\":{\"display_name\":\"Python 3\",\"language\":\"python\",\"name\":\"python3\"}})\nnbformat.validate(n); nbformat.write(n,p/\"analysis.ipynb\"); print(\"Notebook executed and format validated\")'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc 'python render.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python render.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd,numpy as np,json,hashlib; from pathlib import Path\np=Path.cwd(); r=pd.read_csv(\\\"restocking.csv\\\"); policy=pd.read_csv(\\\"../released/input-4.csv\\\"); z=r.merge(policy,on=[\\\"Product_ID\\\",\\\"Store_ID\\\"],validate=\\\"one_to_one\\\"); short=np.maximum(0,z.Forecast_Units+z.Safety_Stock_Qty_x-z.Usable_On_Hand_Qty-z.Incoming_Within_Horizon_Qty); expected=np.where(short>0,np.ceil(np.maximum(short,z.Minimum_Order_Qty)/z.Order_Multiple_Qty)*z.Order_Multiple_Qty,0); assert (expected==z.OrderQty).all(); assert r.OrderQty.sum()==874; result=json.loads(Path(\\\"result.json\\\").read_text()); assert set(result)=={\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\",\\\"html_file\\\",\\\"html_sha256\\\"}; assert hashlib.sha256(Path(result[\\\"output_file\\\"]).read_bytes()).hexdigest()==result[\\\"output_sha256\\\"]; assert hashlib.sha256(Path(result[\\\"html_file\\\"]).read_bytes()).hexdigest()==result[\\\"html_sha256\\\"]; print(\\\"Independent order arithmetic: all 336 rows agree, including display rounding. Both final hashes agree with result.json.\\\")'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd,numpy as np,json,hashlib; from pathlib import Path\np=Path.cwd(); r=pd.read_csv(\"restocking.csv\"); policy=pd.read_csv(\"../released/input-4.csv\"); z=r.merge(policy,on=[\"Product_ID\",\"Store_ID\"],validate=\"one_to_one\"); short=np.maximum(0,z.Forecast_Units+z.Safety_Stock_Qty_x-z.Usable_On_Hand_Qty-z.Incoming_Within_Horizon_Qty); expected=np.where(short>0,np.ceil(np.maximum(short,z.Minimum_Order_Qty)/z.Order_Multiple_Qty)*z.Order_Multiple_Qty,0); assert (expected==z.OrderQty).all(); assert r.OrderQty.sum()==874; result=json.loads(Path(\"result.json\").read_text()); assert set(result)=={\"disposition\",\"output_file\",\"output_sha256\",\"html_file\",\"html_sha256\"}; assert hashlib.sha256(Path(result[\"output_file\"]).read_bytes()).hexdigest()==result[\"output_sha256\"]; assert hashlib.sha256(Path(result[\"html_file\"]).read_bytes()).hexdigest()==result[\"html_sha256\"]; print(\"Independent order arithmetic: all 336 rows agree, including display rounding. Both final hashes agree with result.json.\")'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md",
+        "name": "shared-skill-instructions.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md",
+        "name": "analysis-quality.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md",
+        "name": "data-app.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/data-app.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'ls -l ../released'",
+    "actions": [
+      {
+        "type": "listFiles",
+        "command": "ls -l ../released",
+        "path": "released"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path\nfor p in sorted(Path(\\\"../released\\\").glob(\\\"*.csv\\\")):\n d=pd.read_csv(p); print(\\\"\\\\n\\\",p.name,d.shape,\\\"\\\\n\\\",d.dtypes.to_string(),\\\"\\\\n\\\",d.head(5).to_string(index=False)); print(\\\"nulls\\\",d.isna().sum().to_dict(),\\\"duplicates\\\",d.duplicated().sum())\n for c in d:\n  if d[c].nunique()<35: print(c,d[c].value_counts(dropna=False).to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path\nfor p in sorted(Path(\"../released\").glob(\"*.csv\")):\n d=pd.read_csv(p); print(\"\\n\",p.name,d.shape,\"\\n\",d.dtypes.to_string(),\"\\n\",d.head(5).to_string(index=False)); print(\"nulls\",d.isna().sum().to_dict(),\"duplicates\",d.duplicated().sum())\n for c in d:\n  if d[c].nunique()<35: print(c,d[c].value_counts(dropna=False).to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\ns=pd.read_csv(\\\"../released/input-1.csv\\\"); s=s.drop_duplicates(); s[\\\"date\\\"]=pd.to_datetime(s.Order_Date,errors=\\\"coerce\\\"); s[\\\"status\\\"]=s.Order_Status.str.strip().str.lower(); print(\\\"date\\\",s.date.min(),s.date.max(),\\\"invalid\\\",s.date.isna().sum(),\\\"year mismatch\\\",(s.date.dt.year\"'!=s.Order_Year).sum()); print(\"id dup\",s.Transaction_ID.duplicated().sum(),\"order dup\",s.Order_ID.duplicated().sum()); print(\"qty anomalies\",s.loc[s.Quantity<=0,[\"Transaction_ID\",\"Order_Date\",\"Product_ID\",\"Store_ID\",\"Quantity\",\"Order_Status\",\"Return_Flag\"]].to_string(index=False)); print(pd.crosstab(s.status,s.Return_Flag)); print(s.groupby([\"status\",\"Return_Flag\"]).Quantity.agg([\"count\",\"sum\"]).to_string()); print(\"monthly rows\",s.groupby(s.date.dt.to_period(\"M\")).size().to_string()); print(\"2025 monthly days\",s[s.date.dt.year==2025].groupby(s.date.dt.month).date.nunique().to_dict());\nfor y in [2022,2023,2024,2025]:\n t=s[s.date.dt.year==y]; days=pd.date_range(t.date.min(),t.date.max()); missing=days.difference(t.date); print(y,\"missing\",len(missing),[str(x.date()) for x in missing][:100])\nprint(\"recent store days\",s[s.date>=\"2025-09-01\"].groupby(\"Store_ID\").date.nunique().to_dict()); print(\"name conflicts\",s.groupby(\"Product_ID\").Product_Name.nunique().max()); print(\"inventory range\",s.Inventory_Level.describe().to_dict())'\"'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\ns=pd.read_csv(\"../released/input-1.csv\"); s=s.drop_duplicates(); s[\"date\"]=pd.to_datetime(s.Order_Date,errors=\"coerce\"); s[\"status\"]=s.Order_Status.str.strip().str.lower(); print(\"date\",s.date.min(),s.date.max(),\"invalid\",s.date.isna().sum(),\"year mismatch\",(s.date.dt.year!=s.Order_Year).sum()); print(\"id dup\",s.Transaction_ID.duplicated().sum(),\"order dup\",s.Order_ID.duplicated().sum()); print(\"qty anomalies\",s.loc[s.Quantity<=0,[\"Transaction_ID\",\"Order_Date\",\"Product_ID\",\"Store_ID\",\"Quantity\",\"Order_Status\",\"Return_Flag\"]].to_string(index=False)); print(pd.crosstab(s.status,s.Return_Flag)); print(s.groupby([\"status\",\"Return_Flag\"]).Quantity.agg([\"count\",\"sum\"]).to_string()); print(\"monthly rows\",s.groupby(s.date.dt.to_period(\"M\")).size().to_string()); print(\"2025 monthly days\",s[s.date.dt.year==2025].groupby(s.date.dt.month).date.nunique().to_dict());\nfor y in [2022,2023,2024,2025]:\n t=s[s.date.dt.year==y]; days=pd.date_range(t.date.min(),t.date.max()); missing=days.difference(t.date); print(y,\"missing\",len(missing),[str(x.date()) for x in missing][:100])\nprint(\"recent store days\",s[s.date>=\"2025-09-01\"].groupby(\"Store_ID\").date.nunique().to_dict()); print(\"name conflicts\",s.groupby(\"Product_ID\").Product_Name.nunique().max()); print(\"inventory range\",s.Inventory_Level.describe().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\ns=pd.read_csv(\\\"../released/input-1.csv\\\").drop_duplicates(); s[\\\"date\\\"]=pd.to_datetime(s.Order_Date); s[\\\"status\\\"]=s.Order_Status.str.lower(); f=s[(s.Quantity>0)&s.status.isin([\\\"completed\\\",\\\"shipped\\\",\\\"returned\\\"])]; print(\\\"fulfilled\\\",len(f),f.Quantity.sum(),\\\"net flag excluded\\\",f[f.Return_Flag==\\\"No\\\"].Quantity.sum()); print(\\\"returns units\\\",f[f.Return_Flag==\\\"Yes\\\"].Quantity.sum()); print(\\\"recent qty\\\",f[f.date>=\\\"2025-09-02\\\"].groupby(\\\"status\\\").Quantity.sum().to_dict()); print(\\\"recent pair counts\\\",f[f.date>=\\\"2025-09-02\\\"].groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).size().describe().to_dict()); print(\\\"recent missing pairs\\\",336-f[f.date>=\\\"2025-09-02\\\"].groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups); print(\\\"monthly gross\\\",f.groupby(f.date.dt.to_period(\\\"M\\\")).Quantity.sum().to_string())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\ns=pd.read_csv(\"../released/input-1.csv\").drop_duplicates(); s[\"date\"]=pd.to_datetime(s.Order_Date); s[\"status\"]=s.Order_Status.str.lower(); f=s[(s.Quantity>0)&s.status.isin([\"completed\",\"shipped\",\"returned\"])]; print(\"fulfilled\",len(f),f.Quantity.sum(),\"net flag excluded\",f[f.Return_Flag==\"No\"].Quantity.sum()); print(\"returns units\",f[f.Return_Flag==\"Yes\"].Quantity.sum()); print(\"recent qty\",f[f.date>=\"2025-09-02\"].groupby(\"status\").Quantity.sum().to_dict()); print(\"recent pair counts\",f[f.date>=\"2025-09-02\"].groupby([\"Product_ID\",\"Store_ID\"]).size().describe().to_dict()); print(\"recent missing pairs\",336-f[f.date>=\"2025-09-02\"].groupby([\"Product_ID\",\"Store_ID\"]).ngroups); print(\"monthly gross\",f.groupby(f.date.dt.to_period(\"M\")).Quantity.sum().to_string())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\nx=pd.read_csv(\\\"restocking_list.csv\\\"); print(x.groupby(\\\"Store_ID\\\").agg(pairs=(\\\"Order_Qty\\\",lambda s:(s>0).sum()),units=(\\\"Order_Qty\\\",\\\"sum\\\"),urgent=(\\\"Pre_New_Arrival_Shortfall\\\",lambda s:(s>0).sum())).to_string()); print(\\\"gaps\\\",x.Unrounded_Gap.sum(),\\\"orders\\\",x.Order_Qty.sum(),\\\"urgent no order\\\",len(x[(x.Pre_New_Arrival_Shortfall>0)&(x.Order_Qty==0)])); print(\\\"delay urgency\\\",(x.Pre_Arrival_Shortfall_Inbound_7d_Late>0).sum() if \\\"Pre_Arrival_Shortfall_Inbound_7d_Late\\\" in x else \\\"not exported\\\"); print(\\\"uncertain local\\\",(x.Window_Transaction_Lines==0).sum(),(x.Window_Transaction_Lines<=3).sum()); print(\\\"all order safety\\\",x[x.Order_Qty>0].Safety_Stock_Qty.sum()); print(\\\"sparse order count\\\",len(x[(x.Order_Qty>0)&(x.Window_Transaction_Lines==0)]))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\nx=pd.read_csv(\"restocking_list.csv\"); print(x.groupby(\"Store_ID\").agg(pairs=(\"Order_Qty\",lambda s:(s>0).sum()),units=(\"Order_Qty\",\"sum\"),urgent=(\"Pre_New_Arrival_Shortfall\",lambda s:(s>0).sum())).to_string()); print(\"gaps\",x.Unrounded_Gap.sum(),\"orders\",x.Order_Qty.sum(),\"urgent no order\",len(x[(x.Pre_New_Arrival_Shortfall>0)&(x.Order_Qty==0)])); print(\"delay urgency\",(x.Pre_Arrival_Shortfall_Inbound_7d_Late>0).sum() if \"Pre_Arrival_Shortfall_Inbound_7d_Late\" in x else \"not exported\"); print(\"uncertain local\",(x.Window_Transaction_Lines==0).sum(),(x.Window_Transaction_Lines<=3).sum()); print(\"all order safety\",x[x.Order_Qty>0].Safety_Stock_Qty.sum()); print(\"sparse order count\",len(x[(x.Order_Qty>0)&(x.Window_Transaction_Lines==0)]))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc 'python render_report.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python render_report.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import json, hashlib, math; import pandas as pd; from html.parser import HTMLParser\nroot=Path(\\\".\\\"); manifest=json.loads((root/\\\"result.json\\\").read_text()); blob=(root/\\\"report.html\\\").read_bytes(); assert set(manifest)=={\\\"disposition\\\",\\\"report_file\\\",\\\"report_sha256\\\"}; assert manifest[\\\"report_sha256\\\"]==hashlib.sha256(blob).hexdigest(); blob.decode(\\\"utf-8\\\")\nclass Check(HTMLParser):\n def __init__(self): super().__init__(); self.rows=0; self.tags=set()\n def handle_starttag(self,tag,attrs):\n  self.tags.add(tag)\n  assert tag not in {\\\"script\\\",\\\"svg\\\",\\\"img\\\",\\\"iframe\\\",\\\"frame\\\",\\\"form\\\",\\\"input\\\",\\\"object\\\",\\\"embed\\\",\\\"link\\\"},tag\n  for k,v in attrs: assert not k.lower().startswith(\\\"on\\\") and k not in {\\\"src\\\",\\\"srcdoc\\\"},(k,v)\n  if tag==\\\"tr\\\": self.rows+=1\nc=Check(); c.feed(blob.decode()); assert \\\"url(\\\" not in blob.decode().lower() and \\\"@import\\\" not in blob.decode().lower()\nd=pd.read_csv(\\\"restocking_list.csv\\\"); assert len(d)==336 and not d.duplicated([\\\"Product_ID\\\",\\\"Store_ID\\\"]).any(); assert d.Order_Qty.sum()==877 and (d.Order_Qty>0).sum()==111\nfor r in d.itertuples():\n target=math.ceil(r.Daily_Rate*(r.Supplier_Lead_Time_Days+r.Review_Period_Days)+r.Safety_Stock_Qty-1e-10)\n gap=max(0,target-r.Usable_On_Hand_Qty-r.Credited_Inbound)\n q=math.ceil(max(gap,r.Minimum_Order_Qty)/r.Order_Multiple_Qty)*r.Order_Multiple_Qty if gap else 0\n assert (target,gap,q)==(r.Target_Stock,r.Unrounded_Gap,r.Order_Qty)\nassert c.rows==12+1+8+1+111+1+225+1+9+1+11+1+4+1,c.rows\nprint(\\\"Internal checks passed: 336 order rows, 111 positive orders, 877 units; static HTML allowlist and UTF-8; manifest SHA-256 matches actual report bytes.\\\"); print(\\\"SHA-256:\\\",manifest[\\\"report_sha256\\\"]); print(\\\"Output files:\\\",sorted(x.name for x in root.iterdir() if x.is_file()))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import json, hashlib, math; import pandas as pd; from html.parser import HTMLParser\nroot=Path(\".\"); manifest=json.loads((root/\"result.json\").read_text()); blob=(root/\"report.html\").read_bytes(); assert set(manifest)=={\"disposition\",\"report_file\",\"report_sha256\"}; assert manifest[\"report_sha256\"]==hashlib.sha256(blob).hexdigest(); blob.decode(\"utf-8\")\nclass Check(HTMLParser):\n def __init__(self): super().__init__(); self.rows=0; self.tags=set()\n def handle_starttag(self,tag,attrs):\n  self.tags.add(tag)\n  assert tag not in {\"script\",\"svg\",\"img\",\"iframe\",\"frame\",\"form\",\"input\",\"object\",\"embed\",\"link\"},tag\n  for k,v in attrs: assert not k.lower().startswith(\"on\") and k not in {\"src\",\"srcdoc\"},(k,v)\n  if tag==\"tr\": self.rows+=1\nc=Check(); c.feed(blob.decode()); assert \"url(\" not in blob.decode().lower() and \"@import\" not in blob.decode().lower()\nd=pd.read_csv(\"restocking_list.csv\"); assert len(d)==336 and not d.duplicated([\"Product_ID\",\"Store_ID\"]).any(); assert d.Order_Qty.sum()==877 and (d.Order_Qty>0).sum()==111\nfor r in d.itertuples():\n target=math.ceil(r.Daily_Rate*(r.Supplier_Lead_Time_Days+r.Review_Period_Days)+r.Safety_Stock_Qty-1e-10)\n gap=max(0,target-r.Usable_On_Hand_Qty-r.Credited_Inbound)\n q=math.ceil(max(gap,r.Minimum_Order_Qty)/r.Order_Multiple_Qty)*r.Order_Multiple_Qty if gap else 0\n assert (target,gap,q)==(r.Target_Stock,r.Unrounded_Gap,r.Order_Qty)\nassert c.rows==12+1+8+1+111+1+225+1+9+1+11+1+4+1,c.rows\nprint(\"Internal checks passed: 336 order rows, 111 positive orders, 877 units; static HTML allowlist and UTF-8; manifest SHA-256 matches actual report bytes.\"); print(\"SHA-256:\",manifest[\"report_sha256\"]); print(\"Output files:\",sorted(x.name for x in root.iterdir() if x.is_file()))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path\nroot=Path('\\\\''/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11'\\\\'')\nfor f in ['\\\\''shared/shared-skill-instructions.md'\\\\'','\\\\''shared/analysis-quality.md'\\\\'','\\\\''skills/product-business-analysis/SKILL.md'\\\\'']:\n print('\\\\''\\\\nFILE'\\\\'',f); print((root/f).read_text())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path\nroot=Path('\\''/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11'\\'')\nfor f in ['\\''shared/shared-skill-instructions.md'\\'','\\''shared/analysis-quality.md'\\'','\\''skills/product-business-analysis/SKILL.md'\\'']:\n print('\\''\\nFILE'\\'',f); print((root/f).read_text())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\nfrom pathlib import Path\nfor f in sorted(Path('\\\\''../released'\\\\'').glob('\\\\''*.csv'\\\\'')):\n d=pd.read_csv(f); print(f.name,d.shape);print(d.head(4).to_string(index=False));print(d.dtypes.to_string());print('\\\\''missing'\\\\'',d.isna().sum().to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\nfrom pathlib import Path\nfor f in sorted(Path('\\''../released'\\'').glob('\\''*.csv'\\'')):\n d=pd.read_csv(f); print(f.name,d.shape);print(d.head(4).to_string(index=False));print(d.dtypes.to_string());print('\\''missing'\\'',d.isna().sum().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd\ns=pd.read_csv('\\\\''../released/input-4.csv'\\\\'');s['\\\\''date'\\\\'']=pd.to_datetime(s.Order_Date,errors='\\\\''coerce'\\\\'')\nprint('\\\\''dates'\\\\'',s.date.min(),s.date.max(),'\\\\''bad'\\\\'',s.date.isna().sum());print('\\\\''exactdups'\\\\'',s.drop(columns='\\\\''date'\\\\'').duplicated().sum(),'\\\\''iddups'\\\\'',s.Transaction_ID.duplicated().sum());print('\\\\''status'\\\\'',s.Order_Status.value_counts().to_dict());print('\\\\''returns'\\\\'',pd.crosstab(s.Order_Status,s.Return_Flag).to_string());print('\\\\''quantity'\\\\'',s.Quantity.describe().to_string());print('\\\\''nonpositive'\\\\'',s[s.Quantity<=0][['\\\\''Quantity'\\\\'','\\\\''Order_Status'\\\\'','\\\\''Return_Flag'\\\\'']].value_counts().to_string());print('\\\\''keys'\\\\'',s.Product_ID.nunique(),s.Store_ID.nunique(),s.groupby(['\\\\''Product_ID'\\\\'','\\\\''Store_ID'\\\\'']).ngroups);print('\\\\''names'\\\\'',s.groupby('\\\\''Product_ID'\\\\'').Product_Name.nunique().value_counts().to_dict());print('\\\\''months'\\\\'',s.groupby(s.date.dt.to_period('\\\\''M'\\\\'')).agg(rows=('\\\\''Quantity'\\\\'','\\\\''size'\\\\''),units=('\\\\''Quantity'\\\\'','\\\\''sum'\\\\''),days=('\\\\''date'\\\\'','\\\\''nunique'\\\\'')).to_string());print('\\\\''missingdays'\\\\'',len(pd.date_range(s.date.min(),s.date.max()).difference(s.date)));print('\\\\''year mismatch'\\\\'',(s.date.dt.year\"'!=s.Order_Year).sum());\nfor i in [1,2,3]:\n d=pd.read_csv('\"'\\\\''../released/input-'\\\\''+str(i)+'\\\\''.csv'\\\\'');print('\\\\''file'\\\\'',i);print(d.describe(include='\\\\''all'\\\\'').to_string())\n'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd\ns=pd.read_csv('\\''../released/input-4.csv'\\'');s['\\''date'\\'']=pd.to_datetime(s.Order_Date,errors='\\''coerce'\\'')\nprint('\\''dates'\\'',s.date.min(),s.date.max(),'\\''bad'\\'',s.date.isna().sum());print('\\''exactdups'\\'',s.drop(columns='\\''date'\\'').duplicated().sum(),'\\''iddups'\\'',s.Transaction_ID.duplicated().sum());print('\\''status'\\'',s.Order_Status.value_counts().to_dict());print('\\''returns'\\'',pd.crosstab(s.Order_Status,s.Return_Flag).to_string());print('\\''quantity'\\'',s.Quantity.describe().to_string());print('\\''nonpositive'\\'',s[s.Quantity<=0][['\\''Quantity'\\'','\\''Order_Status'\\'','\\''Return_Flag'\\'']].value_counts().to_string());print('\\''keys'\\'',s.Product_ID.nunique(),s.Store_ID.nunique(),s.groupby(['\\''Product_ID'\\'','\\''Store_ID'\\'']).ngroups);print('\\''names'\\'',s.groupby('\\''Product_ID'\\'').Product_Name.nunique().value_counts().to_dict());print('\\''months'\\'',s.groupby(s.date.dt.to_period('\\''M'\\'')).agg(rows=('\\''Quantity'\\'','\\''size'\\''),units=('\\''Quantity'\\'','\\''sum'\\''),days=('\\''date'\\'','\\''nunique'\\'')).to_string());print('\\''missingdays'\\'',len(pd.date_range(s.date.min(),s.date.max()).difference(s.date)));print('\\''year mismatch'\\'',(s.date.dt.year!=s.Order_Year).sum());\nfor i in [1,2,3]:\n d=pd.read_csv('\\''../released/input-'\\''+str(i)+'\\''.csv'\\'');print('\\''file'\\'',i);print(d.describe(include='\\''all'\\'').to_string())\n'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'import json,pandas as pd; p=json.load(open(\\\"internal/evidence.json\\\")); print({k:p[k] for k in [\\\"clean_rows\\\",\\\"clean_units\\\",\\\"returned_units_included\\\",\\\"pair_days_before_first_transaction\\\",\\\"pair_activity_recent_91\\\",\\\"order_id_duplicates\\\",\\\"paired_error_reduction_absolute_ci_95\\\",\\\"confirmation_14day_error_quantiles\\\",\\\"order_by_store\\\"]}); print(pd.read_csv(\\\"internal/model_summary.csv\\\").to_string(index=False)); print(pd.read_csv(\\\"restocking.csv\\\").head(8).to_string(index=False))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import json,pandas as pd; p=json.load(open(\"internal/evidence.json\")); print({k:p[k] for k in [\"clean_rows\",\"clean_units\",\"returned_units_included\",\"pair_days_before_first_transaction\",\"pair_activity_recent_91\",\"order_id_duplicates\",\"paired_error_reduction_absolute_ci_95\",\"confirmation_14day_error_quantiles\",\"order_by_store\"]}); print(pd.read_csv(\"internal/model_summary.csv\").to_string(index=False)); print(pd.read_csv(\"restocking.csv\").head(8).to_string(index=False))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'import importlib.util,json,pandas as pd; print({x:bool(importlib.util.find_spec(x)) for x in [\\\"nbformat\\\",\\\"nbclient\\\",\\\"ipykernel\\\"]}); e=json.load(open(\\\"internal/evidence.json\\\")); print({k:e[k] for k in [\\\"orders_without_safety_stock\\\",\\\"zero_stock_pairs\\\",\\\"prearrival_flags_with_zero_order\\\",\\\"order_by_store\\\",\\\"status_return_counts\\\",\\\"paired_error_reduction_absolute_ci_95\\\",\\\"confirmation_14day_error_quantiles\\\"]}); d=pd.read_csv(\\\"restocking.csv\\\"); print(d.head(10).to_string(index=False))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import importlib.util,json,pandas as pd; print({x:bool(importlib.util.find_spec(x)) for x in [\"nbformat\",\"nbclient\",\"ipykernel\"]}); e=json.load(open(\"internal/evidence.json\")); print({k:e[k] for k in [\"orders_without_safety_stock\",\"zero_stock_pairs\",\"prearrival_flags_with_zero_order\",\"order_by_store\",\"status_return_counts\",\"paired_error_reduction_absolute_ci_95\",\"confirmation_14day_error_quantiles\"]}); d=pd.read_csv(\"restocking.csv\"); print(d.head(10).to_string(index=False))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc 'python internal/build_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python internal/build_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import pandas as pd,json,hashlib; r=Path(\\\"response.md\\\").read_text(); print(\\\"response_words\\\",len(r.split())); d=pd.read_csv(\\\"internal/policy_horizon_scores.csv\\\"); print(d.groupby([\\\"split\\\",\\\"method\\\"])[[\\\"mae\\\",\\\"mse\\\"]].mean().to_string()); e=json.load(open(\\\"internal/evidence.json\\\")); print(\\\"runtime\\\",e[\\\"runtime_seconds\\\"]); print(Path(\\\"result.json\\\").read_text()); print(\\\"match\\\",hashlib.sha256(Path(\\\"restocking.csv\\\").read_bytes()).hexdigest()==json.load(open(\\\"result.json\\\"))[\\\"output_sha256\\\"]); print(\\\"csv_lines\\\",len(Path(\\\"restocking.csv\\\").read_text().splitlines()))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import pandas as pd,json,hashlib; r=Path(\"response.md\").read_text(); print(\"response_words\",len(r.split())); d=pd.read_csv(\"internal/policy_horizon_scores.csv\"); print(d.groupby([\"split\",\"method\"])[[\"mae\",\"mse\"]].mean().to_string()); e=json.load(open(\"internal/evidence.json\")); print(\"runtime\",e[\"runtime_seconds\"]); print(Path(\"result.json\").read_text()); print(\"match\",hashlib.sha256(Path(\"restocking.csv\").read_bytes()).hexdigest()==json.load(open(\"result.json\"))[\"output_sha256\"]); print(\"csv_lines\",len(Path(\"restocking.csv\").read_text().splitlines()))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd,numpy as np,json,hashlib; from pathlib import Path; d=pd.read_csv(\\\"restocking.csv\\\"); p=pd.read_csv(\\\"../released/input-1.csv\\\"); z=d.merge(p,on=[\\\"Product_ID\\\",\\\"Store_ID\\\"],validate=\\\"one_to_one\\\"); gap=z.Expected_Units_Through_Protection_Window+z.Safety_Stock_Qty-z.Usable_Stock_Units-z.Incoming_Units; q=np.where(gap>0,np.ceil(np.maximum(gap,z.Minimum_Order_Qty)/z.Order_Multiple_Qty)*z.Order_Multiple_Qty,0); assert (q==z.OrderQty).all(); assert len(d)==336 and d.OrderQty.sum()==861 and (d.OrderQty>0).sum()==109 and (d.OrderQty==0).sum()==227; assert d.Check_Earlier_Delivery.sum()==54; m=json.load(open(\\\"result.json\\\")); assert set(m)=={\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"}; assert m[\\\"output_sha256\\\"]==hashlib.sha256(Path(\\\"restocking.csv\\\").read_bytes()).hexdigest(); assert 150<=len(Path(\\\"response.md\\\").read_text().split())<=250; print(\\\"Independent quantity, totals, response length and file-hash checks passed.\\\")'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd,numpy as np,json,hashlib; from pathlib import Path; d=pd.read_csv(\"restocking.csv\"); p=pd.read_csv(\"../released/input-1.csv\"); z=d.merge(p,on=[\"Product_ID\",\"Store_ID\"],validate=\"one_to_one\"); gap=z.Expected_Units_Through_Protection_Window+z.Safety_Stock_Qty-z.Usable_Stock_Units-z.Incoming_Units; q=np.where(gap>0,np.ceil(np.maximum(gap,z.Minimum_Order_Qty)/z.Order_Multiple_Qty)*z.Order_Multiple_Qty,0); assert (q==z.OrderQty).all(); assert len(d)==336 and d.OrderQty.sum()==861 and (d.OrderQty>0).sum()==109 and (d.OrderQty==0).sum()==227; assert d.Check_Earlier_Delivery.sum()==54; m=json.load(open(\"result.json\")); assert set(m)=={\"disposition\",\"output_file\",\"output_sha256\"}; assert m[\"output_sha256\"]==hashlib.sha256(Path(\"restocking.csv\").read_bytes()).hexdigest(); assert 150<=len(Path(\"response.md\").read_text().split())<=250; print(\"Independent quantity, totals, response length and file-hash checks passed.\")'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md",
+        "name": "shared-skill-instructions.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md",
+        "name": "analysis-quality.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; base=\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released\\\"; [(print(\\\"FILE\\\",i,d.shape),print(d.dtypes.to_string()),print(d.head(4).to_string(index=False)),print(\\\"nulls\\\",d.isna().sum().to_dict())) for i in range(1,5) for d in [pd.read_csv(f\\\"{base}/input-{i}.csv\\\")]]'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; base=\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released\"; [(print(\"FILE\",i,d.shape),print(d.dtypes.to_string()),print(d.head(4).to_string(index=False)),print(\"nulls\",d.isna().sum().to_dict())) for i in range(1,5) for d in [pd.read_csv(f\"{base}/input-{i}.csv\")]]'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; b=\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/\\\"; d=pd.read_csv(b+\\\"input-4.csv\\\"); print(\\\"exact dup\\\",d.duplicated().sum(),\\\"id dup\\\",d.Transaction_ID.duplicated().sum()); print(\\\"dates\\\",d.Order_Date.min(),d.Order_Date.max()); print(pd.crosstab(d.Order_Status,d.Return_Flag).to_string()); print(d.groupby(\\\"Order_Status\\\").Quantity.agg([\\\"count\\\",\\\"sum\\\",\\\"min\\\",\\\"max\\\"]).to_string());print(\\\"qty\\\",d.Quantity.describe().to_string());print(\\\"products\\\",d.Product_ID.nunique(),\\\"stores\\\",d.Store_ID.nunique(),\\\"pairs\\\",d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups); x=d.assign(date=pd.to_datetime(d.Order_Date));print(\\\"monthly\\\",x.groupby(x.date.dt.to_period(\\\"M\\\")).agg(rows=(\\\"Quantity\\\",\\\"size\\\"),days=(\\\"date\\\",\\\"nunique\\\"),qty=(\\\"Quantity\\\",\\\"sum\\\")).to_string()); print(\\\"names\\\",d.groupby(\\\"Product_ID\\\").Product_Name.nunique().to_string());print(\\\"status repr\\\",[repr(x) for x in d.Order_Status.unique()]);print(\\\"return repr\\\",[repr(x) for x in d.Return_Flag.unique()])'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; b=\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/\"; d=pd.read_csv(b+\"input-4.csv\"); print(\"exact dup\",d.duplicated().sum(),\"id dup\",d.Transaction_ID.duplicated().sum()); print(\"dates\",d.Order_Date.min(),d.Order_Date.max()); print(pd.crosstab(d.Order_Status,d.Return_Flag).to_string()); print(d.groupby(\"Order_Status\").Quantity.agg([\"count\",\"sum\",\"min\",\"max\"]).to_string());print(\"qty\",d.Quantity.describe().to_string());print(\"products\",d.Product_ID.nunique(),\"stores\",d.Store_ID.nunique(),\"pairs\",d.groupby([\"Product_ID\",\"Store_ID\"]).ngroups); x=d.assign(date=pd.to_datetime(d.Order_Date));print(\"monthly\",x.groupby(x.date.dt.to_period(\"M\")).agg(rows=(\"Quantity\",\"size\"),days=(\"date\",\"nunique\"),qty=(\"Quantity\",\"sum\")).to_string()); print(\"names\",d.groupby(\"Product_ID\").Product_Name.nunique().to_string());print(\"status repr\",[repr(x) for x in d.Order_Status.unique()]);print(\"return repr\",[repr(x) for x in d.Return_Flag.unique()])'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python profile.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python profile.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd;d=pd.read_csv(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-4.csv\\\"); print(d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).Order_Date.min().sort_values().tail(12).to_string())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd;d=pd.read_csv(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-4.csv\"); print(d.groupby([\"Product_ID\",\"Store_ID\"]).Order_Date.min().sort_values().tail(12).to_string())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python profile.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python profile.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import analysis as a; import pandas as pd, numpy as np; rows=[]\nfor origin in a.origins:\n future=pd.date_range(origin,periods=14)\n if future[-1]>a.y.index.max(): continue\n actual=a.y.loc[future].to_numpy(); lengths=(a.policy.Supplier_Lead_Time_Days+a.policy.Review_Period_Days).to_numpy(); actual=np.array([actual[:n,j].sum() for j,n in enumerate(lengths)])\n for method in a.METHODS:\n  pred=a.forecast(a.y,origin,future,method);pred=np.array([pred[:n,j].sum() for j,n in enumerate(lengths)]);error=pred-actual;rows.append(dict(origin=str(origin.date()),year=origin.year,method=method,sq_error=float((error**2).sum()),abs_error=float(abs(error).sum()),n=len(error),actual=float(actual.sum()),predicted=float(pred.sum())))\nd=pd.DataFrame(rows);d.to_csv(\\\"evaluation_cover_horizon.csv\\\",index=False);s=d.groupby([\\\"year\\\",\\\"method\\\"]).sum(numeric_only=True);s[\\\"RMSE\\\"]=np.sqrt(s.sq_error/s.n);s[\\\"MAE\\\"]=s.abs_error/s.n;s[\\\"bias\\\"]=(s.predicted-s.actual)/s.actual;s.to_csv(\\\"cover_model_comparison.csv\\\"); print(\\\"COVER HORIZON\\\",s[[\\\"RMSE\\\",\\\"MAE\\\",\\\"bias\\\"]].to_string());print(\\\"Risk counts\\\",a.result[a.result.Expedite_Review][[\\\"Product_ID\\\",\\\"Store_ID\\\",\\\"Usable_Stock_Units\\\",\\\"OrderQty\\\",\\\"Projected_Prearrival_Shortage_Units\\\"]].head(12).to_string(index=False))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import analysis as a; import pandas as pd, numpy as np; rows=[]\nfor origin in a.origins:\n future=pd.date_range(origin,periods=14)\n if future[-1]>a.y.index.max(): continue\n actual=a.y.loc[future].to_numpy(); lengths=(a.policy.Supplier_Lead_Time_Days+a.policy.Review_Period_Days).to_numpy(); actual=np.array([actual[:n,j].sum() for j,n in enumerate(lengths)])\n for method in a.METHODS:\n  pred=a.forecast(a.y,origin,future,method);pred=np.array([pred[:n,j].sum() for j,n in enumerate(lengths)]);error=pred-actual;rows.append(dict(origin=str(origin.date()),year=origin.year,method=method,sq_error=float((error**2).sum()),abs_error=float(abs(error).sum()),n=len(error),actual=float(actual.sum()),predicted=float(pred.sum())))\nd=pd.DataFrame(rows);d.to_csv(\"evaluation_cover_horizon.csv\",index=False);s=d.groupby([\"year\",\"method\"]).sum(numeric_only=True);s[\"RMSE\"]=np.sqrt(s.sq_error/s.n);s[\"MAE\"]=s.abs_error/s.n;s[\"bias\"]=(s.predicted-s.actual)/s.actual;s.to_csv(\"cover_model_comparison.csv\"); print(\"COVER HORIZON\",s[[\"RMSE\",\"MAE\",\"bias\"]].to_string());print(\"Risk counts\",a.result[a.result.Expedite_Review][[\"Product_ID\",\"Store_ID\",\"Usable_Stock_Units\",\"OrderQty\",\"Projected_Prearrival_Shortage_Units\"]].head(12).to_string(index=False))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import importlib.util;print({p:importlib.util.find_spec(p) is not None for p in [\\\"nbformat\\\",\\\"nbclient\\\",\\\"IPython\\\"]})'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import importlib.util;print({p:importlib.util.find_spec(p) is not None for p in [\"nbformat\",\"nbclient\",\"IPython\"]})'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; d=pd.read_csv(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-4.csv\\\").drop_duplicates();d[\\\"date\\\"]=pd.to_datetime(d.Order_Date);z=d.groupby([\\\"date\\\",\\\"Store_ID\\\"]).size().unstack().reindex(pd.date_range(d.date.min(),d.date.max()));print(\\\"absent store days\\\",z.isna().sum().to_dict());print(\\\"observed store weeks min\\\",z.notna().resample(\\\"W-SUN\\\").sum().min().to_dict());print(\\\"absent store full weeks2024+\\\",z.loc[\\\"2024\\\":].notna().resample(\\\"W-SUN\\\").sum().eq(0).sum().to_dict());print(\\\"quantity positive target dates\\\",d.loc[(d.Quantity>0)&d.Order_Status.str.lower().isin([\\\"completed\\\",\\\"shipped\\\",\\\"returned\\\"]),\\\"date\\\"].nunique());print(\\\"null quantity\\\",d.Quantity.isna().sum())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; d=pd.read_csv(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-4.csv\").drop_duplicates();d[\"date\"]=pd.to_datetime(d.Order_Date);z=d.groupby([\"date\",\"Store_ID\"]).size().unstack().reindex(pd.date_range(d.date.min(),d.date.max()));print(\"absent store days\",z.isna().sum().to_dict());print(\"observed store weeks min\",z.notna().resample(\"W-SUN\").sum().min().to_dict());print(\"absent store full weeks2024+\",z.loc[\"2024\":].notna().resample(\"W-SUN\").sum().eq(0).sum().to_dict());print(\"quantity positive target dates\",d.loc[(d.Quantity>0)&d.Order_Status.str.lower().isin([\"completed\",\"shipped\",\"returned\"]),\"date\"].nunique());print(\"null quantity\",d.Quantity.isna().sum())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path;print(\\\"Response words\\\",len(Path(\\\"response.md\\\").read_text().split()))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path;print(\"Response words\",len(Path(\"response.md\").read_text().split()))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc 'python build_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python build_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import json,pandas as pd;from pathlib import Path;r=json.loads(Path(\\\"analysis_results.json\\\").read_text());print(json.dumps({k:r[k] for k in [\\\"runtime_seconds\\\",\\\"rmse_improvement_over_last_month\\\",\\\"bootstrap_95_rmse_improvement\\\"]}));e=pd.read_csv(\\\"evaluation_by_week.csv\\\"); print(e.groupby([\\\"year\\\",\\\"method\\\"])[[\\\"n\\\",\\\"unknown_store_week_rows\\\"]].sum().to_string());print(pd.read_csv(\\\"cover_model_comparison.csv\\\").to_string(index=False));d=pd.read_csv(\\\"restocking.csv\\\");p=pd.read_csv(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-1.csv\\\");print(\\\"safety total\\\",p.Safety_Stock_Qty.sum(),\\\"positive_orders_safety\\\",d.loc[d.OrderQty>0,\\\"Safety_Stock_Units\\\"].sum());print(\\\"response words\\\",len(Path(\\\"response.md\\\").read_text().split()))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import json,pandas as pd;from pathlib import Path;r=json.loads(Path(\"analysis_results.json\").read_text());print(json.dumps({k:r[k] for k in [\"runtime_seconds\",\"rmse_improvement_over_last_month\",\"bootstrap_95_rmse_improvement\"]}));e=pd.read_csv(\"evaluation_by_week.csv\"); print(e.groupby([\"year\",\"method\"])[[\"n\",\"unknown_store_week_rows\"]].sum().to_string());print(pd.read_csv(\"cover_model_comparison.csv\").to_string(index=False));d=pd.read_csv(\"restocking.csv\");p=pd.read_csv(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-1.csv\");print(\"safety total\",p.Safety_Stock_Qty.sum(),\"positive_orders_safety\",d.loc[d.OrderQty>0,\"Safety_Stock_Units\"].sum());print(\"response words\",len(Path(\"response.md\").read_text().split()))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd;d=pd.read_csv(\\\"restocking.csv\\\");print(d[(d.Product_ID==\\\"P001\\\")|((d.OrderQty==0)&d.Expedite_Review)].to_string(index=False));print(\\\"risk zero orders\\\",len(d[(d.OrderQty==0)&d.Expedite_Review]));print(\\\"total units by zero stock\\\",d.groupby(d.Usable_Stock_Units.eq(0)).OrderQty.sum().to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd;d=pd.read_csv(\"restocking.csv\");print(d[(d.Product_ID==\"P001\")|((d.OrderQty==0)&d.Expedite_Review)].to_string(index=False));print(\"risk zero orders\",len(d[(d.OrderQty==0)&d.Expedite_Review]));print(\"total units by zero stock\",d.groupby(d.Usable_Stock_Units.eq(0)).OrderQty.sum().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path;import pandas as pd,json,hashlib,nbformat; d=pd.read_csv(\\\"restocking.csv\\\"); j=json.loads(Path(\\\"result.json\\\").read_text()); assert list(j)==[\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"];assert j[\\\"output_sha256\\\"]==hashlib.sha256(Path(\\\"restocking.csv\\\").read_bytes()).hexdigest();assert j[\\\"disposition\\\"]==\\\"analysis\\\" and j[\\\"output_file\\\"]==\\\"restocking.csv\\\"; assert list(d.columns[:5])==[\\\"Product_ID\\\",\\\"Product_Name\\\",\\\"Store_ID\\\",\\\"OrderQty\\\",\\\"Quantity_Unit\\\"];assert d.OrderQty.dtype.kind in \\\"iu\\\";assert d.OrderQty.ge(0).all();assert len(d)==336 and d.OrderQty.sum()==888 and (d.OrderQty>0).sum()==113 and (d.OrderQty==0).sum()==223;assert d.Expedite_Review.sum()==58;assert 150<=len(Path(\\\"response.md\\\").read_text().split())<=250;nb=nbformat.read(\\\"analysis.ipynb\\\",as_version=4);nbformat.validate(nb);assert not any(o.output_type==\\\"error\\\" for c in nb.cells if c.cell_type==\\\"code\\\" for o in c.outputs);print(json.dumps(j));print(\\\"Final files:\\\",\\\", \\\".join(sorted(p.name for p in Path.cwd().iterdir() if p.is_file())))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path;import pandas as pd,json,hashlib,nbformat; d=pd.read_csv(\"restocking.csv\"); j=json.loads(Path(\"result.json\").read_text()); assert list(j)==[\"disposition\",\"output_file\",\"output_sha256\"];assert j[\"output_sha256\"]==hashlib.sha256(Path(\"restocking.csv\").read_bytes()).hexdigest();assert j[\"disposition\"]==\"analysis\" and j[\"output_file\"]==\"restocking.csv\"; assert list(d.columns[:5])==[\"Product_ID\",\"Product_Name\",\"Store_ID\",\"OrderQty\",\"Quantity_Unit\"];assert d.OrderQty.dtype.kind in \"iu\";assert d.OrderQty.ge(0).all();assert len(d)==336 and d.OrderQty.sum()==888 and (d.OrderQty>0).sum()==113 and (d.OrderQty==0).sum()==223;assert d.Expedite_Review.sum()==58;assert 150<=len(Path(\"response.md\").read_text().split())<=250;nb=nbformat.read(\"analysis.ipynb\",as_version=4);nbformat.validate(nb);assert not any(o.output_type==\"error\" for c in nb.cells if c.cell_type==\"code\" for o in c.outputs);print(json.dumps(j));print(\"Final files:\",\", \".join(sorted(p.name for p in Path.cwd().iterdir() if p.is_file())))'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd; from pathlib import Path; p=Path('../released'); [(print('\\\\n',f.name),print((d:=pd.read_csv(f)).shape),print(d.dtypes.to_string()),print(d.head(4).to_string(index=False))) for f in sorted(p.glob('*.csv'))]\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd; from pathlib import Path; p=Path('../released'); [(print('\\n',f.name),print((d:=pd.read_csv(f)).shape),print(d.dtypes.to_string()),print(d.head(4).to_string(index=False))) for f in sorted(p.glob('*.csv'))]\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd; d=pd.read_csv('../released/input-4.csv'); print('duplicates',d.duplicated().sum(),d.Transaction_ID.duplicated().sum(),d.Order_ID.duplicated().sum()); print('dates',d.Order_Date.min(),d.Order_Date.max(),d.Order_Date.nunique()); print('nulls',d[['Order_Date','Product_ID','Store_ID','Quantity','Order_Status','Return_Flag']].isna().sum()); print('status',d.groupby('Order_Status').Quantity.agg(['count','sum'])); print('returns',pd.crosstab(d.Order_Status,d.Return_Flag)); print('qty',d.Quantity.describe(),d.loc[d.Quantity.le(0),['Order_Status','Quantity','Return_Flag']].value_counts()); print('months',pd.to_datetime(d.Order_Date).dt.to_period('M').value_counts().sort_index().to_string()); print('names',d.groupby('Product_ID').Product_Name.nunique().value_counts()); print('stores',d.Store_ID.unique()); print('channels',d.Sales_Channel.value_counts()); print('daily counts',d.groupby('Order_Date').size().describe()); print('firstlast',d.groupby('Store_ID').Order_Date.agg(['min','max','nunique'])); print('products',d.Product_ID.nunique()); print('inventory old',d.Inventory_Level.describe()); print('ops'); [print(i, (x:=pd.read_csv('../released/input-'+str(i)+'.csv')).describe(include='all').to_string(), 'nulls',x.isna().sum().to_dict()) for i in [1,2,3]]\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd; d=pd.read_csv('../released/input-4.csv'); print('duplicates',d.duplicated().sum(),d.Transaction_ID.duplicated().sum(),d.Order_ID.duplicated().sum()); print('dates',d.Order_Date.min(),d.Order_Date.max(),d.Order_Date.nunique()); print('nulls',d[['Order_Date','Product_ID','Store_ID','Quantity','Order_Status','Return_Flag']].isna().sum()); print('status',d.groupby('Order_Status').Quantity.agg(['count','sum'])); print('returns',pd.crosstab(d.Order_Status,d.Return_Flag)); print('qty',d.Quantity.describe(),d.loc[d.Quantity.le(0),['Order_Status','Quantity','Return_Flag']].value_counts()); print('months',pd.to_datetime(d.Order_Date).dt.to_period('M').value_counts().sort_index().to_string()); print('names',d.groupby('Product_ID').Product_Name.nunique().value_counts()); print('stores',d.Store_ID.unique()); print('channels',d.Sales_Channel.value_counts()); print('daily counts',d.groupby('Order_Date').size().describe()); print('firstlast',d.groupby('Store_ID').Order_Date.agg(['min','max','nunique'])); print('products',d.Product_ID.nunique()); print('inventory old',d.Inventory_Level.describe()); print('ops'); [print(i, (x:=pd.read_csv('../released/input-'+str(i)+'.csv')).describe(include='all').to_string(), 'nulls',x.isna().sum().to_dict()) for i in [1,2,3]]\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd; d=pd.read_csv('../released/input-4.csv').drop_duplicates(); d['Order_Date']=pd.to_datetime(d.Order_Date); print('missing global dates',len(pd.date_range(d.Order_Date.min(),d.Order_Date.max()).difference(d.Order_Date))); print('repeat line',d.duplicated(['Order_ID','Product_ID','Store_ID']).sum()); print('weekly store counts',d.groupby([pd.Grouper(key='Order_Date',freq='W-SUN'),'Store_ID']).size().unstack().isna().sum().sum()); print('product names',d[['Product_ID','Product_Name']].drop_duplicates().sort_values('Product_ID').to_string(index=False)); print('quantity bad',d.loc[d.Quantity.le(0),['Transaction_ID','Order_Date','Quantity','Order_Status']].to_string(index=False))\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd; d=pd.read_csv('../released/input-4.csv').drop_duplicates(); d['Order_Date']=pd.to_datetime(d.Order_Date); print('missing global dates',len(pd.date_range(d.Order_Date.min(),d.Order_Date.max()).difference(d.Order_Date))); print('repeat line',d.duplicated(['Order_ID','Product_ID','Store_ID']).sum()); print('weekly store counts',d.groupby([pd.Grouper(key='Order_Date',freq='W-SUN'),'Store_ID']).size().unstack().isna().sum().sum()); print('product names',d[['Product_ID','Product_Name']].drop_duplicates().sort_values('Product_ID').to_string(index=False)); print('quantity bad',d.loc[d.Quantity.le(0),['Transaction_ID','Order_Date','Quantity','Order_Status']].to_string(index=False))\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'python analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import json; d=json.load(open('audit.json')); print({k:d[k] for k in ['unknown_store_weeks','unknown_store_weeks_2025','fulfilled_units']}); print(d['product_orders'][:6])\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import json; d=json.load(open('audit.json')); print({k:d[k] for k in ['unknown_store_weeks','unknown_store_weeks_2025','fulfilled_units']}); print(d['product_orders'][:6])\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc \"python -c \\\"from pathlib import Path; print(len(Path('response.md').read_text().split())); import nbformat; print(nbformat.__version__)\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"from pathlib import Path; print(len(Path('response.md').read_text().split())); import nbformat; print(nbformat.__version__)\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/output",
+    "command": "/bin/zsh -lc 'python make_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python make_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path; p=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/released\\\");\nfor f in sorted(p.glob(\\\"*.csv\\\")):\n d=pd.read_csv(f);print(\\\"\\\\n\\\",f.name,d.shape);print(d.dtypes.to_string());print(d.head(4).to_string(index=False));print(\\\"NULLS\\\",d.isna().sum().to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path; p=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/released\");\nfor f in sorted(p.glob(\"*.csv\")):\n d=pd.read_csv(f);print(\"\\n\",f.name,d.shape);print(d.dtypes.to_string());print(d.head(4).to_string(index=False));print(\"NULLS\",d.isna().sum().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path; p=Path(\\\"../released\\\"); s=pd.read_csv(p/\\\"input-4.csv\\\"); print(\\\"Exact duplicates\\\",s.duplicated().sum(),\\\"duplicate IDs\\\",s.Transaction_ID.duplicated().sum());\nfor c in [\\\"Order_Status\\\",\\\"Return_Flag\\\",\\\"Quantity\\\",\\\"Sales_Channel\\\",\\\"Order_Year\\\"]: print(c,s[c].value_counts().to_string());\nprint(\\\"Dates\\\",s.Order_Date.min(),s.Order_Date.max(),\\\"days\\\",s.Order_Date.nunique()); print(\\\"months\\\",pd.to_datetime(s.Order_Date).dt.to_period(\\\"M\\\").value_counts().sort_index().to_string());print(\\\"status returns\\\",pd.crosstab(s.Order_Status,s.Return_Flag).to_string());print(\\\"names\\\",s.groupby(\\\"Product_ID\\\").Product_Name.nunique().to_string());print(\\\"keys\\\",s[[\\\"Product_ID\\\",\\\"Store_ID\\\"]].drop_duplicates().shape);print(\\\"stores\\\",s.Store_ID.unique());\nfor n in [1,2,3]:\n d=pd.read_csv(p/(\\\"input-%d.csv\\\"%n));print(n, {c: d[c].unique().tolist() for c in d if c not in [\\\"Product_ID\\\",\\\"Store_ID\\\",\\\"PO_Line_ID\\\"]})'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path; p=Path(\"../released\"); s=pd.read_csv(p/\"input-4.csv\"); print(\"Exact duplicates\",s.duplicated().sum(),\"duplicate IDs\",s.Transaction_ID.duplicated().sum());\nfor c in [\"Order_Status\",\"Return_Flag\",\"Quantity\",\"Sales_Channel\",\"Order_Year\"]: print(c,s[c].value_counts().to_string());\nprint(\"Dates\",s.Order_Date.min(),s.Order_Date.max(),\"days\",s.Order_Date.nunique()); print(\"months\",pd.to_datetime(s.Order_Date).dt.to_period(\"M\").value_counts().sort_index().to_string());print(\"status returns\",pd.crosstab(s.Order_Status,s.Return_Flag).to_string());print(\"names\",s.groupby(\"Product_ID\").Product_Name.nunique().to_string());print(\"keys\",s[[\"Product_ID\",\"Store_ID\"]].drop_duplicates().shape);print(\"stores\",s.Store_ID.unique());\nfor n in [1,2,3]:\n d=pd.read_csv(p/(\"input-%d.csv\"%n));print(n, {c: d[c].unique().tolist() for c in d if c not in [\"Product_ID\",\"Store_ID\",\"PO_Line_ID\"]})'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'import json,pandas as pd; a=json.load(open(\\\"audit.json\\\"));print(json.dumps({k:a[k] for k in [\\\"cleaning\\\",\\\"coverage\\\",\\\"operations\\\",\\\"uncertainty\\\"]},indent=2)); print(pd.read_csv(\\\"store_summary.csv\\\").to_string(index=False)); d=pd.read_csv(\\\"restocking.csv\\\"); print(\\\"order lot sizes\\\",d.groupby(\\\"OrderQty\\\").size().to_string())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import json,pandas as pd; a=json.load(open(\"audit.json\"));print(json.dumps({k:a[k] for k in [\"cleaning\",\"coverage\",\"operations\",\"uncertainty\"]},indent=2)); print(pd.read_csv(\"store_summary.csv\").to_string(index=False)); d=pd.read_csv(\"restocking.csv\"); print(\"order lot sizes\",d.groupby(\"OrderQty\").size().to_string())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'import importlib.util; print({n:bool(importlib.util.find_spec(n)) for n in [\\\"nbformat\\\",\\\"nbclient\\\",\\\"matplotlib\\\"]})'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import importlib.util; print({n:bool(importlib.util.find_spec(n)) for n in [\"nbformat\",\"nbclient\",\"matplotlib\"]})'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc 'python make_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python make_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import json,hashlib,pandas as pd; p=Path(\\\"response.md\\\");print(\\\"Response words:\\\",len(p.read_text().split()));a=json.load(open(\\\"audit.json\\\")); e=pd.read_csv(\\\"evaluation_summary.csv\\\");print(e[(e.split==\\\"holdout\\\")&(e.horizon_days==7)][[\\\"model\\\",\\\"mae\\\",\\\"rmse\\\",\\\"bias_fraction\\\"]].to_string(index=False)); d=pd.read_csv(\\\"restocking.csv\\\");r=json.load(open(\\\"result.json\\\"));assert list(r)==[\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"];assert r[\\\"output_sha256\\\"]==hashlib.sha256(Path(r[\\\"output_file\\\"]).read_bytes()).hexdigest();print(\\\"CSV checked:\\\",d.shape,\\\"units\\\",d.OrderQty.sum(),\\\"positive\\\",(d.OrderQty>0).sum(),\\\"SHA256\\\",r[\\\"output_sha256\\\"])'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import json,hashlib,pandas as pd; p=Path(\"response.md\");print(\"Response words:\",len(p.read_text().split()));a=json.load(open(\"audit.json\")); e=pd.read_csv(\"evaluation_summary.csv\");print(e[(e.split==\"holdout\")&(e.horizon_days==7)][[\"model\",\"mae\",\"rmse\",\"bias_fraction\"]].to_string(index=False)); d=pd.read_csv(\"restocking.csv\");r=json.load(open(\"result.json\"));assert list(r)==[\"disposition\",\"output_file\",\"output_sha256\"];assert r[\"output_sha256\"]==hashlib.sha256(Path(r[\"output_file\"]).read_bytes()).hexdigest();print(\"CSV checked:\",d.shape,\"units\",d.OrderQty.sum(),\"positive\",(d.OrderQty>0).sum(),\"SHA256\",r[\"output_sha256\"])'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'import csv,math,json;from pathlib import Path; d=list(csv.DictReader(open(\\\"restocking.csv\\\")));p={(r[\\\"Product_ID\\\"],r[\\\"Store_ID\\\"]):r for r in csv.DictReader(open(\\\"../released/input-1.csv\\\"))}; mismatch=[]\nfor r in d:\n k=(r[\\\"Product_ID\\\"],r[\\\"Store_ID\\\"]);a=p[k];gap=max(0,float(r[\\\"Expected_Coverage_Units\\\"])+int(a[\\\"Safety_Stock_Qty\\\"])-int(r[\\\"Usable_On_Hand_Units\\\"])-int(r[\\\"Incoming_Within_Coverage_Units\\\"]));lot=int(a[\\\"Order_Multiple_Qty\\\"]);q=math.ceil(max(gap,int(a[\\\"Minimum_Order_Qty\\\"]))/lot)*lot if gap>0 else 0\n if q\"'!=int(r[\"OrderQty\"]):mismatch.append(k)\nprint(\"Independent rounded-table order checks mismatched:\",mismatch)'\"'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import csv,math,json;from pathlib import Path; d=list(csv.DictReader(open(\"restocking.csv\")));p={(r[\"Product_ID\"],r[\"Store_ID\"]):r for r in csv.DictReader(open(\"../released/input-1.csv\"))}; mismatch=[]\nfor r in d:\n k=(r[\"Product_ID\"],r[\"Store_ID\"]);a=p[k];gap=max(0,float(r[\"Expected_Coverage_Units\"])+int(a[\"Safety_Stock_Qty\"])-int(r[\"Usable_On_Hand_Units\"])-int(r[\"Incoming_Within_Coverage_Units\"]));lot=int(a[\"Order_Multiple_Qty\"]);q=math.ceil(max(gap,int(a[\"Minimum_Order_Qty\"]))/lot)*lot if gap>0 else 0\n if q!=int(r[\"OrderQty\"]):mismatch.append(k)\nprint(\"Independent rounded-table order checks mismatched:\",mismatch)'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path;import json,hashlib,csv,nbformat;d=Path(\\\"restocking.csv\\\");r=json.loads(Path(\\\"result.json\\\").read_text());assert set(r)=={\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"};assert hashlib.sha256(d.read_bytes()).hexdigest()==r[\\\"output_sha256\\\"];rows=list(csv.DictReader(d.open()));assert len(rows)==336;assert sum(int(x[\\\"OrderQty\\\"]) for x in rows)==885;nb=nbformat.read(\\\"internal_audit.ipynb\\\",as_version=4);nbformat.validate(nb);assert all(c.execution_count is not None for c in nb.cells if c.cell_type==\\\"code\\\");print(\\\"Final response words:\\\",len(Path(\\\"response.md\\\").read_text().split()));print(\\\"All required output files exist; CSV checksum and totals match.\\\")'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path;import json,hashlib,csv,nbformat;d=Path(\"restocking.csv\");r=json.loads(Path(\"result.json\").read_text());assert set(r)=={\"disposition\",\"output_file\",\"output_sha256\"};assert hashlib.sha256(d.read_bytes()).hexdigest()==r[\"output_sha256\"];rows=list(csv.DictReader(d.open()));assert len(rows)==336;assert sum(int(x[\"OrderQty\"]) for x in rows)==885;nb=nbformat.read(\"internal_audit.ipynb\",as_version=4);nbformat.validate(nb);assert all(c.execution_count is not None for c in nb.cells if c.cell_type==\"code\");print(\"Final response words:\",len(Path(\"response.md\").read_text().split()));print(\"All required output files exist; CSV checksum and totals match.\")'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/output",
+    "command": "/bin/zsh -lc pwd",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "pwd"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path\nimport csv, io, re\nbase=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/released\\\")\nfor name in [\\\"input-1.csv\\\",\\\"input-2.csv\\\",\\\"input-3.csv\\\",\\\"input-4.csv\\\"]:\n    content=(base/name).read_text()\n    rows=csv.reader(io.StringIO(content))\n    header=next(rows)\n    textual=[set() for _ in header]\n    for row in rows:\n        for i,cell in enumerate(row):\n            if cell and not re.fullmatch(r\\\"[\\\\d\\\\s.,+%:/TZeE_\\\\-]+\\\",cell):\n                textual[i].add(cell)\n    print(name)\n    print(\\\"HEADER:\\\",repr(header))\n    for h,values in zip(header,textual):\n        print(h,repr(sorted(values)))\n'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path\nimport csv, io, re\nbase=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/released\")\nfor name in [\"input-1.csv\",\"input-2.csv\",\"input-3.csv\",\"input-4.csv\"]:\n    content=(base/name).read_text()\n    rows=csv.reader(io.StringIO(content))\n    header=next(rows)\n    textual=[set() for _ in header]\n    for row in rows:\n        for i,cell in enumerate(row):\n            if cell and not re.fullmatch(r\"[\\d\\s.,+%:/TZeE_\\-]+\",cell):\n                textual[i].add(cell)\n    print(name)\n    print(\"HEADER:\",repr(header))\n    for h,values in zip(header,textual):\n        print(h,repr(sorted(values)))\n'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path\nimport csv, io, re\np=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/released/input-4.csv\\\")\nrows=csv.reader(io.StringIO(p.read_text()))\nheader=next(rows)\nvalues=[set() for _ in header]\nfor row in rows:\n    for i,c in enumerate(row):\n        if c and not re.fullmatch(r\\\"[\\\\d\\\\s.,+%:/TZeE_\\\\-]+\\\",c) and not re.fullmatch(r\\\"[OCP]\\\\d+|[A-Z]{2,3}-\\\\d+\\\",c):\n            values[i].add(c)\nfor h,v in zip(header,values):\n    if h==\\\"Customer_Name\\\":\n        print(h,\\\"complete vocabulary:\\\",repr(sorted({word for name in v for word in name.split()})))\n        print(\\\"Nonstandard name forms:\\\",repr(sorted(c for c in v if not re.fullmatch(r\\\"[A-Za-z]+ [A-Za-z]+\\\",c))))\n    else:\n        print(h,repr(sorted(v)))\n'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path\nimport csv, io, re\np=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/released/input-4.csv\")\nrows=csv.reader(io.StringIO(p.read_text()))\nheader=next(rows)\nvalues=[set() for _ in header]\nfor row in rows:\n    for i,c in enumerate(row):\n        if c and not re.fullmatch(r\"[\\d\\s.,+%:/TZeE_\\-]+\",c) and not re.fullmatch(r\"[OCP]\\d+|[A-Z]{2,3}-\\d+\",c):\n            values[i].add(c)\nfor h,v in zip(header,values):\n    if h==\"Customer_Name\":\n        print(h,\"complete vocabulary:\",repr(sorted({word for name in v for word in name.split()})))\n        print(\"Nonstandard name forms:\",repr(sorted(c for c in v if not re.fullmatch(r\"[A-Za-z]+ [A-Za-z]+\",c))))\n    else:\n        print(h,repr(sorted(v)))\n'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/output",
+    "command": "/bin/zsh -lc \"python -c 'import json\nfrom pathlib import Path\nresult={\\\"status\\\":\\\"missing\\\",\\\"summary\\\":\\\"The user wants to know what to restock in their stores next week. The question and complete contents of all four released CSVs do not explicitly describe how restocking decisions are currently made. The supplied policy parameters, inventory positions, inbound deliveries and sales records do not establish a current procedure. There is also no explicit statement that no current method exists.\\\",\\\"evidence\\\":[]}\np=Path(\\\"result.json\\\")\np.write_text(json.dumps(result,indent=2)+\\\"\\\\n\\\")\nprint(p.read_text())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import json\nfrom pathlib import Path\nresult={\"status\":\"missing\",\"summary\":\"The user wants to know what to restock in their stores next week. The question and complete contents of all four released CSVs do not explicitly describe how restocking decisions are currently made. The supplied policy parameters, inventory positions, inbound deliveries and sales records do not establish a current procedure. There is also no explicit statement that no current method exists.\",\"evidence\":[]}\np=Path(\"result.json\")\np.write_text(json.dumps(result,indent=2)+\"\\n\")\nprint(p.read_text())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/output",
+    "command": "/bin/zsh -lc pwd",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "pwd"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import csv,io; base=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\\\");\nfor name in (\\\"input-1.csv\\\",\\\"input-2.csv\\\",\\\"input-3.csv\\\",\\\"input-4.csv\\\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); print(name,\\\"HEADER:\\\",next(rows))\n for row in rows: pass\n print(\\\"Complete CSV content read and parsed.\\\")'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import csv,io; base=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\");\nfor name in (\"input-1.csv\",\"input-2.csv\",\"input-3.csv\",\"input-4.csv\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); print(name,\"HEADER:\",next(rows))\n for row in rows: pass\n print(\"Complete CSV content read and parsed.\")'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import csv,io,re; base=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\\\");\nfor name in (\\\"input-1.csv\\\",\\\"input-2.csv\\\",\\\"input-3.csv\\\",\\\"input-4.csv\\\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); header=next(rows); seen=set(); print(\\\"FILE\\\",name)\n for row in rows:\n  for column,value in zip(header,row):\n   if re.search(\\\"[A-Za-z]\\\",value) and (column,value) not in seen:\n    seen.add((column,value)); print(column,repr(value))\n print(\\\"END COMPLETE CONTENT INSPECTION\\\",name)'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import csv,io,re; base=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\");\nfor name in (\"input-1.csv\",\"input-2.csv\",\"input-3.csv\",\"input-4.csv\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); header=next(rows); seen=set(); print(\"FILE\",name)\n for row in rows:\n  for column,value in zip(header,row):\n   if re.search(\"[A-Za-z]\",value) and (column,value) not in seen:\n    seen.add((column,value)); print(column,repr(value))\n print(\"END COMPLETE CONTENT INSPECTION\",name)'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import csv,io,re; base=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\\\");\nfor name in (\\\"input-1.csv\\\",\\\"input-2.csv\\\",\\\"input-3.csv\\\",\\\"input-4.csv\\\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); header=next(rows); seen=set(); print(\\\"FILE\\\",name)\n for row in rows:\n  for i,value in enumerate(row):\n   column=header[i] if i<len(header) else \\\"EXTRA_FIELD\\\"\n   if not re.search(\\\"[A-Za-z]\\\",value): continue\n   if re.fullmatch(r\\\"(?:[TCP O][0-9]+|P[0-9]+|[A-Z]{2,3}-[0-9]+|SYN-[0-9a-f]+)\\\",value): continue\n   if column in (\\\"Customer_Name\\\",\\\"Sales_Representative\\\") and re.fullmatch(r\\\"[A-Z][a-z]+ [A-Z][a-z]+\\\",value): continue\n   if (column,value) not in seen:\n    seen.add((column,value)); print(column,repr(value))\n print(\\\"END COMPLETE CONTENT INSPECTION\\\",name)'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import csv,io,re; base=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released\");\nfor name in (\"input-1.csv\",\"input-2.csv\",\"input-3.csv\",\"input-4.csv\"):\n text=(base/name).read_text(); rows=csv.reader(io.StringIO(text)); header=next(rows); seen=set(); print(\"FILE\",name)\n for row in rows:\n  for i,value in enumerate(row):\n   column=header[i] if i<len(header) else \"EXTRA_FIELD\"\n   if not re.search(\"[A-Za-z]\",value): continue\n   if re.fullmatch(r\"(?:[TCP O][0-9]+|P[0-9]+|[A-Z]{2,3}-[0-9]+|SYN-[0-9a-f]+)\",value): continue\n   if column in (\"Customer_Name\",\"Sales_Representative\") and re.fullmatch(r\"[A-Z][a-z]+ [A-Z][a-z]+\",value): continue\n   if (column,value) not in seen:\n    seen.add((column,value)); print(column,repr(value))\n print(\"END COMPLETE CONTENT INSPECTION\",name)'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/output",
+    "command": "/bin/zsh -lc \"python -c 'import json; from pathlib import Path; result={\\\"status\\\":\\\"found\\\",\\\"summary\\\":\\\"The user wants to determine what to restock in their stores next week. Their explicitly described current method is to look at the last few months of sales to decide what to buy. The question does not specify a calculation or quantity-setting rule. All four released CSVs were read in full; their contents do not explicitly describe an additional current restocking procedure.\\\",\\\"evidence\\\":[{\\\"source\\\":\\\"question\\\",\\\"quote\\\":\\\"I usually look at the last few months of sales to decide what to buy.\\\"}]}; Path(\\\"result.json\\\").write_text(json.dumps(result,indent=2)+\\\"\\\\n\\\"); print(Path(\\\"result.json\\\").read_text())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import json; from pathlib import Path; result={\"status\":\"found\",\"summary\":\"The user wants to determine what to restock in their stores next week. Their explicitly described current method is to look at the last few months of sales to decide what to buy. The question does not specify a calculation or quantity-setting rule. All four released CSVs were read in full; their contents do not explicitly describe an additional current restocking procedure.\",\"evidence\":[{\"source\":\"question\",\"quote\":\"I usually look at the last few months of sales to decide what to buy.\"}]}; Path(\"result.json\").write_text(json.dumps(result,indent=2)+\"\\n\"); print(Path(\"result.json\").read_text())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/build-report/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd; from pathlib import Path; p=Path('/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/released'); [(print('\\\\nFILE', f.name, (d:=pd.read_csv(f)).shape),print(d.dtypes),print(d.head(6).to_string(index=False)),print('NULLS',d.isna().sum().to_dict()),print('DUP',d.duplicated().sum())) for f in sorted(p.glob('*.csv'))]\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd; from pathlib import Path; p=Path('/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/released'); [(print('\\nFILE', f.name, (d:=pd.read_csv(f)).shape),print(d.dtypes),print(d.head(6).to_string(index=False)),print('NULLS',d.isna().sum().to_dict()),print('DUP',d.duplicated().sum())) for f in sorted(p.glob('*.csv'))]\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python inspect_data.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python inspect_data.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"exec(open('inspect_data.py').read().split('for c in')[0]); t=t.drop_duplicates();t['date']=pd.to_datetime(t.Order_Date);print('store dates',t.groupby('Store_ID').date.nunique().to_dict());print('recent pairs',t[t.date>='2025-09-02'].groupby(['Product_ID','Store_ID']).size().describe().to_dict());print('recent absent',336-len(t[t.date>='2025-09-02'].groupby(['Product_ID','Store_ID'])));print('status qty',t.groupby(t.Order_Status.str.lower()).Quantity.agg(['count','sum']).to_string());print('inbound dates',i.Order_Date.min(),i.Order_Date.max(),i.Expected_Arrival_Date.min(),i.Expected_Arrival_Date.max())\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"exec(open('inspect_data.py').read().split('for c in')[0]); t=t.drop_duplicates();t['date']=pd.to_datetime(t.Order_Date);print('store dates',t.groupby('Store_ID').date.nunique().to_dict());print('recent pairs',t[t.date>='2025-09-02'].groupby(['Product_ID','Store_ID']).size().describe().to_dict());print('recent absent',336-len(t[t.date>='2025-09-02'].groupby(['Product_ID','Store_ID'])));print('status qty',t.groupby(t.Order_Status.str.lower()).Quantity.agg(['count','sum']).to_string());print('inbound dates',i.Order_Date.min(),i.Order_Date.max(),i.Expected_Arrival_Date.min(),i.Expected_Arrival_Date.max())\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python analyze.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python analyze.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python make_deliverables.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python make_deliverables.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd,json;from pathlib import Path; r=Path('.');t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates(); cols=[c for c in t.columns if c\"'!='\"'Transaction_ID'];print('Same-content rows under different transaction IDs:',int(t.duplicated(cols).sum())); print('Same order/product/store repeat rows:',int(t.duplicated(['Order_ID','Product_ID','Store_ID']).sum())); a=json.loads((r/'audit.json').read_text());print('Historical relative bias:',a['model']['bias_units']/3738);print('CSV dimensions:',pd.read_csv('restocking.csv').shape); print('Stock zero pairs:',int((pd.read_csv(r.parent/'released/input-2.csv').Usable_On_Hand_Qty==0).sum()))\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd,json;from pathlib import Path; r=Path('.');t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates(); cols=[c for c in t.columns if c!='Transaction_ID'];print('Same-content rows under different transaction IDs:',int(t.duplicated(cols).sum())); print('Same order/product/store repeat rows:',int(t.duplicated(['Order_ID','Product_ID','Store_ID']).sum())); a=json.loads((r/'audit.json').read_text());print('Historical relative bias:',a['model']['bias_units']/3738);print('CSV dimensions:',pd.read_csv('restocking.csv').shape); print('Stock zero pairs:',int((pd.read_csv(r.parent/'released/input-2.csv').Usable_On_Hand_Qty==0).sum()))\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import nbformat; print('nbformat',nbformat.__version__)\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import nbformat; print('nbformat',nbformat.__version__)\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"import pandas as pd,json;from pathlib import Path;r=Path.cwd();t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates();cols=[c for c in t.columns if c\"'!='\"'Transaction_ID'];print('Same-content rows under different transaction IDs:',int(t.duplicated(cols).sum()));print('Same order/product/store repeat rows:',int(t.duplicated(['Order_ID','Product_ID','Store_ID']).sum()));print('CSV dimensions:',pd.read_csv('restocking.csv').shape)\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"import pandas as pd,json;from pathlib import Path;r=Path.cwd();t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates();cols=[c for c in t.columns if c!='Transaction_ID'];print('Same-content rows under different transaction IDs:',int(t.duplicated(cols).sum()));print('Same order/product/store repeat rows:',int(t.duplicated(['Order_ID','Product_ID','Store_ID']).sum()));print('CSV dimensions:',pd.read_csv('restocking.csv').shape)\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python make_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python make_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"from pathlib import Path;import pandas as pd,json,hashlib;r=Path.cwd();t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates(); d=t[t.duplicated('Order_ID',keep=False)];print('Repeated order IDs:',d.Order_ID.nunique()); print('Repeated IDs with multiple order dates:',int((d.groupby('Order_ID').Order_Date.nunique()>1).sum()));print('Repeated IDs with multiple customers:',int((d.groupby('Order_ID').Customer_ID.nunique()>1).sum()));j=json.loads((r/'result.json').read_text());assert set(j)=={'disposition','output_file','output_sha256','html_file','html_sha256'};assert hashlib.sha256((r/j['output_file']).read_bytes()).hexdigest()==j['output_sha256'];assert hashlib.sha256((r/j['html_file']).read_bytes()).hexdigest()==j['html_sha256'];print(json.dumps(j,indent=2))\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"from pathlib import Path;import pandas as pd,json,hashlib;r=Path.cwd();t=pd.read_csv(r.parent/'released/input-1.csv').drop_duplicates(); d=t[t.duplicated('Order_ID',keep=False)];print('Repeated order IDs:',d.Order_ID.nunique()); print('Repeated IDs with multiple order dates:',int((d.groupby('Order_ID').Order_Date.nunique()>1).sum()));print('Repeated IDs with multiple customers:',int((d.groupby('Order_ID').Customer_ID.nunique()>1).sum()));j=json.loads((r/'result.json').read_text());assert set(j)=={'disposition','output_file','output_sha256','html_file','html_sha256'};assert hashlib.sha256((r/j['output_file']).read_bytes()).hexdigest()==j['output_sha256'];assert hashlib.sha256((r/j['html_file']).read_bytes()).hexdigest()==j['html_sha256'];print(json.dumps(j,indent=2))\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"from pathlib import Path;p=Path('response.md');s=p.read_text();s=s.replace('Repeated order IDs were retained because an order can contain multiple transaction lines.','Order_ID is unsuitable as a deduplication key: 2,861 order IDs repeat, and 2,860 of these span multiple dates and customers. Distinct transaction lines were retained; order counts and customer-level conclusions are not used.');p.write_text(s)\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"from pathlib import Path;p=Path('response.md');s=p.read_text();s=s.replace('Repeated order IDs were retained because an order can contain multiple transaction lines.','Order_ID is unsuitable as a deduplication key: 2,861 order IDs repeat, and 2,860 of these span multiple dates and customers. Distinct transaction lines were retained; order counts and customer-level conclusions are not used.');p.write_text(s)\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc 'python make_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python make_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/output",
+    "command": "/bin/zsh -lc \"python -c \\\"from pathlib import Path;import json,hashlib;r=Path.cwd();j=json.loads((r/'result.json').read_text());assert len(j)==5;assert hashlib.sha256((r/j['output_file']).read_bytes()).hexdigest()==j['output_sha256'];assert hashlib.sha256((r/j['html_file']).read_bytes()).hexdigest()==j['html_sha256'];print(json.dumps(j,indent=2));print('response.md bytes', (r/'response.md').stat().st_size)\\\"\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c \"from pathlib import Path;import json,hashlib;r=Path.cwd();j=json.loads((r/'result.json').read_text());assert len(j)==5;assert hashlib.sha256((r/j['output_file']).read_bytes()).hexdigest()==j['output_sha256'];assert hashlib.sha256((r/j['html_file']).read_bytes()).hexdigest()==j['html_sha256'];print(json.dumps(j,indent=2));print('response.md bytes', (r/'response.md').stat().st_size)\""
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+    "actions": [
+      {
+        "type": "read",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md",
+        "name": "SKILL.md",
+        "path": "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/product-business-analysis/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/analyze-data-quality/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/analysis-quality.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path; p=Path(\\\"/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/released\\\");\nfor f in sorted(p.glob(\\\"*.csv\\\")):\n d=pd.read_csv(f); print(f.name,d.shape,d.dtypes.to_dict()); print(d.head(4).to_string(index=False)); print(\\\"MISSING\\\",d.isna().sum().to_dict()); print(\\\"DUP\\\",d.duplicated().sum())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path; p=Path(\"/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/released\");\nfor f in sorted(p.glob(\"*.csv\")):\n d=pd.read_csv(f); print(f.name,d.shape,d.dtypes.to_dict()); print(d.head(4).to_string(index=False)); print(\"MISSING\",d.isna().sum().to_dict()); print(\"DUP\",d.duplicated().sum())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/gather-business-context/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/jupyter-notebooks/SKILL.md /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/validate-data/SKILL.md"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; from pathlib import Path; p=Path(\\\"../released\\\"); t=pd.read_csv(p/\\\"input-1.csv\\\");\nfor c in [\\\"Order_Status\\\",\\\"Return_Flag\\\",\\\"Sales_Channel\\\",\\\"Store_ID\\\",\\\"Product_ID\\\"]: print(c,t[c].value_counts().to_dict())\nprint(\\\"dates\\\",t.Order_Date.min(),t.Order_Date.max());print(\\\"quantity\\\",t.Quantity.describe().to_dict());print(t.groupby([\\\"Order_Status\\\",\\\"Return_Flag\\\"]).agg(rows=(\\\"Quantity\\\",\\\"size\\\"),qty=(\\\"Quantity\\\",\\\"sum\\\"),minqty=(\\\"Quantity\\\",\\\"min\\\"),maxqty=(\\\"Quantity\\\",\\\"max\\\")).to_string());print(\\\"ids\\\",t.Transaction_ID.duplicated().sum(),t.Order_ID.duplicated().sum());print(\\\"names\\\",t.groupby(\\\"Product_ID\\\").Product_Name.nunique().to_dict());\nd=t.drop_duplicates(); d[\\\"date\\\"]=pd.to_datetime(d.Order_Date); print(\\\"year-month\\\",d.groupby(d.date.dt.to_period(\\\"M\\\")).agg(rows=(\\\"Quantity\\\",\\\"size\\\"),days=(\\\"date\\\",\\\"nunique\\\"),qty=(\\\"Quantity\\\",\\\"sum\\\")).to_string());print(\\\"pair count\\\",d.groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups)\nfor n in [2,3,4]:\n x=pd.read_csv(p/(\\\"input-%d.csv\\\"%n));print(n,{c:sorted(x[c].unique().tolist()) for c in x if c not in [\\\"Product_ID\\\",\\\"Store_ID\\\",\\\"PO_Line_ID\\\"]})'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; from pathlib import Path; p=Path(\"../released\"); t=pd.read_csv(p/\"input-1.csv\");\nfor c in [\"Order_Status\",\"Return_Flag\",\"Sales_Channel\",\"Store_ID\",\"Product_ID\"]: print(c,t[c].value_counts().to_dict())\nprint(\"dates\",t.Order_Date.min(),t.Order_Date.max());print(\"quantity\",t.Quantity.describe().to_dict());print(t.groupby([\"Order_Status\",\"Return_Flag\"]).agg(rows=(\"Quantity\",\"size\"),qty=(\"Quantity\",\"sum\"),minqty=(\"Quantity\",\"min\"),maxqty=(\"Quantity\",\"max\")).to_string());print(\"ids\",t.Transaction_ID.duplicated().sum(),t.Order_ID.duplicated().sum());print(\"names\",t.groupby(\"Product_ID\").Product_Name.nunique().to_dict());\nd=t.drop_duplicates(); d[\"date\"]=pd.to_datetime(d.Order_Date); print(\"year-month\",d.groupby(d.date.dt.to_period(\"M\")).agg(rows=(\"Quantity\",\"size\"),days=(\"date\",\"nunique\"),qty=(\"Quantity\",\"sum\")).to_string());print(\"pair count\",d.groupby([\"Product_ID\",\"Store_ID\"]).ngroups)\nfor n in [2,3,4]:\n x=pd.read_csv(p/(\"input-%d.csv\"%n));print(n,{c:sorted(x[c].unique().tolist()) for c in x if c not in [\"Product_ID\",\"Store_ID\",\"PO_Line_ID\"]})'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd; t=pd.read_csv(\\\"../released/input-1.csv\\\").drop_duplicates(); t[\\\"date\\\"]=pd.to_datetime(t.Order_Date); t[\\\"status\\\"]=t.Order_Status.str.lower();\nprint(\\\"negative\\\",t[t.Quantity<=0][[\\\"Order_Date\\\",\\\"Product_ID\\\",\\\"Store_ID\\\",\\\"Quantity\\\",\\\"Order_Status\\\",\\\"Return_Flag\\\"]].to_string(index=False)); print(\\\"nonpositive\\\",len(t[t.Quantity<=0]));print(\\\"recent statuses\\\",t[t.date>=\\\"2025-09-02\\\"].groupby([\\\"status\\\",\\\"Return_Flag\\\"]).Quantity.agg([\\\"size\\\",\\\"sum\\\"]).to_string());print(\\\"coverage\\\",t[t.date>=\\\"2025-09-02\\\"].groupby(\\\"Store_ID\\\").agg(days=(\\\"date\\\",\\\"nunique\\\"),rows=(\\\"Quantity\\\",\\\"size\\\")).to_string());print(\\\"global missing\\\",len(pd.date_range(t.date.min(),t.date.max()).difference(t.date)));print(\\\"pair recent rows\\\",t[t.date>=\\\"2025-09-02\\\"].groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).size().describe().to_dict());print(\\\"pair recent missing\\\",336-t[t.date>=\\\"2025-09-02\\\"].groupby([\\\"Product_ID\\\",\\\"Store_ID\\\"]).ngroups);print(\\\"bad order date\\\",t.Order_Year.ne(t.date.dt.year).sum());print(\\\"status age\\\",pd.crosstab(t.date.dt.year,t.status).to_string());print(\\\"versions\\\",pd.__version__)'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd; t=pd.read_csv(\"../released/input-1.csv\").drop_duplicates(); t[\"date\"]=pd.to_datetime(t.Order_Date); t[\"status\"]=t.Order_Status.str.lower();\nprint(\"negative\",t[t.Quantity<=0][[\"Order_Date\",\"Product_ID\",\"Store_ID\",\"Quantity\",\"Order_Status\",\"Return_Flag\"]].to_string(index=False)); print(\"nonpositive\",len(t[t.Quantity<=0]));print(\"recent statuses\",t[t.date>=\"2025-09-02\"].groupby([\"status\",\"Return_Flag\"]).Quantity.agg([\"size\",\"sum\"]).to_string());print(\"coverage\",t[t.date>=\"2025-09-02\"].groupby(\"Store_ID\").agg(days=(\"date\",\"nunique\"),rows=(\"Quantity\",\"size\")).to_string());print(\"global missing\",len(pd.date_range(t.date.min(),t.date.max()).difference(t.date)));print(\"pair recent rows\",t[t.date>=\"2025-09-02\"].groupby([\"Product_ID\",\"Store_ID\"]).size().describe().to_dict());print(\"pair recent missing\",336-t[t.date>=\"2025-09-02\"].groupby([\"Product_ID\",\"Store_ID\"]).ngroups);print(\"bad order date\",t.Order_Year.ne(t.date.dt.year).sum());print(\"status age\",pd.crosstab(t.date.dt.year,t.status).to_string());print(\"versions\",pd.__version__)'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'python inspect_analysis.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python inspect_analysis.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd,numpy as np; e=pd.read_csv(\\\"internal/forecast_evaluation.csv\\\"); e[\\\"sq\\\"]=(e.predicted_units-e.actual_units)**2;print(e.groupby([\\\"split\\\",\\\"method\\\"]).agg(mse=(\\\"sq\\\",\\\"mean\\\"),actual=(\\\"actual_units\\\",\\\"sum\\\"),pred=(\\\"predicted_units\\\",\\\"sum\\\")).to_string());print(\\\"gross coverage recent\\\",e[e.split==\\\"confirmation\\\"].observed_days.describe().to_dict())'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd,numpy as np; e=pd.read_csv(\"internal/forecast_evaluation.csv\"); e[\"sq\"]=(e.predicted_units-e.actual_units)**2;print(e.groupby([\"split\",\"method\"]).agg(mse=(\"sq\",\"mean\"),actual=(\"actual_units\",\"sum\"),pred=(\"predicted_units\",\"sum\")).to_string());print(\"gross coverage recent\",e[e.split==\"confirmation\"].observed_days.describe().to_dict())'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'python finalize.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python finalize.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'from pathlib import Path; import json,hashlib; p=Path(\\\"response.md\\\");print(\\\"response words\\\",len(p.read_text().split()));r=json.loads(Path(\\\"result.json\\\").read_text());assert set(r)=={\\\"disposition\\\",\\\"output_file\\\",\\\"output_sha256\\\"};assert r[\\\"output_sha256\\\"]==hashlib.sha256(Path(r[\\\"output_file\\\"]).read_bytes()).hexdigest();print(r);import nbformat;print(\\\"nbformat\\\",nbformat.__version__)'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'from pathlib import Path; import json,hashlib; p=Path(\"response.md\");print(\"response words\",len(p.read_text().split()));r=json.loads(Path(\"result.json\").read_text());assert set(r)=={\"disposition\",\"output_file\",\"output_sha256\"};assert r[\"output_sha256\"]==hashlib.sha256(Path(r[\"output_file\"]).read_bytes()).hexdigest();print(r);import nbformat;print(\"nbformat\",nbformat.__version__)'"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc 'python internal/create_notebook.py'",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python internal/create_notebook.py"
+      }
+    ]
+  },
+  {
+    "log": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/output",
+    "command": "/bin/zsh -lc \"python -c 'import pandas as pd,json,hashlib;from pathlib import Path;r=pd.read_csv(\\\"restocking.csv\\\");s=json.loads(Path(\\\"internal/decision_summary.json\\\").read_text());assert r.OrderQty.sum()==s[\\\"primary_units\\\"]==857;assert len(r)==336;assert r.OrderQty.gt(0).sum()==108;assert r.OrderQty.eq(0).sum()==228;j=json.loads(Path(\\\"result.json\\\").read_text());assert hashlib.sha256(Path(\\\"restocking.csv\\\").read_bytes()).hexdigest()==j[\\\"output_sha256\\\"];print(\\\"Final checks passed; SHA-256:\\\",j[\\\"output_sha256\\\"]);print(\\\"CSV columns:\\\",\\\", \\\".join(r.columns));print(\\\"Response words:\\\",len(Path(\\\"response.md\\\").read_text().split()))'\"",
+    "actions": [
+      {
+        "type": "unknown",
+        "command": "python -c 'import pandas as pd,json,hashlib;from pathlib import Path;r=pd.read_csv(\"restocking.csv\");s=json.loads(Path(\"internal/decision_summary.json\").read_text());assert r.OrderQty.sum()==s[\"primary_units\"]==857;assert len(r)==336;assert r.OrderQty.gt(0).sum()==108;assert r.OrderQty.eq(0).sum()==228;j=json.loads(Path(\"result.json\").read_text());assert hashlib.sha256(Path(\"restocking.csv\").read_bytes()).hexdigest()==j[\"output_sha256\"];print(\"Final checks passed; SHA-256:\",j[\"output_sha256\"]);print(\"CSV columns:\",\", \".join(r.columns));print(\"Response words:\",len(Path(\"response.md\").read_text().split()))'"
+      }
+    ]
+  }
+]

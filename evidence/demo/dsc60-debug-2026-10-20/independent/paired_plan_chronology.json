@@ -1,0 +1,41 @@
+[
+  {
+    "arm": "historical",
+    "prompt_hash_matches_preexecution_freeze": true,
+    "released_hashes_match_preexecution_freeze": {
+      "input-1.csv": true,
+      "input-2.csv": true,
+      "input-3.csv": true,
+      "input-4.csv": true
+    },
+    "plan_filechange_completion_monotonic": [
+      668271.316605041
+    ],
+    "analysis_execution_start_monotonic": [
+      668357.194384916,
+      668370.763796916,
+      668378.674187875,
+      668442.244703791
+    ],
+    "plan_precedes_first_analysis_execution": true,
+    "limit": "Chronology based on retained native RPC events plus inspected source; cannot exclude unretained activity."
+  },
+  {
+    "arm": "structured",
+    "prompt_hash_matches_preexecution_freeze": true,
+    "released_hashes_match_preexecution_freeze": {
+      "input-1.csv": true,
+      "input-2.csv": true,
+      "input-3.csv": true,
+      "input-4.csv": true
+    },
+    "plan_filechange_completion_monotonic": [
+      668296.378483625
+    ],
+    "analysis_execution_start_monotonic": [
+      668405.293749125
+    ],
+    "plan_precedes_first_analysis_execution": true,
+    "limit": "Chronology based on retained native RPC events plus inspected source; cannot exclude unretained activity."
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "passed": [
+    "file hash and exact result schema",
+    "all 336 unique supplied keys",
+    "nonnegative integer orders",
+    "all candidates share targets and populations",
+    "primary MAE independently recomputed",
+    "seven-day targets end by November 30",
+    "current on-order matches due-date ledger",
+    "independent all-row order rounding"
+  ],
+  "exploratory_uncertainty": [
+    {
+      "period": "initial",
+      "origin_count": 12,
+      "exploratory_seasonal_relative_MAE_gain_pct_2_5": 0.19200615133589202,
+      "exploratory_seasonal_relative_MAE_gain_pct_97_5": 3.4515273216999516,
+      "weekly_zero_recorded_units_fraction": 0.7911706349206349
+    },
+    {
+      "period": "later_development",
+      "origin_count": 8,
+      "exploratory_seasonal_relative_MAE_gain_pct_2_5": -8.586103903666874,
+      "exploratory_seasonal_relative_MAE_gain_pct_97_5": -3.261820133981087,
+      "weekly_zero_recorded_units_fraction": 0.7313988095238095
+    }
+  ],
+  "pack_minimum_rounding_above_continuous_shortfall_units": 571.9558999999996,
+  "positive_orders_with_positive_safety_buffer": 97,
+  "safety_buffer_total_all_keys": 1544,
+  "sensitivity_28d_order_units": 791,
+  "sensitivity_182d_order_units": 883,
+  "observed_positive_day_stress_order_units": 6778,
+  "notebook_execution": "Cells executed top-to-bottom in-process and saved with outputs. No notebook UI available; saved cell structure and outputs checked programmatically, not visually inspected."
+}

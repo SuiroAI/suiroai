@@ -1,0 +1,16 @@
+{
+  "format": "dsc60-comparison-plan-inspection-v1",
+  "status": "recorded",
+  "expected_sha256": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+  "declared_sha256": "5619c9d87d3534a7835bb0e58d7d81617a6d1830a2de325c1113662edf98fbeb",
+  "exact_contract_match": true,
+  "plan_ref": {
+    "artifact_id": "demo-comparison-plan-ae0c07f802844e5fac7a91b923161323",
+    "version": 1,
+    "provenance": "derived",
+    "sha256": "46d13d37e537b63fbcaa98657e8a5fc984e4470e423c45624c9f3ed59c3194a3"
+  },
+  "semantic_compliance_verified": false,
+  "meaning": "Declared adoption only; does not verify timing, code, calculations, performance or recording readiness.",
+  "inspection_scope": "Post-run check of actual saved Data plan using final inspection helper. Launch predates automatic stage integration; no live coverage claim for that later helper."
+}

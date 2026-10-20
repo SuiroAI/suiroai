@@ -5,6 +5,9 @@ retail task. Browser reruns only display state; edited inputs revoke consent
 and downloads. Approved development files reach the actual Data runtime;
 unverified findings remain distinct from an independently verified report.
 
+Structured task context preserves the original question and attributes the
+current-process interpretation independently of the readable review text.
+Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
 from __future__ import annotations
@@ -16,6 +19,7 @@ from hashlib import sha256
 import csv
 import codecs
 import io
+import json
 from pathlib import Path
 import re
 import threading
@@ -25,6 +29,7 @@ from suiroai.contracts import VERSION, digest, proposal_digest, record_ref, sche
 from suiroai.integration.artifacts import ArtifactStore
 from suiroai.intake import SuppliedFile, receive_submission
 from .backend import run_approved
+from .task import CONTEXT_ID, comparison_contract_record, task_context
 
 
 ROLES = {
@@ -110,7 +115,9 @@ class DemoSession:
     Consent is checked against a private exact-record ledger, never inferred
     from a worker's JSON or restored from browser session data after restart.
     """
-    def __init__(self, *, artifact_root=None, backend=None, context_detector=None):
+    def __init__(self, *, artifact_root=None, backend=None, context_detector=None,
+                 comparison_contract=None):
+        self._comparison_contract = comparison_contract_record(comparison_contract)
         self._root = Path(artifact_root or Path.cwd() / "artifacts" / "demo").resolve() / uuid.uuid4().hex
         self._task = "retail-" + uuid.uuid4().hex
         from .current_process import detect_current_process
@@ -130,6 +137,20 @@ class DemoSession:
         self._html_download = None
         self._view = {"status": "draft", "message": "", "errors": []}
 
+    def set_comparison_contract(self, definition):
+        """Change controller comparison settings while revoking old consent/results.
+
+        Ordinary customer analysis leaves this optional engineering contract
+        unset. Validate before changing state; never infer it from detector text.
+        Linear: https://linear.app/gr3enarr0w/issue/DSC-60
+        """
+        record = comparison_contract_record(definition)
+        with self._lock:
+            if record != self._comparison_contract:
+                self._comparison_contract = record
+                self.revise()
+                self._fingerprint = None
+
     @property
     def view(self):
         with self._lock:
@@ -137,7 +158,8 @@ class DemoSession:
 
     def invalidate(self, question, uploads):
         uploads = tuple(uploads)
-        current = _fingerprint(question, uploads)
+        current = digest({"inputs": _fingerprint(question, uploads),
+            "comparison_contract": self._comparison_contract})
         with self._lock:
             if current == self._fingerprint:
                 return
@@ -233,9 +255,11 @@ class DemoSession:
                     request += "\n\nCurrent approach described in the supplied question or files:\n" + context["summary"]
                 else:
                     request += "\n\nThe supplied context explicitly says there is no current approach. Do not invent an incumbent."
-            return self._propose(request, uploads)
+            return self._propose(request, uploads, context=task_context(question,
+                current_approach=current_approach, continue_without=continue_without, detected=context,
+                comparison_contract=(self._comparison_contract["definition"] if self._comparison_contract else None)))
 
-    def _propose(self, question, uploads):
+    def _propose(self, question, uploads, *, context=None):
         uploads = tuple(uploads)
         with self._lock:
             if self._proposal is not None and self._view["status"] == "awaiting_approval":
@@ -262,7 +286,7 @@ class DemoSession:
                 lookup[file_id] = file.data
                 files.append(SuppliedFile(file_id, "upload://" + file_id, ROLES.get(file.role.split(":", 1)[0], ("other", set()))[0], self._task,
                     provenance="supplied", version=self._revision, original_name=Path(file.name).name))
-            receipt = receive_submission(original_request=question.strip(), files=files,
+            receipt = receive_submission(original_request=(context["original_question"] if context else question.strip()), files=files,
                 task_id=self._task, task_version=1, input_version=self._revision, received_at=_now(),
                 read_bytes=lambda file, limit: lookup[file.file_id][:limit + 1])
             measured = {source.file_id: source for source in receipt.sources}
@@ -288,6 +312,11 @@ class DemoSession:
                 {"assumption_id": "demo-inferred-measures", "classification": "supported_interpretation", "status": "proposed", "source_refs": receipt.external_refs,
                  "statement": "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. Use supported assumptions, methods and sensitivity analysis to resolve uncertainty; state any remaining limitations in the report."},
             ]
+            if context is not None:
+                assumptions.append({"assumption_id": CONTEXT_ID,
+                    "classification": "supported_interpretation", "status": "proposed",
+                    "source_refs": receipt.external_refs,
+                    "statement": json.dumps(context, ensure_ascii=False, sort_keys=True)})
             assumptions.append({"assumption_id": "development_investigation",
                 "classification": "synthetic_assumption", "status": "proposed",
                 "source_refs": receipt.external_refs,
@@ -317,8 +346,13 @@ class DemoSession:
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
                 "review_date": "2025-11-30", "output": "A restocking CSV to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
                 "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
-                "assumptions": [item["statement"] for item in assumptions],
+                "assumptions": [item["statement"] for item in assumptions if item["assumption_id"] != CONTEXT_ID],
                 "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."}
+            if self._comparison_contract:
+                summary["assumptions"].append(
+                    "This engineering run uses a fixed comparison setup: the same sales definition, "
+                    "simple comparison method, products, weeks, forecast period, error measure and "
+                    "selection rule throughout. It is not your supplied buying rule or proof of improvement.")
             self._view = {"status": "awaiting_approval", "proposal_digest": proposal["binding"]["proposal_digest"],
                 "proposal_summary": summary, "message": "Review this exact task and its limitations before approving.", "errors": []}
             return self.view

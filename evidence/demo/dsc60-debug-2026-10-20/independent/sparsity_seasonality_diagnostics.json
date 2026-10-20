@@ -1,0 +1,70 @@
+{
+  "weekly_target_diagnostics": [
+    {
+      "split": "selection",
+      "zero_target_fraction": 0.7911706349206349,
+      "mean_target": 0.5121527777777778,
+      "median_target": 0.0,
+      "seasonal_mean_forecast": 0.511331931363609,
+      "baseline_mean_forecast": 0.5216918498168498,
+      "seasonal_error_on_zero_targets": 1574.1205580956453,
+      "baseline_error_on_zero_targets": 1607.6923076923076,
+      "seasonal_error_on_nonzero_targets": 1582.0880368096764,
+      "baseline_error_on_nonzero_targets": 1609.2307692307693
+    },
+    {
+      "split": "later_development",
+      "zero_target_fraction": 0.7313988095238095,
+      "mean_target": 0.7436755952380952,
+      "median_target": 0.0,
+      "seasonal_mean_forecast": 0.7328895341702578,
+      "baseline_mean_forecast": 0.5620421245421247,
+      "seasonal_error_on_zero_targets": 1351.8044615024576,
+      "baseline_error_on_zero_targets": 1046.3076923076924,
+      "seasonal_error_on_nonzero_targets": 1427.7974377576268,
+      "baseline_error_on_nonzero_targets": 1576.230769230769
+    }
+  ],
+  "network_seasonality": [
+    {
+      "year": 2022,
+      "period": "July_September",
+      "units_per_day": 20.184782608695652
+    },
+    {
+      "year": 2022,
+      "period": "October_November",
+      "units_per_day": 28.918032786885245
+    },
+    {
+      "year": 2023,
+      "period": "July_September",
+      "units_per_day": 23.608695652173914
+    },
+    {
+      "year": 2023,
+      "period": "October_November",
+      "units_per_day": 30.40983606557377
+    },
+    {
+      "year": 2024,
+      "period": "July_September",
+      "units_per_day": 20.652173913043477
+    },
+    {
+      "year": 2024,
+      "period": "October_November",
+      "units_per_day": 30.540983606557376
+    },
+    {
+      "year": 2025,
+      "period": "July_September",
+      "units_per_day": 24.543478260869566
+    },
+    {
+      "year": 2025,
+      "period": "October_November",
+      "units_per_day": 35.442622950819676
+    }
+  ]
+}

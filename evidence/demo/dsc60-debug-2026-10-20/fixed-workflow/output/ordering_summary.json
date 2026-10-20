@@ -1,0 +1,122 @@
+{
+  "selected": "local91",
+  "initial_winner": "seasonal",
+  "order_units": 873,
+  "positive_order_keys": 111,
+  "zero_order_keys": 225,
+  "risk_before_new_order_keys": 56,
+  "by_store": {
+    "AUS-01": {
+      "OrderQty": 53,
+      "Positive_Order_Keys": 8
+    },
+    "CHI-01": {
+      "OrderQty": 38,
+      "Positive_Order_Keys": 8
+    },
+    "COL-01": {
+      "OrderQty": 74,
+      "Positive_Order_Keys": 9
+    },
+    "LA-01": {
+      "OrderQty": 62,
+      "Positive_Order_Keys": 10
+    },
+    "LON-01": {
+      "OrderQty": 130,
+      "Positive_Order_Keys": 13
+    },
+    "MAN-01": {
+      "OrderQty": 126,
+      "Positive_Order_Keys": 13
+    },
+    "MUC-01": {
+      "OrderQty": 51,
+      "Positive_Order_Keys": 7
+    },
+    "NYC-01": {
+      "OrderQty": 74,
+      "Positive_Order_Keys": 10
+    },
+    "PAR-01": {
+      "OrderQty": 44,
+      "Positive_Order_Keys": 4
+    },
+    "SYD-01": {
+      "OrderQty": 94,
+      "Positive_Order_Keys": 11
+    },
+    "TOR-01": {
+      "OrderQty": 79,
+      "Positive_Order_Keys": 8
+    },
+    "VAN-01": {
+      "OrderQty": 48,
+      "Positive_Order_Keys": 10
+    }
+  },
+  "largest_orders": [
+    {
+      "Product_ID": "P001",
+      "Store_ID": "LON-01",
+      "Product_Name": "AeroBook 14 Laptop",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P005",
+      "Store_ID": "SYD-01",
+      "Product_Name": "Office Keyboard",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P006",
+      "Store_ID": "LON-01",
+      "Product_Name": "Precision Mouse",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P018",
+      "Store_ID": "MAN-01",
+      "Product_Name": "Premium Pens",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P019",
+      "Store_ID": "LON-01",
+      "Product_Name": "Notebook Pack",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "COL-01",
+      "Product_Name": "Desk Fan",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P024",
+      "Store_ID": "MAN-01",
+      "Product_Name": "Desk Fan",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "PAR-01",
+      "Product_Name": "Security Camera",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P027",
+      "Store_ID": "TOR-01",
+      "Product_Name": "Security Camera",
+      "OrderQty": 20
+    },
+    {
+      "Product_ID": "P004",
+      "Store_ID": "NYC-01",
+      "Product_Name": "Vision 27 Monitor",
+      "OrderQty": 15
+    }
+  ],
+  "deployment_week_forecast_units": 222.3846153846154,
+  "deployment_coverage_forecast_units": 356.42857142857144
+}

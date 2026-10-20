@@ -1,0 +1,32 @@
+{
+  "scope": "DSC-60 workflow implementation, tracing and bounded engineering evidence; not untouched-data or milestone acceptance",
+  "full_regression": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 804,
+    "subtests_passed": 659,
+    "elapsed_seconds": 29.03,
+    "timing": "After comparison-plan inspection implementation; before final narrow local-calculation-runtime wording clarification"
+  },
+  "affected_after_runtime_wording": {
+    "command": ".venv/bin/python -m pytest tests/demo/test_investigation.py tests/demo/test_task.py -q",
+    "passed": 40
+  },
+  "final_checklist_and_plan_checks": {
+    "command": ".venv/bin/python -m pytest tests/demo/test_readiness.py tests/demo/test_comparison_plan.py -q",
+    "passed": 20
+  },
+  "other_checks": [
+    "git diff --check passed",
+    "Python compilation passed for changed demo modules and DSC-60 scripts",
+    "Independent reviewer checked exact outbound native requests, input identities and plan/selection chronology",
+    "Actual fixed-contract DemoSession review/engineering approval/backend execution completed analysis_completed",
+    "No December outcomes scored, new recording made, browser file action performed, server refreshed/restarted, PR merged or parent issue closed"
+  ],
+  "remaining": [
+    "No demonstrated meaningful forecasting improvement under fixed comparison",
+    "December genuinely untouched status not certified from available exposure evidence",
+    "Parent frozen-artifact, independent final evaluation and remaining milestone evidence still open",
+    "Final runtime wording instruction checked by affected tests but not another paid Data run",
+    "Matching comparison-plan declarations do not by themselves verify semantic compliance"
+  ]
+}

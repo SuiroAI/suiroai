@@ -1,0 +1,11 @@
+{
+  "recording_ready": false,
+  "scope": "superiority_claim_recording_only",
+  "ordinary_app_results_blocked": false,
+  "reasons": [
+    "development_bundle_not_final_acceptance",
+    "insufficient_frozen_independent_origins",
+    "missing_independent_holdout_receipt"
+  ],
+  "criterion": "Engineering proposal: >=5% relative seven-day MAE gain and positive origin-block 95% lower bound; no business ROI or service guarantee."
+}

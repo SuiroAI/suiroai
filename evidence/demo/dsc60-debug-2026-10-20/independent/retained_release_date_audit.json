@@ -1,0 +1,240 @@
+{
+  "scope": "Only date membership and release metadata read; no December target/outcome evaluation. Native commands inspected separately; retained artifacts cannot prove absence of unretained exposure.",
+  "releases": [
+    {
+      "path": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/d6375f05265e4f8581ab51ccc37db78a/runs/investigation-1e916e20c8e04f59b1ce46621860e989/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    },
+    {
+      "path": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/released/input-1.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "date_min": "2022-01-01",
+      "date_max": "2025-11-30",
+      "has_post_cutoff_dates": false
+    }
+  ],
+  "native_logs": [
+    {
+      "path": "artifacts/demo/f2055556d3564bb5a7344fd5426cd2fa/runs/investigation-48fb2b8229974ef1a52ad092d360ad07/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 4,
+        "commandExecution": 15,
+        "reasoning": 10,
+        "fileChange": 4
+      }
+    },
+    {
+      "path": "artifacts/demo/d6375f05265e4f8581ab51ccc37db78a/runs/investigation-1e916e20c8e04f59b1ce46621860e989/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/84ca0a422b5547599ec2d7ea6a244c65/runs/preflight-bea92ce83a7749fcba5150e92d5d2d1d/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/e39ffdb8c39d412587bfbb42271d7b92/runs/preflight-69dc142d39864b27886dcb3ae5cb234b/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/9fb3637910994692b611b68a62b59ddc/runs/investigation-a7303018bcfd48fc8f66a73ccdfa8c7d/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 4,
+        "commandExecution": 16,
+        "reasoning": 7,
+        "fileChange": 2
+      }
+    },
+    {
+      "path": "artifacts/demo/e470ad2e91ca46aaa0df0a8684adb740/runs/investigation-7f611cfeefed4b72a9517568fe51b660/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 4,
+        "commandExecution": 18,
+        "reasoning": 9,
+        "fileChange": 3
+      }
+    },
+    {
+      "path": "artifacts/demo/e2ba0822f5994ef891df7cb237398411/runs/preflight-0e7711dac69447e4871fe509f487f34f/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-c49ead0546fe49fbb29d9a64972a9e93/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 4,
+        "commandExecution": 14,
+        "reasoning": 13,
+        "fileChange": 7
+      }
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-0bc535ea9b0e4f1384799fcfdfda8f5e/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 6,
+        "commandExecution": 24,
+        "reasoning": 22,
+        "fileChange": 10
+      }
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-8640daf60556438891ffee678b5631ad/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 5,
+        "commandExecution": 11,
+        "reasoning": 9,
+        "fileChange": 4
+      }
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/runs/investigation-fd2a074d16e7401ca1682ad64e944847/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 4,
+        "commandExecution": 12,
+        "reasoning": 18,
+        "fileChange": 6
+      }
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-151d450e192843248659904ad5bcb74b/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 2,
+        "commandExecution": 4,
+        "reasoning": 3
+      }
+    },
+    {
+      "path": "artifacts/demo/f8567dcea15e473380dbcfc067ccf092/context/current-process-1aeefa6c52b04f3bb957661100400fa2/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 2,
+        "commandExecution": 5,
+        "reasoning": 4
+      }
+    },
+    {
+      "path": "artifacts/demo/b0236c43fec24b4d8840031f9bae3120/runs/investigation-d840e0b79fe8469e911482ad6d956ef8/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 5,
+        "commandExecution": 19,
+        "reasoning": 11,
+        "fileChange": 7
+      }
+    },
+    {
+      "path": "artifacts/demo/0eb95aeb00af4dabbf0ff4b3533a1890/runs/preflight-f0c11b53f48749f5bd1115b6c85fd2c9/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/b882855cb9484f26a054e28972839ea1/runs/preflight-f6f896b378ab4e95b3f730814e544eba/native/native-run.json",
+      "outcome": "execution_failed",
+      "item_types": {}
+    },
+    {
+      "path": "artifacts/demo/93766d853daf4889a9fdbbe52e9b817e/runs/investigation-e6af381ca1ee4e658551d331c708b009/native/native-run.json",
+      "outcome": "completed",
+      "item_types": {
+        "userMessage": 1,
+        "agentMessage": 5,
+        "commandExecution": 12,
+        "reasoning": 9,
+        "fileChange": 4
+      }
+    }
+  ]
+}

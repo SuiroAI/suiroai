@@ -1,0 +1,22 @@
+{
+  "initial_winner": "seasonal",
+  "winner_MAE_reductions_vs_baseline": {
+    "initial": 0.01887346404186563,
+    "later_development": -0.05988985100698363
+  },
+  "selected": "baseline_91",
+  "selection_rule": "Select smallest initial-period primary MAE; numerical ties within 1e-12 prefer baseline then local28, local182, local364, shared, seasonal. Retain baseline unless that same initial winner reduces MAE >=5% versus baseline in BOTH development periods. Do not promote another candidate from diagnostics. This 5% is a supplied engineering stability rule, not commercial value or externally declared success threshold.",
+  "both_periods_development": true,
+  "recording_readiness_established": false,
+  "primary_horizon_days": 7,
+  "deployment_horizon_days": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "horizon_mismatch": "Selection on seven-day recorded units; orders cover supplied lead+review days. Secondary coverage results do not choose model."
+}

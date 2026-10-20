@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,Week_Start,Week_End,Usable_Stock_Units,Incoming_Within_Coverage_Units,Supplier_Lead_Days,Expected_Seven_Day_Units,Target_With_Safety_Units,Expected_PreArrival_Shortfall_Units
+P006,Precision Mouse,LON-01,20,product_unit,2025-12-01,2025-12-07,0,0,7,1.154,12.308,1.154
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,2025-12-01,2025-12-07,0,0,7,0.462,10.923,0.462
+P018,Premium Pens,MAN-01,20,product_unit,2025-12-01,2025-12-07,0,0,3,1.0,11.429,0.429
+P027,Security Camera,TOR-01,20,product_unit,2025-12-01,2025-12-07,0,0,6,0.462,10.857,0.396
+P005,Office Keyboard,SYD-01,20,product_unit,2025-12-01,2025-12-07,0,0,4,0.538,10.846,0.308
+P024,Desk Fan,MAN-01,20,product_unit,2025-12-01,2025-12-07,0,0,2,1.077,11.385,0.308
+P019,Notebook Pack,LON-01,20,product_unit,2025-12-01,2025-12-07,0,0,1,1.0,11.143,0.143
+P024,Desk Fan,COL-01,20,product_unit,2025-12-01,2025-12-07,0,0,3,0.154,10.22,0.066
+P027,Security Camera,PAR-01,20,product_unit,2025-12-01,2025-12-07,0,0,1,0.077,10.088,0.011
+P027,Security Camera,AUS-01,15,product_unit,2025-12-01,2025-12-07,0,0,6,0.615,11.143,0.527
+P004,Vision 27 Monitor,NYC-01,15,product_unit,2025-12-01,2025-12-07,0,0,1,0.692,10.791,0.099
+P017,Copy Paper Box,TOR-01,10,product_unit,2025-12-01,2025-12-07,0,0,6,1.538,7.857,1.319
+P024,Desk Fan,NYC-01,10,product_unit,2025-12-01,2025-12-07,0,0,6,1.308,2.429,1.121
+P017,Copy Paper Box,PAR-01,10,product_unit,2025-12-01,2025-12-07,0,0,3,1.154,1.648,0.495
+P026,Webcam HD,TOR-01,10,product_unit,2025-12-01,2025-12-07,0,0,6,0.308,5.571,0.264
+P011,Meeting Table,NYC-01,10,product_unit,2025-12-01,2025-12-07,0,0,7,0.231,5.462,0.231
+P025,USB Power Hub,MUC-01,10,product_unit,2025-12-01,2025-12-07,0,10,7,0.538,11.077,0.231
+P004,Vision 27 Monitor,MAN-01,10,product_unit,2025-12-01,2025-12-07,0,0,4,0.308,5.484,0.176
+P005,Office Keyboard,CHI-01,10,product_unit,2025-12-01,2025-12-07,0,0,5,0.231,0.396,0.165
+P007,NoiseCancel Headset,AUS-01,10,product_unit,2025-12-01,2025-12-07,0,0,2,0.462,0.593,0.132
+P017,Copy Paper Box,MAN-01,10,product_unit,2025-12-01,2025-12-07,0,10,5,0.462,10.791,0.132
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,2025-12-01,2025-12-07,0,0,2,0.308,0.396,0.088
+P012,Ergo Footrest,LA-01,10,product_unit,2025-12-01,2025-12-07,0,10,6,0.077,10.143,0.055
+P010,Standing Desk,LON-01,10,product_unit,2025-12-01,2025-12-07,0,0,2,0.154,5.198,0.044
+P013,Desk Lamp,SYD-01,10,product_unit,2025-12-01,2025-12-07,0,0,1,0.231,5.264,0.033
+P002,ProBook 16 Laptop,COL-01,10,product_unit,2025-12-01,2025-12-07,0,0,2,0.077,5.099,0.022
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,1.308,11.681,0.0
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,1.0,11.286,0.0
+P004,Vision 27 Monitor,LON-01,10,product_unit,2025-12-01,2025-12-07,0,10,3,0.538,10.769,0.0
+P006,Precision Mouse,MAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,0.154,10.198,0.0
+P007,NoiseCancel Headset,LA-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,1.692,12.418,0.0
+P008,SmartDock USB-C,MAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,0.308,10.44,0.0
+P009,Office Chair Pro,SYD-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.385,10.769,0.0
+P010,Standing Desk,COL-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,0.077,10.099,0.0
+P011,Meeting Table,LON-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.615,11.231,0.0
+P012,Ergo Footrest,AUS-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,0.231,10.33,0.0
+P012,Ergo Footrest,COL-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,0.231,10.33,0.0
+P013,Desk Lamp,MUC-01,10,product_unit,2025-12-01,2025-12-07,0,10,1,0.385,10.44,0.0
+P014,Filing Cabinet,LON-01,10,product_unit,2025-12-01,2025-12-07,10,0,4,0.385,10.604,0.0
+P014,Filing Cabinet,SYD-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.077,10.154,0.0
+P015,Printer Plus,MAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,0.308,10.396,0.0
+P016,Laser Toner,PAR-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,0.615,10.879,0.0
+P017,Copy Paper Box,LON-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,0.462,10.659,0.0
+P017,Copy Paper Box,SYD-01,10,product_unit,2025-12-01,2025-12-07,10,0,6,0.538,11.0,0.0
+P018,Premium Pens,LA-01,10,product_unit,2025-12-01,2025-12-07,10,0,4,1.615,12.538,0.0
+P019,Notebook Pack,MAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,5,0.538,10.923,0.0
+P020,Presentation Kit,CHI-01,10,product_unit,2025-12-01,2025-12-07,10,0,1,0.538,10.615,0.0
+P020,Presentation Kit,NYC-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.462,10.923,0.0
+P020,Presentation Kit,SYD-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.154,10.308,0.0
+P020,Presentation Kit,TOR-01,10,product_unit,2025-12-01,2025-12-07,10,0,2,0.154,10.198,0.0
+P021,Coffee Machine,NYC-01,10,product_unit,2025-12-01,2025-12-07,10,0,7,0.385,10.769,0.0
+P022,Air Purifier,TOR-01,10,product_unit,2025-12-01,2025-12-07,10,0,5,0.154,10.264,0.0
+P025,USB Power Hub,MAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,3,1.231,11.758,0.0
+P025,USB Power Hub,TOR-01,10,product_unit,2025-12-01,2025-12-07,10,0,1,0.308,10.352,0.0
+P028,Backup Drive 2TB,VAN-01,10,product_unit,2025-12-01,2025-12-07,10,0,1,0.385,10.44,0.0
+P013,Desk Lamp,LA-01,9,product_unit,2025-12-01,2025-12-07,0,0,7,1.462,8.923,1.462
+P024,Desk Fan,LON-01,6,product_unit,2025-12-01,2025-12-07,0,0,7,0.462,5.923,0.462
+P015,Printer Plus,COL-01,6,product_unit,2025-12-01,2025-12-07,0,0,3,0.154,5.22,0.066
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,2025-12-01,2025-12-07,0,0,4,1.077,1.692,0.615
+P013,Desk Lamp,MAN-01,5,product_unit,2025-12-01,2025-12-07,0,0,4,0.769,1.209,0.44
+P009,Office Chair Pro,AUS-01,5,product_unit,2025-12-01,2025-12-07,0,0,2,1.0,1.286,0.286
+P019,Notebook Pack,CHI-01,5,product_unit,2025-12-01,2025-12-07,0,0,2,0.923,1.187,0.264
+P024,Desk Fan,MUC-01,5,product_unit,2025-12-01,2025-12-07,0,0,6,0.231,0.429,0.198
+P012,Ergo Footrest,SYD-01,5,product_unit,2025-12-01,2025-12-07,0,0,1,0.769,4.879,0.11
+P015,Printer Plus,CHI-01,5,product_unit,2025-12-01,2025-12-07,0,0,6,0.077,4.143,0.066
+P027,Security Camera,SYD-01,5,product_unit,2025-12-01,2025-12-07,0,5,3,0.462,5.659,0.066
+P011,Meeting Table,VAN-01,5,product_unit,2025-12-01,2025-12-07,0,5,3,0.231,5.33,0.033
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,2025-12-01,2025-12-07,5,0,7,0.538,6.077,0.0
+P002,ProBook 16 Laptop,SYD-01,5,product_unit,2025-12-01,2025-12-07,5,0,5,0.077,5.132,0.0
+P003,EdgeTab 11 Tablet,VAN-01,5,product_unit,2025-12-01,2025-12-07,3,0,3,1.615,7.308,0.0
+P006,Precision Mouse,LA-01,5,product_unit,2025-12-01,2025-12-07,5,0,5,1.308,7.242,0.0
+P006,Precision Mouse,NYC-01,5,product_unit,2025-12-01,2025-12-07,5,0,6,2.308,9.286,0.0
+P008,SmartDock USB-C,AUS-01,5,product_unit,2025-12-01,2025-12-07,5,0,6,0.692,6.286,0.0
+P010,Standing Desk,VAN-01,5,product_unit,2025-12-01,2025-12-07,5,0,1,0.308,5.352,0.0
+P012,Ergo Footrest,NYC-01,5,product_unit,2025-12-01,2025-12-07,5,0,3,1.231,6.758,0.0
+P013,Desk Lamp,COL-01,5,product_unit,2025-12-01,2025-12-07,5,0,1,0.538,5.615,0.0
+P013,Desk Lamp,LON-01,5,product_unit,2025-12-01,2025-12-07,5,0,1,0.615,5.703,0.0
+P014,Filing Cabinet,MAN-01,5,product_unit,2025-12-01,2025-12-07,5,0,3,0.308,5.44,0.0
+P018,Premium Pens,SYD-01,5,product_unit,2025-12-01,2025-12-07,5,0,4,0.462,5.725,0.0
+P018,Premium Pens,TOR-01,5,product_unit,2025-12-01,2025-12-07,5,0,1,1.615,6.846,0.0
+P019,Notebook Pack,AUS-01,5,product_unit,2025-12-01,2025-12-07,5,0,1,0.615,5.703,0.0
+P020,Presentation Kit,MUC-01,5,product_unit,2025-12-01,2025-12-07,5,0,6,0.077,5.143,0.0
+P021,Coffee Machine,COL-01,5,product_unit,2025-12-01,2025-12-07,5,0,5,0.846,6.451,0.0
+P025,USB Power Hub,LA-01,5,product_unit,2025-12-01,2025-12-07,5,0,5,2.615,9.484,0.0
+P025,USB Power Hub,LON-01,5,product_unit,2025-12-01,2025-12-07,5,0,6,0.769,6.429,0.0
+P027,Security Camera,COL-01,5,product_unit,2025-12-01,2025-12-07,5,0,7,1.308,7.615,0.0
+P027,Security Camera,MAN-01,5,product_unit,2025-12-01,2025-12-07,5,0,3,1.077,6.538,0.0
+P028,Backup Drive 2TB,LA-01,5,product_unit,2025-12-01,2025-12-07,5,0,3,0.846,6.209,0.0
+P019,Notebook Pack,LA-01,4,product_unit,2025-12-01,2025-12-07,0,3,6,3.385,6.286,0.484
+P006,Precision Mouse,SYD-01,4,product_unit,2025-12-01,2025-12-07,0,0,7,0.231,3.462,0.231
+P013,Desk Lamp,VAN-01,4,product_unit,2025-12-01,2025-12-07,0,0,6,0.154,3.286,0.132
+P014,Filing Cabinet,TOR-01,4,product_unit,2025-12-01,2025-12-07,3,0,4,1.154,6.813,0.0
+P026,Webcam HD,PAR-01,4,product_unit,2025-12-01,2025-12-07,2,0,4,0.692,5.088,0.0
+P014,Filing Cabinet,COL-01,3,product_unit,2025-12-01,2025-12-07,0,0,3,0.308,2.44,0.132
+P003,EdgeTab 11 Tablet,NYC-01,3,product_unit,2025-12-01,2025-12-07,3,0,7,2.538,5.077,0.0
+P017,Copy Paper Box,LA-01,3,product_unit,2025-12-01,2025-12-07,4,0,1,1.846,6.11,0.0
+P017,Copy Paper Box,NYC-01,3,product_unit,2025-12-01,2025-12-07,5,3,7,3.615,10.231,0.0
+P028,Backup Drive 2TB,NYC-01,3,product_unit,2025-12-01,2025-12-07,5,0,6,1.615,8.0,0.0
+P026,Webcam HD,LON-01,2,product_unit,2025-12-01,2025-12-07,0,3,6,1.154,4.143,0.659
+P016,Laser Toner,AUS-01,2,product_unit,2025-12-01,2025-12-07,0,2,5,0.846,3.451,0.242
+P021,Coffee Machine,LON-01,2,product_unit,2025-12-01,2025-12-07,0,0,3,0.538,1.769,0.231
+P008,SmartDock USB-C,VAN-01,2,product_unit,2025-12-01,2025-12-07,0,0,1,0.0,2.0,0.0
+P009,Office Chair Pro,CHI-01,1,product_unit,2025-12-01,2025-12-07,0,0,4,0.462,0.725,0.264
+P010,Standing Desk,AUS-01,1,product_unit,2025-12-01,2025-12-07,0,5,5,0.462,5.791,0.198
+P007,NoiseCancel Headset,VAN-01,1,product_unit,2025-12-01,2025-12-07,0,0,4,0.308,0.484,0.176
+P008,SmartDock USB-C,CHI-01,1,product_unit,2025-12-01,2025-12-07,0,2,7,0.231,2.462,0.165
+P004,Vision 27 Monitor,CHI-01,1,product_unit,2025-12-01,2025-12-07,4,0,2,0.538,4.692,0.0
+P008,SmartDock USB-C,MUC-01,1,product_unit,2025-12-01,2025-12-07,0,5,3,0.462,5.659,0.0
+P020,Presentation Kit,LA-01,1,product_unit,2025-12-01,2025-12-07,3,0,3,0.231,3.33,0.0
+P022,Air Purifier,MAN-01,1,product_unit,2025-12-01,2025-12-07,0,0,4,0.0,1.0,0.0
+P022,Air Purifier,VAN-01,1,product_unit,2025-12-01,2025-12-07,2,2,3,0.154,4.22,0.0
+P023,Portable Heater,COL-01,0,product_unit,2025-12-01,2025-12-07,0,9,7,0.769,6.538,0.659
+P025,USB Power Hub,SYD-01,0,product_unit,2025-12-01,2025-12-07,0,10,7,0.846,1.692,0.242
+P008,SmartDock USB-C,SYD-01,0,product_unit,2025-12-01,2025-12-07,0,10,3,0.462,0.659,0.132
+P009,Office Chair Pro,MAN-01,0,product_unit,2025-12-01,2025-12-07,0,10,2,0.846,1.088,0.121
+P012,Ergo Footrest,PAR-01,0,product_unit,2025-12-01,2025-12-07,0,5,4,0.154,0.242,0.066
+P018,Premium Pens,VAN-01,0,product_unit,2025-12-01,2025-12-07,0,10,3,0.231,0.33,0.033
+P021,Coffee Machine,SYD-01,0,product_unit,2025-12-01,2025-12-07,0,3,6,0.077,0.143,0.011
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,0,6,0.462,0.857,0.0
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,2025-12-01,2025-12-07,21,0,6,1.308,2.429,0.0
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,3,0.077,0.11,0.0
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,1.308,11.681,0.0
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,2025-12-01,2025-12-07,5,5,5,0.154,0.264,0.0
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,2025-12-01,2025-12-07,18,5,5,1.615,2.769,0.0
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,0.462,5.725,0.0
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,2025-12-01,2025-12-07,5,0,7,0.692,1.385,0.0
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,2025-12-01,2025-12-07,3,3,2,0.462,2.593,0.0
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,10,1,2.0,7.286,0.0
+P002,ProBook 16 Laptop,LA-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,1.0,2.0,0.0
+P002,ProBook 16 Laptop,LON-01,0,product_unit,2025-12-01,2025-12-07,10,10,1,0.692,0.791,0.0
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,2025-12-01,2025-12-07,9,9,4,0.538,2.846,0.0
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,2025-12-01,2025-12-07,20,5,1,0.769,5.879,0.0
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,7,0.923,11.846,0.0
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,0.154,10.198,0.0
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.846,6.33,0.0
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,2025-12-01,2025-12-07,10,10,5,0.692,11.187,0.0
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.231,10.363,0.0
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,2025-12-01,2025-12-07,20,0,3,1.154,1.648,0.0
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,2025-12-01,2025-12-07,5,5,3,0.385,5.549,0.0
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,2025-12-01,2025-12-07,4,0,6,1.231,3.286,0.0
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,2025-12-01,2025-12-07,20,0,5,0.769,6.319,0.0
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,0,6,0.385,0.714,0.0
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,2025-12-01,2025-12-07,10,5,3,0.692,5.989,0.0
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,0.231,5.363,0.0
+P004,Vision 27 Monitor,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,0.231,5.264,0.0
+P004,Vision 27 Monitor,COL-01,0,product_unit,2025-12-01,2025-12-07,18,0,7,0.385,0.769,0.0
+P004,Vision 27 Monitor,LA-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.462,10.725,0.0
+P004,Vision 27 Monitor,MUC-01,0,product_unit,2025-12-01,2025-12-07,3,0,5,0.308,0.527,0.0
+P004,Vision 27 Monitor,PAR-01,0,product_unit,2025-12-01,2025-12-07,5,5,1,0.692,5.791,0.0
+P004,Vision 27 Monitor,SYD-01,0,product_unit,2025-12-01,2025-12-07,5,5,3,0.462,0.659,0.0
+P004,Vision 27 Monitor,TOR-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,1.769,3.538,0.0
+P004,Vision 27 Monitor,VAN-01,0,product_unit,2025-12-01,2025-12-07,20,10,5,0.615,1.055,0.0
+P005,Office Keyboard,AUS-01,0,product_unit,2025-12-01,2025-12-07,9,3,4,0.538,5.846,0.0
+P005,Office Keyboard,COL-01,0,product_unit,2025-12-01,2025-12-07,20,10,5,0.077,10.132,0.0
+P005,Office Keyboard,LA-01,0,product_unit,2025-12-01,2025-12-07,3,0,1,1.308,1.495,0.0
+P005,Office Keyboard,LON-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,0.923,11.055,0.0
+P005,Office Keyboard,MAN-01,0,product_unit,2025-12-01,2025-12-07,20,10,4,0.538,0.846,0.0
+P005,Office Keyboard,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,0,5,0.923,1.582,0.0
+P005,Office Keyboard,NYC-01,0,product_unit,2025-12-01,2025-12-07,9,0,4,1.308,2.055,0.0
+P005,Office Keyboard,PAR-01,0,product_unit,2025-12-01,2025-12-07,5,5,2,1.231,6.582,0.0
+P005,Office Keyboard,TOR-01,0,product_unit,2025-12-01,2025-12-07,16,8,2,1.231,2.582,0.0
+P005,Office Keyboard,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,0,1,0.385,0.44,0.0
+P006,Precision Mouse,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,10,6,0.923,11.714,0.0
+P006,Precision Mouse,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,5,3,0.692,0.989,0.0
+P006,Precision Mouse,COL-01,0,product_unit,2025-12-01,2025-12-07,21,0,2,0.692,2.89,0.0
+P006,Precision Mouse,MUC-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,0.154,10.176,0.0
+P006,Precision Mouse,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,0.846,1.088,0.0
+P006,Precision Mouse,TOR-01,0,product_unit,2025-12-01,2025-12-07,10,0,5,1.154,6.978,0.0
+P006,Precision Mouse,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,10,3,0.769,1.099,0.0
+P007,NoiseCancel Headset,CHI-01,0,product_unit,2025-12-01,2025-12-07,20,10,6,0.231,5.429,0.0
+P007,NoiseCancel Headset,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,7,2.231,4.462,0.0
+P007,NoiseCancel Headset,LON-01,0,product_unit,2025-12-01,2025-12-07,10,10,7,1.538,3.077,0.0
+P007,NoiseCancel Headset,MAN-01,0,product_unit,2025-12-01,2025-12-07,15,0,7,0.0,5.0,0.0
+P007,NoiseCancel Headset,MUC-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,0.615,6.231,0.0
+P007,NoiseCancel Headset,NYC-01,0,product_unit,2025-12-01,2025-12-07,10,10,3,1.308,1.868,0.0
+P007,NoiseCancel Headset,PAR-01,0,product_unit,2025-12-01,2025-12-07,0,9,1,1.231,1.407,0.0
+P007,NoiseCancel Headset,SYD-01,0,product_unit,2025-12-01,2025-12-07,0,4,1,0.538,1.615,0.0
+P007,NoiseCancel Headset,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,0,3,0.231,0.33,0.0
+P008,SmartDock USB-C,COL-01,0,product_unit,2025-12-01,2025-12-07,18,3,2,0.154,3.198,0.0
+P008,SmartDock USB-C,LA-01,0,product_unit,2025-12-01,2025-12-07,10,0,1,2.077,7.374,0.0
+P008,SmartDock USB-C,LON-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.308,0.484,0.0
+P008,SmartDock USB-C,NYC-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,1.231,2.462,0.0
+P008,SmartDock USB-C,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,1.0,2.0,0.0
+P008,SmartDock USB-C,TOR-01,0,product_unit,2025-12-01,2025-12-07,5,5,3,0.385,5.549,0.0
+P009,Office Chair Pro,COL-01,0,product_unit,2025-12-01,2025-12-07,10,0,1,0.308,0.352,0.0
+P009,Office Chair Pro,LA-01,0,product_unit,2025-12-01,2025-12-07,15,0,5,0.385,0.659,0.0
+P009,Office Chair Pro,LON-01,0,product_unit,2025-12-01,2025-12-07,10,10,1,0.0,10.0,0.0
+P009,Office Chair Pro,MUC-01,0,product_unit,2025-12-01,2025-12-07,15,0,7,0.692,6.385,0.0
+P009,Office Chair Pro,NYC-01,0,product_unit,2025-12-01,2025-12-07,15,0,3,1.0,6.429,0.0
+P009,Office Chair Pro,PAR-01,0,product_unit,2025-12-01,2025-12-07,15,0,1,0.385,5.44,0.0
+P009,Office Chair Pro,TOR-01,0,product_unit,2025-12-01,2025-12-07,4,2,4,0.154,2.242,0.0
+P009,Office Chair Pro,VAN-01,0,product_unit,2025-12-01,2025-12-07,20,10,4,0.538,10.846,0.0
+P010,Standing Desk,CHI-01,0,product_unit,2025-12-01,2025-12-07,20,0,4,0.231,5.363,0.0
+P010,Standing Desk,LA-01,0,product_unit,2025-12-01,2025-12-07,10,0,3,0.538,5.769,0.0
+P010,Standing Desk,MAN-01,0,product_unit,2025-12-01,2025-12-07,20,0,5,0.308,10.527,0.0
+P010,Standing Desk,MUC-01,0,product_unit,2025-12-01,2025-12-07,3,5,7,1.231,5.462,0.0
+P010,Standing Desk,NYC-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,0.462,10.593,0.0
+P010,Standing Desk,PAR-01,0,product_unit,2025-12-01,2025-12-07,4,0,7,0.385,1.769,0.0
+P010,Standing Desk,SYD-01,0,product_unit,2025-12-01,2025-12-07,10,0,5,0.231,5.396,0.0
+P010,Standing Desk,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,10,5,0.308,10.527,0.0
+P011,Meeting Table,AUS-01,0,product_unit,2025-12-01,2025-12-07,2,2,6,0.538,3.0,0.0
+P011,Meeting Table,CHI-01,0,product_unit,2025-12-01,2025-12-07,4,0,6,0.154,2.286,0.0
+P011,Meeting Table,COL-01,0,product_unit,2025-12-01,2025-12-07,5,10,1,0.077,5.088,0.0
+P011,Meeting Table,LA-01,0,product_unit,2025-12-01,2025-12-07,3,0,6,0.231,0.429,0.0
+P011,Meeting Table,MAN-01,0,product_unit,2025-12-01,2025-12-07,7,0,1,0.0,4.0,0.0
+P011,Meeting Table,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,3,2,0.0,5.0,0.0
+P011,Meeting Table,PAR-01,0,product_unit,2025-12-01,2025-12-07,25,0,1,1.154,6.319,0.0
+P011,Meeting Table,SYD-01,0,product_unit,2025-12-01,2025-12-07,5,5,2,0.308,5.396,0.0
+P011,Meeting Table,TOR-01,0,product_unit,2025-12-01,2025-12-07,4,0,1,0.231,0.264,0.0
+P012,Ergo Footrest,CHI-01,0,product_unit,2025-12-01,2025-12-07,8,0,4,0.692,2.088,0.0
+P012,Ergo Footrest,LON-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,0.769,10.989,0.0
+P012,Ergo Footrest,MAN-01,0,product_unit,2025-12-01,2025-12-07,8,4,1,0.231,4.264,0.0
+P012,Ergo Footrest,MUC-01,0,product_unit,2025-12-01,2025-12-07,10,0,5,0.692,6.187,0.0
+P012,Ergo Footrest,TOR-01,0,product_unit,2025-12-01,2025-12-07,15,0,2,0.154,0.198,0.0
+P012,Ergo Footrest,VAN-01,0,product_unit,2025-12-01,2025-12-07,8,8,2,0.308,0.396,0.0
+P013,Desk Lamp,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,1.692,2.659,0.0
+P013,Desk Lamp,CHI-01,0,product_unit,2025-12-01,2025-12-07,8,4,5,0.538,4.923,0.0
+P013,Desk Lamp,NYC-01,0,product_unit,2025-12-01,2025-12-07,10,10,5,0.538,10.923,0.0
+P013,Desk Lamp,PAR-01,0,product_unit,2025-12-01,2025-12-07,20,0,5,0.385,10.659,0.0
+P013,Desk Lamp,TOR-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,0.769,6.209,0.0
+P014,Filing Cabinet,AUS-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,0.923,6.846,0.0
+P014,Filing Cabinet,CHI-01,0,product_unit,2025-12-01,2025-12-07,10,0,2,0.154,5.198,0.0
+P014,Filing Cabinet,LA-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,0.308,0.396,0.0
+P014,Filing Cabinet,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,0,3,0.231,0.33,0.0
+P014,Filing Cabinet,NYC-01,0,product_unit,2025-12-01,2025-12-07,15,8,6,0.538,5.0,0.0
+P014,Filing Cabinet,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,6,0.308,10.571,0.0
+P014,Filing Cabinet,VAN-01,0,product_unit,2025-12-01,2025-12-07,15,0,6,0.154,0.286,0.0
+P015,Printer Plus,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,10,6,0.231,10.429,0.0
+P015,Printer Plus,LA-01,0,product_unit,2025-12-01,2025-12-07,10,0,6,0.385,5.714,0.0
+P015,Printer Plus,LON-01,0,product_unit,2025-12-01,2025-12-07,2,3,2,0.385,2.495,0.0
+P015,Printer Plus,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,0,3,0.0,0.0,0.0
+P015,Printer Plus,NYC-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,0.154,5.308,0.0
+P015,Printer Plus,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,1,0.538,10.615,0.0
+P015,Printer Plus,SYD-01,0,product_unit,2025-12-01,2025-12-07,2,0,2,0.154,1.198,0.0
+P015,Printer Plus,TOR-01,0,product_unit,2025-12-01,2025-12-07,5,0,7,0.231,0.462,0.0
+P015,Printer Plus,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,0,6,0.0,10.0,0.0
+P016,Laser Toner,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,0.769,6.538,0.0
+P016,Laser Toner,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,5,0.077,5.132,0.0
+P016,Laser Toner,LA-01,0,product_unit,2025-12-01,2025-12-07,25,0,7,0.846,11.692,0.0
+P016,Laser Toner,LON-01,0,product_unit,2025-12-01,2025-12-07,19,0,7,1.154,4.308,0.0
+P016,Laser Toner,MAN-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,0.692,6.385,0.0
+P016,Laser Toner,MUC-01,0,product_unit,2025-12-01,2025-12-07,6,0,6,1.077,2.0,0.0
+P016,Laser Toner,NYC-01,0,product_unit,2025-12-01,2025-12-07,15,0,1,1.846,7.11,0.0
+P016,Laser Toner,SYD-01,0,product_unit,2025-12-01,2025-12-07,10,0,3,1.231,6.758,0.0
+P016,Laser Toner,TOR-01,0,product_unit,2025-12-01,2025-12-07,5,0,7,0.462,0.923,0.0
+P016,Laser Toner,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,10,6,0.615,11.143,0.0
+P017,Copy Paper Box,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,0.308,5.615,0.0
+P017,Copy Paper Box,CHI-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,1.308,11.495,0.0
+P017,Copy Paper Box,COL-01,0,product_unit,2025-12-01,2025-12-07,19,10,2,0.231,5.297,0.0
+P017,Copy Paper Box,MUC-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,0.923,1.187,0.0
+P017,Copy Paper Box,VAN-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,1.308,7.615,0.0
+P018,Premium Pens,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,1.154,11.484,0.0
+P018,Premium Pens,CHI-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,0.769,1.209,0.0
+P018,Premium Pens,COL-01,0,product_unit,2025-12-01,2025-12-07,20,0,4,1.0,4.571,0.0
+P018,Premium Pens,LON-01,0,product_unit,2025-12-01,2025-12-07,20,5,3,1.615,7.308,0.0
+P018,Premium Pens,MUC-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,0.308,5.615,0.0
+P018,Premium Pens,NYC-01,0,product_unit,2025-12-01,2025-12-07,6,12,6,1.231,4.286,0.0
+P018,Premium Pens,PAR-01,0,product_unit,2025-12-01,2025-12-07,20,0,5,0.308,10.527,0.0
+P019,Notebook Pack,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.154,10.242,0.0
+P019,Notebook Pack,MUC-01,0,product_unit,2025-12-01,2025-12-07,19,0,1,0.462,5.527,0.0
+P019,Notebook Pack,NYC-01,0,product_unit,2025-12-01,2025-12-07,5,0,6,1.615,3.0,0.0
+P019,Notebook Pack,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,3,0.308,10.44,0.0
+P019,Notebook Pack,SYD-01,0,product_unit,2025-12-01,2025-12-07,9,0,1,1.769,4.022,0.0
+P019,Notebook Pack,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,0,3,0.846,11.209,0.0
+P019,Notebook Pack,VAN-01,0,product_unit,2025-12-01,2025-12-07,5,10,5,0.077,10.132,0.0
+P020,Presentation Kit,AUS-01,0,product_unit,2025-12-01,2025-12-07,5,5,5,1.077,4.846,0.0
+P020,Presentation Kit,COL-01,0,product_unit,2025-12-01,2025-12-07,10,10,7,0.154,10.308,0.0
+P020,Presentation Kit,LON-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,0.077,10.154,0.0
+P020,Presentation Kit,MAN-01,0,product_unit,2025-12-01,2025-12-07,4,4,1,0.692,4.791,0.0
+P020,Presentation Kit,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,10,5,0.385,10.659,0.0
+P020,Presentation Kit,VAN-01,0,product_unit,2025-12-01,2025-12-07,9,9,5,0.385,2.659,0.0
+P021,Coffee Machine,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,0,2,0.923,1.187,0.0
+P021,Coffee Machine,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,0.846,1.692,0.0
+P021,Coffee Machine,LA-01,0,product_unit,2025-12-01,2025-12-07,20,0,6,0.385,10.714,0.0
+P021,Coffee Machine,MAN-01,0,product_unit,2025-12-01,2025-12-07,10,10,1,0.077,0.088,0.0
+P021,Coffee Machine,MUC-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,0.231,10.264,0.0
+P021,Coffee Machine,PAR-01,0,product_unit,2025-12-01,2025-12-07,10,5,4,0.462,5.725,0.0
+P021,Coffee Machine,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,0.0,10.0,0.0
+P021,Coffee Machine,VAN-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,0.538,10.692,0.0
+P022,Air Purifier,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,0,1,0.385,5.44,0.0
+P022,Air Purifier,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,5,5,0.0,5.0,0.0
+P022,Air Purifier,COL-01,0,product_unit,2025-12-01,2025-12-07,8,8,4,0.385,1.604,0.0
+P022,Air Purifier,LA-01,0,product_unit,2025-12-01,2025-12-07,15,5,6,0.538,6.0,0.0
+P022,Air Purifier,LON-01,0,product_unit,2025-12-01,2025-12-07,10,0,1,0.0,5.0,0.0
+P022,Air Purifier,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,10,3,0.308,0.44,0.0
+P022,Air Purifier,NYC-01,0,product_unit,2025-12-01,2025-12-07,4,0,6,0.077,1.143,0.0
+P022,Air Purifier,PAR-01,0,product_unit,2025-12-01,2025-12-07,20,10,4,0.769,1.209,0.0
+P022,Air Purifier,SYD-01,0,product_unit,2025-12-01,2025-12-07,5,0,7,0.0,5.0,0.0
+P023,Portable Heater,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,10,4,0.692,11.088,0.0
+P023,Portable Heater,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,5,7,0.923,6.846,0.0
+P023,Portable Heater,LA-01,0,product_unit,2025-12-01,2025-12-07,3,0,6,0.231,0.429,0.0
+P023,Portable Heater,LON-01,0,product_unit,2025-12-01,2025-12-07,4,0,3,0.769,2.099,0.0
+P023,Portable Heater,MAN-01,0,product_unit,2025-12-01,2025-12-07,5,5,4,0.077,0.121,0.0
+P023,Portable Heater,MUC-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,0.154,5.308,0.0
+P023,Portable Heater,NYC-01,0,product_unit,2025-12-01,2025-12-07,4,0,6,0.231,1.429,0.0
+P023,Portable Heater,PAR-01,0,product_unit,2025-12-01,2025-12-07,7,0,7,0.154,0.308,0.0
+P023,Portable Heater,SYD-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,0.692,1.385,0.0
+P023,Portable Heater,TOR-01,0,product_unit,2025-12-01,2025-12-07,7,0,4,0.538,2.846,0.0
+P023,Portable Heater,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,0.154,0.308,0.0
+P024,Desk Fan,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,0,7,1.077,2.154,0.0
+P024,Desk Fan,CHI-01,0,product_unit,2025-12-01,2025-12-07,5,10,5,0.923,6.582,0.0
+P024,Desk Fan,LA-01,0,product_unit,2025-12-01,2025-12-07,10,10,3,0.615,10.879,0.0
+P024,Desk Fan,PAR-01,0,product_unit,2025-12-01,2025-12-07,20,0,6,1.615,8.0,0.0
+P024,Desk Fan,SYD-01,0,product_unit,2025-12-01,2025-12-07,15,8,4,1.077,5.692,0.0
+P024,Desk Fan,TOR-01,0,product_unit,2025-12-01,2025-12-07,20,10,4,0.154,10.242,0.0
+P024,Desk Fan,VAN-01,0,product_unit,2025-12-01,2025-12-07,4,0,7,0.154,0.308,0.0
+P025,USB Power Hub,AUS-01,0,product_unit,2025-12-01,2025-12-07,10,0,6,1.692,8.143,0.0
+P025,USB Power Hub,CHI-01,0,product_unit,2025-12-01,2025-12-07,3,5,5,1.385,2.374,0.0
+P025,USB Power Hub,COL-01,0,product_unit,2025-12-01,2025-12-07,19,0,1,0.0,2.0,0.0
+P025,USB Power Hub,NYC-01,0,product_unit,2025-12-01,2025-12-07,20,0,1,2.385,12.725,0.0
+P025,USB Power Hub,PAR-01,0,product_unit,2025-12-01,2025-12-07,20,5,5,1.538,2.637,0.0
+P025,USB Power Hub,VAN-01,0,product_unit,2025-12-01,2025-12-07,10,10,2,1.077,1.385,0.0
+P026,Webcam HD,AUS-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,0.769,11.538,0.0
+P026,Webcam HD,CHI-01,0,product_unit,2025-12-01,2025-12-07,10,10,4,0.923,6.451,0.0
+P026,Webcam HD,COL-01,0,product_unit,2025-12-01,2025-12-07,10,0,2,0.0,0.0,0.0
+P026,Webcam HD,LA-01,0,product_unit,2025-12-01,2025-12-07,20,0,7,1.538,13.077,0.0
+P026,Webcam HD,MAN-01,0,product_unit,2025-12-01,2025-12-07,5,0,3,0.923,1.319,0.0
+P026,Webcam HD,MUC-01,0,product_unit,2025-12-01,2025-12-07,10,0,4,0.769,1.209,0.0
+P026,Webcam HD,NYC-01,0,product_unit,2025-12-01,2025-12-07,20,10,3,1.077,11.538,0.0
+P026,Webcam HD,SYD-01,0,product_unit,2025-12-01,2025-12-07,5,5,4,0.0,5.0,0.0
+P026,Webcam HD,VAN-01,0,product_unit,2025-12-01,2025-12-07,20,0,2,0.538,10.692,0.0
+P027,Security Camera,CHI-01,0,product_unit,2025-12-01,2025-12-07,20,0,5,0.077,10.132,0.0
+P027,Security Camera,LA-01,0,product_unit,2025-12-01,2025-12-07,5,5,4,0.462,0.725,0.0
+P027,Security Camera,LON-01,0,product_unit,2025-12-01,2025-12-07,4,0,3,0.231,0.33,0.0
+P027,Security Camera,MUC-01,0,product_unit,2025-12-01,2025-12-07,24,0,4,0.385,3.604,0.0
+P027,Security Camera,NYC-01,0,product_unit,2025-12-01,2025-12-07,30,10,7,2.462,14.923,0.0
+P027,Security Camera,VAN-01,0,product_unit,2025-12-01,2025-12-07,24,0,4,0.462,2.725,0.0
+P028,Backup Drive 2TB,AUS-01,0,product_unit,2025-12-01,2025-12-07,14,0,6,0.462,4.857,0.0
+P028,Backup Drive 2TB,CHI-01,0,product_unit,2025-12-01,2025-12-07,20,0,6,0.769,11.429,0.0
+P028,Backup Drive 2TB,COL-01,0,product_unit,2025-12-01,2025-12-07,0,10,2,0.462,2.593,0.0
+P028,Backup Drive 2TB,LON-01,0,product_unit,2025-12-01,2025-12-07,9,3,6,0.385,5.714,0.0
+P028,Backup Drive 2TB,MAN-01,0,product_unit,2025-12-01,2025-12-07,0,4,1,1.385,1.582,0.0
+P028,Backup Drive 2TB,MUC-01,0,product_unit,2025-12-01,2025-12-07,5,5,1,0.846,5.967,0.0
+P028,Backup Drive 2TB,PAR-01,0,product_unit,2025-12-01,2025-12-07,0,5,2,0.308,0.396,0.0
+P028,Backup Drive 2TB,SYD-01,0,product_unit,2025-12-01,2025-12-07,10,0,6,0.308,0.571,0.0
+P028,Backup Drive 2TB,TOR-01,0,product_unit,2025-12-01,2025-12-07,2,4,6,1.615,5.0,0.0

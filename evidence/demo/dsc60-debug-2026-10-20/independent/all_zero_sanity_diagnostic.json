@@ -1,0 +1,20 @@
+[
+  {
+    "split": "selection",
+    "all_zero_mae": 0.5121527777777778,
+    "baseline_mae": 0.7978479853479853,
+    "relative_mae_gain": 0.3580822572931611,
+    "aggregate_bias_fraction": -1.0,
+    "eligible_winner": false,
+    "interpretation": "Sanity diagnostic of sparse-target absolute loss, not a replenishment recommendation or protocol candidate."
+  },
+  {
+    "split": "holdout",
+    "all_zero_mae": 0.7436755952380952,
+    "baseline_mae": 0.9756467490842491,
+    "relative_mae_gain": 0.237761417299739,
+    "aggregate_bias_fraction": -1.0,
+    "eligible_winner": false,
+    "interpretation": "Sanity diagnostic of sparse-target absolute loss, not a replenishment recommendation or protocol candidate."
+  }
+]

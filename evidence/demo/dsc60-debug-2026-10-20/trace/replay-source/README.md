@@ -1,0 +1,1 @@
+This call-trace utility snapshot matches the SHA-256 frozen for the exact replay launch: `e90a3a51f71793001bca25fc779b95cdb8db0825e0513bf269009b84c4143c11`. It predates atomic receipt updates and added exposed configuration metadata. Prompt-generating source identities are recorded separately by the frozen replay receipt.

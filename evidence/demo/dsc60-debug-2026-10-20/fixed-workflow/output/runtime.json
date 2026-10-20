@@ -1,0 +1,19 @@
+{
+  "python": "3.13.9",
+  "pandas": "2.3.3",
+  "numpy": "2.3.5",
+  "machine": "arm64",
+  "platform": "Darwin",
+  "total_elapsed_seconds": 1.1114866669522598,
+  "order_calculation_elapsed_seconds_including_all_six_deployment_forecasts": 0.1864152499474585,
+  "source_bytes": 5055815,
+  "raw_transaction_rows": 17406,
+  "daily_panel_shape": [
+    1430,
+    336
+  ],
+  "routine_model": "local91",
+  "routine_dependencies": "Python, pandas, numpy, local CSV files; no LLM, network, paid API or model service calls",
+  "ongoing_cost": "Ordinary local computer workload; existing hardware, electricity, maintenance or optional hosting remain. No supported monetary rate supplied.",
+  "analysis_build_cost": "AI assistance used to build and explain analysis; metered usage and applicable pricing unavailable, cannot estimate charge."
+}

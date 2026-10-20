@@ -1,0 +1,15 @@
+{
+  "issue": "DSC-60",
+  "phase": "development_only",
+  "declared_on": "2026-10-20",
+  "data_boundary": "No transaction outcome later than 2025-11-30 is read or evaluated. October-November are already used development data, never a fresh holdout.",
+  "baseline": "Per product-store arithmetic mean of recorded daily positive non-cancelled units over trailing 91 calendar days, after first recorded activity; multiply by horizon. This is a fair interpretation of a 13-week mean, not the customer's exact method.",
+  "primary_metric": "mean absolute error of seven-day aggregate product-store units; equal weight per origin-pair",
+  "primary_population": "336 policy product-store pairs; fixed non-overlapping Sunday weekly origins June 29 through November 23, 2025; omit September 21/28 to reproduce producer separation",
+  "selection": "Minimum seven-day MAE over June-September development; October-November stability diagnostic only. Candidate remains baseline for release if meaningful robust superiority is unproven.",
+  "candidates": ["recent_13_weeks", "recent_4_weeks", "recent_26_weeks", "annual_average", "shared_patterns", "shared_seasonal"],
+  "secondary": ["14-day aggregate MAE", "policy lead+review aggregate MAE at fully observable origins", "RMSE", "WAPE", "bias", "status assumptions", "missing-day assumptions", "leave-one-origin-out selection stability"],
+  "engineering_recording_criterion": {"relative_mae_improvement_at_least": 0.05, "paired_origin_block_bootstrap": "95% percentile lower bound of relative MAE gain must be positive; fixed seed 60; 10000 resamples", "status": "engineering criterion, not supplied business threshold, ROI, cost or service guarantee; business approval absent"},
+  "recording_readiness": "Requires independently evidenced untouched December, frozen protocol/code/data/rule/predictions, gate approval, and one post-freeze holdout result. Missing evidence fails closed for recording only. Ordinary application results are not blocked.",
+  "holdout": "December 2025 outcomes are forbidden in this development run; do not inspect, score, select or tune on them. Unavailable provenance means no valid final holdout claim."
+}

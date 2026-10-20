@@ -1,0 +1,100 @@
+{
+  "format": "dsc60-approved-service-replay-v1",
+  "reviewed_at": "2026-10-20T16:36:04.132676+00:00",
+  "approval_actor": "authorized engineering caller; no browser/customer click claimed",
+  "detector_context": "retained finding, isolated after separate exact detector replay",
+  "contract_file_sha256": "917a4fad5a1a84a17fe818ca8923746edbdb609730a4a13185fa717d59dec7be",
+  "code_sha256": {
+    "src/suiroai/demo/task.py": "2d7010dce982856b02383a56e0f1cba9aa2b1cb5de36a79a35fb85921a8fa446",
+    "src/suiroai/demo/service.py": "518e6dcad74c16c42a9ac21af934a676d0822ec4aab4eab9a647b30b07412682",
+    "src/suiroai/demo/investigation.py": "baffc14d88fb0de32d2f02129e5a2cd4d6830ea4b8724bc1c307d89435f12507",
+    "src/suiroai/demo/call_trace.py": "571f51046ac02827b3adf708d39d731912d20ab9cb0ce57d009a1049590d2fb4",
+    "scripts/dsc60_workflow_replay.py": "ff6455be767c097faa3b797848ec9bac4f7e990b22e624e9ab28020f14609283"
+  },
+  "source_files": [
+    {
+      "name": "ordering_policy.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "name": "inbound_deliveries.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "name": "inventory_position.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "name": "Sales_transactions_2022_2025.csv",
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707"
+    }
+  ],
+  "artifact_root": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7",
+  "review": {
+    "status": "awaiting_approval",
+    "proposal_digest": "1bd1f858c47299268cc95e929518a1d6f19e49f95cd0aa5e5f9901360851c09f",
+    "proposal_summary": {
+      "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.\n\nCurrent approach described in the supplied question or files:\nThe user wants to determine what to restock in their stores next week. Their explicitly described current method is to look at the last few months of sales to decide what to buy. The question does not specify a calculation or quantity-setting rule. All four released CSVs were read in full; their contents do not explicitly describe an additional current restocking procedure.",
+      "inputs": [
+        "ordering_policy.csv",
+        "inbound_deliveries.csv",
+        "inventory_position.csv",
+        "Sales_transactions_2022_2025.csv"
+      ],
+      "review_date": "2025-11-30",
+      "output": "A restocking CSV to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
+      "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
+      "assumptions": [
+        "Use November 30, 2025 as the planning date and same-product units. Data will assess whether supplied operational inputs are synthetic and explain how their provenance affects the results.",
+        "Data will assess historical availability and daily coverage from the files, choose supported treatment for missing observations, and explain assumptions and sensitivities.",
+        "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. Use supported assumptions, methods and sensitivity analysis to resolve uncertainty; state any remaining limitations in the report.",
+        "Send these approved files and question to Data for analysis through November 30, 2025, with later transaction outcomes withheld. Data will determine supported treatment and methods, compare sensitive assumptions, and produce the best useful report with limitations without asking follow-up questions.",
+        "This engineering run uses a fixed comparison setup: the same sales definition, simple comparison method, products, weeks, forecast period, error measure and selection rule throughout. It is not your supplied buying rule or proof of improvement."
+      ],
+      "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."
+    },
+    "message": "Review this exact task and its limitations before approving.",
+    "errors": []
+  },
+  "limits": "Development only; no untouched outcome evaluation, recording, automatic HTML/CSV action or performance acceptance.",
+  "completed_at": "2026-10-20T16:41:58.041302+00:00",
+  "result": {
+    "status": "analysis_completed",
+    "proposal_digest": "1bd1f858c47299268cc95e929518a1d6f19e49f95cd0aa5e5f9901360851c09f",
+    "proposal_summary": {
+      "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.\n\nCurrent approach described in the supplied question or files:\nThe user wants to determine what to restock in their stores next week. Their explicitly described current method is to look at the last few months of sales to decide what to buy. The question does not specify a calculation or quantity-setting rule. All four released CSVs were read in full; their contents do not explicitly describe an additional current restocking procedure.",
+      "inputs": [
+        "ordering_policy.csv",
+        "inbound_deliveries.csv",
+        "inventory_position.csv",
+        "Sales_transactions_2022_2025.csv"
+      ],
+      "review_date": "2025-11-30",
+      "output": "A restocking CSV to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
+      "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
+      "assumptions": [
+        "Use November 30, 2025 as the planning date and same-product units. Data will assess whether supplied operational inputs are synthetic and explain how their provenance affects the results.",
+        "Data will assess historical availability and daily coverage from the files, choose supported treatment for missing observations, and explain assumptions and sensitivities.",
+        "Quantity, status, and return fields are candidate transaction measures. Their meanings and treatment will be investigated from file contents and cross-file consistency. Use supported assumptions, methods and sensitivity analysis to resolve uncertainty; state any remaining limitations in the report.",
+        "Send these approved files and question to Data for analysis through November 30, 2025, with later transaction outcomes withheld. Data will determine supported treatment and methods, compare sensitive assumptions, and produce the best useful report with limitations without asking follow-up questions.",
+        "This engineering run uses a fixed comparison setup: the same sales definition, simple comparison method, products, weeks, forecast period, error measure and selection rule throughout. It is not your supplied buying rule or proof of improvement."
+      ],
+      "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."
+    },
+    "message": "Analysis complete. Your restocking list is ready to download.",
+    "errors": [],
+    "technical_details": "Analysis complete. Your restocking list is ready to download.",
+    "report_available": true,
+    "report_verified": false,
+    "download_mime": "text/csv",
+    "html_report_available": true,
+    "html_download_mime": "text/html",
+    "html_report_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/demo-report-0913b1d68696459bbbf52103b7f9118a.html",
+    "report_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/restocking-9a8db7a4eaaa42d2acc7ffdcd5d4af15.csv",
+    "evidence_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/attempt-f6cd3881256243a69ded09e038132765.json",
+    "investigation_text": "Use the attached list to plan 873 units across 111 products at stores for December 1\u20137, 2025. Order nothing for the other 225. Check the 56 flagged products at stores first: stock may run short before new orders arrive; consider transfers or faster delivery.\n\nThese quantities are illustrative because the supplied stock, delivery and buying rules are marked synthetic. Confirm them before purchasing. Incoming deliveries match the stock records. Quantities subtract stock and incoming deliveries, cover supplier waiting time plus one week, include the supplied reserve, and follow pack sizes and minimum orders.\n\nI recommend averaging the last 13 weeks of recorded orders. Across the same products and weeks, the seasonal alternative reduced weekly errors by about 2% initially\u2014a small difference\u2014but was worse later. No alternative met the agreed consistency requirement. This simple baseline interprets \u201cthe last few months\u201d; your exact buying calculation was not supplied, so this does not establish improvement over your process.\n\nThe calculation assumes missing entries mean no recorded orders. Empty shelves or missing records could hide demand, so check unusual gaps before buying. Returned orders do not establish stock available for resale. The figures predict recorded orders, not guaranteed availability or savings.\n\nWeekly calculations can run on an ordinary local computer without paid model calls; computer and electricity costs remain. The calculations took about a second. The separate AI-assisted building cost cannot be estimated without usage and pricing information.\n",
+    "investigation_path": "/private/tmp/suiroai-dsc59/artifacts/dsc60-fixed-workflow-2026-10-20/391c35e78ff4433fb982b9ea351db6d7/runs/investigation-8f8b4119fdfe40ed9bc6fe875a26269e.md",
+    "native_outcome": "completed",
+    "verified_report_available": false
+  }
+}

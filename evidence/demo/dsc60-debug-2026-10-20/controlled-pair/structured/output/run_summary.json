@@ -1,0 +1,22 @@
+{
+  "selected_method": "baseline_91",
+  "order_units": 873,
+  "keys_to_order": 111,
+  "zero_orders": 225,
+  "prearrival_shortfall_keys": 56,
+  "prearrival_shortfall_units": 16.6484,
+  "forecast_next7_total": 222.38389999999998,
+  "recent_positive_days_median": 3.0,
+  "recent_absent_zero_fraction": 0.9593472004186291,
+  "28_day_order_total": 791,
+  "182_day_order_total": 883,
+  "observed_days_stress_order_total": 6778,
+  "empirical_residual_scenarios": "10th/90th pooled development actual-minus-forecast errors by coverage length, not calibrated prediction intervals; no tuning/selection use.",
+  "runtime_seconds": 4.896706749917939,
+  "python": "3.13.9",
+  "pandas": "2.3.3",
+  "numpy": "2.3.5",
+  "routine_compute": "Local deterministic pandas/numpy on 17406 input transaction rows, 336 keys and daily arrays; no network or paid model API calls. Runtime includes audit comparisons and list generation.",
+  "build_AI_cost": "Unknown: no observed token usage or applicable billing rates supplied. Separate from routine compute.",
+  "csv_sha256": "3898b7d7d6febcfc62cba451ccb1406ba7aa20cd0b46f394405156b0c4df9b9d"
+}

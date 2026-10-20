@@ -1,0 +1,337 @@
+Product_ID,Product_Name,Store_ID,OrderQty,Quantity_Unit,Order_Date,Expected_New_Order_Arrival,Coverage_Days,Forecast_Coverage_Units,Usable_On_Hand_Qty,Incoming_Within_Coverage_Qty,Safety_Stock_Qty,Order_Multiple_Qty,Minimum_Order_Qty,Risk_Before_New_Order_Arrives,Illustrative_Synthetic_Inputs
+P001,AeroBook 14 Laptop,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,0.857143,20,0,0,10,10,False,True
+P001,AeroBook 14 Laptop,CHI-01,0,product_unit,2025-12-01,2025-12-07,13,2.428571,21,0,0,1,1,False,True
+P001,AeroBook 14 Laptop,COL-01,0,product_unit,2025-12-01,2025-12-04,10,0.10989,10,10,0,5,5,False,True
+P001,AeroBook 14 Laptop,LA-01,0,product_unit,2025-12-01,2025-12-03,9,1.681319,10,10,10,10,10,False,True
+P001,AeroBook 14 Laptop,LON-01,20,product_unit,2025-12-01,2025-12-08,14,0.923077,0,0,10,10,10,True,True
+P001,AeroBook 14 Laptop,MAN-01,0,product_unit,2025-12-01,2025-12-06,12,0.263736,5,5,0,5,5,False,True
+P001,AeroBook 14 Laptop,MUC-01,10,product_unit,2025-12-01,2025-12-03,9,0.395604,0,0,0,10,10,True,True
+P001,AeroBook 14 Laptop,NYC-01,0,product_unit,2025-12-01,2025-12-06,12,2.769231,18,5,0,1,1,False,True
+P001,AeroBook 14 Laptop,PAR-01,0,product_unit,2025-12-01,2025-12-05,11,0.725275,10,0,5,5,5,False,True
+P001,AeroBook 14 Laptop,SYD-01,0,product_unit,2025-12-01,2025-12-08,14,1.384615,5,0,0,5,5,False,True
+P001,AeroBook 14 Laptop,TOR-01,0,product_unit,2025-12-01,2025-12-03,9,0.593407,3,3,2,1,1,False,True
+P001,AeroBook 14 Laptop,VAN-01,5,product_unit,2025-12-01,2025-12-08,14,1.076923,5,0,5,5,5,False,True
+P002,ProBook 16 Laptop,AUS-01,0,product_unit,2025-12-01,2025-12-02,8,2.285714,10,10,5,5,5,False,True
+P002,ProBook 16 Laptop,CHI-01,5,product_unit,2025-12-01,2025-12-05,11,1.692308,0,0,0,5,5,True,True
+P002,ProBook 16 Laptop,COL-01,10,product_unit,2025-12-01,2025-12-03,9,0.098901,0,0,5,5,5,True,True
+P002,ProBook 16 Laptop,LA-01,0,product_unit,2025-12-01,2025-12-08,14,2.0,10,0,0,10,10,False,True
+P002,ProBook 16 Laptop,LON-01,0,product_unit,2025-12-01,2025-12-02,8,0.791209,10,10,0,10,10,False,True
+P002,ProBook 16 Laptop,MAN-01,0,product_unit,2025-12-01,2025-12-05,11,0.846154,9,9,2,1,1,False,True
+P002,ProBook 16 Laptop,MUC-01,10,product_unit,2025-12-01,2025-12-03,9,1.681319,10,0,10,10,10,False,True
+P002,ProBook 16 Laptop,NYC-01,0,product_unit,2025-12-01,2025-12-02,8,0.879121,20,5,5,5,5,False,True
+P002,ProBook 16 Laptop,PAR-01,0,product_unit,2025-12-01,2025-12-08,14,1.846154,10,10,10,10,10,False,True
+P002,ProBook 16 Laptop,SYD-01,5,product_unit,2025-12-01,2025-12-06,12,0.131868,5,0,5,5,5,False,True
+P002,ProBook 16 Laptop,TOR-01,0,product_unit,2025-12-01,2025-12-03,9,0.197802,20,0,10,10,10,False,True
+P002,ProBook 16 Laptop,VAN-01,10,product_unit,2025-12-01,2025-12-03,9,1.285714,10,0,10,10,10,False,True
+P003,EdgeTab 11 Tablet,AUS-01,0,product_unit,2025-12-01,2025-12-05,11,1.32967,10,10,5,5,5,False,True
+P003,EdgeTab 11 Tablet,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,1.186813,10,10,10,10,10,False,True
+P003,EdgeTab 11 Tablet,COL-01,0,product_unit,2025-12-01,2025-12-05,11,0.362637,10,10,10,10,10,False,True
+P003,EdgeTab 11 Tablet,LA-01,0,product_unit,2025-12-01,2025-12-04,10,1.648352,20,0,0,5,5,False,True
+P003,EdgeTab 11 Tablet,LON-01,0,product_unit,2025-12-01,2025-12-04,10,0.549451,5,5,5,5,5,False,True
+P003,EdgeTab 11 Tablet,MAN-01,0,product_unit,2025-12-01,2025-12-07,13,2.285714,4,0,1,1,1,False,True
+P003,EdgeTab 11 Tablet,MUC-01,0,product_unit,2025-12-01,2025-12-06,12,1.318681,20,0,5,5,5,False,True
+P003,EdgeTab 11 Tablet,NYC-01,3,product_unit,2025-12-01,2025-12-08,14,5.076923,3,0,0,1,1,False,True
+P003,EdgeTab 11 Tablet,PAR-01,0,product_unit,2025-12-01,2025-12-07,13,0.714286,10,0,0,10,10,False,True
+P003,EdgeTab 11 Tablet,SYD-01,0,product_unit,2025-12-01,2025-12-04,10,0.989011,10,5,5,5,5,False,True
+P003,EdgeTab 11 Tablet,TOR-01,0,product_unit,2025-12-01,2025-12-05,11,0.362637,10,0,5,5,5,False,True
+P003,EdgeTab 11 Tablet,VAN-01,5,product_unit,2025-12-01,2025-12-04,10,2.307692,3,0,5,1,1,False,True
+P004,Vision 27 Monitor,AUS-01,0,product_unit,2025-12-01,2025-12-02,8,0.263736,20,0,5,5,5,False,True
+P004,Vision 27 Monitor,CHI-01,1,product_unit,2025-12-01,2025-12-03,9,0.692308,4,0,4,1,1,False,True
+P004,Vision 27 Monitor,COL-01,0,product_unit,2025-12-01,2025-12-08,14,0.769231,18,0,0,1,1,False,True
+P004,Vision 27 Monitor,LA-01,0,product_unit,2025-12-01,2025-12-05,11,0.725275,10,10,10,10,10,False,True
+P004,Vision 27 Monitor,LON-01,10,product_unit,2025-12-01,2025-12-04,10,0.769231,0,10,10,10,10,False,True
+P004,Vision 27 Monitor,MAN-01,10,product_unit,2025-12-01,2025-12-05,11,0.483516,0,0,5,5,5,True,True
+P004,Vision 27 Monitor,MUC-01,0,product_unit,2025-12-01,2025-12-06,12,0.527473,3,0,0,1,1,False,True
+P004,Vision 27 Monitor,NYC-01,15,product_unit,2025-12-01,2025-12-02,8,0.791209,0,0,10,5,5,True,True
+P004,Vision 27 Monitor,PAR-01,0,product_unit,2025-12-01,2025-12-02,8,0.791209,5,5,5,5,5,False,True
+P004,Vision 27 Monitor,SYD-01,0,product_unit,2025-12-01,2025-12-04,10,0.659341,5,5,0,1,1,False,True
+P004,Vision 27 Monitor,TOR-01,0,product_unit,2025-12-01,2025-12-08,14,3.538462,10,0,0,10,10,False,True
+P004,Vision 27 Monitor,VAN-01,0,product_unit,2025-12-01,2025-12-06,12,1.054945,20,10,0,10,10,False,True
+P005,Office Keyboard,AUS-01,0,product_unit,2025-12-01,2025-12-05,11,0.846154,9,3,5,1,1,False,True
+P005,Office Keyboard,CHI-01,10,product_unit,2025-12-01,2025-12-06,12,0.395604,0,0,0,10,10,True,True
+P005,Office Keyboard,COL-01,0,product_unit,2025-12-01,2025-12-06,12,0.131868,20,10,10,10,10,False,True
+P005,Office Keyboard,LA-01,0,product_unit,2025-12-01,2025-12-02,8,1.494505,3,0,0,1,1,False,True
+P005,Office Keyboard,LON-01,0,product_unit,2025-12-01,2025-12-02,8,1.054945,20,0,10,10,10,False,True
+P005,Office Keyboard,MAN-01,0,product_unit,2025-12-01,2025-12-05,11,0.846154,20,10,0,10,10,False,True
+P005,Office Keyboard,MUC-01,0,product_unit,2025-12-01,2025-12-06,12,1.582418,5,0,0,5,5,False,True
+P005,Office Keyboard,NYC-01,0,product_unit,2025-12-01,2025-12-05,11,2.054945,9,0,0,1,1,False,True
+P005,Office Keyboard,PAR-01,0,product_unit,2025-12-01,2025-12-03,9,1.582418,5,5,5,5,5,False,True
+P005,Office Keyboard,SYD-01,20,product_unit,2025-12-01,2025-12-05,11,0.846154,0,0,10,10,10,True,True
+P005,Office Keyboard,TOR-01,0,product_unit,2025-12-01,2025-12-03,9,1.582418,16,8,1,1,1,False,True
+P005,Office Keyboard,VAN-01,0,product_unit,2025-12-01,2025-12-02,8,0.43956,10,0,0,10,10,False,True
+P006,Precision Mouse,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,1.714286,20,10,10,10,10,False,True
+P006,Precision Mouse,CHI-01,0,product_unit,2025-12-01,2025-12-04,10,0.989011,5,5,0,5,5,False,True
+P006,Precision Mouse,COL-01,0,product_unit,2025-12-01,2025-12-03,9,0.89011,21,0,2,1,1,False,True
+P006,Precision Mouse,LA-01,5,product_unit,2025-12-01,2025-12-06,12,2.241758,5,0,5,5,5,False,True
+P006,Precision Mouse,LON-01,20,product_unit,2025-12-01,2025-12-08,14,2.307692,0,0,10,10,10,True,True
+P006,Precision Mouse,MAN-01,10,product_unit,2025-12-01,2025-12-03,9,0.197802,10,0,10,10,10,False,True
+P006,Precision Mouse,MUC-01,0,product_unit,2025-12-01,2025-12-02,8,0.175824,20,0,10,10,10,False,True
+P006,Precision Mouse,NYC-01,5,product_unit,2025-12-01,2025-12-07,13,4.285714,5,0,5,5,5,False,True
+P006,Precision Mouse,PAR-01,0,product_unit,2025-12-01,2025-12-03,9,1.087912,10,10,0,10,10,False,True
+P006,Precision Mouse,SYD-01,4,product_unit,2025-12-01,2025-12-08,14,0.461538,0,0,3,1,1,True,True
+P006,Precision Mouse,TOR-01,0,product_unit,2025-12-01,2025-12-06,12,1.978022,10,0,5,1,1,False,True
+P006,Precision Mouse,VAN-01,0,product_unit,2025-12-01,2025-12-04,10,1.098901,10,10,0,5,5,False,True
+P007,NoiseCancel Headset,AUS-01,10,product_unit,2025-12-01,2025-12-03,9,0.593407,0,0,0,10,10,True,True
+P007,NoiseCancel Headset,CHI-01,0,product_unit,2025-12-01,2025-12-07,13,0.428571,20,10,5,5,5,False,True
+P007,NoiseCancel Headset,COL-01,0,product_unit,2025-12-01,2025-12-08,14,4.461538,10,10,0,10,10,False,True
+P007,NoiseCancel Headset,LA-01,10,product_unit,2025-12-01,2025-12-04,10,2.417582,10,0,10,10,10,False,True
+P007,NoiseCancel Headset,LON-01,0,product_unit,2025-12-01,2025-12-08,14,3.076923,10,10,0,10,10,False,True
+P007,NoiseCancel Headset,MAN-01,0,product_unit,2025-12-01,2025-12-08,14,0.0,15,0,5,5,5,False,True
+P007,NoiseCancel Headset,MUC-01,0,product_unit,2025-12-01,2025-12-08,14,1.230769,20,0,5,5,5,False,True
+P007,NoiseCancel Headset,NYC-01,0,product_unit,2025-12-01,2025-12-04,10,1.868132,10,10,0,10,10,False,True
+P007,NoiseCancel Headset,PAR-01,0,product_unit,2025-12-01,2025-12-02,8,1.406593,0,9,0,1,1,False,True
+P007,NoiseCancel Headset,SYD-01,0,product_unit,2025-12-01,2025-12-02,8,0.615385,0,4,1,1,1,False,True
+P007,NoiseCancel Headset,TOR-01,0,product_unit,2025-12-01,2025-12-04,10,0.32967,20,0,0,5,5,False,True
+P007,NoiseCancel Headset,VAN-01,1,product_unit,2025-12-01,2025-12-05,11,0.483516,0,0,0,1,1,True,True
+P008,SmartDock USB-C,AUS-01,5,product_unit,2025-12-01,2025-12-07,13,1.285714,5,0,5,5,5,False,True
+P008,SmartDock USB-C,CHI-01,1,product_unit,2025-12-01,2025-12-08,14,0.461538,0,2,2,1,1,True,True
+P008,SmartDock USB-C,COL-01,0,product_unit,2025-12-01,2025-12-03,9,0.197802,18,3,3,1,1,False,True
+P008,SmartDock USB-C,LA-01,0,product_unit,2025-12-01,2025-12-02,8,2.373626,10,0,5,5,5,False,True
+P008,SmartDock USB-C,LON-01,0,product_unit,2025-12-01,2025-12-05,11,0.483516,10,10,0,10,10,False,True
+P008,SmartDock USB-C,MAN-01,10,product_unit,2025-12-01,2025-12-04,10,0.43956,10,0,10,10,10,False,True
+P008,SmartDock USB-C,MUC-01,1,product_unit,2025-12-01,2025-12-04,10,0.659341,0,5,5,1,1,False,True
+P008,SmartDock USB-C,NYC-01,0,product_unit,2025-12-01,2025-12-08,14,2.461538,5,5,0,5,5,False,True
+P008,SmartDock USB-C,PAR-01,0,product_unit,2025-12-01,2025-12-08,14,2.0,10,0,0,10,10,False,True
+P008,SmartDock USB-C,SYD-01,0,product_unit,2025-12-01,2025-12-04,10,0.659341,0,10,0,10,10,True,True
+P008,SmartDock USB-C,TOR-01,0,product_unit,2025-12-01,2025-12-04,10,0.549451,5,5,5,1,1,False,True
+P008,SmartDock USB-C,VAN-01,2,product_unit,2025-12-01,2025-12-02,8,0.0,0,0,2,1,1,False,True
+P009,Office Chair Pro,AUS-01,5,product_unit,2025-12-01,2025-12-03,9,1.285714,0,0,0,5,5,True,True
+P009,Office Chair Pro,CHI-01,1,product_unit,2025-12-01,2025-12-05,11,0.725275,0,0,0,1,1,True,True
+P009,Office Chair Pro,COL-01,0,product_unit,2025-12-01,2025-12-02,8,0.351648,10,0,0,10,10,False,True
+P009,Office Chair Pro,LA-01,0,product_unit,2025-12-01,2025-12-06,12,0.659341,15,0,0,5,5,False,True
+P009,Office Chair Pro,LON-01,0,product_unit,2025-12-01,2025-12-02,8,0.0,10,10,10,10,10,False,True
+P009,Office Chair Pro,MAN-01,0,product_unit,2025-12-01,2025-12-03,9,1.087912,0,10,0,1,1,True,True
+P009,Office Chair Pro,MUC-01,0,product_unit,2025-12-01,2025-12-08,14,1.384615,15,0,5,5,5,False,True
+P009,Office Chair Pro,NYC-01,0,product_unit,2025-12-01,2025-12-04,10,1.428571,15,0,5,5,5,False,True
+P009,Office Chair Pro,PAR-01,0,product_unit,2025-12-01,2025-12-02,8,0.43956,15,0,5,5,5,False,True
+P009,Office Chair Pro,SYD-01,10,product_unit,2025-12-01,2025-12-08,14,0.769231,10,0,10,10,10,False,True
+P009,Office Chair Pro,TOR-01,0,product_unit,2025-12-01,2025-12-05,11,0.241758,4,2,2,1,1,False,True
+P009,Office Chair Pro,VAN-01,0,product_unit,2025-12-01,2025-12-05,11,0.846154,20,10,10,10,10,False,True
+P010,Standing Desk,AUS-01,1,product_unit,2025-12-01,2025-12-06,12,0.791209,0,5,5,1,1,True,True
+P010,Standing Desk,CHI-01,0,product_unit,2025-12-01,2025-12-05,11,0.362637,20,0,5,5,5,False,True
+P010,Standing Desk,COL-01,10,product_unit,2025-12-01,2025-12-03,9,0.098901,10,0,10,10,10,False,True
+P010,Standing Desk,LA-01,0,product_unit,2025-12-01,2025-12-04,10,0.769231,10,0,5,5,5,False,True
+P010,Standing Desk,LON-01,10,product_unit,2025-12-01,2025-12-03,9,0.197802,0,0,5,5,5,True,True
+P010,Standing Desk,MAN-01,0,product_unit,2025-12-01,2025-12-06,12,0.527473,20,0,10,10,10,False,True
+P010,Standing Desk,MUC-01,0,product_unit,2025-12-01,2025-12-08,14,2.461538,3,5,3,1,1,False,True
+P010,Standing Desk,NYC-01,0,product_unit,2025-12-01,2025-12-03,9,0.593407,10,10,10,10,10,False,True
+P010,Standing Desk,PAR-01,0,product_unit,2025-12-01,2025-12-08,14,0.769231,4,0,1,1,1,False,True
+P010,Standing Desk,SYD-01,0,product_unit,2025-12-01,2025-12-06,12,0.395604,10,0,5,5,5,False,True
+P010,Standing Desk,TOR-01,0,product_unit,2025-12-01,2025-12-06,12,0.527473,20,10,10,10,10,False,True
+P010,Standing Desk,VAN-01,5,product_unit,2025-12-01,2025-12-02,8,0.351648,5,0,5,5,5,False,True
+P011,Meeting Table,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,1.0,2,2,2,1,1,False,True
+P011,Meeting Table,CHI-01,0,product_unit,2025-12-01,2025-12-07,13,0.285714,4,0,2,1,1,False,True
+P011,Meeting Table,COL-01,0,product_unit,2025-12-01,2025-12-02,8,0.087912,5,10,5,5,5,False,True
+P011,Meeting Table,LA-01,0,product_unit,2025-12-01,2025-12-07,13,0.428571,3,0,0,1,1,False,True
+P011,Meeting Table,LON-01,10,product_unit,2025-12-01,2025-12-08,14,1.230769,10,0,10,10,10,False,True
+P011,Meeting Table,MAN-01,0,product_unit,2025-12-01,2025-12-02,8,0.0,7,0,4,1,1,False,True
+P011,Meeting Table,MUC-01,0,product_unit,2025-12-01,2025-12-03,9,0.0,5,3,5,1,1,False,True
+P011,Meeting Table,NYC-01,10,product_unit,2025-12-01,2025-12-08,14,0.461538,0,0,5,5,5,True,True
+P011,Meeting Table,PAR-01,0,product_unit,2025-12-01,2025-12-02,8,1.318681,25,0,5,5,5,False,True
+P011,Meeting Table,SYD-01,0,product_unit,2025-12-01,2025-12-03,9,0.395604,5,5,5,5,5,False,True
+P011,Meeting Table,TOR-01,0,product_unit,2025-12-01,2025-12-02,8,0.263736,4,0,0,1,1,False,True
+P011,Meeting Table,VAN-01,5,product_unit,2025-12-01,2025-12-04,10,0.32967,0,5,5,5,5,True,True
+P012,Ergo Footrest,AUS-01,10,product_unit,2025-12-01,2025-12-04,10,0.32967,10,0,10,10,10,False,True
+P012,Ergo Footrest,CHI-01,0,product_unit,2025-12-01,2025-12-05,11,1.087912,8,0,1,1,1,False,True
+P012,Ergo Footrest,COL-01,10,product_unit,2025-12-01,2025-12-04,10,0.32967,10,0,10,10,10,False,True
+P012,Ergo Footrest,LA-01,10,product_unit,2025-12-01,2025-12-07,13,0.142857,0,10,10,10,10,True,True
+P012,Ergo Footrest,LON-01,0,product_unit,2025-12-01,2025-12-03,9,0.989011,10,10,10,10,10,False,True
+P012,Ergo Footrest,MAN-01,0,product_unit,2025-12-01,2025-12-02,8,0.263736,8,4,4,1,1,False,True
+P012,Ergo Footrest,MUC-01,0,product_unit,2025-12-01,2025-12-06,12,1.186813,10,0,5,5,5,False,True
+P012,Ergo Footrest,NYC-01,5,product_unit,2025-12-01,2025-12-04,10,1.758242,5,0,5,5,5,False,True
+P012,Ergo Footrest,PAR-01,0,product_unit,2025-12-01,2025-12-05,11,0.241758,0,5,0,5,5,True,True
+P012,Ergo Footrest,SYD-01,5,product_unit,2025-12-01,2025-12-02,8,0.879121,0,0,4,1,1,True,True
+P012,Ergo Footrest,TOR-01,0,product_unit,2025-12-01,2025-12-03,9,0.197802,15,0,0,5,5,False,True
+P012,Ergo Footrest,VAN-01,0,product_unit,2025-12-01,2025-12-03,9,0.395604,8,8,0,1,1,False,True
+P013,Desk Lamp,AUS-01,0,product_unit,2025-12-01,2025-12-05,11,2.659341,10,0,0,5,5,False,True
+P013,Desk Lamp,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,0.923077,8,4,4,1,1,False,True
+P013,Desk Lamp,COL-01,5,product_unit,2025-12-01,2025-12-02,8,0.615385,5,0,5,5,5,False,True
+P013,Desk Lamp,LA-01,9,product_unit,2025-12-01,2025-12-08,14,2.923077,0,0,6,1,1,True,True
+P013,Desk Lamp,LON-01,5,product_unit,2025-12-01,2025-12-02,8,0.703297,5,0,5,5,5,False,True
+P013,Desk Lamp,MAN-01,5,product_unit,2025-12-01,2025-12-05,11,1.208791,0,0,0,5,5,True,True
+P013,Desk Lamp,MUC-01,10,product_unit,2025-12-01,2025-12-02,8,0.43956,0,10,10,10,10,False,True
+P013,Desk Lamp,NYC-01,0,product_unit,2025-12-01,2025-12-06,12,0.923077,10,10,10,10,10,False,True
+P013,Desk Lamp,PAR-01,0,product_unit,2025-12-01,2025-12-06,12,0.659341,20,0,10,10,10,False,True
+P013,Desk Lamp,SYD-01,10,product_unit,2025-12-01,2025-12-02,8,0.263736,0,0,5,5,5,True,True
+P013,Desk Lamp,TOR-01,0,product_unit,2025-12-01,2025-12-05,11,1.208791,10,0,5,5,5,False,True
+P013,Desk Lamp,VAN-01,4,product_unit,2025-12-01,2025-12-07,13,0.285714,0,0,3,1,1,True,True
+P014,Filing Cabinet,AUS-01,0,product_unit,2025-12-01,2025-12-08,14,1.846154,5,5,5,5,5,False,True
+P014,Filing Cabinet,CHI-01,0,product_unit,2025-12-01,2025-12-03,9,0.197802,10,0,5,5,5,False,True
+P014,Filing Cabinet,COL-01,3,product_unit,2025-12-01,2025-12-04,10,0.43956,0,0,2,1,1,True,True
+P014,Filing Cabinet,LA-01,0,product_unit,2025-12-01,2025-12-03,9,0.395604,20,0,0,10,10,False,True
+P014,Filing Cabinet,LON-01,10,product_unit,2025-12-01,2025-12-05,11,0.604396,10,0,10,10,10,False,True
+P014,Filing Cabinet,MAN-01,5,product_unit,2025-12-01,2025-12-04,10,0.43956,5,0,5,5,5,False,True
+P014,Filing Cabinet,MUC-01,0,product_unit,2025-12-01,2025-12-04,10,0.32967,5,0,0,5,5,False,True
+P014,Filing Cabinet,NYC-01,0,product_unit,2025-12-01,2025-12-07,13,1.0,15,8,4,1,1,False,True
+P014,Filing Cabinet,PAR-01,0,product_unit,2025-12-01,2025-12-07,13,0.571429,10,10,10,10,10,False,True
+P014,Filing Cabinet,SYD-01,10,product_unit,2025-12-01,2025-12-08,14,0.153846,10,0,10,10,10,False,True
+P014,Filing Cabinet,TOR-01,4,product_unit,2025-12-01,2025-12-05,11,1.813187,3,0,5,1,1,False,True
+P014,Filing Cabinet,VAN-01,0,product_unit,2025-12-01,2025-12-07,13,0.285714,15,0,0,5,5,False,True
+P015,Printer Plus,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,0.428571,10,10,10,10,10,False,True
+P015,Printer Plus,CHI-01,5,product_unit,2025-12-01,2025-12-07,13,0.142857,0,0,4,1,1,True,True
+P015,Printer Plus,COL-01,6,product_unit,2025-12-01,2025-12-04,10,0.21978,0,0,5,1,1,True,True
+P015,Printer Plus,LA-01,0,product_unit,2025-12-01,2025-12-07,13,0.714286,10,0,5,5,5,False,True
+P015,Printer Plus,LON-01,0,product_unit,2025-12-01,2025-12-03,9,0.494505,2,3,2,1,1,False,True
+P015,Printer Plus,MAN-01,10,product_unit,2025-12-01,2025-12-03,9,0.395604,10,0,10,10,10,False,True
+P015,Printer Plus,MUC-01,0,product_unit,2025-12-01,2025-12-04,10,0.0,5,0,0,5,5,False,True
+P015,Printer Plus,NYC-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,10,0,5,5,5,False,True
+P015,Printer Plus,PAR-01,0,product_unit,2025-12-01,2025-12-02,8,0.615385,10,10,10,10,10,False,True
+P015,Printer Plus,SYD-01,0,product_unit,2025-12-01,2025-12-03,9,0.197802,2,0,1,1,1,False,True
+P015,Printer Plus,TOR-01,0,product_unit,2025-12-01,2025-12-08,14,0.461538,5,0,0,5,5,False,True
+P015,Printer Plus,VAN-01,0,product_unit,2025-12-01,2025-12-07,13,0.0,10,0,10,10,10,False,True
+P016,Laser Toner,AUS-01,2,product_unit,2025-12-01,2025-12-06,12,1.450549,0,2,2,1,1,True,True
+P016,Laser Toner,CHI-01,0,product_unit,2025-12-01,2025-12-08,14,1.538462,5,5,5,5,5,False,True
+P016,Laser Toner,COL-01,0,product_unit,2025-12-01,2025-12-06,12,0.131868,10,10,5,5,5,False,True
+P016,Laser Toner,LA-01,0,product_unit,2025-12-01,2025-12-08,14,1.692308,25,0,10,5,5,False,True
+P016,Laser Toner,LON-01,0,product_unit,2025-12-01,2025-12-08,14,2.307692,19,0,2,1,1,False,True
+P016,Laser Toner,MAN-01,0,product_unit,2025-12-01,2025-12-08,14,1.384615,5,5,5,5,5,False,True
+P016,Laser Toner,MUC-01,0,product_unit,2025-12-01,2025-12-07,13,2.0,6,0,0,1,1,False,True
+P016,Laser Toner,NYC-01,0,product_unit,2025-12-01,2025-12-02,8,2.10989,15,0,5,5,5,False,True
+P016,Laser Toner,PAR-01,10,product_unit,2025-12-01,2025-12-04,10,0.879121,10,0,10,10,10,False,True
+P016,Laser Toner,SYD-01,0,product_unit,2025-12-01,2025-12-04,10,1.758242,10,0,5,5,5,False,True
+P016,Laser Toner,TOR-01,0,product_unit,2025-12-01,2025-12-08,14,0.923077,5,0,0,5,5,False,True
+P016,Laser Toner,VAN-01,0,product_unit,2025-12-01,2025-12-07,13,1.142857,10,10,10,10,10,False,True
+P017,Copy Paper Box,AUS-01,0,product_unit,2025-12-01,2025-12-08,14,0.615385,20,0,5,5,5,False,True
+P017,Copy Paper Box,CHI-01,0,product_unit,2025-12-01,2025-12-02,8,1.494505,20,0,10,10,10,False,True
+P017,Copy Paper Box,COL-01,0,product_unit,2025-12-01,2025-12-03,9,0.296703,19,10,5,1,1,False,True
+P017,Copy Paper Box,LA-01,3,product_unit,2025-12-01,2025-12-02,8,2.10989,4,0,4,1,1,False,True
+P017,Copy Paper Box,LON-01,10,product_unit,2025-12-01,2025-12-04,10,0.659341,10,0,10,10,10,False,True
+P017,Copy Paper Box,MAN-01,10,product_unit,2025-12-01,2025-12-06,12,0.791209,0,10,10,10,10,True,True
+P017,Copy Paper Box,MUC-01,0,product_unit,2025-12-01,2025-12-03,9,1.186813,10,10,0,10,10,False,True
+P017,Copy Paper Box,NYC-01,3,product_unit,2025-12-01,2025-12-08,14,7.230769,5,3,3,1,1,False,True
+P017,Copy Paper Box,PAR-01,10,product_unit,2025-12-01,2025-12-04,10,1.648352,0,0,0,10,10,True,True
+P017,Copy Paper Box,SYD-01,10,product_unit,2025-12-01,2025-12-07,13,1.0,10,0,10,10,10,False,True
+P017,Copy Paper Box,TOR-01,10,product_unit,2025-12-01,2025-12-07,13,2.857143,0,0,5,5,5,True,True
+P017,Copy Paper Box,VAN-01,0,product_unit,2025-12-01,2025-12-08,14,2.615385,20,0,5,5,5,False,True
+P018,Premium Pens,AUS-01,0,product_unit,2025-12-01,2025-12-03,9,1.483516,20,0,10,10,10,False,True
+P018,Premium Pens,CHI-01,0,product_unit,2025-12-01,2025-12-05,11,1.208791,10,0,0,10,10,False,True
+P018,Premium Pens,COL-01,0,product_unit,2025-12-01,2025-12-05,11,1.571429,20,0,3,1,1,False,True
+P018,Premium Pens,LA-01,10,product_unit,2025-12-01,2025-12-05,11,2.538462,10,0,10,10,10,False,True
+P018,Premium Pens,LON-01,0,product_unit,2025-12-01,2025-12-04,10,2.307692,20,5,5,5,5,False,True
+P018,Premium Pens,MAN-01,20,product_unit,2025-12-01,2025-12-04,10,1.428571,0,0,10,10,10,True,True
+P018,Premium Pens,MUC-01,0,product_unit,2025-12-01,2025-12-08,14,0.615385,10,0,5,5,5,False,True
+P018,Premium Pens,NYC-01,0,product_unit,2025-12-01,2025-12-07,13,2.285714,6,12,2,1,1,False,True
+P018,Premium Pens,PAR-01,0,product_unit,2025-12-01,2025-12-06,12,0.527473,20,0,10,10,10,False,True
+P018,Premium Pens,SYD-01,5,product_unit,2025-12-01,2025-12-05,11,0.725275,5,0,5,5,5,False,True
+P018,Premium Pens,TOR-01,5,product_unit,2025-12-01,2025-12-02,8,1.846154,5,0,5,5,5,False,True
+P018,Premium Pens,VAN-01,0,product_unit,2025-12-01,2025-12-04,10,0.32967,0,10,0,10,10,True,True
+P019,Notebook Pack,AUS-01,5,product_unit,2025-12-01,2025-12-02,8,0.703297,5,0,5,5,5,False,True
+P019,Notebook Pack,CHI-01,5,product_unit,2025-12-01,2025-12-03,9,1.186813,0,0,0,5,5,True,True
+P019,Notebook Pack,COL-01,0,product_unit,2025-12-01,2025-12-05,11,0.241758,10,10,10,10,10,False,True
+P019,Notebook Pack,LA-01,4,product_unit,2025-12-01,2025-12-07,13,6.285714,0,3,0,1,1,True,True
+P019,Notebook Pack,LON-01,20,product_unit,2025-12-01,2025-12-02,8,1.142857,0,0,10,10,10,True,True
+P019,Notebook Pack,MAN-01,10,product_unit,2025-12-01,2025-12-06,12,0.923077,10,0,10,10,10,False,True
+P019,Notebook Pack,MUC-01,0,product_unit,2025-12-01,2025-12-02,8,0.527473,19,0,5,1,1,False,True
+P019,Notebook Pack,NYC-01,0,product_unit,2025-12-01,2025-12-07,13,3.0,5,0,0,1,1,False,True
+P019,Notebook Pack,PAR-01,0,product_unit,2025-12-01,2025-12-04,10,0.43956,10,10,10,10,10,False,True
+P019,Notebook Pack,SYD-01,0,product_unit,2025-12-01,2025-12-02,8,2.021978,9,0,2,1,1,False,True
+P019,Notebook Pack,TOR-01,0,product_unit,2025-12-01,2025-12-04,10,1.208791,20,0,10,10,10,False,True
+P019,Notebook Pack,VAN-01,0,product_unit,2025-12-01,2025-12-06,12,0.131868,5,10,10,5,5,False,True
+P020,Presentation Kit,AUS-01,0,product_unit,2025-12-01,2025-12-06,12,1.846154,5,5,3,1,1,False,True
+P020,Presentation Kit,CHI-01,10,product_unit,2025-12-01,2025-12-02,8,0.615385,10,0,10,10,10,False,True
+P020,Presentation Kit,COL-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,10,10,10,10,10,False,True
+P020,Presentation Kit,LA-01,1,product_unit,2025-12-01,2025-12-04,10,0.32967,3,0,3,1,1,False,True
+P020,Presentation Kit,LON-01,0,product_unit,2025-12-01,2025-12-08,14,0.153846,20,0,10,10,10,False,True
+P020,Presentation Kit,MAN-01,0,product_unit,2025-12-01,2025-12-02,8,0.791209,4,4,4,1,1,False,True
+P020,Presentation Kit,MUC-01,5,product_unit,2025-12-01,2025-12-07,13,0.142857,5,0,5,5,5,False,True
+P020,Presentation Kit,NYC-01,10,product_unit,2025-12-01,2025-12-08,14,0.923077,10,0,10,10,10,False,True
+P020,Presentation Kit,PAR-01,0,product_unit,2025-12-01,2025-12-06,12,0.659341,10,10,10,10,10,False,True
+P020,Presentation Kit,SYD-01,10,product_unit,2025-12-01,2025-12-08,14,0.307692,10,0,10,10,10,False,True
+P020,Presentation Kit,TOR-01,10,product_unit,2025-12-01,2025-12-03,9,0.197802,10,0,10,10,10,False,True
+P020,Presentation Kit,VAN-01,0,product_unit,2025-12-01,2025-12-06,12,0.659341,9,9,2,1,1,False,True
+P021,Coffee Machine,AUS-01,0,product_unit,2025-12-01,2025-12-03,9,1.186813,10,0,0,10,10,False,True
+P021,Coffee Machine,CHI-01,0,product_unit,2025-12-01,2025-12-08,14,1.692308,5,5,0,5,5,False,True
+P021,Coffee Machine,COL-01,5,product_unit,2025-12-01,2025-12-06,12,1.450549,5,0,5,5,5,False,True
+P021,Coffee Machine,LA-01,0,product_unit,2025-12-01,2025-12-07,13,0.714286,20,0,10,10,10,False,True
+P021,Coffee Machine,LON-01,2,product_unit,2025-12-01,2025-12-04,10,0.769231,0,0,1,1,1,True,True
+P021,Coffee Machine,MAN-01,0,product_unit,2025-12-01,2025-12-02,8,0.087912,10,10,0,10,10,False,True
+P021,Coffee Machine,MUC-01,0,product_unit,2025-12-01,2025-12-02,8,0.263736,20,0,10,10,10,False,True
+P021,Coffee Machine,NYC-01,10,product_unit,2025-12-01,2025-12-08,14,0.769231,10,0,10,10,10,False,True
+P021,Coffee Machine,PAR-01,0,product_unit,2025-12-01,2025-12-05,11,0.725275,10,5,5,5,5,False,True
+P021,Coffee Machine,SYD-01,0,product_unit,2025-12-01,2025-12-07,13,0.142857,0,3,0,1,1,True,True
+P021,Coffee Machine,TOR-01,0,product_unit,2025-12-01,2025-12-03,9,0.0,20,0,10,10,10,False,True
+P021,Coffee Machine,VAN-01,0,product_unit,2025-12-01,2025-12-03,9,0.692308,20,0,10,10,10,False,True
+P022,Air Purifier,AUS-01,0,product_unit,2025-12-01,2025-12-02,8,0.43956,10,0,5,5,5,False,True
+P022,Air Purifier,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,0.0,5,5,5,5,5,False,True
+P022,Air Purifier,COL-01,0,product_unit,2025-12-01,2025-12-05,11,0.604396,8,8,1,1,1,False,True
+P022,Air Purifier,LA-01,0,product_unit,2025-12-01,2025-12-07,13,1.0,15,5,5,5,5,False,True
+P022,Air Purifier,LON-01,0,product_unit,2025-12-01,2025-12-02,8,0.0,10,0,5,5,5,False,True
+P022,Air Purifier,MAN-01,1,product_unit,2025-12-01,2025-12-05,11,0.0,0,0,1,1,1,False,True
+P022,Air Purifier,MUC-01,0,product_unit,2025-12-01,2025-12-04,10,0.43956,5,10,0,5,5,False,True
+P022,Air Purifier,NYC-01,0,product_unit,2025-12-01,2025-12-07,13,0.142857,4,0,1,1,1,False,True
+P022,Air Purifier,PAR-01,0,product_unit,2025-12-01,2025-12-05,11,1.208791,20,10,0,5,5,False,True
+P022,Air Purifier,SYD-01,0,product_unit,2025-12-01,2025-12-08,14,0.0,5,0,5,5,5,False,True
+P022,Air Purifier,TOR-01,10,product_unit,2025-12-01,2025-12-06,12,0.263736,10,0,10,10,10,False,True
+P022,Air Purifier,VAN-01,1,product_unit,2025-12-01,2025-12-04,10,0.21978,2,2,4,1,1,False,True
+P023,Portable Heater,AUS-01,0,product_unit,2025-12-01,2025-12-05,11,1.087912,20,10,10,10,10,False,True
+P023,Portable Heater,CHI-01,0,product_unit,2025-12-01,2025-12-08,14,1.846154,5,5,5,5,5,False,True
+P023,Portable Heater,COL-01,0,product_unit,2025-12-01,2025-12-08,14,1.538462,0,9,5,1,1,True,True
+P023,Portable Heater,LA-01,0,product_unit,2025-12-01,2025-12-07,13,0.428571,3,0,0,1,1,False,True
+P023,Portable Heater,LON-01,0,product_unit,2025-12-01,2025-12-04,10,1.098901,4,0,1,1,1,False,True
+P023,Portable Heater,MAN-01,0,product_unit,2025-12-01,2025-12-05,11,0.120879,5,5,0,5,5,False,True
+P023,Portable Heater,MUC-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,10,0,5,5,5,False,True
+P023,Portable Heater,NYC-01,0,product_unit,2025-12-01,2025-12-07,13,0.428571,4,0,1,1,1,False,True
+P023,Portable Heater,PAR-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,7,0,0,1,1,False,True
+P023,Portable Heater,SYD-01,0,product_unit,2025-12-01,2025-12-08,14,1.384615,10,0,0,5,5,False,True
+P023,Portable Heater,TOR-01,0,product_unit,2025-12-01,2025-12-05,11,0.846154,7,0,2,1,1,False,True
+P023,Portable Heater,VAN-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,10,0,0,10,10,False,True
+P024,Desk Fan,AUS-01,0,product_unit,2025-12-01,2025-12-08,14,2.153846,10,0,0,10,10,False,True
+P024,Desk Fan,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,1.582418,5,10,5,5,5,False,True
+P024,Desk Fan,COL-01,20,product_unit,2025-12-01,2025-12-04,10,0.21978,0,0,10,10,10,True,True
+P024,Desk Fan,LA-01,0,product_unit,2025-12-01,2025-12-04,10,0.879121,10,10,10,10,10,False,True
+P024,Desk Fan,LON-01,6,product_unit,2025-12-01,2025-12-08,14,0.923077,0,0,5,1,1,True,True
+P024,Desk Fan,MAN-01,20,product_unit,2025-12-01,2025-12-03,9,1.384615,0,0,10,10,10,True,True
+P024,Desk Fan,MUC-01,5,product_unit,2025-12-01,2025-12-07,13,0.428571,0,0,0,5,5,True,True
+P024,Desk Fan,NYC-01,10,product_unit,2025-12-01,2025-12-07,13,2.428571,0,0,0,10,10,True,True
+P024,Desk Fan,PAR-01,0,product_unit,2025-12-01,2025-12-07,13,3.0,20,0,5,5,5,False,True
+P024,Desk Fan,SYD-01,0,product_unit,2025-12-01,2025-12-05,11,1.692308,15,8,4,1,1,False,True
+P024,Desk Fan,TOR-01,0,product_unit,2025-12-01,2025-12-05,11,0.241758,20,10,10,10,10,False,True
+P024,Desk Fan,VAN-01,0,product_unit,2025-12-01,2025-12-08,14,0.307692,4,0,0,1,1,False,True
+P025,USB Power Hub,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,3.142857,10,0,5,5,5,False,True
+P025,USB Power Hub,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,2.373626,3,5,0,1,1,False,True
+P025,USB Power Hub,COL-01,0,product_unit,2025-12-01,2025-12-02,8,0.0,19,0,2,1,1,False,True
+P025,USB Power Hub,LA-01,5,product_unit,2025-12-01,2025-12-06,12,4.483516,5,0,5,5,5,False,True
+P025,USB Power Hub,LON-01,5,product_unit,2025-12-01,2025-12-07,13,1.428571,5,0,5,5,5,False,True
+P025,USB Power Hub,MAN-01,10,product_unit,2025-12-01,2025-12-04,10,1.758242,10,0,10,10,10,False,True
+P025,USB Power Hub,MUC-01,10,product_unit,2025-12-01,2025-12-08,14,1.076923,0,10,10,10,10,True,True
+P025,USB Power Hub,NYC-01,0,product_unit,2025-12-01,2025-12-02,8,2.725275,20,0,10,10,10,False,True
+P025,USB Power Hub,PAR-01,0,product_unit,2025-12-01,2025-12-06,12,2.637363,20,5,0,5,5,False,True
+P025,USB Power Hub,SYD-01,0,product_unit,2025-12-01,2025-12-08,14,1.692308,0,10,0,10,10,True,True
+P025,USB Power Hub,TOR-01,10,product_unit,2025-12-01,2025-12-02,8,0.351648,10,0,10,10,10,False,True
+P025,USB Power Hub,VAN-01,0,product_unit,2025-12-01,2025-12-03,9,1.384615,10,10,0,10,10,False,True
+P026,Webcam HD,AUS-01,0,product_unit,2025-12-01,2025-12-08,14,1.538462,20,0,10,10,10,False,True
+P026,Webcam HD,CHI-01,0,product_unit,2025-12-01,2025-12-05,11,1.450549,10,10,5,5,5,False,True
+P026,Webcam HD,COL-01,0,product_unit,2025-12-01,2025-12-03,9,0.0,10,0,0,10,10,False,True
+P026,Webcam HD,LA-01,0,product_unit,2025-12-01,2025-12-08,14,3.076923,20,0,10,10,10,False,True
+P026,Webcam HD,LON-01,2,product_unit,2025-12-01,2025-12-07,13,2.142857,0,3,2,1,1,True,True
+P026,Webcam HD,MAN-01,0,product_unit,2025-12-01,2025-12-04,10,1.318681,5,0,0,5,5,False,True
+P026,Webcam HD,MUC-01,0,product_unit,2025-12-01,2025-12-05,11,1.208791,10,0,0,10,10,False,True
+P026,Webcam HD,NYC-01,0,product_unit,2025-12-01,2025-12-04,10,1.538462,20,10,10,10,10,False,True
+P026,Webcam HD,PAR-01,4,product_unit,2025-12-01,2025-12-05,11,1.087912,2,0,4,1,1,False,True
+P026,Webcam HD,SYD-01,0,product_unit,2025-12-01,2025-12-05,11,0.0,5,5,5,5,5,False,True
+P026,Webcam HD,TOR-01,10,product_unit,2025-12-01,2025-12-07,13,0.571429,0,0,5,5,5,True,True
+P026,Webcam HD,VAN-01,0,product_unit,2025-12-01,2025-12-03,9,0.692308,20,0,10,10,10,False,True
+P027,Security Camera,AUS-01,15,product_unit,2025-12-01,2025-12-07,13,1.142857,0,0,10,5,5,True,True
+P027,Security Camera,CHI-01,0,product_unit,2025-12-01,2025-12-06,12,0.131868,20,0,10,10,10,False,True
+P027,Security Camera,COL-01,5,product_unit,2025-12-01,2025-12-08,14,2.615385,5,0,5,5,5,False,True
+P027,Security Camera,LA-01,0,product_unit,2025-12-01,2025-12-05,11,0.725275,5,5,0,5,5,False,True
+P027,Security Camera,LON-01,0,product_unit,2025-12-01,2025-12-04,10,0.32967,4,0,0,1,1,False,True
+P027,Security Camera,MAN-01,5,product_unit,2025-12-01,2025-12-04,10,1.538462,5,0,5,5,5,False,True
+P027,Security Camera,MUC-01,0,product_unit,2025-12-01,2025-12-05,11,0.604396,24,0,3,1,1,False,True
+P027,Security Camera,NYC-01,0,product_unit,2025-12-01,2025-12-08,14,4.923077,30,10,10,10,10,False,True
+P027,Security Camera,PAR-01,20,product_unit,2025-12-01,2025-12-02,8,0.087912,0,0,10,10,10,True,True
+P027,Security Camera,SYD-01,5,product_unit,2025-12-01,2025-12-04,10,0.659341,0,5,5,5,5,True,True
+P027,Security Camera,TOR-01,20,product_unit,2025-12-01,2025-12-07,13,0.857143,0,0,10,10,10,True,True
+P027,Security Camera,VAN-01,0,product_unit,2025-12-01,2025-12-05,11,0.725275,24,0,2,1,1,False,True
+P028,Backup Drive 2TB,AUS-01,0,product_unit,2025-12-01,2025-12-07,13,0.857143,14,0,4,1,1,False,True
+P028,Backup Drive 2TB,CHI-01,0,product_unit,2025-12-01,2025-12-07,13,1.428571,20,0,10,10,10,False,True
+P028,Backup Drive 2TB,COL-01,0,product_unit,2025-12-01,2025-12-03,9,0.593407,0,10,2,1,1,False,True
+P028,Backup Drive 2TB,LA-01,5,product_unit,2025-12-01,2025-12-04,10,1.208791,5,0,5,5,5,False,True
+P028,Backup Drive 2TB,LON-01,0,product_unit,2025-12-01,2025-12-07,13,0.714286,9,3,5,1,1,False,True
+P028,Backup Drive 2TB,MAN-01,0,product_unit,2025-12-01,2025-12-02,8,1.582418,0,4,0,1,1,False,True
+P028,Backup Drive 2TB,MUC-01,0,product_unit,2025-12-01,2025-12-02,8,0.967033,5,5,5,5,5,False,True
+P028,Backup Drive 2TB,NYC-01,3,product_unit,2025-12-01,2025-12-07,13,3.0,5,0,5,1,1,False,True
+P028,Backup Drive 2TB,PAR-01,0,product_unit,2025-12-01,2025-12-03,9,0.395604,0,5,0,5,5,False,True
+P028,Backup Drive 2TB,SYD-01,0,product_unit,2025-12-01,2025-12-07,13,0.571429,10,0,0,5,5,False,True
+P028,Backup Drive 2TB,TOR-01,0,product_unit,2025-12-01,2025-12-07,13,3.0,2,4,2,1,1,False,True
+P028,Backup Drive 2TB,VAN-01,10,product_unit,2025-12-01,2025-12-02,8,0.43956,10,0,10,10,10,False,True
