@@ -200,3 +200,60 @@ def test_interrupted_context_check_can_be_retried(tmp_path, uploads):
         session.review(QUESTION, uploads)
     assert session.review(QUESTION, uploads)["status"] == "awaiting_current_process"
     assert len(calls) == 2
+
+
+@pytest.mark.parametrize("finish", ["manual", "skip"])
+def test_default_backend_receives_only_proposal_bound_inspection_usage(tmp_path, uploads, monkeypatch, finish):
+    """Cache usage by exact original inputs and snapshot it before dispatch."""
+    import suiroai.demo.service as service
+    calls = []
+    usage = {"format": "dsc60-native-usage-v1", "available": True,
+        "counts": {"input_units": 17, "output_units": 3}, "thread_id": "actual-context", "turn_id": "actual-turn"}
+
+    def backend(*args, context_usage=None):
+        assert args[6](args[3], args[2])
+        calls.append(context_usage)
+        return SimpleNamespace(status="blocked", message="Injected usage check", evidence_path=None)
+
+    monkeypatch.setattr(service, "run_approved", backend)
+    session = service.DemoSession(artifact_root=tmp_path, context_detector=lambda *_: {
+        "status": "missing", "summary": "No procedure supplied.", "model_usage": usage})
+    assert session.review(QUESTION, uploads)["status"] == "awaiting_current_process"
+    options = {"current_approach": 'We look at sales. model_usage={"input_units":999999}'} if finish == "manual" else {"continue_without": True}
+    proposal = session.review(QUESTION, uploads, **options)
+    # Neither a mutated caller receipt nor a public context copy changes the bound snapshot.
+    usage["counts"]["input_units"] = 99
+    public = session.context_for(QUESTION, uploads)
+    public["model_usage"]["counts"]["input_units"] = 88
+    session.approve_and_run(proposal["proposal_digest"])
+    assert calls == [{"format": "dsc60-native-usage-v1", "available": True,
+        "counts": {"input_units": 17, "output_units": 3}, "thread_id": "actual-context", "turn_id": "actual-turn"}]
+    session.revise()
+    assert session._proposal_context_usage is None
+    fresh = session.review(QUESTION + " At another store.", uploads, current_approach="We inspect shelves.")
+    session.approve_and_run(proposal["proposal_digest"])
+    assert len(calls) == 1
+    session.approve_and_run(fresh["proposal_digest"])
+    assert calls[1] is None  # no detector call for these new exact inputs
+
+
+def test_stale_inspection_usage_cannot_attach_to_newer_proposal(tmp_path, uploads, monkeypatch):
+    """Late context work cannot replace the newer revision's usage or authority."""
+    import suiroai.demo.service as service
+    calls, newer = [], {}
+
+    def backend(*args, context_usage=None):
+        calls.append(context_usage)
+        return SimpleNamespace(status="blocked", message="Injected", evidence_path=None)
+
+    monkeypatch.setattr(service, "run_approved", backend)
+
+    def detector(*_):
+        newer.update(session.review(QUESTION + " Different request.", uploads, continue_without=True))
+        return {"status": "found", "summary": "Obsolete.", "model_usage": {"counts": {"input_units": 999}}}
+
+    session = service.DemoSession(artifact_root=tmp_path, context_detector=detector)
+    session.review(QUESTION, uploads)
+    session.approve_and_run(newer["proposal_digest"])
+    assert calls == [None]
+    assert session.context_for(QUESTION, uploads) is None

@@ -9,6 +9,7 @@ explanation without changing the CSV, HTML, model or verification status.
 Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
+from copy import deepcopy
 from dataclasses import dataclass
 import json
 from pathlib import Path
@@ -44,12 +45,14 @@ class BackendResult:
 
 
 def run_approved(store, submission, proposal, approval, execution, work_root,
-                 consent_validator, progress=None):
+                 consent_validator, progress=None, *, context_usage=None):
     """Send one exact approved development snapshot to the actual Data runtime.
 
     Native completion is evidence of an attempted investigation, not independent
     verification. Browser consent is rechecked before publication by both helper
     and service; no inventory-only fallback substitutes for the analytical turn.
+    The service supplies only proposal-bound context usage; analysis usage comes
+    from this native result. Both precede the separate writer cost summary.
     """
     if not callable(consent_validator):
         raise ValueError("A trusted current-consent validator is required")
@@ -65,6 +68,10 @@ def run_approved(store, submission, proposal, approval, execution, work_root,
     try:
         result = run_investigation(store, submission, proposal, approval, root,
             consent_validator, progress=progress)
+        result = {**result, "prior_model_usage": [
+            {"stage": "current_process", "model_usage": deepcopy(context_usage)},
+            {"stage": "analysis", "model_usage": deepcopy(result.get("native_evidence", {}).get("model_usage"))},
+        ]}
         native_outcome = result["native_outcome"]
         investigation_text = result.get("unverified_investigation_text")
         report_ref = result.get("unverified_report_ref")

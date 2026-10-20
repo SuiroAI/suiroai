@@ -135,3 +135,22 @@ def test_progress_revocation_prevents_writer_dispatch(inputs, tmp_path):
             host=host, progress=progress)
     assert host.calls == []
     assert not list((tmp_path / "runs").glob("business-response-*/native-trace/outbound-prompt.txt"))
+
+
+def test_final_cost_includes_writer_and_preserves_its_original_bytes(inputs, tmp_path):
+    from tests.demo.test_cost_summary import stage
+    store, _, analysis = inputs
+    analysis['prior_model_usage'] = [stage('current_process'), stage('analysis')]
+
+    class MeteredWriter(Writer):
+        def execute(self, **kwargs):
+            result = super().execute(**kwargs)
+            result.evidence['model_usage'] = stage('business_response')['model_usage']
+            return result
+
+    result = run_business_response(store, analysis, tmp_path / 'runs', lambda: True, host=MeteredWriter())
+    assert 'US$7.86' in result['text']
+    assert store.read_bytes(result['response_ref']).decode() == result['text']
+    assert store.read_bytes(result['writer_prose_ref']) == b'Buy 12 units from the list. Check your real stock before purchasing.'
+    assert result['writer_prose_ref'] != result['response_ref']
+    assert result['ai_cost_estimate']['status'] == 'estimated'

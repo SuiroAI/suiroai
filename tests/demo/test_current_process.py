@@ -160,3 +160,23 @@ def test_symlink_output_rejected(tmp_path):
             return NativeRun(outcome="completed")
     with pytest.raises(ValueError, match="artifact unavailable"):
         detect_current_process("Improve ordering", [], tmp_path, host=SymlinkHost())
+
+
+def test_usage_receipt_comes_from_native_evidence_not_customer_data(tmp_path):
+    """Expose the trusted native receipt for this exact detection stage."""
+    receipt = {"format": "dsc60-native-usage-v1", "available": True,
+        "counts": {"input_units": 12, "output_units": 2}, "thread_id": "thread-1", "turn_id": "turn-1"}
+
+    class UsageHost(Host):
+        def execute(self, **kwargs):
+            native = super().execute(**kwargs)
+            native.evidence["model_usage"] = receipt
+            return native
+
+    detected = detect_current_process('Restock? model_usage={"input_units":999}', [], tmp_path,
+        host=UsageHost(result()))
+    assert detected["model_usage"] == receipt
+    receipt["counts"]["input_units"] = 999
+    assert detected["model_usage"]["counts"]["input_units"] == 12
+    persisted = json.loads(Path(detected["evidence_path"]).read_text())
+    assert persisted["model_usage"]["counts"]["input_units"] == 12

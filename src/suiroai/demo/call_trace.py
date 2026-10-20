@@ -61,6 +61,7 @@ def finish_call_trace(receipt, *, native=None, error=None):
     if native is not None:
         result["native_execution"] = {"thread_id": native.thread_id, "turn_id": native.turn_id,
             "outcome": native.outcome, "error_code": native.error_code, "message": native.message}
+        result["model_usage"] = deepcopy(native.evidence.get("model_usage"))
         thread = native.evidence.get("thread_start", {})
         result["observed_configuration"] = {
             "skill_sha256": native.evidence.get("skill_sha256"),

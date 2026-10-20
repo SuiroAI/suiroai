@@ -52,6 +52,14 @@ After approval, the page shows a neutral working indicator, then the actual anal
 
 Records and approved source copies are retained in ignored `artifacts/demo/<session>/`; native receipts and controller audits have immutable references. These artifacts are local and must not be committed wholesale.
 
+## Recorded-demo scenario presentation
+
+The supplied stock, deliveries and ordering rules are assumed operating inputs within the user's requested demo roleplay. Fresh task reviews and Data explanations use that scenario directly, without asking for replacement data or adding synthetic/illustrative provenance flags to the new customer list. Actual source files and provenance remain unchanged in internal evidence; no independently verified real-stock claim or prior-run improvement is implied. This is presentation scope only, with no new customer setting and no change to models or evaluation. The rejected/deleted earlier recording must not be presented as the replacement take.
+
+## Repeatable weekly calculation
+
+Fresh Data runs prepare a reusable `restock_routine.py` with configurable input files, planning date and output, together with `routine_usage.md` and measured `routine_measurements.json` in the analytical workspace. The approved task review focuses on replacing recurring restocking hand calculations and identifying exceptions. The app continues to offer the explicit CSV download and separate HTML table; no schedule or automatic file action is installed. The usage artifact describes running the command again and how ChatGPT can help configure optional local scheduling. The recorded demonstration still uses November 30 development inputs, and local calculation time remains separate from AI-assisted analysis/build time and cost.
+
 ## Verification and reproduction
 
 ```sh
@@ -82,3 +90,5 @@ Each detector/analysis attempt now has a sibling `native-trace/` directory conta
 `DemoSession(comparison_contract=definition)` optionally binds an explicitly supplied engineering comparison to the reviewed task. It does not infer or invent business rules. Normal app sessions leave it unset so Data owns analytical choices. For controlled engineering validation, `scripts/dsc60_workflow_replay.py` traverses the real service review/approval/backend path with a fixed supplied contract and retained detector context; it is not a user-operated browser recording. `scripts/dsc60_trace_replay.py` separately replays retained exposed prompts unchanged. Both use the existing restricted native host, preserve December outcomes and allow healthy analysis to finish. [DSC-60 evidence](../../evidence/demo/dsc60-debug-2026-10-20/README.md) distinguishes those runs from the pair with shared controls and from final performance acceptance.
 
 Completed analyses now pass through a separate native business-writing turn before the final explanation is published. It receives bounded findings, aggregate comparison/workload evidence, original model rationale and CSV identity/counts; it cannot change the CSV, HTML or fitted model. This is an additional AI-assisted presentation call, separate from the non-LLM routine calculation. Exact prompts and lineage are retained internally. Current approval is checked before dispatch and publication; a failed writing step keeps the useful original findings. See [the final DSC-60 evaluation and writing evidence](../../evidence/demo/dsc60-debug-2026-10-20/final-evaluation/README.md).
+
+The final explanation now focuses on the automated weekly task. The native adapter retains only allowlisted numeric model-usage counters alongside existing traces. Trusted detector usage is bound to the approved proposal, and the final controller estimates intake+analysis+writing cost after all three complete. The appended standard-API-rate estimate has its own published immutable response reference; original writer bytes and actual Codex billing remain separate. Known long-context requests produce a pricing range. Scheduling language must be supported by the generated configurable routine and usage guide; the app installs no schedule.

@@ -8,9 +8,12 @@ transport failures into an invented absence of a current process.
 
 Exact outbound prompts and requested model settings are persisted before native
 dispatch, with returned thread/turn links retained for internal call tracing.
+Expose the native numeric model-usage receipt separately from customer evidence
+so the approved workflow can account for this exact inspection stage.
 Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
+from copy import deepcopy
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -76,7 +79,7 @@ def detect_current_process(question, uploads, work_root, *, host=None):
     trace = finish_call_trace(trace, native=native)
     internal = {"format": "dsc59-current-process-inspection-v1",
         "question_sha256": sha256(question.encode()).hexdigest(), "released_files": manifest,
-        "call_trace": trace,
+        "call_trace": trace, "model_usage": deepcopy(native.evidence.get("model_usage")),
         "native_outcome": native.outcome, "error_code": native.error_code,
         "message": native.message, "thread_id": native.thread_id, "turn_id": native.turn_id,
         "native_evidence": native.evidence, "native_items": native.items}

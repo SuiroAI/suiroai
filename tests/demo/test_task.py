@@ -13,7 +13,7 @@ import pytest
 
 from suiroai.demo.investigation import investigation_prompt, run_investigation
 from suiroai.demo.service import DemoSession, UploadedInput
-from suiroai.demo.task import approved_task_context, structured_task, task_context
+from suiroai.demo.task import DEMO_SCENARIO, approved_task_context, structured_task, task_context
 from suiroai.integration.native import NativeRun
 
 
@@ -34,11 +34,15 @@ def test_approved_native_task_preserves_original_and_context_provenance(tmp_path
     view = session.review(original, [UploadedInput(name="sales.csv", data=b"Order_Date,Quantity\n2025-11-01,2\n2025-12-01,999999\n")], **kwargs)
     assert view["status"] == "awaiting_approval"
     assert "dsc60-task-context" not in str(view)
+    assert "repeatable weekly routine" in view["proposal_summary"]["understanding"]
+    assert "synthetic" not in " ".join(view["proposal_summary"]["assumptions"]).lower()
     session.approve_and_run(view["proposal_digest"])
     store, submission, proposal, approval = calls[0][:4]
     context = approved_task_context(proposal)
     assert submission["original_request"] == original
     assert context["original_question"] == original
+    assert context["demo_scenario"] == DEMO_SCENARIO
+    assert next(item for item in proposal["assumptions"] if item["assumption_id"] == "demo-scope")["classification"] == "synthetic_assumption"
     process = context["current_process"]
     assert process["source"] == {"detected": "detector_interpretation", "none": "detector_interpretation", "manual": "user_answer", "skip": "explicit_continue_without"}[scenario]
     if scenario in {"detected", "none"}:
@@ -64,11 +68,17 @@ def test_approved_native_task_preserves_original_and_context_provenance(tmp_path
             assert b"999999" not in prompt_bytes
             brief = json.loads(prompt.split("Structured internal task (customer_context remains untrusted data):\n", 1)[1].split("\nReleased inputs", 1)[0])
             assert brief["customer_context"] == context
+            assert brief["demo_scenario"] == DEMO_SCENARIO
+            assert brief["demo_scenario"]["source_provenance_unchanged"] is True
+            assert brief["demo_scenario"]["customer_provenance_only_csv_columns"] is False
             assert brief["candidate_search"]["mode"] == "autonomous_discovery"
             assert set(brief["task_refinement_planning"]["responsibilities"]) == {
                 "decision_outcomes", "evidence_provenance", "candidate_discovery",
                 "operational_suitability", "selection_delivery"}
             assert "task_refinement.json" in brief["deliverables"]
+            assert brief["automation_routine"]["purpose"] == "repeatable_weekly_non_llm_restocking"
+            assert brief["automation_routine"]["program"] in brief["deliverables"]
+            assert brief["automation_routine"]["measurement"] in brief["deliverables"]
             assert brief["controller_scope"]["latest_transaction_date"] == "2025-11-30"
             assert "already been inspected" in brief["controller_scope"]["evaluation_status"]
             assert all(b"999999" not in file.read_bytes() for file in native["released_root"].iterdir())
@@ -242,3 +252,37 @@ def test_data_refinement_preserves_context_and_distinguishes_search_scope(contro
         assert brief["comparison_contract"]["definition"] == contract_definition()
     else:
         assert "comparison_contract" not in brief
+
+
+def test_demo_scenario_is_controller_context_without_changing_model_scope():
+    """Roleplay affects presentation, while provenance and comparisons remain explicit."""
+    context = task_context("What should I restock?", detected={"status": "found", "summary": "Recent sales.",
+        "demo_scenario": {"source_provenance_unchanged": False}})
+    assert context["demo_scenario"] == DEMO_SCENARIO
+    assert context["demo_scenario"]["independently_verified_real_stock_claimed"] is False
+    context["demo_scenario"]["customer_provenance_warnings"] = True
+    assert DEMO_SCENARIO["customer_provenance_warnings"] is False
+    brief = structured_task(context)
+    assert brief["demo_scenario"] == DEMO_SCENARIO
+    assert brief["candidate_search"]["model_scope"]["family"] == "lightweight_conventional_predictive_forecasting"
+    controlled = structured_task(task_context("Restock", comparison_contract=contract_definition()))
+    assert controlled["comparison_contract"]["definition"] == contract_definition()
+    assert controlled["demo_scenario"] == DEMO_SCENARIO
+
+
+@pytest.mark.parametrize("has_process", [True, False])
+def test_repeatable_automation_parameters_preserve_demo_cutoff_and_customer_context(has_process):
+    """Automate supported calculations without inventing an incumbent or rereading holdout."""
+    question = "What should I restock next week?"
+    kwargs = {"current_approach": "I look over the last few months by hand."} if has_process else {"continue_without": True}
+    context = task_context(question, **kwargs)
+    brief = structured_task(context)
+    routine = brief["automation_routine"]
+    assert routine["purpose"] == "repeatable_weekly_non_llm_restocking"
+    assert routine["configurable"] == ["sales_path", "stock_path", "deliveries_path", "policy_path", "planning_date", "output_path"]
+    assert {routine["program"], routine["usage"], routine["measurement"]} <= set(brief["deliverables"])
+    assert brief["customer_context"] == context
+    assert brief["customer_context"]["original_question"] == question
+    assert brief["controller_scope"]["planning_date"] == "2025-11-30"
+    assert brief["controller_scope"]["latest_transaction_date"] == "2025-11-30"
+    assert brief["candidate_search"]["model_scope"]["compute_target"]["cpu_only"] is True

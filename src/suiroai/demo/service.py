@@ -7,6 +7,8 @@ unverified findings remain distinct from an independently verified report.
 
 Structured task context preserves the original question and attributes the
 current-process interpretation independently of the readable review text.
+Trusted native usage is snapshotted per proposal from its exact context cache
+entry; user text cannot supply counters or carry costs across edited tasks.
 Linear: https://linear.app/gr3enarr0w/issue/DSC-60
 Linear: https://linear.app/gr3enarr0w/issue/DSC-59
 """
@@ -131,6 +133,7 @@ class DemoSession:
         self._revision = 0
         self._receipt = self._proposal = self._approval = None
         self._consent = None
+        self._proposal_context_usage = None
         self._attempted = set()
         self._store = None
         self._download = None
@@ -167,12 +170,14 @@ class DemoSession:
             self._fingerprint = current
             self._revision += 1
             self._receipt = self._proposal = self._approval = self._consent = None
+            self._proposal_context_usage = None
             self._download = self._html_download = None
             self._view = {"status": "draft", "message": "Inputs changed. Review the task before approving a new run." if had_proposal else "", "errors": []}
 
     def revise(self):
         with self._lock:
             self._proposal = self._approval = self._consent = None
+            self._proposal_context_usage = None
             self._download = self._html_download = None
             self._revision += 1
             self._view = {"status": "draft", "message": "Edit the question or files, then select Review task again.", "errors": []}
@@ -242,7 +247,7 @@ class DemoSession:
                 if revision != self._revision:
                     return self.view
                 self._context_cache[key] = {field: deepcopy(context[field]) for field in
-                    ("status", "summary", "evidence", "evidence_path", "result_sha256", "native_outcome", "released_files")
+                    ("status", "summary", "evidence", "evidence_path", "result_sha256", "native_outcome", "released_files", "model_usage")
                     if field in context}
         with self._lock:
             if revision != self._revision:
@@ -257,9 +262,10 @@ class DemoSession:
                     request += "\n\nThe supplied context explicitly says there is no current approach. Do not invent an incumbent."
             return self._propose(request, uploads, context=task_context(question,
                 current_approach=current_approach, continue_without=continue_without, detected=context,
-                comparison_contract=(self._comparison_contract["definition"] if self._comparison_contract else None)))
+                comparison_contract=(self._comparison_contract["definition"] if self._comparison_contract else None)),
+                context_usage=deepcopy(self._context_cache.get(key, {}).get("model_usage")))
 
-    def _propose(self, question, uploads, *, context=None):
+    def _propose(self, question, uploads, *, context=None, context_usage=None):
         uploads = tuple(uploads)
         with self._lock:
             if self._proposal is not None and self._view["status"] == "awaiting_approval":
@@ -268,6 +274,7 @@ class DemoSession:
             self._consent = self._approval = None
             self._download = self._html_download = None
             self._receipt = self._proposal = None
+            self._proposal_context_usage = None
             errors = []
             if not question.strip():
                 errors.append("Describe what you are trying to solve for.")
@@ -306,7 +313,7 @@ class DemoSession:
             temporal = {key: value["const"] for key, value in schema_validator().schema["$defs"]["temporal_plan"]["properties"].items()}
             assumptions = [
                 {"assumption_id": "demo-scope", "classification": "synthetic_assumption", "status": "proposed", "source_refs": [],
-                 "statement": "Use November 30, 2025 as the planning date and same-product units. Data will assess whether supplied operational inputs are synthetic and explain how their provenance affects the results."},
+                 "statement": "Use November 30, 2025 as the planning date and same-product units. Use the supplied stock, deliveries and ordering rules as the operating inputs for this demonstration."},
                 {"assumption_id": "demo-unknown-history", "classification": "unknown", "status": "unresolved", "source_refs": receipt.external_refs,
                  "statement": "Data will assess historical availability and daily coverage from the files, choose supported treatment for missing observations, and explain assumptions and sensitivities."},
                 {"assumption_id": "demo-inferred-measures", "classification": "supported_interpretation", "status": "proposed", "source_refs": receipt.external_refs,
@@ -338,14 +345,15 @@ class DemoSession:
             if failures:
                 raise ValueError("Invalid proposal: " + "; ".join(failures))
             self._receipt, self._proposal = receipt, proposal
+            self._proposal_context_usage = (proposal["binding"]["proposal_digest"], deepcopy(context_usage))
             self._store = ArtifactStore(self._root / "store")
             for source in receipt.sources:
                 self._store.put_bytes(source.file_id, source.version, source.provenance, source.data)
             self._store.put_record(receipt.submission)
             self._store.put_record(proposal)
             summary = {"question": question.strip(), "inputs": [file["original_name"] for file in receipt.submission["files"]],
-                "review_date": "2025-11-30", "output": "A restocking CSV to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
-                "understanding": "Data will inspect and compare your files, determine supported treatment and methods, and explain the results and limitations here. No follow-up answers are required.",
+                "review_date": "2025-11-30", "output": "A repeatable weekly restocking routine, a restocking CSV list to download, the same list in a separate browser tab, and a plain-language explanation shown in the app.",
+                "understanding": "Turn the recurring restocking hand calculation into a repeatable weekly routine using your files and ordering rules, starting from your current approach when supplied. Data will prepare the list, flag items needing attention and check the calculation quality. No follow-up answers are required.",
                 "assumptions": [item["statement"] for item in assumptions if item["assumption_id"] != CONTEXT_ID],
                 "execution": "Approve analysis of this question and these files. Data will prepare the restocking CSV and explanation using records through November 30, 2025; later transaction outcomes remain separate."}
             if self._comparison_contract:
@@ -375,6 +383,9 @@ class DemoSession:
             self._consent = (deepcopy(approval), record_ref(self._proposal), self._fingerprint)
             self._store.put_record(approval)
             proposal, receipt, fingerprint = deepcopy(self._proposal), self._receipt, self._fingerprint
+            context_usage = (deepcopy(self._proposal_context_usage[1])
+                if self._proposal_context_usage is not None
+                and self._proposal_context_usage[0] == proposal_digest_value else None)
             self._view.update(status="running", message="Checking the approved task and native analytical runtime.")
 
         def consent(actual_approval, actual_proposal):
@@ -383,8 +394,9 @@ class DemoSession:
                     and actual_approval == self._consent[0] and record_ref(actual_proposal) == self._consent[1])
 
         try:
+            backend_options = {"context_usage": context_usage} if self._backend is run_approved else {}
             result = self._backend(self._store, receipt.submission, proposal, approval, None,
-                self._root / "runs", consent)
+                self._root / "runs", consent, **backend_options)
             with self._lock:
                 if self._fingerprint != fingerprint or not consent(approval, proposal):
                     return self.view

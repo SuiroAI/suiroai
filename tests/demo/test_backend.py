@@ -237,3 +237,39 @@ class BusinessWritingBackendTests(unittest.TestCase):
             assert result.download_bytes == store.read_bytes(ref)
             receipt = json.loads(Path(result.evidence_path).read_text())
             assert receipt['stage_result']['business_response']['error']['message'] == 'TEST writer error'
+
+
+class PriorUsageBackendTests(unittest.TestCase):
+    """Give the writer exact earlier stage receipts without user-derived counters.
+
+    Explicit mocked boundaries retain call wiring and immutable CSV identity.
+    Linear: https://linear.app/gr3enarr0w/issue/DSC-60
+    """
+
+    def test_context_and_analysis_usage_are_attached_before_writer_dispatch(self):
+        from suiroai.demo.backend import run_approved
+        with tempfile.TemporaryDirectory(dir="/private/tmp") as directory:
+            root = Path(directory)
+            store = ArtifactStore(root / 'store')
+            ref = store.put_bytes('csv', 1, 'derived', b'Product_ID,Store_ID,OrderQty\nP,S,1\n')
+            record = {'artifact_id': 'test', 'artifact_version': 1, 'provenance': 'derived'}
+            context_usage = {'counts': {'input_units': 10}, 'thread_id': 'context'}
+            analysis_usage = {'counts': {'input_units': 20}, 'thread_id': 'analysis'}
+            native = {'native_outcome': 'completed', 'unverified_report_ref': ref,
+                'unverified_investigation_text': 'Original', 'native_evidence': {'model_usage': analysis_usage}}
+            expected = [{'stage': 'current_process', 'model_usage': context_usage},
+                {'stage': 'analysis', 'model_usage': analysis_usage}]
+
+            def writer(_store, stage, *_args, **_kwargs):
+                assert stage['prior_model_usage'] == expected
+                assert stage['prior_model_usage'][0]['model_usage'] is not context_usage
+                assert stage['prior_model_usage'][1]['model_usage'] is not analysis_usage
+                return {'status': 'rewritten', 'text': 'Plain explanation'}
+
+            with patch('suiroai.demo.backend.run_investigation', return_value=native), \
+                    patch('suiroai.demo.backend.run_business_response', side_effect=writer):
+                result = run_approved(store, record, record, record, None, root / 'runs',
+                    lambda *_: True, context_usage=context_usage)
+            receipt = json.loads(Path(result.evidence_path).read_text())
+            assert receipt['stage_result']['prior_model_usage'] == expected
+            assert result.download_bytes == store.read_bytes(ref)

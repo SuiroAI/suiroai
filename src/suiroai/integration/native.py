@@ -32,6 +32,7 @@ from typing import Literal
 
 from . import native_profile as policy
 from .artifacts import read_stage_file
+from .usage import UsageAccumulator
 
 
 @dataclass(frozen=True)
@@ -197,6 +198,7 @@ class _Transport:
         self.rejected_requests = []
         self.errors = []
         self.counter = 0
+        self.usage = UsageAccumulator()
         for stream, name in ((self.process.stdout, "stdout"), (self.process.stderr, "stderr")):
             self.selector.register(stream, selectors.EVENT_READ, name)
 
@@ -241,6 +243,12 @@ class _Transport:
                 "message": "Native adapter rejects server requests; no permission granted"}})
             return
         method, params = message.get("method"), message.get("params") or {}
+        if method == "thread/tokenUsage/updated":
+            # Preserve only whitelisted numeric counters before broad token-key
+            # redaction; raw notification payloads keep the existing log policy.
+            if not hasattr(self, "usage"):
+                self.usage = UsageAccumulator()
+            self.usage.observe(params)
         if method == "item/reasoning/textDelta":
             self.record("received_reasoning_content_omitted", {"method": method})
             return
@@ -544,6 +552,7 @@ class NativeHost:
                         self._interrupt(transport, run)
                     raise
                 finally:
+                    run.evidence["model_usage"] = getattr(transport, "usage", UsageAccumulator()).receipt(run.thread_id, run.turn_id)
                     run.evidence["item_completed_events"] = transport.events
                     run.evidence["native_error_events"] = transport.errors
                     run.evidence["rejected_server_requests"] = transport.rejected_requests
@@ -556,10 +565,12 @@ class NativeHost:
             run.outcome, run.error_code, run.message = "execution_failed", "runtime_error", str(exc)
         finally:
             if transport is not None:
+                run.evidence["model_usage"] = getattr(transport, "usage", UsageAccumulator()).receipt(run.thread_id, run.turn_id)
                 try:
                     transport.close()
                 except (OSError, subprocess.SubprocessError) as exc:
                     run.outcome, run.error_code, run.message = "execution_failed", "runtime_error", str(exc)
+            run.evidence.setdefault("model_usage", UsageAccumulator().receipt(run.thread_id, run.turn_id))
             run.items, run.evidence = _safe(run.items), _safe(run.evidence)
             run.message = _safe(run.message)
             if evidence_allowed:
@@ -601,7 +612,8 @@ class NativeHost:
             run.items = []
             run.evidence = {"mode": run.mode, "automatic_acceptance": False, "report": str(report),
                 "artifact_receipts": receipts, "oversized_report_sha256": sha256(data).hexdigest(),
-                "oversized_report_bytes": len(data), "sanitized_items_retained_in_logs": True}
+                "oversized_report_bytes": len(data), "sanitized_items_retained_in_logs": True,
+                "model_usage": run.evidence.get("model_usage")}
             data = (json.dumps(asdict(run), indent=2) + "\n").encode()
         if report.is_symlink():
             raise ValueError("Native evidence report path was replaced")
