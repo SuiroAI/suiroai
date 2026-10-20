@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 
 
-OUTPUTS = {'analysis.py', 'analyze.py', 'evaluation_plan.json', 'evaluation_plan.md',
+OUTPUTS = {'analysis.py', 'analyze.py', 'task_refinement.json', 'evaluation_plan.json', 'evaluation_plan.md',
     'response.md', 'restocking.csv', 'result.json', 'selection.json',
     'model_evaluation.csv', 'model_scores.csv', 'horizon_scores.csv',
     'comparison_results.csv', 'origin_scores.csv', 'origin_results.csv',

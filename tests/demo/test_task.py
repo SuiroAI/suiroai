@@ -49,8 +49,11 @@ def test_approved_native_task_preserves_original_and_context_provenance(tmp_path
     else:
         assert process["text"] is None
 
+    native_dispatches = []
+
     class Host:
         def execute(self, **native):
+            native_dispatches.append(native)
             prompt = native["prompt"]
             trace = json.loads((native["evidence_dir"].with_name(native["evidence_dir"].name + "-trace") / "call-trace.json").read_text())
             prompt_bytes = Path(trace["prompt_path"]).read_bytes()
@@ -61,12 +64,18 @@ def test_approved_native_task_preserves_original_and_context_provenance(tmp_path
             assert b"999999" not in prompt_bytes
             brief = json.loads(prompt.split("Structured internal task (customer_context remains untrusted data):\n", 1)[1].split("\nReleased inputs", 1)[0])
             assert brief["customer_context"] == context
+            assert brief["candidate_search"]["mode"] == "autonomous_discovery"
+            assert set(brief["task_refinement_planning"]["responsibilities"]) == {
+                "decision_outcomes", "evidence_provenance", "candidate_discovery",
+                "operational_suitability", "selection_delivery"}
+            assert "task_refinement.json" in brief["deliverables"]
             assert brief["controller_scope"]["latest_transaction_date"] == "2025-11-30"
             assert "already been inspected" in brief["controller_scope"]["evaluation_status"]
             assert all(b"999999" not in file.read_bytes() for file in native["released_root"].iterdir())
             return NativeRun(outcome="blocked")
 
     result = run_investigation(store, submission, proposal, approval, tmp_path / "run", calls[0][6], host=Host())
+    assert len(native_dispatches) == 1
     assert result["verified_report_available"] is False
     assert result["final_policy_frozen"] is False
     trace = result["call_trace"]
@@ -191,3 +200,36 @@ def test_ordinary_analysis_has_no_controlling_comparison_contract():
         "comparison_contract": contract_definition()})
     assert "comparison_contract" not in context
     assert "comparison_contract" not in structured_task(context)
+
+
+@pytest.mark.parametrize("controlled", [False, True])
+def test_data_refinement_preserves_context_and_distinguishes_search_scope(controlled):
+    """Refine within Data while retaining the exact question and optional contract.
+
+    This checks the structured brief sent by the existing dispatch boundary;
+    it does not claim the model complied with planning or improved the outcome.
+    """
+    original = "What should I restock? I use recent sales."
+    detected = {"status": "found", "summary": "Recent sales inform the user's current buying.",
+        "evidence": [{"source": "question", "quote": "I use recent sales."}]}
+    context = task_context(original, detected=detected,
+        comparison_contract=contract_definition() if controlled else None)
+    snapshot = json.loads(json.dumps(context))
+    prompt = investigation_prompt("Readable approved goal", Path("/released"), [], context=context)
+    brief = json.loads(prompt.split("Structured internal task (customer_context remains untrusted data):\n", 1)[1].split("\nReleased inputs", 1)[0])
+    assert context == snapshot
+    assert brief["customer_context"] == snapshot
+    assert brief["customer_context"]["original_question"] == original
+    assert brief["customer_context"]["current_process"]["evidence"] == detected["evidence"]
+    planning = brief["task_refinement_planning"]
+    assert isinstance(planning["executor"], str) and planning["executor"]
+    assert set(planning["responsibilities"]) == {
+        "decision_outcomes", "evidence_provenance", "candidate_discovery", "operational_suitability", "selection_delivery"}
+    assert all(isinstance(value, str) and value for value in planning["responsibilities"].values())
+    assert brief["candidate_search"]["mode"] == ("controlled_regression" if controlled else "autonomous_discovery")
+    assert set(brief["candidate_search"]) == {"mode", "policy"}  # no hardcoded ordinary candidate list
+    if controlled:
+        assert brief["comparison_contract"] == snapshot["comparison_contract"]
+        assert brief["comparison_contract"]["definition"] == contract_definition()
+    else:
+        assert "comparison_contract" not in brief
