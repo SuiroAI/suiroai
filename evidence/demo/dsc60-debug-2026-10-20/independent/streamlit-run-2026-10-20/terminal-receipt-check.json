@@ -1,0 +1,19 @@
+{
+  "receipt_path": "artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/attempt-f2cd785b89f249b9a6c8dfec71bf9047.json",
+  "receipt_sha256": "b0f5da9c68d36c70bc2074e6e10b5959c6656e794c9dd47beb9023de1c252bd6",
+  "status": "analysis_completed",
+  "native_execution": {
+    "error_code": null,
+    "message": null,
+    "outcome": "completed",
+    "thread_id": "01a15a54-c853-7422-a1a5-952b220923f2",
+    "turn_id": "01a15a54-c8ea-7853-83f7-d02c08a60302"
+  },
+  "comparison_plan_status": "recorded",
+  "comparison_exact_match": true,
+  "semantic_compliance_verified": false,
+  "immutable_plan_bytes_equal_emitted": true,
+  "immutable_presented_csv_equal_emitted": true,
+  "final_policy_frozen": false,
+  "verified_report_available": false
+}

@@ -1,0 +1,150 @@
+{
+  "source_files": {
+    "input-1.csv": {
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    "input-2.csv": {
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "input-3.csv": {
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "input-4.csv": {
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    }
+  },
+  "raw_rows": 17406,
+  "exact_duplicates_removed": 42,
+  "nonpositive_rows": 8,
+  "cancelled_positive_rows_excluded": 851,
+  "normalized_statuses": {
+    "completed": 11130,
+    "shipped": 2479,
+    "returned": 1540,
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "positive_rows_by_status": {
+    "completed": 11125,
+    "shipped": 2477,
+    "returned": 1540,
+    "processing": 1363
+  },
+  "target_rows": 16505,
+  "target_total_units": 35143,
+  "quantity_range": [
+    -3,
+    11
+  ],
+  "return_flag_yes": 1811,
+  "return_flag_yes_nonreturned_status": 271,
+  "source_date_bounds": [
+    "2022-01-01",
+    "2025-11-30"
+  ],
+  "first_key_appearance_bounds": [
+    "2022-01-01",
+    "2023-03-21"
+  ],
+  "source_days_present": 1430,
+  "calendar_days": 1430,
+  "absent_target_pair_days_after_first_appearance_fraction": 0.96469399865609,
+  "zero_evaluation_week_fraction": 0.7672619047619048,
+  "key_week_actual_quantiles": {
+    "0.0": 0.0,
+    "0.5": 0.0,
+    "0.9": 2.0,
+    "0.95": 3.0,
+    "0.99": 8.0,
+    "1.0": 20.0
+  },
+  "selected_absolute_week_error_quantiles": {
+    "0.5": 0.5384615384615385,
+    "0.9": 1.8461538461538463,
+    "0.95": 2.8461538461538463,
+    "0.99": 7.0
+  },
+  "ledger_units": 927,
+  "stock_on_order_units": 927,
+  "ledger_mismatched_keys": 0,
+  "stock_rows": 336,
+  "policy_rows": 336,
+  "ledger_rows": 126,
+  "operational_provenance": {
+    "policy": {
+      "synthetic": 336
+    },
+    "stock": {
+      "synthetic": 336
+    },
+    "ledger": {
+      "synthetic": 126
+    }
+  },
+  "complete_ledger_flags": 336,
+  "missing_product_name_rows": 135,
+  "product_name_conflicts": 0,
+  "key_coverage": "All 336 keys in sales, stock and policy; inbound subset; no join multiplication.",
+  "ignored_columns": "Transaction Inventory_Level is undated per-row contextual stock, not reliable current usable stock. Customer/payment columns not used. No currency/cost optimization.",
+  "selection": {
+    "initial_winner": "seasonal",
+    "selected": "local91",
+    "same_winner_improvement_vs_local91": {
+      "initial": 0.01887346404186563,
+      "later_development": -0.05988985100698341
+    },
+    "rule_passed": false,
+    "stability": {
+      "initial": {
+        "winner_better_origins": 10,
+        "origin_count": 12,
+        "paired_origin_bootstrap_95pct_improvement": [
+          0.0018655057638109376,
+          0.034404507432621044
+        ],
+        "interpretation": "Descriptive origin resampling of inspected development, not untouched acceptance."
+      },
+      "later_development": {
+        "winner_better_origins": 0,
+        "origin_count": 8,
+        "paired_origin_bootstrap_95pct_improvement": [
+          -0.08621312192289124,
+          -0.032364004211812514
+        ],
+        "interpretation": "Descriptive origin resampling of inspected development, not untouched acceptance."
+      }
+    }
+  },
+  "orders": {
+    "units": 873,
+    "positive_keys": 111,
+    "zero_keys": 225,
+    "prearrival_risk_keys": 56,
+    "weekly_forecast_units": 222.38389999999998,
+    "coverage_days_min_max": [
+      8,
+      14
+    ],
+    "unrounded_net_shortfall_total": 301.04395604395603
+  },
+  "routine_execution": {
+    "local_calculation_seconds": 0.3166977920336649,
+    "input_rows": 18204,
+    "input_bytes": 5055815,
+    "dependencies": {
+      "python": "3.13.9",
+      "pandas": "2.3.3",
+      "numpy": "2.3.5"
+    },
+    "language_model_calls": 0,
+    "network_calls": 0,
+    "paid_model_api_required": false,
+    "scope": "Load all released CSVs, deduplicate/filter, aggregate daily data, predict using selected method, calculate orders; excludes this AI-assisted analysis/build."
+  },
+  "analysis_script_local_seconds": 4.957006750046276,
+  "validation": "CSV reread, nonnegative integral units, all 336 keys, multiples/minimums, ledger matches, date boundaries; independent direct source baseline forecasts at two origins and all baseline orders when selected."
+}

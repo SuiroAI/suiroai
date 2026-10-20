@@ -1,0 +1,10 @@
+{
+  "source_byte_hashes_match": true,
+  "normalized_extra_duplicates": 0,
+  "independent_baseline_key_origin_predictions_and_targets_checked": 6720,
+  "origin_primary_MAE_checked": 20,
+  "CSV_rows": 336,
+  "CSV_sha256": "c009a34bda28165b7b4b82aa57bbef81246ca2caf836aad67d12b5a9902f16c4",
+  "response_words": 242,
+  "all_checks_passed": true
+}

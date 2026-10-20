@@ -1,0 +1,12 @@
+{
+  "scope": "Transport/presentation cell equality only; no forecasting or source-data computation. Browser DOM collected by UI owner, checked independently against actual emitted CSV.",
+  "csv_sha256": "c009a34bda28165b7b4b82aa57bbef81246ca2caf836aad67d12b5a9902f16c4",
+  "result_declared_csv_sha256_matches": true,
+  "browser_dom_sha256": "c6e15c6e9409eacd58e413aca37b4aa09c7788dc313ab4ab982e29e6322dd1e7",
+  "csv_data_rows": 336,
+  "columns": 18,
+  "all_cells_and_row_order_exactly_match": true,
+  "body_cell_count": 6048,
+  "header_matches": true,
+  "mismatch_count": 0
+}

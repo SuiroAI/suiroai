@@ -1,0 +1,14 @@
+{
+  "investigation_directories": [
+    "investigation-82658b46aff645ddb00062ee8d3da187"
+  ],
+  "attempt_receipts": [
+    "attempt-f2cd785b89f249b9a6c8dfec71bf9047.json"
+  ],
+  "detector_directories": [
+    "current-process-9d7555b8225a4065ae8a83dcb5e26a70"
+  ],
+  "one_investigation_attempt": true,
+  "browser_download": "Screenshot07 independently viewed: Brave displays Blocked by your organization for suiroai-dsc60-streamlit-restocking.csv. UI owner reports one explicit click and normal Save attempt; no completed persisted browser download claimed.",
+  "scope": "Artifact-count and screenshot review only; no browser security setting changes or bypass."
+}

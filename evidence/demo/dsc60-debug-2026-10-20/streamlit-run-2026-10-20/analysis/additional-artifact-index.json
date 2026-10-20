@@ -1,0 +1,32 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output/make_plan.py",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-run-2026-10-20/analysis/output/make_plan.py",
+    "bytes": 8582,
+    "sha256": "fcd85da36007e7d9861174f2afe052eb89001538e4c3a8f967e548367dedeff2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output/comparison_scores.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-run-2026-10-20/analysis/output/comparison_scores.csv",
+    "bytes": 1326,
+    "sha256": "db15f5c6fee2eb5e305562ca97fd72848c6646a3e5d5cd36141aa5e5c48d44b2"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output/coverage_scores.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-run-2026-10-20/analysis/output/coverage_scores.csv",
+    "bytes": 1323,
+    "sha256": "3a3a6084309064036ac97565dfa6cce38b4ac98d803d6fa2e0e4fdf672238940"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output/sensitivity_scores.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-run-2026-10-20/analysis/output/sensitivity_scores.csv",
+    "bytes": 5032,
+    "sha256": "a7ac1a2b9414ef397f6ab33c942843a541cdea55762ac5fa123015139ba40d25"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output/seasonal_factor_stability.csv",
+    "retained": "/private/tmp/suiroai-dsc59/evidence/demo/dsc60-debug-2026-10-20/streamlit-run-2026-10-20/analysis/output/seasonal_factor_stability.csv",
+    "bytes": 960,
+    "sha256": "5a0fac8a75bacf339b32cc9180379af9946d7dc8366536ad9db0c058e8909c6f"
+  }
+]

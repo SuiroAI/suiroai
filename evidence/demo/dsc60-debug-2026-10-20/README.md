@@ -43,12 +43,21 @@ The original 1.89% earlier MAE gain reversed to 5.99% worse later; October–Nov
 
 Twelve retained demo sales releases contain no post-November-30 dates. That establishes isolation in those releases, not universal untouched status: the full-year original and prior QA were available. No December outcomes are evaluated here. Broader exposure evidence/custodian confirmation is still required, followed by the parent-required adopted frozen model/rule/code/dependency/forecast chain and independent one-shot evaluation. The development-only illustrative first-week freeze is explicitly rejected by the limited recording checklist and does not satisfy DSC-9 final acceptance. If December cannot be certified untouched, use genuinely fresh authorized future evidence; never relabel inspected months.
 
-No recording, server restart/refresh, browser file action, original-video verification, security-policy bypass, PR merge or parent closure is performed. Port 8503 was still listening under PID 70037 and was left alone. The unrelated untracked `report (1).html` remains untouched.
+No recording, original-video verification, security-policy bypass, PR merge or parent closure was performed. The earlier completed browser session was preserved. A subsequent explicitly requested browser run on port 8504 is documented below. The unrelated untracked `report (1).html` remains untouched.
 
 ## Checks and remaining limits
 
-Final code checks: **804 tests and 659 subtests passed** in the canonical `.venv`; after the last narrow runtime-wording prompt clarification, **40 affected tests passed** and `git diff --check` passed. The independent reviewer accepts the scoped workflow/ordinary-baseline behavior; performance acceptance stays blocked.
+Final source checks through `637f5cd`: **815 tests and 659 subtests passed** in the canonical `.venv`; the environment-contract configuration checks also passed. `git diff --check` passed. The independent reviewer accepts the scoped workflow/ordinary-baseline behavior; performance acceptance stays blocked.
 
-The actual fixed-workflow response says “This analysis took about a second.” That measurement is the local non-LLM calculation, not whole AI-assisted wall time. Evidence is unchanged; the future prompt explicitly requires naming local calculation time, and that wording instruction has not been retested in another paid run. Metered AI build charges remain unknown. No purchasing savings are established.
+The actual fixed-workflow response says “This analysis took about a second.” That measurement is the local non-LLM calculation, not whole AI-assisted wall time. Evidence is unchanged; the future prompt explicitly requires naming local calculation time, and the subsequent genuine browser run below verified that instruction in its emitted response. Metered AI build charges remain unknown. No purchasing savings are established.
 
 At the user's subsequent explicit request, a new two-hour keep-awake assertion was started and verified at approximately 12:38 Eastern on October 20, expiring around 14:38. It is independent of the previous recording's expired assertion.
+
+
+## Actual Streamlit browser run, October 20
+
+At the user's request, source `637f5cd` was launched on port **8504** with the same fixed controller contract supplied by the trusted environment setting. The original short question and four files were entered through the actual browser. Ordinary native file selection worked without changing extension permissions. Task review was clicked once, the readable proposal was inspected, and approval was clicked once. Genuine context detection and Data analysis both completed. This closes the earlier UI-run gap; it does not change the performance gate.
+
+See [the completed run](streamlit-run-2026-10-20/README.md), [call/UI index](streamlit-run-2026-10-20/run-index.json), and [independent workflow review](independent/streamlit-run-2026-10-20/REVIEW.md). The final live helper recorded exact contract adoption while explicitly leaving semantic verification false. Independent static inspection checked implementation adherence separately. The app returned the baseline with **873 illustrative units, 111 positive combinations, 225 zero orders and 56 early-shortage warnings**; these are this run's outputs, not the earlier recording's quantities.
+
+The complete explanation including routine/AI cost separation was traversed. HTML was opened by an explicit click in a separate tab and scrolled, then the app was restored. All 336 rows × 18 cells, headers and row order match the emitted CSV independently. The separate explicit CSV click reached the ordinary Save dialog, after which Brave reported **“Blocked by your organization.”** No security setting was changed and no browser download is claimed. Screenshots document separate observations, not a continuous recording.

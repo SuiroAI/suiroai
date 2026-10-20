@@ -1,0 +1,214 @@
+{
+  "scope": "Real UI workflow metadata/claims review; no new analytical computation, original raw-sales parse or generated producer execution. Hidden provider context remains unknown. UI action observations owned by root.",
+  "session": "fb7ddff7fa934efb9fd02c7752e3f04d",
+  "record_kinds": [
+    "submission",
+    "task_approval",
+    "task_proposal"
+  ],
+  "approved_context_present": true,
+  "approved_original_question_matches_submission": true,
+  "approval_proposal_binding_equal": true,
+  "approval_decision": "approved",
+  "calls": [
+    {
+      "stage": "current_process",
+      "dispatch_status": "returned",
+      "prompt_sha256": "dc17104437979650db8560dc684337d7651c59a2e9b590194a058384e55297d8",
+      "saved_prompt_hash_matches": true,
+      "actual_sent": [
+        {
+          "text_matches_trace": true,
+          "reasoning_effort": "medium",
+          "attachments": [
+            {
+              "type": "mention",
+              "name": "Data",
+              "path": "plugin://data-analytics@openai-curated-remote"
+            }
+          ]
+        }
+      ],
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15a53-d8ea-7120-872c-42fe31359d82",
+        "turn_id": "01a15a53-db28-7180-b7ae-eb2bae152dd7"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/context/current-process-9d7555b8225a4065ae8a83dcb5e26a70/output",
+        "data_attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "effective_profile_verified": true,
+        "instruction_sources": [
+          "/Users/ceverson/.codex/AGENTS.md"
+        ],
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-75a5747f5e9e44cca3d5f073a7cb4300",
+        "reasoning_effort": "medium",
+        "runtime_workspace_roots": [
+          "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/context/current-process-9d7555b8225a4065ae8a83dcb5e26a70/output"
+        ],
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "released_files": [
+        {
+          "relative_path": "input-1.csv",
+          "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "released_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-2.csv",
+          "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "released_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-3.csv",
+          "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "released_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-4.csv",
+          "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+          "released_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+          "actual_hash_matches": true
+        }
+      ],
+      "plan_filechange_completion": [],
+      "plan_writer_success_completion": [],
+      "analysis_program_starts": [],
+      "source_update_events": [],
+      "detector_status": "found",
+      "approved_context_matches_detector_result": true
+    },
+    {
+      "stage": "investigation",
+      "dispatch_status": "returned",
+      "prompt_sha256": "cc844deed473a63c44f891f2bb9b79d60c179b974c5b84d325b897e39b9a6d28",
+      "saved_prompt_hash_matches": true,
+      "actual_sent": [
+        {
+          "text_matches_trace": true,
+          "reasoning_effort": "medium",
+          "attachments": [
+            {
+              "type": "mention",
+              "name": "Data",
+              "path": "plugin://data-analytics@openai-curated-remote"
+            }
+          ]
+        }
+      ],
+      "native_execution": {
+        "error_code": null,
+        "message": null,
+        "outcome": "completed",
+        "thread_id": "01a15a54-c853-7422-a1a5-952b220923f2",
+        "turn_id": "01a15a54-c8ea-7853-83f7-d02c08a60302"
+      },
+      "observed_configuration": {
+        "cli_version": "0.163.0",
+        "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output",
+        "data_attachment": {
+          "name": "Data",
+          "path": "plugin://data-analytics@openai-curated-remote",
+          "type": "mention"
+        },
+        "effective_profile_verified": true,
+        "instruction_sources": [
+          "/Users/ceverson/.codex/AGENTS.md"
+        ],
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "permission_profile": "dsc26-stage-c28451387b124404a1480dd0e165d46b",
+        "reasoning_effort": "medium",
+        "runtime_workspace_roots": [
+          "/private/tmp/suiroai-dsc59/artifacts/demo/fb7ddff7fa934efb9fd02c7752e3f04d/runs/investigation-82658b46aff645ddb00062ee8d3da187/output"
+        ],
+        "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+      },
+      "released_files": [
+        {
+          "relative_path": "input-1.csv",
+          "source_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "released_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-2.csv",
+          "source_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "released_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-3.csv",
+          "source_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "released_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+          "actual_hash_matches": true
+        },
+        {
+          "relative_path": "input-4.csv",
+          "source_sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+          "released_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+          "actual_hash_matches": true
+        }
+      ],
+      "plan_filechange_completion": [],
+      "plan_writer_success_completion": [
+        671701.961964458
+      ],
+      "analysis_program_starts": [
+        671806.995994708,
+        671863.645184916
+      ],
+      "source_update_events": [
+        {
+          "monotonic": 671863.445249083,
+          "file": "analysis.py"
+        },
+        {
+          "monotonic": 671980.220925791,
+          "file": "response.md"
+        }
+      ],
+      "transmitted_context_equals_approved_context": true,
+      "transmitted_contract_definition_equals_predeclared": true,
+      "plan_sha256": "c6b30e66b6b614ae91d627c79c58c1b1da57eee3d99dee95dd553c12c57aa59f",
+      "plan_contract_equals_transmitted": true,
+      "declared_digest_matches": true,
+      "plan_precedes_analysis": true,
+      "output_files": [
+        "analysis.py",
+        "artifact_manifest.json",
+        "comparison_scores.csv",
+        "coverage_predictions.csv",
+        "coverage_scores.csv",
+        "development_predictions.csv",
+        "evaluation_plan.json",
+        "independent_baseline_checks.csv",
+        "internal_audit.md",
+        "make_plan.py",
+        "measured_results.json",
+        "origin_mae.csv",
+        "presented-html-b7b3f53b020749eb89ac0af5dc464aaf.html",
+        "presented-output-257cff452dc34aa9ad655b902d5fdfe5.csv",
+        "response.md",
+        "restocking.csv",
+        "result.json",
+        "seasonal_factor_stability.csv",
+        "sensitivity_scores.csv",
+        "validate_outputs.py",
+        "validation_results.json"
+      ]
+    }
+  ]
+}
