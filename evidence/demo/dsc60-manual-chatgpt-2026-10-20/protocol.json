@@ -1,0 +1,16 @@
+{
+  "issue": "https://linear.app/gr3enarr0w/issue/DSC-60",
+  "purpose": "Observe an ordinary customer's ChatGPT conversation, elapsed time and exposed usage/cost evidence, separately from the proprietary SuiroAI agent.",
+  "declared_before_first_customer_message": true,
+  "starting_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "files": ["Sales_transactions_2022_2025.csv", "inventory_position.csv", "inbound_deliveries.csv", "ordering_policy.csv"],
+  "input_scope": "Original authorized four CSVs from /private/tmp/dsc59-four-inputs, unchanged; no SuiroAI prompt, generated routine, prior answer, comparison scores or transformed sales partition supplied.",
+  "surface": "Ordinary ChatGPT Chat mode in a new temporary conversation. UI notice states memory and custom instructions are not followed. Existing displayed Medium thinking setting is unchanged; underlying model identity is not presumed.",
+  "customer_role": "Nontechnical retail owner. Give brief everyday answers grounded in supplied facts. Do not choose metrics/models/cleaning policies or inject the agent's analytical workflow. If missing business facts are requested, acknowledge unavailable information rather than invent facts. Clarify the supplied November 30 planning snapshot and December 1-7 week if asked.",
+  "followups": "Respond naturally to questions; request a usable item/store/quantity list or file if needed. Do not force extra rounds to inflate elapsed time or tokens.",
+  "completion": "A usable restocking list and understandable explanation, or an explicit unresolved blocker; record deficiencies separately without changing the benchmark's customer role.",
+  "timing": "Timestamp upload interaction, initial send, each observed assistant completion and each customer follow-up send, and final usable-answer observation. Report wall time and observable waiting/interaction intervals separately. Automation, polling and observer overhead are included in wall time; this is not measured average human labor.",
+  "trace": "Retain visible conversation text, screenshots and UI action timestamps. Do not fetch private application state or hidden network endpoints. Hidden provider/system/tool context and reasoning are unobserved unless explicitly exposed by supported UI.",
+  "cost": "Calculate from actual exposed usage if available and verified applicable pricing. If exact usage/model/billing is unavailable, do not invent full-run tokens or an actual charge. Distinguish any declared visible-transcript/API-equivalent estimate from total backend cost and ChatGPT subscription charges.",
+  "interpretation": "One observed customer-role conversation, not a controlled universal speed/cost/forecasting comparison or an untouched evaluation. Earlier demo video will be redone later per user instruction."
+}

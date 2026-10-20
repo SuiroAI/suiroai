@@ -1,0 +1,21 @@
+# Ordinary ChatGPT customer-role observation
+
+Tracking: [DSC-60](https://linear.app/gr3enarr0w/issue/DSC-60), [DSC-59](https://linear.app/gr3enarr0w/issue/DSC-59). The user requested this separate test after clarifying that the recorded US$0.62/0.50/0.57 estimates measured SuiroAI's own calls, not ordinary customer use of ChatGPT. The three demos are to be redone later; this conversation is not another recorded demo.
+
+The original question and four original authorized CSVs were submitted to ordinary ChatGPT in a new temporary Chat conversation, with the existing Medium thinking setting. Its UI notice states memory and custom instructions are not followed. No SuiroAI task instructions, prior result, generated routine or transformed sales partition was supplied. The unchanged full sales file includes December, unlike the application's pre-December analytical release; this observation is not a controlled model comparison.
+
+The [protocol](protocol.json) was saved before the first upload/message. The [action trace](ui-actions.jsonl), visible assistant messages and exposed activity summaries retain what happened. The first answer assumed the current October 2026 week and returned historical priorities. A plain customer clarification requested December 1–7 using the supplied November 30 stock count. ChatGPT then reported **854 units across 107 order lines and 12 stores**, with workbook/CSV actions. Its purchase-order CSV opened in the spreadsheet viewer. No CSV download was clicked and the full artifact's calculations have not been independently certified.
+
+| Observed milestone | Customer messages sent | From initial send | From upload interaction |
+|---|---:|---:|---:|
+| First answer, wrong target week | 1 | 2m 46s | 3m 32s |
+| Intended-week order list | 2 | 5m 19s | 6m 05s |
+| Weekly-use guidance | 3 | 7m 09s | 7m 55s |
+
+These are observed wall-time upper bounds, including browser interaction, polling, logging and agent/observer overhead. Some completion logging followed the first observation. They are not average-human labor or exact model-generation durations. The UI separately displayed “Worked for 1m 56s” and “Worked for 1m 44s” for the first two answers; those labels are not the whole wall time. The first-list completion criterion was already met before the separately logged, natural repeatability follow-up.
+
+The third customer message asked how to repeat the task without hand calculations. ChatGPT recommended uploading updated files and requesting a fresh workbook each week. It did not deliver or test a reusable local calculation in this conversation. That narrower observation does not establish ChatGPT could not create one if asked. It also suggested reusing the conversation, but this particular test was temporary; a persistent conversation would be needed for that advice.
+
+**Full conversation cost could not be calculated from this UI trace.** The supported UI exposed messages, activity summaries, file actions and worked-for labels, but no underlying model name or token usage counters. Hidden tool context, reasoning and caching cannot be recovered by counting visible text. No actual charge or full-run API-equivalent amount is fabricated. A metered API fallback was checked: the SDK is installed but `OPENAI_API_KEY` is absent from the execution environment. The proprietary native SuiroAI agent was deliberately not substituted. The recorded demo's costs do not apply here. Official documentation describes [token counting and non-visible output](https://developers.openai.com/api/docs/guides/token-counting), [usage accounting](https://developers.openai.com/api/docs/guides/agents-api/observability), and [API pricing](https://developers.openai.com/api/docs/pricing); API prices alone cannot price unobserved usage or establish a ChatGPT subscription charge.
+
+This is one simulated retail-owner conversation, not a universal speed/cost claim, an authenticated bill, an accuracy improvement or a new untouched evaluation. Exact timings and unresolved measurement fields are in [result.json](result.json). One original question/file screenshot contained attachment thumbnails with sales-row names; its bytes remain private in ignored artifacts, with an omission/hash record here. Retained screenshots show generated business output rather than raw sales rows.

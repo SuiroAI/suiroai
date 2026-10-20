@@ -1,0 +1,33 @@
+{
+  "format": "dsc60-manual-chatgpt-independent-check-v1",
+  "status": "bounded_visible_workflow_and_timing_agree",
+  "timing_arithmetic": [
+    {
+      "response": 1,
+      "from_initial_send_seconds": 166.176,
+      "from_upload_interaction_seconds": 212.369,
+      "from_this_message_send_seconds": 166.176
+    },
+    {
+      "response": 2,
+      "from_initial_send_seconds": 319.153,
+      "from_upload_interaction_seconds": 365.346,
+      "from_this_message_send_seconds": 151.121
+    },
+    {
+      "response": 3,
+      "from_initial_send_seconds": 428.637,
+      "from_upload_interaction_seconds": 474.83,
+      "from_this_message_send_seconds": 84.516
+    }
+  ],
+  "visible_store_count": 12,
+  "visible_store_positive_lines_sum": 107,
+  "visible_store_units_sum": 854,
+  "usage_and_total_cost_unknown": true,
+  "source_identity_and_scope": "Full original four CSV hashes independently checked; no content parsed, API call or producer execution. Full-year input differs from SuiroAI development release.",
+  "artifact_arithmetic_verified": false,
+  "screenshot_viewer_sha256": "463eeac12cd06ceeb7b5a0a9fc43aaa0250528aa20458e94c21fed7780ccc3f7",
+  "result_sha256": "48af365e1e872719563042d5934da9610d2687b2882b20a61747aa481594318a",
+  "review_scope": "Exact customer messages, visible assistant answers/activity, root action timestamps and screenshot05; hidden inputs/model/tool code/token usage and full workbook not exposed."
+}

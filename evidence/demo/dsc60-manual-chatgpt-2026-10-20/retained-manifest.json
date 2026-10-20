@@ -1,0 +1,96 @@
+{
+  "format": "dsc60-ordinary-chatgpt-visible-evidence-v1",
+  "scope": "Visible trace and observed timing only; usage and full cost unknown; no raw CSV inputs retained",
+  "files": [
+    {
+      "path": "02-first-answer.png",
+      "bytes": 118607,
+      "sha256": "332721d3bf96fe7c0afe9c2c8546be1375e5d97f26cd6b24a1f3896428eed3d5"
+    },
+    {
+      "path": "03-order-list-answer.png",
+      "bytes": 101685,
+      "sha256": "272c03d6d783b1376fe43ed8660713fb6633661484266ec91f55a8161f55eb98"
+    },
+    {
+      "path": "04-repeatability-answer.png",
+      "bytes": 127732,
+      "sha256": "1c9a2d76b2578d40e9444d559cef356d8c0befc093c4f3163ff76f3e9144f041"
+    },
+    {
+      "path": "05-purchase-order-file-viewer.png",
+      "bytes": 362434,
+      "sha256": "463eeac12cd06ceeb7b5a0a9fc43aaa0250528aa20458e94c21fed7780ccc3f7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4329,
+      "sha256": "7523d637cdcc515995242691552fcb0f3738bd2bf80618586153cf02bee5d142"
+    },
+    {
+      "path": "assistant-progress-observation-1.json",
+      "bytes": 1051,
+      "sha256": "4596d710ae0a1ae7270073c6cedc3ee666bd662f34c415fcad51600f6c3adc39"
+    },
+    {
+      "path": "assistant-turn-1.json",
+      "bytes": 3574,
+      "sha256": "31c91d287e4fe0703165560d8033da70f40f424a074ec625f8f35f9bebb8acda"
+    },
+    {
+      "path": "assistant-turn-2.json",
+      "bytes": 6101,
+      "sha256": "54228f8d58468be3c5d7b44fbe7f59d14ffa4b5621c0a6c4610a272f705bd712"
+    },
+    {
+      "path": "assistant-turn-3.json",
+      "bytes": 8386,
+      "sha256": "3f3f639fb885fc4b2509c422a0ef6fa3674943b54871ae481061ba7e797e6d6e"
+    },
+    {
+      "path": "independent/FINAL-REVIEW.md",
+      "bytes": 4717,
+      "sha256": "c23037e72fdaa476dcb0902fa508928f4ecfc835cd818f89a30ee953c78982d2"
+    },
+    {
+      "path": "independent/final-observation-check.json",
+      "bytes": 1436,
+      "sha256": "0af9169cc6cf5a8810aebce8052b16ce7126d2f0ad4221084e58e72bdfc304e1"
+    },
+    {
+      "path": "independent/prospective-protocol-review.md",
+      "bytes": 3543,
+      "sha256": "2bf41d4d72c7dd6fe2f88a5ef1d2debf7274e8857692da236326c249a2fb8a02"
+    },
+    {
+      "path": "omitted-private-screenshot.json",
+      "bytes": 353,
+      "sha256": "a8b3d489f544328459b9cb908c48602e7198443f6b21d9b4e7faf63961518a62"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 2876,
+      "sha256": "d4613dcb110c14103a3e90b0bc412a1801c50d0c4de059371dcfc91e356f8c0c"
+    },
+    {
+      "path": "result.json",
+      "bytes": 2970,
+      "sha256": "48af365e1e872719563042d5934da9610d2687b2882b20a61747aa481594318a"
+    },
+    {
+      "path": "ui-actions.jsonl",
+      "bytes": 2604,
+      "sha256": "e5a9f9671c0edb39ceecd00fb557d69329f11d602a686e2304736894324b9fe6"
+    },
+    {
+      "path": "visible-activity-turn-1.txt",
+      "bytes": 10291,
+      "sha256": "81c445f1e738ed4fbea5e0459bd01113fe4f99312d9556b83167629875520898"
+    },
+    {
+      "path": "visible-activity-turn-2.txt",
+      "bytes": 13136,
+      "sha256": "8bec44f0ba73691c3429ce731120d23df0cf32e15c59c8f1781be36a7e7a01d7"
+    }
+  ]
+}

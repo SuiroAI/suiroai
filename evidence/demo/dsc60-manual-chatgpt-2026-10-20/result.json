@@ -1,0 +1,55 @@
+{
+  "format": "dsc60-ordinary-chatgpt-observation-v1",
+  "conversation_url": "https://chatgpt.com/c/6ad7d6a8-47fc-83e9-b47a-aa0d9f99c6f5?temporary-chat=true",
+  "surface": "ChatGPT temporary Chat; UI Medium thinking; underlying model unobserved",
+  "customer_messages": 3,
+  "initial_question_proprietary_task_instructions_supplied": false,
+  "original_four_csvs_used": true,
+  "milestones": {
+    "first_answer_wrong_target_week": {
+      "completion_observed_at": "2026-10-20T21:04:25.251000+00:00",
+      "from_initial_send_seconds": 166.176,
+      "from_upload_interaction_seconds": 212.369,
+      "from_this_message_send_seconds": 166.176,
+      "ui_worked_for_seconds": 116
+    },
+    "first_intended_week_order_list": {
+      "completion_observed_at": "2026-10-20T21:06:58.228000+00:00",
+      "from_initial_send_seconds": 319.153,
+      "from_upload_interaction_seconds": 365.346,
+      "from_this_message_send_seconds": 151.121,
+      "ui_worked_for_seconds": 104
+    },
+    "weekly_repeatability_guidance": {
+      "completion_observed_at": "2026-10-20T21:08:47.712000+00:00",
+      "from_initial_send_seconds": 428.637,
+      "from_upload_interaction_seconds": 474.83,
+      "from_this_message_send_seconds": 84.516,
+      "ui_worked_for_seconds": null
+    }
+  },
+  "reported_output": {
+    "units": 854,
+    "positive_order_lines": 107,
+    "stores": 12,
+    "complete_calculation_lines_reported": 336,
+    "csv_viewer_open_observed": true,
+    "csv_download_clicked": false,
+    "full_artifact_arithmetic_independently_verified": false
+  },
+  "repeatability_result": "ChatGPT recommended uploading fresh files and requesting a new workbook weekly; no tested reusable local calculation delivered. This does not establish ChatGPT cannot build one.",
+  "timing_limit": "Observed wall-time upper bounds include interaction, polling, logging and observer/agent overhead. Completion was observed before the timestamp event was logged; exact backend finish and average-human labor time are not measured. First list and later repeatability guidance are separate milestones.",
+  "cost": {
+    "status": "not_calculable_from_exposed_ui_trace",
+    "actual_charge_usd": null,
+    "full_run_api_equivalent_usd": null,
+    "actual_model": null,
+    "actual_input_tokens": null,
+    "actual_cached_input_tokens": null,
+    "actual_output_including_reasoning_tokens": null,
+    "exposed_trace": "Visible messages, activity summaries, worked-for labels, file actions; no request token counts or underlying model label.",
+    "metered_api_fallback": "SDK is present but no OPENAI_API_KEY in execution environment; existing SuiroAI native agent was deliberately not substituted.",
+    "do_not_reuse": "Earlier US$0.62/0.50/0.57 are SuiroAI-only API-equivalent estimates, not this conversation."
+  },
+  "interpretation": "One simulated retail-owner conversation, not an average-human study, actual bill, controlled cost/speed comparison or forecast-performance evaluation."
+}

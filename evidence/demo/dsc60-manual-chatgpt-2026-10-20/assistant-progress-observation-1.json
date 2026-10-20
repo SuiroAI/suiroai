@@ -1,0 +1,20 @@
+[
+  {
+    "attrs": [
+      [
+        "data-chatgpt-search-message-ids",
+        "92bd83e0-b155-4bc1-8210-ebe1c194ba10 92bd83e0-b155-4bc1-8210-ebe1c194ba10"
+      ]
+    ],
+    "text": "ChatGPT said:\n\nI’ll combine your recent sales, current inventory, incoming deliveries, and ordering rules to build a store-by-store restock recommendation for next week. I’ll also check whether the sales history supports using a more recent demand trend or a seasonal comparison."
+  },
+  {
+    "attrs": [
+      [
+        "data-chatgpt-search-message-ids",
+        "a028e39c-128f-439b-b0de-a2aaba926226 a028e39c-128f-439b-b0de-a2aaba926226"
+      ]
+    ],
+    "text": "ChatGPT said:\n\nThere’s an important date mismatch: your sales file ends on December 31, 2025, while inventory, incoming deliveries, and ordering rules are dated November 30, 2025. Since you’re planning for October 26–November 1, 2026, I can identify likely restock priorities from historical demand, but I can’t safely treat those old stock counts as what’s available today."
+  }
+]
