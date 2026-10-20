@@ -83,14 +83,14 @@
       "sha256": "e5a9f9671c0edb39ceecd00fb557d69329f11d602a686e2304736894324b9fe6"
     },
     {
-      "path": "visible-activity-turn-1.txt",
-      "bytes": 10291,
-      "sha256": "81c445f1e738ed4fbea5e0459bd01113fe4f99312d9556b83167629875520898"
+      "path": "visible-activity-turn-1.json",
+      "bytes": 12788,
+      "sha256": "6e51908adf0b7be83832cfac76943ce57a6dc5253ab8dcdf9d42e91fb736766e"
     },
     {
-      "path": "visible-activity-turn-2.txt",
-      "bytes": 13136,
-      "sha256": "8bec44f0ba73691c3429ce731120d23df0cf32e15c59c8f1781be36a7e7a01d7"
+      "path": "visible-activity-turn-2.json",
+      "bytes": 16407,
+      "sha256": "93b8e8ab837f92bc7b8addbcde0131e1f8ad367a902a7ccf6998f6b16ac3240b"
     }
   ]
 }
