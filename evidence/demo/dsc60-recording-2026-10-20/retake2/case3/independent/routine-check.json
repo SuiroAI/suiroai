@@ -1,0 +1,19 @@
+{
+  "format": "dsc60-independent-routine-check-v1",
+  "selected": "pooled_13week",
+  "rows": 336,
+  "columns": 20,
+  "units": 883,
+  "positive": 113,
+  "zero": 223,
+  "prearrival_flags": 52,
+  "timing_flags": 52,
+  "all_exposed_forecast_order_policy_stock_incoming_dates_match": true,
+  "program_source_output_hashes_match": true,
+  "wall_seconds": 0.8273255409440026,
+  "peak_rss_mib": 168.375,
+  "peak_rss_bytes": 176553984,
+  "source_hash": "8c601872dc6bc9fde20531f202ea993aec9d2abaf15d91f9cd37443945989773",
+  "csv_hash": "4aec680dd9eb99b9a49f1a878b291674cb0f783d383437e374dca799424a4eda",
+  "scope": "Source/actual receipt inspection and own row arithmetic using rounded exposed forecasts; no producer execution, timing simulation, full forecast reconstruction or future-date test."
+}

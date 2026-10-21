@@ -1,0 +1,96 @@
+{
+  "source_attempt_path": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/runs/attempt-b17e7ec98e5848ed99f92cbd9a136a4f.json",
+  "source_attempt_sha256": "7de9cbd2f55b503afc02458873325864da431989b9739c46d5366c22e78fc625",
+  "status": "analysis_completed",
+  "analytical_success": false,
+  "verified_report_available": false,
+  "source_refs": {
+    "submission_ref": {
+      "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:submission",
+      "provenance": "supplied",
+      "sha256": "897e54c94117945f51a65ab73d3df815e8bed9119c7c21cb1f96a1899c4dbb01",
+      "version": 5
+    },
+    "proposal_ref": {
+      "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:proposal",
+      "provenance": "derived",
+      "sha256": "e8f348b77e9274fdb7ee5f505f0b55e241a63f72f34b5c1af83feefa9a8c0572",
+      "version": 5
+    },
+    "approval_ref": {
+      "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:approval",
+      "provenance": "derived",
+      "sha256": "09e3ce2957a6ec5a60ee6d8ae4bbd43a54e43a6c8f47f7f81a489d410070551a",
+      "version": 5
+    },
+    "unverified_investigation_ref": {
+      "artifact_id": "demo-data-investigation-note-f38f87d24b3e4a9bb39f61345e9b813c-presented",
+      "provenance": "derived",
+      "sha256": "cebe60c758bf96ff44d64a36f2c4fc24863493ba6ce593fc97af264cc9be143a",
+      "version": 1
+    },
+    "unverified_report_ref": {
+      "artifact_id": "demo-data-report-360b1c59a00b48e5aab3dbeff9547370-presented",
+      "provenance": "derived",
+      "sha256": "4aec680dd9eb99b9a49f1a878b291674cb0f783d383437e374dca799424a4eda",
+      "version": 1
+    },
+    "html_report_ref": {
+      "artifact_id": "demo-csv-preview-7b7522add88c4fd18045f0041e40a99a",
+      "provenance": "derived",
+      "sha256": "75b89e332b14a194c63d7119c8ebf075de6e5fe6a75d1faf5c3e786a09f1b995",
+      "version": 1
+    }
+  },
+  "writer_refs": {
+    "source_manifest_ref": {
+      "artifact_id": "demo-business-source-manifest-f93003e864354368a39190979fa81d85",
+      "provenance": "derived",
+      "sha256": "1efa48abd604daac93a359762144dd490de9d201641d89ff9032d41ad3b46b59",
+      "version": 1
+    },
+    "prompt_ref": {
+      "artifact_id": "demo-business-prompt-712e90fc2a6745afb5fc37540f9ccb69",
+      "provenance": "derived",
+      "sha256": "cad07ed0dcfaf064e779b2b5436b4dccc8d33cba80c35b00151f043a4b294a06",
+      "version": 1
+    },
+    "call_trace_ref": {
+      "artifact_id": "demo-business-call-trace-c2e6aa5b08ae4ffdbce4aa186fb31950",
+      "provenance": "derived",
+      "sha256": "cb85918051f986170074efc48c3f60be00e477d93025acb1c3334499a565b9bb",
+      "version": 1
+    },
+    "receipt_ref": {
+      "artifact_id": "demo-business-writing-receipt-314a447c649c48038b676009212c6ad4",
+      "provenance": "derived",
+      "sha256": "0d72ec0e118f9f2c0b71735f77daf31b27156b447231b55f41bec448472b04e6",
+      "version": 1
+    },
+    "response_ref": {
+      "artifact_id": "demo-business-response-cbcf1891f4bb43499483331fefa4d797",
+      "provenance": "derived",
+      "sha256": "0e3c3581eb394c0ef2e37877badd8d93bd7c07ae7e5d3cb9c6f97603b06dc6c7",
+      "version": 1
+    },
+    "writer_prose_ref": {
+      "artifact_id": "demo-business-response-cbcf1891f4bb43499483331fefa4d797",
+      "provenance": "derived",
+      "sha256": "0e3c3581eb394c0ef2e37877badd8d93bd7c07ae7e5d3cb9c6f97603b06dc6c7",
+      "version": 1
+    },
+    "writer_result_ref": {
+      "artifact_id": "demo-business-result-4a47d3c0dfb14f65b0fb70ee95261075",
+      "provenance": "derived",
+      "sha256": "d353bd518ad8a1b5c09d3ec3cd2e387c04eefc875edd0ef292ee1317c89930f6",
+      "version": 1
+    }
+  },
+  "published_response_exact_native_writer": true,
+  "external_customer_cost_sentence_appended": false,
+  "analysis_thread_id": "01a15fe2-9ef7-7543-960c-895fde9c56ee",
+  "analysis_turn_id": "01a15fe2-a141-7861-8ec5-4df4d337eebf",
+  "writer_thread_id": "01a15fea-4d97-7f81-8cc4-491184b0411a",
+  "writer_turn_id": "01a15fea-505f-75c2-868c-e93baecd7d2d",
+  "private_attempt_retention": "Hash/reference only; complete attempt contains private native output."
+}

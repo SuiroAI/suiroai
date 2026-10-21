@@ -1,0 +1,19 @@
+{
+  "format": "dsc60-independent-routine-check-v1",
+  "selected": "shrinkage84",
+  "rows": 336,
+  "columns": 21,
+  "units": 887,
+  "positive": 113,
+  "zero": 223,
+  "shortage_flags": 52,
+  "all_row_exposed_forecast_order_policy_inbound_dates_match": true,
+  "source_and_input_output_receipt_hashes_match": true,
+  "measured_cli_output_equals_delivered_bytes": true,
+  "wall_seconds": 0.9613390000304207,
+  "peak_rss_bytes": 166526976,
+  "source_hash": "0b7ff6db1239a1fb91314beb168f0be16bd25bc7293af731620b63383ed7a4e4",
+  "csv_hash": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+  "measurement_history": "Initial CLI calculation and independent checks succeeded, but measurement serialization failed on a NumPy integer. This retained measured rerun writes a separate output and compares bytes with the initial delivered CSV; no input changes.",
+  "scope": "Read selected parameterized source and actual receipt; own exposed-forecast row arithmetic, no producer execution/future-date test. Producer independent labels are not reviewer validation."
+}

@@ -1,0 +1,27 @@
+{"at":"2026-10-20T22:38:30.876Z","case":"case1","action":"clean-session-reset","source_commit":"10f4648","url":"http://localhost:8507/","tab":"1763932469","prior_demo_and_table_tabs_closed":true,"question_empty":true,"files_empty":true}
+{"at":"2026-10-20T22:38:44.414Z","case":"case1","action":"review-task","question":"What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.","files":4}
+{"at":"2026-10-20T22:39:26.637Z","case":"case1","action":"detected-current-approach-review","followup_asked":false}
+{"at":"2026-10-20T22:39:45.879Z","case":"case1","action":"approve-and-run"}
+{"at":"2026-10-20T22:46:55.426Z","case":"case1","action":"full-response-start","units":877,"measured_weekly_seconds":1.1,"customer_cost_text":false}
+{"at":"2026-10-20T22:47:20.859Z","case":"case1","action":"full-response-end","customer_cost_text":false}
+{"at":"2026-10-20T22:47:21.178Z","case":"case1","action":"explicit-open-html"}
+{"at":"2026-10-20T22:48:12.826Z","case":"case1","action":"html-scroll-rows-columns"}
+{"at":"2026-10-20T22:48:31.529Z","case":"case1","action":"return-to-app-no-csv-download"}
+{"at":"2026-10-20T22:49:27.139Z","case":"case2","action":"clean-session-reset","tab":"1763932473","closed_prior_tabs":["1763932469","1763932471"],"question_empty":true,"files_empty":true}
+{"at":"2026-10-20T22:49:43.204Z","case":"case2","action":"review-task","question":"What should I restock in my stores next week?","files":4}
+{"at":"2026-10-20T22:51:09.114Z","case":"case2","action":"manual-current-approach","answer":"I normally use last month's sales to work out what we need for the week."}
+{"at":"2026-10-20T22:51:32.026Z","case":"case2","action":"approve-and-run"}
+{"at":"2026-10-20T23:00:10.224Z","case":"case2","action":"full-response-start","units":887,"measured_weekly_seconds":0.96,"customer_cost_text":false}
+{"at":"2026-10-20T23:00:35.465Z","case":"case2","action":"full-response-end","customer_cost_text":false}
+{"at":"2026-10-20T23:00:48.561Z","case":"case2","action":"explicit-open-html"}
+{"at":"2026-10-20T23:01:49.371Z","case":"case2","action":"html-scroll-rows-columns"}
+{"at":"2026-10-20T23:04:07.440Z","case":"case2","action":"html-bottom-and-right-columns-shown","csvDownloaded":false}
+{"at":"2026-10-21T19:12:40.093Z","case":"case3","action":"question-and-four-files-ready-recording-window","question":"What should I restock in my stores next week?"}
+{"at":"2026-10-21T19:13:40.526Z","case":"case3","action":"continue-without-current-approach"}
+{"at":"2026-10-21T19:14:09.212Z","case":"case3","action":"approve-and-run"}
+{"at":"2026-10-21T19:23:18.541Z","case":"case3","action":"full-response-start-shown","units":883}
+{"at":"2026-10-21T19:23:25.355Z","case":"case3","action":"full-response-shown"}
+{"at":"2026-10-21T19:24:08.280Z","case":"case3","action":"html-explicitly-opened","csvDownloaded":false}
+{"at":"2026-10-21T19:24:24.620Z","case":"case3","action":"html-scrolled"}
+{"at":"2026-10-21T19:25:02.087Z","case":"case3","action":"html-right-columns-and-bottom-shown"}
+{"at":"2026-10-21T19:25:16.061Z","case":"case3","action":"returned-to-app-after-html","csvDownloaded":false}

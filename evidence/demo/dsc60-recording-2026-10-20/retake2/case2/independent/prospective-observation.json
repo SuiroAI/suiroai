@@ -1,0 +1,33 @@
+{
+  "format": "dsc60-prospective-observation-v1",
+  "observed_at": "2026-10-20T22:54:19.761564+00:00",
+  "analysis_run": "investigation-e3cd5622fccd4bb092bf63711e9f7bc7",
+  "observed_output_files": {
+    "evaluation_plan.json": "7b636ed3ed1019faa9e82b3ac3a3e0240b244c792a7a28fec1655769994950c0",
+    "inspect_sources.py": "7f31cb347bd63b238049facd5f975f82282339fb55cb57f93297db393441a169",
+    "source_treatment.json": "e1b53d9b48e7c705deded9697cafc2ae336824f959528e76b3a21f516b3db245",
+    "task_refinement.json": "8fbf93e388df27ae14fd6d08d8ad0e842b5d5f597c3d5a05f416323af62fac3f"
+  },
+  "candidate_scores_present": false,
+  "code_present": "inspect_sources.py only; inspection rather than candidate scoring",
+  "released_hashes_verified": [
+    {
+      "path": "input-1.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6"
+    },
+    {
+      "path": "input-2.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a"
+    },
+    {
+      "path": "input-3.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9"
+    },
+    {
+      "path": "input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+    }
+  ],
+  "outbound_prompt_sha256": "741793efcd01bd3b3207469769717aee20d9a8a791ef1d1067785067efc05e86",
+  "scope": "Live file/hash observation; no producer execution."
+}

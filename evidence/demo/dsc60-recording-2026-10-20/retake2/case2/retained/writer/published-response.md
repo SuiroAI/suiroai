@@ -1,0 +1,7 @@
+Your weekly order list is ready: **887 units are suggested for December 1–7, 2025.** It brings the quantities together so you can review the list without working out each order by hand.
+
+Start with the items flagged as likely to run out before the next delivery, especially **desk lamps at LA-01 and desk fans at NYC-01**. Review these before placing orders and arrange earlier deliveries where possible: a normal delivery may arrive too late to cover the gap. A zero quantity means no order is suggested under the buying rules; it can still have a warning about a delivery arriving too late. Also review slow-selling items before committing to minimum-size orders.
+
+The repeatable weekly routine checks sales, usable stock in each store, deliveries on the way and your buying rules. It blends each item's last 12 weeks of sales at that store with broader product and store patterns, giving it more information to work with when an item sells infrequently. It estimates what is needed through the supplier's delivery time and the next weekly review, adds safety stock, deducts stock and incoming deliveries, and rounds quantities to your minimum orders and pack sizes. Incoming deliveries are already included in this week's suggestions.
+
+The measured weekly calculation took **0.96 seconds** on the computer used. This workload is suitable for an ordinary computer, and the routine runs locally without ChatGPT. It can be scheduled to repeat each week using the week's sales, stock, delivery and buying-rule files. Scheduling has not been set up.

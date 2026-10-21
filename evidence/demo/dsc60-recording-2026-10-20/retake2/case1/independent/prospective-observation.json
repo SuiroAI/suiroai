@@ -1,0 +1,34 @@
+{
+  "format": "dsc60-prospective-observation-v1",
+  "observed_at": "2026-10-20T22:41:43.518066+00:00",
+  "analysis_run": "investigation-437185445c014da7a2b56d4ecaa1999a",
+  "observed_output_files": {
+    "evaluation_plan.json": "095c250969f3b2eba045ac59c7045c258ad213c69af3ca83f3adff8cdc1edbc8",
+    "task_refinement.json": "75e5a8217f9bbc7ef1efe27d14323cfa0aa5ec536bb60ac208db129d095f1556"
+  },
+  "candidate_score_or_code_present": false,
+  "released_input_hashes_verified": [
+    {
+      "relative_path": "input-1.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    },
+    {
+      "relative_path": "input-2.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    {
+      "relative_path": "input-3.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    {
+      "relative_path": "input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    }
+  ],
+  "outbound_prompt_sha256": "3b55ec588378b53fa0eeefe4b5fd132af122f6d381bd2346161cbff905d5caa6",
+  "scope": "Own live file/hash observation before scores; no producer execution or source data analysis."
+}

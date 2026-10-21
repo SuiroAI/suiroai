@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-21T19:16:55.899080+00:00",
+  "analysis_run": "investigation-8a6c13df062941a1a1ca95755942b4ae",
+  "observed_output_files": {
+    "evaluation_plan.json": "f98ec274591aa564cc81d3aa7b80225eeaa0f4005d155f07cfd05a8131b3ecce",
+    "source_profile.json": "a523f5eeef6ee3aa0b073f41632a906edda2d2887f3a6ba65a9799a4e5f43f5c",
+    "inspect_sources.py": "5198a958303d08e5911ae1abc2dc116cc548fa9bdef321a6630365a748a53d44",
+    "task_refinement.json": "bad64900c464f96dbc2b1b2db0667fbf5f480d671db26c5b02cebb526ccfc170"
+  },
+  "candidate_code_or_scores_present": false,
+  "outbound_prompt_sha256": "39e0355394b957b71efee33060a28abadf4694e68b2e4360e2561d5929d0c375",
+  "released_file_hashes_verified": true,
+  "scope": "Live prospective plan/hash observation; inspect_sources.py only, no producer execution."
+}

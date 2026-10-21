@@ -1,0 +1,101 @@
+{
+  "format": "dsc60-independent-development-arithmetic-v1",
+  "rows": 16128,
+  "common_target_cells": 5376,
+  "all_keys_unique_and_actuals_common": true,
+  "prospective_plan_unchanged": true,
+  "scores": [
+    {
+      "method": "poisson_seasonal",
+      "horizon": 7,
+      "n": 2688,
+      "mae": 0.9303063411081802,
+      "bias": -0.10707870778780196
+    },
+    {
+      "method": "poisson_seasonal",
+      "horizon": 14,
+      "n": 2688,
+      "mae": 1.5160945578399554,
+      "bias": -0.240362671903873
+    },
+    {
+      "method": "previous_month",
+      "horizon": 7,
+      "n": 2688,
+      "mae": 0.8969246031746032,
+      "bias": -0.1498223886328725
+    },
+    {
+      "method": "previous_month",
+      "horizon": 14,
+      "n": 2688,
+      "mae": 1.5782674091141833,
+      "bias": -0.3286626344086022
+    },
+    {
+      "method": "shrinkage84",
+      "horizon": 7,
+      "n": 2688,
+      "mae": 0.8851369457795312,
+      "bias": -0.1540798611111111
+    },
+    {
+      "method": "shrinkage84",
+      "horizon": 14,
+      "n": 2688,
+      "mae": 1.4846654626655769,
+      "bias": -0.33717757936507936
+    }
+  ],
+  "selected": "shrinkage84",
+  "gain": 0.01314230577837916,
+  "per_origin": [
+    {
+      "origin": "2025-09-28",
+      "selected": 0.8401373231653404,
+      "baseline": 0.866647465437788
+    },
+    {
+      "origin": "2025-10-05",
+      "selected": 0.8417572765008745,
+      "baseline": 0.8299603174603174
+    },
+    {
+      "origin": "2025-10-12",
+      "selected": 0.8460073733630448,
+      "baseline": 0.8678571428571429
+    },
+    {
+      "origin": "2025-10-19",
+      "selected": 0.8165523593000008,
+      "baseline": 0.8111111111111111
+    },
+    {
+      "origin": "2025-10-26",
+      "selected": 0.8433484978745761,
+      "baseline": 0.8212301587301587
+    },
+    {
+      "origin": "2025-11-02",
+      "selected": 1.0017159560498976,
+      "baseline": 1.0770929339477726
+    },
+    {
+      "origin": "2025-11-09",
+      "selected": 0.8949784214761173,
+      "baseline": 0.9077380952380952
+    },
+    {
+      "origin": "2025-11-16",
+      "selected": 0.9965983585063981,
+      "baseline": 0.9937596006144394
+    }
+  ],
+  "selected_origin_wins": 4,
+  "scope": "Own arithmetic from saved development prediction/actual cells only; no producer execution or source-sales/December scoring.",
+  "caveats": [
+    "Seven-day primary origins do not overlap; 14-day/coverage windows overlap and development estimates/training remain correlated. Producer bootstrap wording overstates overlap of primary windows.",
+    "Source winner uses round(MAE,9) rather than explicit within1e-9 rule, immaterial here because method gaps exceed .01."
+  ]
+}

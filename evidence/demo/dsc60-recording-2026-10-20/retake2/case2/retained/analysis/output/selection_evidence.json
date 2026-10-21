@@ -1,0 +1,261 @@
+{
+  "selected": "shrinkage84",
+  "selection_metric": {
+    "poisson_seasonal": 0.9303063411081802,
+    "previous_month": 0.8969246031746032,
+    "shrinkage84": 0.8851369457795312
+  },
+  "improvement_vs_baseline_fraction": 0.01314230577837916,
+  "bootstrap_origin_block_difference_95_percentile": [
+    -0.033369636541088626,
+    0.005982997879716383
+  ],
+  "bootstrap_limit": "8 overlapping development origins; descriptive uncertainty, not independent generalization evidence.",
+  "leave_one_origin_out_winners": {
+    "2025-09-28": "shrinkage84",
+    "2025-10-05": "shrinkage84",
+    "2025-10-12": "shrinkage84",
+    "2025-10-19": "shrinkage84",
+    "2025-10-26": "shrinkage84",
+    "2025-11-02": "shrinkage84",
+    "2025-11-09": "shrinkage84",
+    "2025-11-16": "shrinkage84"
+  },
+  "fully_observed_store_week_subset": {
+    "poisson_seasonal": {
+      "mean": 1.109410831865461,
+      "size": 308
+    },
+    "previous_month": {
+      "mean": 1.1677174975562072,
+      "size": 308
+    },
+    "shrinkage84": {
+      "mean": 1.107267698623273,
+      "size": 308
+    }
+  },
+  "recent84_pair_transaction_count_distribution": {
+    "count": 336.0,
+    "mean": 3.324404761904762,
+    "std": 2.5023212393560645,
+    "min": 0.0,
+    "25%": 2.0,
+    "50%": 3.0,
+    "75%": 4.0,
+    "max": 15.0
+  },
+  "november_october_recorded_unit_ratio_by_year": {
+    "2022": 1.2379642365887207,
+    "2023": 1.626543209876543,
+    "2024": 1.4114285714285715,
+    "2025": 1.2773972602739727
+  },
+  "workload": [
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0010647500166669488,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.749993190169334e-06,
+      "origin": "2025-09-28"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0014857499627396464,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.4159976318478584e-06,
+      "origin": "2025-09-28"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09401962498668581,
+      "retained_numeric_bytes": 664,
+      "training_rows": 65520,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4717444,
+      "iterations": 15,
+      "inference_seconds": 0.0023646251065656543,
+      "origin": "2025-09-28"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0010764580219984055,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 5.625071935355663e-06,
+      "origin": "2025-10-05"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0015307499561458826,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.207963451743126e-06,
+      "origin": "2025-10-05"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.10236337501555681,
+      "retained_numeric_bytes": 664,
+      "training_rows": 65856,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4741636,
+      "iterations": 18,
+      "inference_seconds": 0.002202000003308058,
+      "origin": "2025-10-05"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0012193339643999934,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.292015314102173e-06,
+      "origin": "2025-10-12"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0014595000538975,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 4.958012141287327e-06,
+      "origin": "2025-10-12"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09299079200718552,
+      "retained_numeric_bytes": 664,
+      "training_rows": 66192,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4765828,
+      "iterations": 17,
+      "inference_seconds": 0.002044582972303033,
+      "origin": "2025-10-12"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0011103750439360738,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 5.832989700138569e-06,
+      "origin": "2025-10-19"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0014117920072749257,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 5.292007699608803e-06,
+      "origin": "2025-10-19"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09753575001377612,
+      "retained_numeric_bytes": 664,
+      "training_rows": 66528,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4790020,
+      "iterations": 18,
+      "inference_seconds": 0.0021299999207258224,
+      "origin": "2025-10-19"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0010922920191660523,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 0.00016212498303502798,
+      "origin": "2025-10-26"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0015948750078678131,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 7.1249669417738914e-06,
+      "origin": "2025-10-26"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09617266699206084,
+      "retained_numeric_bytes": 664,
+      "training_rows": 66864,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4814212,
+      "iterations": 16,
+      "inference_seconds": 0.0018634169828146696,
+      "origin": "2025-10-26"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.001116583007387817,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 5.832989700138569e-06,
+      "origin": "2025-11-02"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0015084579354152083,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 4.875008016824722e-06,
+      "origin": "2025-11-02"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09560466592665762,
+      "retained_numeric_bytes": 664,
+      "training_rows": 67200,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4838404,
+      "iterations": 16,
+      "inference_seconds": 0.0017303329659625888,
+      "origin": "2025-11-02"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0012666250113397837,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.458023563027382e-06,
+      "origin": "2025-11-09"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0015293749747797847,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 5.709007382392883e-06,
+      "origin": "2025-11-09"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09642704203724861,
+      "retained_numeric_bytes": 664,
+      "training_rows": 67536,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4862596,
+      "iterations": 17,
+      "inference_seconds": 0.0018174999859184027,
+      "origin": "2025-11-09"
+    },
+    {
+      "method": "previous_month",
+      "fit_and_preparation_seconds": 0.0012692500604316592,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 0.00014387501869350672,
+      "origin": "2025-11-16"
+    },
+    {
+      "method": "shrinkage84",
+      "fit_and_preparation_seconds": 0.0015870829811319709,
+      "retained_numeric_bytes": 2688,
+      "inference_seconds": 6.916932761669159e-06,
+      "origin": "2025-11-16"
+    },
+    {
+      "method": "poisson_seasonal",
+      "fit_and_preparation_seconds": 0.09431770804803818,
+      "retained_numeric_bytes": 664,
+      "training_rows": 67872,
+      "training_features": 43,
+      "training_matrix_and_target_bytes": 4886788,
+      "iterations": 17,
+      "inference_seconds": 0.0019100419012829661,
+      "origin": "2025-11-16"
+    }
+  ],
+  "total_comparison_wall_seconds": 14.750316041056067,
+  "comparison_process_peak_rss_native": 418660352,
+  "platform": "darwin",
+  "plan_sha256": "7b636ed3ed1019faa9e82b3ac3a3e0240b244c792a7a28fec1655769994950c0",
+  "gate": "Independent performance-success recording readiness not established; external threshold absent and untouched outcomes withheld."
+}

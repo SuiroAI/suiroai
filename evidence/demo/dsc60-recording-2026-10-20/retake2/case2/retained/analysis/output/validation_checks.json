@@ -1,0 +1,35 @@
+{
+  "reject_existing_output": {
+    "exit_code": 2,
+    "message": "Input error: Output already exists; choose a new output path"
+  },
+  "reject_invalid_date": {
+    "exit_code": 2,
+    "message": "Input error: day is out of range for month, at position 0. You might want to try:\n    - passing `format` if your strings have a consistent format;\n    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;\n    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this."
+  },
+  "response_word_count": 240,
+  "csv_sha256": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+  "dependencies_comparison": {
+    "sklearn": "1.7.2",
+    "scipy": "1.16.3",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "frozen_plan_unchanged": true,
+  "measured_program_unchanged": true,
+  "required_files_present": [
+    "restocking.csv",
+    "response.md",
+    "result.json",
+    "task_refinement.json",
+    "restock_routine.py",
+    "routine_usage.md",
+    "routine_measurements.json",
+    "evaluation_plan.json",
+    "source_treatment.json",
+    "comparison_results.csv",
+    "development_predictions.csv"
+  ],
+  "notebook": "Executed sequentially and schema-validated; text outputs inspected, no graphical viewer available",
+  "paid_routine_model_calls": 0
+}

@@ -1,0 +1,17 @@
+{
+  "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "customer_context_unchanged": {
+    "current_process": {"evidence": [{"quote": "I usually look at the last few months of sales to decide what to buy.", "source": "question"}], "source": "detector_interpretation", "status": "found", "text": "The user wants to determine what to restock in stores next week. Their stated current method is to look at the last few months of sales to decide what to buy; no specific calculation or ordering rule is described."},
+    "demo_scenario": {"authority": "explicit_user_demo_roleplay_instruction", "customer_provenance_only_csv_columns": false, "customer_provenance_warnings": false, "independently_verified_real_stock_claimed": false, "mode": "provided_operations_are_assumed_scenario_facts", "operating_inputs": ["supplied_stock", "supplied_deliveries", "supplied_ordering_rules"], "source_provenance_unchanged": true},
+    "format": "dsc60-task-context-v1", "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy."
+  },
+  "refined_task_attribution": "Analyst refinement, before candidate scoring",
+  "refined_task": "Prepare a November 30 weekly order list across the supplied 336 product/store keys. Forecast recorded gross fulfilled product units, apply lead plus review coverage, safety stock, usable stock and timely inbound, round positive needs to minimum and multiple, and flag expected shortages before arrivals. Deliver a reusable local non-LLM CLI with validated paths and dates.",
+  "incumbent": "Only looking at the last few months is known; exact windows, status treatment, arithmetic and judgment are unknown. An 84-day average is an analyst baseline, not an evaluable incumbent replica.",
+  "facts": ["Four released CSV sources only", "Sales partition ends 2025-11-30", "Operational scenario inputs are authorized assumed facts; internal source Provenance values remain synthetic", "December sales reserved and not accessed", "October-November evidence already development"],
+  "interpretations_and_assumptions": ["All assigned channels count toward their supplied store; no channel-specific inventory mapping exists", "Positive completed, shipped or returned quantities proxy gross fulfilled units; returns do not automatically become usable inventory", "Absent pair records on globally observed dates mean zero recorded fulfilled units, conditional on extract completeness and continued assortment; they do not prove zero latent demand or open-store exposure", "Use only longstanding keys established before 2024; do not fabricate assortment start dates"],
+  "unknowns": ["Availability versus excess-stock priority and business costs", "Historical stockouts and opening calendars", "When historical statuses changed", "An externally declared meaningful improvement threshold"],
+  "scope": "Lightweight CPU forecasting only; no policy optimization, paid APIs, deep learning, reserved evaluation, or installed scheduler",
+  "automation_replaces": "Repeated file loading, cleaning, recent-sales calculation, stock and delivery subtraction, order rounding and exception checks; no claim about exact prior hand steps or time saved",
+  "success_gate": "Useful development recommendation permitted. Performance-success readiness remains open: no independent untouched outcomes or external meaningful improvement threshold."
+}

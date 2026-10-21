@@ -1,0 +1,14 @@
+{
+  "positive_order_rows": 113,
+  "row_count": 336,
+  "sha256": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+  "source_csv_ref": {
+    "artifact_id": "demo-data-report-b15d3e1cc8e64b029513997def0e3356-presented",
+    "provenance": "derived",
+    "sha256": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+    "version": 1
+  },
+  "total_order_units": 887,
+  "unit_note": "Use source findings for unit/decision context; counts alone do not verify recommendations.",
+  "zero_order_rows": 223
+}

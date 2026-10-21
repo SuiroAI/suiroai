@@ -1,0 +1,156 @@
+{
+  "dispatch_status": "returned",
+  "format": "dsc60-native-call-trace-v1",
+  "model_usage": {
+    "available": true,
+    "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown.",
+    "counts": {
+      "cache_write_input_units": 0,
+      "cached_input_units": 970240,
+      "input_units": 1031741,
+      "output_units": 26998,
+      "reasoning_output_units": 5006,
+      "total_units": 1058739
+    },
+    "format": "dsc60-native-usage-v1",
+    "max_observed_request_input_units": 76613,
+    "model_context_capacity_units": 475000,
+    "rejected_update_count": 0,
+    "snapshot_count": 19,
+    "source": "native_thread_usage_cumulative_total",
+    "thread_id": "01a15b83-4aa5-7a52-9972-330303049eef",
+    "turn_id": "01a15b83-4ce1-76d3-9038-b1a6e462ac08"
+  },
+  "native_evidence_dir": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native",
+  "native_evidence_files": [
+    {
+      "bytes": 2306,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native/native-bootstrap.jsonl",
+      "sha256": "c24b97c8ef571c5a231193b1956dc88fe6ac27e9c2ba8b2ed523cfebe9912f93"
+    },
+    {
+      "bytes": 1856298,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native/native-rpc.jsonl",
+      "sha256": "0ba3ee48eb7a221da6dd03265dd7378535c91fd99034e3843b930da5dff0fc7f"
+    },
+    {
+      "bytes": 407690,
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native/native-run.json",
+      "sha256": "d0bddc651d03bbd26377e1547c095a2834e7fc880ccd61fd4651b8b35ee1146a"
+    }
+  ],
+  "native_execution": {
+    "error_code": null,
+    "message": null,
+    "outcome": "completed",
+    "thread_id": "01a15b83-4aa5-7a52-9972-330303049eef",
+    "turn_id": "01a15b83-4ce1-76d3-9038-b1a6e462ac08"
+  },
+  "observed_configuration": {
+    "cli_version": "0.163.0",
+    "cwd": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/output",
+    "data_attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "effective_profile_verified": true,
+    "instruction_sources": [
+      "/Users/ceverson/.codex/AGENTS.md"
+    ],
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "permission_profile": "dsc26-stage-f6d5ea4bcb82440ea25c4d51ebd7ee10",
+    "reasoning_effort": "medium",
+    "runtime_workspace_roots": [
+      "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/output"
+    ],
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "prompt_bytes": 23625,
+  "prompt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native-trace/outbound-prompt.txt",
+  "prompt_sha256": "741793efcd01bd3b3207469769717aee20d9a8a791ef1d1067785067efc05e86",
+  "receipt_path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native-trace/call-trace.json",
+  "released_files": [
+    {
+      "approved_source_ref": {
+        "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:policy:0",
+        "provenance": "supplied",
+        "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+        "version": 5
+      },
+      "controller_lineage_ref": null,
+      "development_partition": false,
+      "original_name": "ordering_policy.csv",
+      "relative_path": "input-1.csv",
+      "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "released_bytes": 19279,
+      "source_role": "ordering_policy"
+    },
+    {
+      "approved_source_ref": {
+        "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:receipts:1",
+        "provenance": "supplied",
+        "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+        "version": 5
+      },
+      "controller_lineage_ref": null,
+      "development_partition": false,
+      "original_name": "inbound_deliveries.csv",
+      "relative_path": "input-2.csv",
+      "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "released_bytes": 10740,
+      "source_role": "inbound_ledger"
+    },
+    {
+      "approved_source_ref": {
+        "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:inventory:2",
+        "provenance": "supplied",
+        "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+        "version": 5
+      },
+      "controller_lineage_ref": null,
+      "development_partition": false,
+      "original_name": "inventory_position.csv",
+      "relative_path": "input-3.csv",
+      "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "released_bytes": 18799,
+      "source_role": "usable_stock"
+    },
+    {
+      "approved_source_ref": {
+        "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:sales:3",
+        "provenance": "supplied",
+        "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+        "version": 5
+      },
+      "controller_lineage_ref": {
+        "artifact_id": "demo-investigation-lineage-72e954eebf374c4d8718906af3ce8f2d",
+        "provenance": "derived",
+        "sha256": "4140a33a003feb3b06161dcf7860de97e505fa62464c06592f4d9c7ceeb8838f",
+        "version": 1
+      },
+      "development_partition": true,
+      "original_name": "Sales_transactions_2022_2025.csv",
+      "relative_path": "input-4.csv",
+      "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "released_bytes": 5006997,
+      "source_role": "transactions"
+    }
+  ],
+  "requested_configuration": {
+    "attachment": {
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote",
+      "type": "mention"
+    },
+    "cli_version": "0.163.0",
+    "data_plugin": "data-analytics@openai-curated-remote",
+    "data_skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+  },
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "medium",
+  "stage": "investigation",
+  "transport_exception": null,
+  "visibility_limit": "Explicit outbound inputs and exposed native evidence only; hidden/system context is not known."
+}

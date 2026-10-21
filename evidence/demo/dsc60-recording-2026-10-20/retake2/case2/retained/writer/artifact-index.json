@@ -1,0 +1,50 @@
+[
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/output/business_response.md",
+    "bytes": 1550,
+    "sha256": "568bfc8768ff6425837b2e981b2b78604b18bcccfef0c5329aee97d1d3746a47",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case2/retained/writer/output/business_response.md"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/output/rewrite_result.json",
+    "bytes": 272,
+    "sha256": "dba976e19f0a28ceb63e2cde872e2c00baa131f153ffeef0b622fefb07a6ae41",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case2/retained/writer/output/rewrite_result.json"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/native-trace/call-trace.json",
+    "bytes": 7130,
+    "sha256": "0ce1e27292593ea6008f07dbc048236af57ad4117aae0422abcd2e475bca4ba0",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case2/retained/writer/trace/call-trace.json"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/native-trace/outbound-prompt.txt",
+    "bytes": 7060,
+    "sha256": "d3bccd98790e3a35ff1d457e3efaea310b3dbb563827f496052ea7c99f16fa35",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case2/retained/writer/trace/outbound-prompt.txt"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/native/native-bootstrap.jsonl",
+    "bytes": 2310,
+    "sha256": "5fd4023ac623732064ea82e22d94c5716b3875d7e906ff5d077e817afbf8698a",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/native/native-rpc.jsonl",
+    "bytes": 174081,
+    "sha256": "970ad72e65ed40acf0555653017e35055c2a70ffea30cb48c5464a1d1afa7c6d",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/business-response-a931dd3723d64d6c9d9e85636dc4ee51/native/native-run.json",
+    "bytes": 101450,
+    "sha256": "a8c869865abf5aa15d8c95eab0b34d2e4d7db9a79d6636fe1ab2142574519f7a",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "/Users/ceverson/.codex/sessions/2026/10/20/rollout-2026-10-20T18-59-20-01a15b8a-69c9-7df1-83cf-7f71d39bc140.jsonl",
+    "bytes": 390735,
+    "sha256": "fdfd1636d5b27d311e2ae43e1eafee1d82401c7983e73510392120cd2bc3b930",
+    "retention": "hash_only_full_rollout"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "status": "found",
+  "summary": "The user wants to determine what to restock in stores next week. Their stated current method is to look at the last few months of sales to decide what to buy; no specific calculation or ordering rule is described.",
+  "evidence": [
+    {
+      "source": "question",
+      "quote": "I usually look at the last few months of sales to decide what to buy."
+    }
+  ]
+}

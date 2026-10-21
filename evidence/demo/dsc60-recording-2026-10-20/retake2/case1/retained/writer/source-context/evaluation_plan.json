@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "written_before_scores": true,
+  "status": "development; October-November was already inspected",
+  "target": "Positive gross fulfilled units: normalized completed/shipped/returned statuses. Exclude cancelled/processing and nonpositive quantity. Do not net returns or add them to usable stock.",
+  "deduplication": "Remove exact duplicate rows, reject conflicting transaction IDs",
+  "population": "Same supplied 336 product/store keys for every method; each has records before 2024; use all channels assigned to store",
+  "missing_dates": "Build recorded-unit calendar from 2024-01-01. Fill absent pair records on globally observed dates with zero recorded fulfilled units conditional on complete reporting and active assortment. Never claim zero unconstrained demand; reject a globally missing date in training windows.",
+  "origins": ["2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16"],
+  "training": "2024-01-01 through each origin inclusive; candidate-specific recent windows use only trailing observations",
+  "evaluation_dates": "2025-10-06 through 2025-11-30; overlapping coverage windows disclosed",
+  "horizons": {"primary": "Supplier lead days plus 7 review days, 8-14 days by key", "secondary": "Next 7 days"},
+  "baseline": "84-calendar-day mean of recorded fulfilled units per key; analyst interpretation of a few months, not customer's proven rule",
+  "candidates": [
+    {"name": "mean84", "rationale": "Fair recent-month baseline; 17k rows and 336 longstanding sparse keys in input-4.csv"},
+    {"name": "mean28", "rationale": "Responsive recent level; monthly record counts in input-4.csv rise in autumn"},
+    {"name": "croston_sba", "rationale": "Sparse pair sales; conventional intermittent-demand model with fixed alpha 0.1, bias adjustment, no tuning"},
+    {"name": "poisson_seasonal", "rationale": "Pool month seasonality across sparse keys while retaining pair levels; input-4.csv shows repeated November/December record-count elevation in 2022-24. Monthly aggregate rates with exposure weights, pair/month one-hot plus linear time, fixed regularization alpha 0.01; no promotions or future statuses as features"}
+  ],
+  "primary_metric": "Mean absolute error in product units per product/store coverage window, equally weighted across keys and origins",
+  "selection_rule": "Lowest primary MAE. Numerical ties within 1e-8 select simpler candidate in listed order. No business meaningfulness threshold invented. Baseline may win.",
+  "secondary_diagnostics": ["7-day MAE and signed bias", "Per-origin and per-store errors", "Sparse activity", "Seasonal stability", "Alternative target and missing-exposure sensitivities", "Fit and inference CPU/wall time and process peak memory", "Order sensitivity versus baseline", "Empirical coverage residuals; not calibrated guarantees"],
+  "information_boundaries": "Cut by order date at each origin, fit without later sales. Source final statuses cannot recreate historical as-of statuses; comparisons are conditional development evidence. Current policy horizons provide common scenario weights, not historical ordering rules. No December 2025 outcomes.",
+  "search_budget": "Four candidates, fixed hyperparameters, one primary comparison; no iterative gain search",
+  "business_limits": "Forecast error does not measure stock availability, costs, savings or incumbent superiority. No historical stock or price cost score. Selection and deployment use same lead-plus-review horizon; next-week horizon also reported.",
+  "performance_success_gate": "Not satisfied: external threshold and genuinely untouched outcomes missing."
+}

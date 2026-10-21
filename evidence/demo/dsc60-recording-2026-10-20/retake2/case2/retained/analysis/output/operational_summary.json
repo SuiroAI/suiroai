@@ -1,0 +1,24 @@
+{
+  "rows": 336,
+  "order_rows": 113,
+  "zero_rows": 223,
+  "order_units": 887,
+  "projected_shortage_rows": 52,
+  "prearrival_shortage_rows": 52,
+  "runtime_seconds": 0.9613390000304207,
+  "peak_rss_bytes": 166526976,
+  "store_orders": {
+    "AUS-01": 53,
+    "CHI-01": 38,
+    "COL-01": 74,
+    "LA-01": 61,
+    "LON-01": 131,
+    "MAN-01": 127,
+    "MUC-01": 51,
+    "NYC-01": 73,
+    "PAR-01": 44,
+    "SYD-01": 99,
+    "TOR-01": 79,
+    "VAN-01": 57
+  }
+}

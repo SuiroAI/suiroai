@@ -1,0 +1,7 @@
+Your weekly order list is ready: it suggests ordering **877 units** for the week starting December 1, 2025, with quantities set out in the list. Start with the **52 items flagged as likely to run out before the next delivery**. Review these first and consider an earlier delivery or a stock transfer before placing orders. A zero quantity means no order is suggested under the buying rules; it is not proof that no purchase is needed.
+
+The routine checks sales, usable stock in each store, deliveries on the way and your buying rules. It estimates how much sells at a time and how long the gaps between sales tend to be, which is useful for products that sell irregularly. It works out the stock needed through the delivery wait and the following weekly review period, adds your stock buffer, subtracts available stock and deliveries due in time, then rounds the order to the required minimum and pack size.
+
+This gives you a repeatable weekly task without working out every quantity by hand. Review the flagged items and suggested quantities before placing orders; the flags indicate expected shortages, not certain outcomes.
+
+The weekly calculation, including loading the files and writing the order list, took **1.1 seconds in the measured run**. The measured routine is suitable for an ordinary computer at the current workload and runs without ChatGPT. It can be scheduled to run each week using that week's sales, stock, delivery records and buying rules. No schedule is installed yet.

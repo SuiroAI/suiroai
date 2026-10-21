@@ -1,0 +1,120 @@
+{
+  "fulfilled": {
+    "total_order_units": 883,
+    "positive_orders": 113,
+    "quantities_changed_from_main": 0,
+    "primary_scores": {
+      "recent_8week": 0.9071534863945578,
+      "pooled_13week": 0.8927205497583649,
+      "poisson_calendar": 0.9308680477555223
+    }
+  },
+  "noncancelled": {
+    "total_order_units": 886,
+    "positive_orders": 113,
+    "quantities_changed_from_main": 3,
+    "primary_scores": {
+      "recent_8week": 0.9743835034013606,
+      "pooled_13week": 0.956726280255692,
+      "poisson_calendar": 0.9949346937293052
+    }
+  },
+  "nonreturned": {
+    "total_order_units": 881,
+    "positive_orders": 113,
+    "quantities_changed_from_main": 2,
+    "primary_scores": {
+      "recent_8week": 0.8438031462585034,
+      "pooled_13week": 0.8322162198212619,
+      "poisson_calendar": 0.8617416325944331
+    }
+  },
+  "recorded_demand_residuals": {
+    "7": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -0.8656108597285068,
+        "0.5": -0.3076923076923077,
+        "0.9": 1.7434389140271496
+      },
+      "MAE": 0.8927205497583649,
+      "mean_forecast": 0.5060177917320775,
+      "mean_actual": 0.6662414965986394
+    },
+    "8": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -0.9668605903900022,
+        "0.5": -0.31803490627020037,
+        "0.9": 1.958112475759535
+      },
+      "MAE": 0.9962092895766363,
+      "mean_forecast": 0.5783060476938028,
+      "mean_actual": 0.7763605442176871
+    },
+    "9": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.0640594699418227,
+        "0.5": -0.3296703296703296,
+        "0.9": 2.4219133807369104
+      },
+      "MAE": 1.0919145130579704,
+      "mean_forecast": 0.6505943036555282,
+      "mean_actual": 0.8856292517006803
+    },
+    "10": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.1633268692092222,
+        "0.5": -0.3307476836888601,
+        "0.9": 2.6253178194354683
+      },
+      "MAE": 1.1688111141892654,
+      "mean_forecast": 0.7228825596172535,
+      "mean_actual": 0.9770408163265306
+    },
+    "11": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.27278603749192,
+        "0.5": -0.343675931911226,
+        "0.9": 2.7425770308123285
+      },
+      "MAE": 1.258827615295202,
+      "mean_forecast": 0.7951708155789788,
+      "mean_actual": 1.084608843537415
+    },
+    "12": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.3703943115707824,
+        "0.5": -0.341305753070459,
+        "0.9": 2.8120879120879123
+      },
+      "MAE": 1.341606147953687,
+      "mean_forecast": 0.8674590715407041,
+      "mean_actual": 1.197704081632653
+    },
+    "13": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.459383753501401,
+        "0.5": -0.35994397759103647,
+        "0.9": 3.0501400560224097
+      },
+      "MAE": 1.4251402942129234,
+      "mean_forecast": 0.9397473275024295,
+      "mean_actual": 1.2929421768707483
+    },
+    "14": {
+      "actual_minus_forecast_quantiles": {
+        "0.1": -1.5686274509803926,
+        "0.5": -0.3800904977375567,
+        "0.9": 3.0965309200603324
+      },
+      "MAE": 1.49810116354234,
+      "mean_forecast": 1.012035583464155,
+      "mean_actual": 1.3686224489795917
+    }
+  },
+  "metric_sparsity_warning": {
+    "zero_target_fraction": 0.7538265306122449,
+    "constant_zero_MAE_diagnostic_only": 0.6662414965986394,
+    "meaning": "Absolute error of sparse counts can prefer systematic low forecasts. Zero is a metric stress diagnostic, not a score-selected operational policy. Declared rates estimate average gross fulfillment; no stockout exposure or costs justify service or cost optimality."
+  },
+  "uncertainty_limit": "Empirical residual quantiles across seven origins and heterogeneous pairs, dependent overlapping horizons. Descriptive dispersion only, neither a calibrated prediction interval nor guaranteed service level. No untested additional buffer added; supplied safety stock retained. Aggregate 90th percentile next-week underprediction is about 1.74 units per key, large relative to subunit forecasts. Individual lumpy orders remain hard to predict."
+}

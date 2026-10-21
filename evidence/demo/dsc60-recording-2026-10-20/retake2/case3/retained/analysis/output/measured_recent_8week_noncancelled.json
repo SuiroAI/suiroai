@@ -1,0 +1,86 @@
+{
+  "method": "recent_8week",
+  "target": "noncancelled",
+  "primary_MAE_7day": 0.9743835034013606,
+  "WAPE_7day": 1.3425600468658465,
+  "mean_signed_error": -0.14583333333333334,
+  "MAE_8_to_14day": 1.382930723309732,
+  "actual_7day_units": 1707.0,
+  "zero_target_fraction": 0.7351190476190477,
+  "per_origin_MAE": {
+    "2025-10-05": 0.9159226190476191,
+    "2025-10-12": 0.9449404761904762,
+    "2025-10-19": 0.8880208333333334,
+    "2025-10-26": 0.9255952380952381,
+    "2025-11-02": 1.0673363095238095,
+    "2025-11-09": 1.0063244047619047,
+    "2025-11-16": 1.0725446428571428
+  },
+  "per_store_MAE": {
+    "AUS-01": 1.0440051020408163,
+    "CHI-01": 0.9738520408163265,
+    "COL-01": 0.6307397959183674,
+    "LA-01": 1.2206632653061225,
+    "LON-01": 0.9585459183673469,
+    "MAN-01": 0.8099489795918368,
+    "MUC-01": 0.9853316326530612,
+    "NYC-01": 1.621173469387755,
+    "PAR-01": 0.9540816326530612,
+    "SYD-01": 0.8367346938775511,
+    "TOR-01": 0.9119897959183674,
+    "VAN-01": 0.7455357142857143
+  },
+  "residual_actual_minus_forecast_quantiles": {
+    "0.1": -1.125,
+    "0.5": -0.24999999999999994,
+    "0.9": 2.0
+  },
+  "preparation_seconds": 0.09972895809914917,
+  "origins_workloads": [
+    {
+      "origin": "2025-10-05",
+      "fit_seconds": 0.0005364579847082496,
+      "inference_seconds": 9.750016033649445e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-10-12",
+      "fit_seconds": 0.0005598339485004544,
+      "inference_seconds": 9.207986295223236e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-10-19",
+      "fit_seconds": 0.0002375830663368106,
+      "inference_seconds": 5.709007382392883e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-10-26",
+      "fit_seconds": 0.00020516698714345694,
+      "inference_seconds": 4.041939973831177e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-11-02",
+      "fit_seconds": 0.00019554200116544962,
+      "inference_seconds": 3.999914042651653e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-11-09",
+      "fit_seconds": 0.00019695807714015245,
+      "inference_seconds": 3.833905793726444e-06,
+      "retained_rate_bytes": 2688
+    },
+    {
+      "origin": "2025-11-16",
+      "fit_seconds": 0.0001902079675346613,
+      "inference_seconds": 3.6670826375484467e-06,
+      "retained_rate_bytes": 2688
+    }
+  ],
+  "total_process_work_seconds": 0.16360620805062354,
+  "peak_process_rss_mb": 211.703125,
+  "daily_panel_bytes": 3888344
+}

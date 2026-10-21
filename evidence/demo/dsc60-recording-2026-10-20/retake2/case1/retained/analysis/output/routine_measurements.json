@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "planning_date": "2025-11-30",
+  "dependencies": {
+    "python": "3.13.9",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "wall_seconds_including_startup_preparation_and_output": 1.0979175840038806,
+  "cpu_seconds": 4.415553,
+  "peak_process_rss_bytes": 154746880,
+  "measurement_limits": "Fresh measurement parent, one child. OS process peak includes interpreter, imports, input data and retained arrays through output. macOS RSS bytes/Linux KiB normalized. No hardware cap or 8GB-host assumption. Single observed warm/cold-cache-unspecified run, not a runtime guarantee.",
+  "routine_output": {
+    "method": "croston_sba",
+    "rows": 336,
+    "total_order_units": 877,
+    "timing": {
+      "fit_wall_seconds": 0.0035629170015454292,
+      "fit_cpu_seconds": 0.003561999999999621,
+      "inference_wall_seconds": 8.207978680729866e-06,
+      "inference_cpu_seconds": 7.999999999785956e-06,
+      "daily_array_bytes": 1881600
+    }
+  },
+  "output_agreement": {
+    "all_rows_headers_values_equal": true,
+    "compared_to": "restocking_expected.csv from analysis selected calculation",
+    "independent_policy_checks": "see validation.json"
+  },
+  "sha256": {
+    "restock_routine.py": "4c197fdce757d9660a216d1a0f042219879526719401bcf433d43d317eea2854",
+    "../released/input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "../released/input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "../released/input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "../released/input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+    "restocking.csv": "ace330b3dac631c950765e0b75b4baba4767ae2041de7c21bb0ad41302821781"
+  },
+  "routine_numeric_cost_assessment": {
+    "paid_model_api_calls": 0,
+    "paid_model_api_cost": 0,
+    "routine_uses_llm": false,
+    "AI_assisted_build_cost": "not measured; distinct from local routine"
+  },
+  "eight_gb_assessment": "Measured process well below 1GB, leaving several GB for OS on a CPU-only 8GB computer at current 17,406 input rows and 336 keys. NumPy/pandas only; Croston state linear in keys, calendar preparation linear in dates times keys. Do not extrapolate unlimited growth. No sklearn/scipy required for selected routine; those are comparison-only dependencies."
+}

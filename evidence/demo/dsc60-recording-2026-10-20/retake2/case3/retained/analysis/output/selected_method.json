@@ -1,0 +1,44 @@
+{
+  "selected_method": "pooled_13week",
+  "selection_rule": "Minimum predeclared primary MAE; no score-informed new candidates or tuning",
+  "baseline": "recent_8week, analytical baseline, not customer incumbent",
+  "relative_error_reduction": 0.015910137427301296,
+  "per_origin_error_difference_from_baseline": {
+    "2025-10-05": -0.015547004058033432,
+    "2025-10-12": -0.022673813114989543,
+    "2025-10-19": 0.006231258529052672,
+    "2025-10-26": -0.01061698717948715,
+    "2025-11-02": -0.004991740285857894,
+    "2025-11-09": -0.02779292806866333,
+    "2025-11-16": -0.02563934227537166
+  },
+  "origins_improved": 6,
+  "leave_one_origin_out_winners": {
+    "2025-10-05": "pooled_13week",
+    "2025-10-12": "pooled_13week",
+    "2025-10-19": "pooled_13week",
+    "2025-10-26": "pooled_13week",
+    "2025-11-02": "pooled_13week",
+    "2025-11-09": "pooled_13week",
+    "2025-11-16": "pooled_13week"
+  },
+  "per_store_improved": 8,
+  "secondary_horizon_winners": {
+    "7": "pooled_13week",
+    "8": "pooled_13week",
+    "9": "pooled_13week",
+    "10": "pooled_13week",
+    "11": "pooled_13week",
+    "12": "pooled_13week",
+    "13": "pooled_13week",
+    "14": "pooled_13week"
+  },
+  "interpretation": "Small development error difference; no externally supplied practical improvement threshold. Not proof of business benefit, true demand accuracy, or superiority over an unspecified incumbent.",
+  "performance_success_recording_readiness": false,
+  "gate_reasons": [
+    "No untouched evaluation outcomes used",
+    "No externally predeclared meaningful improvement threshold",
+    "No claim that fixed extract statuses reconstruct historical knowledge"
+  ],
+  "measurement_limits": "Candidate processes ran concurrently, one CPU thread each; elapsed values include contention and import effects. Absolute high-water process RSS includes preparation, fitting, inference, retained comparison outputs and imported libraries; it bounds both fit and inference but cannot isolate their incremental memory."
+}

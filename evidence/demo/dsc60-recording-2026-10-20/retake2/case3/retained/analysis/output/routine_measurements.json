@@ -1,0 +1,68 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "planning_date": "2025-11-30",
+  "local_weekly_calculation_elapsed_seconds_including_process_startup": 0.8273255409440026,
+  "routine_reported": {
+    "selected_method": "pooled_13week",
+    "rows": 336,
+    "positive_orders": 113,
+    "order_units": 883,
+    "preparation_seconds": 0.1039002500474453,
+    "fit_seconds": 0.0006928750080987811,
+    "inference_seconds": 8.499948307871819e-06,
+    "retained_rate_bytes": 2688,
+    "total_internal_seconds": 0.5160978330532089,
+    "peak_process_rss_mb": 168.375
+  },
+  "dependency_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "source_hashes": {
+    "input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "program_sha256": "8c601872dc6bc9fde20531f202ea993aec9d2abaf15d91f9cd37443945989773",
+  "output_sha256": "4aec680dd9eb99b9a49f1a878b291674cb0f783d383437e374dca799424a4eda",
+  "output_agreement": {
+    "delivered_file_is_cli_output": true,
+    "all_order_quantities_independently_recomputed": 336,
+    "coverage_forecasts_and_incoming_checked": true,
+    "all_timing_shortage_quantities_and_first_dates_checked": true,
+    "csv_round_trip_checked": true
+  },
+  "measurement_scope": "One actual 2025-11-30 invocation, isolated from candidate fitting. Wall time includes interpreter startup, imports, all input preparation, forecast fitting/inference, ordering and CSV output. Process RSS is absolute OS high-water memory, includes imports, prepared frames, arrays and output. It upper-bounds fit and inference, not their separate incremental peaks. Not full AI-assisted analysis/build elapsed time; not a guarantee on other hardware.",
+  "cpu_and_memory_assessment": {
+    "threads": 1,
+    "cpu_only": true,
+    "gpu": false,
+    "selected_model_retained_rate_bytes": 2688,
+    "dense_daily_panel_bytes": 3888344,
+    "ordinary_8GB_suitability": "Measured process peak far below 1 GB at supplied 5 MB / 17k-row sales scale. Leaves multiple GB for OS and apps within an 8 GB computer. Host RAM is not assumed to be 8 GB; projection conditional on comparable Python environment and data scale. Memory grows with calendar length times active products at stores plus input rows; future much larger files require remeasurement."
+  },
+  "routine_running_usage": {
+    "paid_model_or_api_calls": 0,
+    "network_calls": 0,
+    "language_model_required": false,
+    "AI_assisted_build_cost": "Not measured; distinct from this routine invocation"
+  }
+}

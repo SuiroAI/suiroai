@@ -1,0 +1,19 @@
+{
+  "original_question": "What should I restock in my stores next week?",
+  "original_customer_context": {
+    "current_process": {"source":"user_answer","status":"supplied","text":"I normally use last month's sales to work out what we need for the week."},
+    "demo_scenario": {"authority":"explicit_user_demo_roleplay_instruction","customer_provenance_only_csv_columns":false,"customer_provenance_warnings":false,"independently_verified_real_stock_claimed":false,"mode":"provided_operations_are_assumed_scenario_facts","operating_inputs":["supplied_stock","supplied_deliveries","supplied_ordering_rules"],"source_provenance_unchanged":true},
+    "format":"dsc60-task-context-v1",
+    "original_question":"What should I restock in my stores next week?"
+  },
+  "refined_task_attribution":"Analyst framing, not additional customer instructions",
+  "refined_task":"Produce November 30 orders for December 1-7; estimate recorded outgoing product units, cover lead time plus review period, subtract usable stock and eligible dated receipts once, add supplied safety stock, apply minimum and multiple rules, and flag shortages before receipts. Deliver all 336 supported products at stores, including zero orders, and a reusable local CLI.",
+  "manual_work_replaced":"Loading and cleaning sales, deriving quantity estimates, matching stock and incoming deliveries, calculating order coverage, rounding orders and collecting timing exceptions. The customer's exact incumbent formula, status/return treatment and stock adjustment are unknown; do not claim exact replication or measured time savings.",
+  "source_facts":"Released sales through 2025-11-30; supplied operational inputs assumed scenario facts. Stock/policy/receipts contain synthetic provenance labels, retained in internal evidence. All four sources are read-only.",
+  "supported_interpretations":"Positive completed/shipped/returned quantities proxy gross outgoing units; returns are not assumed reusable. Current usable stock controls deductions. Earlier order status values are not known as of historical origins.",
+  "unknowns":["store operating/reporting calendars","unrecorded demand and lost sales","return restockability","historical stock positions","incumbent exact quantity rule","availability versus excess-stock priority","prices/cost function for stocking decisions","externally meaningful forecast improvement threshold"],
+  "evaluation_status":"October-November already inspected development evidence; December reserved and inaccessible to this analysis. No independent performance-success gate can be closed.",
+  "candidate_discovery":"Previous-month per-pair daily mean; 84-day empirical-Bayes style shrinkage to pooled product/store rates; regularized pooled Poisson regression with product/store effects, annual harmonics and trend. Finite fixed candidates, no tuning search. Rationale: 336 sparse series, four years of daily global transaction coverage, repeated November/December elevation, and no reliable historical stock exposure.",
+  "outcome_proxies":"Absolute next-week recorded-unit errors for forecasting; quantities and dated projected shortages for action. Neither establishes stock availability, savings or costs.",
+  "routine_suitability_plan":"Measure complete subprocess wall time, CPU time and OS peak RSS including Python imports, preparation, fitting and prediction. Record stage timings and retained array size; assess headroom below 8 GB without assuming host RAM. No APIs or language models in routine. AI-assisted build usage/cost is not inferred from routine runtime."
+}

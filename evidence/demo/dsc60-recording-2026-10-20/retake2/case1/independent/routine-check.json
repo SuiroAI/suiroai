@@ -1,0 +1,19 @@
+{
+  "format": "dsc60-independent-routine-check-v1",
+  "rows": 336,
+  "columns": 19,
+  "units": 877,
+  "positive": 112,
+  "zero": 224,
+  "shortage_flags": 52,
+  "all_row_order_policy_dates_inbound_arithmetic_matches": true,
+  "rounding_scope": "Uses exposed three-decimal coverage forecasts; no result differs in integer order quantity.",
+  "all_receipt_source_input_output_hashes_match": true,
+  "expected_and_actual_output_bytes_equal": true,
+  "wall_seconds": 1.0979175840038806,
+  "peak_rss_bytes": 154746880,
+  "selected": "croston_sba",
+  "source_hash": "4c197fdce757d9660a216d1a0f042219879526719401bcf433d43d317eea2854",
+  "csv_hash": "ace330b3dac631c950765e0b75b4baba4767ae2041de7c21bb0ad41302821781",
+  "scope": "Read source and actual measurement receipt; own row arithmetic, no routine execution or future-date test."
+}

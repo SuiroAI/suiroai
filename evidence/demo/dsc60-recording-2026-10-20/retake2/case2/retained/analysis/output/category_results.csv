@@ -1,0 +1,25 @@
+method,horizon,category,mean,size
+poisson_seasonal,7,Appliances,0.8125765371489563,384
+poisson_seasonal,7,Electronics,1.0228142362925596,1152
+poisson_seasonal,7,Furniture,0.73070994736057,576
+poisson_seasonal,7,Office Supplies,1.0233734804598476,576
+poisson_seasonal,14,Appliances,1.2929846727961625,384
+poisson_seasonal,14,Electronics,1.6653351769626836,1152
+poisson_seasonal,14,Furniture,1.1622220491481796,576
+poisson_seasonal,14,Office Supplies,1.7202257516488035,576
+previous_month,7,Appliances,0.6965837813620072,384
+previous_month,7,Electronics,1.0386312724014337,1152
+previous_month,7,Furniture,0.6778673835125448,576
+previous_month,7,Office Supplies,0.9661290322580646,576
+previous_month,14,Appliances,1.1581541218637994,384
+previous_month,14,Electronics,1.8229633363201911,1152
+previous_month,14,Furniture,1.2259744623655913,576
+previous_month,14,Office Supplies,1.7212440262843487,576
+shrinkage84,7,Appliances,0.7028086860024988,384
+shrinkage84,7,Electronics,1.0045411786521672,1152
+shrinkage84,7,Furniture,0.66986802910799,576
+shrinkage84,7,Office Supplies,0.9831495698904887,576
+shrinkage84,14,Appliances,1.1737408867113595,384
+shrinkage84,14,Electronics,1.6651114234973108,1152
+shrinkage84,14,Furniture,1.1475660196901996,576
+shrinkage84,14,Office Supplies,1.6681560346136315,576

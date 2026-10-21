@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "written_before_scores": true,
+  "status": "development only; October-November already inspected; no reserved December outcomes",
+  "target": "Positive product units on order dates with normalized statuses completed, shipped or returned; include returned positive units as gross outgoing, do not subtract restockable returns without evidence. Remove exact duplicates, reject conflicting transaction IDs, quarantine negative quantities. Include zero quantity records without effect.",
+  "missing_dates": "Do not impute missing input quantities. Aggregate recorded units to calendar windows, conditional on supplied transaction extract representing recorded orders; no claim that absence proves zero underlying demand. Global dates are continuous. Store-day absences may be closure, no sales or missing reporting. Check exposure sensitivity using store transaction-active dates and independently report performance on horizons with all store dates observed. Do not represent transaction inventory levels as historical stock.",
+  "population": "Current supplied stock/policy keys, checked for 1:1 agreement and historical support at every origin; 336 pairs. Historical assortment not supplied: fixed current population is conditional and not proof of historical availability.",
+  "origins": ["2025-09-28","2025-10-05","2025-10-12","2025-10-19","2025-10-26","2025-11-02","2025-11-09","2025-11-16"],
+  "training": "All eligible records available by each origin. Previous-month baseline uses last completed calendar month. Shrinkage uses trailing 84 calendar days. Poisson uses complete Monday-Sunday weeks from 2022-01-03 through origin, with fixed alpha 0.01, product/store categorical effects, annual sine/cosine and linear year trend. No future sales, prices, status-derived features or inventory features.",
+  "evaluation_dates": "2025-09-29 through 2025-11-30; overlapping 14-day windows, correlated results",
+  "horizons": [7,14],
+  "deployment_coverage": "Supplier lead time 1-7 plus review 7 = 8-14 days. Secondary variable horizon uses November 30 policy as a forecast-horizon diagnostic, not historical purchasing policy. Primary next-week selection may differ from full-coverage performance; disclose if so.",
+  "baseline": "Previous completed calendar month units / calendar days, separately by product and store. Analytical interpretation of supplied last-month description; exact incumbent not evaluable.",
+  "candidates": [
+    {"name":"previous_month","rationale":"Fair simple comparison connected to last-month context, no invented incumbent rules."},
+    {"name":"shrinkage84","rationale":"Sparse pair data need variance reduction; trailing 84-day pair rate shrunk toward product total times store share, with fixed 28 pseudo-days."},
+    {"name":"poisson_seasonal","rationale":"Conventional low-complexity pooled count regression can share evidence and use repeated annual seasonality; 44 sparse features, bounded fit."}
+  ],
+  "primary_metric": {"name":"MAE7","definition":"Mean absolute error of 7-calendar-day total recorded gross units across all origins and product/store keys, equal pair-origin weighting","unit":"product units per product at store per week","business_reason":"Unit errors are directly interpretable for quantity planning without inventing a stockout cost or excess-stock preference."},
+  "selection_rule": "Select minimum primary MAE; absolute ties within 1e-9 favor baseline, then shrinkage84, then Poisson. No invented meaningful-improvement threshold. Report supporting metrics and selection sensitivity without changing this rule.",
+  "secondary_diagnostics": ["14-day and supplied variable-coverage MAE","signed unit bias","WAPE as aggregate absolute error / observed units","per-origin and store/category performance","zero-target share and sparse-history distribution","fully observed store-day subset","alternative target excluding returned/return-flagged rows","calendar versus active-day exposure sensitivity","annual seasonal stability","leave-one-origin-out ranking","fixed-origin block bootstrap of candidate-baseline difference (development uncertainty only)"],
+  "search_control":"One fixed prospective comparison; retain all scores. Any extension requires a versioned prospective plan and is exploratory. No tuning to a win.",
+  "success_gate":"Not met or closable: no externally predeclared meaningful threshold or genuinely untouched independent evaluation; December withheld. Forecast errors do not measure availability or savings."
+}

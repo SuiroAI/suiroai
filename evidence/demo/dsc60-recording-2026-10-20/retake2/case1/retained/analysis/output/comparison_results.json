@@ -1,0 +1,72 @@
+{
+  "status": "development only; no independent performance success",
+  "selected": "croston_sba",
+  "scores": {
+    "croston_sba": {
+      "primary_mae": 1.2426091656032976,
+      "bias": -0.32825761753935195,
+      "next_week_mae": 0.874951221713415,
+      "next_week_bias": -0.18481555011137968
+    },
+    "mean28": {
+      "primary_mae": 1.4137208454810495,
+      "bias": -0.1581328960155491,
+      "next_week_mae": 0.9533375850340136,
+      "next_week_bias": -0.08514030612244902
+    },
+    "mean84": {
+      "primary_mae": 1.285117022999676,
+      "bias": -0.2821307094266278,
+      "next_week_mae": 0.8945223922902493,
+      "next_week_bias": -0.15784438775510207
+    },
+    "poisson_seasonal": {
+      "primary_mae": 1.3234656372690412,
+      "bias": -0.21753154223796517,
+      "next_week_mae": 0.9437885841221947,
+      "next_week_bias": -0.11309610253094177
+    }
+  },
+  "reduction_vs_baseline": 0.03307703239130555,
+  "population": 336,
+  "order_units": 877,
+  "positive_orders": 112,
+  "zero_orders": 224,
+  "timing_shortages": 52,
+  "any_timing_shortages": 52,
+  "baseline_order_units": 847,
+  "orders_differ_from_baseline": 18,
+  "recent_84_day_nonzero_days": {
+    "count": 336.0,
+    "mean": 3.2142857142857144,
+    "std": 2.3477975888316402,
+    "min": 0.0,
+    "25%": 2.0,
+    "50%": 3.0,
+    "75%": 4.0,
+    "max": 14.0
+  },
+  "recent_zero_keys": 24,
+  "residual_quantiles_signed_prediction_minus_actual": {
+    "0.05": -4.435148624653587,
+    "0.5": 0.3878789388668054,
+    "0.95": 1.2982643728999883
+  },
+  "sensitivity": {
+    "retained": {
+      "forecast_coverage_units": 240.489141163138
+    },
+    "orders": {
+      "forecast_coverage_units": 298.6740997725379
+    }
+  },
+  "deployment_profile": {
+    "fit_wall_seconds": 0.003561749937944114,
+    "fit_cpu_seconds": 0.003561999999999954,
+    "inference_wall_seconds": 9.791925549507141e-06,
+    "inference_cpu_seconds": 9.99999999995449e-06,
+    "daily_array_bytes": 1881600
+  },
+  "comparison_process_peak_rss_bytes": 253296640,
+  "rss_platform": "macOS bytes; whole process including imports, all candidates and retained evaluation arrays; not per-method isolated peak"
+}

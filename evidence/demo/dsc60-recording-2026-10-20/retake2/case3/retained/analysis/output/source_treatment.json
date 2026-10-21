@@ -1,0 +1,35 @@
+{
+  "deduplicated_rows": 17364,
+  "excluded_nonpositive_rows": 8,
+  "excluded_nonpositive_unit_sum": -6,
+  "normalized_status_counts": {
+    "completed": 11130,
+    "shipped": 2479,
+    "returned": 1540,
+    "processing": 1364,
+    "cancelled": 851
+  },
+  "primary_positive_target_rows": 15142,
+  "primary_target_units": 32198,
+  "returns_flag_not_returned_status": 271,
+  "first_activity_latest": "2023-03-21 00:00:00",
+  "active_pair_calendar_zero_fraction": 0.9675585342653437,
+  "weekly_zero_fraction_2025": 0.7922998986828774,
+  "stock_ledger_difference_units": 0,
+  "inbound_total_units": 927,
+  "stock_total_units": 2869,
+  "product_names_reliable": 28,
+  "inventory_field_use": "Transaction Inventory_Level ignored: no trustworthy snapshot grain/time or usable-stock definition; use dedicated stock snapshot instead.",
+  "source_provenance": "input-1/2/3 supplied files contain synthetic classifications. User authorized assumed operating scenario. Retained internally; no provenance-only customer columns. input-4 is released development partition; source and released byte hashes differ as declared. No raw originals or December files read.",
+  "seasonal_prior_year_units": {
+    "2022-10": 727,
+    "2022-11": 900,
+    "2022-12": 999,
+    "2023-10": 648,
+    "2023-11": 1054,
+    "2023-12": 1019,
+    "2024-10": 700,
+    "2024-11": 988,
+    "2024-12": 951
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "planning_date": "2025-11-30",
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/output/restock_routine.py",
+    "--sales-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-4.csv",
+    "--stock-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-3.csv",
+    "--deliveries-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-2.csv",
+    "--policy-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/output/routine_verified.csv"
+  ],
+  "command_exit_code": 0,
+  "local_weekly_wall_seconds_including_interpreter_imports_preparation_fit_inference_output": 0.9613390000304207,
+  "child_cpu_user_seconds": 0.8823169999999999,
+  "child_cpu_system_seconds": 0.071882,
+  "whole_routine_peak_rss_bytes": 166526976,
+  "peak_measurement": "OS child-process high-water RSS in a fresh measurement process; includes imports and retained input frames, fitting, predictions and output. Single local run, not a worst-case guarantee. Host physical RAM not used as target assumption.",
+  "stage_measurements": {
+    "method": "shrinkage84",
+    "fit_and_preparation_seconds": 0.0014447079738602042,
+    "retained_numeric_bytes": 2688,
+    "input_preparation_seconds": 0.11368608404882252,
+    "inference_seconds": 5.334033630788326e-06,
+    "forecast_array_bytes": 37632,
+    "calculation_seconds": 0.6653728750534356
+  },
+  "dependencies": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "runtime_environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "thread_limits": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    }
+  },
+  "input_files": {
+    "sales_path": {
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-4.csv",
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "bytes": 5006997
+    },
+    "stock_path": {
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-3.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    "deliveries_path": {
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-2.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    "policy_path": {
+      "path": "/private/tmp/suiroai-dsc59/artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/released/input-1.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    }
+  },
+  "program_sha256": "0b7ff6db1239a1fb91314beb168f0be16bd25bc7293af731620b63383ed7a4e4",
+  "output_sha256": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+  "output_agreement": {
+    "method": "Independent aggregation and cumulative supply calculation in measure_routine.py; compare every row against measured CLI output",
+    "rows": 336,
+    "max_order_difference_units": 0,
+    "max_rounded_coverage_forecast_difference_units": 0.0,
+    "timing_mismatched_rows": 0,
+    "all_end_balances_at_or_above_safety_stock": true,
+    "delivered_csv_byte_identical": true
+  },
+  "routine_usage_cost_internal": {
+    "paid_model_or_api_calls": 0,
+    "network_calls": 0,
+    "llm_required": false,
+    "routine_paid_api_cost": 0,
+    "ai_assisted_build_cost": "Not available from this runtime; not estimated or inferred from routine timing.",
+    "ai_assisted_build_elapsed": "Separate from local calculation, not measured by this file."
+  },
+  "eight_gb_assessment": "Whole measured process far below 1 GB at released 5 MB / 17,406-row sales size and 336 operational keys; comfortably leaves room for OS and ordinary applications within 8 GB. Selected pooling requires only pandas/numpy; numeric fitted rates 2,688 bytes, 336x14 forecast array 37,632 bytes. Full raw CSV is loaded for validation/deduplication. Scaling is mainly linear in transaction rows; reject input conflicts and remeasure on much larger files. No paid APIs or GPU.",
+  "limitations": "Single warm-filesystem local CPU measurement; OS RSS excludes other processes and may omit some allocator/shared-library overhead. Fit/inference stage times exclude imports but whole-process wall/RSS includes them. Whole-process peak provides a conservative measured upper bound for both fitting and inference; stage-isolated RSS not sampled. Not a benchmark of AI-assisted analysis/build or a measurement of manual working time.",
+  "measurement_history": "Initial CLI calculation and independent checks succeeded, but measurement serialization failed on a NumPy integer. This retained measured rerun writes a separate output and compares bytes with the initial delivered CSV; no input changes."
+}

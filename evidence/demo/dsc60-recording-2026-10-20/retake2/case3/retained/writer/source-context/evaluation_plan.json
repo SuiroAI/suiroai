@@ -1,0 +1,24 @@
+{
+  "version":1,
+  "written_before_candidate_scores":true,
+  "status":"development; October-November 2025 already inspected in project",
+  "target":"Gross positive recorded units for completed/shipped/returned status, case normalized, assigned to order date. Returns are included without stock credit; negative or zero corrections excluded. Exact duplicate rows removed; conflicting transaction IDs rejected. Processing and cancelled excluded.",
+  "target_sensitivity":"Repeat fixed comparisons for positive noncancelled orders including processing, and fulfilled nonreturned orders. Descriptive exploratory sensitivities only; do not replace primary target or winner.",
+  "missing_dates":"Global calendar has transactions on every day. Within each pair after first recorded activity, missing transaction rows on globally represented days mean zero RECORDED target units, a conditional observation convention, not verified no demand or stockout exposure. Before first activity remains missing. Globally absent dates rejected in routine rather than silently imputed.",
+  "population":"All 336 operational keys; same eligible population for every candidate; every pair observed before evaluation. Use only sales through each origin; no operational snapshots as forecast features.",
+  "origins":["2025-10-05","2025-10-12","2025-10-19","2025-10-26","2025-11-02","2025-11-09","2025-11-16"],
+  "train":"Only dates on/before origin. Baseline last 56 days, pooled candidate last 91 days, Poisson at most last 104 full Monday-Sunday weeks. Training feature history also bounded by origin.",
+  "evaluation":"2025-10-06 through 2025-11-30; 7-day primary, 8 through 14-day secondary; overlapping longer horizons are dependent. No December outcomes.",
+  "baseline":{"name":"recent_8week","description":"Per-pair recorded daily mean over preceding 56 days; analytical baseline, no incumbent supplied."},
+  "candidates":[
+    {"name":"recent_8week","rationale":"Transparent local recent rate; enough weeks for sparse series, fair operational baseline."},
+    {"name":"pooled_13week","rationale":"Shrink 91-day local rate toward product-wide store mean, weight 91/(91+28); borrows strength across sparse stores without heavy modeling."},
+    {"name":"poisson_calendar","rationale":"Sparse penalized Poisson regression for positive count-like weekly units; pair effects, month effects, bounded time trend and lagged 4/13-week averages capture pooling, seasonal calendar and recent movement. Alpha 0.1, max_iter 200, tolerance 1e-6, no search. Weekly fitting reduces data size; predict daily as weekly conditional mean / 7 with forecast-day month, lag features frozen at origin."}
+  ],
+  "primary_metric":{"name":"MAE_7day","unit":"product units per product at store per forecast origin","weighting":"Equal weight to each of 336 keys and seven origins; absolute error of horizon TOTAL, not daily errors."},
+  "selection_rule":"Choose lowest pooled primary MAE. Absolute ties within 1e-9 resolve recent_8week, pooled_13week, poisson_calendar. No business significance threshold invented. Secondary metrics cannot overturn primary rule.",
+  "secondary_diagnostics":["signed error, WAPE, 8-14 day aggregate MAE", "per-origin and store errors; zero observed target frequency", "target sensitivities; leave-one-origin-out winner stability", "Poisson convergence and CPU time/peak resident memory fit/inference plus preparation", "recorded-demand uncertainty using empirical 7-day residual quantiles, descriptive, not guaranteed coverage"],
+  "ordering_horizon":"Score all supported 8-14 day lengths uniformly as diagnostics. Current Nov30 policy not treated as historical policy. Deployment uses each current policy length. Selection uses next-week metric; disclose if longer-horizon ranking differs.",
+  "information_limit":"Current statuses are final extract values; change timestamps unavailable. Use no status-derived features; comparisons conditional on extract labels, not fully reconstructable historical knowledge. Stockouts cannot be corrected. No independent success claim.",
+  "revision_rule":"Retain this plan and all results. Any later candidate requires prospective versioned plan; exploratory only. No unbounded search."
+}

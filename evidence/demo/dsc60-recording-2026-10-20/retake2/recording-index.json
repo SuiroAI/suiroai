@@ -1,0 +1,1205 @@
+{
+  "format": "dsc60-three-recorded-retakes-v2",
+  "take": "retake2",
+  "prepared_at": "2026-10-20T22:36:41.938738+00:00",
+  "status": "all_three_analyses_writers_and_independent_reviews_complete_case2_user_stop_preserved_video_unverified",
+  "purpose": "Fresh redo of all three context flows with no customer cost text, plain automation benefit, and closed prior demo tabs/new clean session before each case.",
+  "source_commit": "10f4648dfde547d267d55c918befb6202c345fee",
+  "source_review": {
+    "status": "pass_reported_by_root",
+    "regression_tests": 864,
+    "regression_subtests": 659,
+    "regression_seconds": 33.28,
+    "independent_source_review": "pass reported by root",
+    "review_scope": "No tests or source review rerun by this evidence-preparation agent."
+  },
+  "observed_launch_commit": "10f4648dfde547d267d55c918befb6202c345fee",
+  "app_url": "http://localhost:8507",
+  "expected_launch_note": "Root reports fresh corrected server launched from10f4648 on8507; process execution session16169. Source ref resolved locally; no source files edited here.",
+  "prior_take": "../retake1/recording-index.json",
+  "prior_take_disposition": "Historical completed workflows retained; user requested another proper three-case redo with cost removed and cleanup before each test.",
+  "authorization_note": "User explicitly requested all three fresh recordings; root controls demo UI, user operates recorder. Each analysis still requires its own actual app approval.",
+  "recording": {
+    "operator": "user",
+    "api_or_agent_recorder_control": false,
+    "running_confirmation": {
+      "source": "User confirmation relayed by root",
+      "at": null,
+      "scope": "After fresh empty reload in correct window before current case3 question; not original-file or continuity verification."
+    },
+    "original_reference": null,
+    "sha256": null,
+    "bytes": null,
+    "duration_seconds": null,
+    "continuity_framing_review": null,
+    "independent_video_verification": null
+  },
+  "awake_context": {
+    "scope": "Root-reported task awake assertion, not a demo result",
+    "root_reported_pid": 13029,
+    "root_reported_started_at": "2026-10-20T22:35:00Z",
+    "root_reported_pmset_confirmed": true,
+    "independently_checked_here": null,
+    "note": "Task-scoped indefinite caffeinate assertion reported by root; no recorder or UI action performed here."
+  },
+  "expected_source_files": [
+    {
+      "name": "Sales_transactions_2022_2025.csv",
+      "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+      "bytes": 5190513
+    },
+    {
+      "name": "inbound_deliveries.csv",
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "bytes": 10740
+    },
+    {
+      "name": "inventory_position.csv",
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "bytes": 18799
+    },
+    {
+      "name": "ordering_policy.csv",
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "bytes": 19279
+    }
+  ],
+  "expected_source_note": "Expected identities carried forward for checking only; no fresh upload/release is asserted.",
+  "retention_policy": {
+    "copy": "Bounded final response/CSV/table, selected routine/usage documents and safe identity/trace indices after actual run paths are supplied.",
+    "do_not_copy": "Raw input CSVs, customer PII previews, entire private native logs or rollout bodies wholesale.",
+    "preserve": "Original private run artifacts and all superseded attempts remain unchanged; link their exact references/hashes when needed."
+  },
+  "cost_scope": "No costs in customer prose for this redo. Historical SuiroAI-call estimates do not establish a normal ChatGPT comparison. A prior three-message manual ChatGPT trial6627b1c exists; no accuracy test or complete cost measurement is claimed.",
+  "cases": [
+    {
+      "case": 1,
+      "scenario": "current process supplied in question",
+      "question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+      "expected_flow": {
+        "close_previous_demo_app_and_table_tabs_before_case": true,
+        "new_clean_session_before_case": true,
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_detector_required": true,
+        "fresh_analysis_required": true,
+        "fresh_writer_required": true,
+        "customer_costs_visible": false,
+        "plain_automation_benefit": true,
+        "full_response_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_exact_writer_routine_full_ui_and_independent_review_complete_video_identity_pending",
+        "source_commit": "10f4648dfde547d267d55c918befb6202c345fee",
+        "server_url": "http://localhost:8507",
+        "previous_demo_tabs_closed": true,
+        "clean_session_started": true,
+        "cleanup_action_at": "2026-10-20T22:38:30.876Z",
+        "session": "8acfb2abed164277835b9da1c3792d3d",
+        "context_status": "found",
+        "followup_asked": false,
+        "answer": null,
+        "continue_without_clicked": null,
+        "approval_clicks": 1,
+        "detector_run_id": "current-process-d1488dedf4c944f086c67b15fca3f215",
+        "analysis_run_id": "investigation-437185445c014da7a2b56d4ecaa1999a",
+        "writer_run_id": "business-response-ca3e21aec3394af1893b3f95597388e0",
+        "attempt_receipt": "artifacts/demo/8acfb2abed164277835b9da1c3792d3d/runs/attempt-d8b19dd484a44260a58e68c774bbf5cc.json",
+        "detector_outcome": "completed",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "approved_task_ref": null,
+        "approved_task_sha256": null,
+        "analysis_prompt_sha256": "3b55ec588378b53fa0eeefe4b5fd132af122f6d381bd2346161cbff905d5caa6",
+        "writer_prompt_sha256": "92ff9d3c9ce70291d2b7578339da6b0a665575e1a095f57bab6f8dbd01b6c1ed",
+        "released_input_bindings": [
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-adce4b063aef4ca4af7a9745b66a70c7:policy:0",
+              "provenance": "supplied",
+              "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+              "version": 4
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_role": "ordering_policy",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_original_input_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-adce4b063aef4ca4af7a9745b66a70c7:receipts:1",
+              "provenance": "supplied",
+              "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+              "version": 4
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_role": "inbound_ledger",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_original_input_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-adce4b063aef4ca4af7a9745b66a70c7:inventory:2",
+              "provenance": "supplied",
+              "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+              "version": 4
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_role": "usable_stock",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_original_input_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-adce4b063aef4ca4af7a9745b66a70c7:sales:3",
+              "provenance": "supplied",
+              "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+              "version": 4
+            },
+            "controller_lineage_ref": {
+              "artifact_id": "demo-investigation-lineage-7631813047ce4765be85c6eee681af42",
+              "provenance": "derived",
+              "sha256": "992b3840faaea6a892be65348f88c97bdd5c15edcc3197032962a78b8e4c744a",
+              "version": 1
+            },
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_role": "transactions",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_original_input_copy"
+          }
+        ],
+        "native_settings": {
+          "model": "gpt-6.1-sol",
+          "model_provider": "openai",
+          "reasoning_effort": "medium",
+          "scope": "Acknowledged detector thread settings from current native RPC; not an analysis/writer result."
+        },
+        "native_writer_prose_sha256": "87d0712da1e9d6a35d179339f8b9a1d77b77d2e69b58767c3e87da8c3cc044bb",
+        "published_response_sha256": "87d0712da1e9d6a35d179339f8b9a1d77b77d2e69b58767c3e87da8c3cc044bb",
+        "csv_sha256": "ace330b3dac631c950765e0b75b4baba4767ae2041de7c21bb0ad41302821781",
+        "html_sha256": "e421c11668b935696dc9c224afa21b453dbe156c1b4465a10ff0f73dd6020194",
+        "csv_rows": 336,
+        "csv_columns": 19,
+        "order_units": 877,
+        "positive_order_rows": 112,
+        "zero_order_rows": 224,
+        "prearrival_review_flags": 52,
+        "routine_runtime_seconds": 1.0979175840038806,
+        "routine_peak_rss_bytes": 154746880,
+        "customer_costs_visible": false,
+        "plain_automation_benefit_review": "Independent review passes current exact writer prose: useful list, repeatable arithmetic, practical exception checks and measured local runtime; no customer cost, incumbent superiority, savings or installed integration claim.",
+        "full_response_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case1/01-clean-start.png",
+            "bytes": 34846,
+            "sha256": "d7a97444e69bb64f4a8e7116a833ad99f8120bcd8bbf5eafd183ba1342972938",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/02-question-files.png",
+            "bytes": 53019,
+            "sha256": "4749c9e8fc799a1da6acd80a4e16d8842aee3d58bd99f110b832357f59b02048",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/03-review-goal.png",
+            "bytes": 140232,
+            "sha256": "0babd931de9f16109fa0c3aa06711b6fe0df7e4eea8df5a24fd8ce3b4fe00d25",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/04-review-approval.png",
+            "bytes": 129988,
+            "sha256": "c65d4a666206ba96bae84cc92ec787bf37d9d50e7aa6296b9eac91e0deb3a910",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/05-response-start.png",
+            "bytes": 135383,
+            "sha256": "9e23d108096cb5c5dfdf4ac9f357c8b3c410ec82057b1cae9eddf1f98a7d1a07",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/06-response-end.png",
+            "bytes": 135465,
+            "sha256": "fc8db87ab3ca0a0e19bea8ecaec3568f8ac25b26fec802a80fe85f49125b8460",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/07-html-top.png",
+            "bytes": 250720,
+            "sha256": "afc533818585f6b5034812e95aeb92cb8f93fc35239502822868c7327d005485",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/08-html-more-rows.png",
+            "bytes": 252505,
+            "sha256": "c7ad8da5b5e4521a6e2a1430478b1aef3971bad34617d60abfc478fac906fe72",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/09-html-right.png",
+            "bytes": 210635,
+            "sha256": "7bfe0bccc79b8f74c9e9953b45f24cea34e7a6159de4dda1a1310fb78347c5ac",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/10-html-bottom.png",
+            "bytes": 215073,
+            "sha256": "5790c3883f605727fca96d53234c51e600e984b402f33053575f94b684bacb81",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case1/11-return-app.png",
+            "bytes": 248984,
+            "sha256": "e0674841a91f8a011a34e53f120400fb10c352f2cf067eba9599e533f71923ff",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          }
+        ],
+        "ui_action_log": "ui-actions.jsonl",
+        "independent_review": {
+          "status": "pass_no_blocking_defect_found",
+          "path": "case1/independent/REVIEW.md",
+          "sha256": "9832e3ac5b9705d8ba522411acbbc4ca51cb748cfe43cd5d416a0517a64a1a7c",
+          "scope": "Independent current-run arithmetic, routine, exact publication and browser-table agreement; no original-video certification."
+        },
+        "detector_thread_id": "01a15b77-928d-7ef1-8587-c3afd6f14baf",
+        "detector_turn_id": "01a15b77-947e-7633-bb25-13f7bb211a3c",
+        "review_task_action_at": "2026-10-20T22:38:44.414Z",
+        "new_app_tab_id": "1763932469",
+        "detector_call_trace": {
+          "path": "artifacts/demo/8acfb2abed164277835b9da1c3792d3d/context/current-process-d1488dedf4c944f086c67b15fca3f215/native-trace/call-trace.json",
+          "prompt_sha256": "9b8ef052f5f5f74b3a6135edba00285a7a417fe41cfe98ed78152699a16540c8",
+          "scope": "In-progress live trace reference; not archived or treated as immutable completed evidence."
+        },
+        "current_approach_review_at": "2026-10-20T22:39:26.637Z",
+        "approval_action_at": "2026-10-20T22:39:45.879Z",
+        "analysis_call_trace": {
+          "path": "artifacts/demo/8acfb2abed164277835b9da1c3792d3d/runs/investigation-437185445c014da7a2b56d4ecaa1999a/native-trace/call-trace.json",
+          "scope": "In-progress call; no final archive or result claim."
+        },
+        "analysis_thread_id": "01a15b78-83a7-7ed1-8401-57e880e2bb76",
+        "analysis_turn_id": "01a15b78-8673-7e01-9851-f3e8644f3fda",
+        "writer_thread_id": "01a15b7e-4f06-7600-9682-5257c7db6e8d",
+        "writer_turn_id": "01a15b7e-5134-7e13-861b-ed3693f0b9c6",
+        "external_customer_cost_sentence_appended": false,
+        "publication_identity_check": {
+          "native_writer_equals_published": true,
+          "basis": "Immutable ArtifactStore response bytes, writer output and returned text are exact equals."
+        },
+        "table_identity_check": {
+          "status": "pass",
+          "headers": 19,
+          "body_rows": 336,
+          "body_cells": 6384,
+          "exact_headers_values_and_order": true,
+          "dom_path": "case1/rendered-table.json",
+          "dom_sha256": "e4e5072025bc738c5d3c2e32bd950e585f37e6da230e545bfb61c8c732e04d5b",
+          "scope": "Exact delivered CSV versus root-captured live DOM equality; no UI controlled by evidence preparer."
+        },
+        "full_response_end_at": "2026-10-20T22:47:20.859Z",
+        "html_opened_at": "2026-10-20T22:47:21.178Z",
+        "html_scroll_at": "2026-10-20T22:48:12.826Z",
+        "returned_to_app_at": "2026-10-20T22:48:31.529Z"
+      },
+      "comparison": {
+        "status": "independent_saved_prediction_primary_arithmetic_checked",
+        "selected_method": "croston_sba",
+        "baseline_definition": "84-calendar-day mean of recorded fulfilled units per key; analyst interpretation of a few months, not customer's proven rule",
+        "target_definition": "Positive gross fulfilled units: normalized completed/shipped/returned statuses. Exclude cancelled/processing and nonpositive quantity. Do not net returns or add them to usable stock.",
+        "status_and_return_rules": "Positive gross fulfilled units: normalized completed/shipped/returned statuses. Exclude cancelled/processing and nonpositive quantity. Do not net returns or add them to usable stock.",
+        "missingness_and_exposure": "Build recorded-unit calendar from 2024-01-01. Fill absent pair records on globally observed dates with zero recorded fulfilled units conditional on complete reporting and active assortment. Never claim zero unconstrained demand; reject a globally missing date in training windows.",
+        "population": "Same supplied 336 product/store keys for every method; each has records before 2024; use all channels assigned to store",
+        "primary_horizon": "Supplier lead days plus 7 review days, 8-14 days by key",
+        "secondary_horizons": "Next 7 days",
+        "metric_units_weighting": "Mean absolute error in product units per product/store coverage window, equally weighted across keys and origins",
+        "origins_and_dates": {
+          "origins": [
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16"
+          ],
+          "dates": "2025-10-06 through 2025-11-30; overlapping coverage windows disclosed"
+        },
+        "prospective_plan_and_selection": {
+          "plan_path": "case1/retained/analysis/output/evaluation_plan.json",
+          "producer_written_before_scores": true,
+          "selection": "Lowest primary MAE. Numerical ties within 1e-8 select simpler candidate in listed order. No business meaningfulness threshold invented. Baseline may win."
+        },
+        "scores": {
+          "croston_sba": {
+            "primary_mae": 1.2426091656032976,
+            "bias": -0.32825761753935195,
+            "next_week_mae": 0.874951221713415,
+            "next_week_bias": -0.18481555011137968
+          },
+          "mean28": {
+            "primary_mae": 1.4137208454810495,
+            "bias": -0.1581328960155491,
+            "next_week_mae": 0.9533375850340136,
+            "next_week_bias": -0.08514030612244902
+          },
+          "mean84": {
+            "primary_mae": 1.285117022999676,
+            "bias": -0.2821307094266278,
+            "next_week_mae": 0.8945223922902493,
+            "next_week_bias": -0.15784438775510207
+          },
+          "poisson_seasonal": {
+            "primary_mae": 1.3234656372690412,
+            "bias": -0.21753154223796517,
+            "next_week_mae": 0.9437885841221947,
+            "next_week_bias": -0.11309610253094177
+          }
+        },
+        "supported_relative_difference": {
+          "producer_reported_reduction_vs_baseline": 0.03307703239130555,
+          "independent_check_pending": false,
+          "scope": "3.307703% primary coverage-MAE reduction on already inspected development data only; not an incumbent, business-value or manual ChatGPT result."
+        },
+        "development_or_reserved": "already_inspected_development_only",
+        "independent_review_ref": "case1/independent/REVIEW.md"
+      },
+      "comparison_scope_note": "Populate only from this actual fresh run; no inherited method, metrics or historical gains. Analytical baselines are not an unsupplied incumbent.",
+      "artifacts": {
+        "retained_manifest": "case1/retained/bounded-archive-index.json",
+        "source_identity_index": "case1/retained/source-identity-index.json",
+        "bounded_output_index": "case1/retained/analysis/artifact-index.json",
+        "trace_reference_index": "case1/retained/writer/artifact-index.json"
+      },
+      "video": {
+        "original_reference": null,
+        "sha256": null,
+        "bytes": null,
+        "duration_seconds": null,
+        "segment_start": null,
+        "segment_end": null,
+        "readability_review": null,
+        "full_response_visible": null,
+        "html_scroll_return_visible": null,
+        "continuity_framing_review": null,
+        "review_status": "original_video_identity_duration_continuity_and_framing_unverified"
+      }
+    },
+    {
+      "case": 2,
+      "scenario": "current process supplied by exact manual follow-up",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "close_previous_demo_app_and_table_tabs_before_case": true,
+        "new_clean_session_before_case": true,
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "I normally use last month's sales to work out what we need for the week.",
+        "continue_without_clicked": false,
+        "approval_clicks": 1,
+        "fresh_detector_required": true,
+        "fresh_analysis_required": true,
+        "fresh_writer_required": true,
+        "customer_costs_visible": false,
+        "plain_automation_benefit": true,
+        "full_response_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_exact_writer_routine_and_visual_review_pass_user_stopped_without_agent_return",
+        "source_commit": "10f4648dfde547d267d55c918befb6202c345fee",
+        "server_url": "http://localhost:8507",
+        "previous_demo_tabs_closed": true,
+        "clean_session_started": true,
+        "cleanup_action_at": "2026-10-20T22:49:27.139Z",
+        "session": "e7614d169fd94ad1852c9d9e9abaa6a6",
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "I normally use last month's sales to work out what we need for the week.",
+        "continue_without_clicked": null,
+        "approval_clicks": 1,
+        "detector_run_id": "current-process-ca35aaa6122142689af768286c88580a",
+        "analysis_run_id": "investigation-e3cd5622fccd4bb092bf63711e9f7bc7",
+        "writer_run_id": "business-response-a931dd3723d64d6c9d9e85636dc4ee51",
+        "attempt_receipt": "artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/attempt-47b87d85b35047e2ad600b038bc30072.json",
+        "detector_outcome": "completed",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "approved_task_ref": null,
+        "approved_task_sha256": null,
+        "analysis_prompt_sha256": "741793efcd01bd3b3207469769717aee20d9a8a791ef1d1067785067efc05e86",
+        "writer_prompt_sha256": "d3bccd98790e3a35ff1d457e3efaea310b3dbb563827f496052ea7c99f16fa35",
+        "released_input_bindings": [
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:policy:0",
+              "provenance": "supplied",
+              "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_role": "ordering_policy",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:receipts:1",
+              "provenance": "supplied",
+              "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_role": "inbound_ledger",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:inventory:2",
+              "provenance": "supplied",
+              "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_role": "usable_stock",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-8cd1311862c74adca28842b0e1c527a3:sales:3",
+              "provenance": "supplied",
+              "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+              "version": 5
+            },
+            "controller_lineage_ref": {
+              "artifact_id": "demo-investigation-lineage-72e954eebf374c4d8718906af3ce8f2d",
+              "provenance": "derived",
+              "sha256": "4140a33a003feb3b06161dcf7860de97e505fa62464c06592f4d9c7ceeb8838f",
+              "version": 1
+            },
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_role": "transactions",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          }
+        ],
+        "native_settings": null,
+        "native_writer_prose_sha256": "568bfc8768ff6425837b2e981b2b78604b18bcccfef0c5329aee97d1d3746a47",
+        "published_response_sha256": "568bfc8768ff6425837b2e981b2b78604b18bcccfef0c5329aee97d1d3746a47",
+        "csv_sha256": "cdc81e046770be8d7a50cb7a028f41a464dfcfe0f17511263ec38c0f26916016",
+        "html_sha256": "1bf49ffd8b870f95089f5520dcf82fd3faf52ecf4e7ce95826d6b6f97ef56150",
+        "csv_rows": 336,
+        "csv_columns": 21,
+        "order_units": 887,
+        "positive_order_rows": 113,
+        "zero_order_rows": 223,
+        "prearrival_review_flags": 52,
+        "routine_runtime_seconds": 0.9613390000304207,
+        "routine_peak_rss_bytes": 166526976,
+        "customer_costs_visible": false,
+        "plain_automation_benefit_review": "Independent review passes current exact writer prose: useful list, repeatable arithmetic, practical exception checks and measured local runtime; no customer cost, incumbent superiority, savings or installed integration claim.",
+        "full_response_scrolled": null,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": false,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case2/01-clean-start.png",
+            "bytes": 34846,
+            "sha256": "d7a97444e69bb64f4a8e7116a833ad99f8120bcd8bbf5eafd183ba1342972938",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/02-question-files.png",
+            "bytes": 49125,
+            "sha256": "6670526a987b668ea70f428e32dbc635324b30ac53411d86ca09a254566edae6",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/03-follow-up.png",
+            "bytes": 56339,
+            "sha256": "e7cf5fdda30324c2bfadfb58b299dc53f4cf82dafc4a7ed3093c668e84a77a91",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/04-review-context.png",
+            "bytes": 103475,
+            "sha256": "066b68a0a65d3f921e292fbf687a9e7957c0f2717ae125fba11488b4abb11e42",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/05-review-approval.png",
+            "bytes": 128918,
+            "sha256": "47e0d70daa8647daf73c95e948e8879d04add1020d4debe7d3e9cfd6f62cec00",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/06-response-start.png",
+            "bytes": 137713,
+            "sha256": "154cd30f93d0346665714ce0e352c8b46c02ff1283f9d783f389f28e6c30ba6a",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/07-response-end.png",
+            "bytes": 134154,
+            "sha256": "430dee701bb0f28e649cea5a2760ad2206fe1d9d237af4fb9f260b43465e8eb5",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/08-html-top.png",
+            "bytes": 261810,
+            "sha256": "5206cbd34cd00d27fbeac607d2144f239c4ad09de43b820391c0f17eb914d508",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/09-html-more-rows.png",
+            "bytes": 259663,
+            "sha256": "a85a72364db6b8fe1525689fca3b74c07bbe4e82e2990e5512105885d4806280",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/10-html-right.png",
+            "bytes": 211901,
+            "sha256": "99396afda8d2bb621dc581008366abd52e10cc4ce5880d5f3890d417f567291f",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case2/11-html-bottom.png",
+            "bytes": 186960,
+            "sha256": "e591be9406759d759aa426ca09b1f3e1fc33d08029938e2b3517d3574f7e3f69",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          }
+        ],
+        "ui_action_log": "ui-actions.jsonl",
+        "independent_review": {
+          "status": "pass_no_blocking_defect_found",
+          "path": "case2/independent/REVIEW.md",
+          "sha256": "1b4a95bc1b5489ae8b2c9d2b38d602c87825fafb43cd7df7b3714cd885cc8989",
+          "scope": "Independent current-run arithmetic, routine, exact publication and browser-table agreement; no original-video certification."
+        },
+        "closed_prior_tabs": [
+          "1763932469",
+          "1763932471"
+        ],
+        "new_app_tab_id": "1763932473",
+        "review_task_action_at": "2026-10-20T22:49:43.204Z",
+        "detector_thread_id": "01a15b81-a034-7f31-9170-4c92cb09ddf9",
+        "detector_turn_id": "01a15b81-a26c-7060-900b-9d68fca832d6",
+        "detector_call_trace": {
+          "path": "artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/context/current-process-ca35aaa6122142689af768286c88580a/native-trace/call-trace.json",
+          "prompt_sha256": "905582a064e382e358c25c69094010fd93fc8411bdc97adc77c102e5f0007591",
+          "scope": "In-progress live trace; no final result/archive claimed."
+        },
+        "manual_answer_action_at": "2026-10-20T22:51:09.114Z",
+        "approval_action_at": "2026-10-20T22:51:32.026Z",
+        "analysis_call_trace": {
+          "path": "artifacts/demo/e7614d169fd94ad1852c9d9e9abaa6a6/runs/investigation-e3cd5622fccd4bb092bf63711e9f7bc7/native-trace/call-trace.json",
+          "scope": "Actual approved native analysis in progress; no completed output claim."
+        },
+        "analysis_thread_id": "01a15b83-4aa5-7a52-9972-330303049eef",
+        "analysis_turn_id": "01a15b83-4ce1-76d3-9038-b1a6e462ac08",
+        "writer_thread_id": "01a15b8a-69c9-7df1-83cf-7f71d39bc140",
+        "writer_turn_id": "01a15b8a-6bd1-7c93-88f1-f5b3b25bc8c6",
+        "external_customer_cost_sentence_appended": false,
+        "publication_identity_check": {
+          "native_writer_equals_published": true,
+          "basis": "Immutable ArtifactStore published/prose references and writer output bytes match exactly."
+        },
+        "workflow_interruption": {
+          "reason": "Explicit user stop after HTML presentation",
+          "last_ui_action_at": "2026-10-20T23:04:07.440Z",
+          "return_to_app_performed": false,
+          "do_not_infer_full_expected_flow": true
+        },
+        "table_identity_check": {
+          "status": "pass",
+          "headers": 21,
+          "body_rows": 336,
+          "body_cells": 7056,
+          "exact_headers_values_and_order": true,
+          "dom_path": "case2/rendered-table.json",
+          "dom_sha256": "8398c66c5e8d4b5a07db9a05b1f858fd23417dbe80d25447fec97f8bbacb82c9",
+          "scope": "Exact delivered CSV versus root-captured live DOM equality; no UI controlled by evidence preparer."
+        },
+        "full_response_visible": true,
+        "full_response_end_at": "2026-10-20T23:00:35.465Z",
+        "html_opened_at": "2026-10-20T23:00:48.561Z",
+        "html_scroll_at": "2026-10-20T23:01:49.371Z",
+        "final_html_bottom_right_at": "2026-10-20T23:04:07.440Z",
+        "returned_to_app_at": null
+      },
+      "comparison": {
+        "status": "independent_saved_prediction_primary_arithmetic_checked",
+        "selected_method": "shrinkage84",
+        "baseline_definition": "Previous completed calendar month units / calendar days, separately by product and store. Analytical interpretation of supplied last-month description; exact incumbent not evaluable.",
+        "target_definition": "Positive product units on order dates with normalized statuses completed, shipped or returned; include returned positive units as gross outgoing, do not subtract restockable returns without evidence. Remove exact duplicates, reject conflicting transaction IDs, quarantine negative quantities. Include zero quantity records without effect.",
+        "status_and_return_rules": "Positive product units on order dates with normalized statuses completed, shipped or returned; include returned positive units as gross outgoing, do not subtract restockable returns without evidence. Remove exact duplicates, reject conflicting transaction IDs, quarantine negative quantities. Include zero quantity records without effect.",
+        "missingness_and_exposure": "Do not impute missing input quantities. Aggregate recorded units to calendar windows, conditional on supplied transaction extract representing recorded orders; no claim that absence proves zero underlying demand. Global dates are continuous. Store-day absences may be closure, no sales or missing reporting. Check exposure sensitivity using store transaction-active dates and independently report performance on horizons with all store dates observed. Do not represent transaction inventory levels as historical stock.",
+        "population": "Current supplied stock/policy keys, checked for 1:1 agreement and historical support at every origin; 336 pairs. Historical assortment not supplied: fixed current population is conditional and not proof of historical availability.",
+        "primary_horizon": "7calendar days",
+        "secondary_horizons": {
+          "fixed_days": 14,
+          "deployment_coverage": "Supplier lead time 1-7 plus review 7 = 8-14 days. Secondary variable horizon uses November 30 policy as a forecast-horizon diagnostic, not historical purchasing policy. Primary next-week selection may differ from full-coverage performance; disclose if so."
+        },
+        "metric_units_weighting": {
+          "name": "MAE7",
+          "definition": "Mean absolute error of 7-calendar-day total recorded gross units across all origins and product/store keys, equal pair-origin weighting",
+          "unit": "product units per product at store per week",
+          "business_reason": "Unit errors are directly interpretable for quantity planning without inventing a stockout cost or excess-stock preference."
+        },
+        "origins_and_dates": {
+          "origins": [
+            "2025-09-28",
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16"
+          ],
+          "dates": "2025-09-29 through 2025-11-30; overlapping 14-day windows, correlated results"
+        },
+        "prospective_plan_and_selection": {
+          "plan": "case2/retained/analysis/output/evaluation_plan.json",
+          "producer_written_before_scores": true,
+          "selection": "Select minimum primary MAE; absolute ties within 1e-9 favor baseline, then shrinkage84, then Poisson. No invented meaningful-improvement threshold. Report supporting metrics and selection sensitivity without changing this rule."
+        },
+        "scores": [
+          {
+            "method": "poisson_seasonal",
+            "horizon": "7",
+            "mae": "0.9303063411081802",
+            "bias": "-0.10707870778780196",
+            "absolute_error": "2500.6634448987884",
+            "observed_units": "1767.0",
+            "zero_target_share": "0.7581845238095238",
+            "n": "2688",
+            "wape": "1.4152028550643965"
+          },
+          {
+            "method": "poisson_seasonal",
+            "horizon": "14",
+            "mae": "1.5160945578399554",
+            "bias": "-0.240362671903873",
+            "absolute_error": "4075.2621714738",
+            "observed_units": "3612.0",
+            "zero_target_share": "0.578125",
+            "n": "2688",
+            "wape": "1.128256415136711"
+          },
+          {
+            "method": "previous_month",
+            "horizon": "7",
+            "mae": "0.8969246031746032",
+            "bias": "-0.1498223886328725",
+            "absolute_error": "2410.9333333333334",
+            "observed_units": "1767.0",
+            "zero_target_share": "0.7581845238095238",
+            "n": "2688",
+            "wape": "1.3644218072061876"
+          },
+          {
+            "method": "previous_month",
+            "horizon": "14",
+            "mae": "1.5782674091141833",
+            "bias": "-0.32866263440860227",
+            "absolute_error": "4242.382795698924",
+            "observed_units": "3612.0",
+            "zero_target_share": "0.578125",
+            "n": "2688",
+            "wape": "1.174524583526834"
+          },
+          {
+            "method": "shrinkage84",
+            "horizon": "7",
+            "mae": "0.8851369457795312",
+            "bias": "-0.1540798611111111",
+            "absolute_error": "2379.2481102553797",
+            "observed_units": "1767.0",
+            "zero_target_share": "0.7581845238095238",
+            "n": "2688",
+            "wape": "1.3464901586051952"
+          },
+          {
+            "method": "shrinkage84",
+            "horizon": "14",
+            "mae": "1.4846654626655769",
+            "bias": "-0.33717757936507936",
+            "absolute_error": "3990.7807636450707",
+            "observed_units": "3612.0",
+            "zero_target_share": "0.578125",
+            "n": "2688",
+            "wape": "1.1048673210534525"
+          }
+        ],
+        "supported_relative_difference": {
+          "producer_reported_reduction": 0.01314230577837916,
+          "independent_review_pending": false
+        },
+        "development_or_reserved": "already_inspected_development_only",
+        "independent_review_ref": "case2/independent/REVIEW.md"
+      },
+      "comparison_scope_note": "Populate only from this actual fresh run; no inherited method, metrics or historical gains. Analytical baselines are not an unsupplied incumbent.",
+      "artifacts": {
+        "retained_manifest": "case2/retained/bounded-archive-index.json",
+        "source_identity_index": "case2/retained/source-identity-index.json",
+        "bounded_output_index": "case2/retained/analysis/artifact-index.json",
+        "trace_reference_index": "case2/retained/writer/artifact-index.json"
+      },
+      "video": {
+        "original_reference": null,
+        "sha256": null,
+        "bytes": null,
+        "duration_seconds": null,
+        "segment_start": null,
+        "segment_end": null,
+        "readability_review": null,
+        "full_response_visible": null,
+        "html_scroll_return_visible": null,
+        "continuity_framing_review": null,
+        "review_status": "original_video_identity_duration_continuity_and_framing_unverified"
+      }
+    },
+    {
+      "case": 3,
+      "scenario": "no current approach; explicit Continue without",
+      "question": "What should I restock in my stores next week?",
+      "expected_flow": {
+        "close_previous_demo_app_and_table_tabs_before_case": true,
+        "new_clean_session_before_case": true,
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "",
+        "continue_without_clicked": true,
+        "approval_clicks": 1,
+        "fresh_detector_required": true,
+        "fresh_analysis_required": true,
+        "fresh_writer_required": true,
+        "customer_costs_visible": false,
+        "plain_automation_benefit": true,
+        "full_response_scrolled": true,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false
+      },
+      "observed": {
+        "status": "analysis_exact_writer_routine_full_ui_and_independent_review_complete_video_identity_pending",
+        "source_commit": "10f4648dfde547d267d55c918befb6202c345fee",
+        "server_url": "http://localhost:8507",
+        "previous_demo_tabs_closed": true,
+        "clean_session_started": true,
+        "cleanup_action_at": null,
+        "session": "a569cf43b5ff47bfbcbbf48fa460ba3a",
+        "context_status": "missing",
+        "followup_asked": true,
+        "answer": "",
+        "continue_without_clicked": true,
+        "approval_clicks": 1,
+        "detector_run_id": "current-process-1a987280906c4fcd87aaf1dc739d9038",
+        "analysis_run_id": "investigation-8a6c13df062941a1a1ca95755942b4ae",
+        "writer_run_id": "business-response-6b11c8f0cb574745831266b1259ff146",
+        "attempt_receipt": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/runs/attempt-b17e7ec98e5848ed99f92cbd9a136a4f.json",
+        "detector_outcome": "completed",
+        "analysis_outcome": "completed",
+        "writer_outcome": "rewritten",
+        "approved_task_ref": null,
+        "approved_task_sha256": null,
+        "analysis_prompt_sha256": "39e0355394b957b71efee33060a28abadf4694e68b2e4360e2561d5929d0c375",
+        "writer_prompt_sha256": "cad07ed0dcfaf064e779b2b5436b4dccc8d33cba80c35b00151f043a4b294a06",
+        "released_input_bindings": [
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:policy:0",
+              "provenance": "supplied",
+              "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "ordering_policy.csv",
+            "relative_path": "input-1.csv",
+            "released_byte_sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+            "released_bytes": 19279,
+            "source_role": "ordering_policy",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:receipts:1",
+              "provenance": "supplied",
+              "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inbound_deliveries.csv",
+            "relative_path": "input-2.csv",
+            "released_byte_sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+            "released_bytes": 10740,
+            "source_role": "inbound_ledger",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:inventory:2",
+              "provenance": "supplied",
+              "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+              "version": 5
+            },
+            "controller_lineage_ref": null,
+            "development_partition": false,
+            "original_name": "inventory_position.csv",
+            "relative_path": "input-3.csv",
+            "released_byte_sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+            "released_bytes": 18799,
+            "source_role": "usable_stock",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          },
+          {
+            "approved_source_ref": {
+              "artifact_id": "retail-a4f8be6166a6485e9c74e6b2f0916a4a:sales:3",
+              "provenance": "supplied",
+              "sha256": "520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707",
+              "version": 5
+            },
+            "controller_lineage_ref": {
+              "artifact_id": "demo-investigation-lineage-c2922279bf8443cabb85812fad2dc569",
+              "provenance": "derived",
+              "sha256": "8ccdde94c3e71066becac01580d05b40b064421545b7ce4cb8c4ad32caa384a9",
+              "version": 1
+            },
+            "development_partition": true,
+            "original_name": "Sales_transactions_2022_2025.csv",
+            "relative_path": "input-4.csv",
+            "released_byte_sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+            "released_bytes": 5006997,
+            "source_role": "transactions",
+            "released_identity_rehashed": true,
+            "retention": "hash/reference_only_no_raw_copy"
+          }
+        ],
+        "native_settings": null,
+        "native_writer_prose_sha256": "0e3c3581eb394c0ef2e37877badd8d93bd7c07ae7e5d3cb9c6f97603b06dc6c7",
+        "published_response_sha256": "0e3c3581eb394c0ef2e37877badd8d93bd7c07ae7e5d3cb9c6f97603b06dc6c7",
+        "csv_sha256": "4aec680dd9eb99b9a49f1a878b291674cb0f783d383437e374dca799424a4eda",
+        "html_sha256": "75b89e332b14a194c63d7119c8ebf075de6e5fe6a75d1faf5c3e786a09f1b995",
+        "csv_rows": 336,
+        "csv_columns": 20,
+        "order_units": 883,
+        "positive_order_rows": 113,
+        "zero_order_rows": 223,
+        "prearrival_review_flags": 52,
+        "routine_runtime_seconds": 0.8273255409440026,
+        "routine_peak_rss_bytes": null,
+        "customer_costs_visible": false,
+        "plain_automation_benefit_review": "Independent review passes current exact writer prose: useful list, repeatable arithmetic, practical exception checks and measured local runtime; no customer cost, incumbent superiority, savings or installed integration claim.",
+        "full_response_scrolled": null,
+        "html_opened_manually": true,
+        "html_table_scrolled": true,
+        "returned_to_app": true,
+        "csv_download_clicked": false,
+        "browser_table_equals_csv": true,
+        "screenshots": [
+          {
+            "path": "case3/01-reset-recording-window.png",
+            "bytes": 93629,
+            "sha256": "9a3ebc50555b8bdcc927dd7dd2b04a0d1b261ed40af504245437630f75e50491",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/02-question-files.png",
+            "bytes": 109549,
+            "sha256": "6021a81efcf705ccc724878aed8e456203875fbc09647c23eb9e935ae9df628a",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/03-current-method-choice.png",
+            "bytes": 129656,
+            "sha256": "786430c6b6a505dc600f4f374f29375311078a751d51abfda400f9c3a5276494",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/04-task-review-top.png",
+            "bytes": 251498,
+            "sha256": "3b0ed4e2f1cc082a0b908d2072f4fd74bace375ca9f3cfd90c156851f3ad9e12",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/05-task-approval.png",
+            "bytes": 226905,
+            "sha256": "6ea6073d3b529aeef13e8c1b121ac031db25837e15916d53f1209292eaff7091",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/06-response-start.png",
+            "bytes": 179222,
+            "sha256": "fe9b5a22ef7af7fa43b719be97c86e0ee062c3a8d70ea23b5778f821be30a76f",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/07-response-full.png",
+            "bytes": 222870,
+            "sha256": "542e2e7da5e9fef38f62632720c046e7b76013deb214fd3dfa6f6219f309e2f7",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/08-html-top.png",
+            "bytes": 208119,
+            "sha256": "22bf0a2ed1a65d1f216f4d9c3f77c30220155040c1abb0fca1cd7573b2d6c6ae",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/09-html-scroll.png",
+            "bytes": 221350,
+            "sha256": "41aa0e48be83d7d456c4d3fcfb260a3cf32371d4fdc17b2ee1d9c113b87924ff",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/10-html-right.png",
+            "bytes": 204044,
+            "sha256": "e5c0d3ba4cd88d283d36e4dd0aa8b9420f2ae1edbb9f174559b0c7b0787271af",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/11-html-bottom.png",
+            "bytes": 201680,
+            "sha256": "6e6d99e223ae55a69cd43cfe4efcdca0e6496aa6b272ebb1ae930eb5a98c6f54",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          },
+          {
+            "path": "case3/12-return-app.png",
+            "bytes": 231732,
+            "sha256": "c199a45ec80fe8a748b2428d009905536435b6beed77b3d2a7883a1fa1c88a97",
+            "scope": "Root-captured image identity; visual review is linked separately."
+          }
+        ],
+        "ui_action_log": "ui-actions.jsonl",
+        "independent_review": {
+          "status": "pass_no_blocking_defect_found",
+          "path": "case3/independent/REVIEW.md",
+          "sha256": "24160976d1f99c7b9789edd0eaef6c94a234fd6522f58c0576a377c28ac90cb3",
+          "scope": "Independent current-run arithmetic, routine, exact publication and browser-table agreement; no original-video certification."
+        },
+        "review_task_action_at": "2026-10-21T19:12:40.093Z",
+        "detector_call_trace": {
+          "path": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native-trace/call-trace.json",
+          "prompt_sha256": "a3411f8851b81bd68dadb92c874ff5acd0a88f0dc8390276595e2788c521b36f",
+          "scope": "In-progress live trace; no completed native outcome asserted."
+        },
+        "start_scope": "Root confirms correct recording window had one demo tab, prior demo2511 disappeared after user closure, and a fresh empty app reload preceded user recording confirmation; precise reset time unavailable.",
+        "continue_without_action_at": "2026-10-21T19:13:40.526Z",
+        "approval_action_at": "2026-10-21T19:14:09.212Z",
+        "detector_thread_id": "01a15fe1-449b-7202-a928-c06229315521",
+        "detector_turn_id": "01a15fe1-46de-7432-acf9-2c8648d00458",
+        "analysis_call_trace": {
+          "path": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/runs/investigation-8a6c13df062941a1a1ca95755942b4ae/native-trace/call-trace.json",
+          "scope": "Current approved native analysis in progress; no final result claimed."
+        },
+        "analysis_thread_id": "01a15fe2-9ef7-7543-960c-895fde9c56ee",
+        "analysis_turn_id": "01a15fe2-a141-7861-8ec5-4df4d337eebf",
+        "writer_thread_id": "01a15fea-4d97-7f81-8cc4-491184b0411a",
+        "writer_turn_id": "01a15fea-505f-75c2-868c-e93baecd7d2d",
+        "routine_peak_rss_reported_mb": 168.375,
+        "external_customer_cost_sentence_appended": false,
+        "full_response_shown_at": "2026-10-21T19:23:25.355Z",
+        "publication_identity_check": {
+          "native_writer_equals_published": true,
+          "basis": "Immutable published/prose references and exact native writer file/text match; no external sentence."
+        },
+        "table_identity_check": {
+          "status": "pass",
+          "headers": 20,
+          "body_rows": 336,
+          "body_cells": 6720,
+          "exact_headers_values_and_order": true,
+          "dom_path": "case3/rendered-table.json",
+          "dom_sha256": "354bd178f956eb6929d2b482b929bcf621eea7c396cecf56541958bb82f02b34",
+          "scope": "Exact delivered CSV versus root-captured live DOM equality; no UI controlled by evidence preparer."
+        },
+        "full_response_visible": true,
+        "html_opened_at": "2026-10-21T19:24:08.280Z",
+        "html_scroll_at": "2026-10-21T19:24:24.620Z",
+        "html_right_bottom_shown_at": "2026-10-21T19:25:02.087Z",
+        "returned_to_app_at": "2026-10-21T19:25:16.061Z",
+        "keep_open_state": {
+          "app_tab": "1763932509",
+          "table_tab": "1763932521",
+          "requested_by_root": true,
+          "scope": "Observed at completed recording endpoint; no further UI action by evidence preparer."
+        }
+      },
+      "comparison": {
+        "status": "independent_saved_prediction_primary_arithmetic_checked",
+        "selected_method": "pooled_13week",
+        "baseline_definition": {
+          "name": "recent_8week",
+          "description": "Per-pair recorded daily mean over preceding 56 days; analytical baseline, no incumbent supplied."
+        },
+        "target_definition": "Gross positive recorded units for completed/shipped/returned status, case normalized, assigned to order date. Returns are included without stock credit; negative or zero corrections excluded. Exact duplicate rows removed; conflicting transaction IDs rejected. Processing and cancelled excluded.",
+        "status_and_return_rules": "Gross positive recorded units for completed/shipped/returned status, case normalized, assigned to order date. Returns are included without stock credit; negative or zero corrections excluded. Exact duplicate rows removed; conflicting transaction IDs rejected. Processing and cancelled excluded.",
+        "missingness_and_exposure": "Global calendar has transactions on every day. Within each pair after first recorded activity, missing transaction rows on globally represented days mean zero RECORDED target units, a conditional observation convention, not verified no demand or stockout exposure. Before first activity remains missing. Globally absent dates rejected in routine rather than silently imputed.",
+        "population": "All 336 operational keys; same eligible population for every candidate; every pair observed before evaluation. Use only sales through each origin; no operational snapshots as forecast features.",
+        "primary_horizon": 7,
+        "secondary_horizons": "8through14days",
+        "metric_units_weighting": {
+          "name": "MAE_7day",
+          "unit": "product units per product at store per forecast origin",
+          "weighting": "Equal weight to each of 336 keys and seven origins; absolute error of horizon TOTAL, not daily errors."
+        },
+        "origins_and_dates": {
+          "origins": [
+            "2025-10-05",
+            "2025-10-12",
+            "2025-10-19",
+            "2025-10-26",
+            "2025-11-02",
+            "2025-11-09",
+            "2025-11-16"
+          ],
+          "dates": "2025-10-06 through 2025-11-30; 7-day primary, 8 through 14-day secondary; overlapping longer horizons are dependent. No December outcomes."
+        },
+        "prospective_plan_and_selection": {
+          "plan": "case3/retained/analysis/output/evaluation_plan.json",
+          "producer_written_before_scores": true,
+          "selection": "Choose lowest pooled primary MAE. Absolute ties within 1e-9 resolve recent_8week, pooled_13week, poisson_calendar. No business significance threshold invented. Secondary metrics cannot overturn primary rule."
+        },
+        "scores": {
+          "path_prefix": "case3/retained/analysis/output/measured_",
+          "selected_method_ref": "case3/retained/analysis/output/selected_method.json"
+        },
+        "supported_relative_difference": {
+          "producer_reported_reduction": 0.015910137427301296,
+          "independent_review_pending": false
+        },
+        "development_or_reserved": "already_inspected_development_only_no_incumbent_supplied",
+        "independent_review_ref": "case3/independent/REVIEW.md"
+      },
+      "comparison_scope_note": "Populate only from this actual fresh run; no inherited method, metrics or historical gains. Analytical baselines are not an unsupplied incumbent.",
+      "artifacts": {
+        "retained_manifest": "case3/retained/bounded-archive-index.json",
+        "source_identity_index": "case3/retained/source-identity-index.json",
+        "bounded_output_index": "case3/retained/analysis/artifact-index.json",
+        "trace_reference_index": "case3/retained/writer/artifact-index.json"
+      },
+      "video": {
+        "original_reference": null,
+        "sha256": null,
+        "bytes": null,
+        "duration_seconds": null,
+        "segment_start": null,
+        "segment_end": null,
+        "readability_review": null,
+        "full_response_visible": null,
+        "html_scroll_return_visible": null,
+        "continuity_framing_review": null,
+        "review_status": "original_video_identity_duration_continuity_and_framing_unverified"
+      }
+    }
+  ],
+  "overall": {
+    "all_three_clean_starts_observed": true,
+    "all_three_analyses_complete": true,
+    "all_three_writers_complete": true,
+    "all_three_full_response_and_html_flows_complete": false,
+    "all_three_tables_match_csv": true,
+    "all_three_independent_reviews_pass": true,
+    "original_video_verified": false,
+    "final_recording_review": {
+      "status": "bounded_app_and_artifact_reviews_pass_original_video_unverified",
+      "script_exception": "Case2 user completed the visual demo and stopped computer use after HTML; no agent return-to-app occurred. Do not infer a continuous three-case video."
+    },
+    "parent_acceptance": null
+  },
+  "pause_resume_history": [
+    {
+      "event": "explicit_user_stop_after_case2",
+      "date": "2026-10-20",
+      "last_root_ui_action_at": "2026-10-20T23:04:07.440Z",
+      "last_root_ui_action": "case2 HTML far-right columns and bottom shown; screenshot11-html-bottom.png",
+      "return_to_app_performed": false,
+      "case3_started_before_stop": false,
+      "work_after_stop": "Stopped; no further tools/UI/metadata edits until renewed authorization.",
+      "scope": "User stop and root endpoint relayed in thread; original video remains unverified."
+    },
+    {
+      "event": "explicit_user_resume_case3_recording",
+      "date": "2026-10-21",
+      "first_logged_question_review_at": "2026-10-21T19:12:40.093Z",
+      "scope": "Renewed authorization for root UI and bounded case3 evidence; no old stop endpoint rewritten as completion."
+    }
+  ],
+  "superseded_ui_attempts": [
+    {
+      "case": 3,
+      "date": "2026-10-21",
+      "status": "superseded_wrong_recording_window",
+      "observed_extent": "File picker only; no analysis executed.",
+      "replacement": "Fresh empty reload in correct recording window, then user recording confirmation and actual case3 question/review19:12:40.093Z.",
+      "source": "Root report; exact earlier attempt timestamps/video identity unavailable."
+    }
+  ],
+  "completed_app_evidence_at": "2026-10-21T19:25:16.061Z"
+}

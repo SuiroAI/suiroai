@@ -1,0 +1,5 @@
+{
+  "status": "missing",
+  "summary": "The user wants to know what to restock in their stores next week. The question and complete contents of all four released CSVs do not explicitly describe how they currently make restocking decisions. The files provide policy parameters, inbound deliveries, inventory positions and transaction records, but these do not establish a current procedure. There is no explicit statement that they have no current method.",
+  "evidence": []
+}

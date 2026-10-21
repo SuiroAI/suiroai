@@ -1,0 +1,50 @@
+[
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/output/result.json",
+    "bytes": 416,
+    "sha256": "b1195c4b1c7816bdacb2102f975c6dd826337b750e2b3c69d684c71a5bf04b13",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case3/retained/context/current-process-1a987280906c4fcd87aaf1dc739d9038/output/result.json"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native-trace/call-trace.json",
+    "bytes": 5650,
+    "sha256": "118c8af4e484ed1b0a51d929362006ab43e46b59f42437e279f867ba74e8f4fe",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case3/retained/context/current-process-1a987280906c4fcd87aaf1dc739d9038/trace/call-trace.json"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native-trace/outbound-prompt.txt",
+    "bytes": 3648,
+    "sha256": "a3411f8851b81bd68dadb92c874ff5acd0a88f0dc8390276595e2788c521b36f",
+    "retained": "evidence/demo/dsc60-recording-2026-10-20/retake2/case3/retained/context/current-process-1a987280906c4fcd87aaf1dc739d9038/trace/outbound-prompt.txt"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native/inspection.json",
+    "bytes": 118178,
+    "sha256": "e74b12e5d202ebd0634067f6f5d8c46cb3445ee72fd3f7e144dc160a3fb8a0d1",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native/native-bootstrap.jsonl",
+    "bytes": 2312,
+    "sha256": "5e06f5402d7b41ade485bc663fece5691c95d155a311ceae2d5f4f7aadec5726",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native/native-rpc.jsonl",
+    "bytes": 174588,
+    "sha256": "3310bf30c966c0aa40d9be4839171d4790b662b51ce239cb5861e3a1162a1ba3",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "artifacts/demo/a569cf43b5ff47bfbcbbf48fa460ba3a/context/current-process-1a987280906c4fcd87aaf1dc739d9038/native/native-run.json",
+    "bytes": 116174,
+    "sha256": "9c617ab5c5f082b9b1135b5cb0386d931fac6d0421267b2f18fdef7647244bd3",
+    "retention": "hash_only_full_native_payload"
+  },
+  {
+    "source": "/Users/ceverson/.codex/sessions/2026/10/21/rollout-2026-10-21T15-12-41-01a15fe1-449b-7202-a928-c06229315521.jsonl",
+    "bytes": 408964,
+    "sha256": "5f237bcb45d387af8a026c07dd72a712c7fa9eb92497f678f2d753f1d454c6e9",
+    "retention": "hash_only_full_rollout"
+  }
+]

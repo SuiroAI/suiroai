@@ -1,0 +1,24 @@
+{
+  "source_native_report_sha256": "8d3615229f6820df695766a81de6d20c2afd9b9894d445cb24f15df509d990f8",
+  "model_usage": {
+    "format": "dsc60-native-usage-v1",
+    "available": true,
+    "counts": {
+      "input_units": 649141,
+      "cached_input_units": 588416,
+      "cache_write_input_units": 0,
+      "output_units": 19407,
+      "reasoning_output_units": 2723,
+      "total_units": 668548
+    },
+    "source": "native_thread_usage_cumulative_total",
+    "model_context_capacity_units": 475000,
+    "max_observed_request_input_units": 63978,
+    "snapshot_count": 14,
+    "thread_id": "01a15b78-83a7-7ed1-8401-57e880e2bb76",
+    "turn_id": "01a15b78-8673-7e01-9851-f3e8644f3fda",
+    "rejected_update_count": 0,
+    "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+  },
+  "scope": "Internal safe cumulative usage only; not customer text."
+}

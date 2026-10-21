@@ -1,0 +1,43 @@
+{
+  "independent_order_recomputation_all_rows": true,
+  "independent_aggregation": "Long-form daily fulfilled rows and observed inter-sale date gaps; no forecast/calendar helper used",
+  "max_forecast_display_rounding_error": 0.0004999472825422124,
+  "integer_nonnegative_unit_and_policy_checks": true,
+  "all_336_keys_covered": true,
+  "released_hashes_match_manifest": true,
+  "aggregate_scores_recomputed_from_detail": true,
+  "origin_wins": 7,
+  "origins": 7,
+  "store_wins": 10,
+  "stores": 12,
+  "origin_mae_improvements_units": {
+    "2025-10-05": 0.040842802059346026,
+    "2025-10-12": 0.05321518063959706,
+    "2025-10-19": 0.0305593309389118,
+    "2025-10-26": 0.05322808688913392,
+    "2025-11-02": 0.04239601779024406,
+    "2025-11-09": 0.02928121395629563,
+    "2025-11-16": 0.04803236950112081
+  },
+  "store_mae_improvements_units": {
+    "AUS-01": 0.09311957047526451,
+    "CHI-01": 0.046412240016668466,
+    "COL-01": 0.015743923522047162,
+    "LA-01": 0.04668477467506703,
+    "LON-01": -0.0056667481755309015,
+    "MAN-01": 0.037948193906531334,
+    "MUC-01": 0.017080975546564642,
+    "NYC-01": 0.09056842818726808,
+    "PAR-01": 0.11735841382540665,
+    "SYD-01": -0.036244614392333604,
+    "TOR-01": 0.048046299960828466,
+    "VAN-01": 0.03904283120875981
+  },
+  "zero_recent_sales_flags": 24,
+  "positive_orders_among_zero_recent_flags": 8,
+  "limitation": "Same released data, alternative arithmetic checks; not independent external stock verification. Origins overlap and are development only.",
+  "reserved_outcomes_accessed": false,
+  "cli_source_overwrite_rejected_without_mutation": true,
+  "routine_and_source_hashes_still_match_measured_invocation": true,
+  "response_word_count": 237
+}

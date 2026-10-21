@@ -1,0 +1,23 @@
+{
+  "original_question": "What should I restock in my stores next week?",
+  "customer_context": {
+    "current_process": {"source":"explicit_continue_without","status":"none","text":null},
+    "demo_scenario": {"authority":"explicit_user_demo_roleplay_instruction","customer_provenance_only_csv_columns":false,"customer_provenance_warnings":false,"independently_verified_real_stock_claimed":false,"mode":"provided_operations_are_assumed_scenario_facts","operating_inputs":["supplied_stock","supplied_deliveries","supplied_ordering_rules"],"source_provenance_unchanged":true},
+    "format":"dsc60-task-context-v1",
+    "original_question":"What should I restock in my stores next week?"
+  },
+  "refined_analytical_task": {
+    "attribution":"Analyst refinement, not customer-supplied method",
+    "decision":"For each of 336 supplied products at stores, estimate recorded fulfilled unit demand, cover supplier lead time plus seven-day review, subtract usable stock and timely existing deliveries, apply safety stock and whole-unit pack/minimum rules, and flag shortages before arrivals.",
+    "routine":"Load and validate the four files; deduplicate transactions; normalize statuses; aggregate demand; fit selected method; project daily demand; calculate target stock and timed gaps; export positive and supported zero orders. Replaces repeating these arithmetic and file preparation steps; no exact incumbent or manual runtime was supplied.",
+    "facts":"2025-11-30 stock snapshot; policy effective 2025-11-30; lead times 1-7 days; reviews seven days; unit denominators agree. Supplied operations are assumed scenario facts.",
+    "interpretations":"Completed, shipped and returned positive quantities represent gross recorded fulfillment attributed to order date. Include online and in-store records because all are assigned a Store_ID; no separate fulfillment-location mapping is supplied. A return is not evidence of usable returned inventory.",
+    "unknowns":"No customer incumbent, lost demand, historical stock availability, return-to-stock timing, historical status changes, independent evaluation outcomes, cost function or meaningful success threshold. Do not invent these.",
+    "proxies":"Recorded-unit absolute forecast error supports method comparison but cannot establish service availability, savings or cost optimality.",
+    "scope":"CPU-only conventional bounded predictive candidates; no operational policy redesign; no paid APIs during weekly execution; no December sales access. October-November comparisons are development evidence.",
+    "candidate_discovery_evidence":["source_profile.json: 336 pairs, 17406 raw rows, 42 exact duplicates, sparse transactions across a complete global daily calendar", "inspect_sources.py: quantity/status/return checks, recurring November-December elevation in prior years, 28 stable product-name mappings", "input-1.csv: supplier lead plus review requires 8-14 days, in addition to next week"],
+    "workload_plan":"Measure each candidate fit and inference including preparation via process high-water resident memory and elapsed time. Sparse one-hot effects and bounded training windows keep arrays small. Assess against 8 GB with OS headroom, without assuming host RAM equals 8 GB.",
+    "unresolved_priorities":"Availability versus excess stock is not specified. Apply supplied safety stock, no invented buffer, and expose lead-time risk and demand uncertainty.",
+    "performance_gate":"Cannot close: no externally predeclared meaningful improvement threshold or untouched outcomes. December remains reserved."
+  }
+}

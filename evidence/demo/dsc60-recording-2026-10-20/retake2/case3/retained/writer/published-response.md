@@ -1,0 +1,7 @@
+Your weekly order list is ready in **restocking.csv**, with **883 units suggested for December 1–7, 2025**. It gives you quantities to review and order without working out each one by hand.
+
+Start with the items flagged as likely to run out before the next delivery. Review the 52 flagged entries first and consider a transfer from another store or faster delivery. Seven of these have no additional order suggested because deliveries already on the way cover the total need, but may arrive too late. Check their shortage dates before placing orders. A zero quantity means no order is suggested; it does not prove that no purchase or other action is needed.
+
+The routine checks sales, stock in each store, deliveries on the way and your buying rules. It estimates needs from the last 13 weeks of sales, using sales of the same product across stores to help when an individual store has few sales. It calculates enough stock to cover the supplier’s delivery time and the following weekly review period, keeps the required spare stock, subtracts available stock and timely deliveries, and applies minimum orders and pack sizes.
+
+The measured weekly calculation took **0.83 seconds**, including reading the files and writing the order list. At this data size, it is suitable for an ordinary computer with Python and the required packages installed, and runs locally without ChatGPT. Each week, the same routine can use updated sales, stock, deliveries and buying rules to produce a fresh list. It can be scheduled on your computer; a schedule has not been set up.
