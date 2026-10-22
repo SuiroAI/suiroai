@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-22T17:06:53.835636+00:00",
+  "analysis_run": "investigation-ace9573ef50448779380fba0924e8480",
+  "observed_output_files": {
+    "evaluation_plan.json": "d9fd63e8ffeea3dc51989f0ecc67c3ce1fbedafb7dd1f8de1cb707fc1033dbd1",
+    "input_profile.json": "aa6d9cb622aa938179304e7b1bd0cd8d3042122a6a417d095208f64808def4d6",
+    "inspect_inputs.py": "4de0cdce23353c0c27317abeb19bd34cc35d6b742a2d888e12772f9c6c0acad1",
+    "task_refinement.json": "e31350b031d3bedfdb50f35d23390cfe074067481b820a2dfa0fd2b1ccbe31a4"
+  },
+  "candidate_scores_or_code_present": false,
+  "code_present": "inspect_inputs.py only",
+  "outbound_prompt_sha256": "d9fbe80f095a05def89c3fcd1f68feba75dffef1c4de8185d685d9a33701f0f5",
+  "detector_released_file_hashes_verified": true
+}

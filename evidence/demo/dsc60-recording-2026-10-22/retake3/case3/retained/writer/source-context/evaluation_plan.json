@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "status": "Prospective before candidate comparison; all October-November outcomes are development evidence, never independent holdout",
+  "target": "Gross positive recorded units with normalized status completed, shipped or returned; include Return_Flag Yes without subtracting or adding usable stock. Exclude cancelled, processing and nonpositive rows. Remove exact duplicate rows; conflicting Transaction_ID duplicates fail.",
+  "date_population": "Daily dates are not automatically observed zeros. Conditional complete-extract assumption: after first recorded transaction for each product at store, no transaction in a complete Monday-Sunday week means zero recorded units, not zero customer demand. No pre-first-observation zeros. All 336 observed series are eligible by every evaluation origin; current stock population used only for deployment and coverage-rule mapping, with survivor limitation disclosed.",
+  "origins": ["2025-09-28","2025-10-05","2025-10-12","2025-10-19","2025-10-26","2025-11-02","2025-11-09","2025-11-16"],
+  "training": "From first full Monday-Sunday week after first recorded transaction through origin inclusive; no post-origin quantities/features. Date calendar features known in advance. Recorded statuses lack old change dates; true as-of-label reconstruction unavailable for every method.",
+  "evaluation": "2025-09-29 through 2025-11-30, all development. Identical pairs, origins and targets for all candidates; no December outcomes accessed.",
+  "horizons": {"primary_days":7,"secondary_days":"8-14 for each pair from supplied current lead time plus seven-day review; historical policy not asserted. Forecast daily by weekly expected total / 7. Scores for coverage horizon overlap."},
+  "baseline": {"name":"recent_8_week_mean","description":"Per-pair last eight full weekly totals, arithmetic mean. Analytical baseline, not customer incumbent."},
+  "candidates": [
+    {"name":"recent_8_week_mean","rationale":"Fair responsive simple method; nonzero uncertainty despite many zero weeks."},
+    {"name":"croston_sba","parameters":{"alpha":0.1},"rationale":"Sparse positive events; separate smoothed event size and interarrival interval, fixed standard bias correction; no tuning."},
+    {"name":"pooled_poisson","parameters":{"alpha":0.1,"max_iter":300},"rationale":"Share product and store effects across sparse series, annual Fourier pair and linear year trend; weekly count regression, regularization, small dense design (~43 columns). No prices, inventory or later status-history features."}
+  ],
+  "primary_metric": "Mean absolute error, units per product at store per seven-day horizon; equal weights over all 336 pairs and eight origins (2688 predictions). Point forecast quantity error, not availability/cost/savings.",
+  "selection_rule": "Smallest unrounded pooled primary MAE. Numerical tie within 1e-8 selects baseline then Croston then Poisson for simplicity. No business meaningfulness threshold is invented. Secondary coverage-horizon disagreement must be disclosed; no winner switching based on diagnostics.",
+  "secondary_diagnostics": ["Coverage-horizon MAE and signed error","Per-origin MAE and paired origin-block bootstrap uncertainty (8 origins, 2000 deterministic resamples; limited independent weeks)","zero week fraction and positive demand size","annual seasonal rates across complete years","alternative status treatment: completed/shipped only and all noncancelled positive orders, fixed selected method versus baseline only; exploratory, no reselection","baseline 4/13-week windows as exploratory selection sensitivity, no reselection"],
+  "resource_evidence": "Measure per-origin fit/inference time, full process peak RSS including preparation and retained arrays/models; separately measure actual routine subprocess wall, CPU and peak RSS on this host. Estimate 8 GB suitability from workload, not host capacity. No unbounded search.",
+  "frozen_scope": "Single plan; any new scoring candidate requires prospective appended plan. No independent success claim; threshold and untouched outcomes absent."
+}

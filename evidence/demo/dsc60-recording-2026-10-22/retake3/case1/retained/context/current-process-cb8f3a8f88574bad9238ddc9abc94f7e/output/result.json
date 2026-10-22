@@ -1,0 +1,10 @@
+{
+  "status": "found",
+  "summary": "The user currently looks at the last few months of sales to decide what to buy for store restocking. The question does not specify an exact lookback period or a rule for selecting products and quantities.",
+  "evidence": [
+    {
+      "source": "question",
+      "quote": "I usually look at the last few months of sales to decide what to buy."
+    }
+  ]
+}

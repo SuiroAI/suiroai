@@ -1,0 +1,15 @@
+{
+  "rows": 336,
+  "columns": 19,
+  "units": 875,
+  "positive": 111,
+  "zero": 225,
+  "prearrival_flags": 52,
+  "all_order_stock_policy_incoming_and_full_precision_forecasts_match": true,
+  "all_timing_quantities_and_first_dates_match": true,
+  "source_input_output_hashes_match": true,
+  "expected_actual_csv_bytes_identical": true,
+  "wall_seconds": 0.9063342500012368,
+  "peak_rss_bytes": 189300736,
+  "scope": "Own arithmetic from emitted full precision daily forecasts and source operational inputs; no forecasting fit/producer execution/December outcome scoring."
+}

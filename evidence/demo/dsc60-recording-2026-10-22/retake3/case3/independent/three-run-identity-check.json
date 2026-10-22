@@ -1,0 +1,49 @@
+{
+  "fresh_distinct_completed_native_calls": 9,
+  "sessions": [
+    "b5596e7153684fd19812869caf61195d",
+    "337b4846d1c643f9bf4d7d426e5688c6",
+    "e179c05da6644712b8d5dcb20ca9c829"
+  ],
+  "identities": [
+    [
+      "01a1646c-778b-7451-8787-9295d6f7828d",
+      "01a1646c-7b66-7131-9e2e-bdaf73e7c4e9"
+    ],
+    [
+      "01a1646e-cd15-7151-bcd6-f26d8afa0213",
+      "01a1646e-cfec-7601-95a8-e9b78ad7db41"
+    ],
+    [
+      "01a16477-9eb1-7731-b84b-536217199f56",
+      "01a16477-a2a6-7591-890d-81b21579c57c"
+    ],
+    [
+      "01a1647d-fa6f-7332-8134-6b2edea83417",
+      "01a1647d-fafa-7292-a524-129625f5f69e"
+    ],
+    [
+      "01a16489-b70c-7580-829b-8eed3b201ec6",
+      "01a16489-b7a3-7573-8bab-74d89d872def"
+    ],
+    [
+      "01a16480-4921-7d40-98eb-7acbfef8d64c",
+      "01a16480-4cb8-7ed2-addb-aecf99758f9d"
+    ],
+    [
+      "01a1648f-fb6a-7183-a5b9-85f4fb90bc41",
+      "01a1648f-fde7-7de3-87aa-c0e2936d261c"
+    ],
+    [
+      "01a1649b-9548-76c2-b0ce-862dc0aa37c3",
+      "01a1649b-95e3-7f21-b51b-fe25182773c8"
+    ],
+    [
+      "01a16492-12a0-7822-ad16-5d755014a53c",
+      "01a16492-1473-7792-b5ff-8dc9e66cb747"
+    ]
+  ],
+  "observed_model": "gpt-6.1-sol",
+  "observed_reasoning_effort": "medium",
+  "scope": "Three fresh stages per scenario; no old result or cost attribution."
+}

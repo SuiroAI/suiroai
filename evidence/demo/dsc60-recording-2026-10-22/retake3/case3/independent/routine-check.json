@@ -1,0 +1,21 @@
+{
+  "rows": 336,
+  "columns": 21,
+  "units": 875,
+  "positive": 111,
+  "zero": 225,
+  "prearrival_flags": 52,
+  "timing_flags": 52,
+  "own_order_stock_policy_incoming_dates_and_net_need_match": true,
+  "all_code_input_output_receipt_hashes_match": true,
+  "output_equals_reference_bytes": true,
+  "wall_seconds": 1.5505502499872819,
+  "peak_rss_bytes": 212959232,
+  "dependency_qualification": "Resolved in Data own in-flight revision: sklearn import moved inside optional Poisson branch; selected Croston uses pandas/NumPy only.",
+  "scope": "Own row arithmetic from six-decimal emitted forecasts/operational inputs; no model fit/producer execution/full timing simulation/December scoring.",
+  "dependency_correction_native_events": {
+    "fileChange_completed_line": 408,
+    "actual_measure_command_started_line": 448,
+    "before_actual_measurement": true
+  }
+}

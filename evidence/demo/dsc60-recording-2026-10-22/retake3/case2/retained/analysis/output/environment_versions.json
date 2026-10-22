@@ -1,0 +1,18 @@
+{
+  "python": "3.13.9",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "scipy": "1.16.3",
+  "scikit_learn": "1.7.2",
+  "routine_dependencies": [
+    "Python standard library",
+    "numpy",
+    "pandas"
+  ],
+  "comparison_only_dependencies": [
+    "scipy",
+    "scikit-learn"
+  ],
+  "hardware_assumption": "CPU-only, observed workload; host RAM not assumed 8 GB",
+  "routine_measurement_count": 1
+}

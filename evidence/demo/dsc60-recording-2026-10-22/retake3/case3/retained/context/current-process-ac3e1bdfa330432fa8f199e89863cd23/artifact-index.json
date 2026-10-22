@@ -1,0 +1,40 @@
+[
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/output/result.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case3/retained/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/output/result.json",
+    "bytes": 518,
+    "sha256": "f9f1e81f285a17e16e023bd3540097f2e09e31cdc844d33da6a65de184a7fead"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native/inspection.json",
+    "bytes": 672644,
+    "sha256": "30a1d7ae0ae305a20491354cf0035d0d83bd0ead5f5cd5b9925eba5d7574a1c2"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native/native-bootstrap.jsonl",
+    "bytes": 2308,
+    "sha256": "9fb36d9230373a4a6d9ba866868a12d4ec0de92d3fdf5720909e94d2d89d0883"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native/native-rpc.jsonl",
+    "bytes": 752540,
+    "sha256": "a0a2a8f30476059733f24f57d41c50010b62533e7750c04f40fa0d3e472a9ed3"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native/native-run.json",
+    "bytes": 670868,
+    "sha256": "4401d990599524af9f1d0261dd17e38928df49b62535f81bb5b9baea4d017b6f"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native-trace/call-trace.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case3/retained/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/trace/call-trace.json",
+    "bytes": 5652,
+    "sha256": "cba808878ee9c69412d0337d57f29c4be5ca625c94eefdc805dda2a15528d945"
+  },
+  {
+    "source": "artifacts/demo/e179c05da6644712b8d5dcb20ca9c829/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/native-trace/outbound-prompt.txt",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case3/retained/context/current-process-ac3e1bdfa330432fa8f199e89863cd23/trace/outbound-prompt.txt",
+    "bytes": 3648,
+    "sha256": "acc233604b6ab6a10956e41a3d315a3da78773e0c33295e9642b2af1b3d299a7"
+  }
+]

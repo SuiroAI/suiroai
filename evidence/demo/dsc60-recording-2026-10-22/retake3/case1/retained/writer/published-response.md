@@ -1,0 +1,7 @@
+Your weekly order list is ready. For December 1–7, 2025, the suggested quantities in `restocking.csv` total **875 units**. Start with the items flagged as likely to run out before the next delivery. Review the **52 shortage flags** before placing orders, and check whether faster delivery is available for those items.
+
+The repeatable weekly routine checks sales, stock in each store, deliveries on the way and your buying rules, then produces suggested quantities so you do not have to work out every quantity by hand. It estimates how much sells when sales occur and how long the gaps between sales tend to be, which helps with items that sell irregularly. Orders cover supplier delivery time plus the following weekly review period. Safety stock, minimum orders and pack sizes are included, so an order can exceed expected sales for one week. A zero quantity means no order is suggested by the calculation; it is not proof that no purchase is needed.
+
+The weekly calculation took **0.9 seconds** in the measured run. This workload is suitable for an ordinary computer, and the routine runs locally without ChatGPT or an internet connection.
+
+Use the same routine each week with that week’s sales, stock, incoming deliveries and buying rules, following `routine_usage.md`. It can be scheduled to run weekly on your computer; a schedule has not been installed. Review the flagged items and suggested quantities before placing each week’s orders.

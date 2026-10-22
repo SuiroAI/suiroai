@@ -1,0 +1,7 @@
+Order **848 product units across 107 products at stores** for the week of **1–7 December 2025**, using the quantities in `restocking.csv`. The list also includes **229 zero orders**. Quantities cover the wait for delivery plus the weekly review period, including the supplied safety levels and pack sizes.
+
+Review the **48 products at stores flagged for earlier supply** before sending orders. They may run short before normal deliveries arrive; check whether earlier delivery or a transfer is possible. Incoming deliveries match the stock records. Review the sparse-sales flags too: minimum orders and pack sizes can mean buying more than the expected sales.
+
+The reusable command now loads and cleans sales, estimates requirements, subtracts usable stock and incoming deliveries, applies ordering rules, and writes the list with exceptions. Its measured local weekly calculation took **about 1.2 seconds**, including startup. It runs on your computer without calling ChatGPT. You can schedule the command on your computer, with ChatGPT’s help preparing the setup.
+
+The calculation uses a **13-week sales average**. It had the lowest next-week error in the comparison, but differed from a simple last-month baseline by less than 1%, so there is no clear accuracy gain. Your exact weekly conversion was unspecified, preventing an exact comparison with your calculation. Sales are irregular, and shortage dates assume sales spread evenly through the week: use those dates to prioritise checks, not as promises.

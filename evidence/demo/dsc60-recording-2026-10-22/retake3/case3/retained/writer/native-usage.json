@@ -1,0 +1,24 @@
+{
+  "source_native_report_sha256": "69410c2c68d0347b7b51c50dd8c1486cb68849a527c9d4cd4fdc9905d49e504f",
+  "model_usage": {
+    "format": "dsc60-native-usage-v1",
+    "available": true,
+    "counts": {
+      "input_units": 73185,
+      "cached_input_units": 51712,
+      "cache_write_input_units": 0,
+      "output_units": 969,
+      "reasoning_output_units": 69,
+      "total_units": 74154
+    },
+    "source": "native_thread_usage_cumulative_total",
+    "model_context_capacity_units": 475000,
+    "max_observed_request_input_units": 21780,
+    "snapshot_count": 4,
+    "thread_id": "01a1649b-9548-76c2-b0ce-862dc0aa37c3",
+    "turn_id": "01a1649b-95e3-7f21-b51b-fe25182773c8",
+    "rejected_update_count": 0,
+    "counting_note": "Final cumulative total, not summed snapshots. Output includes reasoning; do not add reasoning again. Capacity is not actual request length. Missing counters remain unknown."
+  },
+  "scope": "Internal numeric usage only; no customer cost text or manual ChatGPT benchmark."
+}

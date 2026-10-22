@@ -1,0 +1,153 @@
+[
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/analyze.py",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/analyze.py",
+    "bytes": 10256,
+    "sha256": "f747f26c4bc36e5b6e1204dda4396bb7b382648e33191c2165f981265101b1ec"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/comparison_results.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/comparison_results.json",
+    "bytes": 21887,
+    "sha256": "8df4ddcf24c5d54c0fa018cf35dd13987effdfa12bd78e0ed9da10cf586253a4"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/development_predictions.csv",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/development_predictions.csv",
+    "bytes": 3067459,
+    "sha256": "6b296320e3df3cba103550c29a61c1017d12fea44013e865be772e40af47c282"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/environment_versions.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/environment_versions.json",
+    "bytes": 393,
+    "sha256": "fffe754bf047a242c39adc65c0b9c36ba9bb694f7a219c658f77332e83158669"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/evaluation_plan.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/evaluation_plan.json",
+    "bytes": 4281,
+    "sha256": "f0163306410d2570d60d4cd60908bfe04c5684068f2a5c4fc0c6de7b5d17f059"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/forecasting.py",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/forecasting.py",
+    "bytes": 7703,
+    "sha256": "b36a6873d3ead6480c835ec38bf78b31171544b97eff3eebba95b613c57b2a20"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/internal_method_notes.md",
+    "bytes": 11289,
+    "sha256": "8af639cc2cff06c3f112b001f5ef0c4b274632fb73b6493e0cfd4f04ecb9b079"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/output_checks.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/output_checks.json",
+    "bytes": 259,
+    "sha256": "047faa821b16e1defcb40e7629ccb89fad24fb89d9b15b317506428985698903"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/presented-html-910c99123a584b2bbd7c6c5ff616441a.html",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/presented-html-910c99123a584b2bbd7c6c5ff616441a.html",
+    "bytes": 101546,
+    "sha256": "e9202d70e5ae8836f6a5222e28d5ca10b0874cd5cf2b676fddc28f21ceb11896"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/presented-output-794c10239f07450da95f0f645c9fb4c7.csv",
+    "bytes": 40526,
+    "sha256": "5880bb86b9537853bddaea933c59e4ac7afd2fd1a07629f80476d01dfef9ecd1"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/response.md",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/response.md",
+    "bytes": 1514,
+    "sha256": "99e9bb6accd021d15ba6e9b71e91ff22b462b1a79f78cd271ab06a30ef725089"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/restock_routine.py",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/restock_routine.py",
+    "bytes": 8767,
+    "sha256": "0c5789b8f221cb72cca7eb2a3d886c85b45fe6164d9ccd7fecadb1ee2e894d98"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/restocking.csv",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/restocking.csv",
+    "bytes": 40526,
+    "sha256": "5880bb86b9537853bddaea933c59e4ac7afd2fd1a07629f80476d01dfef9ecd1"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/result.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/result.json",
+    "bytes": 153,
+    "sha256": "f877cad9b61570bcb4510936f1a2fa8eaa52f10f6861906240751268fe75b987"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/routine_measurements.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/routine_measurements.json",
+    "bytes": 2634,
+    "sha256": "b1e64e5e80b14f2369f1da90b6e9470e01ee7693cfdacfded0c2737751c37a7c"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/routine_usage.md",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/routine_usage.md",
+    "bytes": 3500,
+    "sha256": "2bbea0ef5f82285bcb7c381cd2ea83e9c6b87603a1446749d214c5ce8ac10c78"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/segment_scores.csv",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/segment_scores.csv",
+    "bytes": 18058,
+    "sha256": "11c8ecb90a4fbcae9f5d402d7469f03d8d12291279514c3142e375c742dd07fa"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/selected_method.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/selected_method.json",
+    "bytes": 78,
+    "sha256": "f83574fa397223a595e670c92c2f02b03404991cbab1f570b90836e0e68c8928"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/source_treatment.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/source_treatment.json",
+    "bytes": 3982,
+    "sha256": "ea1be015d727619ad681b4475ee263c74ad18c6524753b2c4978924b9c90ade5"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/task_refinement.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/task_refinement.json",
+    "bytes": 3427,
+    "sha256": "7ed94e275cccf6b3bea9d7e0f769c887f63adc7c37ff19e912739c7cd72d261c"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/output/verify_outputs.py",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/output/verify_outputs.py",
+    "bytes": 4320,
+    "sha256": "b6a9e1cf72e50c12f3bc95b7fed09bb54e6a9b4a4d984e827423371e9fc05c0a"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/native/native-bootstrap.jsonl",
+    "bytes": 2308,
+    "sha256": "b039143338b294f1077b018b50bb6fcd8fc641420c1714425cca104c76508b1a"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/native/native-rpc.jsonl",
+    "bytes": 1430867,
+    "sha256": "523cb85a6298d679dcb3aa43939402a1bc42723bfb5aa4285b33a9b708078f22"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/native/native-run.json",
+    "bytes": 372228,
+    "sha256": "f319a6dce593073640febb13a367eacc3b034b4ed35a9a890cfaa79ea6f7b5ce"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/native-trace/call-trace.json",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/trace/call-trace.json",
+    "bytes": 6816,
+    "sha256": "5aa4fd40f745241be15f2e3d6bea28dde052debb13442e71823b8da7549f4eb3"
+  },
+  {
+    "source": "artifacts/demo/337b4846d1c643f9bf4d7d426e5688c6/runs/investigation-bac42ef597424a31be879b65c747f67f/native-trace/outbound-prompt.txt",
+    "retained": "evidence/demo/dsc60-recording-2026-10-22/retake3/case2/retained/analysis/trace/outbound-prompt.txt",
+    "bytes": 23625,
+    "sha256": "fd27b14dfc6774a8f01f8393c89ee075b5b48454495ff86d59cd7174452c995b"
+  }
+]

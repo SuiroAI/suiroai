@@ -1,0 +1,15 @@
+{
+  "checks_passed": true,
+  "rows": 336,
+  "order_units": 875,
+  "positive_orders": 111,
+  "zero_orders": 225,
+  "shortage_rows": 52,
+  "all_rows_independent_policy_and_trajectory_checks": true,
+  "one_series_independent_sba_check": true,
+  "sha256": "0cf20f279ed5e4be2cdba2344323d8d4a5366e6d0936cec7cb234a632da977b8",
+  "mae_relative_improvement": 0.01895911875214118,
+  "stores_with_lower_mae_than_baseline": 10,
+  "weekly_origins_with_lower_mae_than_baseline": 8,
+  "true_demand_or_service_improvement_established": false
+}

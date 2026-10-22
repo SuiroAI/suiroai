@@ -1,0 +1,97 @@
+{
+  "prediction_rows": 8064,
+  "forecast_cells": 16128,
+  "common_target_cells": 5376,
+  "all_keys_unique_and_actuals_common": true,
+  "scores": [
+    {
+      "method": "croston_sba",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.8706492784231914,
+      "bias": -0.17629545820537101
+    },
+    {
+      "method": "croston_sba",
+      "horizon": "coverage",
+      "n": 2688,
+      "mae": 1.2357096706219317,
+      "bias": -0.31672774674196963
+    },
+    {
+      "method": "pooled_poisson",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.9219507590827601,
+      "bias": -0.12795829937780712
+    },
+    {
+      "method": "pooled_poisson",
+      "horizon": "coverage",
+      "n": 2688,
+      "mae": 1.2956587616308777,
+      "bias": -0.2402444781484443
+    },
+    {
+      "method": "recent_8_week_mean",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.8980654761904762,
+      "bias": -0.1362537202380953
+    },
+    {
+      "method": "recent_8_week_mean",
+      "horizon": "coverage",
+      "n": 2688,
+      "mae": 1.2978249893707483,
+      "bias": -0.24232700892857145
+    }
+  ],
+  "selected": "croston_sba",
+  "gain_vs_baseline": 0.03052806114269324,
+  "origins_improved": 7,
+  "per_origin": [
+    {
+      "origin": "2025-09-28",
+      "selected": 0.8354189216076923,
+      "baseline": 0.8344494047619048
+    },
+    {
+      "origin": "2025-10-05",
+      "selected": 0.834392334345356,
+      "baseline": 0.8560267857142857
+    },
+    {
+      "origin": "2025-10-12",
+      "selected": 0.8267198207851579,
+      "baseline": 0.8720238095238095
+    },
+    {
+      "origin": "2025-10-19",
+      "selected": 0.802641103472096,
+      "baseline": 0.8188244047619048
+    },
+    {
+      "origin": "2025-10-26",
+      "selected": 0.825334900195382,
+      "baseline": 0.8567708333333333
+    },
+    {
+      "origin": "2025-11-02",
+      "selected": 0.9871400836390752,
+      "baseline": 1.0119047619047619
+    },
+    {
+      "origin": "2025-11-09",
+      "selected": 0.8788261747980505,
+      "baseline": 0.9185267857142857
+    },
+    {
+      "origin": "2025-11-16",
+      "selected": 0.9747208885427211,
+      "baseline": 1.0159970238095237
+    }
+  ],
+  "prospective_plan_unchanged": true,
+  "scope": "Own arithmetic from emitted predictions/actuals, no producer execution or source-sales/December scoring."
+}

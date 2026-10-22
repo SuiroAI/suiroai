@@ -1,0 +1,20 @@
+[
+  {
+    "source": "/Users/ceverson/.codex/sessions/2026/10/22/rollout-2026-10-22T12-25-46-01a1646e-cd15-7151-bcd6-f26d8afa0213.jsonl",
+    "bytes": 1006439,
+    "sha256": "a7cf22c1bad9404bfafd533ecb6386b5ca7f7feb8e9bacdff69e7b886fc1689e",
+    "retention": "hash_only_complete_rollout"
+  },
+  {
+    "source": "/Users/ceverson/.codex/sessions/2026/10/22/rollout-2026-10-22T12-35-24-01a16477-9eb1-7731-b84b-536217199f56.jsonl",
+    "bytes": 380345,
+    "sha256": "d7e6ab740b26f5381d493e9d89143aa7c384e714dbd8f41f109ebac66e20f0d1",
+    "retention": "hash_only_complete_rollout"
+  },
+  {
+    "source": "/Users/ceverson/.codex/sessions/2026/10/22/rollout-2026-10-22T12-23-13-01a1646c-778b-7451-8787-9295d6f7828d.jsonl",
+    "bytes": 407443,
+    "sha256": "2a8b2fb5796fd549c63ac76733eb8f3e69d65bfd8785c181a2183428d6e1eab3",
+    "retention": "hash_only_complete_rollout"
+  }
+]

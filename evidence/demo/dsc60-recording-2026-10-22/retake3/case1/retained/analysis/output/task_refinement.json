@@ -1,0 +1,32 @@
+{
+  "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy.",
+  "customer_context": {
+    "current_process": {
+      "evidence": [{"quote": "I usually look at the last few months of sales to decide what to buy.", "source": "question"}],
+      "source": "detector_interpretation",
+      "status": "found",
+      "text": "The user currently looks at the last few months of sales to decide what to buy for store restocking. The question does not specify an exact lookback period or a rule for selecting products and quantities."
+    },
+    "demo_scenario": {
+      "authority": "explicit_user_demo_roleplay_instruction",
+      "customer_provenance_only_csv_columns": false,
+      "customer_provenance_warnings": false,
+      "independently_verified_real_stock_claimed": false,
+      "mode": "provided_operations_are_assumed_scenario_facts",
+      "operating_inputs": ["supplied_stock", "supplied_deliveries", "supplied_ordering_rules"],
+      "source_provenance_unchanged": true
+    },
+    "format": "dsc60-task-context-v1",
+    "original_question": "What should I restock in my stores next week? I usually look at the last few months of sales to decide what to buy."
+  },
+  "refinement_attribution": "Analyst decisions from released CSV inspection; not supplied customer policy",
+  "refined_task": "For planning date 2025-11-30, estimate recorded fulfilled units for December 1-7 and each supplied lead-time-plus-review coverage period, subtract usable stock and timely incoming deliveries, add supplied safety stock, round positive shortages to minimums and multiples, and flag expected shortages before new orders arrive. Deliver all 336 supported rows, including zero orders, plus reusable local non-LLM CLI.",
+  "manual_work_replaced": ["Load and clean the current sales files", "Aggregate relevant sales to estimate required quantities", "Subtract stock and incoming deliveries", "Apply supplied lead times, safety stock, minimums and pack multiples", "Export orders and timing exceptions"],
+  "incumbent_unknowns": ["Exact lookback", "Status and return treatment", "Quantity formula", "Use of stock and deliveries"],
+  "facts": ["Four supplied released CSVs are the only controlling sources", "Sales end November 30, 2025", "Operational inputs apply November 30", "Review period is seven days; supplier lead times range one to seven days", "December sales are reserved and inaccessible"],
+  "supported_interpretations": ["Sparse fulfilled sales warrant intermittent and pooled seasonal conventional candidates", "Every global calendar date appears; pair-level no-line dates can represent zero recorded units only under reporting-completeness assumption"],
+  "unresolved_priorities": ["No purchasing costs, stockout exposure, business loss function or priority between availability and excess stock", "No externally set meaningful improvement threshold"],
+  "proxies": {"forecast_absolute_error":"Recorded fulfilled-unit prediction, not stock availability or cost", "pre_arrival_shortage":"Expected trajectory under forecast and known arrivals, not probability or guarantee"},
+  "candidate_scope": "Small fixed set of conventional CPU methods, no neural networks, heavy ensembles, policy optimization, paid APIs or unbounded search",
+  "delivery_gate": "Useful development recommendation allowed; independent performance-success gate remains open without untouched outcomes and external meaningful improvement threshold"
+}

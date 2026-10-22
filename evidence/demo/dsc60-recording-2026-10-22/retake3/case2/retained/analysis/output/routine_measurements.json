@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "working_directory_note": "relative released paths are specific to this delivered layout; all four inputs and output/date are configurable",
+  "planning_date": "2025-11-30",
+  "returncode": 0,
+  "wall_seconds_including_startup": 1.178740916075185,
+  "child_user_cpu_seconds": 1.266766,
+  "child_system_cpu_seconds": 3.516093,
+  "child_peak_rss_bytes": 180453376,
+  "peak_rss_units": "bytes on macOS; process high-water mark, includes imports and retained data/arrays; not sum of Python object allocations",
+  "stage_measurements": {
+    "method": "recent13",
+    "source_preparation_seconds": 0.10008712497074157,
+    "forecast": {
+      "preparation_seconds": 0.23829254100564867,
+      "fit_seconds": 0.0,
+      "inference_seconds": 0.00029800005722790956
+    },
+    "exact_sales_duplicates_removed": 42,
+    "calculation_seconds": 0.7604182079667225
+  },
+  "versions": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "source_and_code_hashes": {
+    "restock_routine.py": "0c5789b8f221cb72cca7eb2a3d886c85b45fe6164d9ccd7fecadb1ee2e894d98",
+    "forecasting.py": "b36a6873d3ead6480c835ec38bf78b31171544b97eff3eebba95b613c57b2a20",
+    "../released/input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "../released/input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "../released/input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "../released/input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "output_sha256": "5880bb86b9537853bddaea933c59e4ac7afd2fd1a07629f80476d01dfef9ecd1",
+  "paid_model_api_calls": 0,
+  "routine_language_model_calls": 0,
+  "measurement_scope": "one actual 2025-11-30 CLI invocation, separate from AI-assisted analysis/build time; no scheduling installed",
+  "output_agreement": {
+    "all_rows_checked": 336,
+    "independent_implementation": "verify_outputs.py, Python standard library CSV aggregation and arithmetic",
+    "forecast_rounding_tolerance_units": 5.1e-05,
+    "orders_match": true,
+    "incoming_match": true,
+    "shortage_quantities_and_dates_match": true,
+    "output_sha256_matches": true
+  }
+}

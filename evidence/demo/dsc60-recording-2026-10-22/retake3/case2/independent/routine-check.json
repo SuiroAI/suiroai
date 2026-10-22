@@ -1,0 +1,13 @@
+{
+  "rows": 336,
+  "columns": 21,
+  "units": 848,
+  "positive": 107,
+  "zero": 229,
+  "prearrival_flags": 48,
+  "all_exposedforecast_orders_stock_policy_incoming_dates_match": true,
+  "source_code_output_receipt_hashes_match": true,
+  "wall_seconds": 1.178740916075185,
+  "peak_rss_bytes": 180453376,
+  "scope": "Own row arithmetic using emitted rounded coverage forecasts and source operational inputs; no forecast fit/producer execution/full timing simulation/December scoring."
+}

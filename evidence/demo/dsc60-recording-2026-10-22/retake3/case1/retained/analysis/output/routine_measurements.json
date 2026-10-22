@@ -1,0 +1,49 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "cwd_requirement": "Directory containing restock_routine.py; relative sources shown are this released demo layout",
+  "planning_date": "2025-11-30",
+  "selected_method": "sba",
+  "wall_seconds": 0.9063342500012368,
+  "cpu_user_seconds": 1.167568,
+  "cpu_system_seconds": 3.309621,
+  "peak_rss_mib": 180.53125,
+  "measurement_scope": "One actual fresh CLI child process; includes Python/dependency imports, CSV reading, validation, preparation, fitting, inference, all order/timing calculations and output write. Not AI-assisted build duration. OS peak RSS includes resident native allocations and retained arrays; does not measure virtual memory, disk cache or other applications. Host is not assumed to have 8 GB.",
+  "dependency_versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  },
+  "python": "3.13.9",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "source_sha256": {
+    "input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "program_sha256": "98c93202c5088e9bb6ec94e24a087a036e296ea4ea7a351f2b52c395d77f22b2",
+  "output_sha256": "0cf20f279ed5e4be2cdba2344323d8d4a5366e6d0936cec7cb234a632da977b8",
+  "output_agreement": {
+    "byte_equal_to_prepared_selected_list": true,
+    "reference_sha256": "0cf20f279ed5e4be2cdba2344323d8d4a5366e6d0936cec7cb234a632da977b8",
+    "reference_note": "Same selected implementation; separate independent policy arithmetic check in validate_outputs.py"
+  },
+  "stdout": "Wrote 336 rows; 875 product units",
+  "routine_external_model_or_api_calls": 0,
+  "routine_paid_calls": 0,
+  "routine_numeric_cost_assessment": "No model/API dependency or per-run API charge; no measured hardware/energy cost. AI-assisted analysis/build usage and cost not measured here."
+}

@@ -1,0 +1,87 @@
+{
+  "source_authority": "User-authorized released CSV files only; operational files assumed as scenario facts, not independently verified stock.",
+  "internal_provenance": {
+    "policy_stock_receipts": "Provenance field is synthetic in all rows, unchanged source bytes",
+    "sales": "Released derived development partition SHA256 48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8; original approved artifact SHA256 520fa470ccb7ff5c7d0d8b34d157d15c05c948f7c785e48397ac676bf6cd7707, not accessed. Controller lineage demo-investigation-lineage-048e4cd3fd4344709d8195e77d80942e v1 derived SHA256 399100f9f6fca4f26e5aa9eff6f71c7e3ebc487fa35502d7627f6fabb266cb8e."
+  },
+  "rows_raw": 17406,
+  "duplicate_rows_removed": 42,
+  "unique_transactions": 17364,
+  "nonpositive_rows_excluded": 8,
+  "target_rows": 15142,
+  "target_total_units": 32198,
+  "status_return_table_after_dedup": [
+    {
+      "status": "cancelled",
+      "Return_Flag": "No",
+      "size": 825,
+      "sum": 1753
+    },
+    {
+      "status": "cancelled",
+      "Return_Flag": "Yes",
+      "size": 26,
+      "sum": 53
+    },
+    {
+      "status": "completed",
+      "Return_Flag": "No",
+      "size": 10951,
+      "sum": 23389
+    },
+    {
+      "status": "completed",
+      "Return_Flag": "Yes",
+      "size": 179,
+      "sum": 366
+    },
+    {
+      "status": "processing",
+      "Return_Flag": "No",
+      "size": 1337,
+      "sum": 2884
+    },
+    {
+      "status": "processing",
+      "Return_Flag": "Yes",
+      "size": 27,
+      "sum": 60
+    },
+    {
+      "status": "returned",
+      "Return_Flag": "Yes",
+      "size": 1540,
+      "sum": 3155
+    },
+    {
+      "status": "shipped",
+      "Return_Flag": "No",
+      "size": 2440,
+      "sum": 5215
+    },
+    {
+      "status": "shipped",
+      "Return_Flag": "Yes",
+      "size": 39,
+      "sum": 68
+    }
+  ],
+  "global_calendar_dates": 1430,
+  "all_global_calendar_dates_present": true,
+  "pair_first_seen_latest": "2023-03-21",
+  "pair_zero_treatment": "Conditional complete-extract assumption only after first observed transaction and full weeks. Missing rows become zero recorded units; no assertion of zero latent demand, daily opening, assortment or stock exposure. Not all store dates have transactions. All 336 series observed before development origins. First observation may be later than actual introduction; no prior zeros invented.",
+  "status_information_boundary": "Recorded final labels used for targets and training. No status-change/return dates, so cannot reconstruct old as-of labels; identical limitation for all models. Only order dates and calendar features determine splits. These comparisons are development evidence, not untouched or faithful as-of deployment evaluation.",
+  "quantity_meaning": "All units are product_unit, not cartons or money. Positive fulfilled/returned orders estimate gross outflow, including later returns. Invalid negative/zero quantities excluded, not silently interpreted as stock credits. Return flags do not establish usable stock recovery; do not subtract them.",
+  "order_id_repetition": "Order_ID repeats across legitimate transaction lines; deduplicate exact rows by Transaction_ID, not Order_ID.",
+  "names": "135 raw name nulls; each Product_ID has exactly one non-null name, used as reliable dictionary without guessing. No direct customer identifiers in outputs.",
+  "inventory_fields": "Transaction Inventory_Level is irregular event-level historical value; not used as current usable stock, stockout exposure or future predictor. Supplied end-of-date stock governs.",
+  "cross_file_consistency": "336 unique policy and stock keys exactly match sales population; 126 unique incoming PO lines match every recorded On_Order_Qty, totaling 927 units; all ledger-complete true; single product_unit; no missing critical operational values.",
+  "date_convention": "Planning at close of day; day 1 is Dec 1. Existing deliveries and proposed new order available at start of due day. Lead is calendar days because no supplier calendars supplied. Forecast daily rate constant for selected method. Cover lead+review days inclusive through planning+h; only existing receipts due in coverage reduce order. Current stock treated usable immediately; backlog not supplied.",
+  "rounding": "OrderQty zero if no need; otherwise ceil(max(net need, minimum)/multiple)*multiple. Safety is supplied quantity, not fitted. New-order timing shortfalls cannot be fixed by increasing regular quantity that arrives later; flagged separately. Deficits use expected fractional daily units then ceil for display; no calibrated stockout probabilities.",
+  "unsupported_claims": [
+    "No exact incumbent process, hours or savings inferred.",
+    "No availability, excess-stock cost optimization, performance success threshold or independent success evidence.",
+    "No independent real-stock verification claimed.",
+    "No December transactions or external files accessed."
+  ]
+}

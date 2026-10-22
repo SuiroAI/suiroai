@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "status": "prospective plan recorded before candidate scoring; all October-November evidence is development",
+  "target": "Positive gross fulfilled units by order date; completed/shipped/returned statuses normalized; exact duplicate rows removed; nonpositive excluded; returns not netted without dated usable receipts",
+  "status_information_boundary": "Exported final statuses lack change timestamps; historical comparisons conditional on final labels and cannot simulate past known statuses",
+  "population": "336 supplied policy keys, all with first fulfilled transaction before development origins; current policy used only to define coverage-length diagnostic, not claimed historically known",
+  "missing_dates": "Calendar-wide transaction presence verified. Zero recorded units after each pair's first positive fulfilled sale, conditional on file completeness; pre-first-sale days unknown. Fit seasonal model only on complete Monday-Sunday weeks after first sale.",
+  "forecast_origins": ["2025-09-28", "2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16"],
+  "training": "Expanding history beginning 2022-01-01 through each origin; all methods receive only dated sales through that origin",
+  "evaluation": "Following 7 and 14 days and current per-key lead-time-plus-seven-day coverage (8-14 days), all ending by 2025-11-30",
+  "reserved": "December 2025 sales never accessed or scored",
+  "baseline": {"name":"recent84", "definition":"Mean recorded units per calendar day over last 84 days, or available post-first-sale exposure if shorter; flat future daily rate", "incumbent":"Analytical recent-average baseline, not exact customer method; exact lookback and quantity rule unknown"},
+  "candidates": [
+    {"name":"recent84", "rationale":"Fair reproducible interpretation of recent months; small retained daily panel; no supplied exact incumbent"},
+    {"name":"sba", "rationale":"Croston SBA with fixed smoothing 0.1 on complete weeks handles intermittent positive sizes and arrival gaps; sparse per-key transactions observed in input-4.csv; no seasonal assumption"},
+    {"name":"poisson", "rationale":"Regularized pooled Poisson regression on weekly units with pair intercept, common month effects and global linear trend; shares seasonal evidence across sparse keys and uses 2022-2025 history. Fixed alpha=0.001, max_iter=300; no tuning grid"}
+  ],
+  "primary_metric": "Mean absolute error of next-seven-day totals, product units per key-origin; equal weight over identical 336 keys and eight origins",
+  "selection_rule": "Lowest primary MAE; baseline retained when within 1% relative of best (analyst numerical simplicity tie convention, not external meaningful-improvement threshold). Nonbaseline ties within 1% prefer SBA over Poisson. Select once, no further model search.",
+  "secondary_diagnostics": ["14-day and policy-coverage MAE", "signed bias and WAPE", "per-origin and October/November ordering", "zero-week rate and positive-week error", "per-store error", "empirical absolute-error quantiles", "annual monthly normalized rate stability", "recent average 56/112-day order sensitivity only", "include processing and exclude returned/return-flagged target sensitivity only; not model selection", "CPU fit/predict runtime, wall time and whole-process peak RSS including preparation and retained arrays"],
+  "business_limits": "No historical stock/stockout exposure or prices; forecast scores establish neither availability, purchasing cost savings nor superiority to unspecified incumbent. Unknown true demand is not zero.",
+  "deployment_horizon": "Primary selection 7 days; quantities cover 8-14 days. Report diagnostic support and disagreement; no historical inventory policy simulation.",
+  "performance_success_gate": "Open: lacks externally predeclared meaningful threshold and independent untouched evaluation with frozen artifacts. Development investigation cannot close gate."
+}

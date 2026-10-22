@@ -1,0 +1,17 @@
+"""Measure one actual routine subprocess, including preparation/imports/write."""
+import hashlib,json,platform,resource,subprocess,sys,time
+from pathlib import Path
+import numpy,pandas
+
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+cmd=[sys.executable,'restock_routine.py','--sales-path','../released/input-4.csv','--stock-path','../released/input-3.csv','--deliveries-path','../released/input-2.csv','--policy-path','../released/input-1.csv','--planning-date','2025-11-30','--output-path','restocking.csv']
+before=resource.getrusage(resource.RUSAGE_CHILDREN);start=time.perf_counter()
+completed=subprocess.run(cmd,capture_output=True,text=True,check=True)
+wall=time.perf_counter()-start;after=resource.getrusage(resource.RUSAGE_CHILDREN)
+agreement=Path('restocking.csv').read_bytes()==Path('reference_restocking.csv').read_bytes()
+assert agreement
+out={'command':cmd,'planning_date':'2025-11-30','execution_status':'passed','stdout':json.loads(completed.stdout),'stderr':completed.stderr,'wall_seconds_including_imports_preparation_fit_inference_write':wall,'child_user_cpu_seconds':after.ru_utime-before.ru_utime,'child_system_cpu_seconds':after.ru_stime-before.ru_stime,'child_process_peak_rss_bytes':after.ru_maxrss*(1 if sys.platform=='darwin' else 1024),'memory_measurement':'OS child process high-water RSS, entire routine including imports, preparation, retained weekly panel and fit/inference. Fresh measurement process with this sole child. Not parent+child aggregate or memory of AI analysis.','dependency_versions':{'python':platform.python_version(),'pandas':pandas.__version__,'numpy':numpy.__version__},'host':{'system':platform.system(),'machine':platform.machine(),'host_ram_assumption':'No assumption that measured host has 8 GB'},'input_sha256':{f'input-{i}.csv':sha(f'../released/input-{i}.csv') for i in range(1,5)},'code_sha256':{p:sha(p) for p in ['restock_routine.py','forecasting.py']},'output_sha256':sha('restocking.csv'),'reference_output_sha256':sha('reference_restocking.csv'),'output_agreement':{'byte_identical_to_reference':agreement,'rows':len(pandas.read_csv('restocking.csv'))},'compute_compatibility':{'target':'ordinary CPU-only 8 GB RAM computer','scope':'Supplied 5 MB transaction CSV, 17,406 rows; 65,330 weekly panel rows, 336 series. No ensemble or GPU. Selected method holds panel, small per-series arrays and daily forecasts; measured child peak compared with 8 GB, allowing several GB for OS. More history/assortment scales with total series-weeks, and must be remeasured at materially larger input size.','routine_calls_paid_model_or_api':False,'routine_llm_calls':0,'routine_api_cost':0,'analysis_build_cost':'Not measured or inferred from local routine runtime; AI-assisted build separate.'},'measurement_limits':['One local warm-filesystem run, not a hardware-independent speed guarantee.','RSS is resident high-water, not total virtual allocation; OS overhead and other applications excluded.','fit/inference split excludes data preparation; whole-child wall/RSS includes it.']}
+Path('routine_measurements.json').write_text(json.dumps(out,indent=2))
+Path('result.json').write_text(json.dumps({'disposition':'analysis','output_file':'restocking.csv','output_sha256':out['output_sha256']},indent=2))
+print(json.dumps({'wall_seconds':wall,'peak_rss_bytes':out['child_process_peak_rss_bytes'],'sha256':out['output_sha256']},indent=2))

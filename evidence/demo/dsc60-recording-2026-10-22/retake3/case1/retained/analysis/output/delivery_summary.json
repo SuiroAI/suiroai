@@ -1,0 +1,56 @@
+{
+  "selected_method": "sba",
+  "order_rows": 336,
+  "positive_orders": 111,
+  "zero_orders": 225,
+  "total_order_units": 875,
+  "prearrival_shortage_rows": 52,
+  "coverage_shortage_rows": 52,
+  "rounding_rows": 111,
+  "next_week_forecast_units": 170.67897762923542,
+  "sensitivities_not_selection": [
+    {
+      "variant": "recent56",
+      "total_units": 821,
+      "positive_order_rows": 102,
+      "rows_different_from_selected": 29,
+      "absolute_quantity_difference": 114
+    },
+    {
+      "variant": "recent84",
+      "total_units": 847,
+      "positive_order_rows": 107,
+      "rows_different_from_selected": 18,
+      "absolute_quantity_difference": 58
+    },
+    {
+      "variant": "recent112",
+      "total_units": 871,
+      "positive_order_rows": 111,
+      "rows_different_from_selected": 10,
+      "absolute_quantity_difference": 20
+    },
+    {
+      "variant": "include_processing",
+      "total_units": 879,
+      "positive_order_rows": 112,
+      "rows_different_from_selected": 4,
+      "absolute_quantity_difference": 4
+    },
+    {
+      "variant": "exclude_all_returns",
+      "total_units": 872,
+      "positive_order_rows": 111,
+      "rows_different_from_selected": 3,
+      "absolute_quantity_difference": 3
+    }
+  ],
+  "final_fit_inference_profile": {
+    "fit_prepare_wall_seconds": 0.019056082936003804,
+    "fit_prepare_cpu_seconds": 0.019059999999999633,
+    "inference_wall_seconds": 3.195810131728649e-05,
+    "inference_cpu_seconds": 2.800000000036107e-05
+  },
+  "missing_name_rows_filled_from_unique_product_mapping": 135,
+  "method_limit": "Intermittent forecast smooths purchase size and gaps. Fixed rate cannot anticipate a future seasonal jump; no December validation. Small MAE advantage and negative bias do not establish inventory service benefit."
+}

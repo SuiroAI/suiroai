@@ -1,0 +1,113 @@
+{
+  "format": "dsc60-independent-development-check-v1",
+  "prediction_rows": 8064,
+  "forecast_cells": 24192,
+  "common_target_cells": 8064,
+  "scores": [
+    {
+      "method": "poisson",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.5190280999014463,
+      "bias": -0.13248884061703378
+    },
+    {
+      "method": "poisson",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.9335496966216873,
+      "bias": -0.06313154572079618
+    },
+    {
+      "method": "poisson",
+      "horizon": "policy",
+      "n": 2688,
+      "mae": 1.3072671559026843,
+      "bias": -0.12434226384047509
+    },
+    {
+      "method": "recent84",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.5091765873015872,
+      "bias": -0.3371775793650794
+    },
+    {
+      "method": "recent84",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.8883308531746031,
+      "bias": -0.15407986111111113
+    },
+    {
+      "method": "recent84",
+      "horizon": "policy",
+      "n": 2688,
+      "mae": 1.2750274589002268,
+      "bias": -0.27624096513605445
+    },
+    {
+      "method": "sba",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.4379126068169092,
+      "bias": -0.3796476790108972
+    },
+    {
+      "method": "sba",
+      "horizon": "7",
+      "n": 2688,
+      "mae": 0.8714888830380747,
+      "bias": -0.17531491093402002
+    },
+    {
+      "method": "sba",
+      "horizon": "policy",
+      "n": 2688,
+      "mae": 1.2366769232887176,
+      "bias": -0.3153562245137369
+    }
+  ],
+  "selected": "sba",
+  "gain_vs_recent84": 0.018959118752141513,
+  "prospective_plan_unchanged": true,
+  "native_log_sha256": "9bcf58ae8cd99146ef2e4a06f004e572186cb15f30c4516e1cf093c5cd119f34",
+  "chronology": [
+    {
+      "line": 236,
+      "method": "item/completed",
+      "item_type": "fileChange",
+      "item_id": "exec-883c6975-77b1-405c-83f8-64f51de71c54",
+      "description": "Plan and routine added together"
+    },
+    {
+      "line": 246,
+      "method": "item/completed",
+      "item_type": "fileChange",
+      "item_id": "exec-24d47c62-b23f-4d5d-bb55-578407da2f11",
+      "description": "Comparison runner added"
+    },
+    {
+      "line": 250,
+      "method": "item/started",
+      "item_type": "commandExecution",
+      "item_id": "exec-ae4bccd1-6121-4448-bda8-46f659afee53",
+      "description": "First comparison invocation; rejected missing product names"
+    },
+    {
+      "line": 271,
+      "method": "item/completed",
+      "item_type": "fileChange",
+      "item_id": "exec-b11d175b-6c2c-4c21-b47b-75c5b541cf1f",
+      "description": "Allow optional product-name missingness; no target/model/scoring change"
+    },
+    {
+      "line": 275,
+      "method": "item/started",
+      "item_type": "commandExecution",
+      "item_id": "exec-78bac248-12b3-410d-80dd-b4043221f84e",
+      "description": "Comparison reissued"
+    }
+  ],
+  "scope": "Own prediction arithmetic/native metadata inspection; no producer execution/source-sales rerun/December scoring."
+}

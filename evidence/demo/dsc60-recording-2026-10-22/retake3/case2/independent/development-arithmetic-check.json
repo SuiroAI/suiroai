@@ -1,0 +1,138 @@
+{
+  "prediction_rows": 32124,
+  "common_forecast_target_cells": 8031,
+  "all_keys_unique_actuals_and_population_common": true,
+  "scores": [
+    {
+      "method": "baseline_month",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.488675275217614,
+      "bias": -0.3113375256016385
+    },
+    {
+      "method": "baseline_month",
+      "horizon": "7",
+      "n": 2660,
+      "mae": 0.8381255558250464,
+      "bias": -0.1451269302287978
+    },
+    {
+      "method": "baseline_month",
+      "horizon": "coverage",
+      "n": 2683,
+      "mae": 1.2335934337665668,
+      "bias": -0.24935656202533674
+    },
+    {
+      "method": "recent13",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.4218177655677655,
+      "bias": -0.322172619047619
+    },
+    {
+      "method": "recent13",
+      "horizon": "7",
+      "n": 2660,
+      "mae": 0.8316946211683054,
+      "bias": -0.15088201272411797
+    },
+    {
+      "method": "recent13",
+      "horizon": "coverage",
+      "n": 2683,
+      "mae": 1.1960693363041481,
+      "bias": -0.26218225183935207
+    },
+    {
+      "method": "ridge",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.423542559986288,
+      "bias": -0.1541429155875708
+    },
+    {
+      "method": "ridge",
+      "horizon": "7",
+      "n": 2660,
+      "mae": 0.8701166204192796,
+      "bias": -0.0663493765899161
+    },
+    {
+      "method": "ridge",
+      "horizon": "coverage",
+      "n": 2683,
+      "mae": 1.2231762722885346,
+      "bias": -0.13373082796746008
+    },
+    {
+      "method": "seasonal_pool",
+      "horizon": "14",
+      "n": 2688,
+      "mae": 1.4276436529535197,
+      "bias": -0.14526219227868628
+    },
+    {
+      "method": "seasonal_pool",
+      "horizon": "7",
+      "n": 2660,
+      "mae": 0.8655534941916014,
+      "bias": -0.061659805613596574
+    },
+    {
+      "method": "seasonal_pool",
+      "horizon": "coverage",
+      "n": 2683,
+      "mae": 1.2238545085143038,
+      "bias": -0.12588858143799114
+    }
+  ],
+  "selected": "recent13",
+  "gain_vs_baseline": 0.007672996739027327,
+  "selected_origin_wins": 4,
+  "per_origin": [
+    {
+      "origin": "2025-09-28",
+      "selected": 0.7458791208791209,
+      "baseline": 0.7616167434715821
+    },
+    {
+      "origin": "2025-10-05",
+      "selected": 0.791437728937729,
+      "baseline": 0.7816468253968254
+    },
+    {
+      "origin": "2025-10-12",
+      "selected": 0.8366633366633367,
+      "baseline": 0.8454545454545455
+    },
+    {
+      "origin": "2025-10-19",
+      "selected": 0.770260989010989,
+      "baseline": 0.7526785714285714
+    },
+    {
+      "origin": "2025-10-26",
+      "selected": 0.8096192002442003,
+      "baseline": 0.7854166666666667
+    },
+    {
+      "origin": "2025-11-02",
+      "selected": 0.9459897741147741,
+      "baseline": 1.0037442396313363
+    },
+    {
+      "origin": "2025-11-09",
+      "selected": 0.83819826007326,
+      "baseline": 0.8646313364055299
+    },
+    {
+      "origin": "2025-11-16",
+      "selected": 0.9159226190476191,
+      "baseline": 0.910426267281106
+    }
+  ],
+  "prospective_plan_unchanged": true,
+  "scope": "Own arithmetic from emitted predictions/actuals; no producer execution/source-sales model rerun/December scoring."
+}

@@ -1,0 +1,75 @@
+{
+  "command": [
+    "/opt/anaconda3/bin/python",
+    "restock_routine.py",
+    "--sales-path",
+    "../released/input-4.csv",
+    "--stock-path",
+    "../released/input-3.csv",
+    "--deliveries-path",
+    "../released/input-2.csv",
+    "--policy-path",
+    "../released/input-1.csv",
+    "--planning-date",
+    "2025-11-30",
+    "--output-path",
+    "restocking.csv"
+  ],
+  "planning_date": "2025-11-30",
+  "execution_status": "passed",
+  "stdout": {
+    "rows": 336,
+    "order_units": 875,
+    "method": "croston_sba",
+    "model_workload": {
+      "fit_seconds": 0.028619458083994687,
+      "inference_seconds": 2.1916930563747883e-05,
+      "training_rows": 65330
+    }
+  },
+  "stderr": "",
+  "wall_seconds_including_imports_preparation_fit_inference_write": 1.5505502499872819,
+  "child_user_cpu_seconds": 1.737063,
+  "child_system_cpu_seconds": 3.4575299999999998,
+  "child_process_peak_rss_bytes": 212959232,
+  "memory_measurement": "OS child process high-water RSS, entire routine including imports, preparation, retained weekly panel and fit/inference. Fresh measurement process with this sole child. Not parent+child aggregate or memory of AI analysis.",
+  "dependency_versions": {
+    "python": "3.13.9",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  },
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "host_ram_assumption": "No assumption that measured host has 8 GB"
+  },
+  "input_sha256": {
+    "input-1.csv": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+    "input-2.csv": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+    "input-3.csv": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+    "input-4.csv": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8"
+  },
+  "code_sha256": {
+    "restock_routine.py": "fe3ae24e8939992b9a4764a110e3d443e8d5e1e46f19ade2d3bb27f33c49d0d4",
+    "forecasting.py": "79c50941e205652c1c00cdc02c7ae8d14560b8b183250c008ca46593a8c3923a"
+  },
+  "output_sha256": "292c5fbe32266913a6d67280524be7c889ff6d88343c54f9b485b4282c83a74e",
+  "reference_output_sha256": "292c5fbe32266913a6d67280524be7c889ff6d88343c54f9b485b4282c83a74e",
+  "output_agreement": {
+    "byte_identical_to_reference": true,
+    "rows": 336
+  },
+  "compute_compatibility": {
+    "target": "ordinary CPU-only 8 GB RAM computer",
+    "scope": "Supplied 5 MB transaction CSV, 17,406 rows; 65,330 weekly panel rows, 336 series. No ensemble or GPU. Selected method holds panel, small per-series arrays and daily forecasts; measured child peak compared with 8 GB, allowing several GB for OS. More history/assortment scales with total series-weeks, and must be remeasured at materially larger input size.",
+    "routine_calls_paid_model_or_api": false,
+    "routine_llm_calls": 0,
+    "routine_api_cost": 0,
+    "analysis_build_cost": "Not measured or inferred from local routine runtime; AI-assisted build separate."
+  },
+  "measurement_limits": [
+    "One local warm-filesystem run, not a hardware-independent speed guarantee.",
+    "RSS is resident high-water, not total virtual allocation; OS overhead and other applications excluded.",
+    "fit/inference split excludes data preparation; whole-child wall/RSS includes it."
+  ]
+}

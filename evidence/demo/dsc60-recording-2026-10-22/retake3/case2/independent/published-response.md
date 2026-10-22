@@ -1,0 +1,7 @@
+Your weekly order list is ready: **848 individual product units are suggested for 1–7 December 2025**, with the quantities for each store in `restocking.csv`. The routine prepares this list so you do not have to work out every quantity by hand each week.
+
+Start with the items flagged as likely to run out before the next delivery. There are **48 flagged items across the stores** to review for earlier delivery or a possible stock transfer before placing orders. The timing is an estimate to help you prioritise those checks. Also review small orders where pack sizes or minimum purchases mean buying more than expected sales. A zero quantity means no order is suggested by the calculation; it is not proof that no purchase is needed.
+
+The routine uses average weekly sales over the last 13 weeks to estimate requirements for each item in each store. This gives a simple, repeatable starting point using several weeks of sales. It checks stock in each store and deliveries on the way, allows for the wait until delivery and the following weekly review period, adds safety stock, and applies minimum orders and pack sizes to produce the suggested quantities.
+
+The measured weekly calculation took **about 1.2 seconds, including startup**. The routine is suitable for an ordinary computer with the required Python software installed and runs locally without another ChatGPT call. The same task can be scheduled to run each week using that week's sales, stock, deliveries and buying rules; a schedule has not been installed.

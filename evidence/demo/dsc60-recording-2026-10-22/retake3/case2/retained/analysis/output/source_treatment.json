@@ -1,0 +1,114 @@
+{
+  "sources": [
+    {
+      "path": "../released/input-1.csv",
+      "bytes": 19279,
+      "sha256": "333614c3d0be51c2fe694b482effb2caf93d1e6b2124b14a48a5c45995fae2a6",
+      "actual_provenance_values": [
+        "synthetic"
+      ]
+    },
+    {
+      "path": "../released/input-2.csv",
+      "bytes": 10740,
+      "sha256": "1af4a67eb95dff218ae5fdf10446d4a1f4887022bd75c5f598babdb29904ae5a",
+      "actual_provenance_values": [
+        "synthetic"
+      ]
+    },
+    {
+      "path": "../released/input-3.csv",
+      "bytes": 18799,
+      "sha256": "3836aaba4dec70b6ee3ce56529ab03353cbaa801d111f52b6bb7433f7924aef9",
+      "actual_provenance_values": [
+        "synthetic"
+      ]
+    },
+    {
+      "path": "../released/input-4.csv",
+      "bytes": 5006997,
+      "sha256": "48238e68f578f73efdbb8db3893cdfc55a0162f16e2e1690e5b2676eeeaaa0b8",
+      "actual_provenance_values": [
+        "supplied transactions; controller-released development partition"
+      ]
+    }
+  ],
+  "provenance_note": "Operational CSVs internally label every row synthetic; explicitly authorized as assumed scenario operating facts. Sales released hash differs from original approved hash due to development partition. No originals or December outcomes read.",
+  "sales_rows_raw": 17406,
+  "exact_duplicate_rows_removed": 42,
+  "conflicting_transaction_ids": 0,
+  "repeated_order_ids_note": "Order IDs are not transaction-line keys; 3224 repeat after exact deduplication, retained distinct Transaction_ID lines.",
+  "dates": [
+    "2022-01-01 00:00:00",
+    "2025-11-30 00:00:00"
+  ],
+  "global_missing_calendar_dates": 0,
+  "status_rows_and_units": {
+    "count": {
+      "cancelled": 851,
+      "completed": 11130,
+      "processing": 1364,
+      "returned": 1540,
+      "shipped": 2479
+    },
+    "sum": {
+      "cancelled": 1806,
+      "completed": 23755,
+      "processing": 2944,
+      "returned": 3155,
+      "shipped": 5283
+    }
+  },
+  "status_return_cross": {
+    "No": {
+      "cancelled": 825,
+      "completed": 10951,
+      "processing": 1337,
+      "returned": 0,
+      "shipped": 2440
+    },
+    "Yes": {
+      "cancelled": 26,
+      "completed": 179,
+      "processing": 27,
+      "returned": 1540,
+      "shipped": 39
+    }
+  },
+  "nonpositive_quantity_rows": "{('completed', 'No'): 5, ('processing', 'No'): 1, ('shipped', 'No'): 2}",
+  "target_rows": 13602,
+  "target_units": 29043,
+  "fulfilled_return_flag_rows": 218,
+  "product_name_conflicts": 0,
+  "missing_product_names": 135,
+  "inventory_transaction_field": "Ignored: transaction-time Inventory_Level is not present-day usable stock and cannot reconstruct historical stockout exposure.",
+  "operational_checks": {
+    "keys": 336,
+    "inventory_rule_key_agreement": true,
+    "sales_key_agreement": true,
+    "ledger_complete_all": true,
+    "incoming_totals_match_on_order_all": true,
+    "incoming_total": 927,
+    "on_hand_total": 2869,
+    "units": [
+      "product_unit"
+    ],
+    "stock_dates": [
+      "2025-11-30"
+    ],
+    "policy_dates": [
+      "2025-11-30"
+    ]
+  },
+  "target_interpretation": "Recorded positive fulfilled units, gross of return flags. Returned status excluded because actual prior fulfilment and return dates unknown; no negative adjustment to stock without evidence of usable returns. Current statuses may have changed after historical origins; unknown timing limits comparison validity.",
+  "coverage_interpretation": "Store_ID used for all sales channels because no channel allocation instructions. No evidence of open-day calendar or assortment exposure: within active store-weeks missing product lines mean zero recorded transactions only, not fabricated measured demand zeros. Store-inactive weeks remain missing. Current roster conditions historical comparison.",
+  "reserved_outcomes_accessed": false,
+  "weekly_panel_cells": 68544,
+  "unknown_pair_weeks": 3312,
+  "zero_recorded_fraction": 0.813373804267844,
+  "raw_store_week_coverage": {
+    "12": 190,
+    "11": 14,
+    "5": 1
+  }
+}

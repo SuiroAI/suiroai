@@ -1,0 +1,5 @@
+{
+  "status": "missing",
+  "summary": "The question asks what to restock in stores next week. The complete contents of all four released CSVs provide ordering parameters, inbound deliveries, inventory positions and sales transactions, but do not explicitly describe how the user currently decides what or how much to restock. Policy parameter columns alone do not establish an existing procedure. There is also no explicit statement that the user has no current method.",
+  "evidence": []
+}

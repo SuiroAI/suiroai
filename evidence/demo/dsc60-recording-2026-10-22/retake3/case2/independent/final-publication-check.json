@@ -1,0 +1,29 @@
+{
+  "format": "dsc60-no-cost-publication-check-v1",
+  "status": "passed",
+  "session": "337b4846d1c643f9bf4d7d426e5688c6",
+  "attempt": "attempt-e6ada098821743ec8bd5065f17adfceb.json",
+  "single_attempt": true,
+  "analysis_outcome": "completed",
+  "writer_id": "business-response-c477ead2d60943bba57b4b23170fc434",
+  "writer_outcome": "rewritten",
+  "published_text_exact_native_writer": true,
+  "writer_and_publication_ref_identical": true,
+  "published_hash": "0207fb782b98cd252173cf76164e0b5417f396e83241c8145b5ac9d908eda7b8",
+  "customer_cost_text": false,
+  "internal_cost_estimate_retained": true,
+  "native_source_context_prompt_hashes_verified": true,
+  "csv_hash": "5880bb86b9537853bddaea933c59e4ac7afd2fd1a07629f80476d01dfef9ecd1",
+  "html_hash": "e9202d70e5ae8836f6a5222e28d5ca10b0874cd5cf2b676fddc28f21ceb11896",
+  "rows": 336,
+  "columns": 21,
+  "body_cells": 7056,
+  "static_html_matches_csv_all_cells": true,
+  "live_dom_matches_csv_all_cells": true,
+  "gates": {
+    "analytical_success": false,
+    "verified_report_available": false,
+    "final_policy_frozen": false
+  },
+  "scope": "Own receipt/hash/text/static-and-if-present-live table checks; no producer execution or source-data modeling."
+}
