@@ -6,16 +6,17 @@ aggregate forecast uniformly across days. DSC-30 independently recalculates.
 """
 from __future__ import annotations
 
-from collections import Counter, defaultdict
-from copy import deepcopy
 import csv
-from datetime import date, timedelta
-from decimal import Decimal, Inexact, InvalidOperation, localcontext
 import io
 import json
 import unicodedata
+from collections import Counter, defaultdict
+from copy import deepcopy
+from datetime import date, timedelta
+from decimal import ROUND_CEILING, Decimal, Inexact, InvalidOperation, localcontext
 
 from suiroai.contracts import record_ref
+
 from .context import Handoff, InputError
 
 KEY_FIELDS = ("source_namespace", "product_id", "store_id")
@@ -336,6 +337,13 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
     except (OverflowError, ValueError):
         raise InputError("policy_horizon_outside_supported_calendar") from None
     demands = {}
+    # Optional distribution-aware safety stock: when the frozen forecast carries
+    # a per-day service-level upper quantile alongside the point (median)
+    # forecast, the gap between the two over the protection horizon is exactly
+    # the buffer needed to meet that service level. It is additive -- a forecast
+    # without the field keeps the fixed policy Safety_Stock_Qty untouched.
+    service_quantiles = {}
+    service_level = None
     for _, row in forecast_rows:
         required = {"key", "date", "quantity", "quantity_unit", "as_of_date", "latest_information_available_date"}
         if not required <= set(row):
@@ -349,11 +357,35 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
         if day in demands:
             raise InputError("duplicate_daily_forecast")
         demands[day] = _decimal(row["quantity"])
+        if "service_level_quantity" in row:
+            level = _decimal(row.get("service_level", "0"))
+            if not Decimal("0.5") < level < 1:
+                raise InputError("service_level_must_exceed_median_and_stay_below_one")
+            quantile_quantity = _decimal(row["service_level_quantity"])
+            if quantile_quantity < demands[day]:
+                raise InputError("service_level_quantile_below_point_forecast")
+            service_quantiles[day] = quantile_quantity
+            service_level = level if service_level is None else service_level
+            if level != service_level:
+                raise InputError("inconsistent_service_level_across_days")
     if len(demands) < lead + review:
         raise InputError("partial_daily_forecast_cannot_prove_receipt_timing")
     expected_days = [as_of + timedelta(days=d) for d in range(1, lead + review + 1)]
     if any(day not in demands for day in expected_days):
         raise InputError("partial_daily_forecast_cannot_prove_receipt_timing")
+    # Distribution-aware safety: the horizon quantile gap, used only when the
+    # forecast supplies a complete service-level trajectory over the same days.
+    quantile_safety = None
+    if service_quantiles:
+        if any(day not in service_quantiles for day in expected_days):
+            raise InputError("partial_service_level_trajectory_over_protection_horizon")
+        point_total = _sum(demands[d] for d in expected_days)
+        service_total = _sum(service_quantiles[d] for d in expected_days)
+        # Buffer to reach the service level; clamp at zero and round UP to a
+        # whole product unit (safety stock is integer, and a conservative
+        # ceiling never under-buffers the requested service level).
+        gap = max(Decimal(0), _sum((service_total, point_total.copy_negate())))
+        quantile_safety = gap.to_integral_value(rounding=ROUND_CEILING)
     due = defaultdict(int)
     receipt_trace = []
     for line, row in receipt_rows:
@@ -370,7 +402,10 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
         raise InputError(f"receipt_summary_mismatch: summary={summary}; ledger={sum(due.values())}")
     forecast = _sum(demands[d] for d in expected_days)
     eligible = sum(q for d, q in due.items() if d <= end)
-    signed_need = _sum((forecast, Decimal(safety), Decimal(-usable), Decimal(-eligible)))
+    # Effective safety never falls below the declared policy safety stock: the
+    # distribution-aware quantile buffer can only raise it, never weaken it.
+    effective_safety = Decimal(safety) if quantile_safety is None else max(Decimal(safety), quantile_safety)
+    signed_need = _sum((forecast, effective_safety, Decimal(-usable), Decimal(-eligible)))
     need = max(Decimal(0), signed_need)
     # Exact rational ceiling avoids division rounding just above a multiple.
     numerator, denominator = max(need, Decimal(minimum)).as_integer_ratio()
@@ -383,7 +418,13 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
              "minimum_positive_order_quantity": minimum, "order_multiple": multiple,
              "rounded_order_quantity": order, "candidate_arrival_date": arrival.isoformat(),
              "receipts": receipt_trace, "daily_balances": [],
-             "summary_subtracted": False, "safety_stock_quantity": safety}
+             "summary_subtracted": False, "safety_stock_quantity": _number(effective_safety),
+             "policy_safety_stock_quantity": safety,
+             "quantile_safety_stock_exact": None if quantile_safety is None else str(quantile_safety),
+             "service_level": None if service_level is None else str(service_level),
+             "effective_safety_stock_exact": str(effective_safety),
+             "safety_stock_basis": "policy" if quantile_safety is None
+                                   else ("service_level_quantile" if quantile_safety >= Decimal(safety) else "policy_floor")}
     # Test each day's demand before date-only arrivals. Also test terminal
     # safety stock, so a late receipt cannot erase a prior demand shortage.
     balance = Decimal(usable)
@@ -402,7 +443,7 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
             raise _KeyError(f"{code}: {day.isoformat()} before-arrivals balance={before}; "
                             f"after-arrivals balance={after}; later receipts/orders cannot cure earlier demand", audit)
         balance = after
-    if balance < safety:
+    if balance < effective_safety:
         raise _KeyError("terminal_safety_stock_not_covered", audit)
     row = {"key": _key_dict(key), "quantity_unit": "product_unit",
            "arithmetic_input_refs": deepcopy(refs), "forecast_ref": deepcopy(forecast_ref),
@@ -410,7 +451,12 @@ def _calculate_key(key, indexed, execution, as_of, forecast_ref, refs):
            "forecast_quantity": _number(forecast), "usable_on_hand_quantity": usable,
            "on_order_summary_quantity": summary, "eligible_receipt_quantity": eligible,
            "supplier_lead_calendar_days": lead, "review_period_calendar_days": review,
-           "safety_stock_quantity": safety, "order_multiple": multiple,
+           # safety_stock_quantity is the safety ACTUALLY APPLIED: the policy
+           # value, raised by the service-level quantile buffer when the forecast
+           # supplies one. This keeps the contract invariant
+           # raw_order_need == forecast + safety_stock_quantity - usable - eligible
+           # true. The policy value and quantile breakdown are in the audit.
+           "safety_stock_quantity": _number(effective_safety), "order_multiple": multiple,
            "minimum_positive_order_quantity": minimum, "raw_order_need": _number(need),
            "rounded_order_quantity": order, "approved_order_quantity": None,
            "evidence_refs": deepcopy(refs)}

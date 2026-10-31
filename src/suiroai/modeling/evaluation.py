@@ -5,11 +5,11 @@ A caller supplies prepared, availability-checked examples, never the raw sales f
 """
 from __future__ import annotations
 
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date
 from math import isfinite
 from time import monotonic
-from typing import Mapping, Sequence
 
 from .core import CUTOFF, Example, ModelingError, Prediction
 from .metrics import compare_values, metric_value, score
@@ -85,7 +85,7 @@ def _signature(folds):
 
 def _spec(spec):
     if (not spec.candidate_id or not spec.feature_set_id or not spec.rationale.strip()
-            or spec.model_kind not in {"past_mean", "mean", "ridge"}
+            or spec.model_kind not in {"past_mean", "mean", "ridge", "quantile_gbt"}
             or not isinstance(spec.parameters, Mapping)):
         raise ModelingError("candidate needs a supported model, feature ID and justified rationale")
     return {"candidate_id": spec.candidate_id, "model_kind": spec.model_kind,
