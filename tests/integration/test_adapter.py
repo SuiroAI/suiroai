@@ -78,7 +78,7 @@ def replace_reference(value, old, new):
 
 class MockStageAdapterTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-adapter-", dir="/private/tmp")
+        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-adapter-")
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.store = ArtifactStore(self.root / "store")

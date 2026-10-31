@@ -88,7 +88,10 @@ def _read_local(file, limit):
     path = Path(file.location)
     if not path.is_absolute():
         raise OSError("Supply an explicit absolute file path or connector-measured bytes")
-    fd = os.open(path, os.O_RDONLY | os.O_NONBLOCK)
+    # O_NOFOLLOW matches the rest of the codebase's symlink-refusing reads
+    # (native stage walks, adapter): never follow a symlink at the final path
+    # component when opening a caller-supplied local submission.
+    fd = os.open(path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW)
     with os.fdopen(fd, "rb") as stream:
         if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
             raise OSError("Supplied location is not a regular file")

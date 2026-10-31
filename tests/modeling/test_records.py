@@ -23,7 +23,7 @@ from suiroai.modeling.records import (comparison_record, final_record, initial_r
 
 class MeasuredRecordTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.store = ArtifactStore(self.temp.name)
         fixture = json.loads((Path(__file__).resolve().parents[2] /

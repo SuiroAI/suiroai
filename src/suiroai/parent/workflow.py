@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
 import math
 import threading
@@ -481,7 +482,6 @@ class ParentWorkflow:
                 raise GuardRejected("candidate does not bind active dispatched request")
             if len(artifact_bytes) != len(candidate["artifacts"]):
                 raise GuardRejected("candidate bytes missing")
-            import hashlib
             for meta, data in zip(candidate["artifacts"], artifact_bytes):
                 if len(data) != meta["bytes"] or hashlib.sha256(data).hexdigest() != meta["byte_sha256"]:
                     raise GuardRejected("candidate measured bytes changed")
@@ -613,8 +613,9 @@ class ParentWorkflow:
         self._event("adapter_result_committed", stage_result_ref=record_ref(result), outcome=result["outcome"])
         outcome = result["outcome"]
         if outcome in {"needs_inputs", "needs_material_facts"}:
-            if not result["gaps"] or not any(g["material"] for g in result["gaps"]):
-                raise GuardRejected("intake return requires an irreducible material gap")
+            # The irreducible-material-gap invariant is already enforced above,
+            # before self._review runs for this same needs_inputs/needs_material
+            # outcome; re-checking the identical condition here was dead code.
             self._state, self._outcome = "intake", outcome
             self._approval = None
             self._cancel.set()

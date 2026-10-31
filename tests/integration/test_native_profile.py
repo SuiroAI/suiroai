@@ -23,7 +23,7 @@ def disabled_row():
 
 class NativeProfileTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-profile-", dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-profile-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.release, self.output = self.root / "released", self.root / "output"
@@ -159,7 +159,7 @@ class NativeProfileTests(unittest.TestCase):
 class NativeInventoryTests(unittest.TestCase):
     """Fake executable is local Python; stable CLI argv only, no Codex calls."""
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-inventory-", dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-inventory-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.executable = self.root / "fake-cli"
@@ -212,6 +212,44 @@ class NativeInventoryTests(unittest.TestCase):
         with self.assertRaises(policy.NativePolicyError) as raised: self.invoke(seconds=.1)
         self.assertEqual(raised.exception.code, "timeout")
         self.assertTrue(self.receipt["plugin_inventory_command"]["cleanup"]["direct_child_reaped"])
+
+
+class NativePortabilityTests(unittest.TestCase):
+    """Exercise the host gate WITHOUT patching the pinned roots, so the
+    single-host portability contract is a stated, checked limitation rather than
+    an accident masked by mocks (Sage finding: native tests patch over
+    DATA_ROOT/PYTHON_ROOT/platform, so the break can never fail CI)."""
+
+    def test_absent_resource_roots_fail_closed_with_actionable_message(self):
+        # Point both roots at a path that does not exist on any host, and do NOT
+        # patch them. validate_supported_plugin must refuse with an actionable
+        # unsupported_integration naming the override env vars.
+        missing = Path(tempfile.gettempdir()) / "suiroai-nonexistent-resource-root-xyz"
+        self.assertFalse(missing.exists())
+        with patch.object(policy, "DATA_ROOT", missing), \
+             patch.object(policy, "PYTHON_ROOT", missing), \
+             patch.object(policy.sys, "platform", "darwin"):
+            with self.assertRaises(policy.NativePolicyError) as raised:
+                policy.validate_supported_plugin(DataPluginSpec())
+        self.assertEqual(raised.exception.code, "unsupported_integration")
+        self.assertIn("SUIROAI_DATA_ROOT", str(raised.exception))
+        self.assertIn("SUIROAI_PYTHON_ROOT", str(raised.exception))
+
+    def test_resource_roots_resolve_from_environment(self):
+        # The roots are config, not literals: a reload under SUIROAI_* env vars
+        # must resolve DATA_ROOT/PYTHON_ROOT to the supplied paths.
+        import importlib
+        with tempfile.TemporaryDirectory(prefix="dsc26-env-roots-") as tmp:
+            data_root = Path(tmp) / "data"; py_root = Path(tmp) / "python"
+            data_root.mkdir(); py_root.mkdir()
+            with patch.dict(os.environ, {"SUIROAI_DATA_ROOT": str(data_root),
+                                         "SUIROAI_PYTHON_ROOT": str(py_root)}):
+                reloaded = importlib.reload(policy)
+                try:
+                    self.assertEqual(reloaded.DATA_ROOT, data_root)
+                    self.assertEqual(reloaded.PYTHON_ROOT, py_root)
+                finally:
+                    importlib.reload(policy)  # restore module-level defaults
 
 
 if __name__ == "__main__": unittest.main()

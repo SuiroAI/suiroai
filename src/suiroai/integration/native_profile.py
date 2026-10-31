@@ -15,8 +15,17 @@ import time
 
 CLI_VERSION = "0.163.0"
 MODEL = "gpt-6.1-sol"
-DATA_ROOT = Path("/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11")
-PYTHON_ROOT = Path("/opt/anaconda3")
+# The Data plugin cache and Python interpreter roots are resolved from the
+# environment so the customer native path is portable, not pinned to one host.
+# SUIROAI_DATA_ROOT / SUIROAI_PYTHON_ROOT override the exercised defaults below;
+# the literals remain only as the single-host default that was actually tested.
+# validate_supported_plugin still asserts both resolved roots exist (is_dir),
+# and profile_overrides still grants exactly these resolved roots read access,
+# so the strict gate is unchanged -- only the source of the paths is now config.
+_DEFAULT_DATA_ROOT = "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11"
+_DEFAULT_PYTHON_ROOT = "/opt/anaconda3"
+DATA_ROOT = Path(os.environ.get("SUIROAI_DATA_ROOT", _DEFAULT_DATA_ROOT))
+PYTHON_ROOT = Path(os.environ.get("SUIROAI_PYTHON_ROOT", _DEFAULT_PYTHON_ROOT))
 SKILL_SHA256 = "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
 DISABLED_FEATURES = ("apps", "browser_use", "browser_use_external", "browser_use_full_cdp_access",
     "computer_use", "in_app_browser", "in_app_local_automation", "multi_agent", "memories", "view_image")
@@ -283,7 +292,9 @@ def validate_supported_plugin(plugin):
         and plugin.skill_sha256 == SKILL_SHA256,
         "Customer native Data identity/hash differs from the exercised specification")
     require(sys.platform == "darwin" and DATA_ROOT.is_dir() and PYTHON_ROOT.is_dir(),
-        "Exercised native runtime requires macOS and the pinned Data/Python resource roots")
+        "Exercised native runtime requires macOS and existing Data/Python resource roots; "
+        "set SUIROAI_DATA_ROOT and SUIROAI_PYTHON_ROOT for this host "
+        "(resolved DATA_ROOT=" + str(DATA_ROOT) + ", PYTHON_ROOT=" + str(PYTHON_ROOT) + ")")
 
 
 def verify_host(host):

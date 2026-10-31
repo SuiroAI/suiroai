@@ -258,6 +258,13 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                 if receipt_timing == "unknown" and before < 0 and arrivals:
                     raise ValueError("timing_ambiguity_on_" + day.isoformat())
                 balance = after
+            # Mirror the producer's terminal guard (replenishment/calculation.py
+            # raises terminal_safety_stock_not_covered when the horizon-end
+            # balance falls below safety). Recomputing it here makes the
+            # independent verifier reach the same withhold decision on its own,
+            # instead of depending on the producer's exception being evidenced.
+            if balance < safety:
+                raise ValueError("terminal_safety_stock_not_covered")
             expected = {"key": _mapping(key), "quantity_unit": "product_unit",
                         "forecast_horizon_start": start.isoformat(), "forecast_horizon_end": end.isoformat(),
                         "forecast_quantity": forecast, "usable_on_hand_quantity": on_hand,

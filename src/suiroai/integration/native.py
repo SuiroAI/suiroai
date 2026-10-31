@@ -126,10 +126,15 @@ def _observed_invalid_code(items, events, thread_id, turn_id):
 
 
 def _matched_file_changes(items, events, thread_id, turn_id, cwd):
-    """Canonical paired writes plus actual bounded output bytes, never prose."""
+    """Canonical paired writes plus actual bounded output bytes, never prose.
+
+    Returns (receipts, read_errors): read_errors records files the CLI reported
+    writing that could not be read back, so the caller can tell a transient read
+    failure from a genuine no-output turn instead of silently dropping evidence.
+    """
     observed = {(event.get("threadId"), event.get("turnId"), (event.get("item") or {}).get("id")):
         event.get("item") or {} for event in events}
-    receipts, total = [], 0
+    receipts, read_errors, total = [], [], 0
     for entry in items:
         item = entry.get("item") or {}
         event = observed.get((thread_id, turn_id, item.get("id")))
@@ -147,10 +152,18 @@ def _matched_file_changes(items, events, thread_id, turn_id, cwd):
             path = Path(change["path"])
             if not path.is_absolute() or not path.is_relative_to(cwd):
                 continue
+            relative = str(path.relative_to(cwd))
             try:
-                relative = str(path.relative_to(cwd))
                 data = read_stage_file(cwd, relative, max_bytes=16 * 1024 * 1024)
-            except (ValueError, OSError):
+            except (ValueError, OSError) as exc:
+                # The CLI reported writing this file but we could not read it
+                # back (transient FS error, sandbox EPERM on the O_NOFOLLOW
+                # open, race). Record the reason so a swallowed read failure is
+                # distinguishable from a genuine 'model produced nothing' turn,
+                # instead of dropping it with a bare continue. Still fail-closed:
+                # the receipt is omitted, never fabricated.
+                read_errors.append({"relative_path": relative,
+                    "error": type(exc).__name__, "reason": str(exc)})
                 continue
             total += len(data)
             if total > 64 * 1024 * 1024:
@@ -158,7 +171,7 @@ def _matched_file_changes(items, events, thread_id, turn_id, cwd):
             measured.append({"relative_path": relative, "bytes": len(data), "sha256": sha256(data).hexdigest()})
         if measured:
             receipts.append({"item_id": item["id"], "files": measured})
-    return receipts
+    return receipts, read_errors
 
 
 class _Transport:
@@ -512,9 +525,14 @@ class NativeHost:
                         run.evidence["invalid_code_command_id"] = failed_code
                         raise _Stop("invalid_code", "Matching native command/history contains an actual Python syntax failure")
                     commands = _matched_commands(run.items, transport.events, run.thread_id, run.turn_id)
-                    file_changes = _matched_file_changes(run.items, transport.events, run.thread_id, run.turn_id, cwd)
+                    file_changes, file_change_read_errors = _matched_file_changes(
+                        run.items, transport.events, run.thread_id, run.turn_id, cwd)
                     run.evidence["matched_command_ids"] = [item["id"] for item in commands]
                     run.evidence["matched_file_changes"] = file_changes
+                    # Surface files the CLI reported writing but we could not read
+                    # back, so a transient/sandbox read failure is not mistaken for
+                    # a genuine no-output turn in the runtime_error classification.
+                    run.evidence["file_change_read_errors"] = file_change_read_errors
                     run.evidence["diagnostic_failed_command_ids"] = [item["id"] for item in commands if item["exitCode"] != 0]
                     if not commands and not file_changes:
                         raise _Stop("runtime_error", "Native completion has no actual paired command or output-file-change evidence")

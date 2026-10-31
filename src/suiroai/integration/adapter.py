@@ -107,6 +107,14 @@ class StageAdapter:
     parent's ledger using an exact candidate-bound receipt. It must bound its
     own I/O and return promptly; it cannot advance a checkpoint before the
     adapter commits the checked stage result.
+
+    PLATFORM: the isolation contract is POSIX-only and, on the customer native
+    path, macOS-only. Sibling staging and the native validate_roots walk rely on
+    POSIX directory semantics (O_NOFOLLOW / O_DIRECTORY, process-group killpg),
+    and native_profile's sandbox profile wording is macOS seatbelt. These
+    guarantees have only been exercised on macOS; a non-POSIX host is not
+    supported and the native customer gate (validate_supported_plugin) fails
+    closed there.
     """
 
     def __init__(self, store: ArtifactStore, *, work_root: Path,
