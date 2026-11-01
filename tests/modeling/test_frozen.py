@@ -12,7 +12,7 @@ from suiroai.modeling.frozen import (finalize_validation, freeze_bundle, record_
 
 class FrozenTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.store = ArtifactStore(self.temp.name)
         self.execution = {"binding": {"task_id": "mock-task"}, "run_id": "mock-run"}

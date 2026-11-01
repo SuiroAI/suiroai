@@ -23,7 +23,7 @@ class FeatureRecordTests(unittest.TestCase):
         self.context = self.build_context()
 
     def build_context(self, provenance="mock"):
-        temporary = tempfile.TemporaryDirectory(dir="/private/tmp")
+        temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
         store = ArtifactStore(temporary.name)
         example_root = Path(__file__).resolve().parents[2] / "examples/contracts/v0.1.0"

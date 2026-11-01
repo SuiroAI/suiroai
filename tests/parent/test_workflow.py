@@ -65,7 +65,7 @@ class MockPacketHost:
 
 class WorkflowTests(unittest.TestCase):
     def setUp(self):
-        tmp = tempfile.TemporaryDirectory(prefix="dsc10-mock-", dir="/private/tmp")
+        tmp = tempfile.TemporaryDirectory(prefix="dsc10-mock-")
         self.addCleanup(tmp.cleanup)
         self.root = Path(tmp.name)
         self.fixture = json.loads((ROOT / "examples/contracts/v0.1.0/successful_analysis.json").read_text())
