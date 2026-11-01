@@ -33,8 +33,9 @@ outcome from which records exist.
   missing_inputs→pre-execution, proposal still readable; approved_execution→running; mock-as-real rejected
 
 ## A-PR3 · record → view translation (DSC-72)
-- [ ] `service/views.py` — `submission`→`Analysis`/`DataFile[]` (roles map §2.1 incl. `dictionary`); gaps→`Readiness[]`; `evaluation_result`→`ModelResult[]`/`ModelRun`/`recommendedId`; `quantity_result`→`OrderLine[]`+exceptions; `report_draft`→summary/data tabs; escape text, http/https only (R11)
-- [ ] `tests/service/test_views.py` — fixtures round-trip without loss/fabrication; metric labels match §4.7 (R3); recommended rule (R4); exceptions as distinct state (R6)
+- [x] `service/views.py` — `submission`→`Analysis`/`DataFile[]` (roles map §2.1 incl. `dictionary`); `evaluation_result`→`ModelResult[]`/`ModelRun`/`recommendedId` (baseline always shown, frozen=recommended; metrics mapped faithfully, not fabricated); `quantity_result`→`OrderLine[]`+exceptions (authoritative qty R5, exception distinct state R6); `report_draft`→summary/claims/findings; `esc()`/`safe_url()` escape text + http/https only (R11)
+- [x] `tests/service/test_views.py` — 11 tests: roles incl. dictionary (R1); baseline present + single recommended (R3/R4); scores mapped not invented; authoritative order qty (R5); exceptions distinct (R6); failures carry no orders (R9); escaping + link safety (R11)
+- note: proposal→`Readiness[]` deferred to A-PR5 (readiness is assembled at the API layer from proposal gaps alongside the intake endpoints)
 
 ## A-PR4 · server-side derived fields (DSC-73)
 - [ ] `service/derive.py` — `coverWeeks`; flags+priority ≤2/+N (§4.3); supplier aggregate minimums+status+top-up (§4.2)
