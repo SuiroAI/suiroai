@@ -1,0 +1,17 @@
+{
+  "outcome": "execution_failed",
+  "error_code": "budget_exhausted",
+  "message": "Native execution requires positive finite remaining time",
+  "thread_id": null,
+  "turn_id": null,
+  "terminal_status": null,
+  "items": [],
+  "evidence": {
+    "mode": "engineering",
+    "customer_isolation_verified": false,
+    "automatic_acceptance": false,
+    "log": "/private/tmp/suiroai-dsc26/evidence/integration/declared-limit-2026-10-17/native-rpc.jsonl",
+    "report": "/private/tmp/suiroai-dsc26/evidence/integration/declared-limit-2026-10-17/native-run.json"
+  },
+  "mode": "engineering"
+}
