@@ -60,6 +60,14 @@ preparation
 
 Everything the user sees in steps 1–5 of the prototype is produced (or should be) by these stages.
 
+> **Update (validated against the current backend).** The analysis in these stages is now
+> **first-party deterministic data science via `dscraft`** (the sibling library) — seeded-stochastic
+> modeling and service-level safety stock (PR DSC-66), and EDA through `dscraft.eda` with KLL
+> quantile sketches (PR DSC-67). This is the MVP's "real data-science coding, deterministic" that
+> replaces the Codex-authored path. These PRs change **computation only**; the DSC-24 contract
+> (record shapes, order-row fields) is untouched, so the mapping below remains valid. See
+> [`MAPPING_VALIDATION.md`](./MAPPING_VALIDATION.md).
+
 ---
 
 ## 1. Flow-level mapping (prototype step → backend)
@@ -123,11 +131,16 @@ definitions in `docs/04-business-rules.md §4.7`:
 
 | Frontend field | Meaning (per §4.7) | Backend source |
 | --- | --- | --- |
-| `accuracy` | 100% − WAPE | metric over held-back weeks (`metrics.py`) |
-| `typicalErrorUnits` | mean absolute error | same |
-| `shortagesCaught` | recall of would-run-out weeks | same |
-| `unneededOrders` | 1 − precision of reorder suggestions | same |
-| `recommendedId` | best accuracy that also catches most shortages | `comparison_and_freeze` → `evaluation_result.frozen.selected_candidate_id` |
+| `accuracy` | 100% − WAPE | `metrics.py` `wape` (optional, `include_wape`) over held-back weeks |
+| `typicalErrorUnits` | mean absolute error | `metrics.py` `mae` (always computed) |
+| `shortagesCaught` | recall of would-run-out weeks | **Gap — not computed by the backend.** `metrics.py` produces only `mae`/`wape` (docstring: "No MAPE and no cross-SKU pooled WAPE"); recall would need a new metric |
+| `unneededOrders` | 1 − precision of reorder suggestions | **Gap — not computed by the backend.** Same as above; precision is not produced |
+| `recommendedId` | best accuracy that also catches most shortages | `comparison_and_freeze` → `evaluation_result.frozen.selected_candidate_id` (selection on the metrics that **are** computed) |
+
+> **Validated:** the backend (`modeling/metrics.py`) computes **`mae`** (always) and **`wape`**
+> (optional) only. So of the four headline metrics, **accuracy** and **typical error** have a real
+> source today; **shortages caught** and **unneeded orders** do not exist in the backend and are
+> gaps to either implement server-side or show as "Not enough data".
 
 Important differences:
 - The prototype shows **5 named models** (`avg`, `lin`, `cur`, `rf`, `xgb`) with illustrative
@@ -158,6 +171,16 @@ This is the richest seam. Frontend `OrderLine` (`types.d.ts`) ↔ backend
 | `lineCost`, `flags`, `reviewed`, `note`, `editedBy` | — | **not modeled** by backend (product-shell concepts) |
 | `lastRestockQty/Date`, `daysSinceLastSale`, `expiryDate` | — | not in the order record |
 | `forecast_horizon_start/end` | `forecast_horizon_start`/`_end` | backend is horizon-based (`lead + review` days), not "next week" |
+| *(no frontend field)* | `safety_stock_quantity` + `safety_stock_basis` | **effective** safety applied; now **deterministic service-level (quantile)** or fixed policy — see note |
+
+> **Update (PR DSC-66, validated).** `replenishment/calculation.py` now derives a deterministic
+> **service-level (quantile) safety stock** in addition to the fixed policy value. On the order row,
+> `safety_stock_quantity` is the **safety actually applied**, and the audit carries
+> `policy_safety_stock_quantity`, `quantile_safety_stock_exact`, `effective_safety_stock_exact` and
+> `safety_stock_basis` (`"policy"` vs quantile). If the UI explains *why* a quantity was suggested,
+> it can surface that the safety buffer is model-derived and deterministic, not just a fixed policy
+> number. The `rounded_order_quantity` already includes this safety, so the authoritative-quantity
+> point below is unaffected.
 
 **Formula reconciliation — read this carefully.** The two sides compute order quantities with
 *different* models:
