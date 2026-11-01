@@ -37,9 +37,17 @@ outcome from which records exist.
 - [x] `tests/service/test_views.py` — 11 tests: roles incl. dictionary (R1); baseline present + single recommended (R3/R4); scores mapped not invented; authoritative order qty (R5); exceptions distinct (R6); failures carry no orders (R9); escaping + link safety (R11)
 - note: proposal→`Readiness[]` deferred to A-PR5 (readiness is assembled at the API layer from proposal gaps alongside the intake endpoints)
 
-## A-PR4 · server-side derived fields (DSC-73)
-- [ ] `service/derive.py` — `coverWeeks`; flags+priority ≤2/+N (§4.3); supplier aggregate minimums+status+top-up (§4.2)
-- [ ] `tests/service/test_derive.py` — §4.11 Ex 2, 3, 6 pass; client-supplied flag/cover ignored (R7, R8, R10)
+## A-PR4 · generic rule engine + retail-chain rule library (DSC-73)
+Reframed per architecture decision (see docs/architecture/AGNOSTIC_ENGINE.md): the engine is
+**problem-agnostic** (no domain terms); retail rules are **supplied as data**; scope is the
+**end-to-end retail chain**, suppliers included — not a single problem.
+- [x] `service/rules.py` — domain-neutral `RuleSet`/`MetricRule`/`FlagRule` (no retail terms)
+- [x] `service/derive.py` — generic engine: evaluate any RuleSet over a record; metric None = not-enough-data; non-derivable flags reported unavailable with what they need (never fabricated)
+- [x] `service/retail/__init__.py` — retail-chain registry (`RETAIL_PROBLEMS`) + `RETAIL_CHAIN` map (built: restocking, suppliers; planned: demand/forecasting/inventory/pricing/assortment/fulfilment); `ruleset_for()` raises on unknown area (no silent fallback)
+- [x] `service/retail/restocking.py` — restocking rules as data (cover, stock-out), thresholds overridable via `build_restocking_ruleset`
+- [x] `service/retail/suppliers.py` — supplier/procurement rules as data (lead time, lead+review window, on-order, below-line-minimum, not-order-multiple, long-lead); aggregate supplier minimum declared unavailable (backend extension)
+- [x] `docs/architecture/AGNOSTIC_ENGINE.md` — persists the agnostic-engine + retail-chain architecture so it isn't lost
+- [x] `tests/service/test_derive.py` — 18 tests: generic engine (incl. a non-retail toy ruleset), restocking cover/stock-out + overridable thresholds, supplier metrics/flags, chain registry, unknown-area raises, unavailable-not-fabricated
 
 ## A-PR5 · HTTP API: intake arc (DSC-74)
 - [ ] `service/api/` — `POST /analyses`, `POST/PATCH/DELETE …/files`, `GET …/readiness`, `POST …/approve-task`; deny-by-default auth stub (R10)

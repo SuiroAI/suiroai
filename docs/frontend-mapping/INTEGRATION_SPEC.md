@@ -8,6 +8,16 @@ them*, in what scope, and how we will know it works. The follow-on
 [`INTEGRATION_PLAN.md`](./INTEGRATION_PLAN.md) turns this into PRs and
 [`TASKS.md`](./TASKS.md) into checkable tasks.
 
+> **Architecture note (supersedes narrower framing below).** See
+> [`docs/architecture/AGNOSTIC_ENGINE.md`](../architecture/AGNOSTIC_ENGINE.md). The system is
+> **problem-agnostic**: the engine holds no domain knowledge and evaluates rules supplied as
+> **data**. The existing single-case backend is the **demo**, not the target. Current focus is the
+> **end-to-end retail chain** (demand → forecasting → restocking → **suppliers/procurement** →
+> inventory → pricing/markdown → assortment → fulfilment), not a single problem. Where this spec
+> says "restocking", read it as the first built area of that chain; the service layer expresses
+> retail as a supplied rule library (`service/retail/`) over a generic engine
+> (`service/derive.py`, `service/rules.py`), with thresholds overridable and nothing baked in.
+
 ---
 
 ## 1. Problem
