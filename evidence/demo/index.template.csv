@@ -1,0 +1,16 @@
+requirement_id,evidence_record_ref,task_binding_ref,run_stage_attempt,artifact_ref,retained_location,recording_ref,recording_sha256,timecode_start,timecode_end,expected,actual,evidence_mode,verifier,verifier_decision,verified_at,limitations
+GATE,,,,,,,,,,Working integration through DSC-30 delivery,,,,not_recorded,,Preparation only
+A,,,,,,,,,,Actual user request and supplied files,,,,not_recorded,,No request or recording captured
+B,,,,,,,,,,Current step-2 proposal and genuine missing-data guidance if relevant,,,,not_recorded,,No proposal captured
+C,,,,,,,,,,Authentic current-version sign-off,,,,not_recorded,,No sign-off captured
+D,,,,,,,,,,Real approved-task Codex/Data invocation and parent checkpoints,,,,not_recorded,,Engineering probes do not satisfy this row
+E1,,,,,,,,,,Justified preparation and isolated development context,,,,not_recorded,,Source completeness and availability need evidence
+E2,,,,,,,,,,Measured initial model/baseline and parent decision,,,,not_recorded,,No retail scores captured
+E3,,,,,,,,,,Actual LLM additional features and materialization checks,,,,not_recorded,,No retail feature generation captured
+E4,,,,,,,,,,Bounded common-plan model/feature comparison,,,,not_recorded,,No retail comparison captured
+E5,,,,,,,,,,Immutable freeze and separate November 30 forecast,,,,not_recorded,,No retail frozen forecast captured
+F,,,,,,,,,,Reserved evaluation and bounded parent outcome,,,,not_recorded,,No retail holdout scores captured
+G-NUMERICAL,,,,,,,,,,Independent candidate check then exact parent numerical approval,,,,not_recorded,,No retail quantities captured
+G-DELIVERY,,,,,,,,,,Verified final report and actual authorized byte-equal readback,,,,not_recorded,,No retail delivery captured
+FAILURE-IF-OBSERVED,,,,,,,,,,Honest actual failure evidence and verified explanation when available,,,,not_recorded,,Conditional branch; no failure recording exists
+RECORDING-REVIEW,,,,,,,,,,Original recording and indexed artifacts agree under named review,,,,not_recorded,,No recording exists

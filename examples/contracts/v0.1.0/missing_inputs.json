@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0-draft.3",
+  "fixture_provenance": "mock",
+  "mock_notice": "MOCK COMPONENT FIXTURE ONLY: all files, identities, approvals, models, scores, checks and quantities are invented interface examples. No analytical pipeline ran; no customer facts or acceptance evidence are established.",
+  "records": [
+    {
+      "kind": "submission",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-submission",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "cd87e07a10a2def943e081d2c8c06f8b0e361abd6bdbb3f3b99597148954d282"
+      },
+      "original_request": "MOCK request: illustrate one restocking list for MOCK-P001 at MOCK-STORE.",
+      "files": [
+        {
+          "file_id": "mock-unavailable-sales",
+          "original_name": "mock-unavailable-sales.csv",
+          "supplied_location": "mock://unavailable/sales.csv",
+          "source_role": "transactions",
+          "source_namespace": "mock-retail",
+          "provenance": "mock",
+          "access": "inaccessible",
+          "sha256": null,
+          "size_bytes": null,
+          "access_reason": "MOCK file link is inaccessible; no replacement dataset is supplied."
+        }
+      ],
+      "received_at": "2026-10-17T09:00:00Z"
+    },
+    {
+      "kind": "task_proposal",
+      "schema_version": "0.1.0-draft.3",
+      "artifact_id": "mock-task-proposal",
+      "artifact_version": 1,
+      "provenance": "mock",
+      "binding": {
+        "task_id": "mock-retail-restocking",
+        "task_version": 1,
+        "input_version": 1,
+        "input_digest": "cd87e07a10a2def943e081d2c8c06f8b0e361abd6bdbb3f3b99597148954d282",
+        "proposal_version": 1,
+        "proposal_digest": "be23f600a6242a41f00ef45400ca93896f3a61cf5dea66dbb6b070dca6ae354b"
+      },
+      "submission_ref": {
+        "artifact_id": "mock-submission",
+        "version": 1,
+        "sha256": "5f154ea97b115b33a690e4e16f6b4255bde2f133faa66830547ae65b8006feb7",
+        "provenance": "mock"
+      },
+      "goal": "MOCK single retail replenishment illustration only.",
+      "output": "one_restocking_list_and_final_report_or_verified_failure_explanation",
+      "source_refs": [],
+      "readiness": "needs_inputs",
+      "assumptions": [],
+      "gaps": [
+        {
+          "gap_id": "missing-sales",
+          "description": "MOCK sales file is inaccessible; quantities cannot be inspected.",
+          "material": true,
+          "blocks": [
+            "approval",
+            "execution",
+            "quantities",
+            "report"
+          ],
+          "request_to_user": "Provide an accessible sales file and source dictionary; no demo substitution will occur."
+        }
+      ],
+      "target_policy": {
+        "status": "pending",
+        "unresolved_gap_ids": [
+          "missing-sales"
+        ]
+      },
+      "temporal_plan": {
+        "as_of_date": "2025-11-30",
+        "date_interpretation": "source_calendar_date",
+        "initial_development_start": "2022-01-01",
+        "initial_development_end": "2024-12-31",
+        "rolling_validation_start": "2025-01-01",
+        "development_target_end_cutoff": "2025-11-30",
+        "reserved_unseen_start": "2025-12-01",
+        "reserved_unseen_end": "2025-12-31",
+        "development_context_access": "development_artifacts_only",
+        "every_development_horizon_finishes_by_cutoff": true,
+        "score_fully_observed_horizons_only": true,
+        "freeze_before_holdout_access": true,
+        "forecast_as_of_date": "2025-11-30",
+        "december_must_not_change_saved_forecast": true
+      },
+      "acceptance_rule": {
+        "status": "pending",
+        "unresolved_gap_ids": [
+          "missing-sales"
+        ]
+      }
+    }
+  ],
+  "mock_artifacts": []
+}

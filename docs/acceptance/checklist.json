@@ -1,0 +1,1027 @@
+{
+  "scope": "DSC-56 fixed single retail case; engineering checks only. This is a reviewer worksheet, not a runtime or new wire contract.",
+  "reviewer": "Codex / DSC-56 fixed-MVP verification engineer",
+  "baseline": "93f6cc9f7725ae0d9d5442bd64491c007f4d372c",
+  "source_requirements": "docs/acceptance/requirements.json",
+  "artifact_version_binding": "evidence/acceptance/check-results.json#source_bindings (each path measured by SHA-256; code_commit identifies checkout; examples/task bindings remain explicitly mock)",
+  "final_decision": "blocked",
+  "decision_reason": "No actual coherent full-input restocking run, DSC-31 recording or current integrated DSC-24/10 acceptance evidence supplied. Isolated native engineering evidence exists but does not satisfy this gate.",
+  "groups": [
+    {
+      "id": "approval",
+      "expected": "Current consent gates preparation; stale versions and silence grant no permit.",
+      "checks": [
+        "test_intake_parent_silence_and_forged_preparation_do_not_join",
+        "test_intake_parent_revised_proposal_rejects_previous_exact_consent"
+      ],
+      "implementation_paths": [
+        "src/suiroai/intake/",
+        "src/suiroai/parent/",
+        "src/suiroai/preparation/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_workflow_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "sequence",
+      "expected": "Actual dispatched step6, step7 and step8 are distinct and ordered; injected skipped stages reject.",
+      "checks": [
+        "test_parent_adapter_observe_exact_step6_step7_step8_order",
+        "test_adapter_cannot_advance_with_skipped_or_combined_modeling_stages"
+      ],
+      "implementation_paths": [
+        "src/suiroai/parent/",
+        "src/suiroai/integration/",
+        "src/suiroai/modeling/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_workflow_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "isolation",
+      "expected": "Development requests stage only permitted bytes; December poison cannot alter development features.",
+      "checks": [
+        "test_parent_adapter_development_stages_release_only_allowlisted_bytes",
+        "test_mock_december_poison_does_not_change_preparation_or_initial_features"
+      ],
+      "implementation_paths": [
+        "src/suiroai/parent/",
+        "src/suiroai/integration/",
+        "src/suiroai/preparation/",
+        "src/suiroai/modeling/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_workflow_acceptance.py",
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "grain_sparse",
+      "expected": "Exact duplicates retain lineage; conflicting grain rejects; unobserved per-key dates remain unavailable.",
+      "checks": [
+        "test_mock_preparation_duplicate_reconciliation_preserves_sparse_series_and_horizon_unknowns",
+        "test_mock_conflicting_transaction_grain_stops_before_feature_consumption"
+      ],
+      "implementation_paths": [
+        "src/suiroai/preparation/",
+        "src/suiroai/modeling/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "features",
+      "expected": "Future/realized/customer operational fields cannot be promoted into permitted initial features.",
+      "checks": [
+        "test_mock_prepared_features_reject_customer_fields_and_realized_future_values"
+      ],
+      "implementation_paths": [
+        "src/suiroai/preparation/",
+        "src/suiroai/modeling/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "arithmetic",
+      "expected": "Actual producer candidate is independently recomputed; plausible false intermediates reject.",
+      "checks": [
+        "test_mock_produced_candidate_is_independently_recomputed_from_bound_sources",
+        "test_mock_independent_verifier_rejects_plausible_false_producer_arithmetic"
+      ],
+      "implementation_paths": [
+        "src/suiroai/replenishment/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "receipts",
+      "expected": "Receipt ledger counts once; late receipts and ambiguous same-day shortages preserve correct orders/exceptions.",
+      "checks": [
+        "test_mock_receipt_coverage_and_same_day_ambiguity_are_preserved_across_verifier"
+      ],
+      "implementation_paths": [
+        "src/suiroai/replenishment/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "claims",
+      "expected": "A produced report passes unchanged and false measured score/quantity claims block delivery.",
+      "checks": [
+        "test_mock_generated_report_false_measured_claims_block_delivery",
+        "test_mock_unmodified_shared_findings_collide_after_real_report_composition_and_block"
+      ],
+      "implementation_paths": [
+        "src/suiroai/reporting/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "stale",
+      "expected": "Evidence accepted for one exact candidate cannot authorize a newer candidate version.",
+      "checks": [
+        "test_mock_previously_accepted_candidate_evidence_cannot_accept_changed_candidate_bytes"
+      ],
+      "implementation_paths": [
+        "src/suiroai/contracts/",
+        "src/suiroai/replenishment/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_data_output_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "correction",
+      "expected": "Only final failed/affected dependencies recheck; frozen model/features/forecast/rule/chronology remain fixed.",
+      "checks": [
+        "test_bounded_correction_preserves_freeze_rule_chronology_and_only_rechecks_final",
+        "test_correction_cannot_redeclare_threshold_forecast_or_holdout_chronology",
+        "test_unsuccessful_bounded_correction_stops_without_retraining_or_second_best"
+      ],
+      "implementation_paths": [
+        "src/suiroai/parent/",
+        "src/suiroai/modeling/",
+        "src/suiroai/integration/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_workflow_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "terminal",
+      "expected": "Measured underperformance and execution failure remain distinct; reviewed failure ends without recommendation/fallback.",
+      "checks": [
+        "test_measured_underperformance_and_unresolved_review_end_without_fallback",
+        "test_adapter_execution_failure_never_becomes_a_measured_validation_failure",
+        "test_unsuccessful_bounded_correction_stops_without_retraining_or_second_best"
+      ],
+      "implementation_paths": [
+        "src/suiroai/parent/",
+        "src/suiroai/modeling/",
+        "src/suiroai/reporting/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [
+        "tests/acceptance/test_workflow_acceptance.py"
+      ],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    },
+    {
+      "id": "manual",
+      "expected": "Inspect actual current artifacts/recording and named owner decisions; mocks never satisfy final acceptance.",
+      "checks": [],
+      "implementation_paths": [
+        "src/suiroai/contracts/",
+        "src/suiroai/parent/",
+        "src/suiroai/integration/",
+        "src/suiroai/intake/",
+        "src/suiroai/preparation/",
+        "src/suiroai/modeling/",
+        "src/suiroai/replenishment/",
+        "src/suiroai/reporting/",
+        "src/suiroai/verification/"
+      ],
+      "test_files": [],
+      "affected_recheck": "Rerun the named failed/changed checks and consuming groups whose referenced artifact versions changed; invalidate dependent approvals. See docs/acceptance/REVIEW.md."
+    }
+  ],
+  "rows": [
+    {
+      "requirement_id": "DSC-24-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "Customer step 1 requires only supplying files and stating the problem; data joins/preparation occur later in [DSC-27](https://linear.app/gr3enarr0w/issue/DSC-27).",
+      "check_groups": [
+        "approval"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-24-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "One source/operational-input/output contract is locked with shared Drive links; no additional scenario suite is required.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-24-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "Missing-input assessment, runtime error and completed restocking have distinct outcomes.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-24-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "Analytical uncertainty triggers investigation/sensitivity checks before targeted business clarification.",
+      "check_groups": [
+        "grain_sparse",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-24-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "Synthetic operational inputs and unresolved source meanings remain visibly distinct from observed facts.",
+      "check_groups": [
+        "features",
+        "arithmetic",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-24-AC6",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-24",
+      "source_version": "2026-10-17T04:43:11.271Z",
+      "expected": "No model/pipeline implementation is claimed by this planning update.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-25-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "source_version": "2026-10-18T00:08:13.094Z",
+      "expected": "Step2 forms and presents the proposed task; absent/inaccessible/incomplete data produces specific required-data guidance before sign-off.",
+      "check_groups": [
+        "approval",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-25-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "source_version": "2026-10-18T00:08:13.094Z",
+      "expected": "Approval binds to the current step2 proposal; rejection/correction/new material input returns to step2, and no response waits without analytical execution.",
+      "check_groups": [
+        "approval"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-25-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "source_version": "2026-10-18T00:08:13.094Z",
+      "expected": "Compatible partial schemas are handled; a genuinely different business task is identified without silent rerouting.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-25-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "source_version": "2026-10-18T00:08:13.094Z",
+      "expected": "No unnecessary customer choice of imputation, algorithms or hyperparameters.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-25-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-25",
+      "source_version": "2026-10-18T00:08:13.094Z",
+      "expected": "Material assumptions appear in the initial understanding and remain traceable.",
+      "check_groups": [
+        "approval",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-26-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "source_version": "2026-10-17T04:39:53.799Z",
+      "expected": "Supported Codex/Data invocation and a real bounded execution are evidenced before integration is accepted.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-26-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "source_version": "2026-10-17T04:39:53.799Z",
+      "expected": "Capability assessment, needs-material-facts, analytical success and runtime failure remain distinct.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-26-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "source_version": "2026-10-17T04:39:53.799Z",
+      "expected": "Source/task/assumption versions and actual checkpoint evidence are returned.",
+      "check_groups": [
+        "sequence",
+        "stale",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-26-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "source_version": "2026-10-17T04:39:53.799Z",
+      "expected": "Missing plugin, invalid code, timeout and exhausted-budget paths are inspectable.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-26-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-26",
+      "source_version": "2026-10-17T04:39:53.799Z",
+      "expected": "No unsupported interface or completed engineering is claimed.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "EDA/feature findings and relevant analytical choices are retained for the final report; no interim customer analysis-progress update is emitted.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "Required joins/alignment occur in this preparation stage; key coverage, cardinality, reconciliation and source lineage are checked.",
+      "check_groups": [
+        "approval",
+        "grain_sparse"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "CSV source/duplicate reconciliation, dictionary mappings and Product_ID/Store_ID transaction-grain evidence are retained.",
+      "check_groups": [
+        "grain_sparse",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "Aggregation and missingness decisions are made and tested by the agent.",
+      "check_groups": [
+        "grain_sparse",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "Units and outliers are resolved, bounded or flagged with consequences\u2014not silently fabricated.",
+      "check_groups": [
+        "features",
+        "arithmetic",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC6",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "Future features and fitted preprocessing do not leak validation/holdout information.",
+      "check_groups": [
+        "isolation",
+        "features",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-27-AC7",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-27",
+      "source_version": "2026-10-17T04:47:39.707Z",
+      "expected": "No customer statistical-treatment gate is introduced.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Failed step9 validation receives an internal parent check; confirmed failure or unresolved bounded recovery ends with a verified customer explanation and no restocking recommendation or second-best-model retry.",
+      "check_groups": [
+        "terminal",
+        "correction"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "The explicit sequence is initial-model/baseline evaluation (step6) \u2192 LLM-generated additional features (step7) \u2192 bounded model/feature comparison (step8) \u2192 frozen unseen validation.",
+      "check_groups": [
+        "sequence"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "LLM feature definitions and materialized outputs are traceable, prediction-time available, fold-safe and checked by the parent; original features remain a comparison reference.",
+      "check_groups": [
+        "features",
+        "sequence",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Comparable baseline/candidate evidence and correct metric direction are recorded.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Train/development/holdout boundaries, eligibility and prediction-time features are checked.",
+      "check_groups": [
+        "isolation",
+        "features",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC6",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Passing, worse and equal branches match the contract.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC7",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Fully observed development/holdout windows obey the cutoff; the final pass/fail rule is frozen before scoring and failure blocks delivery without optimization.",
+      "check_groups": [
+        "isolation",
+        "correction",
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-28-AC8",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-28",
+      "source_version": "2026-10-17T04:57:59.045Z",
+      "expected": "Stockout/profit/inventory-cost improvement is not claimed from forecast accuracy alone.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-29-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "source_version": "2026-10-17T04:57:59.896Z",
+      "expected": "Supported-input and insufficient-input customer responses are both grounded in evidence.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-29-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "source_version": "2026-10-17T04:57:59.896Z",
+      "expected": "Alternatives are offered without silently replacing the requested task.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-29-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "source_version": "2026-10-17T04:57:59.896Z",
+      "expected": "Synthetic provenance/material limitations remain clear.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-29-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "source_version": "2026-10-17T04:57:59.896Z",
+      "expected": "The final report contains the restocking list and concise verified EDA/feature findings; raw code and detailed diagnostics remain internal, with no interim analysis-progress message.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-29-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-29",
+      "source_version": "2026-10-17T04:57:59.896Z",
+      "expected": "No false unsuitability or execution-success claims.",
+      "check_groups": [
+        "terminal",
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-30-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "source_version": "2026-10-17T04:58:01.438Z",
+      "expected": "Final quantities reconcile to forecast, stock and eligible receipts without double counting.",
+      "check_groups": [
+        "arithmetic",
+        "receipts"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-30-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "source_version": "2026-10-17T04:58:01.438Z",
+      "expected": "Units, dates, rounding and applicable constraints are checked.",
+      "check_groups": [
+        "arithmetic",
+        "receipts"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-30-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "source_version": "2026-10-17T04:58:01.438Z",
+      "expected": "Missing/invalid/stale/conflicting inputs produce explicit correct handling.",
+      "check_groups": [
+        "stale",
+        "receipts",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-30-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "source_version": "2026-10-17T04:58:01.438Z",
+      "expected": "Synthetic output is illustrative, not a real purchasing recommendation.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-30-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-30",
+      "source_version": "2026-10-17T04:58:01.438Z",
+      "expected": "The delivered final report's list, EDA/feature summary and limitations match verified artifacts; a blocked task receives the supported capability response.",
+      "check_groups": [
+        "claims",
+        "stale",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-31-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "source_version": "2026-10-17T03:43:38.260Z",
+      "expected": "Future recording proves real execution of the one selected restocking case; no extra scenario suite.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-31-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "source_version": "2026-10-17T03:43:38.260Z",
+      "expected": "Source, synthetic inputs, assumptions and actual outputs are distinguishable.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-31-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "source_version": "2026-10-17T03:43:38.260Z",
+      "expected": "Missing-input success is not mislabeled as full end-to-end restocking success.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-31-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "source_version": "2026-10-17T03:43:38.260Z",
+      "expected": "No app launch/delivery or extra V1 workflow is required.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-31-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-31",
+      "source_version": "2026-10-17T03:43:38.260Z",
+      "expected": "Recording and versioned evidence agree.",
+      "check_groups": [
+        "stale",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-10-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "source_version": "2026-10-18T00:08:14.068Z",
+      "expected": "Fact/inference/assumption/synthetic/unknown provenance is testable.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-10-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "source_version": "2026-10-18T00:08:14.068Z",
+      "expected": "The one restocking task distinguishes ready/needs-material-facts capability states from system errors; no nine-dataset requirement.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-10-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "source_version": "2026-10-18T00:08:14.068Z",
+      "expected": "Cleanup and model choices do not become customer statistical decisions.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-10-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "source_version": "2026-10-18T00:08:14.068Z",
+      "expected": "Unsupported material facts use targeted review; routine analysis progress stays internal and its relevant findings appear in the final report.",
+      "check_groups": [
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-10-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-10",
+      "source_version": "2026-10-18T00:08:14.068Z",
+      "expected": "Permissions, isolation, retry/compute budgets, logs and model gates are verifiable.",
+      "check_groups": [
+        "approval",
+        "sequence",
+        "isolation",
+        "correction",
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC1",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "Step9 failure is parent-reviewed; confirmed underperformance, failed bounded correction or unresolved execution ends with an evidenced final customer explanation, no restocking list and no second-best-model retry. Runtime failure and measured validation failure are distinguished; this terminal behavior does not by itself prove a successful restocking demonstration.",
+      "check_groups": [
+        "terminal",
+        "correction"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC2",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "Execution evidence distinguishes step6's initial-model/baseline gate, step7 LLM-generated and validated additional features, and step8 model/feature comparison before frozen unseen validation; no final-holdout information enters feature generation.",
+      "check_groups": [
+        "sequence",
+        "isolation",
+        "features"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC3",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "The one end-to-end restocking case maps to actual execution and verification evidence.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC4",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "Missing-input assessments and actual restocking completion are classified correctly.",
+      "check_groups": [
+        "terminal",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC5",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "No unsupported operational fact, silent task switch or unnecessary statistical question passes.",
+      "check_groups": [
+        "features",
+        "arithmetic",
+        "claims",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC6",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "Full-input demo evidence and affected rechecks are required for gate closure.",
+      "check_groups": [
+        "stale",
+        "correction",
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    },
+    {
+      "requirement_id": "DSC-56-AC7",
+      "requirement_source": "https://linear.app/gr3enarr0w/issue/DSC-56",
+      "source_version": "2026-10-17T04:58:02.966Z",
+      "expected": "Fixture-validation results are not misrepresented as product tests or implementation completion.",
+      "check_groups": [
+        "manual"
+      ],
+      "artifact_version_binding": "See top-level artifact_version_binding and each group's implementation_paths/test_files",
+      "actual": "Local engineering outcomes are recorded per test in check-results.json; this criterion's required genuine integrated proof has not been reviewed.",
+      "decision": "blocked",
+      "uncovered": "Actual run-specific evidence and owner/reviewer acceptance; consult README.md and REVIEW.md. Mocks cover only the listed assertions."
+    }
+  ],
+  "initial_baseline": "7af5a855ea98a47d332b2428bc1325f8154eb49e"
+}

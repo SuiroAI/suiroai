@@ -1,0 +1,748 @@
+{
+  "bounded_comparison": {
+    "candidates": [
+      {
+        "candidate_id": "mock-initial-ridge",
+        "feature_set_id": "original",
+        "rationale": "Mock bounded linear trend.",
+        "scores": [
+          {
+            "forecast_origin_end": "2025-10-31",
+            "forecast_origin_start": "2025-10-31",
+            "metric_id": "mae",
+            "observation_count": 1,
+            "population_id": "mock-development",
+            "target_end_max": "2025-11-01",
+            "unit": "product_unit",
+            "value": 0.011976047904191489
+          },
+          {
+            "forecast_origin_end": "2025-10-31",
+            "forecast_origin_start": "2025-10-31",
+            "metric_id": "bias",
+            "observation_count": 1,
+            "population_id": "mock-development",
+            "target_end_max": "2025-11-01",
+            "unit": "product_unit",
+            "value": -0.011976047904191489
+          }
+        ]
+      },
+      {
+        "candidate_id": "mock-augmented-mean",
+        "feature_set_id": "augmented",
+        "rationale": "Mock simpler comparator for feature inclusion.",
+        "scores": [
+          {
+            "forecast_origin_end": "2025-10-31",
+            "forecast_origin_start": "2025-10-31",
+            "metric_id": "mae",
+            "observation_count": 1,
+            "population_id": "mock-development",
+            "target_end_max": "2025-11-01",
+            "unit": "product_unit",
+            "value": 6.0
+          },
+          {
+            "forecast_origin_end": "2025-10-31",
+            "forecast_origin_start": "2025-10-31",
+            "metric_id": "bias",
+            "observation_count": 1,
+            "population_id": "mock-development",
+            "target_end_max": "2025-11-01",
+            "unit": "product_unit",
+            "value": -6.0
+          }
+        ]
+      }
+    ],
+    "fit_count": 2,
+    "selected_candidate_id": "mock-initial-ridge",
+    "tie_rule": "earlier_predeclared_candidate"
+  },
+  "contract_version": "0.1.0-draft.3",
+  "evidence_mode": "mock",
+  "failing_validation": {
+    "evidence": {
+      "acceptance_rule": {
+        "all_gates_required": true,
+        "declared_at": "2026-10-17T09:00:15Z",
+        "metric_gates": [
+          {
+            "aggregation": "equal_series_mean",
+            "direction": "upper_bound",
+            "metric_id": "mae",
+            "population_id": "mock-final",
+            "threshold": 1.0,
+            "unit": "product_unit"
+          }
+        ],
+        "minimum_observation_count": 1,
+        "required_check_ids": [
+          "frozen_coverage"
+        ],
+        "rule_id": "mock-measured-mae",
+        "version": 1
+      },
+      "aggregation": "equal_series_mean",
+      "binding": {
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "input_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b",
+        "proposal_version": 1,
+        "task_id": "mock-retail-restocking",
+        "task_version": 1
+      },
+      "bundle_ref": {
+        "artifact_id": "mock-measured-freeze/bundle",
+        "provenance": "mock",
+        "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+        "version": 1
+      },
+      "checks": [
+        {
+          "actual": "1/1 (1.0)",
+          "check_id": "frozen_coverage",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-measured-freeze/bundle",
+              "provenance": "mock",
+              "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+              "version": 1
+            },
+            {
+              "artifact_id": "mock-export-fail",
+              "provenance": "mock",
+              "sha256": "20d69d796c16dab45bb0736db789f87a9fa607a8539e5777828173146ddb6e24",
+              "version": 1
+            }
+          ],
+          "expected": "predeclared minimum observation count and frozen population coverage",
+          "requirement_id": "DSC-28",
+          "status": "pass",
+          "verifier": "dsc28-frozen-calculation"
+        },
+        {
+          "actual": "excluded=0",
+          "check_id": "fully_observed_horizons",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-measured-freeze/bundle",
+              "provenance": "mock",
+              "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+              "version": 1
+            },
+            {
+              "artifact_id": "mock-export-fail",
+              "provenance": "mock",
+              "sha256": "20d69d796c16dab45bb0736db789f87a9fa607a8539e5777828173146ddb6e24",
+              "version": 1
+            }
+          ],
+          "expected": "every frozen forecast horizon observed",
+          "requirement_id": "DSC-28",
+          "status": "pass",
+          "verifier": "dsc28-frozen-calculation"
+        }
+      ],
+      "coverage_fraction": 1.0,
+      "eligible_observation_count": 1,
+      "excluded_horizons": [],
+      "execution_contract_sha256": "8077cb32e5f7b34772b2767542193a47f1bd7895b33f76b581e589b628766d73",
+      "execution_outcome": "completed",
+      "expected_observation_count": 1,
+      "format": "dsc28-validation-evidence-v1",
+      "frozen_result_ref": {
+        "artifact_id": "mock-measured-freeze/frozen-result",
+        "provenance": "mock",
+        "sha256": "1a83b36acbf07b0891e4043d8d27710f8e42c7fac60e9173027d49b8ce38aa4a",
+        "version": 1
+      },
+      "gate_results": [
+        {
+          "actual": 20.000000000000004,
+          "gate": {
+            "aggregation": "equal_series_mean",
+            "direction": "upper_bound",
+            "metric_id": "mae",
+            "population_id": "mock-final",
+            "threshold": 1.0,
+            "unit": "product_unit"
+          },
+          "passed": false
+        }
+      ],
+      "holdout_accessed_at": "2026-10-17T09:03:30Z",
+      "limitations": [
+        "Forecast accuracy alone does not establish stockout, profit or inventory-cost improvement.",
+        "Prepared target completeness and availability require independent upstream evidence."
+      ],
+      "november_30_forecast_ref": {
+        "artifact_id": "mock-measured-freeze/november30-forecast",
+        "provenance": "mock",
+        "sha256": "73034438043a6cc599b3d85bf5c301c923221546731972f9a5be659d321638eb",
+        "version": 1
+      },
+      "observed_through": "2025-12-31",
+      "outcome": "fail",
+      "per_series": [
+        {
+          "bias": -20.000000000000004,
+          "key": [
+            "mock-task",
+            "mock-product",
+            "mock-store"
+          ],
+          "mae": 20.000000000000004,
+          "observation_count": 1
+        }
+      ],
+      "requires_parent_review": true,
+      "reserved_targets_ref": null,
+      "reserved_unseen_data_ref": {
+        "artifact_id": "mock-export-fail",
+        "provenance": "mock",
+        "sha256": "20d69d796c16dab45bb0736db789f87a9fa607a8539e5777828173146ddb6e24",
+        "version": 1
+      },
+      "run_id": "mock-run-1",
+      "scored_at": "2026-10-17T09:04:00Z",
+      "scores": [
+        {
+          "forecast_origin_end": "2025-11-30",
+          "forecast_origin_start": "2025-11-30",
+          "metric_id": "mae",
+          "observation_count": 1,
+          "population_id": "mock-final",
+          "target_end_max": "2025-12-01",
+          "unit": "product_unit",
+          "value": 20.000000000000004
+        },
+        {
+          "forecast_origin_end": "2025-11-30",
+          "forecast_origin_start": "2025-11-30",
+          "metric_id": "bias",
+          "observation_count": 1,
+          "population_id": "mock-final",
+          "target_end_max": "2025-12-01",
+          "unit": "product_unit",
+          "value": -20.000000000000004
+        }
+      ]
+    },
+    "evidence_ref": {
+      "artifact_id": "mock-export-fail/evidence",
+      "provenance": "mock",
+      "sha256": "a50cfa5d2adb8aae6c6a77e6af1fd0fd96c7ed6a60f568c4caa823188413d457",
+      "version": 1
+    }
+  },
+  "feature_call": {
+    "is_real_llm_call": false,
+    "model_id": "mock-feature-llm",
+    "prompt_ref": {
+      "artifact_id": "fixture-added-features/prompt",
+      "provenance": "mock",
+      "sha256": "04e10daca944f4e5210c26f8e7dbf95153a5b2540897d8b4a94858172a292326",
+      "version": 1
+    },
+    "response_ref": {
+      "artifact_id": "fixture-added-features/response",
+      "provenance": "mock",
+      "sha256": "96964738bee802a035b3097f40c273a2ba876625ce8c266893f08fa0f8377c88",
+      "version": 1
+    }
+  },
+  "feature_materialization": {
+    "checks": {
+      "calculation_rechecked": true,
+      "finite_or_explicit_null": true,
+      "identity_alignment": true,
+      "null_counts": {
+        "calendar_product": 0,
+        "origin_weekend": 0
+      },
+      "original_values_preserved": true,
+      "reproducibility_sha256": "8b949003301aa42f4b02d027c32abab98e9e5c79b0d268f5b3666a10fb70065b",
+      "row_count": 2,
+      "stateless_no_fitted_parameters": true
+    },
+    "definitions": [
+      {
+        "availability_time_basis": "Known at forecast origin",
+        "event_time_basis": "Calendar at forecast origin",
+        "expression": "{\"op\": \"calendar\", \"part\": \"is_weekend\"}",
+        "feature_id": "origin_weekend",
+        "fit_scope": "training_fold_only",
+        "minimum_lag_calendar_days": 0,
+        "name": "Synthetic feature origin_weekend",
+        "rationale": "Synthetic component hypothesis only; comparison required",
+        "source_refs": [
+          {
+            "artifact_id": "fixture-post-step6-eda",
+            "provenance": "mock",
+            "sha256": "f0e285511635195ba903daa9a8dfef1797904eef1798f9f3aa4d26f30456aacf",
+            "version": 1
+          }
+        ],
+        "timing_rule": "Use unchanged origin-safe calendar inputs at inference",
+        "uses_only_information_available_at_origin": true
+      },
+      {
+        "availability_time_basis": "Known at forecast origin",
+        "event_time_basis": "Calendar at forecast origin",
+        "expression": "{\"op\": \"multiply\", \"fields\": [\"target_month\", \"target_day_of_year\"]}",
+        "feature_id": "calendar_product",
+        "fit_scope": "training_fold_only",
+        "minimum_lag_calendar_days": 0,
+        "name": "Synthetic feature calendar_product",
+        "rationale": "Synthetic component hypothesis only; comparison required",
+        "source_refs": [
+          {
+            "artifact_id": "fixture-post-step6-eda",
+            "provenance": "mock",
+            "sha256": "f0e285511635195ba903daa9a8dfef1797904eef1798f9f3aa4d26f30456aacf",
+            "version": 1
+          }
+        ],
+        "timing_rule": "Use unchanged origin-safe calendar inputs at inference",
+        "uses_only_information_available_at_origin": true
+      }
+    ],
+    "format": "dsc28-materialized-features-v1",
+    "inference_behavior": "Reuse these definitions unchanged; calendar uses forecast origin. Arithmetic propagates null and ratio by zero returns null. Any downstream imputation fits only on training folds.",
+    "initial_feature_fields": [
+      "target_month",
+      "target_day_of_year"
+    ],
+    "parent_approval": "required_externally",
+    "rows": [
+      {
+        "Product_ID": "P1",
+        "Store_ID": "S1",
+        "calendar_product": 3663,
+        "origin": "2025-11-29",
+        "origin_weekend": 1,
+        "target_day_of_year": 333,
+        "target_month": 11
+      },
+      {
+        "Product_ID": "P1",
+        "Store_ID": "S1",
+        "calendar_product": 3674,
+        "origin": "2025-11-30",
+        "origin_weekend": 1,
+        "target_day_of_year": 334,
+        "target_month": 11
+      }
+    ],
+    "selection_status": "validated_calculations_not_selected"
+  },
+  "feature_specs": [
+    {
+      "availability_time_basis": "Known at forecast origin",
+      "event_time_basis": "Calendar at forecast origin",
+      "expression": "{\"op\": \"calendar\", \"part\": \"is_weekend\"}",
+      "feature_id": "origin_weekend",
+      "fit_scope": "training_fold_only",
+      "minimum_lag_calendar_days": 0,
+      "name": "Synthetic feature origin_weekend",
+      "rationale": "Synthetic component hypothesis only; comparison required",
+      "source_refs": [
+        {
+          "artifact_id": "fixture-post-step6-eda",
+          "provenance": "mock",
+          "sha256": "f0e285511635195ba903daa9a8dfef1797904eef1798f9f3aa4d26f30456aacf",
+          "version": 1
+        }
+      ],
+      "timing_rule": "Use unchanged origin-safe calendar inputs at inference",
+      "uses_only_information_available_at_origin": true
+    },
+    {
+      "availability_time_basis": "Known at forecast origin",
+      "event_time_basis": "Calendar at forecast origin",
+      "expression": "{\"op\": \"multiply\", \"fields\": [\"target_month\", \"target_day_of_year\"]}",
+      "feature_id": "calendar_product",
+      "fit_scope": "training_fold_only",
+      "minimum_lag_calendar_days": 0,
+      "name": "Synthetic feature calendar_product",
+      "rationale": "Synthetic component hypothesis only; comparison required",
+      "source_refs": [
+        {
+          "artifact_id": "fixture-post-step6-eda",
+          "provenance": "mock",
+          "sha256": "f0e285511635195ba903daa9a8dfef1797904eef1798f9f3aa4d26f30456aacf",
+          "version": 1
+        }
+      ],
+      "timing_rule": "Use unchanged origin-safe calendar inputs at inference",
+      "uses_only_information_available_at_origin": true
+    }
+  ],
+  "frozen": {
+    "bundle_ref": {
+      "artifact_id": "mock-measured-freeze/bundle",
+      "provenance": "mock",
+      "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+      "version": 1
+    },
+    "frozen": {
+      "acceptance_rule_ref": {
+        "artifact_id": "mock-measured-freeze/acceptance-rule",
+        "provenance": "mock",
+        "sha256": "af56d44e700b5fd6b0d1d25a5aa6ff86c6d0e5788b449c6b2ca885ed6fc94586",
+        "version": 1
+      },
+      "development_input_refs": [
+        {
+          "artifact_id": "mock-original-feature-set",
+          "provenance": "mock",
+          "sha256": "7359a16448fab0cf3c336a870e68f4c8e6d31fc5a4a8c53b384403e193e3e72c",
+          "version": 1
+        }
+      ],
+      "evaluation_plan_ref": {
+        "artifact_id": "mock-measured-plan",
+        "provenance": "mock",
+        "sha256": "319c56e60a4fce42485da6fddcb088850c4c9e0998a3a65580fb1293b47b0902",
+        "version": 1
+      },
+      "feature_set_ref": {
+        "artifact_id": "mock-original-feature-set",
+        "provenance": "mock",
+        "sha256": "7359a16448fab0cf3c336a870e68f4c8e6d31fc5a4a8c53b384403e193e3e72c",
+        "version": 1
+      },
+      "forecast_as_of_date": "2025-11-30",
+      "forecast_input_refs": [
+        {
+          "artifact_id": "mock-original-feature-set",
+          "provenance": "mock",
+          "sha256": "7359a16448fab0cf3c336a870e68f4c8e6d31fc5a4a8c53b384403e193e3e72c",
+          "version": 1
+        }
+      ],
+      "freeze_id": "mock-measured-freeze",
+      "frozen_at": "2026-10-17T09:02:00Z",
+      "model_ref": {
+        "artifact_id": "mock-initial/model",
+        "provenance": "mock",
+        "sha256": "c6676f9eeaea504f0f9a87bf63f97a185f6dc82b12c21742a98e3d9229d23a16",
+        "version": 1
+      },
+      "no_reserved_outcomes_in_fit_selection_or_forecast": true,
+      "november_30_forecast_ref": {
+        "artifact_id": "mock-measured-freeze/november30-forecast",
+        "provenance": "mock",
+        "sha256": "73034438043a6cc599b3d85bf5c301c923221546731972f9a5be659d321638eb",
+        "version": 1
+      },
+      "preprocessing_ref": {
+        "artifact_id": "mock-initial/preprocessing",
+        "provenance": "mock",
+        "sha256": "03d5c797736d1e2e88eb9512b874564f44302a09ab798c57ef9bb7d53955771b",
+        "version": 1
+      },
+      "selected_candidate_id": "mock-initial-ridge"
+    },
+    "frozen_result_ref": {
+      "artifact_id": "mock-measured-freeze/frozen-result",
+      "provenance": "mock",
+      "sha256": "1a83b36acbf07b0891e4043d8d27710f8e42c7fac60e9173027d49b8ce38aa4a",
+      "version": 1
+    }
+  },
+  "initial_comparison": {
+    "baseline_label": "Past-only historical mean demo comparator; not the customer's actual process.",
+    "baseline_scores": [
+      {
+        "forecast_origin_end": "2025-10-31",
+        "forecast_origin_start": "2025-10-31",
+        "metric_id": "mae",
+        "observation_count": 1,
+        "population_id": "mock-development",
+        "target_end_max": "2025-11-01",
+        "unit": "product_unit",
+        "value": 6.0
+      },
+      {
+        "forecast_origin_end": "2025-10-31",
+        "forecast_origin_start": "2025-10-31",
+        "metric_id": "bias",
+        "observation_count": 1,
+        "population_id": "mock-development",
+        "target_end_max": "2025-11-01",
+        "unit": "product_unit",
+        "value": -6.0
+      }
+    ],
+    "candidate_scores": [
+      {
+        "forecast_origin_end": "2025-10-31",
+        "forecast_origin_start": "2025-10-31",
+        "metric_id": "mae",
+        "observation_count": 1,
+        "population_id": "mock-development",
+        "target_end_max": "2025-11-01",
+        "unit": "product_unit",
+        "value": 0.011976047904191489
+      },
+      {
+        "forecast_origin_end": "2025-10-31",
+        "forecast_origin_start": "2025-10-31",
+        "metric_id": "bias",
+        "observation_count": 1,
+        "population_id": "mock-development",
+        "target_end_max": "2025-11-01",
+        "unit": "product_unit",
+        "value": -0.011976047904191489
+      }
+    ],
+    "comparison": "better",
+    "parent_verified": false
+  },
+  "initial_nightly": "83f134fb7674de64d7f3a6b62f984bb6486ec81d",
+  "limitations": [
+    "Every identity, source, approval, LLM response and parent decision here is mock.",
+    "Temporary mock artifact stores are deleted; these content hashes describe test payloads and are not production retrieval references.",
+    "Current genuine preparation does not establish complete demand horizons or historical outcome availability.",
+    "Final gates in this implementation support absolute equal-series MAE/bias only; unsupported gates fail before freeze.",
+    "Aggregate forecast fixture has no daily trajectory and cannot produce a recommendation.",
+    "Feature fixture demonstrates materialization; its proposals did not earn inclusion in the separate numerical model fixture.",
+    "Forecast accuracy alone does not prove stockout, profit or inventory-cost improvements."
+  ],
+  "mock_parent_review_outcome": {
+    "evidence_ref": {
+      "artifact_id": "mock-export-fail/evidence",
+      "provenance": "mock",
+      "sha256": "a50cfa5d2adb8aae6c6a77e6af1fd0fd96c7ed6a60f568c4caa823188413d457",
+      "version": 1
+    },
+    "outcome": "validation_failed",
+    "parent_review": {
+      "actor": "mock-parent",
+      "checkpoint": "final_validation",
+      "decided_at": "2026-10-17T09:05:00Z",
+      "decision": "confirmed_failure",
+      "evidence_refs": [
+        {
+          "artifact_id": "mock-export-fail/evidence",
+          "provenance": "mock",
+          "sha256": "a50cfa5d2adb8aae6c6a77e6af1fd0fd96c7ed6a60f568c4caa823188413d457",
+          "version": 1
+        }
+      ],
+      "reason": "Explicit mock independent parent test decision."
+    }
+  },
+  "notice": "Actual calculations over explicit synthetic component fixtures. No customer data, approval, real LLM call, native stage run, genuine forecast, real final holdout score or restocking recommendation. Independent feature and model fixtures are not a coherent customer run.",
+  "passing_validation": {
+    "evidence": {
+      "acceptance_rule": {
+        "all_gates_required": true,
+        "declared_at": "2026-10-17T09:00:15Z",
+        "metric_gates": [
+          {
+            "aggregation": "equal_series_mean",
+            "direction": "upper_bound",
+            "metric_id": "mae",
+            "population_id": "mock-final",
+            "threshold": 1.0,
+            "unit": "product_unit"
+          }
+        ],
+        "minimum_observation_count": 1,
+        "required_check_ids": [
+          "frozen_coverage"
+        ],
+        "rule_id": "mock-measured-mae",
+        "version": 1
+      },
+      "aggregation": "equal_series_mean",
+      "binding": {
+        "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+        "input_version": 1,
+        "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b",
+        "proposal_version": 1,
+        "task_id": "mock-retail-restocking",
+        "task_version": 1
+      },
+      "bundle_ref": {
+        "artifact_id": "mock-measured-freeze/bundle",
+        "provenance": "mock",
+        "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+        "version": 1
+      },
+      "checks": [
+        {
+          "actual": "1/1 (1.0)",
+          "check_id": "frozen_coverage",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-measured-freeze/bundle",
+              "provenance": "mock",
+              "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+              "version": 1
+            },
+            {
+              "artifact_id": "mock-export-pass",
+              "provenance": "mock",
+              "sha256": "e541dcef07798ff0b1211641eca20bdcf5e3725f2f7421a8d1ffb5a5d24a2b91",
+              "version": 1
+            }
+          ],
+          "expected": "predeclared minimum observation count and frozen population coverage",
+          "requirement_id": "DSC-28",
+          "status": "pass",
+          "verifier": "dsc28-frozen-calculation"
+        },
+        {
+          "actual": "excluded=0",
+          "check_id": "fully_observed_horizons",
+          "evidence_refs": [
+            {
+              "artifact_id": "mock-measured-freeze/bundle",
+              "provenance": "mock",
+              "sha256": "aae17d8d9cddacc7bc40ffdec695f09cdbee7a2d12358f2474f5d0b91d82dd40",
+              "version": 1
+            },
+            {
+              "artifact_id": "mock-export-pass",
+              "provenance": "mock",
+              "sha256": "e541dcef07798ff0b1211641eca20bdcf5e3725f2f7421a8d1ffb5a5d24a2b91",
+              "version": 1
+            }
+          ],
+          "expected": "every frozen forecast horizon observed",
+          "requirement_id": "DSC-28",
+          "status": "pass",
+          "verifier": "dsc28-frozen-calculation"
+        }
+      ],
+      "coverage_fraction": 1.0,
+      "eligible_observation_count": 1,
+      "excluded_horizons": [],
+      "execution_contract_sha256": "8077cb32e5f7b34772b2767542193a47f1bd7895b33f76b581e589b628766d73",
+      "execution_outcome": "completed",
+      "expected_observation_count": 1,
+      "format": "dsc28-validation-evidence-v1",
+      "frozen_result_ref": {
+        "artifact_id": "mock-measured-freeze/frozen-result",
+        "provenance": "mock",
+        "sha256": "1a83b36acbf07b0891e4043d8d27710f8e42c7fac60e9173027d49b8ce38aa4a",
+        "version": 1
+      },
+      "gate_results": [
+        {
+          "actual": 0.5,
+          "gate": {
+            "aggregation": "equal_series_mean",
+            "direction": "upper_bound",
+            "metric_id": "mae",
+            "population_id": "mock-final",
+            "threshold": 1.0,
+            "unit": "product_unit"
+          },
+          "passed": true
+        }
+      ],
+      "holdout_accessed_at": "2026-10-17T09:03:30Z",
+      "limitations": [
+        "Forecast accuracy alone does not establish stockout, profit or inventory-cost improvement.",
+        "Prepared target completeness and availability require independent upstream evidence."
+      ],
+      "november_30_forecast_ref": {
+        "artifact_id": "mock-measured-freeze/november30-forecast",
+        "provenance": "mock",
+        "sha256": "73034438043a6cc599b3d85bf5c301c923221546731972f9a5be659d321638eb",
+        "version": 1
+      },
+      "observed_through": "2025-12-31",
+      "outcome": "pass",
+      "per_series": [
+        {
+          "bias": -0.5,
+          "key": [
+            "mock-task",
+            "mock-product",
+            "mock-store"
+          ],
+          "mae": 0.5,
+          "observation_count": 1
+        }
+      ],
+      "requires_parent_review": false,
+      "reserved_targets_ref": null,
+      "reserved_unseen_data_ref": {
+        "artifact_id": "mock-export-pass",
+        "provenance": "mock",
+        "sha256": "e541dcef07798ff0b1211641eca20bdcf5e3725f2f7421a8d1ffb5a5d24a2b91",
+        "version": 1
+      },
+      "run_id": "mock-run-1",
+      "scored_at": "2026-10-17T09:04:00Z",
+      "scores": [
+        {
+          "forecast_origin_end": "2025-11-30",
+          "forecast_origin_start": "2025-11-30",
+          "metric_id": "mae",
+          "observation_count": 1,
+          "population_id": "mock-final",
+          "target_end_max": "2025-12-01",
+          "unit": "product_unit",
+          "value": 0.5
+        },
+        {
+          "forecast_origin_end": "2025-11-30",
+          "forecast_origin_start": "2025-11-30",
+          "metric_id": "bias",
+          "observation_count": 1,
+          "population_id": "mock-final",
+          "target_end_max": "2025-12-01",
+          "unit": "product_unit",
+          "value": -0.5
+        }
+      ]
+    },
+    "evidence_ref": {
+      "artifact_id": "mock-export-pass/evidence",
+      "provenance": "mock",
+      "sha256": "3a4c01557d8a613b03777850e860aac92cb5c7a3f724095dab589cddfe693460",
+      "version": 1
+    }
+  },
+  "real_execution_accepted": false,
+  "reproduce": "PYTHONPATH=src python3 tests/modeling/export_component_evidence.py",
+  "saved_forecast_payload": {
+    "as_of_date": "2025-11-30",
+    "binding": {
+      "input_digest": "b2b78c1068e63cae9af351c5c31ef940078d9bb7dd71bd845c1fb0d60d28b40e",
+      "input_version": 1,
+      "proposal_digest": "7d4e90182b4e655a1439907f3775d1c7471d651b2a0dbcd1dea2f7616039637b",
+      "proposal_version": 1,
+      "task_id": "mock-retail-restocking",
+      "task_version": 1
+    },
+    "daily_forecast": null,
+    "execution_contract_sha256": "8077cb32e5f7b34772b2767542193a47f1bd7895b33f76b581e589b628766d73",
+    "format": "dsc28-forecast-v1",
+    "recommendation_ready": false,
+    "rows": [
+      {
+        "horizon_days": 1,
+        "key": [
+          "mock-task",
+          "mock-product",
+          "mock-store"
+        ],
+        "origin": "2025-11-30",
+        "predicted": 13.984031936127746,
+        "target_end": "2025-12-01",
+        "target_start": "2025-12-01"
+      }
+    ],
+    "run_id": "mock-run-1"
+  },
+  "source_nightly": "ee16115"
+}
