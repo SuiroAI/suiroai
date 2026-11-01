@@ -1,0 +1,256 @@
+{
+  "notice": "MOCK DEVELOPMENT ARTIFACT ONLY. No real model ran, no real approval was granted, and no customer report is authorized. The numerical and reporting examples use separate test-specific input bindings; they are not one end-to-end run.",
+  "reproduce": "tests/replenishment/test_handoff.py scenario() + calculate()",
+  "artifact": {
+    "kind": "quantity_result",
+    "schema_version": "0.1.0-draft.3",
+    "artifact_id": "mock-generated-candidate",
+    "artifact_version": 1,
+    "provenance": "mock",
+    "binding": {
+      "task_id": "mock-retail-restocking",
+      "task_version": 1,
+      "input_version": 1,
+      "input_digest": "aba934b2d82b2401b086d69670d068bdc4373b5db25f17f6940e36b8186da301",
+      "proposal_version": 1,
+      "proposal_digest": "2b6eea294e7291d7ade9c4b293991a17e678406fb15c4ee20c89e208f88d6c23"
+    },
+    "run_id": "mock-run-1",
+    "execution_contract_ref": {
+      "artifact_id": "mock-execution-contract",
+      "version": 1,
+      "sha256": "8791f7a19d32a933c586f3636aac8fa6576556b44d6d549c93befa77394abc86",
+      "provenance": "mock"
+    },
+    "final_validation_ref": {
+      "artifact_id": "mock-final-validation-result",
+      "version": 1,
+      "sha256": "94fdd9a728559495716735f259fd5810a56942b714e739fa235658ee234697e5",
+      "provenance": "mock"
+    },
+    "frozen_result_ref": {
+      "artifact_id": "mock-freeze-manifest",
+      "version": 1,
+      "sha256": "0b2c2e11e3628d9cf8a2ef948403226cd14fa3fbbb49fa64f75ecf3107c318f4",
+      "provenance": "mock"
+    },
+    "november_30_forecast_ref": {
+      "artifact_id": "mock-november-30-forecast",
+      "version": 1,
+      "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+      "provenance": "mock"
+    },
+    "arithmetic_source_refs": [
+      {
+        "artifact_id": "mock-november-30-forecast",
+        "version": 1,
+        "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+        "provenance": "mock"
+      },
+      {
+        "artifact_id": "mock-stock",
+        "version": 1,
+        "sha256": "2290c697e31b7935efcda507169b4d2cac70761519a6864ba5ec857da8eb952a",
+        "provenance": "mock"
+      },
+      {
+        "artifact_id": "mock-receipts",
+        "version": 1,
+        "sha256": "2629df64b5d1f82a3b11823306b45fd776fb3932ed7793ce725e1e14090e6389",
+        "provenance": "mock"
+      },
+      {
+        "artifact_id": "mock-policy",
+        "version": 1,
+        "sha256": "183f0dda2592f47150355d9e761e8a704eff3146f122f36bbd3f587b52519b75",
+        "provenance": "mock"
+      },
+      {
+        "artifact_id": "mock-prepared-development",
+        "version": 1,
+        "sha256": "440e53d06233ab3d69e1b8ea79c60cec55a39fe6d16400a743283e8f759cda75",
+        "provenance": "mock"
+      }
+    ],
+    "orders": [
+      {
+        "key": {
+          "source_namespace": "mock-retail",
+          "product_id": "MOCK-P001",
+          "store_id": "MOCK-STORE"
+        },
+        "quantity_unit": "product_unit",
+        "arithmetic_input_refs": [
+          {
+            "artifact_id": "mock-november-30-forecast",
+            "version": 1,
+            "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-stock",
+            "version": 1,
+            "sha256": "2290c697e31b7935efcda507169b4d2cac70761519a6864ba5ec857da8eb952a",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-receipts",
+            "version": 1,
+            "sha256": "2629df64b5d1f82a3b11823306b45fd776fb3932ed7793ce725e1e14090e6389",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-policy",
+            "version": 1,
+            "sha256": "183f0dda2592f47150355d9e761e8a704eff3146f122f36bbd3f587b52519b75",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-prepared-development",
+            "version": 1,
+            "sha256": "440e53d06233ab3d69e1b8ea79c60cec55a39fe6d16400a743283e8f759cda75",
+            "provenance": "mock"
+          }
+        ],
+        "forecast_ref": {
+          "artifact_id": "mock-november-30-forecast",
+          "version": 1,
+          "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+          "provenance": "mock"
+        },
+        "forecast_horizon_start": "2025-12-01",
+        "forecast_horizon_end": "2025-12-04",
+        "forecast_quantity": 10,
+        "usable_on_hand_quantity": 4,
+        "on_order_summary_quantity": 3,
+        "eligible_receipt_quantity": 3,
+        "supplier_lead_calendar_days": 2,
+        "review_period_calendar_days": 2,
+        "safety_stock_quantity": 2,
+        "order_multiple": 1,
+        "minimum_positive_order_quantity": 1,
+        "raw_order_need": 5,
+        "rounded_order_quantity": 5,
+        "approved_order_quantity": null,
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-november-30-forecast",
+            "version": 1,
+            "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-stock",
+            "version": 1,
+            "sha256": "2290c697e31b7935efcda507169b4d2cac70761519a6864ba5ec857da8eb952a",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-receipts",
+            "version": 1,
+            "sha256": "2629df64b5d1f82a3b11823306b45fd776fb3932ed7793ce725e1e14090e6389",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-policy",
+            "version": 1,
+            "sha256": "183f0dda2592f47150355d9e761e8a704eff3146f122f36bbd3f587b52519b75",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-prepared-development",
+            "version": 1,
+            "sha256": "440e53d06233ab3d69e1b8ea79c60cec55a39fe6d16400a743283e8f759cda75",
+            "provenance": "mock"
+          }
+        ]
+      }
+    ],
+    "exceptions": [],
+    "arithmetic_checks": [
+      {
+        "check_id": "key-1",
+        "requirement_id": "DSC-29/key-1",
+        "status": "pass",
+        "expected": "complete as-of inputs; reconciled ledger; daily stock coverage; net need rounded by declared policy",
+        "actual": "{\"as_of_date\": \"2025-11-30\", \"candidate_arrival_date\": \"2025-12-02\", \"daily_balances\": [{\"before_arrivals\": \"3\", \"candidate_arrival_quantity\": 0, \"closing\": \"3\", \"date\": \"2025-12-01\", \"forecast\": \"1\", \"opening\": \"4\", \"receipt_quantity\": 0}, {\"before_arrivals\": \"2\", \"candidate_arrival_quantity\": 5, \"closing\": \"10\", \"date\": \"2025-12-02\", \"forecast\": \"1\", \"opening\": \"3\", \"receipt_quantity\": 3}, {\"before_arrivals\": \"6\", \"candidate_arrival_quantity\": 0, \"closing\": \"6\", \"date\": \"2025-12-03\", \"forecast\": \"4\", \"opening\": \"10\", \"receipt_quantity\": 0}, {\"before_arrivals\": \"2\", \"candidate_arrival_quantity\": 0, \"closing\": \"2\", \"date\": \"2025-12-04\", \"forecast\": \"4\", \"opening\": \"6\", \"receipt_quantity\": 0}], \"eligible_receipt_quantity\": 3, \"forecast_quantity_exact\": \"10\", \"key\": {\"product_id\": \"MOCK-P001\", \"source_namespace\": \"mock-retail\", \"store_id\": \"MOCK-STORE\"}, \"ledger_total_quantity\": 3, \"minimum_positive_order_quantity\": 1, \"on_order_summary_quantity\": 3, \"order_multiple\": 1, \"outside_horizon_receipt_quantity\": 0, \"quantity_unit\": \"product_unit\", \"raw_order_need_exact\": \"5\", \"receipt_convention\": \"end_of_day_conservative\", \"receipts\": [{\"arrival_date\": \"2025-12-02\", \"csv_row\": 2, \"line_id\": \"MOCK-LINE-0\", \"order_date\": \"2025-11-29\", \"quantity\": 3, \"within_horizon\": true}], \"rounded_order_quantity\": 5, \"safety_stock_quantity\": 2, \"signed_need_exact\": \"5\", \"source_rows\": {\"forecast\": [1, 2, 3, 4], \"policy\": [2], \"receipts\": [2], \"stock\": [2]}, \"summary_subtracted\": false, \"usable_on_hand_quantity\": 4}",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-november-30-forecast",
+            "version": 1,
+            "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-stock",
+            "version": 1,
+            "sha256": "2290c697e31b7935efcda507169b4d2cac70761519a6864ba5ec857da8eb952a",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-receipts",
+            "version": 1,
+            "sha256": "2629df64b5d1f82a3b11823306b45fd776fb3932ed7793ce725e1e14090e6389",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-policy",
+            "version": 1,
+            "sha256": "183f0dda2592f47150355d9e761e8a704eff3146f122f36bbd3f587b52519b75",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-prepared-development",
+            "version": 1,
+            "sha256": "440e53d06233ab3d69e1b8ea79c60cec55a39fe6d16400a743283e8f759cda75",
+            "provenance": "mock"
+          }
+        ],
+        "verifier": "DSC-29-producer-self-check"
+      },
+      {
+        "check_id": "coverage",
+        "requirement_id": "DSC-29/coverage",
+        "status": "pass",
+        "expected": "each requested key has one order or an explicit exception",
+        "actual": "{\"exceptions\": 0, \"orders\": 1, \"requested_keys\": 1, \"self_check_only\": true}",
+        "evidence_refs": [
+          {
+            "artifact_id": "mock-november-30-forecast",
+            "version": 1,
+            "sha256": "cfd6808b781d7d5be88899b2154e1c35feb9b52062bdf8736db7c4b50a9ce5b3",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-stock",
+            "version": 1,
+            "sha256": "2290c697e31b7935efcda507169b4d2cac70761519a6864ba5ec857da8eb952a",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-receipts",
+            "version": 1,
+            "sha256": "2629df64b5d1f82a3b11823306b45fd776fb3932ed7793ce725e1e14090e6389",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-policy",
+            "version": 1,
+            "sha256": "183f0dda2592f47150355d9e761e8a704eff3146f122f36bbd3f587b52519b75",
+            "provenance": "mock"
+          },
+          {
+            "artifact_id": "mock-prepared-development",
+            "version": 1,
+            "sha256": "440e53d06233ab3d69e1b8ea79c60cec55a39fe6d16400a743283e8f759cda75",
+            "provenance": "mock"
+          }
+        ],
+        "verifier": "DSC-29-producer-self-check"
+      }
+    ],
+    "independent_check_refs": [],
+    "parent_decision": null,
+    "candidate_quantity_ref": null
+  }
+}

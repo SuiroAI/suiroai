@@ -1,0 +1,20 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "local-model-cache-observation.json",
+      "sha256": "0d79d9c9397578430e1ac248c43b63869989983bdaabc85ad8aa18f712e0a095",
+      "bytes": 1200
+    },
+    {
+      "path": "observation.json",
+      "sha256": "b8d652cb59717c6b0fedf9131f292cdc8a5fa8bcc449a3eee60f675da519241a",
+      "bytes": 6031
+    },
+    {
+      "path": "review.json",
+      "sha256": "75681ec65fb3660e212c2a358d530d41a3c22cb5632773dc94f7e950af7a2b2d",
+      "bytes": 1822
+    }
+  ]
+}
