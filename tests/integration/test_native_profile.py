@@ -23,7 +23,7 @@ def disabled_row():
 
 class NativeProfileTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-profile-", dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-profile-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.release, self.output = self.root / "released", self.root / "output"
@@ -159,7 +159,7 @@ class NativeProfileTests(unittest.TestCase):
 class NativeInventoryTests(unittest.TestCase):
     """Fake executable is local Python; stable CLI argv only, no Codex calls."""
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-inventory-", dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory(prefix="dsc26-MOCK-native-inventory-")
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.executable = self.root / "fake-cli"

@@ -202,7 +202,7 @@ class MockPreparationResultTests(unittest.TestCase):
         # Explicit artificial approval packet exercises the real adapter's
         # retrieval implementation without bypassing shared validation.
         self.packet = bound_packet(mock_approved_partition=True)
-        temporary = tempfile.TemporaryDirectory(prefix="dsc27-MOCK-adapter-", dir="/private/tmp")
+        temporary = tempfile.TemporaryDirectory(prefix="dsc27-MOCK-adapter-")
         self.addCleanup(temporary.cleanup)
         home = Path(temporary.name)
         store = ArtifactStore(home / "store")
@@ -242,7 +242,7 @@ class MockPreparationResultTests(unittest.TestCase):
             store.read_record(record_ref(built["record"]))
 
     def test_current_shared_contract_blocks_unapproved_derived_partition_before_dispatch(self):
-        temporary = tempfile.TemporaryDirectory(prefix="dsc27-MOCK-release-blocker-", dir="/private/tmp")
+        temporary = tempfile.TemporaryDirectory(prefix="dsc27-MOCK-release-blocker-")
         self.addCleanup(temporary.cleanup)
         home = Path(temporary.name)
         store = ArtifactStore(home / "store")
