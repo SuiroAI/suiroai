@@ -1,91 +1,84 @@
-# Architecture: data science as a service (DSaaS) pipeline
+# Architecture: DSaaS MVP — the 14-step working-demo flow
 
-**Status:** architecture of record. Supersedes the "rule engine / retail rule library" framing in
-`AGNOSTIC_ENGINE.md` and `RETAIL_CHAIN_SPEC.md` (both to be retired — see "Correction" below).
-
-Grounded in the Miro board *"SuiroAI — Agent Architecture and Guardrail Review."*
+**Status:** architecture of record for the MVP. Supersedes the "rule engine / retail rule library"
+framing (`AGNOSTIC_ENGINE.md`, `RETAIL_CHAIN_SPEC.md` — retired). Grounded in the Miro board
+*"SuiroAI — Agent Architecture and Guardrail Review."*
 
 ## What the product is
 
-Suiro is **data science as a service**. The product is the **framework that runs data science on a
-customer's data**, not a library of pre-written analyses. Concretely:
+Suiro is **data science as a service**. The customer, through an LLM, provides a problem and data;
+the LLM reiterates its understanding; the customer validates; then the service does the data
+science on the customer's data and delivers a result — ending in a **runnable customer app**.
 
-1. The **customer, through an LLM, provides a problem and data.**
-2. The **LLM evaluates it and reiterates its understanding back to the customer.**
-3. The **customer validates** that understanding.
-4. Only then does the **data-science-as-a-service run all the data science** on the customer's data
-   and deliver results.
+## MVP scope (very small, on purpose)
 
-The actual analysis (cleanup, EDA, features, models, validation) is produced **per customer, per
-upload** by the pipeline — it is **not** shipped as domain formulas. We build the framework; the
-data science happens when customers provide data.
+The board's own summary: **"A build plan for a working demo: one parent, one coding task, one
+execution pipeline, one humanizer and one usable customer app."** Singular everything. This is a
+literal demo/MVP:
 
-## Current scope: a simple demo / MVP
+- one prepared demo dataset, **one** supported business problem;
+- **no neural-network feature engineering**; the pipeline is simple;
+- as few stages as possible to show the end-to-end flow and produce a runnable app.
 
-Right now we build a **very simple version** of this — a literal demo/MVP, **not** the full
-pipeline. In particular there is **no neural-network feature engineering** (Miro stage 06 is out of
-scope for the MVP). The MVP demonstrates the DSaaS flow end to end with the minimum stages:
+## The main flow (14 steps)
 
-> customer provides data + problem → LLM understanding → **customer validates** →
-> the service runs the (simple) data science → results delivered.
+Left to right, **every arrow is a handoff**. Each green main-flow step has a blue **guardrail**
+above it (the invariant that must hold at that step). Clarifications or missing inputs return to
+Understanding; the first handoff happens **only after the customer confirms**.
 
-Heavy ML, NN feature engineering, and the broader chain are **future**, not now.
-
-## The pipeline (Miro 10 stages → backend)
-
-The board lays out ten stages, corresponding to the governed pipeline in `src/suiroai/`. The
-**MVP scope** column marks what the simple demo includes.
-
-| # | Miro stage | Backend stage / module | MVP |
+| # | Main-flow step | What happens | Guardrail |
 | --- | --- | --- | --- |
-| 01 | Input, understanding and validation | `intake` (understanding → proposal → **reiterate** → customer **approval/validation**) | ✅ in |
-| 02 | Data cleanup | `preparation` | ✅ in (simple) |
-| 03 | Exploratory data analysis | `preparation` | ✅ in (simple) |
-| 04 | Initial feature engineering | `preparation` | ✅ in (simple) |
-| 05 | Initial baseline comparison + customer understanding | `initial_baseline_evaluation` | ✅ in |
-| 06 | Neural-network feature engineering | `llm_features` | ❌ **out (MVP)** |
-| 07 | Model comparison and feature selection | `comparison_and_freeze` | ✅ in (baseline models) |
-| 08 | Final model validation on unseen data | `final_validation` | ✅ in |
-| 09 | Customer results presentation | `recommendations` / `reporting` | ✅ in |
-| 10 | Final delivery and runnable customer deliverable | `output_verification` + delivery | ✅ in |
+| 1 | Customer starts | Upload CSV/Excel; describe one business question | Input scope: one prepared demo dataset, one supported problem |
+| 2 | Parent + humanizer | Restate the goal in familiar language; check required data is present | Understanding: explicitly report missing data; no silent assumptions |
+| 3 | Customer confirms | Confirm understanding; supply missing info if asked | First handoff: understanding signed off, required inputs available |
+| 4 | Parent prepares one task | One pipeline specification: metric, splits, comparator, limits | Pipeline contract: context-aware cleaning, untouched holdout, agreed metric |
+| 5 | Codex writes the code | Cleaning → model → app: code, configuration and tests only | Authoring boundary: Codex writes, runtime executes; limited deps |
+| 6 | Parent approves the run | Inspect code and run contract; hand off to a separate environment | Run approval: review code before execution; bounded compute, permitted access |
+| 7 | Runtime executes a stage | One pipeline, staged execution; return real artifacts and logs | Execution: train/transforms, folds, stage logic, artifacts and versions |
+| 8 | Parent checks checkpoint | Verify results; resume next stage; only a complete pipeline advances | Checkpoint gates: stop on weak/invalid results; holdout never used to tune |
+| 9 | Humanizer presents results | Final findings, benefits and limits; parent verifies numbers and visuals | Explanation: plain language, supported claims, no extra approval gate |
+| 10 | Customer receives results | Plain-language report and charts; app delivery next, no reply gate | Results update: final validation passed; verified findings; preserve limitations |
+| 11 | Runtime builds executable | Build from approved Codex code; one input→output; return artifacts | Build checks: approved code + frozen artifacts; platform parity; fresh-input tests |
+| 12 | Customer receives app | Parent verifies app and instructions; deliver tested executable | Delivery checks: parent-verified executable + guide; no refitting; agreed platform |
+| 13 | App runs on fresh inputs | Customer uploads and clicks Run; validate; apply the frozen model | New-input checks: expected schema/units/history; no refitting during prediction |
+| 14 | Customer gets outputs | Readable business-purpose results; view/download; repeat as needed | Output fidelity: requested purpose and units; preserve limits; no inverted outputs |
 
-Stages 01 and 05 are the human-in-the-loop points: the LLM reiterates understanding and the
-customer validates. The `ParentWorkflow` (`parent/workflow.py`) is the guardrail controller that
-gates these transitions and keeps evidence immutable. For the MVP, the service drives this over the
-committed demo evidence; swapping in a live run is additive.
+**Execution loop (steps 7–8):** an accepted checkpoint resumes the next runtime stage; code errors
+return to the **same bounded Codex task** (step 5), not to the customer.
 
-## What the framework/service layer builds (and does not)
+## Map to the backend that exists
 
-**Builds (framework):**
-- Data + problem **intake** (upload, the LLM understanding, reiteration to the customer, validation).
-- **Driving the pipeline** over the customer's data through the ten stages, with the guardrails.
-- **Delivering results** (stage 09/10) to the frontend and as a runnable deliverable.
-- The HTTP/service surface, events and auth around all of the above.
+The five "actors" in the flow map to existing modules; the service layer wires them, it does not
+re-implement them.
 
-**Does not build (this is the data science, done by the pipeline on customer data):**
-- Pre-written cleanup/EDA/feature/model/analysis rules for any domain.
-- A shipped "retail rule library" of metrics/flags/thresholds.
+| Flow actor | Backend |
+| --- | --- |
+| Parent (guardrail controller, steps 2/4/6/8/12) | `parent/workflow.py` (`ParentWorkflow`) |
+| Humanizer (steps 2 restate, 9 present) | `intake` humanizer + `reporting/drafts.py` |
+| One coding task + runtime (steps 5/7/11) | `integration` (Codex/Data native adapter) + `modeling`/`preparation` stages |
+| Pipeline stages (step 7) | `preparation → initial_baseline_evaluation → comparison_and_freeze → final_validation` |
+| Contracts/evidence/checkpoints | `contracts` + the `ParentWorkflow` checkpoint gates |
 
-## Correction to earlier service-layer work
+Human-in-the-loop points are steps **3** (customer confirms understanding) and **10/12** (customer
+receives results, then the app). The MVP drives this over the committed demo evidence; a live
+Codex run is additive (and macOS-gated today — see the portability/native work).
 
-Earlier service PRs introduced a generic **rule engine** (`service/derive.py`, `service/rules.py`)
-and a **retail rule library** (`service/retail/restocking.py`, `suppliers.py`), plus a chain-area
-spec. Under the DSaaS framing these are a **misdirection**: they pre-author data-science rules
-rather than letting the pipeline do the analysis on customer data. They are therefore retired. The
-genuinely useful framework plumbing is kept:
+## What the service/framework layer builds (MVP)
 
-- **Keep:** `service/store.py` (evidence store), `service/orchestrator.py` (drive/read a run),
-  `service/views.py` (results → frontend).
-- **Retire:** `service/derive.py`, `service/rules.py`, `service/retail/**`, `AGNOSTIC_ENGINE.md`,
-  `RETAIL_CHAIN_SPEC.md`.
+- **Intake**: upload one dataset + one business question; run the humanizer's **restate →
+  customer-confirm** loop (steps 1–3).
+- **Drive the one task/one pipeline** through the parent's approve → execute → checkpoint loop
+  (steps 4–8), over demo evidence.
+- **Present results** (steps 9–10) and **deliver the runnable app** (steps 11–14): build the
+  executable from approved code, let the customer run it on fresh inputs, return outputs.
 
-The "agnostic" property is real but is delivered by the **pipeline running on whatever data/problem
-a customer supplies**, not by a rule-evaluation engine we ship.
+### Not in the MVP
+- Neural-network feature engineering.
+- Any authored domain rule library (the analysis is what the pipeline produces on the data).
+- Multi-problem / multi-dataset; it is one of each.
 
-## Forward plan (MVP)
+## Forward plan (MVP, stdlib only, no new deps)
 
-Resume the framework path with the **simple demo** scope: a stdlib HTTP service that lets a customer
-upload data and a problem, runs the LLM understanding + customer-validation loop (stage 01), drives
-the pipeline over the demo evidence, and returns the presentation and deliverable (stages 09/10).
-No neural-network feature engineering (stage 06). No domain data-science authored by us — the
-analysis is what the pipeline does on the customer's data.
+Resume the framework path scoped to these steps: a small HTTP service for steps 1–3 (upload +
+understanding + confirm), driving the parent/pipeline for steps 4–10 over demo evidence, then the
+app build + run for steps 11–14. No stage-06 NN work; no authored data science.
