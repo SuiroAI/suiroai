@@ -19,9 +19,18 @@ it rather than writing a parallel store. A-PR1 becomes a store factory + fixture
 - [x] `src/suiroai/service/store.py` — `open_store(root)` factory over `ArtifactStore`; `load_fixture_bundle(store, path)` validates the bundle + each record and stores records + external byte artifacts, returning an index by kind; fail-closed on unknown/invalid/tampered (R10)
 - [x] `tests/service/test_store.py` — 9 tests: all shipped fixtures load, records + external bytes round-trip, latest-version ordering, unknown ref / invalid record / tampered marker / missing-records all fail closed
 
-## A-PR2 · orchestration driver (DSC-71)
-- [ ] `service/orchestrator.py` — load a contract fixture bundle into the store; advance workflow stages; expose state + `checkpoint()`; surface mock provenance
-- [ ] `tests/service/test_orchestrator.py` — `successful_analysis` → report+quantity; `missing_inputs` → readiness gaps (R2); `validation_failed`/`execution_failed` → failure report, no orders (R9)
+## A-PR2 · orchestration façade (DSC-71)
+Design note: a **live** run needs a `StageAdapter` + the macOS-gated native host, unavailable on
+the universal path. So the façade is **read-only over committed evidence** (fixtures now, real run
+outputs later — same record kinds). It builds a trusted `Handoff` and classifies the terminal
+outcome from which records exist.
+- [x] `service/orchestrator.py` — `load_analysis(path)` → `AnalysisView` with `outcome`
+  (success/validation_failure/execution_failure/missing_inputs/running), `delivery_allowed` gate
+  (R9), and accessors for report_draft / quantity_result / evaluation_result / proposal / submission;
+  surfaces mock provenance + notice; `allow_mock=False` blocks mock-as-real
+- [x] `tests/service/test_orchestrator.py` — 9 tests: all 5 fixtures classify correctly;
+  success→report+orders+delivery_allowed; validation/execution failure→no orders, not delivery_allowed (R9);
+  missing_inputs→pre-execution, proposal still readable; approved_execution→running; mock-as-real rejected
 
 ## A-PR3 · record → view translation (DSC-72)
 - [ ] `service/views.py` — `submission`→`Analysis`/`DataFile[]` (roles map §2.1 incl. `dictionary`); gaps→`Readiness[]`; `evaluation_result`→`ModelResult[]`/`ModelRun`/`recommendedId`; `quantity_result`→`OrderLine[]`+exceptions; `report_draft`→summary/data tabs; escape text, http/https only (R11)
