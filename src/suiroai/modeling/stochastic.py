@@ -40,53 +40,45 @@ from __future__ import annotations
 
 from .core import ModelingError, finite
 
-#: Hyperparameters a caller may declare for the ``quantile_gbt`` kind. Every
-#: one is forwarded verbatim into the seeded LightGBM fit; anything outside
-#: this set is rejected by ``models.fit_model``'s parameter gate so a frozen
-#: model can never carry an undeclared, unreproducible configuration.
+#: Hyperparameters a caller may declare for the ``quantile_gbt`` kind. Every one
+#: is forwarded verbatim into dscraft's first-party seeded quantile fit; anything
+#: outside this set is rejected by ``models.fit_model``'s parameter gate so a
+#: frozen model can never carry an undeclared, unreproducible configuration.
+#:
+#: FIRST-PARTY RECONCILIATION: this previously targeted LightGBM via
+#: ``build_model("LightGBM", objective="quantile", ...)``. dscraft's first-party
+#: rebuild removed LightGBM, so the quantile capability is now dscraft's own
+#: ``DSQuantileBoost`` backend, consumed here through the public
+#: ``dscraft.automl.fit_quantile_model`` / serialized-inference contract -- no
+#: third-party backend, no ``booster_.dump_model()`` internal, no private attrs.
 QUANTILE_GBT_PARAMETERS = frozenset({
     "alpha",            # the target quantile tau in (0, 1); 0.5 == median/point
     "seed",             # recorded RNG seed -> reproducible stochastic sampling
     "n_estimators",
-    "num_leaves",
     "max_depth",
     "learning_rate",
-    "subsample",        # row subsampling: the stochastic part (with subsample_freq)
-    "colsample_bytree",  # feature subsampling: also stochastic
-    "min_child_samples",
+    "subsample",        # row subsampling: the stochastic part
 })
 
-#: Fixed LightGBM settings this module always imposes for reproducibility and
-#: safety; they are NOT caller-configurable and are recorded in the frozen
-#: state so the fit is auditable.
-_FIXED_FIT_SETTINGS = {
-    "objective": "quantile",
-    "deterministic": True,
-    "force_row_wise": True,
-    "verbose": -1,
-    "subsample_freq": 1,  # apply row subsampling every iteration (else ignored)
-}
 
-
-def _require_tabular():
-    """Import dscraft's seeded GBT backend, or raise an actionable error.
+def _require_quantile_backend():
+    """Import dscraft's first-party quantile contract, or raise an actionable error.
 
     Kept lazy (call-time) so that importing/using the modeling package for
-    inference never force-imports dscraft or its heavy stack. Also validates
-    the environment against dscraft's known-good set up front, so a subtly
-    incompatible install fails here with a clear message rather than deep
-    inside LightGBM.
+    inference never force-imports dscraft or its heavy stack. Also validates the
+    environment against dscraft's known-good set up front, so a subtly
+    incompatible install fails here with a clear message.
     """
     try:
         import dscraft
-        from dscraft.automl import build_model
+        from dscraft.automl import fit_quantile_model, predict_from_serialized
     except ImportError as exc:  # pragma: no cover - exercised via integration env
         raise ModelingError(
             "quantile_gbt requires the dscraft tabular backend; install "
             "suiroai with its dscraft[analytics] dependency"
         ) from exc
     dscraft.validate_environment("tabular")
-    return build_model
+    return fit_quantile_model, predict_from_serialized
 
 
 def _quantile(parameters: dict) -> float:
@@ -103,41 +95,35 @@ def _seed(parameters: dict) -> int:
     return seed
 
 
-def _fit_booster(training, parameters: dict):
-    """Fit a seeded, stochastic LightGBM quantile regressor (dscraft backend)."""
-    build_model = _require_tabular()
+def _prepare(training, parameters: dict):
+    """Train-only median imputation into a dense finite matrix (never peeks outside training)."""
     width = len(training[0].features)
-    # Train-only median imputation, recorded, mirroring the ridge path: a GBT
-    # must still see a dense, finite matrix and we never peek outside training.
     columns = [[r.features[j] for r in training if r.features[j] is not None] for j in range(width)]
     from statistics import median
     medians = [median(col) if col else 0.0 for col in columns]
     matrix = [[medians[j] if v is None else float(finite(v)) for j, v in enumerate(r.features)]
               for r in training]
     targets = [finite(r.actual) for r in training]
+    return matrix, targets, medians
+
+
+def fit_quantile_gbt(training, parameters: dict) -> dict:
+    """Fit a seeded first-party quantile model via dscraft and distill to JSON state.
+
+    Returns a ``canonical()``-serializable dict (JSON-native numbers/strings/lists/dicts;
+    no NaN, no bytes, no pickled objects). The distilled ``model`` payload is dscraft's own
+    ``ds_quantile_v1`` serialization (a JSON tree ensemble), so inference is a pure-arithmetic
+    tree walk that never imports dscraft or any training backend.
+    """
+    fit_quantile_model, _ = _require_quantile_backend()
+    matrix, targets, medians = _prepare(training, parameters)
     tau = _quantile(parameters)
     seed = _seed(parameters)
     kwargs = {k: parameters[k] for k in QUANTILE_GBT_PARAMETERS
               if k in parameters and k not in {"alpha", "seed"}}
-    model = build_model(
-        "LightGBM", "regression",
-        alpha=tau, random_state=seed, **_FIXED_FIT_SETTINGS, **kwargs,
-    )
-    model.fit(matrix, targets)
-    return model, medians, tau, seed
-
-
-def distill_booster(model, *, medians, tau, seed, parameters: dict) -> dict:
-    """Distill a fitted booster into JSON-native, pure-arithmetic inference state.
-
-    The returned dict is ``canonical()``-serializable (only JSON-native numbers,
-    strings, lists and dicts -- no NaN, no bytes, no pickled objects). Every
-    tree is reduced to the minimal fields the stdlib walker in
-    :func:`predict_ensemble` needs: split feature index, threshold, missing
-    direction, and child nodes / leaf values.
-    """
-    dump = model.booster_.dump_model()
-    trees = [_distill_node(info["tree_structure"]) for info in dump["tree_info"]]
+    model = fit_quantile_model(matrix, targets, quantiles=(tau,), seed=seed, **kwargs)
+    import json as _json
+    serialized = _json.loads(model.serialize().decode("utf-8"))
     return {
         "kind": "quantile_gbt",
         "parameters": dict(parameters),
@@ -147,61 +133,51 @@ def distill_booster(model, *, medians, tau, seed, parameters: dict) -> dict:
         "clip_negative_forecasts": True,
         "fit_scope": "training_fold_only",
         "imputation": "training_median",
-        "backend": "dscraft.automl.LightGBM",
+        "backend": "dscraft.automl.DSQuantileBoost",
         "objective": "quantile",
-        "trees": trees,
+        # dscraft's ds_quantile_v1 JSON payload (the model itself, not a refit recipe).
+        "ds_quantile_model": serialized,
     }
 
 
-def _distill_node(node: dict) -> dict:
-    """Recursively reduce one LightGBM dump node to a minimal JSON form."""
-    if "leaf_value" in node:
-        return {"leaf": finite(node["leaf_value"], "leaf value")}
-    if node.get("decision_type") != "<=":
-        # LightGBM uses "<=" for numeric splits; categorical "==" splits would
-        # need a different walker and are not produced for our numeric features.
-        raise ModelingError("unsupported non-numeric tree split in distilled model")
-    return {
-        "feature": int(node["split_feature"]),
-        "threshold": finite(node["threshold"], "split threshold"),
-        "default_left": bool(node["default_left"]),
-        "left": _distill_node(node["left_child"]),
-        "right": _distill_node(node["right_child"]),
-    }
-
-
-def _walk(node: dict, features) -> float:
-    """Pure-arithmetic single-tree traversal. Mirrors LightGBM numeric routing."""
+def _walk_tree(node: dict, features) -> float:
+    """Pure-stdlib single-tree traversal over a distilled ds_quantile_v1 node."""
     while "leaf" not in node:
-        value = features[node["feature"]]
-        if value is None:
-            node = node["left"] if node["default_left"] else node["right"]
-        else:
-            node = node["left"] if value <= node["threshold"] else node["right"]
+        node = node["left"] if features[node["feature"]] <= node["threshold"] else node["right"]
     return node["leaf"]
 
 
 def predict_ensemble(state: dict, features) -> float:
-    """Reproduce the booster's quantile prediction from distilled JSON state.
+    """Reproduce the quantile prediction from distilled JSON state (pure stdlib).
 
-    ``features`` is the raw example feature tuple (may contain ``None``). Train
-    -only medians recorded at fit time impute missing values exactly as the fit
-    saw them, so inference matches training preprocessing. The sum over trees is
-    LightGBM's raw additive score; the quantile objective means this already is
-    the predicted ``tau`` quantile. Negative forecasts are clamped to zero
+    ``features`` is the raw example feature tuple (may contain ``None``). Train-only medians
+    recorded at fit time impute missing values exactly as the fit saw them, so inference matches
+    training preprocessing. The tree walk is pure stdlib arithmetic over the stored
+    ``ds_quantile_v1`` JSON ensemble -- it deliberately does NOT import dscraft, so loading and
+    predicting a frozen model never pulls in the training backend or its heavy dependencies
+    (this preserves the no-pickle, stdlib-only inference guarantee). The single stored quantile's
+    ensemble is summed as ``init + learning_rate * sum(tree)``; negatives are clamped to zero
     (gross units cannot be negative), consistent with the other model kinds.
     """
     medians = state["medians"]
     if len(features) != len(medians):
         raise ModelingError("inference feature alignment changed")
-    imputed = [medians[i] if x is None else finite(x) for i, x in enumerate(features)]
-    total = 0.0
-    for tree in state["trees"]:
-        total += _walk(tree, imputed)
+    imputed = [medians[i] if x is None else float(finite(x)) for i, x in enumerate(features)]
+    tau = float(state["quantile"])
+    model = state["ds_quantile_model"]
+    ensembles = model.get("ensembles") or {}
+    # single-quantile model: find the ensemble whose key parses to tau
+    ens = None
+    for key, candidate in ensembles.items():
+        try:
+            if abs(float(key) - tau) < 1e-12:
+                ens = candidate
+                break
+        except (TypeError, ValueError):
+            continue
+    if ens is None:
+        raise ModelingError("distilled quantile ensemble missing for the recorded quantile")
+    if len(imputed) != ens["n_features_in"]:
+        raise ModelingError("inference feature alignment changed")
+    total = ens["init"] + ens["learning_rate"] * sum(_walk_tree(t, imputed) for t in ens["trees"])
     return max(0.0, finite(total, "prediction"))
-
-
-def fit_quantile_gbt(training, parameters: dict) -> dict:
-    """Fit + distill in one step; returns JSON-native state for ``FittedModel``."""
-    model, medians, tau, seed = _fit_booster(training, parameters)
-    return distill_booster(model, medians=medians, tau=tau, seed=seed, parameters=parameters)

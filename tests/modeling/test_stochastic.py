@@ -42,15 +42,17 @@ def _ex(x, extra=1.0):
     return Example(Window(K, date(2024, 1, 1), 1), (float(x), float(extra)), 0.0, date(2024, 1, 2))
 
 
+# First-party quantile backend (dscraft DSQuantileBoost) parameter surface. The
+# LightGBM-specific knobs (num_leaves / colsample_bytree / min_child_samples) were
+# removed with the third-party backend; the first-party booster is configured by
+# n_estimators / max_depth / learning_rate / subsample.
 _PARAMS = {
     "alpha": 0.5,
     "seed": 42,
     "n_estimators": 12,
-    "num_leaves": 7,
     "max_depth": 3,
+    "learning_rate": 0.1,
     "subsample": 0.8,
-    "colsample_bytree": 0.8,
-    "min_child_samples": 3,
 }
 
 
