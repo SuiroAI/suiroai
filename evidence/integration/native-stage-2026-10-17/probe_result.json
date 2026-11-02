@@ -1,0 +1,15 @@
+{
+  "row_count": 3,
+  "group_totals": {
+    "A": 5,
+    "B": 5
+  },
+  "total_units": 10,
+  "binding": {
+    "probe_kind": "engineering_synthetic_only",
+    "task_version": 1,
+    "input_version": 1,
+    "run_id": "35fdfc4e-0289-4b53-a2b8-464acd02177e",
+    "input_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849"
+  }
+}
