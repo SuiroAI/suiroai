@@ -1,0 +1,108 @@
+{
+  "record_kind": "reviewed_actual_engineering_failure_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "native_identity": {
+    "mode": "engineering",
+    "thread_id": "01a14b85-5cb1-7b82-a8b2-ffbeb48ba202",
+    "turn_id": "01a14b85-5d00-77b1-9bdf-1e6fef8d2f99",
+    "host_user_agent": "suiroai_dsc26_native/0.163.0 (Mac OS 26.5.2; arm64) ghostty/1.3.1 (suiroai_dsc26_native; 0.1.0)",
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "plugin_id": "data-analytics@openai-curated-remote",
+    "remote_plugin_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11",
+    "installed": true,
+    "enabled": true,
+    "attachment": {
+      "type": "mention",
+      "name": "Data",
+      "path": "plugin://data-analytics@openai-curated-remote"
+    },
+    "skill_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+    "effective_sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": false,
+      "excludeSlashTmp": false
+    }
+  },
+  "original_adapter_result": {
+    "outcome": "execution_failed",
+    "error_code": "timeout",
+    "message": "Native operation exceeded its finite deadline",
+    "terminal_status": "interrupted"
+  },
+  "actual_interrupt_request": {
+    "id": 5,
+    "method": "turn/interrupt",
+    "params": {
+      "threadId": "01a14b85-5cb1-7b82-a8b2-ffbeb48ba202",
+      "turnId": "01a14b85-5d00-77b1-9bdf-1e6fef8d2f99"
+    }
+  },
+  "actual_interrupt_acknowledgment": {
+    "id": 5,
+    "result": {}
+  },
+  "native_turn_terminal": {
+    "id": "01a14b85-5d00-77b1-9bdf-1e6fef8d2f99",
+    "rootTurnId": "01a14b85-5d00-77b1-9bdf-1e6fef8d2f99",
+    "status": "interrupted",
+    "error": null,
+    "startedAt": 1792268393,
+    "completedAt": 1792268452,
+    "durationMs": 59122
+  },
+  "actual_python_command_started": {
+    "id": "exec-57abda9a-3105-42d3-889c-75e7ccad26a7",
+    "command": "/bin/zsh -lc 'python3 waiting_probe.py'",
+    "cwd": "/private/tmp/dsc26-native-failures-658wxq2w/timeout/synthetic-stage",
+    "status": "inProgress",
+    "exitCode": null,
+    "processId": "18987"
+  },
+  "actual_python_output_delta": {
+    "threadId": "01a14b85-5cb1-7b82-a8b2-ffbeb48ba202",
+    "turnId": "01a14b85-5d00-77b1-9bdf-1e6fef8d2f99",
+    "itemId": "exec-57abda9a-3105-42d3-889c-75e7ccad26a7",
+    "delta": "synthetic wait started\n"
+  },
+  "event_monotonic_seconds": {
+    "python_command_started": 423177.860286041,
+    "python_output_observed": 423178.097383583,
+    "interrupt_sent": 423215.439739458,
+    "interrupted_terminal_received": 423215.444559583
+  },
+  "script": {
+    "retained_path": "waiting_probe.py",
+    "original_path": "/private/tmp/dsc26-native-failures-658wxq2w/timeout/synthetic-stage/waiting_probe.py",
+    "sha256": "4449da139e98391e7e710283e678f08eed8d714223a7a629597a7facf4655080",
+    "bytes": 127
+  },
+  "checks": {
+    "original_timeout_classification_matches": true,
+    "native_interrupt_acknowledged": true,
+    "matching_interrupted_terminal_observed": true,
+    "python_command_started_and_printed_wait_marker": true,
+    "matching_python_completed_item_present": false
+  },
+  "review": {
+    "decision": "actual_bounded_native_timeout_and_turn_interruption_demonstrated",
+    "limitation": "A real Python wait command started and printed its marker before timeout. No matching command-completed or OS-process-exit receipt was retained, so process termination is not independently demonstrated."
+  },
+  "raw_evidence_references": [
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/timeout/evidence/native-run.json",
+      "sha256": "4e536c5a80320fff5969e229c498438e9c0b83cffa486808fc9ead7109e8374f",
+      "bytes": 104477
+    },
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/timeout/evidence/native-rpc.jsonl",
+      "sha256": "e11eb923bc8fd44b2ac65c20f2a98a424a41e9249fd837d82a884ff26cd7f292",
+      "bytes": 324693
+    }
+  ]
+}
