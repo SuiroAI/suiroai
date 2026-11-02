@@ -1,0 +1,344 @@
+{
+  "record_kind": "independently_reviewed_synthetic_engineering_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "observed_at_utc": "2026-10-17T19:57:17.571929+00:00",
+  "reviewed_at_utc": "2026-10-17T20:00:39.853205+00:00",
+  "scope": "One three-row synthetic CSV calculation; no retail data, customer approval or customer stage.",
+  "host": {
+    "executable": "/opt/homebrew/bin/codex",
+    "reported_version": "0.163.0",
+    "interface": "app-server stdio",
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "litellm_gateway_verified": false
+  },
+  "plugin": {
+    "id": "data-analytics@openai-curated-remote",
+    "remotePluginId": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11",
+    "localVersion": "1.0.11",
+    "installed": true,
+    "enabled": true,
+    "source": {
+      "type": "remote"
+    }
+  },
+  "attachment": {
+    "type": "mention",
+    "name": "Data",
+    "path": "plugin://data-analytics@openai-curated-remote"
+  },
+  "attachment_mode": "native_plugin_mention",
+  "native_skill_evidence": {
+    "skill_name": "index",
+    "markdown_bytes": 66898,
+    "sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+    "full_markdown_committed": false
+  },
+  "native_execution": {
+    "thread_id": "01a14b70-b045-7751-b142-9a4af12556b6",
+    "turn_id": "01a14b70-b0f0-73f0-bc61-98047f5b24fe",
+    "status": "completed",
+    "error": null,
+    "duration_ms": 21917,
+    "turn_deadline_seconds": 90,
+    "sandbox_request": "workspace-write",
+    "effective_sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": false,
+      "excludeSlashTmp": false
+    },
+    "approval_policy": "never",
+    "calculation_command_ids": [
+      "exec-3fb1251d-dfa4-4b99-b0b0-15984777045b"
+    ],
+    "generated_code_change_id": "exec-9aca221a-436b-4dc9-972c-949ffd1ff2a0"
+  },
+  "engineering_binding": {
+    "probe_kind": "engineering_synthetic_only",
+    "task_version": 1,
+    "input_version": 1,
+    "run_id": "35fdfc4e-0289-4b53-a2b8-464acd02177e",
+    "input_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849"
+  },
+  "expected_and_actual_result": {
+    "row_count": 3,
+    "group_totals": {
+      "A": 5,
+      "B": 5
+    },
+    "total_units": 10
+  },
+  "artifacts": [
+    {
+      "path": "probe_input.csv",
+      "sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "bytes": 26,
+      "native_source": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage/probe_input.csv",
+      "original_fetched_reference": "/private/tmp/dsc26-data-stage-p71l6d8o/fetched/probe_input.csv"
+    },
+    {
+      "path": "binding.json",
+      "sha256": "4ab6b3a978c3c13dcf23d2fe74178e380a0fbe9ec9bc50776a762c93d6b2d002",
+      "bytes": 230,
+      "native_source": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage/binding.json",
+      "original_fetched_reference": "/private/tmp/dsc26-data-stage-p71l6d8o/fetched/binding.json"
+    },
+    {
+      "path": "probe_calculation.py",
+      "sha256": "985ed5458c973cacb845527ee11a92e6ffb9a5ca82fed9578edff76a1cbadfeb",
+      "bytes": 992,
+      "native_source": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage/probe_calculation.py",
+      "original_fetched_reference": "/private/tmp/dsc26-data-stage-p71l6d8o/fetched/probe_calculation.py"
+    },
+    {
+      "path": "probe_result.json",
+      "sha256": "271758f61b9548bf87903cecb67ace2f45a2da8dfdb2aec0fd70cd5bf2985a72",
+      "bytes": 346,
+      "native_source": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage/probe_result.json",
+      "original_fetched_reference": "/private/tmp/dsc26-data-stage-p71l6d8o/fetched/probe_result.json"
+    }
+  ],
+  "command_evidence": [
+    {
+      "id": "exec-7f1a3bdc-be94-42fa-a5b7-440cd0e96256",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 212,
+      "streamed_item_canonical_sha256": "e5a488d605110039a4be8aff9fcdc93c136c79ac8cc08cbca381012bc26970db",
+      "persisted_item_canonical_sha256": "3fdc36f299c4e5223e61b4cb279ec154c4352e1e3c9a7359584d675637525fc5",
+      "streamed_output_bytes": 66898,
+      "streamed_output_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "persisted_output_bytes": 65536,
+      "persisted_output_sha256": "629750a59ce38001e77d38bf58c554c6f6b101d4a43ab5e66a1dcea935ef3cf1",
+      "persisted_output_truncated": true
+    },
+    {
+      "id": "exec-d6635238-56c1-42f2-9881-9ca2a2f9a88f",
+      "command": "/bin/zsh -lc pwd",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 219,
+      "streamed_item_canonical_sha256": "255cfe3628fa5fb77168abed0baf37e6f814cfa85710735900caa5503be68db8",
+      "persisted_item_canonical_sha256": "255cfe3628fa5fb77168abed0baf37e6f814cfa85710735900caa5503be68db8",
+      "streamed_output_bytes": 55,
+      "streamed_output_sha256": "702c7d297285476528ff65883b19b3efb9c9f22068f320305536b8ee774de650",
+      "persisted_output_bytes": 55,
+      "persisted_output_sha256": "702c7d297285476528ff65883b19b3efb9c9f22068f320305536b8ee774de650"
+    },
+    {
+      "id": "exec-3994d828-0fa0-494c-bb80-7a6234d629db",
+      "command": "/bin/zsh -lc 'cat probe_input.csv binding.json'",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 220,
+      "streamed_item_canonical_sha256": "4b18ce49091c2716a70b65c13caeb9774ea9486d09064d37994b119ae6152500",
+      "persisted_item_canonical_sha256": "4b18ce49091c2716a70b65c13caeb9774ea9486d09064d37994b119ae6152500",
+      "streamed_output_bytes": 256,
+      "streamed_output_sha256": "f2429124c99d5453cedf7234a5038fc3cfbd9aa7527112b2fab2322c49c99a9a",
+      "persisted_output_bytes": 256,
+      "persisted_output_sha256": "f2429124c99d5453cedf7234a5038fc3cfbd9aa7527112b2fab2322c49c99a9a"
+    },
+    {
+      "id": "exec-4d5aa64f-750e-4696-b0f2-6fb041608484",
+      "command": "/bin/zsh -lc \"sed -n '150,250p' /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md\"",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 222,
+      "streamed_item_canonical_sha256": "5d0a7c969149484479db5dd4bdad628e52b9b708501647089bac05e7ceb234e0",
+      "persisted_item_canonical_sha256": "5d0a7c969149484479db5dd4bdad628e52b9b708501647089bac05e7ceb234e0",
+      "streamed_output_bytes": 12735,
+      "streamed_output_sha256": "b781f5741e56ad0405e4f81b6ced0d0f5d2cd57f6114b37bd01370a9ebe7c1a7",
+      "persisted_output_bytes": 12735,
+      "persisted_output_sha256": "b781f5741e56ad0405e4f81b6ced0d0f5d2cd57f6114b37bd01370a9ebe7c1a7"
+    },
+    {
+      "id": "exec-627e0d2b-fe98-40a5-ad5e-6313d4f7f068",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 224,
+      "streamed_item_canonical_sha256": "8f4e79771b9f4d5b20ce43baf4901069a8c0fcdb117c733b9c9bfb6d5c99c911",
+      "persisted_item_canonical_sha256": "8f4e79771b9f4d5b20ce43baf4901069a8c0fcdb117c733b9c9bfb6d5c99c911",
+      "streamed_output_bytes": 18781,
+      "streamed_output_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "persisted_output_bytes": 18781,
+      "persisted_output_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7"
+    },
+    {
+      "id": "exec-3fb1251d-dfa4-4b99-b0b0-15984777045b",
+      "command": "/bin/zsh -lc 'python3 probe_calculation.py'",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 258,
+      "streamed_item_canonical_sha256": "e5548815aff8754d80d8e8045ed420c5d6a226dabb2c322f7ffc1fe25da301bc",
+      "persisted_item_canonical_sha256": "e5548815aff8754d80d8e8045ed420c5d6a226dabb2c322f7ffc1fe25da301bc",
+      "streamed_output_bytes": null,
+      "streamed_output_sha256": null,
+      "persisted_output_bytes": null,
+      "persisted_output_sha256": null
+    },
+    {
+      "id": "exec-ac89fba6-7867-42bd-9dd8-9a786a129cb5",
+      "command": "/bin/zsh -lc 'cat probe_result.json'",
+      "cwd": "/private/tmp/dsc26-data-stage-p71l6d8o/synthetic-stage",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 222,
+      "streamed_item_canonical_sha256": "459079d8da4ee58e006b13b26d991ec3bbc351fbca9dba23ace8d763c795f101",
+      "persisted_item_canonical_sha256": "459079d8da4ee58e006b13b26d991ec3bbc351fbca9dba23ace8d763c795f101",
+      "streamed_output_bytes": 346,
+      "streamed_output_sha256": "271758f61b9548bf87903cecb67ace2f45a2da8dfdb2aec0fd70cd5bf2985a72",
+      "persisted_output_bytes": 346,
+      "persisted_output_sha256": "271758f61b9548bf87903cecb67ace2f45a2da8dfdb2aec0fd70cd5bf2985a72"
+    }
+  ],
+  "independent_checks": [
+    {
+      "check": "probe_input.csv: recorded hash and byte count match",
+      "passed": true
+    },
+    {
+      "check": "probe_input.csv: fetched bytes equal native output/source",
+      "passed": true
+    },
+    {
+      "check": "binding.json: recorded hash and byte count match",
+      "passed": true
+    },
+    {
+      "check": "binding.json: fetched bytes equal native output/source",
+      "passed": true
+    },
+    {
+      "check": "probe_calculation.py: recorded hash and byte count match",
+      "passed": true
+    },
+    {
+      "check": "probe_calculation.py: fetched bytes equal native output/source",
+      "passed": true
+    },
+    {
+      "check": "probe_result.json: recorded hash and byte count match",
+      "passed": true
+    },
+    {
+      "check": "probe_result.json: fetched bytes equal native output/source",
+      "passed": true
+    },
+    {
+      "check": "Exact engineering binding propagated to result",
+      "passed": true
+    },
+    {
+      "check": "Input digest matches original synthetic CSV",
+      "passed": true
+    },
+    {
+      "check": "Independent row/group/total recomputation",
+      "passed": true
+    },
+    {
+      "check": "exec-7f1a3bdc-be94-42fa-a5b7-440cd0e96256: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "Full streamed Data index matches native remote skill retrieval",
+      "passed": true
+    },
+    {
+      "check": "Persisted Data index declares truncation",
+      "passed": true
+    },
+    {
+      "check": "exec-d6635238-56c1-42f2-9881-9ca2a2f9a88f: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "exec-3994d828-0fa0-494c-bb80-7a6234d629db: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "exec-4d5aa64f-750e-4696-b0f2-6fb041608484: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "exec-627e0d2b-fe98-40a5-ad5e-6313d4f7f068: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "exec-3fb1251d-dfa4-4b99-b0b0-15984777045b: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "Calculation execution stream and persisted item match exactly",
+      "passed": true
+    },
+    {
+      "check": "exec-ac89fba6-7867-42bd-9dd8-9a786a129cb5: native stream and persisted command identity",
+      "passed": true
+    },
+    {
+      "check": "Native printed result bytes match retained artifact",
+      "passed": true
+    },
+    {
+      "check": "Native generated-code change matches retained code bytes",
+      "passed": true
+    },
+    {
+      "check": "Actual native attachment matches recorded Data mention",
+      "passed": true
+    },
+    {
+      "check": "Skill Markdown not pasted into synthetic prompt",
+      "passed": true
+    },
+    {
+      "check": "Completed terminal belongs to exact native thread/turn",
+      "passed": true
+    },
+    {
+      "check": "Actual Data identity/version installed and enabled",
+      "passed": true
+    }
+  ],
+  "manual_review": {
+    "reviewer": "DSC-26 acceptance_review subagent",
+    "decision": "real_bounded_Codex_Data_invocation_and_artifact_retrieval_demonstrated_for_this_engineering_probe",
+    "full_adapter_acceptance": "incomplete",
+    "basis": "Native identity/attachment, actual Data index and shared-instruction reads, generated-code change, executed calculation, retrieved output bytes and unchanged engineering bindings independently checked."
+  },
+  "limitations": [
+    "Engineering observation, not a customer execution contract or production adapter.",
+    "plugin/read metadata discovery is under development and cannot be a production adapter dependency.",
+    "Persisted Data index output is truncated to 65536 bytes; the full 66898-byte stream matches native skill retrieval. Do not claim every persisted output equals its streamed output.",
+    "Task/input/run binding passthrough demonstrated only for this synthetic packet; customer proposal/approval/source/assumption binding and mismatch rejection remain unverified.",
+    "Native invalid-code, timeout/cancellation and exhausted-limit behavior remain untested; passing mocked protocol checks do not establish these native outcomes.",
+    "Observed modelProvider is openai; the intended LiteLLM gateway route is unverified.",
+    "Full raw native logs and skill contents remain at the original local paths; this committed projection omits skill text, agent reasoning and unrelated native fields."
+  ],
+  "raw_evidence_references": [
+    {
+      "path": "/private/tmp/dsc26-data-stage-p71l6d8o/probe-evidence.json",
+      "sha256": "a738a628aa9dffe8db9c8eb85c669e17f2ab7f7e511e042f323b7402140a049b",
+      "bytes": 143050
+    },
+    {
+      "path": "/private/tmp/dsc26-data-stage-p71l6d8o/native-rpc.jsonl",
+      "sha256": "263f20dac9ca9d8ce72a6a0b1c967956f692eb7f81fdb5b6b20be6bbe970c49c",
+      "bytes": 501303
+    }
+  ]
+}
