@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1.0-draft.3",
+  "owner": "DSC-24",
+  "status": "agreed_for_parallel_mvp_development",
+  "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+  "files": {
+    "src/suiroai/contracts/schema/retail-contract.schema.json": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+    "src/suiroai/contracts/validation.py": "aecca19351e368e982ef014639c3f83120064fe1c480109fb41d3c9e9129368a",
+    "examples/contracts/v0.1.0/approved_execution.json": "65fce44c921d176d6696a7f8ae05f7d4b552cac9ac862b7451da368cac715bd8",
+    "examples/contracts/v0.1.0/execution_failed.json": "f76851314ba3a440ddf9447ff32ed19af36f1a2613f6fba9bbd631dabbb98a5d",
+    "examples/contracts/v0.1.0/missing_inputs.json": "d860a3255e8381402165b2181ca25821e41b16fe1241fdf0092a731542ed780e",
+    "examples/contracts/v0.1.0/successful_analysis.json": "7256c8a570c6badfbddc89fd4c5171e1484974f444b7a84491078f2ae4f91aea",
+    "examples/contracts/v0.1.0/validation_failed.json": "5a02591e447ba3e760230299e01a61a0c289bbf8fa2a38aaf383ded9f7bcfb67"
+  },
+  "real_execution_accepted": false,
+  "source_audit_not_pipeline_evidence": true,
+  "consumer_owners": [
+    "DSC-3",
+    "DSC-10",
+    "DSC-25",
+    "DSC-26",
+    "DSC-27",
+    "DSC-28",
+    "DSC-29",
+    "DSC-30",
+    "DSC-56",
+    "DSC-31",
+    "DSC-9"
+  ],
+  "regression_tests_passed": 77,
+  "source_checks_passed": 41,
+  "source_checks_failed": 0,
+  "code_commit": "dd3e0dda1b759ebe5439e78e8cf10e3374eb700b",
+  "stable_definitions": [
+    "submission_and_approval_bindings",
+    "execution_and_stage_handoffs",
+    "preparation_feature_evaluation_validation_results",
+    "quantity_report_verification_and_evidence"
+  ],
+  "owner_acknowledgements": [
+    {
+      "owner": "DSC-3",
+      "thread_id": "01a14ad0-4645-7661-b396-a295d232196e",
+      "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "scope": "structural_development_interface_only",
+      "independent_regression_tests_passed": 77,
+      "snapshot_file_hashes_verified": 7
+    },
+    {
+      "owner": "DSC-26",
+      "thread_id": "01a14ad0-60c2-7c43-bdfa-3ce602d3794e",
+      "schema_sha256": "1d4615cf03d571d3ba9cc6df34e5848b109918d3b0274b7007abc8ce1544ed46",
+      "scope": "structural_handoff_interface_only",
+      "independent_regression_tests_passed": 77,
+      "snapshot_file_hashes_verified": 7
+    }
+  ]
+}
