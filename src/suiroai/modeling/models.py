@@ -1,12 +1,17 @@
-"""Small deterministic reference candidates, serializable without pickle.
+"""Model candidates, all serializable without pickle (pure canonical JSON state).
 
-Ridge uses training-only median imputation and standardization. This bounded
-small-feature implementation avoids adding dependencies to shared manifests.
+Deterministic reference candidates -- ``past_mean`` baseline, ``mean``, and
+``ridge`` (training-only median imputation + standardization) -- are implemented
+here directly. The ``quantile_gbt`` candidate is a *seeded* stochastic gradient
+boosted quantile model fitted through dscraft (see ``stochastic.py``); its
+randomness is reproducible and it is distilled to the same JSON-native,
+no-pickle state contract, so ``load_model(state).predict(x)`` stays byte-for-byte
+reproducible for every kind. Inference never imports dscraft.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
 import json
+from dataclasses import dataclass
 from statistics import fmean, median
 
 from .core import ModelingError, canonical, finite
@@ -47,6 +52,11 @@ class FittedModel:
             return match[0]
         if p["kind"] == "mean":
             return p["intercept"]
+        if p["kind"] == "quantile_gbt":
+            # Pure-stdlib tree walk over distilled JSON state; no dscraft import,
+            # no re-drawn randomness -- reproduces the seeded booster exactly.
+            from .stochastic import predict_ensemble
+            return predict_ensemble(p, example.features)
         if len(example.features) != len(p["medians"]):
             raise ModelingError("inference feature alignment changed")
         values = [(p["medians"][i] if x is None else finite(x)) for i,x in enumerate(example.features)]
@@ -63,14 +73,31 @@ def fit_model(kind, training, parameters=None):
     widths = {len(r.features) for r in rows}
     if len(widths) != 1:
         raise ModelingError("training feature alignment changed")
-    if kind not in {"past_mean", "mean", "ridge"}:
+    if kind not in {"past_mean", "mean", "ridge", "quantile_gbt"}:
         raise ModelingError("unsupported bounded model candidate")
-    if set(parameters) - ({"alpha"} if kind == "ridge" else set()):
+    if kind == "quantile_gbt":
+        from .stochastic import QUANTILE_GBT_PARAMETERS
+        allowed_parameters = set(QUANTILE_GBT_PARAMETERS)
+    elif kind == "ridge":
+        allowed_parameters = {"alpha"}
+    else:
+        allowed_parameters = set()
+    if set(parameters) - allowed_parameters:
         raise ModelingError("undeclared model configuration")
     p = {"kind": kind, "parameters": parameters, "training_count": len(rows),
          "training_target_end_max": max(r.window.end for r in rows).isoformat(),
          "training_information_end_max": max(r.label_available_on for r in rows).isoformat(),
          "clip_negative_forecasts": True}
+    if kind == "quantile_gbt":
+        # Seeded stochastic GBT fitted through dscraft, distilled to JSON-native
+        # tree state. fit_quantile_gbt returns the complete predict-ready dict;
+        # merge the shared bookkeeping fields (training counts, clip flag, etc.).
+        from .stochastic import fit_quantile_gbt
+        if len(rows[0].features) < 1:
+            raise ModelingError("quantile_gbt requires prepared features")
+        state = fit_quantile_gbt(rows, parameters)
+        p.update(state)
+        return FittedModel(canonical(p))
     if kind == "past_mean":
         keys = sorted({(r.window.key, r.window.horizon_days) for r in rows})
         p["baseline_label"] = "past-only historical-horizon mean demo comparator; not verified customer process"
@@ -102,6 +129,6 @@ def fit_model(kind, training, parameters=None):
 
 def load_model(payload):
     """Load trusted measured JSON; never deserialize executable model objects."""
-    if not isinstance(payload, dict) or payload.get("kind") not in {"ridge", "mean", "past_mean"}:
+    if not isinstance(payload, dict) or payload.get("kind") not in {"ridge", "mean", "past_mean", "quantile_gbt"}:
         raise ModelingError("unknown saved model format")
     return FittedModel(canonical(payload))

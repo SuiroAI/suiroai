@@ -7,8 +7,26 @@ name = "suiroai"
 version = "0.1.0"
 description = "SuiroAI single-case retail restocking MVP application"
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = ["jsonschema>=4.18,<5"]
+requires-python = ">=3.12,<3.13"
+# SuiroAI depends on dscraft as its single data-science backend: all EDA and
+# modeling go through dscraft rather than importing numpy/pandas/scikit-learn/
+# statsforecast/etc. directly. dscraft[analytics] pulls the tabular+forecast+eda
+# capability groups as one tested, conflict-free, version-matched stack, so this
+# application never hand-assembles mutually-compatible DS library versions.
+# jsonschema remains for DSC-24 JSON Schema Draft 2020-12 contract validation.
+dependencies = [
+    "jsonschema>=4.18,<5",
+    "dscraft[analytics]>=0.2.1",
+]
+
+# dscraft is consumed as a normal, version-pinned BUILT ARTIFACT (wheel/sdist),
+# resolved from the configured index like any other dependency -- NOT an editable
+# sibling-path checkout. A sibling-path/editable override couples this app to
+# another repo's working tree (accidental sibling-checkout dependency), which the
+# review explicitly forbids; the `dscraft[analytics]>=0.2.1` requirement above is
+# the whole contract. For local development against an unreleased dscraft, install
+# the built artifact into the environment out-of-band (e.g. `pip install
+# /path/to/dscraft/dist/dscraft-*.whl`) rather than pinning a path here.
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/suiroai"]

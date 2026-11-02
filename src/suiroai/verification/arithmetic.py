@@ -8,9 +8,16 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import date, timedelta
-from decimal import Decimal, InvalidOperation, ROUND_CEILING
+from decimal import ROUND_CEILING, Decimal, InvalidOperation
+from fractions import Fraction
 from typing import Any
 
+# A shared, side-effect-free math primitive (exact joint-horizon convolution).
+# Importing it is NOT importing producer arithmetic: the verifier still builds
+# its OWN inputs from source bytes and calls the primitive independently, the
+# same way it independently calls Decimal. This keeps producer and verifier on
+# one correct joint method instead of two divergent re-implementations.
+from suiroai.replenishment.horizon import HorizonError, joint_horizon_quantile
 
 _KEY_FIELDS = ("source_namespace", "product_id", "store_id")
 _PROVENANCE = {"supplied", "synthetic", "derived", "mock"}
@@ -216,6 +223,10 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
             if ledger_complete is not True or stock.get("Open_Order_Ledger_Complete") not in (True, "true"):
                 raise ValueError("open_order_ledger_not_explicitly_complete")
             daily = {}
+            day_cdf: dict[date, tuple[list[int], list[Fraction]]] = {}
+            service_level = None
+            dependence_model = None
+            saw_v1_marginal = False
             for row in sources["forecast"][key]:
                 day = _date(row.get("date"))
                 if row.get("quantity_unit") != "product_unit":
@@ -225,11 +236,36 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                 if day in daily:
                     raise ValueError("duplicate_forecast_date")
                 daily[day] = _number(row.get("quantity"))
+                # Independently recompute distribution-aware safety from the v2 CDF.
+                if "demand_support" in row or "demand_cumulative" in row:
+                    support = row.get("demand_support")
+                    cumulative = row.get("demand_cumulative")
+                    if not isinstance(support, list) or not isinstance(cumulative, list):
+                        raise ValueError("v2_demand_cdf_requires_support_and_cumulative_lists")
+                    day_cdf[day] = (
+                        [int(_number(v, integer=True)) for v in support],
+                        [Fraction(str(_number(p))) for p in cumulative],
+                    )
+                    level = _number(row.get("service_level"))
+                    if not Decimal("0.5") < level < 1:
+                        raise ValueError("service_level_out_of_range")
+                    service_level = level if service_level is None else service_level
+                    if level != service_level:
+                        raise ValueError("inconsistent_service_level_across_days")
+                    model = row.get("dependence_model")
+                    dependence_model = model if dependence_model is None else dependence_model
+                    if model != dependence_model:
+                        raise ValueError("inconsistent_dependence_model_across_days")
+                elif "service_level_quantity" in row:
+                    # v1 marginal: recorded but never summed into a horizon buffer.
+                    saw_v1_marginal = True
             if len(daily) < lead + period:
                 raise ValueError("incomplete_daily_forecast_coverage")
             horizon = [start + timedelta(days=i) for i in range(lead + period)]
             if not all(day in daily for day in horizon):
                 raise ValueError("incomplete_daily_forecast_coverage")
+            if day_cdf and not all(day in day_cdf for day in horizon):
+                raise ValueError("incomplete_service_level_trajectory")
             receipts, ledger_sum = defaultdict(Decimal), Decimal(0)
             for row in sources["receipt"][key]:
                 ordered = _date(row.get("Order_Date"))
@@ -244,7 +280,30 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                 raise ValueError("on_order_summary_does_not_reconcile_to_ledger")
             forecast = sum((daily[day] for day in horizon), Decimal(0))
             eligible = sum(receipts.values(), Decimal(0))
-            raw = max(Decimal(0), forecast + safety - on_hand - eligible)
+            # Mirror the producer's effective safety: policy floor, raised (never
+            # lowered) by the JOINT horizon-quantile buffer when the forecast
+            # supplies a v2 CDF trajectory. Must match calculation.py exactly:
+            # the horizon service-level quantity is an exact convolution, NEVER a
+            # sum of per-day marginal quantiles. A v1 marginal cannot drive it.
+            if day_cdf:
+                if dependence_model is None:
+                    raise ValueError("v2_frozen_forecast_requires_dependence_model")
+                try:
+                    horizon_quantity = joint_horizon_quantile(
+                        [day_cdf[day] for day in horizon],
+                        service_level=Fraction(str(service_level)),
+                        dependence_model=dependence_model,
+                    )
+                except HorizonError as exc:
+                    raise ValueError(f"horizon_service_level_withheld: {exc}") from None
+                gap = max(Decimal(0), Decimal(horizon_quantity) - forecast)
+                quantile_safety = gap.to_integral_value(rounding=ROUND_CEILING)
+                effective_safety = max(safety, quantile_safety)
+            elif saw_v1_marginal:
+                raise ValueError("v1_marginal_service_level_cannot_drive_horizon_safety")
+            else:
+                effective_safety = safety
+            raw = max(Decimal(0), forecast + effective_safety - on_hand - eligible)
             rounded = ((max(raw, minimum) / multiple).to_integral_value(rounding=ROUND_CEILING) * multiple) if raw else Decimal(0)
             balance = on_hand
             for day in horizon:
@@ -263,7 +322,7 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                         "forecast_quantity": forecast, "usable_on_hand_quantity": on_hand,
                         "on_order_summary_quantity": summary, "eligible_receipt_quantity": eligible,
                         "supplier_lead_calendar_days": lead, "review_period_calendar_days": period,
-                        "safety_stock_quantity": safety, "order_multiple": multiple,
+                        "safety_stock_quantity": effective_safety, "order_multiple": multiple,
                         "minimum_positive_order_quantity": minimum, "raw_order_need": raw,
                         "rounded_order_quantity": rounded}
             if name_required:
