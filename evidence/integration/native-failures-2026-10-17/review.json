@@ -1,0 +1,45 @@
+{
+  "record_kind": "independent_engineering_failure_review_index",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "reviewed_at_utc": "2026-10-17T20:23:00.106411+00:00",
+  "reviewer": "DSC-26 acceptance_review subagent",
+  "cases": {
+    "invalid_code": {
+      "record": "invalid_code.json",
+      "native_failure_demonstrated": true,
+      "original_adapter_classification_correct": false,
+      "corrected_classifier_offline_replay_verified": true
+    },
+    "cancelled": {
+      "record": "cancelled.json",
+      "native_interrupted_terminal_demonstrated": true,
+      "running_python_termination_demonstrated": false
+    },
+    "timeout": {
+      "record": "timeout.json",
+      "native_timeout_and_interrupted_terminal_demonstrated": true,
+      "python_wait_started": true,
+      "python_process_exit_independently_confirmed": false
+    },
+    "declared_zero_time": {
+      "record": "declared_zero_time.json",
+      "declared_bound_guard_demonstrated": true,
+      "upstream_quota_exhaustion": false
+    }
+  },
+  "overall_acceptance": "incomplete",
+  "scope": "Engineering probes with synthetic input only. Original raw files were read without modification; retained projections omit full skills, reasoning and large native logs.",
+  "remaining": [
+    "Corrected invalid-code classification was replayed offline; the original adapter result is preserved as a defect and a corrected native-return rerun is not claimed.",
+    "Python command exit after timeout interruption was not independently recorded; early cancellation occurred before any analytical command.",
+    "Native account/usage quota exhaustion, full customer version/error integration and customer file isolation remain unverified.",
+    "No customer approval or execution is implied."
+  ],
+  "source_failure_suite_reference": {
+    "path": "/private/tmp/dsc26-native-failures-658wxq2w/failure-evidence.json",
+    "sha256": "adeeefb35b19b24a0b23b80002474aba8d6012707db4ab6191bdd70c1a0813ee",
+    "bytes": 321145
+  }
+}
