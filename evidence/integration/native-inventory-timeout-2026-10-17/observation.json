@@ -1,0 +1,102 @@
+{
+  "record_kind": "scoped_local_inventory_preflight_timeout_not_native_stage",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "observed_phase": "local_plugin_inventory_preflight",
+  "observation_kind": "local_subprocess_timeout",
+  "local_subprocess": {
+    "argv": [
+      "/opt/homebrew/bin/codex",
+      "plugin",
+      "list",
+      "--json"
+    ],
+    "reported_timeout_seconds": 20,
+    "actual_elapsed_seconds": null,
+    "native_child_exit_code": null,
+    "process_tree_exit_verified": false
+  },
+  "original_probe_outcome": {
+    "status": "blocked_or_incomplete",
+    "blocker": "Command '['/opt/homebrew/bin/codex', 'plugin', 'list', '--json']' timed out after 20 seconds",
+    "error_code": "runtime_error",
+    "error_code_origin": "Local probe exception mapping; not a native provider/stage error",
+    "model_turn_requested": false,
+    "deterministic_native_controls_passed": false,
+    "data_turn_artifacts_verified": false
+  },
+  "actual_bootstrap": {
+    "sent_methods": [
+      "initialize",
+      "initialized",
+      "config/read"
+    ],
+    "logged_monotonic_span_seconds": 0.07971362501848489,
+    "span_meaning": "Only first-to-last bootstrap log timestamps, excluding later inventory subprocess; not total timeout elapsed.",
+    "initialize_response_cli_version": "0.163.0",
+    "config_read_response_received": true
+  },
+  "execution_not_exercised": [
+    "Named profile selection",
+    "Native permission controls",
+    "Native thread creation",
+    "Native analytical/model turn",
+    "Customer execution"
+  ],
+  "generated_profile": {
+    "id": "dsc26-synthetic-0e2e6f51e56ef35c",
+    "selected_by_native_request": false
+  },
+  "protected_hashes": {
+    "input": {
+      "before_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "after_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "actual_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849"
+    },
+    "sentinel": {
+      "before_sha256": "b6b5876060b767bccf9de66989fb24fdc3201f8ea1d0c4dc9766e187c41795e0",
+      "after_sha256": "b6b5876060b767bccf9de66989fb24fdc3201f8ea1d0c4dc9766e187c41795e0",
+      "actual_sha256": "b6b5876060b767bccf9de66989fb24fdc3201f8ea1d0c4dc9766e187c41795e0"
+    },
+    "allowed_image": {
+      "before_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+      "after_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+      "actual_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5"
+    },
+    "denied_image": {
+      "before_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+      "after_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+      "actual_sha256": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5"
+    }
+  },
+  "offline_fidelity_check_count": 6,
+  "offline_fidelity_checks": {
+    "only_bootstrap_initialize_initialized_configread": true,
+    "no_profile_thread_turn_or_command_dispatch": true,
+    "restricted_rpc_log_absent": true,
+    "control_and_model_artifacts_absent": true,
+    "actual_sources_hash_match_before_after": true,
+    "outside_write_absent": true
+  },
+  "source_records": [
+    {
+      "path": "/private/tmp/dsc26-native-isolation-q90clxgt/evidence/isolation-evidence.json",
+      "bytes": 2314,
+      "sha256": "dcd9d2b21bb26f2fb6dd74d72da47321bcaadc174f58cf91940229152b1b8e13"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-q90clxgt/evidence/bootstrap.jsonl",
+      "bytes": 2285,
+      "sha256": "357d4b87170f01377bddaeb09ff52cb90f10e19aa54f2c1b681c4d6167b8307f"
+    }
+  ],
+  "limitations": [
+    "The record reports a 20-second subprocess timeout threshold; exact wall elapsed was not independently recorded.",
+    "No native child exit status or process-tree termination receipt was retained.",
+    "Underlying stall cause, provider route, authentication state and quota involvement are unknown.",
+    "A local inventory discovery timeout is not an analytical validation failure, provider quota failure or native model-turn timeout."
+  ],
+  "omissions": "No raw installation ID, hostname, full configuration, plugin inventory, credentials, skill content, hidden reasoning or random sentinel value retained."
+}
