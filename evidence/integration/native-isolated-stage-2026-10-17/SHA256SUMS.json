@@ -1,0 +1,45 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "control-result.json",
+      "sha256": "1f81009d1a481d2687c87f5f0088f517a704fdfa66fd71b57362e49099660481",
+      "bytes": 69
+    },
+    {
+      "path": "control_check.py",
+      "sha256": "a0f3933ebd5147fc8520b68d1a7efa3a9447ce250f094a9d73f9d51e5f93c4bc",
+      "bytes": 1479
+    },
+    {
+      "path": "isolation_calculation.py",
+      "sha256": "16b55b552bbf3c932aea9df6ce03865a90c3c5e5f183f5491982caf465a2c02a",
+      "bytes": 705
+    },
+    {
+      "path": "isolation_result.json",
+      "sha256": "8031f1845e9b9a6e3943cf7476ed4a5f0826a47ad648f5c1be17b27d0f7c7342",
+      "bytes": 90
+    },
+    {
+      "path": "model-control-result.json",
+      "sha256": "1f81009d1a481d2687c87f5f0088f517a704fdfa66fd71b57362e49099660481",
+      "bytes": 69
+    },
+    {
+      "path": "observation.json",
+      "sha256": "54a21be1f681b577f8c2f55b961d875154bc8a811764f680ec0086642140dd6f",
+      "bytes": 26117
+    },
+    {
+      "path": "review.json",
+      "sha256": "5275c3efecfbf1f500dfaf65a87af1dabcfe5d2ac77974c59fd7aaabc8223216",
+      "bytes": 3664
+    },
+    {
+      "path": "synthetic.csv",
+      "sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "bytes": 26
+    }
+  ]
+}

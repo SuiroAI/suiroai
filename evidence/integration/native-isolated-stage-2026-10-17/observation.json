@@ -1,0 +1,680 @@
+{
+  "record_kind": "reviewed_real_native_isolated_codex_data_engineering_stage",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "customer_gate_unchanged": true,
+  "observed_status": "engineering_checks_observed_pending_manual_review",
+  "manual_review_decision": "Real bounded isolated native Codex/Data engineering execution and accurate artifact retrieval demonstrated for this exact host/profile; full adapter and customer acceptance incomplete.",
+  "actual_native_refs": {
+    "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+    "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+    "profile_id": "dsc26-synthetic-e51e6d941d4cf0da",
+    "cli_version": "0.163.0",
+    "model": "gpt-6.1-sol",
+    "modelProvider": "openai",
+    "gateway_route_verified": false
+  },
+  "actual_terminal": {
+    "id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+    "rootTurnId": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+    "status": "completed",
+    "error": null,
+    "startedAt": 1792280620,
+    "completedAt": 1792280642,
+    "durationMs": 21825
+  },
+  "native_discovery": {
+    "phase": {
+      "limit_seconds": 60,
+      "status": "verified",
+      "elapsed_seconds": 0.554667
+    },
+    "inventory_command": {
+      "phase": "plugin_inventory",
+      "command": [
+        "/opt/homebrew/bin/codex",
+        "plugin",
+        "list",
+        "--json"
+      ],
+      "status": "verified",
+      "limit_seconds": 59.882196332968306,
+      "stdout_limit_bytes": 2097152,
+      "stderr_limit_bytes": 65536,
+      "exit_code": 0,
+      "diagnostics": {
+        "fallback_observed": false,
+        "raw_stderr_omitted": true,
+        "source_warning": null,
+        "source": "rust-v0.163.0/codex-rs/cli/src/plugin_cmd.rs:895"
+      },
+      "installed_count": 28,
+      "selected_data_entry_count": 1,
+      "data_entries": [
+        {
+          "pluginId": "data-analytics@openai-curated-remote",
+          "enabled": true,
+          "installed": true,
+          "version": "1.0.11",
+          "source_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7"
+        }
+      ],
+      "data_entry": {
+        "pluginId": "data-analytics@openai-curated-remote",
+        "enabled": true,
+        "installed": true,
+        "version": "1.0.11",
+        "source_id": "Plugin_fc9843a6fb34819195d6c7802398a8a7"
+      },
+      "cleanup": {
+        "term_sent": false,
+        "kill_sent": false,
+        "direct_child_reaped": true
+      },
+      "elapsed_seconds": 0.436821,
+      "stdout_observed_bytes": 14198,
+      "stdout_observed_sha256": "b51ae023c18632ade3d6d5fdb25c005e451cddc781667a7fbc2676c8ffdd60b1",
+      "stderr_observed_bytes": 0,
+      "stderr_observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_content_omitted": false
+    }
+  },
+  "selected_profile_and_process_overrides": {
+    "effective_profile_comparison": {
+      "expected": {
+        "filesystem": {
+          ":root": "deny",
+          ":minimal": "read",
+          "/private/tmp/dsc26-native-isolation-zkaavghj/released": "read",
+          "/private/tmp/dsc26-native-isolation-zkaavghj/output": "write",
+          "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11": "read",
+          "/opt/anaconda3": "read",
+          "/private/tmp": "deny",
+          "/private/var/folders/47/q5r4vm094rs50jyk76tdz7fr0000gn/T": "deny",
+          "/private/var/tmp": "deny"
+        },
+        "network": {
+          "enabled": false
+        }
+      },
+      "observed": {
+        "profile": "dsc26-synthetic-e51e6d941d4cf0da",
+        "profile_shape_valid": true,
+        "filesystem_shape_valid": true,
+        "network_shape_valid": true,
+        "filesystem": {
+          "glob_scan_max_depth": null,
+          "/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11": "read",
+          "/opt/anaconda3": "read",
+          "/private/tmp": "deny",
+          "/private/tmp/dsc26-native-isolation-zkaavghj/output": "write",
+          "/private/tmp/dsc26-native-isolation-zkaavghj/released": "read",
+          "/private/var/folders/47/q5r4vm094rs50jyk76tdz7fr0000gn/T": "deny",
+          "/private/var/tmp": "deny",
+          ":minimal": "read",
+          ":root": "deny"
+        },
+        "network": {
+          "enabled": false,
+          "other_present_field_names": [
+            "allow_local_binding",
+            "allow_upstream_proxy",
+            "dangerously_allow_all_unix_sockets",
+            "dangerously_allow_non_loopback_proxy",
+            "domains",
+            "enable_socks5",
+            "enable_socks5_udp",
+            "mitm",
+            "mode",
+            "proxy_url",
+            "socks_url",
+            "unix_sockets"
+          ],
+          "other_nonnull_field_names": []
+        }
+      },
+      "filesystem_differences": {},
+      "normalization": [
+        "glob_scan_max_depth:null equivalent to absent"
+      ],
+      "filesystem_matches": true,
+      "network_matches": true
+    },
+    "feature_flags": {
+      "apps": false,
+      "browser_use": false,
+      "browser_use_external": false,
+      "browser_use_full_cdp_access": false,
+      "computer_use": false,
+      "in_app_browser": false,
+      "in_app_local_automation": false,
+      "multi_agent": false,
+      "memories": false,
+      "view_image": false,
+      "plugins": true,
+      "code_mode_host": true
+    },
+    "web_search": "disabled",
+    "mcp_process_disables": {
+      "node_repl": {
+        "enabled": false
+      },
+      "computer-use": {
+        "enabled": false
+      }
+    },
+    "plugin_projection": {
+      "default": {
+        "enabled": false
+      },
+      "data": {
+        "enabled": true
+      },
+      "other_configured_plugin_count": 33,
+      "all_other_configured_plugins_disabled": true
+    }
+  },
+  "thread_request": {
+    "id": 6,
+    "method": "thread/start",
+    "params": {
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "runtimeWorkspaceRoots": [
+        "/private/tmp/dsc26-native-isolation-zkaavghj/output"
+      ],
+      "approvalPolicy": "never",
+      "permissions": "dsc26-synthetic-e51e6d941d4cf0da"
+    }
+  },
+  "thread_response_projection": {
+    "activePermissionProfile": {
+      "id": "dsc26-synthetic-e51e6d941d4cf0da",
+      "extends": null
+    },
+    "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+    "runtimeWorkspaceRoots": [
+      "/private/tmp/dsc26-native-isolation-zkaavghj/output"
+    ],
+    "approvalPolicy": "never",
+    "sandbox": {
+      "type": "workspaceWrite",
+      "writableRoots": [],
+      "networkAccess": false,
+      "excludeTmpdirEnvVar": true,
+      "excludeSlashTmp": true
+    },
+    "model": "gpt-6.1-sol",
+    "modelProvider": "openai"
+  },
+  "native_data_loading": {
+    "skill_request": {
+      "id": 8,
+      "method": "plugin/skill/read",
+      "params": {
+        "remoteMarketplaceName": "openai-curated-remote",
+        "remotePluginId": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+        "skillName": "index"
+      }
+    },
+    "skill_response_hash_projection": {
+      "contents_omitted": true,
+      "contents_bytes": 66898,
+      "contents_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
+    },
+    "turn_start_rpc_id": 9,
+    "turn_start_thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+    "actual_native_mention": [
+      {
+        "type": "mention",
+        "name": "Data",
+        "path": "plugin://data-analytics@openai-curated-remote"
+      }
+    ],
+    "no_skill_body_pasted_into_prompt": true
+  },
+  "mcp_inventory_before": {
+    "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+    "detail": "full",
+    "pages": [
+      {
+        "cursor": null,
+        "rows": [
+          {
+            "name": "computer-use",
+            "runtimeStatus": "disabled",
+            "pluginId": null,
+            "httpOrigin": null,
+            "serverInfo": null,
+            "serverCapabilities": null,
+            "tools": {},
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unsupported"
+          },
+          {
+            "name": "node_repl",
+            "runtimeStatus": "disabled",
+            "pluginId": null,
+            "httpOrigin": null,
+            "serverInfo": null,
+            "serverCapabilities": null,
+            "tools": {},
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unsupported"
+          }
+        ],
+        "nextCursor": null
+      }
+    ],
+    "validated_disabled_only": true
+  },
+  "mcp_inventory_after": {
+    "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+    "detail": "full",
+    "pages": [
+      {
+        "cursor": null,
+        "rows": [
+          {
+            "name": "computer-use",
+            "runtimeStatus": "disabled",
+            "pluginId": null,
+            "httpOrigin": null,
+            "serverInfo": null,
+            "serverCapabilities": null,
+            "tools": {},
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unsupported"
+          },
+          {
+            "name": "node_repl",
+            "runtimeStatus": "disabled",
+            "pluginId": null,
+            "httpOrigin": null,
+            "serverInfo": null,
+            "serverCapabilities": null,
+            "tools": {},
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unsupported"
+          }
+        ],
+        "nextCursor": null
+      }
+    ],
+    "validated_disabled_only": true
+  },
+  "native_preflight_controls": {
+    "response": {
+      "exitCode": 0,
+      "stdout": "{\"positive\": {\"row_count\": 3, \"group_totals\": {\"A\": 5, \"B\": 5}, \"total_units\": 10}, \"checks\": {\"sentinel_open\": {\"denied\": true, \"type\": \"PermissionError\", \"errno\": 1}, \"symlink_open\": {\"denied\": true, \"type\": \"PermissionError\", \"errno\": 1}, \"input_write\": {\"denied\": true, \"type\": \"PermissionError\", \"errno\": 1}, \"outside_write\": {\"denied\": true, \"type\": \"PermissionError\", \"errno\": 1}, \"network\": {\"denied\": true, \"type\": \"PermissionError\", \"errno\": 1}}}\n",
+      "stderr": ""
+    },
+    "cat_response": {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "cat: /private/tmp/dsc26-native-isolation-zkaavghj/unreleased/sentinel.txt: Operation not permitted\n"
+    },
+    "listener_positive": true
+  },
+  "actual_bound_model_commands": [
+    {
+      "id": "exec-ab743d9d-6907-4d75-883b-4497fc6bfae5",
+      "command": "/bin/zsh -lc '/opt/anaconda3/bin/python3.13 -I -S /private/tmp/dsc26-native-isolation-zkaavghj/released/control_check.py'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "f1d49c7c2433cb3cc1c10fb450105ce563685ceb38b2c090c56ed1ae5ed0db8d",
+      "stream_stdout_bytes": 457,
+      "persisted_stdout_sha256": "f1d49c7c2433cb3cc1c10fb450105ce563685ceb38b2c090c56ed1ae5ed0db8d",
+      "persisted_stdout_bytes": 457,
+      "stream_and_persisted_output_equal": true,
+      "actual_nonproprietary_stdout_json": {
+        "positive": {
+          "row_count": 3,
+          "group_totals": {
+            "A": 5,
+            "B": 5
+          },
+          "total_units": 10
+        },
+        "checks": {
+          "sentinel_open": {
+            "denied": true,
+            "type": "PermissionError",
+            "errno": 1
+          },
+          "symlink_open": {
+            "denied": true,
+            "type": "PermissionError",
+            "errno": 1
+          },
+          "input_write": {
+            "denied": true,
+            "type": "PermissionError",
+            "errno": 1
+          },
+          "outside_write": {
+            "denied": true,
+            "type": "PermissionError",
+            "errno": 1
+          },
+          "network": {
+            "denied": true,
+            "type": "PermissionError",
+            "errno": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "exec-da61612c-d156-4606-b9b6-5532c8ef3a55",
+      "command": "/bin/zsh -lc 'cat /private/tmp/dsc26-native-isolation-zkaavghj/released/synthetic.csv'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "stream_stdout_bytes": 26,
+      "persisted_stdout_sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "persisted_stdout_bytes": 26,
+      "stream_and_persisted_output_equal": true
+    },
+    {
+      "id": "exec-5e4431b4-f89d-4272-a6f1-ff027257fabc",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "stream_stdout_bytes": 66898,
+      "persisted_stdout_sha256": "629750a59ce38001e77d38bf58c554c6f6b101d4a43ab5e66a1dcea935ef3cf1",
+      "persisted_stdout_bytes": 65536,
+      "stream_and_persisted_output_equal": false
+    },
+    {
+      "id": "exec-6034454f-0ce8-40f1-9d0d-972f7a230e15",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "stream_stdout_bytes": 18781,
+      "persisted_stdout_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "persisted_stdout_bytes": 18781,
+      "stream_and_persisted_output_equal": true
+    },
+    {
+      "id": "exec-649b1a31-e8e9-4936-9d22-0f91b2c4e806",
+      "command": "/bin/zsh -lc \"sed -n '115,365p' /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md\"",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "4e0a4f5e475485e541a489d8aa10c85e1515ff02f4ce3d46863eefe37435b0cf",
+      "stream_stdout_bytes": 31560,
+      "persisted_stdout_sha256": "4e0a4f5e475485e541a489d8aa10c85e1515ff02f4ce3d46863eefe37435b0cf",
+      "persisted_stdout_bytes": 31560,
+      "stream_and_persisted_output_equal": true
+    },
+    {
+      "id": "exec-6edc5c59-054b-48fc-aeac-b8b61659af90",
+      "command": "/bin/zsh -lc 'python3 isolation_calculation.py'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "status": "completed",
+      "exitCode": 0,
+      "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+      "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+      "stream_stdout_sha256": "50dfb27d645177f948676c55ea33a127cc1b8b515aa6d1674907d37da6ba4047",
+      "stream_stdout_bytes": 70,
+      "persisted_stdout_sha256": "50dfb27d645177f948676c55ea33a127cc1b8b515aa6d1674907d37da6ba4047",
+      "persisted_stdout_bytes": 70,
+      "stream_and_persisted_output_equal": true,
+      "actual_nonproprietary_stdout_json": {
+        "row_count": 3,
+        "group_totals": {
+          "A": 5,
+          "B": 5
+        },
+        "total_units": 10
+      }
+    }
+  ],
+  "actual_control_source": {
+    "path": "/private/tmp/dsc26-native-isolation-zkaavghj/released/control_check.py",
+    "sha256": "a0f3933ebd5147fc8520b68d1a7efa3a9447ce250f094a9d73f9d51e5f93c4bc",
+    "command_argv": [
+      "/opt/anaconda3/bin/python3.13",
+      "-I",
+      "-S",
+      "/private/tmp/dsc26-native-isolation-zkaavghj/released/control_check.py"
+    ],
+    "harness_authored": true,
+    "loopback_address": [
+      "127.0.0.1",
+      50424
+    ],
+    "sha256_after": "a0f3933ebd5147fc8520b68d1a7efa3a9447ce250f094a9d73f9d51e5f93c4bc",
+    "unchanged": true
+  },
+  "actual_model_control_receipt": [
+    {
+      "command_id": "exec-ab743d9d-6907-4d75-883b-4497fc6bfae5",
+      "command": "/bin/zsh -lc '/opt/anaconda3/bin/python3.13 -I -S /private/tmp/dsc26-native-isolation-zkaavghj/released/control_check.py'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "stdout_sha256": "f1d49c7c2433cb3cc1c10fb450105ce563685ceb38b2c090c56ed1ae5ed0db8d",
+      "positive": {
+        "row_count": 3,
+        "group_totals": {
+          "A": 5,
+          "B": 5
+        },
+        "total_units": 10
+      },
+      "checks": {
+        "sentinel_open": {
+          "denied": true,
+          "type": "PermissionError",
+          "errno": 1
+        },
+        "symlink_open": {
+          "denied": true,
+          "type": "PermissionError",
+          "errno": 1
+        },
+        "input_write": {
+          "denied": true,
+          "type": "PermissionError",
+          "errno": 1
+        },
+        "outside_write": {
+          "denied": true,
+          "type": "PermissionError",
+          "errno": 1
+        },
+        "network": {
+          "denied": true,
+          "type": "PermissionError",
+          "errno": 1
+        }
+      }
+    }
+  ],
+  "model_control_listener_positive": true,
+  "model_control_precedes_calculation": true,
+  "actual_generated_file_change": {
+    "thread_id": "01a14c3f-e981-7412-9040-dc2f1074d38a",
+    "turn_id": "01a14c3f-ec8b-7f43-8e9b-b4f7f5b40ecc",
+    "item": {
+      "type": "fileChange",
+      "id": "exec-37bccf76-be66-4d6e-a84b-62d7708ca3c6",
+      "changes": [
+        {
+          "path": "/private/tmp/dsc26-native-isolation-zkaavghj/output/isolation_calculation.py",
+          "kind": {
+            "type": "add"
+          },
+          "diff": "import csv\nimport json\nfrom pathlib import Path\n\n\nsource = Path('/private/tmp/dsc26-native-isolation-zkaavghj/released/synthetic.csv')\nrow_count = 0\ngroup_totals = {}\ntotal_units = 0\n\nwith source.open(newline='', encoding='utf-8') as handle:\n    for row in csv.DictReader(handle):\n        units = int(row['units'])\n        product = row['product']\n        row_count += 1\n        group_totals[product] = group_totals.get(product, 0) + units\n        total_units += units\n\nresult = {\n    'row_count': row_count,\n    'group_totals': group_totals,\n    'total_units': total_units,\n}\nPath('isolation_result.json').write_text(\n    json.dumps(result, indent=2) + '\\n', encoding='utf-8'\n)\nprint(json.dumps(result))\n"
+        }
+      ],
+      "status": "completed"
+    },
+    "diff_matches_fetched_calculation_file_bytes": true
+  },
+  "data_resource_receipts": [
+    {
+      "command_id": "exec-5e4431b4-f89d-4272-a6f1-ff027257fabc",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "actual_resource_bytes_verified": true,
+      "resource_output_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "stream_and_persisted_output_equal": false,
+      "stream_output_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "stream_output_bytes": 66898,
+      "persisted_output_sha256": "629750a59ce38001e77d38bf58c554c6f6b101d4a43ab5e66a1dcea935ef3cf1",
+      "persisted_output_bytes": 65536
+    },
+    {
+      "command_id": "exec-6034454f-0ce8-40f1-9d0d-972f7a230e15",
+      "command": "/bin/zsh -lc 'cat /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/shared/shared-skill-instructions.md'",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "actual_resource_bytes_verified": true,
+      "resource_output_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "stream_and_persisted_output_equal": true,
+      "stream_output_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "stream_output_bytes": 18781,
+      "persisted_output_sha256": "ada5c1ed67f32188b0521c3a354eef35f6d9dcc08310e615092d07c0c99f55c7",
+      "persisted_output_bytes": 18781
+    },
+    {
+      "command_id": "exec-649b1a31-e8e9-4936-9d22-0f91b2c4e806",
+      "command": "/bin/zsh -lc \"sed -n '115,365p' /Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11/skills/index/SKILL.md\"",
+      "cwd": "/private/tmp/dsc26-native-isolation-zkaavghj/output",
+      "actual_resource_bytes_verified": true,
+      "resource_output_sha256": "4e0a4f5e475485e541a489d8aa10c85e1515ff02f4ce3d46863eefe37435b0cf",
+      "stream_and_persisted_output_equal": true,
+      "stream_output_sha256": "4e0a4f5e475485e541a489d8aa10c85e1515ff02f4ce3d46863eefe37435b0cf",
+      "stream_output_bytes": 31560,
+      "persisted_output_sha256": "4e0a4f5e475485e541a489d8aa10c85e1515ff02f4ce3d46863eefe37435b0cf",
+      "persisted_output_bytes": 31560
+    }
+  ],
+  "stream_persistence_pair_summary": {
+    "persisted_count": 6,
+    "streamed_count": 6,
+    "matched_count": 5,
+    "matched_command_ids": [
+      "exec-ab743d9d-6907-4d75-883b-4497fc6bfae5",
+      "exec-da61612c-d156-4606-b9b6-5532c8ef3a55",
+      "exec-6034454f-0ce8-40f1-9d0d-972f7a230e15",
+      "exec-649b1a31-e8e9-4936-9d22-0f91b2c4e806",
+      "exec-6edc5c59-054b-48fc-aeac-b8b61659af90"
+    ],
+    "agent_reported_errors_are_unverified": true,
+    "matched_calculation_count": 1
+  },
+  "independently_verified_truncation": [
+    {
+      "command_id": "exec-5e4431b4-f89d-4272-a6f1-ff027257fabc",
+      "nonoutput_fields_match": true,
+      "exact_native_truncation_marker_once": true,
+      "nonempty_prefix_suffix_match": true,
+      "streamed_bytes": 66898,
+      "persisted_bytes": 65536,
+      "streamed_sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+      "persisted_sha256": "629750a59ce38001e77d38bf58c554c6f6b101d4a43ab5e66a1dcea935ef3cf1"
+    }
+  ],
+  "actual_artifact_sources": [
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/released/synthetic.csv",
+      "sha256": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+      "bytes": 26,
+      "retained_copy": "synthetic.csv"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/released/control_check.py",
+      "sha256": "a0f3933ebd5147fc8520b68d1a7efa3a9447ce250f094a9d73f9d51e5f93c4bc",
+      "bytes": 1479,
+      "retained_copy": "control_check.py"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/output/isolation_calculation.py",
+      "sha256": "16b55b552bbf3c932aea9df6ce03865a90c3c5e5f183f5491982caf465a2c02a",
+      "bytes": 705,
+      "retained_copy": "isolation_calculation.py"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/output/isolation_result.json",
+      "sha256": "8031f1845e9b9a6e3943cf7476ed4a5f0826a47ad648f5c1be17b27d0f7c7342",
+      "bytes": 90,
+      "retained_copy": "isolation_result.json"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/output/model-control-result.json",
+      "sha256": "1f81009d1a481d2687c87f5f0088f517a704fdfa66fd71b57362e49099660481",
+      "bytes": 69,
+      "retained_copy": "model-control-result.json"
+    },
+    {
+      "path": "/private/tmp/dsc26-native-isolation-zkaavghj/output/control-result.json",
+      "sha256": "1f81009d1a481d2687c87f5f0088f517a704fdfa66fd71b57362e49099660481",
+      "bytes": 69,
+      "retained_copy": "control-result.json"
+    }
+  ],
+  "independent_csv_expected": {
+    "row_count": 3,
+    "group_totals": {
+      "A": 5,
+      "B": 5
+    },
+    "total_units": 10
+  },
+  "protected_sources_before": {
+    "input": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+    "sentinel": "2f3fc2bf6f74c55b2af5f038d80603dae716f7d4f3658fe6881f3ad1ea2897e0",
+    "allowed_image": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+    "denied_image": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+    "link": "/private/tmp/dsc26-native-isolation-zkaavghj/unreleased/sentinel.txt",
+    "image_link": "/private/tmp/dsc26-native-isolation-zkaavghj/unreleased/denied.png"
+  },
+  "protected_sources_after": {
+    "input": "3feffd0676eb783c699207fa5e5426b7abec601642edd4138dd24f9822899849",
+    "sentinel": "2f3fc2bf6f74c55b2af5f038d80603dae716f7d4f3658fe6881f3ad1ea2897e0",
+    "allowed_image": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+    "denied_image": "4ff6ab670a58c14270e034e2090d9a432caa263a14e0a25785386b0c12f880b5",
+    "link": "/private/tmp/dsc26-native-isolation-zkaavghj/unreleased/sentinel.txt",
+    "image_link": "/private/tmp/dsc26-native-isolation-zkaavghj/unreleased/denied.png"
+  },
+  "outside_write_absent_actual": true,
+  "sentinel_value_absent_from_prompt_actual": true,
+  "unexercised": [
+    "Native image helper denial (tool disabled)",
+    "Native apply_patch negative permission control (source forwarding only)",
+    "Customer analytical execution",
+    "Upstream quota exhaustion"
+  ],
+  "experimental_fields": [
+    "thread/start.permissions",
+    "command/exec.permissionProfile",
+    "thread/start.runtimeWorkspaceRoots",
+    "thread/start.activePermissionProfile"
+  ],
+  "evidence_omissions": "No proprietary Data skill bodies, hidden reasoning, random sentinel value, full plugin catalog or unrelated configuration retained."
+}
