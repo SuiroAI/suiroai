@@ -8,9 +8,8 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import date, timedelta
-from decimal import Decimal, InvalidOperation, ROUND_CEILING
+from decimal import ROUND_CEILING, Decimal, InvalidOperation
 from typing import Any
-
 
 _KEY_FIELDS = ("source_namespace", "product_id", "store_id")
 _PROVENANCE = {"supplied", "synthetic", "derived", "mock"}
@@ -216,6 +215,8 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
             if ledger_complete is not True or stock.get("Open_Order_Ledger_Complete") not in (True, "true"):
                 raise ValueError("open_order_ledger_not_explicitly_complete")
             daily = {}
+            service_quantiles = {}
+            service_level = None
             for row in sources["forecast"][key]:
                 day = _date(row.get("date"))
                 if row.get("quantity_unit") != "product_unit":
@@ -225,11 +226,25 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                 if day in daily:
                     raise ValueError("duplicate_forecast_date")
                 daily[day] = _number(row.get("quantity"))
+                # Independently recompute distribution-aware safety when present.
+                if "service_level_quantity" in row:
+                    level = _number(row.get("service_level"))
+                    if not Decimal("0.5") < level < 1:
+                        raise ValueError("service_level_out_of_range")
+                    quantile_quantity = _number(row.get("service_level_quantity"))
+                    if quantile_quantity < daily[day]:
+                        raise ValueError("service_level_quantile_below_point_forecast")
+                    service_quantiles[day] = quantile_quantity
+                    service_level = level if service_level is None else service_level
+                    if level != service_level:
+                        raise ValueError("inconsistent_service_level_across_days")
             if len(daily) < lead + period:
                 raise ValueError("incomplete_daily_forecast_coverage")
             horizon = [start + timedelta(days=i) for i in range(lead + period)]
             if not all(day in daily for day in horizon):
                 raise ValueError("incomplete_daily_forecast_coverage")
+            if service_quantiles and not all(day in service_quantiles for day in horizon):
+                raise ValueError("incomplete_service_level_trajectory")
             receipts, ledger_sum = defaultdict(Decimal), Decimal(0)
             for row in sources["receipt"][key]:
                 ordered = _date(row.get("Order_Date"))
@@ -244,7 +259,17 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                 raise ValueError("on_order_summary_does_not_reconcile_to_ledger")
             forecast = sum((daily[day] for day in horizon), Decimal(0))
             eligible = sum(receipts.values(), Decimal(0))
-            raw = max(Decimal(0), forecast + safety - on_hand - eligible)
+            # Mirror the producer's effective safety: policy floor, raised (never
+            # lowered) by the service-level quantile buffer when the forecast
+            # supplies one. Must match calculation.py exactly.
+            if service_quantiles:
+                service_total = sum((service_quantiles[day] for day in horizon), Decimal(0))
+                gap = max(Decimal(0), service_total - forecast)
+                quantile_safety = gap.to_integral_value(rounding=ROUND_CEILING)
+                effective_safety = max(safety, quantile_safety)
+            else:
+                effective_safety = safety
+            raw = max(Decimal(0), forecast + effective_safety - on_hand - eligible)
             rounded = ((max(raw, minimum) / multiple).to_integral_value(rounding=ROUND_CEILING) * multiple) if raw else Decimal(0)
             balance = on_hand
             for day in horizon:
@@ -263,7 +288,7 @@ def reconcile_orders(orders, exceptions, *, scope_keys, forecast_rows, inventory
                         "forecast_quantity": forecast, "usable_on_hand_quantity": on_hand,
                         "on_order_summary_quantity": summary, "eligible_receipt_quantity": eligible,
                         "supplier_lead_calendar_days": lead, "review_period_calendar_days": period,
-                        "safety_stock_quantity": safety, "order_multiple": multiple,
+                        "safety_stock_quantity": effective_safety, "order_multiple": multiple,
                         "minimum_positive_order_quantity": minimum, "raw_order_need": raw,
                         "rounded_order_quantity": rounded}
             if name_required:
