@@ -1,6 +1,7 @@
 """Explicit mock consumer evidence; no real December data is accessed."""
 from datetime import date
 import json
+from pathlib import Path
 import tempfile
 import unittest
 
@@ -12,7 +13,7 @@ from suiroai.modeling.frozen import (finalize_validation, freeze_bundle, record_
 
 class FrozenTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(dir="/private/tmp")
+        self.temp = tempfile.TemporaryDirectory(dir=Path(tempfile.gettempdir()).resolve())
         self.addCleanup(self.temp.cleanup)
         self.store = ArtifactStore(self.temp.name)
         self.execution = {"binding": {"task_id": "mock-task"}, "run_id": "mock-run"}

@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class MockArtifactStoreTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-artifacts-", dir="/private/tmp")
+        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-artifacts-", dir=Path(tempfile.gettempdir()).resolve())
         self.addCleanup(temporary.cleanup)
         self.directory = Path(temporary.name)
         self.store = ArtifactStore(self.directory / "store")
