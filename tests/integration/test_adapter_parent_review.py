@@ -61,7 +61,7 @@ class MockPacketHost:
 
 class ParentReviewTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-parent-review-")
+        temporary = tempfile.TemporaryDirectory(prefix="dsc26-mock-parent-review-", dir=Path(tempfile.gettempdir()).resolve())
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.fixture = json.loads((ROOT / "examples/contracts/v0.1.0/successful_analysis.json").read_text())
