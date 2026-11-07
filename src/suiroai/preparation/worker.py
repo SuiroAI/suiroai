@@ -7,15 +7,14 @@ trusted caller's exact-request permit, including in explicitly mocked tests.
 """
 from __future__ import annotations
 
-from collections import Counter, defaultdict
 import csv
-from datetime import date
 import hashlib
 import io
 import json
 import re
-import statistics
 import unicodedata
+from collections import Counter, defaultdict
+from datetime import date
 
 from suiroai.contracts import record_ref, validate_record
 
@@ -395,6 +394,11 @@ def prepare_development(sources, *, execution, request, development_receipt,
     if approved_policy["status"] != "pending" and policy != approved_policy:
         raise PreparationError("approved target policy differs; cannot silently change approved task")
     positive_quantities = sorted(integer(r["Quantity"]) for r in unique if integer(r["Quantity"]) > 0)
+    # DSC-27 numeric EDA statistics are computed through dscraft (SuiroAI's
+    # single DS backend), over already-prepared development values only.
+    from .profiling import numeric_summary
+    positive_quantity_stats = numeric_summary(positive_quantities)
+    observed_dates_stats = numeric_summary([r["observed_days"] for r in coverage])
     audit = {"raw_source_ref": development_receipt["raw_ref"],
         "raw_development_records": len(raw_rows), "distinct_development_records": len(unique),
         "exact_duplicate_excess": len(raw_rows)-len(unique), "daily_records": len(prepared),
@@ -406,12 +410,12 @@ def prepare_development(sources, *, execution, request, development_receipt,
         "target_excluded_lines": sum(len(r["excluded_source_records"]) for r in prepared),
         "development_target_quantity": sum(r["target_quantity"] for r in prepared),
         "global_observed_dates": len(all_dates), "possible_calendar_dates": span,
-        "median_series_observed_dates": statistics.median(r["observed_days"] for r in coverage),
+        "median_series_observed_dates": observed_dates_stats["median"],
         "sensitivity_units": dict(sensitivity), "ambiguous_mappings": ambiguous,
         "missing_mapping_values": dict(missing_mapping_values),
-        "positive_quantity_summary": {"count": len(positive_quantities),
-            "minimum": min(positive_quantities, default=None), "maximum": max(positive_quantities, default=None),
-            "median": statistics.median(positive_quantities) if positive_quantities else None,
+        "positive_quantity_summary": {"count": positive_quantity_stats["count"],
+            "minimum": positive_quantity_stats["minimum"], "maximum": positive_quantity_stats["maximum"],
+            "median": positive_quantity_stats["median"],
             "treatment": "Retain positive values without unsupported winsorization; boundedness/fitness belongs to measured modeling checks"},
         "joins": join_audit, "latest_event_date": max(all_dates), "earliest_event_date": min(all_dates),
         "quantity_source": "Quantity only", "source_refs": refs,
