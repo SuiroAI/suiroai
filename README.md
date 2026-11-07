@@ -2,7 +2,7 @@
 
 This independent Python application supports implementation of one historical retail restocking case. The current foundation contains package configuration and reviewed architecture; it does not execute the customer workflow.
 
-Use Python 3.11 or later. From this directory, `uv sync --locked` installs the foundation from the committed lockfile. `uv run --no-sync python -c "import suiroai"` checks package import. There is no customer executable, server or demo runner in this assignment.
+Use Python 3.12. From this directory, `uv sync --locked` installs the application from the committed lockfile. Nightly pins DSCraft to immutable first-party commit `d692d97a9a2d6c5ff519b1c99739c43ad2c2927b`, builds its wheel, and does not use a sibling checkout. This development pin is needed until a compatible release provides the analytics and quantile APIs; published DSCraft 0.2.1 is not equivalent. `uv run --no-sync python -c "import suiroai"` checks package import. There is no customer executable, server or demo runner in this assignment.
 
 - [Architecture and integration blockers](docs/architecture/ARCHITECTURE.md)
 - [Exclusive component ownership](docs/architecture/OWNERSHIP.md)

@@ -19,14 +19,13 @@ dependencies = [
     "dscraft[analytics]>=0.2.1",
 ]
 
-# dscraft is consumed as a normal, version-pinned BUILT ARTIFACT (wheel/sdist),
-# resolved from the configured index like any other dependency -- NOT an editable
-# sibling-path checkout. A sibling-path/editable override couples this app to
-# another repo's working tree (accidental sibling-checkout dependency), which the
-# review explicitly forbids; the `dscraft[analytics]>=0.2.1` requirement above is
-# the whole contract. For local development against an unreleased dscraft, install
-# the built artifact into the environment out-of-band (e.g. `pip install
-# /path/to/dscraft/dist/dscraft-*.whl`) rather than pinning a path here.
+# Nightly uses the immutable first-party reconciliation commit until its APIs
+# are available in a published release. uv builds and installs a wheel from this
+# source; it never imports an editable sibling checkout. The full commit pin
+# makes clean installs reproducible without relying on a developer's working tree.
+# Published dscraft 0.2.1 does not contain the analytics extra or quantile APIs.
+[tool.uv.sources]
+dscraft = { git = "https://github.com/SuiroAI/dscraft.git", rev = "d692d97a9a2d6c5ff519b1c99739c43ad2c2927b", subdirectory = "packages/dscraft" }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/suiroai"]
