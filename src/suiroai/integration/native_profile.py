@@ -15,8 +15,21 @@ import time
 
 CLI_VERSION = "0.163.0"
 MODEL = "gpt-6.1-sol"
-DATA_ROOT = Path("/Users/ceverson/.codex/plugins/cache/openai-curated-remote/data-analytics/1.0.11")
-PYTHON_ROOT = Path("/opt/anaconda3")
+
+# The native Codex/Data host is a macOS-seatbelt-sandboxed dev integration (see
+# docs/integration/NATIVE_BOUNDARY.md): execution is hard-gated to macOS below. These two
+# resource roots describe where the reviewed Data plugin cache and the Python runtime live on
+# the native host. They are **configuration, not a fixed machine path** — resolve them from the
+# environment so no single developer's home directory is baked in, which also keeps the universal
+# (non-macOS, e.g. OpenShift) deployment free of any Mac-specific path assumption. The macOS
+# seatbelt deny semantics and the darwin guard are unchanged; only the source of these two roots
+# moved from hardcoded constants to env-overridable values. Tests inject their own via
+# patch.object, which continues to work.
+_DEFAULT_DATA_ROOT = (Path.home() / ".codex" / "plugins" / "cache"
+                      / "openai-curated-remote" / "data-analytics" / "1.0.11")
+_DEFAULT_PYTHON_ROOT = Path("/opt/anaconda3")
+DATA_ROOT = Path(os.environ.get("SUIROAI_NATIVE_DATA_ROOT", str(_DEFAULT_DATA_ROOT)))
+PYTHON_ROOT = Path(os.environ.get("SUIROAI_NATIVE_PYTHON_ROOT", str(_DEFAULT_PYTHON_ROOT)))
 SKILL_SHA256 = "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e"
 DISABLED_FEATURES = ("apps", "browser_use", "browser_use_external", "browser_use_full_cdp_access",
     "computer_use", "in_app_browser", "in_app_local_automation", "multi_agent", "memories", "view_image")
