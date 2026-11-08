@@ -1,0 +1,40 @@
+{
+  "record_kind": "scoped_actual_engineering_probe_observation",
+  "source_record": {
+    "path": "/private/tmp/dsc26-data-stage-hlid40pr/probe-evidence.json",
+    "sha256": "7f5ed1a8e87e59f5ba8157bf4b35b3b88ad310425fa7d5a65b168688e1deb086"
+  },
+  "status": "integration_blocked",
+  "native_error": "thread/start returned RPC error: {\"code\": -32600, \"message\": \"Invalid request: unknown variant `workspaceWrite`, expected one of `read-only`, `workspace-write`, `danger-full-access`\"}",
+  "model_turn_requested": false,
+  "thread_id": null,
+  "turn_id": null,
+  "verified_native_plugin": {
+    "id": "data-analytics@openai-curated-remote",
+    "remotePluginId": "Plugin_fc9843a6fb34819195d6c7802398a8a7",
+    "version": "1.0.11",
+    "installed": true,
+    "enabled": true
+  },
+  "native_remote_skill_retrieval": {
+    "name": "index",
+    "evidence_path": "/private/tmp/dsc26-data-stage-hlid40pr/native-index-skill-evidence.txt",
+    "sha256": "a139924dda9dcab3e0207f69947b68de2b45f5d1bd997548c304735de397271e",
+    "bytes": 66898
+  },
+  "native_attachment": {
+    "type": "mention",
+    "name": "Data",
+    "path": "plugin://data-analytics@openai-curated-remote"
+  },
+  "failed_request_field": {
+    "method": "thread/start",
+    "sandbox": "workspaceWrite"
+  },
+  "corrected_request_field": {
+    "method": "thread/start",
+    "sandbox": "workspace-write"
+  },
+  "effective_response_policy_type_remains": "workspaceWrite",
+  "correction_exercised_in_native_host": false
+}

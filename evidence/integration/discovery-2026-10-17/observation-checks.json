@@ -1,0 +1,48 @@
+{
+  "record_kind": "local_integrity_checks_not_integration_acceptance",
+  "checks": [
+    {
+      "artifact": "appserver-default.json",
+      "check": "Actual child failure, zero RPC replies and no stage execution remain recorded",
+      "expected": {
+        "process_exit": 1,
+        "rpc_responses": 0,
+        "sent_methods": [
+          "initialize"
+        ],
+        "analytical_invocation": false
+      },
+      "actual": {
+        "process_exit": 1,
+        "rpc_responses": 0,
+        "sent_methods": [
+          "initialize"
+        ],
+        "analytical_invocation": false
+      },
+      "passed": true
+    },
+    {
+      "artifact": "appserver-writable-state.json",
+      "check": "Actual child failure, zero RPC replies and no stage execution remain recorded",
+      "expected": {
+        "process_exit": 1,
+        "rpc_responses": 0,
+        "sent_methods": [
+          "initialize"
+        ],
+        "analytical_invocation": false
+      },
+      "actual": {
+        "process_exit": 1,
+        "rpc_responses": 0,
+        "sent_methods": [
+          "initialize"
+        ],
+        "analytical_invocation": false
+      },
+      "passed": true
+    }
+  ],
+  "real_invocation_passed": false
+}
