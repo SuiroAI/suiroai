@@ -1,0 +1,80 @@
+{
+  "evidence_kind": "MOCK_ILLUSTRATIVE_CONVERSATION_EXCERPTS",
+  "schema_snapshot": "0.1.0-draft.3",
+  "complete_contract_records": false,
+  "real_uploads_or_live_model_calls": false,
+  "purpose": "Readable examples of the one retail restocking conversation; references and messages below are illustrative, not executable wire packets or acceptance evidence.",
+  "scenarios": [
+    {
+      "name": "absent_inputs",
+      "request": "Help me decide how much to reorder for each product and store.",
+      "supplied_references": [],
+      "presentation_excerpt": {
+        "status": "needs_inputs",
+        "goal": "Determine replenishment quantities by product and store.",
+        "customer_message": "No files were supplied. Please provide dated sales with quantity meanings to estimate demand; usable stock at the review date and due-dated inbound commitments (or a complete no-open-orders statement) to avoid ordering stock already available or arriving; and supplier lead times, review period and purchasing constraints to calculate feasible orders. Please confirm the November 30, 2025 historical review context and same-product units. I will present a revised proposal when those inputs are available. Execution has not started."
+      },
+      "response": null,
+      "result_excerpt": {"decision": "pending", "execution_started": false}
+    },
+    {
+      "name": "inaccessible_reference",
+      "request": "Use the sales file in this private link for my restocking review.",
+      "supplied_references": [{"file_id": "mock-private-sales", "location": "https://example.invalid/private/sales.csv", "access": "inaccessible"}],
+      "presentation_excerpt": {
+        "status": "needs_inputs",
+        "customer_message": "The supplied sales reference could not be read; its contents were not inspected. Provide an authorized readable copy so its relevance and field meanings can be checked. Stock, inbound commitments, purchasing constraints and review context also remain unconfirmed."
+      },
+      "invariants": ["No fixture substituted", "No claim to inspect inaccessible contents", "No execution"]
+    },
+    {
+      "name": "partial_inputs_and_candidate_relationships",
+      "request": "Use this transaction file to recommend store orders for the November 30, 2025 review in product units.",
+      "supplied_references": [{"file_id": "mock-sales", "provenance": "mock", "access": "accessible", "inspected_columns": ["Date", "Product_ID", "Store_ID", "Quantity", "Inventory_Level", "Delivery_Days"]}],
+      "presentation_excerpt": {
+        "status": "needs_inputs",
+        "goal": "Recommend product/store restocking quantities for the November 30, 2025 review using product units.",
+        "customer_message": "The sales header contains candidate product/store keys, but row meanings and completeness remain unverified. Please provide quantity definitions, usable stock at review time, due-dated inbound commitments or a complete no-open-orders statement, and purchasing rules including supplier lead times. Inventory_Level is approximate transaction-time stock, and Delivery_Days is customer fulfillment duration; these do not establish the operational facts needed to calculate orders."
+      },
+      "invariants": ["Candidate keys recorded only", "No joins or aggregation", "Business facts requested, no algorithm choice"]
+    },
+    {
+      "name": "accurate_proposal_and_waiting",
+      "request": "For the November 30, 2025 historical review, recommend product-unit orders for store S01 only, using these supplied sales, stock, complete inbound and policy files. Deliver one final report and order list.",
+      "assumed_fixture_condition": "MOCK focused-role output plus trusted MOCK source reviewer accepts that supplied files support the business facts; no real acceptance asserted.",
+      "presentation_excerpt": {
+        "status": "awaiting_confirmation",
+        "proposal_version": 1,
+        "goal": "Recommend product-unit restocking quantities for store S01 for the November 30, 2025 review.",
+        "output": "one_restocking_list_and_final_report_or_verified_failure_explanation",
+        "customer_message": "Proposal v1 covers store S01 using your supplied sales, usable stock, complete inbound ledger and policy references. December remains reserved for final unseen evaluation. Please confirm this exact proposal or provide corrections. No reply means waiting; execution has not started."
+      },
+      "response": null,
+      "result_excerpt": {"status": "awaiting_confirmation", "decision": "pending", "execution_started": false}
+    },
+    {
+      "name": "correction_then_version_bound_approval",
+      "events": [
+        {"event": "customer_response", "reply_to_proposal_version": 1, "decision": "correct", "text": "Use S02 instead of S01.", "result": "revise_proposal"},
+        {"event": "parent_repeats_step2", "task_input_versions": "allocated by parent", "proposal_version": 2, "goal": "Recommend product-unit orders for store S02 at the same review date."},
+        {"event": "stale_approval", "reply_to_proposal_version": 1, "current_proposal_version": 2, "result": "reject stale reference; no execution"},
+        {"event": "customer_response", "reply_to_proposal_version": 2, "decision": "approve", "text": "I approve proposal v2 for S02.", "result": "approved after trusted host authenticates the event"},
+        {"event": "approved_handoff", "returned_chain": ["same current submission", "same proposal v2 content/reference/digest", "approval bound to v2"], "execution_started_by_intake": false}
+      ]
+    },
+    {
+      "name": "new_material_overrides_apparent_approval",
+      "response_excerpt": {"decision": "approve", "text": "Approved, but use this corrected stock file.", "has_material_changes": true},
+      "result_excerpt": {"status": "revise_proposal", "decision": "rejected", "execution_started": false},
+      "next_step": "Parent invalidates the old sign-off, allocates material input/proposal revisions, repeats read-only understanding/source review, and presents the revised proposal for fresh confirmation."
+    },
+    {
+      "name": "rejection_and_ambiguity",
+      "variants": [
+        {"customer_decision": "reject", "result": "revise_proposal", "execution_started": false},
+        {"customer_decision": "unclear", "result": "awaiting_confirmation", "approval_decision": "pending", "execution_started": false},
+        {"customer_decision": "approve", "proposal_readiness": "needs_inputs", "result": "needs_inputs", "approval_decision": "pending", "execution_started": false}
+      ]
+    }
+  ]
+}

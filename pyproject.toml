@@ -7,8 +7,25 @@ name = "suiroai"
 version = "0.1.0"
 description = "SuiroAI single-case retail restocking MVP application"
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = ["jsonschema>=4.18,<5"]
+requires-python = ">=3.12,<3.13"
+# SuiroAI depends on dscraft as its single data-science backend: all EDA and
+# modeling go through dscraft rather than importing numpy/pandas/scikit-learn/
+# statsforecast/etc. directly. dscraft[analytics] pulls the tabular+forecast+eda
+# capability groups as one tested, conflict-free, version-matched stack, so this
+# application never hand-assembles mutually-compatible DS library versions.
+# jsonschema remains for DSC-24 JSON Schema Draft 2020-12 contract validation.
+dependencies = [
+    "jsonschema>=4.18,<5",
+    "dscraft[analytics]>=0.2.1",
+]
+
+# Nightly uses the immutable first-party reconciliation commit until its APIs
+# are available in a published release. uv builds and installs a wheel from this
+# source; it never imports an editable sibling checkout. The full commit pin
+# makes clean installs reproducible without relying on a developer's working tree.
+# Published dscraft 0.2.1 does not contain the analytics extra or quantile APIs.
+[tool.uv.sources]
+dscraft = { git = "https://github.com/SuiroAI/dscraft.git", rev = "d692d97a9a2d6c5ff519b1c99739c43ad2c2927b", subdirectory = "packages/dscraft" }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/suiroai"]
