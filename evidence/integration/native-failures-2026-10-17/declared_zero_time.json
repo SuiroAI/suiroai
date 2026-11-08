@@ -1,0 +1,32 @@
+{
+  "record_kind": "reviewed_declared_bound_predispatch_observation",
+  "shared_contract_instance": false,
+  "customer_analysis": false,
+  "automatic_DSC26_acceptance": false,
+  "original_adapter_result": {
+    "outcome": "execution_failed",
+    "error_code": "budget_exhausted",
+    "message": "Native execution requires positive finite remaining time",
+    "thread_id": null,
+    "turn_id": null,
+    "terminal_status": null,
+    "mode": "engineering"
+  },
+  "checks": {
+    "zero_remaining_time_rejected": true,
+    "no_thread_or_turn_started": true,
+    "native_rpc_log_created": false
+  },
+  "review": {
+    "decision": "declared_zero_time_guard_demonstrated_without_native_dispatch",
+    "upstream_quota_exhaustion": false,
+    "limitation": "This exercises a supplied zero-time bound; no native account, usage or compute quota was depleted."
+  },
+  "raw_evidence_references": [
+    {
+      "path": "/private/tmp/dsc26-native-failures-658wxq2w/declared_zero_time/evidence/native-run.json",
+      "sha256": "937538987f06bbff54044f1c1f274cc7b3378e73d5012f604d06da11de002e07",
+      "bytes": 584
+    }
+  ]
+}
