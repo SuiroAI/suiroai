@@ -1,0 +1,30 @@
+{
+  "record_kind": "retained_engineering_file_integrity_manifest",
+  "files": [
+    {
+      "path": "command-observation.json",
+      "sha256": "9d46e5792bed3248e89c777a56a603b57384fce1cd48e7df96c48759f704adde",
+      "bytes": 6365
+    },
+    {
+      "path": "control-result.json",
+      "sha256": "1f81009d1a481d2687c87f5f0088f517a704fdfa66fd71b57362e49099660481",
+      "bytes": 69
+    },
+    {
+      "path": "control_code.py",
+      "sha256": "8cdb3231679e8de3424ab6303d603009d9dcc6664e0577577993d610ca5056f2",
+      "bytes": 1473
+    },
+    {
+      "path": "outside-created-file.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "review.json",
+      "sha256": "e9b5d84125bd8828c21dfbfe6a0a79b54d612ab32c749c197539802e828d8dbd",
+      "bytes": 3694
+    }
+  ]
+}
